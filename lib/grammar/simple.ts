@@ -4,8 +4,10 @@ import { adjectives, verbForms, simpleVerbs, beForms } from "./vocabulary.ts";
 import { nounPhrase, directObject, objectPhrase, type Phrase } from "./phrases.ts";
 import { createBoundaryBudget } from "./context.ts";
 import { suggest } from "./suggestions.ts";
+import { diagnose, budgetMessage } from "./feedback.ts";
 
 export function analyzeDeclarative(tokens: Token[], result: AnalysisResult, consumeBoundary = createBoundaryBudget()): string {
+  diagnose(result, "unsupported-structure");
   let end = tokens.length;
   let adverb: Token | null = ["today", "yesterday"].includes(tokens.at(-1)?.normalized ?? "") ? tokens[--end] : null;
   // Fixed destination frame only, not a general preposition grammar.
@@ -24,7 +26,7 @@ export function analyzeDeclarative(tokens: Token[], result: AnalysisResult, cons
     const subject = nounPhrase(tokens, 0, v);
     if (!subject) continue;
     for (let split = v + 2; split < end; split++) {
-      if (!consumeBoundary()) return ("输入结构过长，超出本地规则的计算预算。");
+      if (!consumeBoundary()) { diagnose(result, "budget-exceeded"); return budgetMessage; }
       const recipient = nounPhrase(tokens, v + 1, split, true);
       const object = directObject(tokens, split, end);
       if (recipient && object) candidates.push({ subject, verbIndex: v, verb: form,
@@ -32,18 +34,21 @@ export function analyzeDeclarative(tokens: Token[], result: AnalysisResult, cons
     }
   }
   if (!candidates.length) return ("未匹配词典及动词搭配限定的五种句型结构。");
-  if (candidates.length > 1) { result.status = "ambiguous"; return ("存在多个可能的成分边界，无法唯一确定结构。"); }
+  if (candidates.length > 1) { result.status = "ambiguous"; diagnose(result, "ambiguous"); return ("存在多个可能的成分边界，无法唯一确定结构。"); }
   const c = candidates[0];
   if (c.tense === "present" && tokens[c.verbIndex].normalized !== (c.subject.thirdPerson ? c.verb.third : c.verb.base)) {
     result.status = "partial";
+    diagnose(result, "form-mismatch");
     if (adverb?.normalized !== "yesterday") suggest(result, tokens[c.verbIndex], c.subject.thirdPerson ? c.verb.third : c.verb.base, "AGREEMENT-001", "一般现在时的动词形式需要与主语的人称和单复数一致。");
     return ("名词短语与双宾语结构已匹配，但动词形式不在此规则的支持条件内；请查看语法检查中的限定纠错建议。");
   }
   if (c.tense === "present" && adverb?.normalized === "yesterday") {
+    diagnose(result, "form-mismatch");
     return ("yesterday 与当前一般现在时规则不匹配，无法可靠分析。时态纠错尚未支持。");
   }
   result.status = "complete"; result.purpose = "declarative"; result.pattern = "SVOO";
   result.complexity = "simple"; result.tense = c.tense;
+  result.reasons = [];
   const add = (role: Role, start: number, stop: number, explanation: string, parentId: string | null = null) => {
     const id = `node-${result.nodes.length + 1}`;
     result.nodes.push({ id, role, parentId, implicit: false, ranges: [{ start: tokens[start].start, end: tokens[stop - 1].end }], ruleId: "SVOO-001", explanation });
@@ -96,16 +101,18 @@ function analyzeSimplePatterns(tokens: Token[], end: number, adverb: Token | nul
     }
   }
   if (!matches.length) return null;
-  if (matches.length > 1) { result.status = "ambiguous"; return "存在多个可能的成分边界，无法唯一确定结构。"; }
+  if (matches.length > 1) { result.status = "ambiguous"; diagnose(result, "ambiguous"); return "存在多个可能的成分边界，无法唯一确定结构。"; }
   const c = matches[0];
   if (tokens[c.v].normalized !== c.expected) {
     result.status = "partial";
+    diagnose(result, "form-mismatch");
     if (c.tense === "past" || adverb?.normalized !== "yesterday") suggest(result, tokens[c.v], c.expected, "AGREEMENT-001", "动词形式需要与主语的人称和单复数一致；be 同时保留原句的现在或过去时。");
     return "短语结构已匹配，但主语与动词形式不在此规则的支持条件内；请查看语法检查中的限定纠错建议。";
   }
-  if (c.tense === "present" && adverb?.normalized === "yesterday") return "yesterday 与当前一般现在时规则不匹配，无法可靠分析。时态纠错尚未支持。";
+  if (c.tense === "present" && adverb?.normalized === "yesterday") { diagnose(result, "form-mismatch"); return "yesterday 与当前一般现在时规则不匹配，无法可靠分析。时态纠错尚未支持。"; }
   result.status = "complete"; result.pattern = c.pattern; result.purpose = "declarative";
   result.complexity = "simple"; result.tense = c.tense;
+  result.reasons = [];
   const ruleId = `${c.pattern}-001`;
   const add = (role: Role, phrase: Phrase, explanation: string) => {
     const id = `node-${result.nodes.length + 1}`;

@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { analyzeSentence, validateAnalysisResult } from '../lib/grammar.ts';
+import { analyzeSentence, validateAnalysisResult, RULE_VERSION } from '../lib/grammar.ts';
 import { stage9, compareStage9 } from './helpers/stage9-fixtures.mjs';
 import { analyzeCompound } from '../lib/grammar/compound.ts';
 import { tokenize } from '../lib/grammar/tokens.ts';
@@ -9,7 +9,7 @@ for (const fixture of stage9.fixtures) test(`stage 9 fixed expectation: ${fixtur
   compareStage9(fixture.expected, result);
   validateAnalysisResult(result);
   assert.equal(result.inputVersion, 9);
-  if (result.status === 'complete') assert.equal(result.ruleVersion, stage9.targetRuleVersion);
+  if (result.status === 'complete') assert.equal(result.ruleVersion, RULE_VERSION);
   if (result.status === 'partial') {
     assert.match(result.messages[0], /暂不提供纠错/);
     assert.doesNotMatch(result.messages[0], /请查看.*建议/);

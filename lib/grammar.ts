@@ -3,10 +3,12 @@ import { RULE_VERSION, MAX_INPUT_LENGTH, validateAnalysisResult, type AnalysisRe
 import { tokenize } from "./grammar/tokens.ts";
 import { knownWords } from "./grammar/vocabulary.ts";
 import { analyzePurpose } from "./grammar/purposes.ts";
+import { analyzeComplex } from "./grammar/complex.ts";
 import { analyzeCompound } from "./grammar/compound.ts";
+import { diagnose } from "./grammar/feedback.ts";
 
 export { RULE_VERSION, MAX_INPUT_LENGTH, validateAnalysisResult } from "./grammar/protocol.ts";
-export type { Range, Role, Purpose, Pattern, Tense, ComponentNode, Correction, AnalysisResult } from "./grammar/protocol.ts";
+export type { Range, Role, Purpose, Pattern, Tense, ComponentNode, Correction, AnalysisResult, AnalysisReason, ReasonCode } from "./grammar/protocol.ts";
 export { tokenize } from "./grammar/tokens.ts";
 export type { Token } from "./grammar/tokens.ts";
 export { VOCABULARY } from "./grammar/vocabulary.ts";
@@ -28,8 +30,8 @@ export function applyCorrection(result: AnalysisResult, id: string, input: strin
 export function analyzeSentence(input: string, inputVersion = 0): AnalysisResult {
   const result: AnalysisResult = {
     input, inputVersion, ruleVersion: RULE_VERSION, status: "unsupported", purpose: null,
-    pattern: null, complexity: null, tense: null, nodes: [], corrections: [],
-    messages: ["当前仅分析闭合词典内的五种句型、四种简单句用途及两个完整陈述分句的 and/but 并列句；纠错仅覆盖简单句的主谓一致、do/does/did 后原形及 can 后原形。"],
+    pattern: null, complexity: null, tense: null, nodes: [], corrections: [], reasons: [],
+    messages: ["当前仅分析闭合词典内的五种句型、四种简单句用途及两个完整陈述分句的 and/but 并列句、后置无逗号 because 原因从句和前置带逗号 if 条件从句；纠错仅覆盖简单句的主谓一致、do/does/did 后原形及 can 后原形。"],
   };
   const finish = (message?: string) => {
     if (message) result.messages.unshift(message);
@@ -38,22 +40,29 @@ export function analyzeSentence(input: string, inputVersion = 0): AnalysisResult
   };
   if (!input.trim() || input.length > MAX_INPUT_LENGTH) {
     result.status = "invalid";
+    diagnose(result, "invalid-input");
     return finish(!input.trim() ? "请输入一个英文句子。" : "输入超过 1000 个 UTF-16 字符，请缩短后重试。");
   }
   const tokens = tokenize(input);
   const terminals = tokens.filter(t => /[.!?]/.test(t.text));
   if (terminals.length > 1 || (terminals.length && terminals[0] !== tokens.at(-1))) {
     result.status = "invalid";
+    diagnose(result, "punctuation");
     return finish("每次只能分析一个句子，请检查句末标点。");
   }
   const punctuation = terminals[0]?.text ?? null;
   if (punctuation) tokens.pop();
+  if (tokens.some(t => ["because", "if"].includes(t.normalized))) return finish(analyzeComplex(tokens, punctuation, result));
   if (tokens.some(t => ["and", "but"].includes(t.normalized))) return finish(analyzeCompound(tokens, punctuation, result));
   if (tokens.some(t => !/^[A-Za-z]+$/.test(t.text))) {
+    diagnose(result, "punctuation");
     return finish("本阶段支持英文单词和可选的句末句号、问号或感叹号；其他符号尚未支持。");
   }
   const unknown = [...new Set(tokens.filter(t => !knownWords.has(t.normalized)).map(t => t.text))];
-  if (unknown.length) return finish(`词典尚未覆盖：${unknown.join("、")}。无法可靠分析此句。`);
+  if (unknown.length) {
+    diagnose(result, "unknown-word", tokens.filter(t => !knownWords.has(t.normalized)).map(({ start, end }) => ({ start, end })));
+    return finish(`词典尚未覆盖：${unknown.join("、")}。无法可靠分析此句。`);
+  }
   const purposeMessage = analyzePurpose(tokens, punctuation, result);
   return finish(purposeMessage);
 }

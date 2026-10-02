@@ -1,0 +1,33 @@
+{
+  "targetRuleVersion": "0.9.0",
+  "authorship": "Hand-authored reason, status and correction availability before implementation. Controlled ambiguity and budget cases are explicitly identified.",
+  "fixtures": [
+    {"input":"She likes the weather.","code":"unknown-word","status":"unsupported","edits":0,"words":["weather"]},
+    {"input":"If she sleeps, he likes music.","code":"unknown-word","status":"unsupported","edits":0,"words":["music"],"clauseIndex":2},
+    {"input":"  Music likes music.","code":"unknown-word","status":"unsupported","edits":0,"words":["Music","music"]},
+    {"input":"She smiles if he sleeps.","code":"unsupported-structure","status":"unsupported","edits":0},
+    {"input":"She sleeps and he smiles because he is kind.","code":"unsupported-structure","status":"unsupported","edits":0},
+    {"input":"She smiles because likes books.","code":"unsupported-structure","status":"unsupported","edits":0,"clauseIndex":2},
+    {"input":"She sleep.","code":"form-mismatch","status":"partial","edits":1},
+    {"input":"She do not likes books.","code":"form-mismatch","status":"partial","edits":2},
+    {"input":"If she sleeps, he can is kind.","code":"form-mismatch","status":"partial","edits":0,"clauseIndex":2},
+    {"input":"She sleeps. He smiles.","code":"punctuation","status":"invalid","edits":0},
+    {"input":"If she sleeps he smiles.","code":"punctuation","status":"unsupported","edits":0},
+    {"input":"She smiles, because he sleeps.","code":"punctuation","status":"unsupported","edits":0},
+    {"input":"She gives boys boys books.","code":"ambiguous","status":"ambiguous","edits":0,"adjectiveOverlap":"boys"},
+    {"input":"She gives girls girls gifts.","code":"ambiguous","status":"ambiguous","edits":0,"adjectiveOverlap":"girls"},
+    {"input":"She gives teachers teachers books.","code":"ambiguous","status":"ambiguous","edits":0,"adjectiveOverlap":"teachers"},
+    {"input":"She gives him a book","code":"budget-exceeded","status":"unsupported","edits":0,"budget":0,"entry":"purpose"},
+    {"input":"She can not give him a book","code":"budget-exceeded","status":"unsupported","edits":0,"budget":1,"entry":"purpose"},
+    {"input":"If she does not give him a book, he does not give her a book","code":"budget-exceeded","status":"unsupported","edits":0,"budget":8,"entry":"complex","clauseIndex":2},
+    {"input":"","code":"invalid-input","status":"invalid","edits":0},
+    {"input":"She runs yesterday.","code":"form-mismatch","status":"unsupported","edits":0},
+    {"input":"She do not likes books because he likes music.","code":"unknown-word","status":"unsupported","edits":0,"words":["music"],"clauseIndex":2},
+    {"input":"If she likes music he smiles.","code":"punctuation","status":"unsupported","edits":0},
+    {"input":"She likes music. He sleeps.","code":"punctuation","status":"invalid","edits":0},
+    {"input":"If she sleeps, he smiles.","code":null,"status":"complete","edits":0},
+    {"input":"She is kind because he smiled.","code":null,"status":"complete","edits":0},
+    {"input":"She can be kind.","code":null,"status":"complete","edits":0},
+    {"input":"She sleeps and he smiles.","code":null,"status":"complete","edits":0}
+  ]
+}

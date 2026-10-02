@@ -5,20 +5,21 @@ import { nounPhrase } from "./phrases.ts";
 import { analyzeDeclarative } from "./simple.ts";
 import { forkCandidate } from "./context.ts";
 import { suggest } from "./suggestions.ts";
+import { diagnose, hasReason, budgetMessage } from "./feedback.ts";
 
 const unsupported = "未匹配当前限定的否定陈述句或 can 疑问句；否定疑问、缩写及其他搭配尚未支持。";
-const budgetMessage = "输入结构过长，超出本地规则的计算预算。";
 
 /** Match the whole frame before exposing any correction. Keep every original token offset. */
 export function analyzeExtended(tokens: Token[], punctuation: string | null, result: AnalysisResult, consumeBoundary: () => boolean): string | null {
   const question = tokens[0]?.normalized === "can";
   const negatives = tokens.filter(t => t.normalized === "not");
   if (!question && !negatives.length) return null;
-  if (question ? negatives.length > 0 || (punctuation !== null && punctuation !== "?")
-    : negatives.length !== 1 || (punctuation !== null && punctuation !== ".")) return unsupported;
+  diagnose(result, "unsupported-structure");
+  if (punctuation !== null && punctuation !== (question ? "?" : ".")) { diagnose(result, "punctuation"); return unsupported; }
+  if (question ? negatives.length > 0 : negatives.length !== 1) return unsupported;
   const parsed: { candidate: AnalysisResult; message: string }[] = [];
   for (let m = question ? 2 : 1; m < tokens.length; m++) {
-    if (!consumeBoundary()) return budgetMessage;
+    if (!consumeBoundary()) { diagnose(result, "budget-exceeded"); return budgetMessage; }
     const subjectStart = question ? 1 : 0;
     const subject = nounPhrase(tokens, subjectStart, m);
     if (!subject) continue;
@@ -39,7 +40,7 @@ export function analyzeExtended(tokens: Token[], punctuation: string | null, res
     const candidate = forkCandidate(result);
     const tailStart = beNegative ? m + 2 : v + 1;
     const message = analyzeDeclarative([...tokens.slice(subjectStart, m), { ...lexical, normalized }, ...tokens.slice(tailStart)], candidate, consumeBoundary);
-    if (message === budgetMessage) return message;
+    if (hasReason(candidate, "budget-exceeded")) { result.reasons = candidate.reasons; return message; }
     if (beNegative) {
       if (!["complete", "partial"].includes(candidate.status)) continue;
     } else {
@@ -49,6 +50,7 @@ export function analyzeExtended(tokens: Token[], punctuation: string | null, res
       const wrongBase = lexical.normalized !== (form?.base ?? "be");
       if (wrongAux || wrongBase) {
         candidate.status = "partial"; candidate.purpose = null; candidate.pattern = null;
+        diagnose(candidate, "form-mismatch");
         candidate.complexity = null; candidate.tense = null; candidate.nodes = [];
         if (wrongAux) suggest(candidate, auxiliary, subject.thirdPerson ? "does" : "do", "AGREEMENT-001", "否定陈述句的 do/does 需要与主语的人称和单复数一致。");
         if (wrongBase) suggest(candidate, lexical, form?.base ?? "be", doNegative ? "DO-BASE-001" : "MODAL-BASE-001",
@@ -70,7 +72,7 @@ export function analyzeExtended(tokens: Token[], punctuation: string | null, res
     parsed.push({ candidate, message: candidate.status === "complete" ? `已匹配${question ? "can 一般疑问" : "否定陈述"}规则。${message}`
       : "完整短语搭配已匹配，但否定或 can 疑问中的动词形式不符合规则；请查看限定纠错建议。" });
   }
-  if (parsed.length > 1) { result.status = "ambiguous"; return "存在多个可能的成分边界，无法唯一确定结构。"; }
+  if (parsed.length > 1) { result.status = "ambiguous"; diagnose(result, "ambiguous"); return "存在多个可能的成分边界，无法唯一确定结构。"; }
   if (!parsed.length) return unsupported;
   Object.assign(result, parsed[0].candidate);
   return parsed[0].message;

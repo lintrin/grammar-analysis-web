@@ -13,7 +13,7 @@ const canonicalNodes = nodes => nodes.map(n => ({ role: n.role, parentRole: n.pa
   implicit: n.implicit, ranges: n.ranges })).sort((a, b) => JSON.stringify(a).localeCompare(JSON.stringify(b)));
 export const compare = (input, expected, result) => {
   const migration = fixtures.find(f => f.input === input)?.migration;
-  if (migration && result.ruleVersion === migration.targetRuleVersion) {
+  if (migration && result.ruleVersion.localeCompare(migration.targetRuleVersion, 'en', { numeric: true }) >= 0) {
     const target = stage9.fixtures.find(f => f.id === migration.fixtureId);
     assert.equal(target.input, input);
     return compareStage9(target.expected, result);

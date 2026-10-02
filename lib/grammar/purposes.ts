@@ -6,13 +6,16 @@ import { analyzeDeclarative } from "./simple.ts";
 import { analyzeExtended } from "./extended.ts";
 import { createBoundaryBudget, forkCandidate } from "./context.ts";
 import { suggest } from "./suggestions.ts";
+import { diagnose, hasReason } from "./feedback.ts";
 
 /** Reorder token references, never input text: every explicit range stays in the original string. */
 export function analyzePurpose(tokens: Token[], punctuation: string | null, result: AnalysisResult, consumeBoundary = createBoundaryBudget()): string {
+  diagnose(result, "unsupported-structure");
   const extended = analyzeExtended(tokens, punctuation, result, consumeBoundary);
   if (extended !== null) return extended;
   const first = tokens[0]?.normalized;
   const unsupported = "未匹配当前支持的句子用途结构，或句末标点与结构不匹配。";
+  const wrongPunctuation = () => { diagnose(result, "punctuation"); return unsupported; };
   const tryParse = (ordered: Token[]) => {
     const candidate = forkCandidate(result);
     const message = analyzeDeclarative(ordered, candidate, consumeBoundary);
@@ -24,7 +27,7 @@ export function analyzePurpose(tokens: Token[], punctuation: string | null, resu
     return message;
   };
   if (["do", "does", "did"].includes(first)) {
-    if (punctuation && punctuation !== "?") return unsupported;
+    if (punctuation && punctuation !== "?") return wrongPunctuation();
     for (let v = 2; v < tokens.length; v++) {
       const subject = nounPhrase(tokens, 1, v);
       const form = [...verbForms, ...simpleVerbs].find(f => [f.base, f.third, f.past].includes(tokens[v].normalized));
@@ -32,9 +35,11 @@ export function analyzePurpose(tokens: Token[], punctuation: string | null, resu
       const past = first === "did";
       const lexical = { ...tokens[v], normalized: past ? form.past : subject.thirdPerson ? form.third : form.base };
       const { candidate, message } = tryParse([...tokens.slice(1, v), lexical, ...tokens.slice(v + 1)]);
+      if (hasReason(candidate, "budget-exceeded")) { result.reasons = candidate.reasons; return message; }
       if (candidate.status !== "complete") continue;
       if ((!past && first !== (subject.thirdPerson ? "does" : "do")) || tokens[v].normalized !== form.base) {
         result.status = "partial";
+        diagnose(result, "form-mismatch");
         if (!past && first !== (subject.thirdPerson ? "does" : "do")) suggest(result, tokens[0], subject.thirdPerson ? "does" : "do", "AGREEMENT-001", "一般现在时疑问句的 do/does 需要与主语一致。");
         if (tokens[v].normalized !== form.base) suggest(result, tokens[v], form.base, "DO-BASE-001", "do/does/did 已承担时态与人称变化，其后的实义动词应使用原形。");
         return "疑问句短语已匹配，但助动词与主语或其后动词形式不符合当前规则；请查看语法检查中的限定纠错建议。";
@@ -48,14 +53,15 @@ export function analyzePurpose(tokens: Token[], punctuation: string | null, resu
     return unsupported;
   }
   if (beForms.includes(first)) {
-    if (punctuation && punctuation !== "?") return unsupported;
+    if (punctuation && punctuation !== "?") return wrongPunctuation();
     const parsed = [];
     for (let split = 2; split < tokens.length; split++) {
       if (!nounPhrase(tokens, 1, split)) continue;
       const entry = tryParse([...tokens.slice(1, split), tokens[0], ...tokens.slice(split)]);
+      if (hasReason(entry.candidate, "budget-exceeded")) { result.reasons = entry.candidate.reasons; return entry.message; }
       if (["complete", "partial"].includes(entry.candidate.status)) parsed.push(entry);
     }
-    if (parsed.length > 1) { result.status = "ambiguous"; return "存在多个可能的疑问句边界，无法唯一确定结构。"; }
+    if (parsed.length > 1) { result.status = "ambiguous"; diagnose(result, "ambiguous"); return "存在多个可能的疑问句边界，无法唯一确定结构。"; }
     if (!parsed.length) return unsupported;
     const { candidate, message } = parsed[0];
     const verb = candidate.nodes.find(n => n.role === "verb");
@@ -63,7 +69,7 @@ export function analyzePurpose(tokens: Token[], punctuation: string | null, resu
     return accept(candidate, `已匹配 be 疑问句规则 QUESTION-BE-001。${message}`, "interrogative");
   }
   if (first === "how" || first === "what") {
-    if (punctuation && punctuation !== "!") return unsupported;
+    if (punctuation && punctuation !== "!") return wrongPunctuation();
     const last = tokens.at(-1)!;
     if (!beForms.includes(last.normalized)) return unsupported;
     const parsed = [];
@@ -79,9 +85,10 @@ export function analyzePurpose(tokens: Token[], punctuation: string | null, resu
       }
       if (!nounPhrase(tokens, split, tokens.length - 1)) continue;
       const entry = tryParse([...tokens.slice(split, -1), last, ...tokens.slice(1, split)]);
+      if (hasReason(entry.candidate, "budget-exceeded")) { result.reasons = entry.candidate.reasons; return entry.message; }
       if (["complete", "partial"].includes(entry.candidate.status)) parsed.push(entry);
     }
-    if (parsed.length > 1) { result.status = "ambiguous"; return "存在多个可能的感叹句边界，无法唯一确定结构。"; }
+    if (parsed.length > 1) { result.status = "ambiguous"; diagnose(result, "ambiguous"); return "存在多个可能的感叹句边界，无法唯一确定结构。"; }
     if (!parsed.length) return unsupported;
     const { candidate, message } = parsed[0];
     const complement = candidate.nodes.find(n => n.role === "complement");
@@ -95,7 +102,7 @@ export function analyzePurpose(tokens: Token[], punctuation: string | null, resu
     return accept(candidate, `已匹配完整感叹句规则 EXCLAMATION-001。${message}`, "exclamatory");
   }
   if (tokens.some(t => t.normalized === "can")) {
-    if (punctuation && punctuation !== ".") return unsupported;
+    if (punctuation && punctuation !== ".") return wrongPunctuation();
     const m = tokens.findIndex(t => t.normalized === "can");
     const subject = nounPhrase(tokens, 0, m);
     const lexical = tokens[m + 1];
@@ -103,9 +110,11 @@ export function analyzePurpose(tokens: Token[], punctuation: string | null, resu
     if (!subject || !lexical || (!form && !["be", ...beForms].includes(lexical.normalized))) return unsupported;
     const normalized = form ? subject.thirdPerson ? form.third : form.base : m === 1 && first === "i" ? "am" : subject.thirdPerson ? "is" : "are";
     const { candidate, message } = tryParse([...tokens.slice(0, m), { ...lexical, normalized }, ...tokens.slice(m + 2)]);
+    if (hasReason(candidate, "budget-exceeded")) { result.reasons = candidate.reasons; return message; }
     if (candidate.status !== "complete") return unsupported;
     if (lexical.normalized !== (form?.base ?? "be")) {
       result.status = "partial";
+      diagnose(result, "form-mismatch");
       suggest(result, lexical, form?.base ?? "be", "MODAL-BASE-001", "情态动词 can 后使用动词原形，不随主语变化。");
       return "已匹配 can 的简单句搭配，但其后动词需要使用原形。";
     }
@@ -118,10 +127,11 @@ export function analyzePurpose(tokens: Token[], punctuation: string | null, resu
   }
   const imperativeForm = [...verbForms, ...simpleVerbs].some(f => f.base === first) || first === "be";
   if (imperativeForm) {
-    if (punctuation && ![".", "!"].includes(punctuation)) return unsupported;
+    if (punctuation && ![".", "!"].includes(punctuation)) return wrongPunctuation();
     const implicit: Token = { text: "you", normalized: "you", start: 0, end: 0 };
     const verb = first === "be" ? { ...tokens[0], normalized: "are" } : tokens[0];
     const { candidate, message } = tryParse([implicit, verb, ...tokens.slice(1)]);
+    if (hasReason(candidate, "budget-exceeded")) { result.reasons = candidate.reasons; return message; }
     if (candidate.status !== "complete") return unsupported;
     const subject = candidate.nodes.find(n => n.role === "subject")!;
     subject.implicit = true; subject.ranges = []; subject.ruleId = "IMPERATIVE-001";
@@ -132,6 +142,6 @@ export function analyzePurpose(tokens: Token[], punctuation: string | null, resu
     candidate.tense = null;
     return accept(candidate, `已匹配祈使句规则 IMPERATIVE-001。${message}`, "imperative");
   }
-  if (punctuation && punctuation !== ".") return unsupported;
+  if (punctuation && punctuation !== ".") return wrongPunctuation();
   return analyzeDeclarative(tokens, result, consumeBoundary);
 }

@@ -3,34 +3,11 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { BookOpen, Braces, ChevronRight, CircleHelp, Feather, Layers3, ScanText, Sparkles } from "lucide-react";
-import { analyzeSentence, applyCorrection, type AnalysisResult, type ComponentNode, type Role } from "@/lib/grammar";
+import { analyzeSentence, applyCorrection, type AnalysisResult, type ComponentNode, type Role, type Range } from "@/lib/grammar";
 
-const sample = "The teacher gave the students a useful book yesterday.";
-const examples = [
-  { title: "双宾语 · 过去时", text: sample },
-  { title: "双宾语 · 现在时", text: "She gives him a new book today." },
-  { title: "双宾语 · 更换动词", text: "They sent the children small gifts." },
-  { title: "主谓", text: "The children smiled yesterday." },
-  { title: "主谓宾", text: "She likes the useful book." },
-  { title: "主系表", text: "The book is useful." },
-  { title: "宾语补足语", text: "We found the book useful." },
-  { title: "一般疑问句", text: "Did she give him a book yesterday?" },
-  { title: "祈使句", text: "Be kind." },
-  { title: "感叹句", text: "What a useful book it is!" },
-  { title: "基础纠错", text: "She go to school." },
-  { title: "情态动词", text: "She can go to school." },
-  { title: "否定陈述", text: "She does not like the book." },
-  { title: "否定表语", text: "The book is not useful." },
-  { title: "can 否定", text: "She can not go to school." },
-  { title: "can 疑问", text: "Can she give him a book?" },
-  { title: "冠词短语", text: "It is an old book." },
-  { title: "宾语代词", text: "We found it useful." },
-  { title: "否定句纠错", text: "She do not likes books." },
-  { title: "并列 · and", text: "She sleeps and he smiles." },
-  { title: "并列 · but", text: "She likes the book, but he likes the toy." },
-  { title: "并列 · 不同句型", text: "She is kind and we found it useful." },
-  { title: "范围提示", text: "The weather is beautiful today." },
-];
+import { exampleGroups, sample } from "@/lib/grammar/learning";
+import { reasonLabels } from "@/lib/grammar/feedback";
+
 const labels: Record<Role, { role: string; code: string; color: string }> = {
   subject: { role: "主语", code: "S", color: "subject" },
   verb: { role: "谓语", code: "V", color: "verb" },
@@ -56,6 +33,8 @@ function nodeText(result: AnalysisResult, node: ComponentNode) {
 }
 
 export default function Home() {
+  const sentenceInput = useRef<HTMLTextAreaElement>(null);
+  const [locatedWord, setLocatedWord] = useState<string | null>(null);
   const [input, setInput] = useState(sample);
   const [result, setResult] = useState<AnalysisResult | null>(null);
   const [selectedId, setSelectedId] = useState<string | null>(null);
@@ -80,13 +59,13 @@ export default function Home() {
     version.current++; request.current++;
     if (pending.current !== null) clearTimeout(pending.current);
     pending.current = null;
-    setInput(text); setResult(null); setSelectedId(null); setActiveClauseId(null); setBusy(false); setFailure(null);
+    setLocatedWord(null); setInput(text); setResult(null); setSelectedId(null); setActiveClauseId(null); setBusy(false); setFailure(null);
   }
   function analyze(text = input) {
     if (pending.current !== null) return;
     const inputVersion = version.current;
     const requestId = ++request.current;
-    setBusy(true); setResult(null); setSelectedId(null); setActiveClauseId(null); setFailure(null);
+    setLocatedWord(null); setBusy(true); setResult(null); setSelectedId(null); setActiveClauseId(null); setFailure(null);
     pending.current = setTimeout(() => {
       pending.current = null;
       try {
@@ -100,6 +79,11 @@ export default function Home() {
       }
     }, 0);
   }
+  function locateWord(range: Range) {
+    sentenceInput.current?.focus();
+    sentenceInput.current?.setSelectionRange(range.start, range.end);
+    setLocatedWord(`已选中原文“${input.slice(range.start, range.end)}”，位置 ${range.start + 1}–${range.end}。仅定位，输入未修改。`);
+  }
   function apply(id: string) {
     if (!result || busy) return;
     try {
@@ -112,20 +96,25 @@ export default function Home() {
   }
   const activeClause = result?.nodes.find(n => n.id === activeClauseId);
   const roots = result?.nodes.filter(n => n.parentId === activeClauseId) ?? [];
-  if (result?.complexity === "compound" && activeClauseId === null) roots.sort((a, b) => a.ranges[0].start - b.ranges[0].start);
+  if ((result?.complexity === "compound" || result?.complexity === "complex") && activeClauseId === null) roots.sort((a, b) => a.ranges[0].start - b.ranges[0].start);
   const selected = result?.nodes.find(n => n.id === selectedId);
   const children = result?.nodes.filter(n => n.parentId === selectedId) ?? [];
   const pattern = activeClause?.clause?.pattern ?? result?.pattern;
   const purpose = activeClause?.clause?.purpose ?? result?.purpose;
   const tense = activeClause?.clause?.tense ?? (activeClause ? null : result?.tense);
+  const complex = result?.complexity === "complex";
+  const conditional = complex && result?.nodes.some(n => n.role === "connector" && n.relation === "condition");
+  const subordinateLabel = conditional ? "条件从句" : "原因从句";
   const labelFor = (role: Role, node?: ComponentNode) => {
     let owner = node;
     while (owner?.parentId) owner = result?.nodes.find(n => n.id === owner?.parentId);
+    if (role === "clause" && node?.clause?.kind === "main") return { ...labels.clause, role: "主句", code: "MC" };
+    if (role === "clause" && node?.clause?.kind === "subordinate") return { ...labels.clause, role: subordinateLabel, code: "SC" };
     return role === "complement" ? { ...labels[role], role: (owner?.clause?.pattern ?? pattern) === "SVC" ? "表语" : "宾语补足语" } : labels[role];
   };
   const selectedLabel = selected ? labelFor(selected.role, selected) : null;
   const patternDetail = pattern ? patternDetails[pattern] : null;
-  const compoundOverview = result?.complexity === "compound" && !activeClause;
+  const multiClauseOverview = (result?.complexity === "compound" || complex) && !activeClause;
   const viewStart = activeClause?.ranges[0].start ?? 0;
   const viewEnd = activeClause?.ranges[0].end ?? result?.input.length ?? 0;
   function selectNode(node: ComponentNode) {
@@ -146,12 +135,13 @@ export default function Home() {
           <section className="input-card">
             <div className="section-heading"><span className="small-icon"><Feather size={18}/></span><h2>输入英文句子</h2><span className="step-label">01</span></div>
             <label htmlFor="sentence" className="sr-only">需要分析的英文句子</label>
-            <textarea id="sentence" value={input} onChange={e => editInput(e.target.value)} onKeyDown={e => { if (e.key === "Enter" && (e.metaKey || e.ctrlKey) && !e.nativeEvent.isComposing) { e.preventDefault(); analyze(); } }} spellCheck={false} placeholder="试着输入一个英文句子…" aria-describedby="scope-hint input-count"/>
-            <div className="input-meta"><span>限定词汇 · 简单句与两分句并列句</span><span id="input-count">{input.length}/1000</span></div>
+            <textarea ref={sentenceInput} id="sentence" value={input} onChange={e => editInput(e.target.value)} onKeyDown={e => { if (e.key === "Enter" && (e.metaKey || e.ctrlKey) && !e.nativeEvent.isComposing) { e.preventDefault(); analyze(); } }} spellCheck={false} placeholder="试着输入一个英文句子…" aria-describedby="scope-hint input-count"/>
+            <div className="input-meta"><span>限定词汇 · 简单句、并列句与 because / if 从句</span><span id="input-count">{input.length}/1000</span></div>
             <button className="analyze-button" onClick={() => analyze()} disabled={busy} aria-keyshortcuts="Control+Enter Meta+Enter"><ScanText size={18}/>{busy ? "正在分析…" : "分析句子"}</button>
             <div className="input-hint" id="scope-hint">Ctrl / ⌘ + Enter 分析 · 一般现在时与过去时</div>
+            <details className="support-help"><summary>当前范围与键盘操作</summary><p>使用随应用提供的小词典。仅支持五种句型、四种简单句用途、两个完整陈述分句的 and/but、后置无逗号 because，以及前置带英文逗号的 if。两侧必须完整匹配；will/would、其他从句、缩写和多句尚未支持。can 不推断现在或过去时。</p><p>Tab 定位按钮，Enter 或空格查看成分、进入分句；返回整句后焦点回到原分句。未知词可用“查看原文”按钮定位；仅选中，不改写。修改输入立即清除旧结果。</p><p>检测顺序：输入限制 → 句末/多句 → 连接结构与标点 → 词典覆盖 → 分句顺序及规则。只展示实际检测到的原因。未命中纠错不代表完全正确；并列句与主从句暂无纠错。</p></details>
           </section>
-          <section className="examples-card"><div className="section-heading"><BookOpen size={17}/><h2>从一个例句开始</h2></div><p>选择例句后，点击分析。</p>{examples.map((e, i) => <button className="example" key={e.title} onClick={() => editInput(e.text)}><span className="example-number">{String(i + 1).padStart(2, "0")}</span><span><strong>{e.title}</strong><span className="example-text">{e.text}</span></span><ChevronRight size={14}/></button>)}</section>
+          <section className="examples-card"><div className="section-heading"><BookOpen size={17}/><h2>从一个例句开始</h2></div><p>选择例句后，点击分析。</p>{exampleGroups.map(group => <section className="example-group" key={group.title}><h3>{group.title}</h3><p>{group.scope}</p>{group.examples.map((e, i) => <button className="example" key={e.title} onClick={() => editInput(e.text)}><span className="example-number">{String(i + 1).padStart(2, "0")}</span><span><strong>{e.title}</strong><span className="example-text">{e.text}</span></span><ChevronRight size={14}/></button>)}</section>)}</section>
           <div className="privacy-note"><Braces size={14}/><span>基于本地规则分析，句子无需上传；刷新后不保留输入。</span></div>
         </aside>
         <section className="result-card" aria-busy={busy}>
@@ -165,10 +155,12 @@ export default function Home() {
             {!result && !failure && <div className="empty-result"><ScanText size={28}/><h3>{busy ? "正在运行本地规则…" : "准备好，拆解下一个句子"}</h3><p>{busy ? "分析结果只对应本次输入。" : "输入或选择一个例句，再点击“分析句子”。修改输入会立即清除旧标注。"}</p></div>}
             {result && <>
               <div className="analysis-message" role="status">{result.messages.map(message => <p key={message}>{message}</p>)}</div>
-              {tab === "checks" ? <div className="grammar-checks"><p className="check-scope">{result.complexity === "compound" ? "并列句暂不提供可应用纠错建议；分句完整匹配不代表所有语法检查已通过。" : "仅检查受支持简单句中的主谓一致、do/does/did 后原形和 can 后原形。并列句暂不提供纠错；未命中规则不代表句子完全正确。"}</p>{result.corrections.length === 0 ? <p>当前未命中可应用的纠错建议。</p> : result.corrections.map(c => <article className="correction-card" key={c.id}><h3>{c.ruleId === "AGREEMENT-001" ? "主谓一致" : c.ruleId === "DO-BASE-001" ? "助动词后的动词原形" : "情态动词后的动词原形"}</h3><p>{c.reason}</p>{c.edits.map(e => <p className="correction-edit" key={e.range.start}><del>{e.expected}</del><span aria-hidden="true"> → </span><strong>{e.replacement}</strong></p>)}<p className="rule-reference">{c.context} 规则：{c.ruleId}</p><button className="apply-correction" onClick={() => apply(c.id)} disabled={busy}>应用此建议并重新分析</button></article>)}</div> : result.status === "complete" && <>
-                {activeClause && <div className="clause-navigation"><button ref={backButton} className="nested-part" onClick={() => { setActiveClauseId(null); setSelectedId(activeClause.id); }}>返回整句</button><span role="status">正在查看第 {result.nodes.filter(n => n.role === "clause").findIndex(n => n.id === activeClause.id) + 1} 分句</span></div>}
-                <div className="result-overview"><div><span className="mini-label">句式结构</span><h3>{compoundOverview ? "两个完整分句" : patternDetail?.title}</h3><p>{purpose ? purposeLabels[purpose] : "用途待确定"} <span>·</span> {compoundOverview ? "并列句" : activeClause ? "独立分句" : "简单句"}</p></div><div className="tense-badge">{compoundOverview ? "时态按分句查看" : tense === null ? (purpose === "imperative" ? "动词原形 · 祈使" : "can + 动词原形") : tense === "past" ? "一般过去时" : "一般现在时"}<span>{compoundOverview ? "and / but 连接" : "主动语态"}</span></div></div>
-                <div className="sentence-board" ref={board}><div className="board-caption"><span>{compoundOverview ? "选择分句进入，或查看连接关系" : "点击成分，查看解析"}</span><span>SENTENCE BREAKDOWN</span></div><div className="sentence-parts">{spans.map(({ node, range }, index) => {
+              {!!result.reasons?.length && <section className="analysis-feedback" aria-label="分析原因"><p role="status">{result.reasons.map((reason, i) => <span key={i}>{i > 0 ? "；" : ""}{reason.clauseIndex ? `第 ${reason.clauseIndex} 分句：` : ""}{reasonLabels[reason.code]}</span>)}</p><p>只展示按检测顺序发现的原因，范围限制不等于语法错误。可展开“当前范围与键盘操作”查看说明。</p>{result.reasons.flatMap((reason, i) => reason.code === "unknown-word" ? reason.ranges.map(range => <button className="nested-part" key={`${i}-${range.start}`} onClick={() => locateWord(range)}>查看原文：{result.input.slice(range.start, range.end)}{reason.clauseIndex ? `（第 ${reason.clauseIndex} 分句）` : ""}</button>) : [])}</section>}
+              {locatedWord && <p className="word-location" role="status">{locatedWord}</p>}
+              {tab === "checks" ? <div className="grammar-checks"><p className="check-scope">{complex ? "主从句暂不提供可应用纠错建议；分句完整匹配不代表所有语法检查已通过。" : result.complexity === "compound" ? "并列句暂不提供可应用纠错建议；分句完整匹配不代表所有语法检查已通过。" : "仅检查受支持简单句中的主谓一致、do/does/did 后原形和 can 后原形。并列句与主从句暂不提供纠错；未命中规则不代表句子完全正确。"}</p>{result.corrections.length === 0 ? <p>当前未命中可应用的纠错建议。</p> : result.corrections.map(c => <article className="correction-card" key={c.id}><h3>{c.ruleId === "AGREEMENT-001" ? "主谓一致" : c.ruleId === "DO-BASE-001" ? "助动词后的动词原形" : "情态动词后的动词原形"}</h3><p>{c.reason}</p>{c.edits.map(e => <p className="correction-edit" key={e.range.start}><del>{e.expected}</del><span aria-hidden="true"> → </span><strong>{e.replacement}</strong></p>)}<p className="rule-reference">{c.context} 规则：{c.ruleId}</p><button className="apply-correction" onClick={() => apply(c.id)} disabled={busy}>应用此建议并重新分析</button></article>)}</div> : result.status === "complete" && <>
+                {activeClause && <div className="clause-navigation"><button ref={backButton} className="nested-part" onClick={() => { setActiveClauseId(null); setSelectedId(activeClause.id); }}>返回整句</button><span role="status">{complex ? `正在查看${activeClause.clause?.kind === "main" ? "主句" : subordinateLabel}` : `正在查看第 ${result.nodes.filter(n => n.role === "clause").findIndex(n => n.id === activeClause.id) + 1} 分句`}</span></div>}
+                <div className="result-overview"><div><span className="mini-label">句式结构</span><h3>{multiClauseOverview ? (complex ? (conditional ? "条件从句 + 主句" : "主句 + 原因从句") : "两个完整分句") : patternDetail?.title}</h3><p>{purpose ? purposeLabels[purpose] : "用途待确定"} <span>·</span> {multiClauseOverview ? (complex ? "主从复合句" : "并列句") : activeClause ? (complex ? (activeClause.clause?.kind === "main" ? "主句" : subordinateLabel) : "独立分句") : "简单句"}</p></div><div className="tense-badge">{multiClauseOverview ? "时态按分句查看" : tense === null ? (purpose === "imperative" ? "动词原形 · 祈使" : "can + 动词原形") : tense === "past" ? "一般过去时" : "一般现在时"}<span>{multiClauseOverview ? (complex ? (conditional ? "if 表示条件" : "because 表示原因") : "and / but 连接") : "主动语态"}</span></div></div>
+                <div className="sentence-board" ref={board}><div className="board-caption"><span>{multiClauseOverview ? "选择分句进入，或查看连接关系" : "点击成分，查看解析"}</span><span>SENTENCE BREAKDOWN</span></div><div className="sentence-parts">{spans.map(({ node, range }, index) => {
                   const gap = result.input.slice(index === 0 ? viewStart : spans[index - 1].range.end, range.start);
                   const label = labelFor(node.role, node);
                   return <span className="annotated-span" key={`${node.id}-${range.start}`}><span className="sentence-gap">{gap}</span><button className={`sentence-part ${label.color} ${selectedId === node.id ? "selected" : ""}`} onClick={() => selectNode(node)} aria-pressed={selectedId === node.id}><span className="part-label">{label.role}</span><span className="part-text">{result.input.slice(range.start, range.end)}</span><span className="part-code">{label.code}</span></button></span>;
@@ -180,8 +172,8 @@ export default function Home() {
                   {selected.role === "clause" && !activeClause && <button className="nested-part" onClick={() => selectNode(selected)}>查看此分句成分</button>}
                   {children.length > 0 && selected.role !== "clause" && <div className="nested-parts"><p>短语内部成分</p>{children.map(child => <button className="nested-part attribute" key={child.id} onClick={() => setSelectedId(child.id)}>{labelFor(child.role, child).role} · {nodeText(result, child)}</button>)}</div>}
                 </div></div>}
-                <div className="structure-heading"><h3>句子骨架</h3><span>THE BIG PICTURE</span></div><div className="structure-strip">{roots.filter(n => n.role !== "adverbial").map((node, i) => { const label = labelFor(node.role); return <div className="structure-item" key={node.id}>{i > 0 && <span className="structure-plus">+</span>}<span className={`structure-pill ${label.color}`}>{label.code}</span><span>{label.role}</span></div>; })}</div>
-                <div className="learning-note"><span className="note-icon"><Sparkles size={18}/></span><div><h4>一个值得记住的结构</h4><p>{compoundOverview ? "and 表示并列添加，but 表示转折。每个分句保留自己的主语、谓语、句型和时态；选择分句查看内部结构。" : purpose === "imperative" ? "祈使句用动词原形表达要求，主语 you 通常省略。" : purpose === "exclamatory" ? "What/How 将强调的表语提前，后面保留主语与系动词。" : purpose === "interrogative" ? "一般疑问句将助动词、can 或系动词提前。do/does/did 和 can 与后面的原形动词共同组成动词成分，可跨越主语。" : roots.some(n => n.ruleId.startsWith("NEGATIVE-")) ? "not 是否定谓语的一部分。do/does/did 后使用动词原形；be 保留人称和时态；can 后同样接原形。" : patternDetail?.note}</p></div></div>
+                <div className="structure-heading"><h3>句子骨架</h3><span>THE BIG PICTURE</span></div><div className="structure-strip">{roots.filter(n => n.role !== "adverbial").map((node, i) => { const label = labelFor(node.role, node); return <div className="structure-item" key={node.id}>{i > 0 && <span className="structure-plus">+</span>}<span className={`structure-pill ${label.color}`}>{label.code}</span><span>{label.role}</span></div>; })}</div>
+                <div className="learning-note"><span className="note-icon"><Sparkles size={18}/></span><div><h4>一个值得记住的结构</h4><p>{multiClauseOverview ? (complex ? (conditional ? "if 引导前置条件从句，提出主句成立的条件；逗号分隔条件从句与主句。两侧分别保留自己的句型与时态，不推断条件的语义或时态搭配。" : "because 引导原因从句，说明主句发生的原因。主句与原因从句保留自己的主语、谓语、句型和时态；选择分句查看内部结构。") : "and 表示并列添加，but 表示转折。每个分句保留自己的主语、谓语、句型和时态；选择分句查看内部结构。") : purpose === "imperative" ? "祈使句用动词原形表达要求，主语 you 通常省略。" : purpose === "exclamatory" ? "What/How 将强调的表语提前，后面保留主语与系动词。" : purpose === "interrogative" ? "一般疑问句将助动词、can 或系动词提前。do/does/did 和 can 与后面的原形动词共同组成动词成分，可跨越主语。" : roots.some(n => n.ruleId.startsWith("NEGATIVE-")) ? "not 是否定谓语的一部分。do/does/did 后使用动词原形；be 保留人称和时态；can 后同样接原形。" : patternDetail?.note}</p></div></div>
               </>}
             </>}
           </div>

@@ -2,7 +2,7 @@ import type { AnalysisResult } from "./protocol.ts";
 
 /** Isolate tentative nodes and edits; a rejected purpose must not leak suggestions. */
 export function forkCandidate(result: AnalysisResult): AnalysisResult {
-  return { ...result, nodes: [], corrections: [], messages: [...result.messages] };
+  return { ...result, nodes: [], corrections: [], reasons: [], messages: [...result.messages] };
 }
 
 /** Preserve the existing SVOO boundary limit; reusable by future frame rules. */
