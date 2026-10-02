@@ -1,10 +1,15 @@
-export const RULE_VERSION = "0.5.0";
+export const RULE_VERSION = "0.6.0";
 export const MAX_INPUT_LENGTH = 1000;
 export type Range = { start: number; end: number };
-export type Role = "subject" | "verb" | "indirectObject" | "object" | "complement" | "adverbial" | "attribute" | "clause";
+export type Purpose = "declarative" | "interrogative" | "imperative" | "exclamatory";
+export type Pattern = "SV" | "SVO" | "SVC" | "SVOO" | "SVOC";
+export type Tense = "present" | "past" | null;
+export type Role = "subject" | "verb" | "indirectObject" | "object" | "complement" | "adverbial" | "attribute" | "clause" | "connector";
 export type ComponentNode = {
   id: string; role: Role; parentId: string | null; ranges: Range[];
   implicit: boolean; ruleId: string; explanation: string;
+  clause?: { kind: "independent"; purpose: Purpose; pattern: Pattern; tense: Tense };
+  relation?: "addition" | "contrast";
 };
 export type Correction = {
   id: string; ruleId: string; reason: string; context: string;
@@ -13,10 +18,10 @@ export type Correction = {
 export type AnalysisResult = {
   input: string; inputVersion: number; ruleVersion: string;
   status: "complete" | "partial" | "unsupported" | "ambiguous" | "invalid";
-  purpose: "declarative" | "interrogative" | "imperative" | "exclamatory" | null;
-  pattern: "SV" | "SVO" | "SVC" | "SVOO" | "SVOC" | null;
-  complexity: "simple" | "complex" | null;
-  tense: "present" | "past" | null;
+  purpose: Purpose | null;
+  pattern: Pattern | null;
+  complexity: "simple" | "compound" | "complex" | null;
+  tense: Tense;
   nodes: ComponentNode[]; corrections: Correction[]; messages: string[];
 };
 /** Reject malformed data before rendering or applying edits. This is separate from linguistic correctness. */
@@ -31,9 +36,9 @@ export function validateAnalysisResult(value: unknown): asserts value is Analysi
   if (!["complete", "partial", "unsupported", "ambiguous", "invalid"].includes(r.status as string)) fail("状态");
   for (const [field, allowed] of [
     ["purpose", ["declarative", "interrogative", "imperative", "exclamatory"]],
-    ["pattern", ["SV", "SVO", "SVC", "SVOO", "SVOC"]], ["complexity", ["simple", "complex"]], ["tense", ["present", "past"]],
+    ["pattern", ["SV", "SVO", "SVC", "SVOO", "SVOC"]], ["complexity", ["simple", "compound", "complex"]], ["tense", ["present", "past"]],
   ] as const) if (r[field] !== null && !allowed.includes(r[field] as never)) fail(field);
-  if (r.status === "complete" && (!r.purpose || !r.pattern || !r.complexity)) fail("完整结果缺少分类");
+  if (r.status === "complete" && (!r.purpose || !r.complexity || (r.complexity !== "compound" && !r.pattern))) fail("完整结果缺少分类");
   if (!Array.isArray(r.messages) || !r.messages.every(nonempty) || !Array.isArray(r.nodes) || !Array.isArray(r.corrections)) fail("结果列表");
   const range = (v: unknown, insertion = false): Range => {
     if (!object(v) || !Number.isSafeInteger(v.start) || !Number.isSafeInteger(v.end)) fail("位置类型");
@@ -46,8 +51,12 @@ export function validateAnalysisResult(value: unknown): asserts value is Analysi
   const nodes = r.nodes as unknown[];
   const byId = new Map<string, ComponentNode>();
   for (const raw of nodes) {
-    if (!object(raw) || !nonempty(raw.id) || byId.has(raw.id) || !["subject", "verb", "indirectObject", "object", "complement", "adverbial", "attribute", "clause"].includes(raw.role as string) || (raw.parentId !== null && !nonempty(raw.parentId)) || typeof raw.implicit !== "boolean" || !nonempty(raw.ruleId) || !nonempty(raw.explanation) || !Array.isArray(raw.ranges)) fail("成分节点");
+    if (!object(raw) || !nonempty(raw.id) || byId.has(raw.id) || !["subject", "verb", "indirectObject", "object", "complement", "adverbial", "attribute", "clause", "connector"].includes(raw.role as string) || (raw.parentId !== null && !nonempty(raw.parentId)) || typeof raw.implicit !== "boolean" || !nonempty(raw.ruleId) || !nonempty(raw.explanation) || !Array.isArray(raw.ranges)) fail("成分节点");
     const node = raw as ComponentNode;
+    const metadata = raw as Record<string, unknown>;
+    const classification = metadata.clause;
+    if (classification !== undefined && (node.role !== "clause" || !object(classification) || classification.kind !== "independent" || !["declarative", "interrogative", "imperative", "exclamatory"].includes(classification.purpose as string) || !["SV", "SVO", "SVC", "SVOO", "SVOC"].includes(classification.pattern as string) || ![null, "present", "past"].includes(classification.tense as string | null))) fail("分句分类");
+    if (metadata.relation !== undefined && (node.role !== "connector" || !["addition", "contrast"].includes(metadata.relation as string))) fail("连接关系");
     if (node.implicit ? node.ranges.length !== 0 : node.ranges.length === 0) fail("隐含成分位置");
     let previousEnd = -1;
     for (const rawRange of node.ranges) { const q = range(rawRange); if (q.start < previousEnd) fail("成分区间重叠或乱序"); previousEnd = q.end; }
@@ -69,6 +78,31 @@ export function validateAnalysisResult(value: unknown): asserts value is Analysi
   for (let i = 0; i < explicit.length; i++) for (let j = i + 1; j < explicit.length; j++) {
     const a = explicit[i], b = explicit[j];
     if (a.parentId === b.parentId && a.ranges.some(x => b.ranges.some(y => x.start < y.end && y.start < x.end))) fail("同层成分区间重叠");
+  }
+  if (r.status === "complete" && r.complexity === "compound") {
+    const roots = [...byId.values()].filter(n => n.parentId === null);
+    const clauses = roots.filter(n => n.role === "clause");
+    const connector = roots.find(n => n.role === "connector");
+    if (r.purpose !== "declarative" || r.pattern !== null || r.tense !== null || (r.corrections as unknown[]).length || roots.length !== 3 || clauses.length !== 2 || !connector?.relation) fail("并列句整体分类与关系");
+    for (const clause of clauses) {
+      if (clause.implicit || clause.ranges.length !== 1 || clause.clause?.purpose !== "declarative") fail("并列分句分类");
+      const parts = [...byId.values()].filter(n => n.parentId === clause.id);
+      for (const role of ["subject", "verb"]) if (parts.filter(n => n.role === role && !n.implicit).length !== 1) fail("分句缺少显式主谓");
+    }
+    clauses.sort((a, b) => a.ranges[0].start - b.ranges[0].start);
+    const link = connector!;
+    const word = link.ranges.map(q => input.slice(q.start, q.end)).join(" ").toLowerCase();
+    if (link.implicit || !/^,?\s*(and|but)$/.test(word) || link.relation !== (word.endsWith("and") ? "addition" : "contrast") || clauses[0].ranges[0].end > link.ranges[0].start || link.ranges.at(-1)!.end > clauses[1].ranges[0].start) fail("连接词原文或顺序");
+    for (const node of byId.values()) {
+      if (roots.includes(node)) continue;
+      let ancestor = node;
+      while (ancestor.parentId !== null) ancestor = byId.get(ancestor.parentId)!;
+      if (!clauses.includes(ancestor) || node.role === "clause" || node.role === "connector") fail("分句归属");
+    }
+    const ranges = roots.flatMap(n => n.ranges).sort((a, b) => a.start - b.start);
+    let end = 0;
+    for (const q of ranges) { if (input.slice(end, q.start).trim()) fail("并列句存在未归属原文"); end = q.end; }
+    if (!/^\s*\.?\s*$/.test(input.slice(end))) fail("并列句末尾原文");
   }
   const ids = new Set<string>();
   for (const raw of r.corrections as unknown[]) {

@@ -1685,6 +1685,7 @@
     {
       "id": "boundary-18",
       "group": "boundary",
+      "migration": {"targetRuleVersion": "0.6.0", "fixtureId": "compound-13"},
       "input": "She does not sleep and he smiles.",
       "expected": {
         "status": "unsupported",

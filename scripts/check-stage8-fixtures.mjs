@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { analyzeSentence, applyCorrection, validateAnalysisResult } from '../lib/grammar.ts';
+import { RULE_VERSION, analyzeSentence, applyCorrection, validateAnalysisResult } from '../lib/grammar.ts';
 
 const plan = JSON.parse(await readFile(new URL('../tests/fixtures/stage8.json', import.meta.url), 'utf8'));
 const implemented = process.argv.includes('--implemented');
@@ -26,7 +26,7 @@ for (const fixture of plan.fixtures) {
   }
   if (implemented) {
     const result = analyzeSentence(input, 7);
-    assert.equal(result.ruleVersion, plan.targetRuleVersion, 'Implement the target version before grammar acceptance.');
+    assert.equal(result.ruleVersion, RULE_VERSION, 'Check the current rules, including explicitly recorded later-stage migrations.');
     compare(input, expected, result);
     if (afterApply) {
       const next = applyCorrection(result, result.corrections[0].id, input, 7);

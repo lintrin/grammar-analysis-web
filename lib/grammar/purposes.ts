@@ -8,8 +8,7 @@ import { createBoundaryBudget, forkCandidate } from "./context.ts";
 import { suggest } from "./suggestions.ts";
 
 /** Reorder token references, never input text: every explicit range stays in the original string. */
-export function analyzePurpose(tokens: Token[], punctuation: string | null, result: AnalysisResult): string {
-  const consumeBoundary = createBoundaryBudget();
+export function analyzePurpose(tokens: Token[], punctuation: string | null, result: AnalysisResult, consumeBoundary = createBoundaryBudget()): string {
   const extended = analyzeExtended(tokens, punctuation, result, consumeBoundary);
   if (extended !== null) return extended;
   const first = tokens[0]?.normalized;

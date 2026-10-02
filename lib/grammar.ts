@@ -3,9 +3,10 @@ import { RULE_VERSION, MAX_INPUT_LENGTH, validateAnalysisResult, type AnalysisRe
 import { tokenize } from "./grammar/tokens.ts";
 import { knownWords } from "./grammar/vocabulary.ts";
 import { analyzePurpose } from "./grammar/purposes.ts";
+import { analyzeCompound } from "./grammar/compound.ts";
 
 export { RULE_VERSION, MAX_INPUT_LENGTH, validateAnalysisResult } from "./grammar/protocol.ts";
-export type { Range, Role, ComponentNode, Correction, AnalysisResult } from "./grammar/protocol.ts";
+export type { Range, Role, Purpose, Pattern, Tense, ComponentNode, Correction, AnalysisResult } from "./grammar/protocol.ts";
 export { tokenize } from "./grammar/tokens.ts";
 export type { Token } from "./grammar/tokens.ts";
 export { VOCABULARY } from "./grammar/vocabulary.ts";
@@ -28,7 +29,7 @@ export function analyzeSentence(input: string, inputVersion = 0): AnalysisResult
   const result: AnalysisResult = {
     input, inputVersion, ruleVersion: RULE_VERSION, status: "unsupported", purpose: null,
     pattern: null, complexity: null, tense: null, nodes: [], corrections: [],
-    messages: ["当前仅分析词典及规则覆盖的五种句型与四种用途；纠错仅覆盖主谓一致、do/does/did 后原形及 can 后原形。"],
+    messages: ["当前仅分析闭合词典内的五种句型、四种简单句用途及两个完整陈述分句的 and/but 并列句；纠错仅覆盖简单句的主谓一致、do/does/did 后原形及 can 后原形。"],
   };
   const finish = (message?: string) => {
     if (message) result.messages.unshift(message);
@@ -47,6 +48,7 @@ export function analyzeSentence(input: string, inputVersion = 0): AnalysisResult
   }
   const punctuation = terminals[0]?.text ?? null;
   if (punctuation) tokens.pop();
+  if (tokens.some(t => ["and", "but"].includes(t.normalized))) return finish(analyzeCompound(tokens, punctuation, result));
   if (tokens.some(t => !/^[A-Za-z]+$/.test(t.text))) {
     return finish("本阶段支持英文单词和可选的句末句号、问号或感叹号；其他符号尚未支持。");
   }

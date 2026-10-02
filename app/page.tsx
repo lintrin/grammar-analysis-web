@@ -26,6 +26,9 @@ const examples = [
   { title: "冠词短语", text: "It is an old book." },
   { title: "宾语代词", text: "We found it useful." },
   { title: "否定句纠错", text: "She do not likes books." },
+  { title: "并列 · and", text: "She sleeps and he smiles." },
+  { title: "并列 · but", text: "She likes the book, but he likes the toy." },
+  { title: "并列 · 不同句型", text: "She is kind and we found it useful." },
   { title: "范围提示", text: "The weather is beautiful today." },
 ];
 const labels: Record<Role, { role: string; code: string; color: string }> = {
@@ -37,6 +40,7 @@ const labels: Record<Role, { role: string; code: string; color: string }> = {
   adverbial: { role: "状语", code: "A", color: "adverbial" },
   attribute: { role: "定语", code: "ATTR", color: "attribute" },
   clause: { role: "分句", code: "CL", color: "clause" },
+  connector: { role: "连接关系", code: "LINK", color: "clause" },
 };
 const patternDetails = {
   SV: { title: "主语 + 谓语", note: "sleep、smile、run、go 的当前规则不接宾语；go 可接固定目的地 to school。" },
@@ -55,25 +59,34 @@ export default function Home() {
   const [input, setInput] = useState(sample);
   const [result, setResult] = useState<AnalysisResult | null>(null);
   const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [activeClauseId, setActiveClauseId] = useState<string | null>(null);
   const [tab, setTab] = useState<"parts" | "checks">("parts");
   const [busy, setBusy] = useState(false);
   const [failure, setFailure] = useState<string | null>(null);
   const version = useRef(0);
   const request = useRef(0);
   const pending = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const backButton = useRef<HTMLButtonElement>(null);
+  const board = useRef<HTMLDivElement>(null);
+  const previousClauseId = useRef<string | null>(null);
   useEffect(() => () => { if (pending.current !== null) clearTimeout(pending.current); }, []);
+  useEffect(() => {
+    if (activeClauseId) backButton.current?.focus();
+    else if (previousClauseId.current) board.current?.querySelector<HTMLButtonElement>('button[aria-pressed="true"]')?.focus();
+    previousClauseId.current = activeClauseId;
+  }, [activeClauseId]);
 
   function editInput(text: string) {
     version.current++; request.current++;
     if (pending.current !== null) clearTimeout(pending.current);
     pending.current = null;
-    setInput(text); setResult(null); setSelectedId(null); setBusy(false); setFailure(null);
+    setInput(text); setResult(null); setSelectedId(null); setActiveClauseId(null); setBusy(false); setFailure(null);
   }
   function analyze(text = input) {
     if (pending.current !== null) return;
     const inputVersion = version.current;
     const requestId = ++request.current;
-    setBusy(true); setResult(null); setSelectedId(null); setFailure(null);
+    setBusy(true); setResult(null); setSelectedId(null); setActiveClauseId(null); setFailure(null);
     pending.current = setTimeout(() => {
       pending.current = null;
       try {
@@ -97,12 +110,30 @@ export default function Home() {
       setFailure("建议已失效，请重新分析当前输入。");
     }
   }
-  const roots = result?.nodes.filter(n => n.parentId === null) ?? [];
+  const activeClause = result?.nodes.find(n => n.id === activeClauseId);
+  const roots = result?.nodes.filter(n => n.parentId === activeClauseId) ?? [];
+  if (result?.complexity === "compound" && activeClauseId === null) roots.sort((a, b) => a.ranges[0].start - b.ranges[0].start);
   const selected = result?.nodes.find(n => n.id === selectedId);
   const children = result?.nodes.filter(n => n.parentId === selectedId) ?? [];
-  const labelFor = (role: Role) => role === "complement" ? { ...labels[role], role: result?.pattern === "SVC" ? "表语" : "宾语补足语" } : labels[role];
-  const selectedLabel = selected ? labelFor(selected.role) : null;
-  const patternDetail = result?.pattern ? patternDetails[result.pattern] : null;
+  const pattern = activeClause?.clause?.pattern ?? result?.pattern;
+  const purpose = activeClause?.clause?.purpose ?? result?.purpose;
+  const tense = activeClause?.clause?.tense ?? (activeClause ? null : result?.tense);
+  const labelFor = (role: Role, node?: ComponentNode) => {
+    let owner = node;
+    while (owner?.parentId) owner = result?.nodes.find(n => n.id === owner?.parentId);
+    return role === "complement" ? { ...labels[role], role: (owner?.clause?.pattern ?? pattern) === "SVC" ? "表语" : "宾语补足语" } : labels[role];
+  };
+  const selectedLabel = selected ? labelFor(selected.role, selected) : null;
+  const patternDetail = pattern ? patternDetails[pattern] : null;
+  const compoundOverview = result?.complexity === "compound" && !activeClause;
+  const viewStart = activeClause?.ranges[0].start ?? 0;
+  const viewEnd = activeClause?.ranges[0].end ?? result?.input.length ?? 0;
+  function selectNode(node: ComponentNode) {
+    if (node.role === "clause") {
+      setActiveClauseId(node.id);
+      setSelectedId(result?.nodes.find(n => n.parentId === node.id)?.id ?? node.id);
+    } else setSelectedId(node.id);
+  }
   // Render original gaps and punctuation too: no reconstruction or normalization of input.
   const spans = result ? roots.flatMap(node => node.ranges.map(range => ({ node, range }))).sort((a, b) => a.range.start - b.range.start) : [];
 
@@ -116,7 +147,7 @@ export default function Home() {
             <div className="section-heading"><span className="small-icon"><Feather size={18}/></span><h2>输入英文句子</h2><span className="step-label">01</span></div>
             <label htmlFor="sentence" className="sr-only">需要分析的英文句子</label>
             <textarea id="sentence" value={input} onChange={e => editInput(e.target.value)} onKeyDown={e => { if (e.key === "Enter" && (e.metaKey || e.ctrlKey) && !e.nativeEvent.isComposing) { e.preventDefault(); analyze(); } }} spellCheck={false} placeholder="试着输入一个英文句子…" aria-describedby="scope-hint input-count"/>
-            <div className="input-meta"><span>限定词汇 · 简单句 · 支持限定否定句</span><span id="input-count">{input.length}/1000</span></div>
+            <div className="input-meta"><span>限定词汇 · 简单句与两分句并列句</span><span id="input-count">{input.length}/1000</span></div>
             <button className="analyze-button" onClick={() => analyze()} disabled={busy} aria-keyshortcuts="Control+Enter Meta+Enter"><ScanText size={18}/>{busy ? "正在分析…" : "分析句子"}</button>
             <div className="input-hint" id="scope-hint">Ctrl / ⌘ + Enter 分析 · 一般现在时与过去时</div>
           </section>
@@ -134,21 +165,23 @@ export default function Home() {
             {!result && !failure && <div className="empty-result"><ScanText size={28}/><h3>{busy ? "正在运行本地规则…" : "准备好，拆解下一个句子"}</h3><p>{busy ? "分析结果只对应本次输入。" : "输入或选择一个例句，再点击“分析句子”。修改输入会立即清除旧标注。"}</p></div>}
             {result && <>
               <div className="analysis-message" role="status">{result.messages.map(message => <p key={message}>{message}</p>)}</div>
-              {tab === "checks" ? <div className="grammar-checks"><p className="check-scope">仅检查受支持结构中的主谓一致、do/does/did 后原形和 can 后原形。未命中规则不代表句子完全正确。</p>{result.corrections.length === 0 ? <p>当前未命中可应用的纠错建议。</p> : result.corrections.map(c => <article className="correction-card" key={c.id}><h3>{c.ruleId === "AGREEMENT-001" ? "主谓一致" : c.ruleId === "DO-BASE-001" ? "助动词后的动词原形" : "情态动词后的动词原形"}</h3><p>{c.reason}</p>{c.edits.map(e => <p className="correction-edit" key={e.range.start}><del>{e.expected}</del><span aria-hidden="true"> → </span><strong>{e.replacement}</strong></p>)}<p className="rule-reference">{c.context} 规则：{c.ruleId}</p><button className="apply-correction" onClick={() => apply(c.id)} disabled={busy}>应用此建议并重新分析</button></article>)}</div> : result.status === "complete" && <>
-                <div className="result-overview"><div><span className="mini-label">句式结构</span><h3>{patternDetail?.title}</h3><p>{result.purpose ? purposeLabels[result.purpose] : "用途待确定"} <span>·</span> 简单句</p></div><div className="tense-badge">{result.tense === null ? (result.purpose === "imperative" ? "动词原形 · 祈使" : "can + 动词原形") : result.tense === "past" ? "一般过去时" : "一般现在时"}<span>主动语态</span></div></div>
-                <div className="sentence-board"><div className="board-caption"><span>点击成分，查看解析</span><span>SENTENCE BREAKDOWN</span></div><div className="sentence-parts">{spans.map(({ node, range }, index) => {
-                  const gap = result.input.slice(index === 0 ? 0 : spans[index - 1].range.end, range.start);
-                  const label = labelFor(node.role);
-                  return <span className="annotated-span" key={`${node.id}-${range.start}`}><span className="sentence-gap">{gap}</span><button className={`sentence-part ${label.color} ${selectedId === node.id ? "selected" : ""}`} onClick={() => setSelectedId(node.id)} aria-pressed={selectedId === node.id}><span className="part-label">{label.role}</span><span className="part-text">{result.input.slice(range.start, range.end)}</span><span className="part-code">{label.code}</span></button></span>;
-                })}<span className="sentence-gap">{result.input.slice(spans.at(-1)?.range.end ?? 0)}</span></div></div>
+              {tab === "checks" ? <div className="grammar-checks"><p className="check-scope">{result.complexity === "compound" ? "并列句暂不提供可应用纠错建议；分句完整匹配不代表所有语法检查已通过。" : "仅检查受支持简单句中的主谓一致、do/does/did 后原形和 can 后原形。并列句暂不提供纠错；未命中规则不代表句子完全正确。"}</p>{result.corrections.length === 0 ? <p>当前未命中可应用的纠错建议。</p> : result.corrections.map(c => <article className="correction-card" key={c.id}><h3>{c.ruleId === "AGREEMENT-001" ? "主谓一致" : c.ruleId === "DO-BASE-001" ? "助动词后的动词原形" : "情态动词后的动词原形"}</h3><p>{c.reason}</p>{c.edits.map(e => <p className="correction-edit" key={e.range.start}><del>{e.expected}</del><span aria-hidden="true"> → </span><strong>{e.replacement}</strong></p>)}<p className="rule-reference">{c.context} 规则：{c.ruleId}</p><button className="apply-correction" onClick={() => apply(c.id)} disabled={busy}>应用此建议并重新分析</button></article>)}</div> : result.status === "complete" && <>
+                {activeClause && <div className="clause-navigation"><button ref={backButton} className="nested-part" onClick={() => { setActiveClauseId(null); setSelectedId(activeClause.id); }}>返回整句</button><span role="status">正在查看第 {result.nodes.filter(n => n.role === "clause").findIndex(n => n.id === activeClause.id) + 1} 分句</span></div>}
+                <div className="result-overview"><div><span className="mini-label">句式结构</span><h3>{compoundOverview ? "两个完整分句" : patternDetail?.title}</h3><p>{purpose ? purposeLabels[purpose] : "用途待确定"} <span>·</span> {compoundOverview ? "并列句" : activeClause ? "独立分句" : "简单句"}</p></div><div className="tense-badge">{compoundOverview ? "时态按分句查看" : tense === null ? (purpose === "imperative" ? "动词原形 · 祈使" : "can + 动词原形") : tense === "past" ? "一般过去时" : "一般现在时"}<span>{compoundOverview ? "and / but 连接" : "主动语态"}</span></div></div>
+                <div className="sentence-board" ref={board}><div className="board-caption"><span>{compoundOverview ? "选择分句进入，或查看连接关系" : "点击成分，查看解析"}</span><span>SENTENCE BREAKDOWN</span></div><div className="sentence-parts">{spans.map(({ node, range }, index) => {
+                  const gap = result.input.slice(index === 0 ? viewStart : spans[index - 1].range.end, range.start);
+                  const label = labelFor(node.role, node);
+                  return <span className="annotated-span" key={`${node.id}-${range.start}`}><span className="sentence-gap">{gap}</span><button className={`sentence-part ${label.color} ${selectedId === node.id ? "selected" : ""}`} onClick={() => selectNode(node)} aria-pressed={selectedId === node.id}><span className="part-label">{label.role}</span><span className="part-text">{result.input.slice(range.start, range.end)}</span><span className="part-code">{label.code}</span></button></span>;
+                })}<span className="sentence-gap">{result.input.slice(spans.at(-1)?.range.end ?? viewStart, viewEnd)}</span></div></div>
                 {roots.some(n => n.implicit) && <div className="nested-parts"><p>隐含成分（没有原文位置）</p>{roots.filter(n => n.implicit).map(node => <button className="nested-part" key={node.id} onClick={() => setSelectedId(node.id)} aria-pressed={selectedId === node.id}>{labels[node.role].role} · 隐含 you</button>)}</div>}
                 <div className="role-legend">{[...new Set(roots.map(n => n.role))].map(role => { const label = labelFor(role); return <span key={role}><i className={label.color}/>{label.role}</span>; })}</div>
                 {selected && selectedLabel && <div className={`detail-callout ${selectedLabel.color}`}><div className="detail-symbol">{selectedLabel.code}</div><div><h4>{selectedLabel.role} <span>{nodeText(result, selected)}</span></h4><p>{selected.explanation}</p><p className="rule-reference">规则：{selected.ruleId}</p>
-                  {selected.parentId && <button className="nested-part" onClick={() => setSelectedId(selected.parentId)}>返回上层短语</button>}
-                  {children.length > 0 && <div className="nested-parts"><p>短语内部成分</p>{children.map(child => <button className="nested-part attribute" key={child.id} onClick={() => setSelectedId(child.id)}>{labels[child.role].role} · {nodeText(result, child)}</button>)}</div>}
+                  {selected.parentId && selected.parentId !== activeClauseId && <button className="nested-part" onClick={() => setSelectedId(selected.parentId)}>返回上层短语</button>}
+                  {selected.role === "clause" && !activeClause && <button className="nested-part" onClick={() => selectNode(selected)}>查看此分句成分</button>}
+                  {children.length > 0 && selected.role !== "clause" && <div className="nested-parts"><p>短语内部成分</p>{children.map(child => <button className="nested-part attribute" key={child.id} onClick={() => setSelectedId(child.id)}>{labelFor(child.role, child).role} · {nodeText(result, child)}</button>)}</div>}
                 </div></div>}
                 <div className="structure-heading"><h3>句子骨架</h3><span>THE BIG PICTURE</span></div><div className="structure-strip">{roots.filter(n => n.role !== "adverbial").map((node, i) => { const label = labelFor(node.role); return <div className="structure-item" key={node.id}>{i > 0 && <span className="structure-plus">+</span>}<span className={`structure-pill ${label.color}`}>{label.code}</span><span>{label.role}</span></div>; })}</div>
-                <div className="learning-note"><span className="note-icon"><Sparkles size={18}/></span><div><h4>一个值得记住的结构</h4><p>{result.purpose === "imperative" ? "祈使句用动词原形表达要求，主语 you 通常省略。" : result.purpose === "exclamatory" ? "What/How 将强调的表语提前，后面保留主语与系动词。" : result.purpose === "interrogative" ? "一般疑问句将助动词、can 或系动词提前。do/does/did 和 can 与后面的原形动词共同组成动词成分，可跨越主语。" : result.nodes.some(n => n.ruleId.startsWith("NEGATIVE-")) ? "not 是否定谓语的一部分。do/does/did 后使用动词原形；be 保留人称和时态；can 后同样接原形。" : patternDetail?.note}</p></div></div>
+                <div className="learning-note"><span className="note-icon"><Sparkles size={18}/></span><div><h4>一个值得记住的结构</h4><p>{compoundOverview ? "and 表示并列添加，but 表示转折。每个分句保留自己的主语、谓语、句型和时态；选择分句查看内部结构。" : purpose === "imperative" ? "祈使句用动词原形表达要求，主语 you 通常省略。" : purpose === "exclamatory" ? "What/How 将强调的表语提前，后面保留主语与系动词。" : purpose === "interrogative" ? "一般疑问句将助动词、can 或系动词提前。do/does/did 和 can 与后面的原形动词共同组成动词成分，可跨越主语。" : roots.some(n => n.ruleId.startsWith("NEGATIVE-")) ? "not 是否定谓语的一部分。do/does/did 后使用动词原形；be 保留人称和时态；can 后同样接原形。" : patternDetail?.note}</p></div></div>
               </>}
             </>}
           </div>

@@ -76,3 +76,7 @@ node --experimental-strip-types scripts/check-stage8-fixtures.mjs --implemented
 用途规则只重排原始 Token 引用，必要时仅调整 normalized 以复用句型；text/start/end 必须保留原文。context 隔离候选的成分和建议，每次用途解析共享 4000 次边界预算，新增结构枚举与 SVOO 候选解析共用同一计数器；同时保留输入长度和唯一匹配限制。新增支持仅按已固定范围改变旧边界预期。
 
 阶段 8 已通过固定样例的语法比对、383 项全量回归、类型/ESLint/构建及键盘、手机、断网、纠错与失效交互；阶段 7 的完整性检查不代替这些门槛。
+
+## 阶段 9 的后续迁移
+
+0.6.0 保留阶段 8 的原始答案作为历史数据，在 boundary-18 明确记录迁移到阶段 9 的 compound-13：`She does not sleep and he smiles.` 改为完整并列句，顶层句型/时态为空，每个分句单独分类，保留原文、层级及无建议断言。当前语法检查命令按该记录比对新答案，完整性命令仍检查原 0.5.0 答案；其他输入保持预期。

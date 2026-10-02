@@ -41,6 +41,6 @@ export const beForms = ["am", "is", "are", "was", "were"];
 export const VOCABULARY = {
   nouns: Object.keys(nouns), adjectives: [...adjectives], determiners: [...determiners],
   pronouns: [...new Set([...subjectPronouns, ...objectPronouns])],
-  verbs: [...verbForms, ...simpleVerbs].flatMap(v => [v.base, v.third, v.past]).concat(beForms), adverbs: ["today", "yesterday"], markers: ["do", "does", "did", "be", "what", "how", "can", "to", "school", "not"],
+  verbs: [...verbForms, ...simpleVerbs].flatMap(v => [v.base, v.third, v.past]).concat(beForms), adverbs: ["today", "yesterday"], markers: ["do", "does", "did", "be", "what", "how", "can", "to", "school", "not", "and", "but"],
 };
 export const knownWords = new Set(Object.values(VOCABULARY).flat());
