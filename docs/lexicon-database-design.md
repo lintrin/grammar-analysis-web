@@ -50,7 +50,7 @@ be 的 SVC、go 的固定 to school、SVOO 人物接受者、SVO/SVOC 的宾格�
 
 阶段 20A 已交付 init/migrate、import、query、revise、validate 和完整修订 show；20B/C 已交付审核、发布、重建及客户端命令。完整维护 CLI 交付命令：init/migrate、import、query（lemma/surface/POS）、revise、validate、review、publish、export-release、rebuild、generate-client、verify。无环境数据库时 build 仍使用固定发布和生成客户端，缺失/非法则明确失败，不回退旧手写词典。构建不得悄悄生成或审核新内容；生成是显式开发命令，verify 检查确定性。
 
-当前联合清单为规则 `0.15.0` + 词典 `1.1.0`，148 个完整词条；初始 `1.0.0` 仍冻结保存。新增 57 条草稿来源、逐词范围和发布重现见 [阶段 21](stage21-scope.md)。`rebuild` 使用当前清单锁定的版本，不默认回到旧种子。
+当前联合清单为规则 `0.15.1` + 词典 `1.1.0`，148 个完整词条；初始 `1.0.0` 仍冻结保存。新增 57 条草稿来源、逐词范围和发布重现见 [阶段 21](stage21-scope.md)。`rebuild` 使用当前清单锁定的版本，不默认回到旧种子。
 
 ## 分析版本与失效
 

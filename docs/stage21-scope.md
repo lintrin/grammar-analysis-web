@@ -39,4 +39,12 @@
 - 上述范围是当前诊断规则的词条白名单，不根据旧协议、发布版本或来源分支。被动分析仍须通过每条 frame 的 passivePromotion 校验。walk/dance/laugh/cry/wait 的分词不在该错误提示白名单内，阶段 21 的禁止被动答案保持 unsupported。
 - 用途来自实际解析分支，并作为内部元信息独立于结果分类保留。partial 的公开 purpose 继续为 null，已确认的内部用途用于校验 frame.allowedPurposes。
 - 将 give 的 frame 限定为 declarative 后，`Do she give him a book`、`Does she gives him a book`、`Can she gives him a book`（有无问号）均 unsupported、无节点和建议；陈述用途的错误仍保留原有建议。
-- 将 give 限定为 interrogative 后，无问号的上述错误疑问句仍可给原有唯一基础纠错；正确或错误陈述均须拒绝。用于用途审核的词条变体仅在隔离测试和浏览器验证目录中使用，不发布新词典。
+- 将 give 限定为 interrogative 后，无问号的上述错误疑问句仍可给原有唯一基础纠错；正确或错误陈述均须拒绝。用于用途审核的词条变体仅在隔离单元测试和开发浏览器临时热更新测试中使用，不发布新词典。
+
+### 审查修复交付 ✅
+
+- 当前规则升级为 **0.15.1**，应用组合清单同步；词典仍引用已审核发布 1.1.0。修改当前进行式诊断范围，保留旧词的原文错误范围和第 2 分句归属，同时保持新词禁止被动的 240 个固定答案。
+- do/be、can、祈使、感叹及组合谓语解析分支记录内部用途。审核检查使用该用途；不将无问号的 partial 误判为陈述，不改变 partial 的公开分类协议。组合谓语和 can 疑问也通过同一记录机制。
+- 新增 7 个准确范围/分句归属回归，以及 2 组声明/疑问用途隔离测试；修复前 9 项均失败，修复后通过。用途测试覆盖有无问号、do/can/完成链、允许时的精确基础纠错编辑、拒绝时无节点/建议，以及 partial 的公开分类均为 null。全量 **1739 项通过**，失败/跳过 0；专项 293 项通过，类型、ESLint、构建、词典 verify 和差异检查通过。
+- 两种服务均通过 ui-review-fixes、ui-stage21、ui-smoke、ui-stage12、ui-predicate。开发专项临时将 give 限定为陈述和疑问用途，验证有无问号的拒绝/纠错行为，并恢复原始快照。构建专项验证旧词错误提示、新词禁止被动和第 2 分句原因。390px、断网、无输入网络/日志/存储及页面无错误通过；截图已查看。
+- 新浏览器脚本 `tests/ui-review-fixes.mjs`；工程日志 `/tmp/grammar-review-fix-{tests,types,lint,build,focused}.log`，浏览器日志 `/tmp/grammar-review-fix-{dev,production}-ui-*.log`，截图 `/tmp/grammar-review-fix-production-mobile.png`。浏览器关闭、验收服务停止。本次修复未执行提交、推送或部署。

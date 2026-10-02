@@ -114,7 +114,11 @@ function runFixture(t, modify, expected) {
     assert.equal(result.status,typeof answer === 'string' ? answer : answer.status,result.input);
     if (typeof answer === 'object') {
       assert.equal(result.reasons[0].code,answer.code);
-      if (answer.corrections) assert.deepEqual(result.corrections.map(({ ruleId,edits })=>({ ruleId,edits })),answer.corrections);
+      if (answer.corrections) {
+        assert.deepEqual(result.corrections.map(({ ruleId,edits })=>({ ruleId,edits })),answer.corrections);
+        assert.deepEqual(result.nodes,[]);
+        for (const field of ['purpose','pattern','complexity','tense','aspect','voice']) assert.equal(result[field],null);
+      }
     }
     if (result.status === 'unsupported') { assert.deepEqual(result.nodes,[]); assert.deepEqual(result.corrections,[]); }
     if (result.status === 'ambiguous') { assert.deepEqual(result.nodes,[]); assert.deepEqual(result.corrections,[]); }
@@ -234,6 +238,7 @@ test('20C declarative-only frame rejects erroneous questions with and without a 
   'Does she gives him a book': 'unsupported', 'Does she gives him a book?': 'unsupported',
   'Can she gives him a book': 'unsupported', 'Can she gives him a book?': 'unsupported',
   'Does she give him a book': 'unsupported', 'Does she give him a book?': 'unsupported',
+  'Has she give him a book': 'unsupported', 'Has she give him a book?': 'unsupported',
   'She gives him a book': 'complete',
   'She give him a book': {status:'partial',code:'form-mismatch',corrections:[{ruleId:'AGREEMENT-001',edits:[{range:{start:4,end:8},expected:'give',replacement:'gives'}]}]},
 }));
@@ -243,5 +248,7 @@ test('20C interrogative-only frame preserves partial question corrections and re
   'Do she give him a book': {status:'partial',code:'form-mismatch',corrections:[{ruleId:'AGREEMENT-001',edits:[{range:{start:0,end:2},expected:'Do',replacement:'Does'}]}]},
   'Does she gives him a book': {status:'partial',code:'form-mismatch',corrections:[{ruleId:'DO-BASE-001',edits:[{range:{start:9,end:14},expected:'gives',replacement:'give'}]}]},
   'Can she gives him a book': {status:'partial',code:'form-mismatch',corrections:[{ruleId:'MODAL-BASE-001',edits:[{range:{start:8,end:13},expected:'gives',replacement:'give'}]}]},
+  'Has she give him a book': {status:'partial',code:'form-mismatch',corrections:[]},
+  'Has she given him a book':'complete',
   'Does she give him a book':'complete', 'She gives him a book':'unsupported', 'She give him a book':'unsupported',
 }));
