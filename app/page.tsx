@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { BookOpen, Braces, ChevronRight, CircleHelp, Feather, Layers3, ScanText, Sparkles } from "lucide-react";
-import { analyzeSentence, type AnalysisResult, type ComponentNode, type Role } from "@/lib/grammar";
+import { analyzeSentence, applyCorrection, type AnalysisResult, type ComponentNode, type Role } from "@/lib/grammar";
 
 const sample = "The teacher gave the students a useful book yesterday.";
 const examples = [
@@ -17,6 +17,8 @@ const examples = [
   { title: "一般疑问句", text: "Did she give him a book yesterday?" },
   { title: "祈使句", text: "Be kind." },
   { title: "感叹句", text: "What a useful book it is!" },
+  { title: "基础纠错", text: "She go to school." },
+  { title: "情态动词", text: "She can go to school." },
   { title: "范围提示", text: "The weather is beautiful today." },
 ];
 const labels: Record<Role, { role: string; code: string; color: string }> = {
@@ -25,12 +27,12 @@ const labels: Record<Role, { role: string; code: string; color: string }> = {
   indirectObject: { role: "间接宾语", code: "IO", color: "object" },
   object: { role: "直接宾语", code: "DO", color: "complement" },
   complement: { role: "补语", code: "C", color: "complement" },
-  adverbial: { role: "时间状语", code: "A", color: "adverbial" },
+  adverbial: { role: "状语", code: "A", color: "adverbial" },
   attribute: { role: "定语", code: "ATTR", color: "attribute" },
   clause: { role: "分句", code: "CL", color: "clause" },
 };
 const patternDetails = {
-  SV: { title: "主语 + 谓语", note: "sleep、smile、run 的当前规则不接宾语，句末可接时间状语。" },
+  SV: { title: "主语 + 谓语", note: "sleep、smile、run、go 的当前规则不接宾语；go 可接固定目的地 to school。" },
   SVO: { title: "主语 + 谓语 + 宾语", note: "like、enjoy、see 的当前规则接一个宾语，可以是名词短语或宾格代词。" },
   SVC: { title: "主语 + 系动词 + 表语", note: "be 连接主语与表语。表语说明主语的身份或性质，可以是名词短语或单个形容词。" },
   SVOO: { title: "主语 + 谓语 + 双宾语", note: "这些动词可以接两个宾语：动词 + 接受者 + 事物。短语内的形容词可以在成分详情中继续查看。" },
@@ -60,7 +62,7 @@ export default function Home() {
     pending.current = null;
     setInput(text); setResult(null); setSelectedId(null); setBusy(false); setFailure(null);
   }
-  function analyze() {
+  function analyze(text = input) {
     if (pending.current !== null) return;
     const inputVersion = version.current;
     const requestId = ++request.current;
@@ -68,7 +70,7 @@ export default function Home() {
     pending.current = setTimeout(() => {
       pending.current = null;
       try {
-        const next = analyzeSentence(input, inputVersion);
+        const next = analyzeSentence(text, inputVersion);
         if (version.current !== inputVersion || request.current !== requestId) return;
         setResult(next); setSelectedId(next.nodes[0]?.id ?? null);
       } catch {
@@ -77,6 +79,16 @@ export default function Home() {
         if (version.current === inputVersion && request.current === requestId) setBusy(false);
       }
     }, 0);
+  }
+  function apply(id: string) {
+    if (!result || busy) return;
+    try {
+      const next = applyCorrection(result, id, input, version.current);
+      editInput(next);
+      analyze(next);
+    } catch {
+      setFailure("建议已失效，请重新分析当前输入。");
+    }
   }
   const roots = result?.nodes.filter(n => n.parentId === null) ?? [];
   const selected = result?.nodes.find(n => n.id === selectedId);
@@ -98,7 +110,7 @@ export default function Home() {
             <label htmlFor="sentence" className="sr-only">需要分析的英文句子</label>
             <textarea id="sentence" value={input} onChange={e => editInput(e.target.value)} onKeyDown={e => { if (e.key === "Enter" && (e.metaKey || e.ctrlKey) && !e.nativeEvent.isComposing) { e.preventDefault(); analyze(); } }} spellCheck={false} placeholder="试着输入一个英文句子…" aria-describedby="scope-hint input-count"/>
             <div className="input-meta"><span>限定词汇 · 五种句型 · 四种用途</span><span id="input-count">{input.length}/1000</span></div>
-            <button className="analyze-button" onClick={analyze} disabled={busy} aria-keyshortcuts="Control+Enter Meta+Enter"><ScanText size={18}/>{busy ? "正在分析…" : "分析句子"}</button>
+            <button className="analyze-button" onClick={() => analyze()} disabled={busy} aria-keyshortcuts="Control+Enter Meta+Enter"><ScanText size={18}/>{busy ? "正在分析…" : "分析句子"}</button>
             <div className="input-hint" id="scope-hint">Ctrl / ⌘ + Enter 分析 · 一般现在时与过去时</div>
           </section>
           <section className="examples-card"><div className="section-heading"><BookOpen size={17}/><h2>从一个例句开始</h2></div><p>选择例句后，点击分析。</p>{examples.map((e, i) => <button className="example" key={e.title} onClick={() => editInput(e.text)}><span className="example-number">{String(i + 1).padStart(2, "0")}</span><span><strong>{e.title}</strong><span className="example-text">{e.text}</span></span><ChevronRight size={14}/></button>)}</section>
@@ -108,15 +120,15 @@ export default function Home() {
           <div className="result-header"><div className="section-heading"><span className="small-icon blue"><Layers3 size={18}/></span><h2>分析结果</h2></div><span className="result-status" role="status">{busy ? "正在分析" : failure ? "分析失败" : result ? statusLabels[result.status] : "等待分析"}</span></div>
           <div className="result-tabs" role="tablist" aria-label="分析视图">
             <button id="parts-tab" role="tab" aria-selected={tab === "parts"} aria-controls="result-panel" className={tab === "parts" ? "active" : ""} onClick={() => setTab("parts")}>成分解析</button>
-            <button id="checks-tab" role="tab" aria-selected={tab === "checks"} aria-controls="result-panel" className={tab === "checks" ? "active" : ""} onClick={() => setTab("checks")}>语法检查 <b>待开发</b></button>
+            <button id="checks-tab" role="tab" aria-selected={tab === "checks"} aria-controls="result-panel" className={tab === "checks" ? "active" : ""} onClick={() => setTab("checks")}>语法检查 {result && result.corrections.length > 0 && <b>{result.corrections.length}</b>}</button>
           </div>
           <div className="result-body" id="result-panel" role="tabpanel" aria-labelledby={tab === "parts" ? "parts-tab" : "checks-tab"}>
             {failure && <p className="analysis-message" role="alert">{failure}</p>}
             {!result && !failure && <div className="empty-result"><ScanText size={28}/><h3>{busy ? "正在运行本地规则…" : "准备好，拆解下一个句子"}</h3><p>{busy ? "分析结果只对应本次输入。" : "输入或选择一个例句，再点击“分析句子”。修改输入会立即清除旧标注。"}</p></div>}
             {result && <>
               <div className="analysis-message" role="status">{result.messages.map(message => <p key={message}>{message}</p>)}</div>
-              {tab === "checks" ? <div className="learning-note"><span className="note-icon"><CircleHelp size={18}/></span><div><h4>基础纠错尚未启用</h4><p>当前结果仅解释受支持的句子结构，没有执行完整语法检查，也不提供修改建议。</p></div></div> : result.status === "complete" && <>
-                <div className="result-overview"><div><span className="mini-label">句式结构</span><h3>{patternDetail?.title}</h3><p>{result.purpose ? purposeLabels[result.purpose] : "用途待确定"} <span>·</span> 简单句</p></div><div className="tense-badge">{result.tense === null ? "动词原形 · 祈使" : result.tense === "past" ? "一般过去时" : "一般现在时"}<span>主动语态</span></div></div>
+              {tab === "checks" ? <div className="grammar-checks"><p className="check-scope">仅检查受支持结构中的主谓一致、do/does/did 后原形和 can 后原形。未命中规则不代表句子完全正确。</p>{result.corrections.length === 0 ? <p>当前未命中可应用的纠错建议。</p> : result.corrections.map(c => <article className="correction-card" key={c.id}><h3>{c.ruleId === "AGREEMENT-001" ? "主谓一致" : c.ruleId === "DO-BASE-001" ? "助动词后的动词原形" : "情态动词后的动词原形"}</h3><p>{c.reason}</p>{c.edits.map(e => <p className="correction-edit" key={e.range.start}><del>{e.expected}</del><span aria-hidden="true"> → </span><strong>{e.replacement}</strong></p>)}<p className="rule-reference">{c.context} 规则：{c.ruleId}</p><button className="apply-correction" onClick={() => apply(c.id)} disabled={busy}>应用此建议并重新分析</button></article>)}</div> : result.status === "complete" && <>
+                <div className="result-overview"><div><span className="mini-label">句式结构</span><h3>{patternDetail?.title}</h3><p>{result.purpose ? purposeLabels[result.purpose] : "用途待确定"} <span>·</span> 简单句</p></div><div className="tense-badge">{result.tense === null ? (result.purpose === "imperative" ? "动词原形 · 祈使" : "can + 动词原形") : result.tense === "past" ? "一般过去时" : "一般现在时"}<span>主动语态</span></div></div>
                 <div className="sentence-board"><div className="board-caption"><span>点击成分，查看解析</span><span>SENTENCE BREAKDOWN</span></div><div className="sentence-parts">{spans.map(({ node, range }, index) => {
                   const gap = result.input.slice(index === 0 ? 0 : spans[index - 1].range.end, range.start);
                   const label = labelFor(node.role);

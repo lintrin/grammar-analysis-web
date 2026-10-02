@@ -47,7 +47,7 @@ const boundaries = [
   ['Give me book.', 'unsupported'], ['What a useful book!', 'unsupported'],
   ['She gave him a mysterious book.', 'unsupported'], ['She gave him a book and a pen.', 'unsupported'],
   ['The teacher who smiled gave me a book.', 'unsupported'], ['A book was given to me.', 'unsupported'],
-  ['She has given him a book.', 'unsupported'], ['She can give him a book.', 'unsupported'],
+  ['She has given him a book.', 'unsupported'],
   ['She gave him a book 😀.', 'unsupported'], ['She gave him a book, today.', 'unsupported'],
   ['She gave her book.', 'unsupported'], ['She gave him an old book.', 'unsupported'],
   ['She gave him a old book.', 'unsupported'], ['She gave him this books.', 'unsupported'],
@@ -57,7 +57,8 @@ const boundaries = [
 for (const [input, status] of boundaries) test(`boundary: ${input.slice(0, 65) || '(empty)'}`, () => {
   const r = analyzeSentence(input);
   assert.equal(r.status, status); assert.equal(r.pattern, null);
-  assert.deepEqual(r.nodes, []); assert.deepEqual(r.corrections, []);
+  assert.deepEqual(r.nodes, []);
+  if (status === "partial") assert.ok(r.corrections.length > 0); else assert.deepEqual(r.corrections, []);
   assert.ok(r.messages.length >= 2); validateAnalysisResult(r);
 });
 

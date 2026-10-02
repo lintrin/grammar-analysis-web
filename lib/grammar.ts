@@ -1,5 +1,5 @@
 /** Hand-authored local grammar rules and vocabulary; distributed under this repository's MIT license. */
-export const RULE_VERSION = "0.3.1";
+export const RULE_VERSION = "0.4.0";
 export const MAX_INPUT_LENGTH = 1000;
 export type Range = { start: number; end: number };
 export type Role = "subject" | "verb" | "indirectObject" | "object" | "complement" | "adverbial" | "attribute" | "clause";
@@ -51,6 +51,7 @@ const verbForms = [
   { base: "offer", third: "offers", past: "offered" },
 ];
 const simpleVerbs = [
+  { base: "go", third: "goes", past: "went", pattern: "SV" },
   { base: "sleep", third: "sleeps", past: "slept", pattern: "SV" },
   { base: "smile", third: "smiles", past: "smiled", pattern: "SV" },
   { base: "run", third: "runs", past: "ran", pattern: "SV" },
@@ -64,7 +65,7 @@ const beForms = ["am", "is", "are", "was", "were"];
 export const VOCABULARY = {
   nouns: Object.keys(nouns), adjectives: [...adjectives], determiners: [...determiners],
   pronouns: [...new Set([...subjectPronouns, ...objectPronouns])],
-  verbs: [...verbForms, ...simpleVerbs].flatMap(v => [v.base, v.third, v.past]).concat(beForms), adverbs: ["today", "yesterday"], markers: ["do", "does", "did", "be", "what", "how"],
+  verbs: [...verbForms, ...simpleVerbs].flatMap(v => [v.base, v.third, v.past]).concat(beForms), adverbs: ["today", "yesterday"], markers: ["do", "does", "did", "be", "what", "how", "can", "to", "school"],
 };
 const knownWords = new Set(Object.values(VOCABULARY).flat());
 
@@ -93,6 +94,28 @@ function nounPhrase(tokens: Token[], start: number, end: number, recipient = fal
   }
   return { start, end, thirdPerson: !noun.plural, attributes };
 }
+function suggest(result: AnalysisResult, token: Token, replacement: string, ruleId: string, reason: string) {
+  const original = token.text;
+  const text = original === original.toUpperCase() ? replacement.toUpperCase()
+    : /^[A-Z]/.test(original) ? replacement[0].toUpperCase() + replacement.slice(1) : replacement;
+  result.corrections.push({ id: `correction-${result.corrections.length + 1}`, ruleId, reason,
+    context: "仅适用于当前词典和完整匹配的简单句结构；不检查语义或复杂时态。",
+    edits: [{ range: { start: token.start, end: token.end }, expected: original, replacement: text }] });
+}
+
+/** Apply one current suggestion atomically. Never trust stale positions or edited text. */
+export function applyCorrection(result: AnalysisResult, id: string, input: string, inputVersion: number): string {
+  validateAnalysisResult(result);
+  if (result.inputVersion !== inputVersion || result.input !== input || result.ruleVersion !== RULE_VERSION) throw new Error("建议已过期，请重新分析。");
+  const correction = result.corrections.find(c => c.id === id);
+  if (!correction) throw new Error("修改建议不存在。");
+  let next = input;
+  for (const edit of [...correction.edits].sort((a, b) => b.range.start - a.range.start)) {
+    next = next.slice(0, edit.range.start) + edit.replacement + next.slice(edit.range.end);
+  }
+  return next;
+}
+
 function directObject(tokens: Token[], start: number, end: number): Phrase | null {
   // Same noun phrase grammar; object pronouns are deferred to avoid lexical ambiguity.
   if (end <= start || !nouns[tokens[end - 1].normalized]) return null;
@@ -104,7 +127,7 @@ export function analyzeSentence(input: string, inputVersion = 0): AnalysisResult
   const result: AnalysisResult = {
     input, inputVersion, ruleVersion: RULE_VERSION, status: "unsupported", purpose: null,
     pattern: null, complexity: null, tense: null, nodes: [], corrections: [],
-    messages: ["当前仅分析词典及规则覆盖的五种句型与四种用途；语法纠错尚未启用。"],
+    messages: ["当前仅分析词典及规则覆盖的五种句型与四种用途；纠错仅覆盖主谓一致、do/does/did 后原形及 can 后原形。"],
   };
   const finish = (message?: string) => {
     if (message) result.messages.unshift(message);
@@ -134,7 +157,12 @@ export function analyzeSentence(input: string, inputVersion = 0): AnalysisResult
 
 function analyzeDeclarative(tokens: Token[], result: AnalysisResult): string {
   let end = tokens.length;
-  const adverb = ["today", "yesterday"].includes(tokens.at(-1)?.normalized ?? "") ? tokens[--end] : null;
+  let adverb: Token | null = ["today", "yesterday"].includes(tokens.at(-1)?.normalized ?? "") ? tokens[--end] : null;
+  // Fixed destination frame only, not a general preposition grammar.
+  if (!adverb && tokens.at(-2)?.normalized === "to" && tokens.at(-1)?.normalized === "school" && tokens.some(t => ["go", "goes", "went"].includes(t.normalized))) {
+    end -= 2;
+    adverb = { start: tokens[end].start, end: tokens[end + 1].end, text: result.input.slice(tokens[end].start, tokens[end + 1].end), normalized: "to school" };
+  }
   const simple = analyzeSimplePatterns(tokens, end, adverb, result);
   if (simple) return (simple);
   type Candidate = { subject: Phrase; verbIndex: number; verb: typeof verbForms[number]; tense: "present" | "past"; recipient: Phrase; object: Phrase };
@@ -159,7 +187,8 @@ function analyzeDeclarative(tokens: Token[], result: AnalysisResult): string {
   const c = candidates[0];
   if (c.tense === "present" && tokens[c.verbIndex].normalized !== (c.subject.thirdPerson ? c.verb.third : c.verb.base)) {
     result.status = "partial";
-    return ("名词短语与双宾语结构已匹配，但动词形式不在此规则的支持条件内；本阶段不生成修改建议。");
+    if (adverb?.normalized !== "yesterday") suggest(result, tokens[c.verbIndex], c.subject.thirdPerson ? c.verb.third : c.verb.base, "AGREEMENT-001", "一般现在时的动词形式需要与主语的人称和单复数一致。");
+    return ("名词短语与双宾语结构已匹配，但动词形式不在此规则的支持条件内；请查看语法检查中的限定纠错建议。");
   }
   if (c.tense === "present" && adverb?.normalized === "yesterday") {
     return ("yesterday 与当前一般现在时规则不匹配，无法可靠分析。时态纠错尚未支持。");
@@ -210,7 +239,9 @@ function analyzePurpose(tokens: Token[], punctuation: string | null, result: Ana
       if (candidate.status !== "complete") continue;
       if ((!past && first !== (subject.thirdPerson ? "does" : "do")) || tokens[v].normalized !== form.base) {
         result.status = "partial";
-        return "疑问句短语已匹配，但助动词与主语或其后动词形式不符合当前规则；尚不生成纠错建议。";
+        if (!past && first !== (subject.thirdPerson ? "does" : "do")) suggest(result, tokens[0], subject.thirdPerson ? "does" : "do", "AGREEMENT-001", "一般现在时疑问句的 do/does 需要与主语一致。");
+        if (tokens[v].normalized !== form.base) suggest(result, tokens[v], form.base, "DO-BASE-001", "do/does/did 已承担时态与人称变化，其后的实义动词应使用原形。");
+        return "疑问句短语已匹配，但助动词与主语或其后动词形式不符合当前规则；请查看语法检查中的限定纠错建议。";
       }
       const verb = candidate.nodes.find(n => n.role === "verb")!;
       verb.ranges.unshift({ start: tokens[0].start, end: tokens[0].end });
@@ -266,6 +297,28 @@ function analyzePurpose(tokens: Token[], punctuation: string | null, result: Ana
         ranges: [{ start: tokens[0].start, end: tokens[0].end }], ruleId: "EXCLAMATION-001", explanation: `${tokens[0].text} 是感叹结构中的强调成分，修饰此表语短语。` });
     }
     return accept(candidate, `已匹配完整感叹句规则 EXCLAMATION-001。${message}`, "exclamatory");
+  }
+  if (tokens.some(t => t.normalized === "can")) {
+    if (punctuation && punctuation !== ".") return unsupported;
+    const m = tokens.findIndex(t => t.normalized === "can");
+    const subject = nounPhrase(tokens, 0, m);
+    const lexical = tokens[m + 1];
+    const form = [...verbForms, ...simpleVerbs].find(f => [f.base, f.third, f.past].includes(lexical?.normalized));
+    if (!subject || !lexical || (!form && !["be", ...beForms].includes(lexical.normalized))) return unsupported;
+    const normalized = form ? subject.thirdPerson ? form.third : form.base : m === 1 && first === "i" ? "am" : subject.thirdPerson ? "is" : "are";
+    const { candidate, message } = tryParse([...tokens.slice(0, m), { ...lexical, normalized }, ...tokens.slice(m + 2)]);
+    if (candidate.status !== "complete") return unsupported;
+    if (lexical.normalized !== (form?.base ?? "be")) {
+      result.status = "partial";
+      suggest(result, lexical, form?.base ?? "be", "MODAL-BASE-001", "情态动词 can 后使用动词原形，不随主语变化。");
+      return "已匹配 can 的简单句搭配，但其后动词需要使用原形。";
+    }
+    const verb = candidate.nodes.find(n => n.role === "verb")!;
+    verb.ranges.unshift({ start: tokens[m].start, end: tokens[m].end });
+    verb.ruleId = "MODAL-CAN-001";
+    verb.explanation = "can 表示能力或可能性，其后接动词原形；不按一般现在时或过去时分类。";
+    candidate.tense = null;
+    return accept(candidate, `已匹配 can + 原形规则。${message}`, "declarative");
   }
   const imperativeForm = [...verbForms, ...simpleVerbs].some(f => f.base === first) || first === "be";
   if (imperativeForm) {
@@ -326,7 +379,8 @@ function analyzeSimplePatterns(tokens: Token[], end: number, adverb: Token | nul
   const c = matches[0];
   if (tokens[c.v].normalized !== c.expected) {
     result.status = "partial";
-    return "短语结构已匹配，但主语与动词形式不在此规则的支持条件内；本阶段不生成修改建议。";
+    if (c.tense === "past" || adverb?.normalized !== "yesterday") suggest(result, tokens[c.v], c.expected, "AGREEMENT-001", "动词形式需要与主语的人称和单复数一致；be 同时保留原句的现在或过去时。");
+    return "短语结构已匹配，但主语与动词形式不在此规则的支持条件内；请查看语法检查中的限定纠错建议。";
   }
   if (c.tense === "present" && adverb?.normalized === "yesterday") return "yesterday 与当前一般现在时规则不匹配，无法可靠分析。时态纠错尚未支持。";
   result.status = "complete"; result.pattern = c.pattern; result.purpose = "declarative";
@@ -343,7 +397,8 @@ function analyzeSimplePatterns(tokens: Token[], end: number, adverb: Token | nul
   add("verb", { start: c.v, end: c.v + 1, thirdPerson: false, attributes: [] }, `${tokens[c.v].text} 是句子的${c.pattern === "SVC" ? "系动词，连接主语和表语" : "谓语动词，表示动作"}，使用${c.tense === "past" ? "一般过去时" : "一般现在时"}。`);
   if (c.object) add("object", c.object, "宾语说明动作涉及的人或事物；由宾格代词或简单名词短语构成。");
   if (c.complement) add("complement", c.complement, c.pattern === "SVC" ? "表语通过系动词说明主语的身份或性质，不是动作的接受者。" : "宾语补足语用形容词说明宾语的性质或状态，与宾语一起表达完整意思。");
-  if (adverb) add("adverbial", { start: end, end: end + 1, thirdPerson: false, attributes: [] }, `${adverb.text} 说明动作或状态发生的时间。`);
+  if (adverb) result.nodes.push({ id: `node-${result.nodes.length + 1}`, role: "adverbial", parentId: null, implicit: false, ruleId,
+    ranges: [{ start: adverb.start, end: adverb.end }], explanation: `${adverb.text} 说明动作或状态发生的${adverb.normalized === "to school" ? "目的地" : "时间"}。` });
   return `已匹配本地规则 ${ruleId}。此结果不代表已经检查所有语法问题。`;
 }
 

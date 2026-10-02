@@ -45,7 +45,7 @@ for (const [pattern, tense, input, segments] of fixtures) test(`${pattern}: ${in
   assert.deepEqual(r.corrections, []); validateAnalysisResult(r);
 });
 for (const input of ['She sleep.', 'They sleeps.', 'I is kind.', 'You was kind.', 'The boys is good.', 'She am kind.', 'We enjoys books.', 'She make him good.']) test(`agreement: ${input}`, () => {
-  const r = analyzeSentence(input); assert.equal(r.status, 'partial'); assert.deepEqual(r.nodes, []); assert.deepEqual(r.corrections, []);
+  const r = analyzeSentence(input); assert.equal(r.status, 'partial'); assert.deepEqual(r.nodes, []); assert.ok(r.corrections.length > 0);
 });
 for (const input of ['She sleeps books.', 'She likes.', 'She enjoys him a book.', 'She is him.', 'She makes him a teacher.', 'She finds him.', 'She is very kind.', 'She is good kind.', 'She runs yesterday.', 'She gave her book.', 'The weather is beautiful today.', 'Does she sleep, today?', 'Sleeps.', 'How kind she is?', 'She slept and smiled.']) test(`unsupported: ${input}`, () => {
   assert.equal(analyzeSentence(input).status, 'unsupported');

@@ -33,7 +33,7 @@ try {
   await waitStatus('规则分析完成');
   assert.equal((await page.locator('.part-text, .sentence-gap').allTextContents()).join(''), text);
   await page.getByRole('tab', { name: '语法检查' }).click();
-  await waitStatus('基础纠错尚未启用');
+  await waitStatus('当前未命中可应用的纠错建议。');
   await page.getByRole('tab', { name: '成分解析' }).click();
   await page.evaluate(() => {
     window.originalTimer = window.setTimeout;
@@ -110,6 +110,31 @@ try {
       assert.match(await page.locator('.detail-callout').innerText(), /强调成分/);
     }
   }
+  await sentence.fill('Do she gives him a book?'); await analyze.click(); await waitStatus('部分支持');
+  await page.getByRole('tab', { name: '语法检查' }).click();
+  assert.equal(await page.locator('.correction-card').count(), 2);
+  await page.getByRole('button', { name: '应用此建议并重新分析' }).first().click();
+  await waitStatus('部分支持');
+  assert.equal(await sentence.inputValue(), 'Does she gives him a book?');
+  assert.equal(await page.locator('.correction-card').count(), 1);
+  await page.getByRole('button', { name: '应用此建议并重新分析' }).click();
+  await waitStatus('规则分析完成');
+  assert.equal(await sentence.inputValue(), 'Does she give him a book?');
+  await waitStatus('当前未命中可应用的纠错建议。');
+  await sentence.fill('She go to school.'); await analyze.click(); await waitStatus('部分支持');
+  await page.evaluate(() => {
+    window.originalTimer = window.setTimeout;
+    window.setTimeout = (callback, delay, ...args) => window.originalTimer(callback, delay === 0 ? 200 : delay, ...args);
+  });
+  await page.getByRole('button', { name: '应用此建议并重新分析' }).click();
+  assert.equal(await page.locator('.correction-card').count(), 0);
+  await sentence.fill('They sleep.');
+  await page.waitForTimeout(350); await waitStatus('等待分析');
+  await page.evaluate(() => { window.setTimeout = window.originalTimer; });
+  await sentence.fill('She can goes to school.'); await analyze.click(); await waitStatus('部分支持');
+  await sentence.fill('She sleeps.');
+  assert.equal(await page.getByRole('button', { name: '应用此建议并重新分析' }).count(), 0);
+  await page.getByRole('tab', { name: '成分解析' }).click();
   requests.length = 0;
   await context.setOffline(true);
   const privateSentence = 'Did the young teacher give the girls a useful book yesterday?';
@@ -117,6 +142,18 @@ try {
   assert.equal(requests.length, 0, 'analysis should make no HTTP requests');
   assert.equal(messages.some(message => message.includes(privateSentence)), false);
   assert.equal(await page.evaluate(() => Object.keys(localStorage).length + Object.keys(sessionStorage).length), 0);
+  await sentence.fill('She can goes to school.'); await analyze.click(); await waitStatus('部分支持');
+  await page.getByRole('tab', { name: '语法检查' }).click();
+  await page.setViewportSize({ width: 390, height: 844 });
+  assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
+  await page.screenshot({ path: '/tmp/clause-corrections-mobile.png', fullPage: true });
+  await page.getByRole('button', { name: '应用此建议并重新分析' }).focus();
+  await page.keyboard.press('Enter'); await waitStatus('规则分析完成');
+  assert.equal(await sentence.inputValue(), 'She can go to school.');
+  assert.equal(requests.length, 0, 'offline correction should make no HTTP requests');
+  assert.equal(messages.some(message => message.includes('She can goes to school.')), false);
+  await page.getByRole('tab', { name: '成分解析' }).click();
+  assert.match(await page.locator('.tense-badge').innerText(), /can/);
   await page.setViewportSize({ width: 390, height: 844 });
   assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
   await page.screenshot({ path: '/tmp/clause-mobile.png', fullPage: true });

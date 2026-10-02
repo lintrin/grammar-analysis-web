@@ -35,7 +35,7 @@ for (const [input, purpose, pattern, tense, segments] of fixtures) test(`${purpo
   assert.deepEqual(r.corrections, []); validateAnalysisResult(r);
 });
 for (const input of ['Do she sleep?', 'Does they like him?', 'Did she gave him a book?', 'Does she sleeps?', 'Is the boys good?', 'Were I kind?', 'How kind she are!', 'What a book they is!']) test(`partial: ${input}`, () => {
-  const r = analyzeSentence(input); assert.equal(r.status, 'partial'); assert.deepEqual(r.nodes, []); assert.deepEqual(r.corrections, []);
+  const r = analyzeSentence(input); assert.equal(r.status, 'partial'); assert.deepEqual(r.nodes, []); assert.ok(r.corrections.length > 0);
 });
 for (const input of ['She sleeps?', 'Does she sleep.', 'Is she kind!', 'How kind she is?', 'What a book!', 'How kind!', 'Be him.', 'Sleeps.', 'Did she can sleep?', 'Does she sleep yesterday?', 'Do sleep.', 'What she is!', 'How she likes books!', 'What a old book it is!', 'Give me a book?', 'She likes books!', 'Does she sleep? She smiles.']) test(`scope: ${input}`, () => {
   const r = analyzeSentence(input); assert.notEqual(r.status, 'complete'); assert.deepEqual(r.nodes, []);
