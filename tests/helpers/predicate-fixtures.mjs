@@ -4,6 +4,16 @@ import { analyzeSentence, validateAnalysisResult } from '../../lib/grammar.ts';
 import { expectedStage12 } from './stage12-fixtures.mjs';
 import { compareStage9 } from './stage9-fixtures.mjs';
 export const development = JSON.parse(readFileSync(new URL('../fixtures/predicate-development.json', import.meta.url), 'utf8'));
+// Keep historical stage labels in the manifest; run identical boundary answers once.
+// Compare every answer field so a changed expectation receives its own regression.
+const boundaryAnswers = new Set();
+export const distinctDevelopmentBoundaries = development.boundaries.filter(({ id, stage, ...answer }) => {
+  void id; void stage;
+  const key = JSON.stringify(Object.fromEntries(Object.entries(answer).sort(([a], [b]) => a.localeCompare(b))));
+  if (boundaryAnswers.has(key)) return false;
+  boundaryAnswers.add(key);
+  return true;
+});
 export function checkPredicate(fixture) {
   const expected = expectedStage12(fixture);
   const result = analyzeSentence(fixture.input, 23);

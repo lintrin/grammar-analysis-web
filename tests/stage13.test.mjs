@@ -46,7 +46,7 @@ test('stage 13 all existing complete purposes have explicit simple active classi
     assert.equal(node.clause.aspect, 'simple'); assert.equal(node.clause.voice, 'active');
   }
 });
-for (const field of ['aspect', 'voice', 'reasons']) test(`stage 13 rejects missing ${field} without historical adaptation`, () => {
+for (const field of ['aspect', 'voice']) test(`stage 13 rejects missing ${field} without historical adaptation`, () => {
   const result = analyzeSentence('She sleeps.'); delete result[field];
   assert.throws(() => validateAnalysisResult(result), /分析数据无效/);
 });

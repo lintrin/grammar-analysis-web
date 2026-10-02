@@ -4,7 +4,7 @@
 
 阶段 1–12 ✅ 已完成，历史开发与验收见 [开发计划](docs/development-plan.md)、[后续开发计划](docs/follow-up-development-plan.md) 和 [阶段 12 验收](docs/stage12-scope.md)。本轮阶段 13–18 ✅ 已完成；实施记录见 [谓语扩展执行计划](docs/predicate-expansion-plan.md)。
 
-下一轮按阶段 19–25 规划本地 SQLite 数据库词典、审核快照与词汇扩容、实义 have、限定否定缩写及谓语纠错；范围、依赖和验收门槛见 [后续计划](docs/next-development-plan.md)。数据库维护词典，分析仍在浏览器内使用打包快照，输入句子不入库。计划已补充历史验收语料基线、词条修改后重新审核，以及规则与词典版本联合校验。新增阶段均待开始，当前支持范围仍以 0.14.3 为准。
+下一轮按阶段 19–25 规划本地 SQLite 数据库词典、审核快照与词汇扩容、实义 have、限定否定缩写及谓语纠错；范围、依赖和验收门槛见 [后续计划](docs/next-development-plan.md)。数据库维护词典，分析仍在浏览器内使用打包快照，输入句子不入库。计划已补充历史验收语料基线、词条修改后重新审核，以及规则与词典版本联合校验。阶段 19 ✅ 已完成：固定范围、数据库设计、416 个未来开发答案、历史开发基线和 65 项迁移；阶段交付的工程、开发/构建浏览器复核通过；测试去重及审查完整性修复后 1422 项全部通过，见 [阶段 19 验收与测试清理](docs/stage19-scope.md)。下一步为阶段 20A，当前支持范围仍以 0.14.3 为准。
 
 ## 当前进度
 
@@ -22,7 +22,7 @@
 
 ## 本地开发
 
-要求 Node.js >= 22.13.0。已在 macOS / Node.js v24.14.1 验证 1065 项测试、类型检查、全仓 ESLint、构建；独立 60 个正确句和 30 个对照均符合人工固定答案。两种本地启动方式、1000 UTF-16 上限、计算预算、390px 手机、断网与隐私在阶段 18 复核；结果仅证明当前声明范围。
+要求 Node.js >= 22.13.0。阶段 19 已在 macOS / Node.js v24.14.1 完成工程与浏览器验证；测试清理及审查修复后 1422 项测试、类型检查和全仓 ESLint 通过；独立 60 个正确句和 30 个对照均符合人工固定答案。两种本地启动方式、1000 UTF-16 上限、计算预算、390px 手机、断网与隐私在阶段 18 复核；结果仅证明当前声明范围。
 
 ```sh
 npm ci
@@ -55,6 +55,12 @@ node --experimental-strip-types scripts/check-predicate-fixtures.mjs
 node --experimental-strip-types scripts/check-predicate-performance.mjs
 ```
 
+常规 `npm test` 可在源码导出或缺少历史提交的浅克隆中运行。以下独立命令核验历史来源，需要 Git 可执行文件及包含固定基线提交 `9708002c8606afaebfc5bd9b7b80537e20149cfe` 的仓库历史：
+
+```sh
+node scripts/check-historical-baselines.mjs
+```
+
 ## 技术栈
 
 - React 19、TypeScript、Vinext / Vite
@@ -79,6 +85,11 @@ node --experimental-strip-types scripts/check-predicate-performance.mjs
 - `tests/stage12-performance.test.mjs`：1000 字符边界、共享预算及耗尽降级
 - `tests/stage13.test.mjs` 至 `tests/stage18.test.mjs`：谓语扩展、协议、独立答案与预算回归
 - `tests/fixtures/predicate-development.json`、`predicate-acceptance.json`：人工固定开发与独立答案
+- `tests/stage19.test.mjs`、`tests/fixtures/lexicon-development.json`：未来人工答案完整性、范围和数量（不表示未来能力已实现）
+- `tests/fixtures/lexicon-migrations.json`：历史样例审查、原 fixture 与逐阶段迁移答案
+- `tests/baselines/`、`tests/helpers/historical-independence.mjs`：固定历史开发语料和独立性保护
+- `tests/baselines/original-fixtures/`、`tests/helpers/original-fixtures.mjs`：原始样例快照与冻结来源哈希校验；常规测试不依赖 Git 历史
+- `docs/lexicon-expansion-scope.md`、`docs/lexicon-database-design.md`：词汇与语法范围、SQLite/审核/快照协议
 - `tests/ui-smoke.mjs`、`tests/ui-stage12.mjs`、`tests/ui-predicate.mjs`：可选整体验收与浏览器性能回归
 - `app/layout.tsx`：应用元信息
 - `components/ui/`：基础界面组件

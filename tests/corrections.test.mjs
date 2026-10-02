@@ -39,10 +39,6 @@ for (const [rule, pairs] of groups) for (const [input, expected] of pairs) {
     assert.equal(parsed.status, 'complete'); assert.deepEqual(parsed.corrections, []);
     validateAnalysisResult(parsed);
   });
-  test(`correct control ${rule}: ${expected}`, () => {
-    const r = analyzeSentence(expected);
-    assert.equal(r.status, 'complete'); assert.deepEqual(r.corrections, []);
-  });
 }
 for (const input of [
   'She can be kind.', 'I can give her a book.', 'Go to school.', 'Did she go to school?',

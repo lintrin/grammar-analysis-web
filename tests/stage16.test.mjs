@@ -1,7 +1,7 @@
 import test from 'node:test';
-import { development, checkPredicate, checkBoundary } from './helpers/predicate-fixtures.mjs';
+import { development, distinctDevelopmentBoundaries, checkPredicate, checkBoundary } from './helpers/predicate-fixtures.mjs';
 for (const fixture of development.fixtures.filter(f => f.stage === 16)) test(`stage 16 ${fixture.id}`, () => checkPredicate(fixture));
-for (const fixture of development.boundaries.filter(f => f.stage === 16)) test(`stage 16 ${fixture.id}`, () => checkBoundary(fixture));
+for (const fixture of distinctDevelopmentBoundaries.filter(f => f.stage === 16)) test(`stage 16 ${fixture.id}`, () => checkBoundary(fixture));
 
 import assert from 'node:assert/strict';
 import { analyzeSentence } from '../lib/grammar.ts';

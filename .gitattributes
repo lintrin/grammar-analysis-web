@@ -1,0 +1,2 @@
+# Frozen source snapshots must retain the LF bytes used by their source hashes.
+tests/baselines/original-fixtures/*.json text eol=lf

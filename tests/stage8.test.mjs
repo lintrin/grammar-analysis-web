@@ -15,5 +15,4 @@ for (const { id, input, expected, afterApply } of plan.fixtures) {
       assert.throws(() => applyCorrection(r, r.corrections[0].id, next, 8), /过期/);
     }
   });
-  if (afterApply) test(`stage 8 correct control: ${id}`, () => compare(afterApply.input, afterApply, analyzeSentence(afterApply.input)));
 }

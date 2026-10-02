@@ -1,6 +1,7 @@
 import test from 'node:test';
+import { checkHistoricalIndependence } from './helpers/historical-independence.mjs';
 import assert from 'node:assert/strict';
-import { readFileSync, readdirSync } from 'node:fs';
+import { readFileSync } from 'node:fs';
 import { analyzeSentence, validateAnalysisResult, tokenize, RULE_VERSION } from '../lib/grammar.ts';
 import { analyzePurpose } from '../lib/grammar/purposes.ts';
 import { analyzeClauses } from '../lib/grammar/clauses.ts';
@@ -11,24 +12,8 @@ const acceptance = JSON.parse(readFileSync(new URL('./fixtures/predicate-accepta
 test('stage 18 has 60 independent fixed answers, ten per capability, and 30 new contrasts', () => {
   assert.equal(acceptance.ruleVersion, RULE_VERSION);
   assert.equal(acceptance.fixtures.length, 60); assert.equal(acceptance.boundaries.length, 30);
-  const normalize = input => input.toLowerCase().replace(/\s+/g,' ').trim();
-  const previous = new Set();
-  const collect = value => {
-    if (typeof value === 'string') previous.add(normalize(value));
-    else if (value && typeof value === 'object') Object.values(value).forEach(collect);
-  };
-  const dir = new URL('./fixtures/',import.meta.url);
-  for (const file of readdirSync(dir).filter(f => f.endsWith('.json') && f !== 'predicate-acceptance.json')) collect(JSON.parse(readFileSync(new URL(file,dir),'utf8')));
-  for (const file of [...readdirSync(new URL('./',import.meta.url)).filter(f => f.endsWith('.mjs') && !f.startsWith('stage18')).map(f => new URL(f,import.meta.url)),new URL('../lib/grammar/learning.ts',import.meta.url)]) {
-    for (const match of readFileSync(file,'utf8').matchAll(/(['"`])((?:\\.|(?!\1)[^\\])*)\1/g)) previous.add(normalize(match[2]));
-  }
   for (const category of ['progressive','perfect','passive','perfect-progressive','perfect-passive','progressive-passive']) assert.equal(acceptance.fixtures.filter(f => f.category === category).length,10);
-  const unique = new Set();
-  for (const fixture of [...acceptance.fixtures,...acceptance.boundaries]) {
-    const input = normalize(fixture.input);
-    assert.equal(previous.has(input),false, `Development input reused: ${fixture.input}`);
-    assert.equal(unique.has(input),false, `Duplicate independent input: ${fixture.input}`); unique.add(input);
-  }
+  checkHistoricalIndependence([...acceptance.fixtures, ...acceptance.boundaries], 18);
 });
 for (const fixture of acceptance.fixtures) test(`stage 18 ${fixture.id}`, () => checkPredicate(fixture));
 for (const fixture of acceptance.boundaries) test(`stage 18 ${fixture.id}`, () => checkBoundary(fixture));
