@@ -2,6 +2,20 @@
 
 第 1 至第 6 阶段已完成，交付范围是闭合词典及下述限定规则。后续复杂句扩展尚未开始。
 
+## 阶段 7：规则组织与下一轮样例（2026-10-02）
+
+状态 **✅ 已完成**，规则版本仍为 `0.4.0`。未启用否定句、can 疑问、an 短语或 it 宾语的新规则。
+
+- [阶段 8 范围](stage8-scope.md) 固定词汇、搭配、语序、标点、人工首音表、纠错上下文和 3 项旧边界迁移。`tests/fixtures/stage8.json` 固定 75 个输入（30 正确、25 错误、20 边界）及 25 个正确对照，包含分类、精确 UTF-16 区间、父子关系、编辑与重新分析预期。
+- `lib/grammar.ts` 保留全部公共入口；内部拆分为 protocol、tokens、vocabulary、phrases、simple、purposes、suggestions、context。候选隔离及 4000 次 SVOO 边界枚举预算保持原行为，原文 Token 引用不被重建。
+- `tsconfig.json` 开启 `allowImportingTsExtensions`，与现有 noEmit 及 Node 类型擦除测试方式配合，让模块路径同时用于测试和构建。
+- 环境：macOS、Node.js `v24.14.1`；使用现有依赖。`npm test`：245 项全部通过，未删除或改变旧断言。`npx tsc --noEmit`、`npx eslint lib/grammar.ts lib/grammar/*.ts scripts/check-stage8-fixtures.mjs tests/*.mjs`、`npm run build`、`git diff --check` 通过；新增文件另查尾随空白。构建保留既有代理和 Vinext 路由分类警告。
+- `node --experimental-strip-types scripts/check-stage8-fixtures.mjs`：75 项预期数据与 25 个对照的协议、位置、层级、编辑和数量检查通过。**这只验证未来答案自身，不证明 0.5.0 语法已经支持**；未来使用 `--implemented` 独立运行语法比对。
+- 临时保存拆分前模块，比对既有测试文本、手工未来样例与词汇/句型/人称/时间组合，共 2,132 个输入的全部结果字段完全一致；124 次修改建议应用结果一致。该比对证明此轮重构未改变这些输入的结果，不是新增英文覆盖率。
+- 使用现有 `tests/ui-smoke.mjs`、随环境提供的 Playwright 和 Chromium，启动 `127.0.0.1:5188` 后完成浏览器回归：输入、嵌套、不连续/隐含成分、纠错和双建议、过期失效、分析中编辑、连续点击、失败重试、键盘、断网零请求、无句子日志或持久存储、刷新不恢复输入均通过。390px 手机无横向溢出，分析和纠错截图已核对。首次沙箱启动受监听权限限制，获准后重跑通过；服务已停止。
+
+下一步为阶段 8，按固定清单实现新规则后再迁移旧边界预期、更新界面与规则版本。阶段 8–12 仍待开始。
+
 ## 当前新增支持与验收（0.4.0，2026-10-02）
 
 - 词典与规则版本均为 `0.4.0`，人工编写，沿用 MIT 许可证；新增 go/goes/went、can、to、school，不下载外部词典。
