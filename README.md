@@ -4,7 +4,7 @@
 
 阶段 1–12 ✅ 已完成，历史开发与验收见 [开发计划](docs/development-plan.md)、[后续开发计划](docs/follow-up-development-plan.md) 和 [阶段 12 验收](docs/stage12-scope.md)。本轮阶段 13–18 ✅ 已完成；实施记录见 [谓语扩展执行计划](docs/predicate-expansion-plan.md)。
 
-下一轮按阶段 19–25 规划本地 SQLite 数据库词典、审核快照与词汇扩容、实义 have、限定否定缩写及谓语纠错；范围、依赖和验收门槛见 [后续计划](docs/next-development-plan.md)。数据库维护词典，分析仍在浏览器内使用打包快照，输入句子不入库。计划已补充历史验收语料基线、词条修改后重新审核，以及规则与词典版本联合校验。阶段 19 ✅ 已完成：固定范围、数据库设计、416 个未来开发答案、历史开发基线和 65 项迁移；阶段交付的工程、开发/构建浏览器复核通过；测试去重及审查完整性修复后 1422 项全部通过，见 [阶段 19 验收与测试清理](docs/stage19-scope.md)。下一步为阶段 20A，当前支持范围仍以 0.14.3 为准。
+下一轮按阶段 19–25 规划本地 SQLite 数据库词典、审核快照与词汇扩容、实义 have、限定否定缩写及谓语纠错；范围、依赖和验收门槛见 [后续计划](docs/next-development-plan.md)。数据库维护词典，分析仍在浏览器内使用打包快照，输入句子不入库。计划已补充历史验收语料基线、词条修改后重新审核，以及规则与词典版本联合校验。阶段 19 ✅ 已完成：固定范围、数据库设计、416 个未来开发答案、历史开发基线和 65 项迁移；阶段交付的工程、开发/构建浏览器复核通过；测试去重及审查完整性修复后 1422 项全部通过，见 [阶段 19 验收与测试清理](docs/stage19-scope.md)。阶段 20A ✅ 已完成本地建库、旧词入库与维护命令，见 [20A 记录](docs/stage20a-scope.md)；当前支持范围仍以 0.14.3 为准。
 
 ## 当前进度
 
@@ -22,7 +22,7 @@
 
 ## 本地开发
 
-要求 Node.js >= 22.13.0。阶段 19 已在 macOS / Node.js v24.14.1 完成工程与浏览器验证；测试清理及审查修复后 1422 项测试、类型检查和全仓 ESLint 通过；独立 60 个正确句和 30 个对照均符合人工固定答案。两种本地启动方式、1000 UTF-16 上限、计算预算、390px 手机、断网与隐私在阶段 18 复核；结果仅证明当前声明范围。
+要求 Node.js >= 22.13.0。阶段 19 已在 macOS / Node.js v24.14.1 完成工程与浏览器验证；阶段 20A 审查修复后 1446 项测试、类型检查、全仓 ESLint、构建及开发/构建两种服务浏览器回归通过；独立 60 个正确句和 30 个对照均符合人工固定答案。两种本地启动方式、1000 UTF-16 上限、计算预算、390px 手机、断网与隐私在阶段 18 复核；结果仅证明当前声明范围。
 
 ```sh
 npm ci
@@ -61,6 +61,32 @@ node --experimental-strip-types scripts/check-predicate-performance.mjs
 node scripts/check-historical-baselines.mjs
 ```
 
+## 本地词典维护
+
+Node 内置 `node:sqlite` 在 Node >=22.13 可用，本次验证版本为 24.14.1；目前仍会显示 experimental 提示。工作库放在忽略目录 `.lexicon/`，不需要 D1 绑定或网页服务。
+
+```sh
+npm run lexicon -- init
+npm run lexicon -- import --file data/lexicon/seed.json
+npm run lexicon -- validate
+npm run lexicon -- query --surface her
+npm run lexicon -- query --lemma give --pos verb
+npm run lexicon -- show --revision verb:lexical:give:r1
+```
+
+`init` / `migrate` 按 Drizzle journal 执行 SQL 并核对已应用迁移的 SHA-256；重复执行无操作。种子完整迁移旧人工词典，共 91 个词条、161 条词形；同 ID 同内容重复导入无操作，冲突整批回滚。数据库插入触发器同时阻止 REPLACE 覆盖冻结记录，保护不依赖 recursive_triggers 设置。普通导入只能创建草稿，拒绝审核及发布字段。
+
+修改词条时，先从 `show` 输出提取完整 `entry` 对象保存为 JSON，保留 `id`，将 `revisionId` 改为新 ID，人工修改属性、词形或搭配；然后执行：
+
+```sh
+npm run lexicon -- revise --from verb:lexical:give:r1 --file /path/to/replacement-entry.json
+npm run lexicon -- validate
+```
+
+`revise` 创建下一版草稿，旧修订保留；不接受局部补丁或继承审核。新增词条使用 `{ sources, entries }` 导入格式，可参考种子。`--db <path>` 可指定独立工作库；导入、查询、修订和校验要求库已初始化。删除 `.lexicon/` 后可由迁移及种子重建初始草稿库。
+
+本阶段仅提供维护工作库。审核、不可变发布和发布重建在 20B 实施，客户端生成及分析器接入在 20C 实施。当前网页仍读取人工 TypeScript 词典，构建与分析不读取 SQLite；数据库没有输入句子、分析结果或历史记录表。完整验收见 [阶段 20A](docs/stage20a-scope.md)。
+
 ## 技术栈
 
 - React 19、TypeScript、Vinext / Vite
@@ -69,6 +95,10 @@ node scripts/check-historical-baselines.mjs
 
 ## 项目结构
 
+- `db/schema.ts`、`drizzle/`：SQLite 词典模型、生成迁移与冻结触发器
+- `data/lexicon/seed.json`：完整旧人工词典的入库种子
+- `scripts/lexicon.mjs`、`scripts/lexicon/`：本地维护 CLI、严格校验与事务
+- `tests/stage20a.test.mjs`：建库、种子覆盖、维护和拒绝路径回归
 - `app/page.tsx`：工作台界面与交互
 - `app/globals.css`：视觉样式与响应式布局
 - `lib/grammar.ts`：同步分析与安全纠错公共入口

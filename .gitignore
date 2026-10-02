@@ -52,3 +52,6 @@ next-env.d.ts
 *.tsbuildinfo
 *.tar.gz
 *.tgz
+
+# Local lexicon maintenance database; rebuild from tracked seed/release data.
+/.lexicon/

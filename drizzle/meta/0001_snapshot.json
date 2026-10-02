@@ -1,0 +1,796 @@
+{
+  "id": "e6134db2-2ad6-474d-9624-a41a2307a601",
+  "prevId": "94b90d6a-ad73-4d8c-aa12-4118c1d4eaed",
+  "version": "6",
+  "dialect": "sqlite",
+  "tables": {
+    "lexicon_entries": {
+      "name": "lexicon_entries",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {
+        "entry_id_nonempty": {
+          "name": "entry_id_nonempty",
+          "value": "\"lexicon_entries\".\"id\" <> ''"
+        }
+      }
+    },
+    "lexicon_forms": {
+      "name": "lexicon_forms",
+      "columns": {
+        "revision_id": {
+          "name": "revision_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "form_kind": {
+          "name": "form_kind",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "surface": {
+          "name": "surface",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "initial_sound": {
+          "name": "initial_sound",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "lexicon_forms_revision_id_lexicon_revisions_id_fk": {
+          "name": "lexicon_forms_revision_id_lexicon_revisions_id_fk",
+          "tableFrom": "lexicon_forms",
+          "columnsFrom": [
+            "revision_id"
+          ],
+          "tableTo": "lexicon_revisions",
+          "columnsTo": [
+            "id"
+          ],
+          "onUpdate": "no action",
+          "onDelete": "no action"
+        }
+      },
+      "compositePrimaryKeys": {
+        "lexicon_forms_revision_id_form_kind_pk": {
+          "columns": [
+            "revision_id",
+            "form_kind"
+          ],
+          "name": "lexicon_forms_revision_id_form_kind_pk"
+        }
+      },
+      "uniqueConstraints": {},
+      "checkConstraints": {
+        "form_kind_enum": {
+          "name": "form_kind_enum",
+          "value": "\"lexicon_forms\".\"form_kind\" IN ('singular','plural','positive','base','third','past','participle','progressive','marker')"
+        },
+        "form_surface": {
+          "name": "form_surface",
+          "value": "\"lexicon_forms\".\"surface\" <> '' AND \"lexicon_forms\".\"surface\" NOT GLOB '*[^a-z]*'"
+        },
+        "form_sound": {
+          "name": "form_sound",
+          "value": "\"lexicon_forms\".\"initial_sound\" IS NULL OR \"lexicon_forms\".\"initial_sound\" IN ('vowel','consonant')"
+        }
+      }
+    },
+    "lexicon_frames": {
+      "name": "lexicon_frames",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "revision_id": {
+          "name": "revision_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "pattern": {
+          "name": "pattern",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "recipient": {
+          "name": "recipient",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "complement": {
+          "name": "complement",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "allow_progressive": {
+          "name": "allow_progressive",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "allow_perfect": {
+          "name": "allow_perfect",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "passive_promotion": {
+          "name": "passive_promotion",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "allowed_purposes_json": {
+          "name": "allowed_purposes_json",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "allowed_polarities_json": {
+          "name": "allowed_polarities_json",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "fixed_tail": {
+          "name": "fixed_tail",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "lexicon_frames_revision_id_lexicon_revisions_id_fk": {
+          "name": "lexicon_frames_revision_id_lexicon_revisions_id_fk",
+          "tableFrom": "lexicon_frames",
+          "columnsFrom": [
+            "revision_id"
+          ],
+          "tableTo": "lexicon_revisions",
+          "columnsTo": [
+            "id"
+          ],
+          "onUpdate": "no action",
+          "onDelete": "no action"
+        }
+      },
+      "compositePrimaryKeys": {
+        "lexicon_frames_revision_id_id_pk": {
+          "columns": [
+            "revision_id",
+            "id"
+          ],
+          "name": "lexicon_frames_revision_id_id_pk"
+        }
+      },
+      "uniqueConstraints": {},
+      "checkConstraints": {
+        "frame_id": {
+          "name": "frame_id",
+          "value": "\"lexicon_frames\".\"id\" <> ''"
+        },
+        "frame_pattern": {
+          "name": "frame_pattern",
+          "value": "\"lexicon_frames\".\"pattern\" IN ('SV','SVO','SVC','SVOO','SVOC')"
+        },
+        "frame_flags": {
+          "name": "frame_flags",
+          "value": "\"lexicon_frames\".\"allow_progressive\" IN (0,1) AND \"lexicon_frames\".\"allow_perfect\" IN (0,1)"
+        },
+        "frame_recipient": {
+          "name": "frame_recipient",
+          "value": "\"lexicon_frames\".\"recipient\" IS NULL OR \"lexicon_frames\".\"recipient\" = 'person'"
+        },
+        "frame_complement": {
+          "name": "frame_complement",
+          "value": "\"lexicon_frames\".\"complement\" IS NULL OR \"lexicon_frames\".\"complement\" IN ('single-adjective','noun-or-single-adjective')"
+        },
+        "frame_passive": {
+          "name": "frame_passive",
+          "value": "\"lexicon_frames\".\"passive_promotion\" IS NULL OR \"lexicon_frames\".\"passive_promotion\" IN ('direct-object','direct-object-or-recipient')"
+        },
+        "frame_tail": {
+          "name": "frame_tail",
+          "value": "\"lexicon_frames\".\"fixed_tail\" IS NULL OR \"lexicon_frames\".\"fixed_tail\" = 'to school'"
+        },
+        "frame_shape": {
+          "name": "frame_shape",
+          "value": "(\"lexicon_frames\".\"pattern\" = 'SVOO') = (\"lexicon_frames\".\"recipient\" IS NOT NULL) AND\n    (\"lexicon_frames\".\"pattern\" IN ('SVC','SVOC')) = (\"lexicon_frames\".\"complement\" IS NOT NULL) AND\n    (\"lexicon_frames\".\"passive_promotion\" IS NULL OR (\"lexicon_frames\".\"pattern\" = 'SVO' AND \"lexicon_frames\".\"passive_promotion\" = 'direct-object') OR (\"lexicon_frames\".\"pattern\" = 'SVOO' AND \"lexicon_frames\".\"passive_promotion\" = 'direct-object-or-recipient')) AND\n    (\"lexicon_frames\".\"fixed_tail\" IS NULL OR \"lexicon_frames\".\"pattern\" = 'SV')"
+        },
+        "frame_json": {
+          "name": "frame_json",
+          "value": "json_valid(\"lexicon_frames\".\"allowed_purposes_json\") AND json_valid(\"lexicon_frames\".\"allowed_polarities_json\")"
+        }
+      }
+    },
+    "lexicon_release_items": {
+      "name": "lexicon_release_items",
+      "columns": {
+        "lexicon_version": {
+          "name": "lexicon_version",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "entry_id": {
+          "name": "entry_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "revision_id": {
+          "name": "revision_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "review_id": {
+          "name": "review_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "frozen_content_json": {
+          "name": "frozen_content_json",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "content_hash": {
+          "name": "content_hash",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "lexicon_release_items_lexicon_version_lexicon_releases_lexicon_version_fk": {
+          "name": "lexicon_release_items_lexicon_version_lexicon_releases_lexicon_version_fk",
+          "tableFrom": "lexicon_release_items",
+          "columnsFrom": [
+            "lexicon_version"
+          ],
+          "tableTo": "lexicon_releases",
+          "columnsTo": [
+            "lexicon_version"
+          ],
+          "onUpdate": "no action",
+          "onDelete": "no action"
+        },
+        "lexicon_release_items_entry_id_lexicon_entries_id_fk": {
+          "name": "lexicon_release_items_entry_id_lexicon_entries_id_fk",
+          "tableFrom": "lexicon_release_items",
+          "columnsFrom": [
+            "entry_id"
+          ],
+          "tableTo": "lexicon_entries",
+          "columnsTo": [
+            "id"
+          ],
+          "onUpdate": "no action",
+          "onDelete": "no action"
+        },
+        "lexicon_release_items_revision_id_lexicon_revisions_id_fk": {
+          "name": "lexicon_release_items_revision_id_lexicon_revisions_id_fk",
+          "tableFrom": "lexicon_release_items",
+          "columnsFrom": [
+            "revision_id"
+          ],
+          "tableTo": "lexicon_revisions",
+          "columnsTo": [
+            "id"
+          ],
+          "onUpdate": "no action",
+          "onDelete": "no action"
+        },
+        "lexicon_release_items_review_id_lexicon_reviews_id_fk": {
+          "name": "lexicon_release_items_review_id_lexicon_reviews_id_fk",
+          "tableFrom": "lexicon_release_items",
+          "columnsFrom": [
+            "review_id"
+          ],
+          "tableTo": "lexicon_reviews",
+          "columnsTo": [
+            "id"
+          ],
+          "onUpdate": "no action",
+          "onDelete": "no action"
+        }
+      },
+      "compositePrimaryKeys": {
+        "lexicon_release_items_lexicon_version_entry_id_pk": {
+          "columns": [
+            "lexicon_version",
+            "entry_id"
+          ],
+          "name": "lexicon_release_items_lexicon_version_entry_id_pk"
+        }
+      },
+      "uniqueConstraints": {},
+      "checkConstraints": {
+        "release_content": {
+          "name": "release_content",
+          "value": "json_valid(\"lexicon_release_items\".\"frozen_content_json\")"
+        },
+        "release_item_hash": {
+          "name": "release_item_hash",
+          "value": "length(\"lexicon_release_items\".\"content_hash\") = 64 AND \"lexicon_release_items\".\"content_hash\" NOT GLOB '*[^0-9a-f]*'"
+        }
+      }
+    },
+    "lexicon_releases": {
+      "name": "lexicon_releases",
+      "columns": {
+        "lexicon_version": {
+          "name": "lexicon_version",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "format_version": {
+          "name": "format_version",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "lexicon_hash": {
+          "name": "lexicon_hash",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "published_at": {
+          "name": "published_at",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {
+        "release_version": {
+          "name": "release_version",
+          "value": "\"lexicon_releases\".\"lexicon_version\" <> '' AND \"lexicon_releases\".\"format_version\" = 1"
+        },
+        "release_hash": {
+          "name": "release_hash",
+          "value": "length(\"lexicon_releases\".\"lexicon_hash\") = 64 AND \"lexicon_releases\".\"lexicon_hash\" NOT GLOB '*[^0-9a-f]*'"
+        }
+      }
+    },
+    "lexicon_reviews": {
+      "name": "lexicon_reviews",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "revision_id": {
+          "name": "revision_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "content_hash": {
+          "name": "content_hash",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "decision": {
+          "name": "decision",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "reviewer": {
+          "name": "reviewer",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "reviewed_at": {
+          "name": "reviewed_at",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "lexicon_reviews_revision_id_lexicon_revisions_id_fk": {
+          "name": "lexicon_reviews_revision_id_lexicon_revisions_id_fk",
+          "tableFrom": "lexicon_reviews",
+          "columnsFrom": [
+            "revision_id"
+          ],
+          "tableTo": "lexicon_revisions",
+          "columnsTo": [
+            "id"
+          ],
+          "onUpdate": "no action",
+          "onDelete": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {
+        "review_decision": {
+          "name": "review_decision",
+          "value": "\"lexicon_reviews\".\"decision\" IN ('approve','reject')"
+        },
+        "review_strings": {
+          "name": "review_strings",
+          "value": "\"lexicon_reviews\".\"id\" <> '' AND \"lexicon_reviews\".\"reviewer\" <> ''"
+        },
+        "review_hash": {
+          "name": "review_hash",
+          "value": "length(\"lexicon_reviews\".\"content_hash\") = 64 AND \"lexicon_reviews\".\"content_hash\" NOT GLOB '*[^0-9a-f]*'"
+        }
+      }
+    },
+    "lexicon_revision_sources": {
+      "name": "lexicon_revision_sources",
+      "columns": {
+        "revision_id": {
+          "name": "revision_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "source_id": {
+          "name": "source_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "lexicon_revision_sources_revision_id_lexicon_revisions_id_fk": {
+          "name": "lexicon_revision_sources_revision_id_lexicon_revisions_id_fk",
+          "tableFrom": "lexicon_revision_sources",
+          "columnsFrom": [
+            "revision_id"
+          ],
+          "tableTo": "lexicon_revisions",
+          "columnsTo": [
+            "id"
+          ],
+          "onUpdate": "no action",
+          "onDelete": "no action"
+        },
+        "lexicon_revision_sources_source_id_lexicon_sources_id_fk": {
+          "name": "lexicon_revision_sources_source_id_lexicon_sources_id_fk",
+          "tableFrom": "lexicon_revision_sources",
+          "columnsFrom": [
+            "source_id"
+          ],
+          "tableTo": "lexicon_sources",
+          "columnsTo": [
+            "id"
+          ],
+          "onUpdate": "no action",
+          "onDelete": "no action"
+        }
+      },
+      "compositePrimaryKeys": {
+        "lexicon_revision_sources_revision_id_source_id_pk": {
+          "columns": [
+            "revision_id",
+            "source_id"
+          ],
+          "name": "lexicon_revision_sources_revision_id_source_id_pk"
+        }
+      },
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "lexicon_revisions": {
+      "name": "lexicon_revisions",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "entry_id": {
+          "name": "entry_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "revision_number": {
+          "name": "revision_number",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "lemma": {
+          "name": "lemma",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "part_of_speech": {
+          "name": "part_of_speech",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "sense": {
+          "name": "sense",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "status": {
+          "name": "status",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "'draft'"
+        },
+        "person": {
+          "name": "person",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "initial_sound": {
+          "name": "initial_sound",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "adjective_uses_json": {
+          "name": "adjective_uses_json",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "marker_kind": {
+          "name": "marker_kind",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "attributes_json": {
+          "name": "attributes_json",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "content_hash": {
+          "name": "content_hash",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        }
+      },
+      "indexes": {
+        "revision_entry_number": {
+          "name": "revision_entry_number",
+          "columns": [
+            "entry_id",
+            "revision_number"
+          ],
+          "isUnique": true
+        }
+      },
+      "foreignKeys": {
+        "lexicon_revisions_entry_id_lexicon_entries_id_fk": {
+          "name": "lexicon_revisions_entry_id_lexicon_entries_id_fk",
+          "tableFrom": "lexicon_revisions",
+          "columnsFrom": [
+            "entry_id"
+          ],
+          "tableTo": "lexicon_entries",
+          "columnsTo": [
+            "id"
+          ],
+          "onUpdate": "no action",
+          "onDelete": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {
+        "revision_number_positive": {
+          "name": "revision_number_positive",
+          "value": "\"lexicon_revisions\".\"revision_number\" > 0"
+        },
+        "revision_strings": {
+          "name": "revision_strings",
+          "value": "\"lexicon_revisions\".\"id\" <> '' AND \"lexicon_revisions\".\"sense\" <> '' AND \"lexicon_revisions\".\"lemma\" <> '' AND \"lexicon_revisions\".\"lemma\" NOT GLOB '*[^a-z]*'"
+        },
+        "revision_pos": {
+          "name": "revision_pos",
+          "value": "\"lexicon_revisions\".\"part_of_speech\" IN ('noun','adjective','verb','function-word')"
+        },
+        "revision_status": {
+          "name": "revision_status",
+          "value": "\"lexicon_revisions\".\"status\" IN ('draft','approved','rejected')"
+        },
+        "revision_person": {
+          "name": "revision_person",
+          "value": "\"lexicon_revisions\".\"person\" IS NULL OR \"lexicon_revisions\".\"person\" IN (0,1)"
+        },
+        "revision_sound": {
+          "name": "revision_sound",
+          "value": "\"lexicon_revisions\".\"initial_sound\" IS NULL OR \"lexicon_revisions\".\"initial_sound\" IN ('vowel','consonant')"
+        },
+        "revision_marker": {
+          "name": "revision_marker",
+          "value": "\"lexicon_revisions\".\"marker_kind\" IS NULL OR \"lexicon_revisions\".\"marker_kind\" IN ('determiner','subject-pronoun','object-pronoun','auxiliary','adverb','connector','marker')"
+        },
+        "revision_json": {
+          "name": "revision_json",
+          "value": "json_valid(\"lexicon_revisions\".\"attributes_json\") AND (\"lexicon_revisions\".\"adjective_uses_json\" IS NULL OR json_valid(\"lexicon_revisions\".\"adjective_uses_json\"))"
+        },
+        "revision_hash": {
+          "name": "revision_hash",
+          "value": "length(\"lexicon_revisions\".\"content_hash\") = 64 AND \"lexicon_revisions\".\"content_hash\" NOT GLOB '*[^0-9a-f]*'"
+        }
+      }
+    },
+    "lexicon_sources": {
+      "name": "lexicon_sources",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "version": {
+          "name": "version",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "title": {
+          "name": "title",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "license": {
+          "name": "license",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "attribution": {
+          "name": "attribution",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "frozen_hash": {
+          "name": "frozen_hash",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {
+        "source_strings": {
+          "name": "source_strings",
+          "value": "\"lexicon_sources\".\"id\" <> '' AND \"lexicon_sources\".\"version\" <> '' AND \"lexicon_sources\".\"title\" <> '' AND \"lexicon_sources\".\"license\" <> '' AND \"lexicon_sources\".\"attribution\" <> ''"
+        },
+        "source_hash": {
+          "name": "source_hash",
+          "value": "length(\"lexicon_sources\".\"frozen_hash\") = 64 AND \"lexicon_sources\".\"frozen_hash\" NOT GLOB '*[^0-9a-f]*'"
+        }
+      }
+    }
+  },
+  "views": {},
+  "enums": {},
+  "_meta": {
+    "columns": {},
+    "schemas": {},
+    "tables": {}
+  },
+  "internal": {
+    "indexes": {}
+  }
+}

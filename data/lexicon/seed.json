@@ -1,0 +1,2859 @@
+{
+  "sources": [
+    {
+      "id": "clause-manual-0.14.3",
+      "version": "0.14.3",
+      "title": "Clause audited vocabulary.ts",
+      "license": "MIT",
+      "attribution": "Copyright (c) 2026 lintrin; project-maintained manual vocabulary"
+    }
+  ],
+  "entries": [
+    {
+      "id": "adjective:quality:beautiful",
+      "revisionId": "adjective:quality:beautiful:r1",
+      "lemma": "beautiful",
+      "partOfSpeech": "adjective",
+      "sense": "quality",
+      "attributes": {
+        "initialSound": "consonant",
+        "uses": [
+          "attribute",
+          "subject-complement",
+          "object-complement"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "positive",
+          "surface": "beautiful",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "adjective:quality:big",
+      "revisionId": "adjective:quality:big:r1",
+      "lemma": "big",
+      "partOfSpeech": "adjective",
+      "sense": "quality",
+      "attributes": {
+        "initialSound": "consonant",
+        "uses": [
+          "attribute",
+          "subject-complement",
+          "object-complement"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "positive",
+          "surface": "big",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "adjective:quality:good",
+      "revisionId": "adjective:quality:good:r1",
+      "lemma": "good",
+      "partOfSpeech": "adjective",
+      "sense": "quality",
+      "attributes": {
+        "initialSound": "consonant",
+        "uses": [
+          "attribute",
+          "subject-complement",
+          "object-complement"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "positive",
+          "surface": "good",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "adjective:quality:kind",
+      "revisionId": "adjective:quality:kind:r1",
+      "lemma": "kind",
+      "partOfSpeech": "adjective",
+      "sense": "quality",
+      "attributes": {
+        "initialSound": "consonant",
+        "uses": [
+          "attribute",
+          "subject-complement",
+          "object-complement"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "positive",
+          "surface": "kind",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "adjective:quality:new",
+      "revisionId": "adjective:quality:new:r1",
+      "lemma": "new",
+      "partOfSpeech": "adjective",
+      "sense": "quality",
+      "attributes": {
+        "initialSound": "consonant",
+        "uses": [
+          "attribute",
+          "subject-complement",
+          "object-complement"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "positive",
+          "surface": "new",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "adjective:quality:old",
+      "revisionId": "adjective:quality:old:r1",
+      "lemma": "old",
+      "partOfSpeech": "adjective",
+      "sense": "quality",
+      "attributes": {
+        "initialSound": "vowel",
+        "uses": [
+          "attribute",
+          "subject-complement",
+          "object-complement"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "positive",
+          "surface": "old",
+          "initialSound": "vowel"
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "adjective:quality:small",
+      "revisionId": "adjective:quality:small:r1",
+      "lemma": "small",
+      "partOfSpeech": "adjective",
+      "sense": "quality",
+      "attributes": {
+        "initialSound": "consonant",
+        "uses": [
+          "attribute",
+          "subject-complement",
+          "object-complement"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "positive",
+          "surface": "small",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "adjective:quality:useful",
+      "revisionId": "adjective:quality:useful:r1",
+      "lemma": "useful",
+      "partOfSpeech": "adjective",
+      "sense": "quality",
+      "attributes": {
+        "initialSound": "consonant",
+        "uses": [
+          "attribute",
+          "subject-complement",
+          "object-complement"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "positive",
+          "surface": "useful",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "adjective:quality:young",
+      "revisionId": "adjective:quality:young:r1",
+      "lemma": "young",
+      "partOfSpeech": "adjective",
+      "sense": "quality",
+      "attributes": {
+        "initialSound": "consonant",
+        "uses": [
+          "attribute",
+          "subject-complement",
+          "object-complement"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "positive",
+          "surface": "young",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:adverb:today",
+      "revisionId": "function-word:adverb:today:r1",
+      "lemma": "today",
+      "partOfSpeech": "function-word",
+      "sense": "adverb",
+      "attributes": {
+        "markerKind": "adverb",
+        "uses": [
+          "time"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "today",
+          "initialSound": null
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:adverb:yesterday",
+      "revisionId": "function-word:adverb:yesterday:r1",
+      "lemma": "yesterday",
+      "partOfSpeech": "function-word",
+      "sense": "adverb",
+      "attributes": {
+        "markerKind": "adverb",
+        "uses": [
+          "time"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "yesterday",
+          "initialSound": null
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:auxiliary:am",
+      "revisionId": "function-word:auxiliary:am:r1",
+      "lemma": "am",
+      "partOfSpeech": "function-word",
+      "sense": "auxiliary",
+      "attributes": {
+        "markerKind": "auxiliary",
+        "uses": [
+          "finite-be"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "am",
+          "initialSound": null
+        }
+      ],
+      "frames": [
+        {
+          "id": "primary",
+          "pattern": "SVC",
+          "recipient": null,
+          "complement": "noun-or-single-adjective",
+          "allowProgressive": false,
+          "allowPerfect": true,
+          "passivePromotion": null,
+          "allowedPurposes": [
+            "declarative",
+            "interrogative",
+            "imperative",
+            "exclamatory"
+          ],
+          "allowedPolarities": [
+            "positive",
+            "negative"
+          ],
+          "fixedTail": null
+        }
+      ],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:auxiliary:are",
+      "revisionId": "function-word:auxiliary:are:r1",
+      "lemma": "are",
+      "partOfSpeech": "function-word",
+      "sense": "auxiliary",
+      "attributes": {
+        "markerKind": "auxiliary",
+        "uses": [
+          "finite-be"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "are",
+          "initialSound": null
+        }
+      ],
+      "frames": [
+        {
+          "id": "primary",
+          "pattern": "SVC",
+          "recipient": null,
+          "complement": "noun-or-single-adjective",
+          "allowProgressive": false,
+          "allowPerfect": true,
+          "passivePromotion": null,
+          "allowedPurposes": [
+            "declarative",
+            "interrogative",
+            "imperative",
+            "exclamatory"
+          ],
+          "allowedPolarities": [
+            "positive",
+            "negative"
+          ],
+          "fixedTail": null
+        }
+      ],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:auxiliary:be",
+      "revisionId": "function-word:auxiliary:be:r1",
+      "lemma": "be",
+      "partOfSpeech": "function-word",
+      "sense": "auxiliary",
+      "attributes": {
+        "markerKind": "auxiliary",
+        "uses": [
+          "be-bridge"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "be",
+          "initialSound": null
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:auxiliary:been",
+      "revisionId": "function-word:auxiliary:been:r1",
+      "lemma": "been",
+      "partOfSpeech": "function-word",
+      "sense": "auxiliary",
+      "attributes": {
+        "markerKind": "auxiliary",
+        "uses": [
+          "be-bridge"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "been",
+          "initialSound": null
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:auxiliary:being",
+      "revisionId": "function-word:auxiliary:being:r1",
+      "lemma": "being",
+      "partOfSpeech": "function-word",
+      "sense": "auxiliary",
+      "attributes": {
+        "markerKind": "auxiliary",
+        "uses": [
+          "be-bridge"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "being",
+          "initialSound": null
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:auxiliary:can",
+      "revisionId": "function-word:auxiliary:can:r1",
+      "lemma": "can",
+      "partOfSpeech": "function-word",
+      "sense": "auxiliary",
+      "attributes": {
+        "markerKind": "auxiliary",
+        "uses": [
+          "modal-can"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "can",
+          "initialSound": null
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:auxiliary:did",
+      "revisionId": "function-word:auxiliary:did:r1",
+      "lemma": "did",
+      "partOfSpeech": "function-word",
+      "sense": "auxiliary",
+      "attributes": {
+        "markerKind": "auxiliary",
+        "uses": [
+          "do-auxiliary"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "did",
+          "initialSound": null
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:auxiliary:do",
+      "revisionId": "function-word:auxiliary:do:r1",
+      "lemma": "do",
+      "partOfSpeech": "function-word",
+      "sense": "auxiliary",
+      "attributes": {
+        "markerKind": "auxiliary",
+        "uses": [
+          "do-auxiliary"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "do",
+          "initialSound": null
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:auxiliary:does",
+      "revisionId": "function-word:auxiliary:does:r1",
+      "lemma": "does",
+      "partOfSpeech": "function-word",
+      "sense": "auxiliary",
+      "attributes": {
+        "markerKind": "auxiliary",
+        "uses": [
+          "do-auxiliary"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "does",
+          "initialSound": null
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:auxiliary:had",
+      "revisionId": "function-word:auxiliary:had:r1",
+      "lemma": "had",
+      "partOfSpeech": "function-word",
+      "sense": "auxiliary",
+      "attributes": {
+        "markerKind": "auxiliary",
+        "uses": [
+          "perfect-auxiliary"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "had",
+          "initialSound": null
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:auxiliary:has",
+      "revisionId": "function-word:auxiliary:has:r1",
+      "lemma": "has",
+      "partOfSpeech": "function-word",
+      "sense": "auxiliary",
+      "attributes": {
+        "markerKind": "auxiliary",
+        "uses": [
+          "perfect-auxiliary"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "has",
+          "initialSound": null
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:auxiliary:have",
+      "revisionId": "function-word:auxiliary:have:r1",
+      "lemma": "have",
+      "partOfSpeech": "function-word",
+      "sense": "auxiliary",
+      "attributes": {
+        "markerKind": "auxiliary",
+        "uses": [
+          "perfect-auxiliary"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "have",
+          "initialSound": null
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:auxiliary:is",
+      "revisionId": "function-word:auxiliary:is:r1",
+      "lemma": "is",
+      "partOfSpeech": "function-word",
+      "sense": "auxiliary",
+      "attributes": {
+        "markerKind": "auxiliary",
+        "uses": [
+          "finite-be"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "is",
+          "initialSound": null
+        }
+      ],
+      "frames": [
+        {
+          "id": "primary",
+          "pattern": "SVC",
+          "recipient": null,
+          "complement": "noun-or-single-adjective",
+          "allowProgressive": false,
+          "allowPerfect": true,
+          "passivePromotion": null,
+          "allowedPurposes": [
+            "declarative",
+            "interrogative",
+            "imperative",
+            "exclamatory"
+          ],
+          "allowedPolarities": [
+            "positive",
+            "negative"
+          ],
+          "fixedTail": null
+        }
+      ],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:auxiliary:was",
+      "revisionId": "function-word:auxiliary:was:r1",
+      "lemma": "was",
+      "partOfSpeech": "function-word",
+      "sense": "auxiliary",
+      "attributes": {
+        "markerKind": "auxiliary",
+        "uses": [
+          "finite-be"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "was",
+          "initialSound": null
+        }
+      ],
+      "frames": [
+        {
+          "id": "primary",
+          "pattern": "SVC",
+          "recipient": null,
+          "complement": "noun-or-single-adjective",
+          "allowProgressive": false,
+          "allowPerfect": true,
+          "passivePromotion": null,
+          "allowedPurposes": [
+            "declarative",
+            "interrogative",
+            "imperative",
+            "exclamatory"
+          ],
+          "allowedPolarities": [
+            "positive",
+            "negative"
+          ],
+          "fixedTail": null
+        }
+      ],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:auxiliary:were",
+      "revisionId": "function-word:auxiliary:were:r1",
+      "lemma": "were",
+      "partOfSpeech": "function-word",
+      "sense": "auxiliary",
+      "attributes": {
+        "markerKind": "auxiliary",
+        "uses": [
+          "finite-be"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "were",
+          "initialSound": null
+        }
+      ],
+      "frames": [
+        {
+          "id": "primary",
+          "pattern": "SVC",
+          "recipient": null,
+          "complement": "noun-or-single-adjective",
+          "allowProgressive": false,
+          "allowPerfect": true,
+          "passivePromotion": null,
+          "allowedPurposes": [
+            "declarative",
+            "interrogative",
+            "imperative",
+            "exclamatory"
+          ],
+          "allowedPolarities": [
+            "positive",
+            "negative"
+          ],
+          "fixedTail": null
+        }
+      ],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:connector:and",
+      "revisionId": "function-word:connector:and:r1",
+      "lemma": "and",
+      "partOfSpeech": "function-word",
+      "sense": "connector",
+      "attributes": {
+        "markerKind": "connector",
+        "uses": [
+          "coordination"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "and",
+          "initialSound": null
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:connector:because",
+      "revisionId": "function-word:connector:because:r1",
+      "lemma": "because",
+      "partOfSpeech": "function-word",
+      "sense": "connector",
+      "attributes": {
+        "markerKind": "connector",
+        "uses": [
+          "subordination"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "because",
+          "initialSound": null
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:connector:but",
+      "revisionId": "function-word:connector:but:r1",
+      "lemma": "but",
+      "partOfSpeech": "function-word",
+      "sense": "connector",
+      "attributes": {
+        "markerKind": "connector",
+        "uses": [
+          "coordination"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "but",
+          "initialSound": null
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:connector:if",
+      "revisionId": "function-word:connector:if:r1",
+      "lemma": "if",
+      "partOfSpeech": "function-word",
+      "sense": "connector",
+      "attributes": {
+        "markerKind": "connector",
+        "uses": [
+          "subordination"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "if",
+          "initialSound": null
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:determiner:a",
+      "revisionId": "function-word:determiner:a:r1",
+      "lemma": "a",
+      "partOfSpeech": "function-word",
+      "sense": "determiner",
+      "attributes": {
+        "markerKind": "determiner",
+        "uses": [
+          "article"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "a",
+          "initialSound": null
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:determiner:an",
+      "revisionId": "function-word:determiner:an:r1",
+      "lemma": "an",
+      "partOfSpeech": "function-word",
+      "sense": "determiner",
+      "attributes": {
+        "markerKind": "determiner",
+        "uses": [
+          "article"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "an",
+          "initialSound": null
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:determiner:her",
+      "revisionId": "function-word:determiner:her:r1",
+      "lemma": "her",
+      "partOfSpeech": "function-word",
+      "sense": "determiner",
+      "attributes": {
+        "markerKind": "determiner",
+        "uses": [
+          "possessive"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "her",
+          "initialSound": null
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:determiner:his",
+      "revisionId": "function-word:determiner:his:r1",
+      "lemma": "his",
+      "partOfSpeech": "function-word",
+      "sense": "determiner",
+      "attributes": {
+        "markerKind": "determiner",
+        "uses": [
+          "possessive"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "his",
+          "initialSound": null
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:determiner:my",
+      "revisionId": "function-word:determiner:my:r1",
+      "lemma": "my",
+      "partOfSpeech": "function-word",
+      "sense": "determiner",
+      "attributes": {
+        "markerKind": "determiner",
+        "uses": [
+          "possessive"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "my",
+          "initialSound": null
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:determiner:our",
+      "revisionId": "function-word:determiner:our:r1",
+      "lemma": "our",
+      "partOfSpeech": "function-word",
+      "sense": "determiner",
+      "attributes": {
+        "markerKind": "determiner",
+        "uses": [
+          "possessive"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "our",
+          "initialSound": null
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:determiner:that",
+      "revisionId": "function-word:determiner:that:r1",
+      "lemma": "that",
+      "partOfSpeech": "function-word",
+      "sense": "determiner",
+      "attributes": {
+        "markerKind": "determiner",
+        "uses": [
+          "demonstrative"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "that",
+          "initialSound": null
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:determiner:the",
+      "revisionId": "function-word:determiner:the:r1",
+      "lemma": "the",
+      "partOfSpeech": "function-word",
+      "sense": "determiner",
+      "attributes": {
+        "markerKind": "determiner",
+        "uses": [
+          "article"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "the",
+          "initialSound": null
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:determiner:their",
+      "revisionId": "function-word:determiner:their:r1",
+      "lemma": "their",
+      "partOfSpeech": "function-word",
+      "sense": "determiner",
+      "attributes": {
+        "markerKind": "determiner",
+        "uses": [
+          "possessive"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "their",
+          "initialSound": null
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:determiner:these",
+      "revisionId": "function-word:determiner:these:r1",
+      "lemma": "these",
+      "partOfSpeech": "function-word",
+      "sense": "determiner",
+      "attributes": {
+        "markerKind": "determiner",
+        "uses": [
+          "demonstrative"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "these",
+          "initialSound": null
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:determiner:this",
+      "revisionId": "function-word:determiner:this:r1",
+      "lemma": "this",
+      "partOfSpeech": "function-word",
+      "sense": "determiner",
+      "attributes": {
+        "markerKind": "determiner",
+        "uses": [
+          "demonstrative"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "this",
+          "initialSound": null
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:determiner:those",
+      "revisionId": "function-word:determiner:those:r1",
+      "lemma": "those",
+      "partOfSpeech": "function-word",
+      "sense": "determiner",
+      "attributes": {
+        "markerKind": "determiner",
+        "uses": [
+          "demonstrative"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "those",
+          "initialSound": null
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:determiner:your",
+      "revisionId": "function-word:determiner:your:r1",
+      "lemma": "your",
+      "partOfSpeech": "function-word",
+      "sense": "determiner",
+      "attributes": {
+        "markerKind": "determiner",
+        "uses": [
+          "possessive"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "your",
+          "initialSound": null
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:marker:by",
+      "revisionId": "function-word:marker:by:r1",
+      "lemma": "by",
+      "partOfSpeech": "function-word",
+      "sense": "marker",
+      "attributes": {
+        "markerKind": "marker",
+        "uses": [
+          "passive-agent"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "by",
+          "initialSound": null
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:marker:how",
+      "revisionId": "function-word:marker:how:r1",
+      "lemma": "how",
+      "partOfSpeech": "function-word",
+      "sense": "marker",
+      "attributes": {
+        "markerKind": "marker",
+        "uses": [
+          "exclamation"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "how",
+          "initialSound": null
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:marker:not",
+      "revisionId": "function-word:marker:not:r1",
+      "lemma": "not",
+      "partOfSpeech": "function-word",
+      "sense": "marker",
+      "attributes": {
+        "markerKind": "marker",
+        "uses": [
+          "negation"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "not",
+          "initialSound": null
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:marker:school",
+      "revisionId": "function-word:marker:school:r1",
+      "lemma": "school",
+      "partOfSpeech": "function-word",
+      "sense": "marker",
+      "attributes": {
+        "markerKind": "marker",
+        "uses": [
+          "go-destination"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "school",
+          "initialSound": null
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:marker:to",
+      "revisionId": "function-word:marker:to:r1",
+      "lemma": "to",
+      "partOfSpeech": "function-word",
+      "sense": "marker",
+      "attributes": {
+        "markerKind": "marker",
+        "uses": [
+          "passive-recipient",
+          "go-destination"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "to",
+          "initialSound": null
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:marker:what",
+      "revisionId": "function-word:marker:what:r1",
+      "lemma": "what",
+      "partOfSpeech": "function-word",
+      "sense": "marker",
+      "attributes": {
+        "markerKind": "marker",
+        "uses": [
+          "exclamation"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "what",
+          "initialSound": null
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:object-pronoun:her",
+      "revisionId": "function-word:object-pronoun:her:r1",
+      "lemma": "her",
+      "partOfSpeech": "function-word",
+      "sense": "object-pronoun",
+      "attributes": {
+        "markerKind": "object-pronoun",
+        "uses": [
+          "direct-object",
+          "recipient"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "her",
+          "initialSound": null
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:object-pronoun:him",
+      "revisionId": "function-word:object-pronoun:him:r1",
+      "lemma": "him",
+      "partOfSpeech": "function-word",
+      "sense": "object-pronoun",
+      "attributes": {
+        "markerKind": "object-pronoun",
+        "uses": [
+          "direct-object",
+          "recipient"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "him",
+          "initialSound": null
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:object-pronoun:it",
+      "revisionId": "function-word:object-pronoun:it:r1",
+      "lemma": "it",
+      "partOfSpeech": "function-word",
+      "sense": "object-pronoun",
+      "attributes": {
+        "markerKind": "object-pronoun",
+        "uses": [
+          "direct-object"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "it",
+          "initialSound": null
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:object-pronoun:me",
+      "revisionId": "function-word:object-pronoun:me:r1",
+      "lemma": "me",
+      "partOfSpeech": "function-word",
+      "sense": "object-pronoun",
+      "attributes": {
+        "markerKind": "object-pronoun",
+        "uses": [
+          "direct-object",
+          "recipient"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "me",
+          "initialSound": null
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:object-pronoun:them",
+      "revisionId": "function-word:object-pronoun:them:r1",
+      "lemma": "them",
+      "partOfSpeech": "function-word",
+      "sense": "object-pronoun",
+      "attributes": {
+        "markerKind": "object-pronoun",
+        "uses": [
+          "direct-object",
+          "recipient"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "them",
+          "initialSound": null
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:object-pronoun:us",
+      "revisionId": "function-word:object-pronoun:us:r1",
+      "lemma": "us",
+      "partOfSpeech": "function-word",
+      "sense": "object-pronoun",
+      "attributes": {
+        "markerKind": "object-pronoun",
+        "uses": [
+          "direct-object",
+          "recipient"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "us",
+          "initialSound": null
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:object-pronoun:you",
+      "revisionId": "function-word:object-pronoun:you:r1",
+      "lemma": "you",
+      "partOfSpeech": "function-word",
+      "sense": "object-pronoun",
+      "attributes": {
+        "markerKind": "object-pronoun",
+        "uses": [
+          "direct-object",
+          "recipient"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "you",
+          "initialSound": null
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:subject-pronoun:he",
+      "revisionId": "function-word:subject-pronoun:he:r1",
+      "lemma": "he",
+      "partOfSpeech": "function-word",
+      "sense": "subject-pronoun",
+      "attributes": {
+        "markerKind": "subject-pronoun",
+        "uses": [
+          "subject"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "he",
+          "initialSound": null
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:subject-pronoun:i",
+      "revisionId": "function-word:subject-pronoun:i:r1",
+      "lemma": "i",
+      "partOfSpeech": "function-word",
+      "sense": "subject-pronoun",
+      "attributes": {
+        "markerKind": "subject-pronoun",
+        "uses": [
+          "subject"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "i",
+          "initialSound": null
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:subject-pronoun:it",
+      "revisionId": "function-word:subject-pronoun:it:r1",
+      "lemma": "it",
+      "partOfSpeech": "function-word",
+      "sense": "subject-pronoun",
+      "attributes": {
+        "markerKind": "subject-pronoun",
+        "uses": [
+          "subject"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "it",
+          "initialSound": null
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:subject-pronoun:she",
+      "revisionId": "function-word:subject-pronoun:she:r1",
+      "lemma": "she",
+      "partOfSpeech": "function-word",
+      "sense": "subject-pronoun",
+      "attributes": {
+        "markerKind": "subject-pronoun",
+        "uses": [
+          "subject"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "she",
+          "initialSound": null
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:subject-pronoun:they",
+      "revisionId": "function-word:subject-pronoun:they:r1",
+      "lemma": "they",
+      "partOfSpeech": "function-word",
+      "sense": "subject-pronoun",
+      "attributes": {
+        "markerKind": "subject-pronoun",
+        "uses": [
+          "subject"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "they",
+          "initialSound": null
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:subject-pronoun:we",
+      "revisionId": "function-word:subject-pronoun:we:r1",
+      "lemma": "we",
+      "partOfSpeech": "function-word",
+      "sense": "subject-pronoun",
+      "attributes": {
+        "markerKind": "subject-pronoun",
+        "uses": [
+          "subject"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "we",
+          "initialSound": null
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "function-word:subject-pronoun:you",
+      "revisionId": "function-word:subject-pronoun:you:r1",
+      "lemma": "you",
+      "partOfSpeech": "function-word",
+      "sense": "subject-pronoun",
+      "attributes": {
+        "markerKind": "subject-pronoun",
+        "uses": [
+          "subject"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "marker",
+          "surface": "you",
+          "initialSound": null
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "noun:countable:book",
+      "revisionId": "noun:countable:book:r1",
+      "lemma": "book",
+      "partOfSpeech": "noun",
+      "sense": "countable",
+      "attributes": {
+        "person": false,
+        "initialSound": "consonant"
+      },
+      "forms": [
+        {
+          "kind": "singular",
+          "surface": "book",
+          "initialSound": "consonant"
+        },
+        {
+          "kind": "plural",
+          "surface": "books",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "noun:countable:boy",
+      "revisionId": "noun:countable:boy:r1",
+      "lemma": "boy",
+      "partOfSpeech": "noun",
+      "sense": "countable",
+      "attributes": {
+        "person": true,
+        "initialSound": "consonant"
+      },
+      "forms": [
+        {
+          "kind": "singular",
+          "surface": "boy",
+          "initialSound": "consonant"
+        },
+        {
+          "kind": "plural",
+          "surface": "boys",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "noun:countable:child",
+      "revisionId": "noun:countable:child:r1",
+      "lemma": "child",
+      "partOfSpeech": "noun",
+      "sense": "countable",
+      "attributes": {
+        "person": true,
+        "initialSound": "consonant"
+      },
+      "forms": [
+        {
+          "kind": "singular",
+          "surface": "child",
+          "initialSound": "consonant"
+        },
+        {
+          "kind": "plural",
+          "surface": "children",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "noun:countable:father",
+      "revisionId": "noun:countable:father:r1",
+      "lemma": "father",
+      "partOfSpeech": "noun",
+      "sense": "countable",
+      "attributes": {
+        "person": true,
+        "initialSound": "consonant"
+      },
+      "forms": [
+        {
+          "kind": "singular",
+          "surface": "father",
+          "initialSound": "consonant"
+        },
+        {
+          "kind": "plural",
+          "surface": "fathers",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "noun:countable:friend",
+      "revisionId": "noun:countable:friend:r1",
+      "lemma": "friend",
+      "partOfSpeech": "noun",
+      "sense": "countable",
+      "attributes": {
+        "person": true,
+        "initialSound": "consonant"
+      },
+      "forms": [
+        {
+          "kind": "singular",
+          "surface": "friend",
+          "initialSound": "consonant"
+        },
+        {
+          "kind": "plural",
+          "surface": "friends",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "noun:countable:gift",
+      "revisionId": "noun:countable:gift:r1",
+      "lemma": "gift",
+      "partOfSpeech": "noun",
+      "sense": "countable",
+      "attributes": {
+        "person": false,
+        "initialSound": "consonant"
+      },
+      "forms": [
+        {
+          "kind": "singular",
+          "surface": "gift",
+          "initialSound": "consonant"
+        },
+        {
+          "kind": "plural",
+          "surface": "gifts",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "noun:countable:girl",
+      "revisionId": "noun:countable:girl:r1",
+      "lemma": "girl",
+      "partOfSpeech": "noun",
+      "sense": "countable",
+      "attributes": {
+        "person": true,
+        "initialSound": "consonant"
+      },
+      "forms": [
+        {
+          "kind": "singular",
+          "surface": "girl",
+          "initialSound": "consonant"
+        },
+        {
+          "kind": "plural",
+          "surface": "girls",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "noun:countable:letter",
+      "revisionId": "noun:countable:letter:r1",
+      "lemma": "letter",
+      "partOfSpeech": "noun",
+      "sense": "countable",
+      "attributes": {
+        "person": false,
+        "initialSound": "consonant"
+      },
+      "forms": [
+        {
+          "kind": "singular",
+          "surface": "letter",
+          "initialSound": "consonant"
+        },
+        {
+          "kind": "plural",
+          "surface": "letters",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "noun:countable:mother",
+      "revisionId": "noun:countable:mother:r1",
+      "lemma": "mother",
+      "partOfSpeech": "noun",
+      "sense": "countable",
+      "attributes": {
+        "person": true,
+        "initialSound": "consonant"
+      },
+      "forms": [
+        {
+          "kind": "singular",
+          "surface": "mother",
+          "initialSound": "consonant"
+        },
+        {
+          "kind": "plural",
+          "surface": "mothers",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "noun:countable:pen",
+      "revisionId": "noun:countable:pen:r1",
+      "lemma": "pen",
+      "partOfSpeech": "noun",
+      "sense": "countable",
+      "attributes": {
+        "person": false,
+        "initialSound": "consonant"
+      },
+      "forms": [
+        {
+          "kind": "singular",
+          "surface": "pen",
+          "initialSound": "consonant"
+        },
+        {
+          "kind": "plural",
+          "surface": "pens",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "noun:countable:picture",
+      "revisionId": "noun:countable:picture:r1",
+      "lemma": "picture",
+      "partOfSpeech": "noun",
+      "sense": "countable",
+      "attributes": {
+        "person": false,
+        "initialSound": "consonant"
+      },
+      "forms": [
+        {
+          "kind": "singular",
+          "surface": "picture",
+          "initialSound": "consonant"
+        },
+        {
+          "kind": "plural",
+          "surface": "pictures",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "noun:countable:student",
+      "revisionId": "noun:countable:student:r1",
+      "lemma": "student",
+      "partOfSpeech": "noun",
+      "sense": "countable",
+      "attributes": {
+        "person": true,
+        "initialSound": "consonant"
+      },
+      "forms": [
+        {
+          "kind": "singular",
+          "surface": "student",
+          "initialSound": "consonant"
+        },
+        {
+          "kind": "plural",
+          "surface": "students",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "noun:countable:teacher",
+      "revisionId": "noun:countable:teacher:r1",
+      "lemma": "teacher",
+      "partOfSpeech": "noun",
+      "sense": "countable",
+      "attributes": {
+        "person": true,
+        "initialSound": "consonant"
+      },
+      "forms": [
+        {
+          "kind": "singular",
+          "surface": "teacher",
+          "initialSound": "consonant"
+        },
+        {
+          "kind": "plural",
+          "surface": "teachers",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "noun:countable:toy",
+      "revisionId": "noun:countable:toy:r1",
+      "lemma": "toy",
+      "partOfSpeech": "noun",
+      "sense": "countable",
+      "attributes": {
+        "person": false,
+        "initialSound": "consonant"
+      },
+      "forms": [
+        {
+          "kind": "singular",
+          "surface": "toy",
+          "initialSound": "consonant"
+        },
+        {
+          "kind": "plural",
+          "surface": "toys",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": [],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "verb:lexical:enjoy",
+      "revisionId": "verb:lexical:enjoy:r1",
+      "lemma": "enjoy",
+      "partOfSpeech": "verb",
+      "sense": "lexical",
+      "attributes": {},
+      "forms": [
+        {
+          "kind": "base",
+          "surface": "enjoy",
+          "initialSound": null
+        },
+        {
+          "kind": "third",
+          "surface": "enjoys",
+          "initialSound": null
+        },
+        {
+          "kind": "past",
+          "surface": "enjoyed",
+          "initialSound": null
+        },
+        {
+          "kind": "participle",
+          "surface": "enjoyed",
+          "initialSound": null
+        },
+        {
+          "kind": "progressive",
+          "surface": "enjoying",
+          "initialSound": null
+        }
+      ],
+      "frames": [
+        {
+          "id": "primary",
+          "pattern": "SVO",
+          "recipient": null,
+          "complement": null,
+          "allowProgressive": true,
+          "allowPerfect": true,
+          "passivePromotion": "direct-object",
+          "allowedPurposes": [
+            "declarative",
+            "interrogative",
+            "imperative"
+          ],
+          "allowedPolarities": [
+            "positive",
+            "negative"
+          ],
+          "fixedTail": null
+        }
+      ],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "verb:lexical:find",
+      "revisionId": "verb:lexical:find:r1",
+      "lemma": "find",
+      "partOfSpeech": "verb",
+      "sense": "lexical",
+      "attributes": {},
+      "forms": [
+        {
+          "kind": "base",
+          "surface": "find",
+          "initialSound": null
+        },
+        {
+          "kind": "third",
+          "surface": "finds",
+          "initialSound": null
+        },
+        {
+          "kind": "past",
+          "surface": "found",
+          "initialSound": null
+        },
+        {
+          "kind": "participle",
+          "surface": "found",
+          "initialSound": null
+        },
+        {
+          "kind": "progressive",
+          "surface": "finding",
+          "initialSound": null
+        }
+      ],
+      "frames": [
+        {
+          "id": "primary",
+          "pattern": "SVOC",
+          "recipient": null,
+          "complement": "single-adjective",
+          "allowProgressive": true,
+          "allowPerfect": true,
+          "passivePromotion": null,
+          "allowedPurposes": [
+            "declarative",
+            "interrogative",
+            "imperative"
+          ],
+          "allowedPolarities": [
+            "positive",
+            "negative"
+          ],
+          "fixedTail": null
+        }
+      ],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "verb:lexical:give",
+      "revisionId": "verb:lexical:give:r1",
+      "lemma": "give",
+      "partOfSpeech": "verb",
+      "sense": "lexical",
+      "attributes": {},
+      "forms": [
+        {
+          "kind": "base",
+          "surface": "give",
+          "initialSound": null
+        },
+        {
+          "kind": "third",
+          "surface": "gives",
+          "initialSound": null
+        },
+        {
+          "kind": "past",
+          "surface": "gave",
+          "initialSound": null
+        },
+        {
+          "kind": "participle",
+          "surface": "given",
+          "initialSound": null
+        },
+        {
+          "kind": "progressive",
+          "surface": "giving",
+          "initialSound": null
+        }
+      ],
+      "frames": [
+        {
+          "id": "primary",
+          "pattern": "SVOO",
+          "recipient": "person",
+          "complement": null,
+          "allowProgressive": true,
+          "allowPerfect": true,
+          "passivePromotion": "direct-object-or-recipient",
+          "allowedPurposes": [
+            "declarative",
+            "interrogative",
+            "imperative"
+          ],
+          "allowedPolarities": [
+            "positive",
+            "negative"
+          ],
+          "fixedTail": null
+        }
+      ],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "verb:lexical:go",
+      "revisionId": "verb:lexical:go:r1",
+      "lemma": "go",
+      "partOfSpeech": "verb",
+      "sense": "lexical",
+      "attributes": {},
+      "forms": [
+        {
+          "kind": "base",
+          "surface": "go",
+          "initialSound": null
+        },
+        {
+          "kind": "third",
+          "surface": "goes",
+          "initialSound": null
+        },
+        {
+          "kind": "past",
+          "surface": "went",
+          "initialSound": null
+        },
+        {
+          "kind": "participle",
+          "surface": "gone",
+          "initialSound": null
+        },
+        {
+          "kind": "progressive",
+          "surface": "going",
+          "initialSound": null
+        }
+      ],
+      "frames": [
+        {
+          "id": "primary",
+          "pattern": "SV",
+          "recipient": null,
+          "complement": null,
+          "allowProgressive": true,
+          "allowPerfect": true,
+          "passivePromotion": null,
+          "allowedPurposes": [
+            "declarative",
+            "interrogative",
+            "imperative"
+          ],
+          "allowedPolarities": [
+            "positive",
+            "negative"
+          ],
+          "fixedTail": "to school"
+        }
+      ],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "verb:lexical:lend",
+      "revisionId": "verb:lexical:lend:r1",
+      "lemma": "lend",
+      "partOfSpeech": "verb",
+      "sense": "lexical",
+      "attributes": {},
+      "forms": [
+        {
+          "kind": "base",
+          "surface": "lend",
+          "initialSound": null
+        },
+        {
+          "kind": "third",
+          "surface": "lends",
+          "initialSound": null
+        },
+        {
+          "kind": "past",
+          "surface": "lent",
+          "initialSound": null
+        },
+        {
+          "kind": "participle",
+          "surface": "lent",
+          "initialSound": null
+        },
+        {
+          "kind": "progressive",
+          "surface": "lending",
+          "initialSound": null
+        }
+      ],
+      "frames": [
+        {
+          "id": "primary",
+          "pattern": "SVOO",
+          "recipient": "person",
+          "complement": null,
+          "allowProgressive": true,
+          "allowPerfect": true,
+          "passivePromotion": "direct-object-or-recipient",
+          "allowedPurposes": [
+            "declarative",
+            "interrogative",
+            "imperative"
+          ],
+          "allowedPolarities": [
+            "positive",
+            "negative"
+          ],
+          "fixedTail": null
+        }
+      ],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "verb:lexical:like",
+      "revisionId": "verb:lexical:like:r1",
+      "lemma": "like",
+      "partOfSpeech": "verb",
+      "sense": "lexical",
+      "attributes": {},
+      "forms": [
+        {
+          "kind": "base",
+          "surface": "like",
+          "initialSound": null
+        },
+        {
+          "kind": "third",
+          "surface": "likes",
+          "initialSound": null
+        },
+        {
+          "kind": "past",
+          "surface": "liked",
+          "initialSound": null
+        },
+        {
+          "kind": "participle",
+          "surface": "liked",
+          "initialSound": null
+        },
+        {
+          "kind": "progressive",
+          "surface": "liking",
+          "initialSound": null
+        }
+      ],
+      "frames": [
+        {
+          "id": "primary",
+          "pattern": "SVO",
+          "recipient": null,
+          "complement": null,
+          "allowProgressive": true,
+          "allowPerfect": true,
+          "passivePromotion": "direct-object",
+          "allowedPurposes": [
+            "declarative",
+            "interrogative",
+            "imperative"
+          ],
+          "allowedPolarities": [
+            "positive",
+            "negative"
+          ],
+          "fixedTail": null
+        }
+      ],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "verb:lexical:make",
+      "revisionId": "verb:lexical:make:r1",
+      "lemma": "make",
+      "partOfSpeech": "verb",
+      "sense": "lexical",
+      "attributes": {},
+      "forms": [
+        {
+          "kind": "base",
+          "surface": "make",
+          "initialSound": null
+        },
+        {
+          "kind": "third",
+          "surface": "makes",
+          "initialSound": null
+        },
+        {
+          "kind": "past",
+          "surface": "made",
+          "initialSound": null
+        },
+        {
+          "kind": "participle",
+          "surface": "made",
+          "initialSound": null
+        },
+        {
+          "kind": "progressive",
+          "surface": "making",
+          "initialSound": null
+        }
+      ],
+      "frames": [
+        {
+          "id": "primary",
+          "pattern": "SVOC",
+          "recipient": null,
+          "complement": "single-adjective",
+          "allowProgressive": true,
+          "allowPerfect": true,
+          "passivePromotion": null,
+          "allowedPurposes": [
+            "declarative",
+            "interrogative",
+            "imperative"
+          ],
+          "allowedPolarities": [
+            "positive",
+            "negative"
+          ],
+          "fixedTail": null
+        }
+      ],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "verb:lexical:offer",
+      "revisionId": "verb:lexical:offer:r1",
+      "lemma": "offer",
+      "partOfSpeech": "verb",
+      "sense": "lexical",
+      "attributes": {},
+      "forms": [
+        {
+          "kind": "base",
+          "surface": "offer",
+          "initialSound": null
+        },
+        {
+          "kind": "third",
+          "surface": "offers",
+          "initialSound": null
+        },
+        {
+          "kind": "past",
+          "surface": "offered",
+          "initialSound": null
+        },
+        {
+          "kind": "participle",
+          "surface": "offered",
+          "initialSound": null
+        },
+        {
+          "kind": "progressive",
+          "surface": "offering",
+          "initialSound": null
+        }
+      ],
+      "frames": [
+        {
+          "id": "primary",
+          "pattern": "SVOO",
+          "recipient": "person",
+          "complement": null,
+          "allowProgressive": true,
+          "allowPerfect": true,
+          "passivePromotion": "direct-object-or-recipient",
+          "allowedPurposes": [
+            "declarative",
+            "interrogative",
+            "imperative"
+          ],
+          "allowedPolarities": [
+            "positive",
+            "negative"
+          ],
+          "fixedTail": null
+        }
+      ],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "verb:lexical:run",
+      "revisionId": "verb:lexical:run:r1",
+      "lemma": "run",
+      "partOfSpeech": "verb",
+      "sense": "lexical",
+      "attributes": {},
+      "forms": [
+        {
+          "kind": "base",
+          "surface": "run",
+          "initialSound": null
+        },
+        {
+          "kind": "third",
+          "surface": "runs",
+          "initialSound": null
+        },
+        {
+          "kind": "past",
+          "surface": "ran",
+          "initialSound": null
+        },
+        {
+          "kind": "participle",
+          "surface": "run",
+          "initialSound": null
+        },
+        {
+          "kind": "progressive",
+          "surface": "running",
+          "initialSound": null
+        }
+      ],
+      "frames": [
+        {
+          "id": "primary",
+          "pattern": "SV",
+          "recipient": null,
+          "complement": null,
+          "allowProgressive": true,
+          "allowPerfect": true,
+          "passivePromotion": null,
+          "allowedPurposes": [
+            "declarative",
+            "interrogative",
+            "imperative"
+          ],
+          "allowedPolarities": [
+            "positive",
+            "negative"
+          ],
+          "fixedTail": null
+        }
+      ],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "verb:lexical:see",
+      "revisionId": "verb:lexical:see:r1",
+      "lemma": "see",
+      "partOfSpeech": "verb",
+      "sense": "lexical",
+      "attributes": {},
+      "forms": [
+        {
+          "kind": "base",
+          "surface": "see",
+          "initialSound": null
+        },
+        {
+          "kind": "third",
+          "surface": "sees",
+          "initialSound": null
+        },
+        {
+          "kind": "past",
+          "surface": "saw",
+          "initialSound": null
+        },
+        {
+          "kind": "participle",
+          "surface": "seen",
+          "initialSound": null
+        },
+        {
+          "kind": "progressive",
+          "surface": "seeing",
+          "initialSound": null
+        }
+      ],
+      "frames": [
+        {
+          "id": "primary",
+          "pattern": "SVO",
+          "recipient": null,
+          "complement": null,
+          "allowProgressive": true,
+          "allowPerfect": true,
+          "passivePromotion": "direct-object",
+          "allowedPurposes": [
+            "declarative",
+            "interrogative",
+            "imperative"
+          ],
+          "allowedPolarities": [
+            "positive",
+            "negative"
+          ],
+          "fixedTail": null
+        }
+      ],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "verb:lexical:send",
+      "revisionId": "verb:lexical:send:r1",
+      "lemma": "send",
+      "partOfSpeech": "verb",
+      "sense": "lexical",
+      "attributes": {},
+      "forms": [
+        {
+          "kind": "base",
+          "surface": "send",
+          "initialSound": null
+        },
+        {
+          "kind": "third",
+          "surface": "sends",
+          "initialSound": null
+        },
+        {
+          "kind": "past",
+          "surface": "sent",
+          "initialSound": null
+        },
+        {
+          "kind": "participle",
+          "surface": "sent",
+          "initialSound": null
+        },
+        {
+          "kind": "progressive",
+          "surface": "sending",
+          "initialSound": null
+        }
+      ],
+      "frames": [
+        {
+          "id": "primary",
+          "pattern": "SVOO",
+          "recipient": "person",
+          "complement": null,
+          "allowProgressive": true,
+          "allowPerfect": true,
+          "passivePromotion": "direct-object-or-recipient",
+          "allowedPurposes": [
+            "declarative",
+            "interrogative",
+            "imperative"
+          ],
+          "allowedPolarities": [
+            "positive",
+            "negative"
+          ],
+          "fixedTail": null
+        }
+      ],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "verb:lexical:show",
+      "revisionId": "verb:lexical:show:r1",
+      "lemma": "show",
+      "partOfSpeech": "verb",
+      "sense": "lexical",
+      "attributes": {},
+      "forms": [
+        {
+          "kind": "base",
+          "surface": "show",
+          "initialSound": null
+        },
+        {
+          "kind": "third",
+          "surface": "shows",
+          "initialSound": null
+        },
+        {
+          "kind": "past",
+          "surface": "showed",
+          "initialSound": null
+        },
+        {
+          "kind": "participle",
+          "surface": "shown",
+          "initialSound": null
+        },
+        {
+          "kind": "progressive",
+          "surface": "showing",
+          "initialSound": null
+        }
+      ],
+      "frames": [
+        {
+          "id": "primary",
+          "pattern": "SVOO",
+          "recipient": "person",
+          "complement": null,
+          "allowProgressive": true,
+          "allowPerfect": true,
+          "passivePromotion": "direct-object-or-recipient",
+          "allowedPurposes": [
+            "declarative",
+            "interrogative",
+            "imperative"
+          ],
+          "allowedPolarities": [
+            "positive",
+            "negative"
+          ],
+          "fixedTail": null
+        }
+      ],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "verb:lexical:sleep",
+      "revisionId": "verb:lexical:sleep:r1",
+      "lemma": "sleep",
+      "partOfSpeech": "verb",
+      "sense": "lexical",
+      "attributes": {},
+      "forms": [
+        {
+          "kind": "base",
+          "surface": "sleep",
+          "initialSound": null
+        },
+        {
+          "kind": "third",
+          "surface": "sleeps",
+          "initialSound": null
+        },
+        {
+          "kind": "past",
+          "surface": "slept",
+          "initialSound": null
+        },
+        {
+          "kind": "participle",
+          "surface": "slept",
+          "initialSound": null
+        },
+        {
+          "kind": "progressive",
+          "surface": "sleeping",
+          "initialSound": null
+        }
+      ],
+      "frames": [
+        {
+          "id": "primary",
+          "pattern": "SV",
+          "recipient": null,
+          "complement": null,
+          "allowProgressive": true,
+          "allowPerfect": true,
+          "passivePromotion": null,
+          "allowedPurposes": [
+            "declarative",
+            "interrogative",
+            "imperative"
+          ],
+          "allowedPolarities": [
+            "positive",
+            "negative"
+          ],
+          "fixedTail": null
+        }
+      ],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    },
+    {
+      "id": "verb:lexical:smile",
+      "revisionId": "verb:lexical:smile:r1",
+      "lemma": "smile",
+      "partOfSpeech": "verb",
+      "sense": "lexical",
+      "attributes": {},
+      "forms": [
+        {
+          "kind": "base",
+          "surface": "smile",
+          "initialSound": null
+        },
+        {
+          "kind": "third",
+          "surface": "smiles",
+          "initialSound": null
+        },
+        {
+          "kind": "past",
+          "surface": "smiled",
+          "initialSound": null
+        },
+        {
+          "kind": "participle",
+          "surface": "smiled",
+          "initialSound": null
+        },
+        {
+          "kind": "progressive",
+          "surface": "smiling",
+          "initialSound": null
+        }
+      ],
+      "frames": [
+        {
+          "id": "primary",
+          "pattern": "SV",
+          "recipient": null,
+          "complement": null,
+          "allowProgressive": true,
+          "allowPerfect": true,
+          "passivePromotion": null,
+          "allowedPurposes": [
+            "declarative",
+            "interrogative",
+            "imperative"
+          ],
+          "allowedPolarities": [
+            "positive",
+            "negative"
+          ],
+          "fixedTail": null
+        }
+      ],
+      "sourceIds": [
+        "clause-manual-0.14.3"
+      ]
+    }
+  ]
+}

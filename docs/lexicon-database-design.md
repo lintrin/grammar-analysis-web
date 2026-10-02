@@ -1,10 +1,10 @@
 # Clause · 阶段 20 数据库与发布协议设计
 
-阶段 19 固定设计，阶段 20 待实施。本文件定义直接升级的唯一协议，不要求兼容旧库、结果或快照。当前生产分析仍使用人工 TypeScript 词典。
+阶段 19 固定设计；阶段 20A ✅ 已完成建库与草稿维护及验收，20B/C 待实施。本文件定义直接升级的唯一协议，不要求兼容旧库、结果或快照。当前生产分析仍使用人工 TypeScript 词典。
 
 ## 数据实体与约束
 
-采用本地 SQLite、现有 Drizzle SQLite schema 与版本化 SQL migration；维护命令使用 Node 内置 `node:sqlite` 的 DatabaseSync（阶段 20A 先验证运行环境，README 最低版本将升至 Node 22.13，推荐当前 24.14.1；如运行验证要求更高则先修改此门槛）。数据库放入 `.lexicon/` 忽略目录。仓库保留 schema、迁移、人工导入及固定发布文件。D1 绑定和远程维护不在此交付。
+采用本地 SQLite、现有 Drizzle SQLite schema 与版本化 SQL migration；维护命令使用 Node 内置 `node:sqlite` 的 DatabaseSync（阶段 20A 已验证 Node 24.14.1 / SQLite 3.51.2；最低要求 Node 22.13，已写入启动说明）。数据库放入 `.lexicon/` 忽略目录。仓库保留 schema、迁移、人工导入及固定发布文件。D1 绑定和远程维护不在此交付。
 
 标识均为非空稳定字符串；关系使用外键，外键检查在每次连接启用。所有枚举同时由 SQL CHECK 与应用校验限定，引用列 NOT NULL，禁止悄悄级联删除审核/发布内容。
 
@@ -48,7 +48,7 @@ be 的 SVC、go 的固定 to school、SVOO 人物接受者、SVO/SVOC 的宾格�
 
 客户端快照由此发布数据生成，包含 formatVersion、lexiconVersion、lexiconHash、来源归属和纯词条数据，不携带维护时间戳/审核者。按规范化 surface 建索引到候选数组（entryId、revisionId、formKind、frameId），排序只决定确定性遍历顺序，不决定语言解释优先级。发布文件与客户端快照不同：客户端 lexiconHash 引用完整发布哈希；构建重新验证发布文件、重生成客户端字节并比对仓库产物，禁止篡改客户端索引后沿用原哈希。
 
-维护 CLI 交付命令：init/migrate、import、query（lemma/surface/POS）、revise、validate、review、publish、export-release、rebuild、generate-client、verify。无环境数据库时 build 仍使用固定发布和生成客户端，缺失/非法则明确失败，不回退旧手写词典。构建不得悄悄生成或审核新内容；生成是显式开发命令，verify 检查确定性。
+阶段 20A 已交付 init/migrate、import、query、revise、validate 和完整修订 show；审核、发布、重建及客户端命令在后续小阶段实施。完整维护 CLI 交付命令：init/migrate、import、query（lemma/surface/POS）、revise、validate、review、publish、export-release、rebuild、generate-client、verify。无环境数据库时 build 仍使用固定发布和生成客户端，缺失/非法则明确失败，不回退旧手写词典。构建不得悄悄生成或审核新内容；生成是显式开发命令，verify 检查确定性。
 
 ## 分析版本与失效
 
@@ -65,3 +65,11 @@ be 的 SVC、go 的固定 to school、SVOO 人物接受者、SVO/SVOC 的宾格�
 20A：空库迁移、完整旧词幂等导入、查询、修订、非法子记录/引用/ID 拒绝、批量事务回滚。20B：完整修订审核、A→B 修改须重新审核、伪造审核/过期哈希/同版本异内容拒绝、A 发布不可变、失败无可用半成品、重建与重复导出字节/哈希一致。20C：联合清单、格式/篡改拒绝、候选/歧义/预算、全部旧语法与纠错回归、词典版本/哈希旧建议拒绝、界面旧结果和延迟结果失效。
 
 每小阶段执行全量工程检查、相关浏览器回归并记录；20A/B/C 全部完成才将阶段 20 标注 ✅。开发服务和构建产物在静态资源加载、关闭维护数据库并断网后，仍完成分析与纠错。网络、控制台、local/session storage、IndexedDB、cookie 和 SQLite 中均无用户输入或结果。
+
+### 20A 实施约定
+
+`data/lexicon/seed.json` 保存人工完整旧词表。功能词每个类别/表面词独立修订，forms 使用 `marker` kind，attributes 包含 `markerKind` 和限定 `uses`；跨类别同形保留。finite-be 功能词关联 SVC 搭配，be/been/being 的桥接身份单独保存。`uses` 明确宾格接受者与直接宾语差异、to/by 限定用途等；用途集合不代表所有用途/体/极性的笛卡尔积都可解析，20C 仍须遵守人工句式范围。
+
+SQL 的 person/initial_sound/adjective_uses_json/marker_kind 是 attributes 的约束辅助列，validate 检查与完整属性一致。词条内容哈希覆盖稳定 entry/revision ID、完整规范化词形/搭配及展开来源。来源记录以新 ID/version 更新，原记录均冻结；CLI 修改一律创建完整新修订。冻结表的 BEFORE INSERT 保护同时覆盖主键、修订编号唯一键与显式 rowid 冲突，拒绝 REPLACE 的隐式删除，不依赖 recursive_triggers。迁移使用生成 schema SQL 和独立 custom guard SQL，两者及 Drizzle snapshots/journal 均纳入仓库。维护迁移在单一事务中执行并检查文件摘要，不能悄悄改写已应用迁移。
+
+审核/发布表与基础冻结约束在 20A 建库时预置，尚无审核/发布 CLI、发布产物或重建功能；不能视为 20B 验收完成。记录见 [20A](stage20a-scope.md)。
