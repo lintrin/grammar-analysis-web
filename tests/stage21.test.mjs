@@ -1,0 +1,80 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {analyzeSentence,LEXICON_VERSION,LEXICON_HASH} from '../lib/grammar.ts';
+import {compareLexiconExpectation} from './helpers/lexicon-expectations.mjs';
+const development=JSON.parse(readFileSync('tests/fixtures/lexicon-development.json','utf8'));
+for(const f of development.fixtures.filter(f=>f.stage===21)) test(`21 fixed answer: ${f.id} ${f.input}`,()=>{
+  const result=analyzeSentence(f.input);
+  compareLexiconExpectation(f.expected,result);
+  assert.equal(result.lexiconVersion,LEXICON_VERSION);assert.equal(result.lexiconHash,LEXICON_HASH);
+});
+
+import {openDatabase,migrate,importData,query} from '../scripts/lexicon/store.mjs';
+import {validateRelease,rebuild,review,publish,trustedRelease} from '../scripts/lexicon/release.mjs';
+import {canonical} from '../scripts/lexicon/data.mjs';
+import {analyzePurpose} from '../lib/grammar/purposes.ts';
+import {tokenize} from '../lib/grammar/tokens.ts';
+import {forkCandidate,createBoundaryBudget} from '../lib/grammar/context.ts';
+import {surfaceCandidates} from '../lib/grammar/vocabulary.ts';
+const draft=JSON.parse(readFileSync('data/lexicon/stage21-import.json','utf8'));
+const old=validateRelease(JSON.parse(readFileSync('data/lexicon/releases/1.0.0.json','utf8')));
+const current=trustedRelease().release;
+test('21 audit preserves all reviewed old entries and exactly the human-fixed new inventory',()=>{
+  assert.equal(old.lexiconHash,'e68bedb119d05e817277071ad694d835f0744c5d244d916ae8a7c22763733a36');
+  assert.equal(current.entries.length,148);assert.equal(draft.entries.length,57);
+  for(const entry of old.entries) assert.deepEqual(current.entries.find(e=>e.id===entry.id),entry);
+  const {nouns,adjectives,verbs}=development.vocabulary;
+  assert.deepEqual(new Set(draft.entries.map(e=>e.lemma)),new Set([...nouns,...adjectives,...verbs].map(e=>e.lemma)));
+  for(const e of nouns){const row=draft.entries.find(r=>r.lemma===e.lemma);assert.equal(row.partOfSpeech,'noun');assert.deepEqual(row.attributes,{person:e.person,initialSound:e.initialSound});assert.deepEqual(row.forms,[{kind:'singular',surface:e.lemma,initialSound:e.initialSound},{kind:'plural',surface:e.plural,initialSound:e.initialSound}]);}
+  for(const e of adjectives){const row=draft.entries.find(r=>r.lemma===e.lemma);assert.equal(row.partOfSpeech,'adjective');assert.deepEqual(row.attributes,{initialSound:e.initialSound,uses:e.uses});assert.deepEqual(row.forms,[{kind:'positive',surface:e.lemma,initialSound:e.initialSound}]);}
+  for(const e of verbs){const row=draft.entries.find(r=>r.lemma===e.lemma);assert.equal(row.partOfSpeech,'verb');assert.deepEqual(Object.fromEntries(row.forms.map(f=>[f.kind,f.surface])),e.forms);assert.deepEqual(row.frames,e.frames.map(f=>({id:f.id,pattern:f.pattern,recipient:f.recipient,complement:f.complement,allowProgressive:f.progressive,allowPerfect:f.perfect,passivePromotion:f.passive,allowedPurposes:['declarative','interrogative','imperative'],allowedPolarities:['positive','negative'],fixedTail:null})));}
+});
+test('21 import, hash review and release reproduce the bundled snapshot deterministically',t=>{
+  const db=openDatabase(':memory:',true);t.after(()=>db.close());migrate(db);rebuild(db,old,old.lexiconHash);importData(db,draft);
+  for(const row of query(db).filter(r=>r.status==='draft')) review(db,row.entry.revisionId,row.contentHash,'stage21-human-scope-audit','approve');
+  assert.equal(canonical(publish(db,{lexiconVersion:'1.1.0',revisionIds:query(db).map(r=>r.entry.revisionId).reverse()})),canonical(current));
+});
+test('21 read retains all three form kinds and shared candidate budget',()=>{
+  assert.deepEqual(new Set(surfaceCandidates('read',()=>true).map(c=>c.formKind)),new Set(['base','past','participle']));
+  let attempts=0; assert.equal(surfaceCandidates('read',()=>++attempts<=2),null); assert.equal(attempts,3);
+  const r=forkCandidate(analyzeSentence('They read books.'));analyzePurpose(tokenize('They read books'),'.',r,createBoundaryBudget(2));assert.equal(r.status,'unsupported');assert.deepEqual(r.reasons,[{code:'budget-exceeded',ranges:[]}]);assert.deepEqual(r.nodes,[]);assert.deepEqual(r.corrections,[]);
+});
+import {applyCorrection} from '../lib/grammar.ts';
+for(const [input,purpose,tense,verbRanges] of [
+  ['Read the book!','imperative',null,[{start:0,end:4}]],
+  ['They can read books.','declarative',null,[{start:5,end:8},{start:9,end:13}]],
+  ['Can they read books?','interrogative',null,[{start:0,end:3},{start:9,end:13}]],
+  ['They can not read books.','declarative',null,[{start:5,end:17}]],
+  ['They do not read books.','declarative','present',[{start:5,end:16}]],
+  ['They did not read books.','declarative','past',[{start:5,end:17}]],
+  ['She read the book.','declarative','past',[{start:4,end:8}]],
+]) test(`21 finite context: ${input}`,()=>{
+  const r=analyzeSentence(input);assert.equal(r.status,'complete');assert.equal(r.purpose,purpose);assert.equal(r.tense,tense);assert.equal(r.pattern,'SVO');assert.equal(r.aspect,'simple');assert.equal(r.voice,'active');assert.deepEqual(r.nodes.find(n=>n.role==='verb').ranges,verbRanges);assert.deepEqual(r.reasons,[]);assert.deepEqual(r.corrections,[]);
+});
+for(const [input,next,ruleId,start,end,expected,replacement] of [
+  ['The doctor walk.','The doctor walks.','AGREEMENT-001',11,15,'walk','walks'],
+  ['She does not carries the apple.','She does not carry the apple.','DO-BASE-001',13,20,'carries','carry'],
+  ['Can she writes the letter?','Can she write the letter?','MODAL-BASE-001',8,14,'writes','write'],
+]) test(`21 existing correction: ${input}`,()=>{
+  const r=analyzeSentence(input,7);assert.equal(r.status,'partial');assert.deepEqual(r.nodes,[]);assert.deepEqual(r.corrections.map(({ruleId,edits})=>({ruleId,edits})),[{ruleId,edits:[{range:{start,end},expected,replacement}]}]);assert.equal(applyCorrection(r,r.corrections[0].id,input,7),next);assert.equal(analyzeSentence(next).status,'complete');
+});
+test('21 yesterday resolves bare read while today and an ambiguous first clause stay conservative',()=>{
+  const r=analyzeSentence('They read books yesterday.');assert.equal(r.status,'complete');assert.equal(r.tense,'past');assert.equal(r.pattern,'SVO');assert.equal(r.purpose,'declarative');assert.equal(r.complexity,'simple');assert.equal(r.aspect,'simple');assert.equal(r.voice,'active');
+  assert.deepEqual(r.nodes.map(({role,ranges,parentId})=>({role,ranges,parentId})),[{role:'subject',ranges:[{start:0,end:4}],parentId:null},{role:'verb',ranges:[{start:5,end:9}],parentId:null},{role:'object',ranges:[{start:10,end:15}],parentId:null},{role:'adverbial',ranges:[{start:16,end:25}],parentId:null}]);assert.deepEqual(r.reasons,[]);assert.deepEqual(r.corrections,[]);
+  for(const [input,reasons] of [['They read books today.',[{code:'ambiguous',ranges:[]}]],['They read books and she walks.',[{code:'ambiguous',ranges:[],clauseIndex:1}]]]){const result=analyzeSentence(input);assert.equal(result.status,'ambiguous');assert.deepEqual(result.reasons,reasons);assert.deepEqual(result.nodes,[]);assert.deepEqual(result.corrections,[]);}
+});
+
+for(const [input,ranges,clauseIndex] of [
+  ['She is slept.',[{start:7,end:12}]],
+  ['She is gone.',[{start:7,end:11}]],
+  ['She is smiled.',[{start:7,end:13}]],
+  ['She is made it useful.',[{start:7,end:11}]],
+  ['She is found it useful.',[{start:7,end:12}]],
+  ['Is she slept?',[{start:7,end:12}]],
+  ['She sleeps and he is smiled.',[{start:21,end:27}],2],
+]) test(`21 review retains current progressive diagnostic: ${input}`,()=>{
+  const r=analyzeSentence(input);assert.equal(r.status,'partial');assert.deepEqual(r.reasons,[{code:'form-mismatch',ranges,...(clauseIndex?{clauseIndex}:{})}]);
+  for(const field of ['purpose','pattern','complexity','tense','aspect','voice']) assert.equal(r[field],null);
+  assert.deepEqual(r.nodes,[]);assert.deepEqual(r.corrections,[]);
+});

@@ -1,48 +1,83 @@
-// Deliberately small, audited vocabulary. No runtime downloads or inference service.
-export const nouns: Record<string, { plural: boolean; person: boolean; initialSound: "consonant" }> = {};
-for (const [singular, plural, person] of [
-  ["teacher", "teachers", true], ["student", "students", true], ["girl", "girls", true],
-  ["boy", "boys", true], ["friend", "friends", true], ["mother", "mothers", true],
-  ["father", "fathers", true], ["child", "children", true],
-  ["book", "books", false], ["gift", "gifts", false], ["letter", "letters", false],
-  ["picture", "pictures", false], ["pen", "pens", false], ["toy", "toys", false],
-] as const) {
-  nouns[singular] = { plural: false, person, initialSound: "consonant" }; nouns[plural] = { plural: true, person, initialSound: "consonant" };
-}
-export const adjectives = new Set(["useful", "new", "old", "good", "small", "big", "beautiful", "young", "kind"]);
-// Audited pronunciation, including /j/ in useful and young; never infer from letters.
-export const adjectiveInitialSounds: Record<string, "vowel" | "consonant"> = {
-  useful: "consonant", new: "consonant", old: "vowel", good: "consonant", small: "consonant",
-  big: "consonant", beautiful: "consonant", young: "consonant", kind: "consonant",
+// Generated, audited release only. No database, downloads or second handwritten lexicon.
+import snapshot from "./generated/lexicon.json" with { type: "json" };
+import type { Pattern, Purpose } from "./protocol.ts";
+export const LEXICON_VERSION = snapshot.lexiconVersion;
+export const LEXICON_HASH = snapshot.lexiconHash;
+export type VerbFrame = {
+  entryId: string; frameId: string; base: string; third: string; past: string; participle: string; progressive: string;
+  pattern: Exclude<Pattern, "SVC">; allowProgressive: boolean; allowPerfect: boolean;
+  passivePromotion: string | null; fixedTail: string | null; allowedPurposes: Purpose[]; allowedPolarities: string[];
 };
-export const directObjectPronouns = new Set(["me", "you", "him", "her", "it", "us", "them"]);
-export const determiners = new Set(["a", "an", "the", "my", "your", "his", "her", "our", "their", "this", "that", "these", "those"]);
-export const subjectPronouns = new Set(["i", "you", "he", "she", "it", "we", "they"]);
-export const objectPronouns = new Set(["me", "you", "him", "her", "us", "them"]);
-export const verbForms = [
-  { base: "give", third: "gives", past: "gave", participle: "given", progressive: "giving" },
-  { base: "send", third: "sends", past: "sent", participle: "sent", progressive: "sending" },
-  { base: "show", third: "shows", past: "showed", participle: "shown", progressive: "showing" },
-  { base: "lend", third: "lends", past: "lent", participle: "lent", progressive: "lending" },
-  { base: "offer", third: "offers", past: "offered", participle: "offered", progressive: "offering" },
-];
-export const simpleVerbs = [
-  { base: "go", third: "goes", past: "went", participle: "gone", progressive: "going", pattern: "SV" },
-  { base: "sleep", third: "sleeps", past: "slept", participle: "slept", progressive: "sleeping", pattern: "SV" },
-  { base: "smile", third: "smiles", past: "smiled", participle: "smiled", progressive: "smiling", pattern: "SV" },
-  { base: "run", third: "runs", past: "ran", participle: "run", progressive: "running", pattern: "SV" },
-  { base: "like", third: "likes", past: "liked", participle: "liked", progressive: "liking", pattern: "SVO" },
-  { base: "enjoy", third: "enjoys", past: "enjoyed", participle: "enjoyed", progressive: "enjoying", pattern: "SVO" },
-  { base: "see", third: "sees", past: "saw", participle: "seen", progressive: "seeing", pattern: "SVO" },
-  { base: "make", third: "makes", past: "made", participle: "made", progressive: "making", pattern: "SVOC" },
-  { base: "find", third: "finds", past: "found", participle: "found", progressive: "finding", pattern: "SVOC" },
-] as const;
-export const beForms = ["am", "is", "are", "was", "were"];
+const entries = snapshot.entries;
+export const nouns: Record<string, { plural: boolean; person: boolean; initialSound: "vowel" | "consonant" }> = {};
+export const adjectives = new Set<string>();
+export const adjectiveInitialSounds: Record<string, "vowel" | "consonant"> = {};
+for (const entry of entries) {
+  if (entry.partOfSpeech === "noun") for (const f of entry.forms) nouns[f.surface] = { plural: f.kind === "plural", person: entry.attributes.person!, initialSound: f.initialSound as "vowel" | "consonant" };
+  if (entry.partOfSpeech === "adjective") { adjectives.add(entry.lemma); adjectiveInitialSounds[entry.lemma] = entry.attributes.initialSound as "vowel" | "consonant"; }
+}
+const markers = (kind: string, use?: string) => new Set(entries.filter(e => e.attributes.markerKind === kind && (!use || e.attributes.uses?.includes(use))).flatMap(e => e.forms.map(f => f.surface)));
+export const directObjectPronouns = markers("object-pronoun", "direct-object");
+export const objectPronouns = markers("object-pronoun", "recipient");
+export const subjectPronouns = markers("subject-pronoun");
+export const determiners = markers("determiner");
+export const beForms = [...markers("auxiliary", "finite-be")];
+export const lexicalVerbs: VerbFrame[] = entries.filter(e => e.partOfSpeech === "verb").flatMap(e => e.frames.map(f => ({
+  entryId: e.id, frameId: f.id,
+  ...Object.fromEntries(e.forms.map(form => [form.kind, form.surface])) as Pick<VerbFrame, "base" | "third" | "past" | "participle" | "progressive">,
+  pattern: f.pattern as VerbFrame["pattern"], allowProgressive: f.allowProgressive, allowPerfect: f.allowPerfect,
+  passivePromotion: f.passivePromotion, fixedTail: f.fixedTail, allowedPurposes: f.allowedPurposes as Purpose[], allowedPolarities: f.allowedPolarities,
+})));
+export const verbForms = lexicalVerbs.filter(v => v.pattern === "SVOO");
+export const simpleVerbs = lexicalVerbs.filter(v => v.pattern !== "SVOO");
 export const VOCABULARY = {
   nouns: Object.keys(nouns), adjectives: [...adjectives], determiners: [...determiners],
   pronouns: [...new Set([...subjectPronouns, ...objectPronouns])],
-  verbs: [...verbForms, ...simpleVerbs].flatMap(v => [v.base, v.third, v.past, v.participle, v.progressive]).concat(beForms), adverbs: ["today", "yesterday"], markers: ["been", "being", "have", "has", "had", "by", "do", "does", "did", "be", "what", "how", "can", "to", "school", "not", "and", "but", "because", "if"],
+  verbs: [...new Set(lexicalVerbs.flatMap(v => [v.base,v.third,v.past,v.participle,v.progressive]).concat(beForms))],
+  adverbs: [...markers("adverb")], markers: entries.filter(e => e.partOfSpeech === "function-word" && !["determiner","subject-pronoun","object-pronoun","adverb"].includes(e.attributes.markerKind!)).map(e => e.lemma),
 };
-export const knownWords = new Set(Object.values(VOCABULARY).flat());
+export const knownWords = new Set(entries.flatMap(e => e.forms.map(f => f.surface)));
+export type SurfaceCandidate = { entryId: string; revisionId: string; formKind: string; frameId: string | null };
+export const surfaceIndex: Readonly<Record<string, readonly SurfaceCandidate[]>> = snapshot.index;
+const candidateKey = (entryId: string, frameId: string | null) => JSON.stringify([entryId,frameId]);
+export function surfaceCandidates(word: string, consume: () => boolean): readonly SurfaceCandidate[] | null {
+  const candidates = Object.hasOwn(surfaceIndex,word.toLowerCase()) ? surfaceIndex[word.toLowerCase()] : [];
+  for (const candidate of candidates) { void candidate; if (!consume()) return null; }
+  return candidates;
+}
+/** A frame is returned once even when past and participle share a surface. */
+export function verbCandidates(word: string, consume: () => boolean, kinds = ["base","third","past","participle","progressive"]): VerbFrame[] | null {
+  const candidates = surfaceCandidates(word,consume);
+  if (candidates === null) return null;
+  const ids = new Set(candidates.filter(c => kinds.includes(c.formKind)).map(c => candidateKey(c.entryId,c.frameId)));
+  return lexicalVerbs.filter(v => ids.has(candidateKey(v.entryId,v.frameId)));
+}
 
-export const lexicalVerbs = [...verbForms.map(v => ({ ...v, pattern: "SVOO" as const })), ...simpleVerbs];
+export function selectedVerb(token: { normalized: string; lexiconChoice?: string }, forms = lexicalVerbs, kinds = ["base","third","past"]): VerbFrame | undefined {
+  return forms.find(v => (!token.lexiconChoice || token.lexiconChoice === candidateKey(v.entryId,v.frameId)) && kinds.some(k => v[k as "base" | "third" | "past"] === token.normalized));
+}
+export function nounCandidate(token: { normalized: string; lexiconChoice?: string }) {
+  if (!token.lexiconChoice) return Object.hasOwn(nouns,token.normalized) ? nouns[token.normalized] : undefined;
+  const entry = entries.find(e => candidateKey(e.id,null) === token.lexiconChoice && e.partOfSpeech === "noun");
+  const form = entry?.forms.find(f => f.surface === token.normalized);
+  return entry && form ? { plural: form.kind === "plural", person: entry.attributes.person!, initialSound: form.initialSound as "vowel" | "consonant" } : undefined;
+}
+/** Distinct noun senses and verb frames are enumerated by the purpose parser. */
+export function interpretationChoices(word: string): string[] {
+  const candidates = Object.hasOwn(surfaceIndex,word) ? surfaceIndex[word] : [];
+  return [...new Set(candidates.filter(c => ["singular","plural","positive","base","third","past","participle","progressive"].includes(c.formKind)).map(c => candidateKey(c.entryId,c.frameId)))];
+}
+
+export function framePermits(v: VerbFrame, purpose: Purpose, negative: boolean) {
+  return v.allowedPurposes.includes(purpose) && v.allowedPolarities.includes(negative ? "negative" : "positive");
+}
+
+export function adjectiveSupports(token: { normalized: string; lexiconChoice?: string }, use: string): boolean {
+  if (!adjectives.has(token.normalized)) return false;
+  const entry = entries.find(e => e.partOfSpeech === "adjective" && e.lemma === token.normalized && (!token.lexiconChoice || token.lexiconChoice === candidateKey(e.id,null)));
+  return entry ? !!entry.attributes.uses?.includes(use) : !token.lexiconChoice;
+}
+export function initialSound(token: { normalized: string; lexiconChoice?: string }) {
+  const entry = entries.find(e => e.partOfSpeech === "adjective" && e.lemma === token.normalized && (!token.lexiconChoice || token.lexiconChoice === candidateKey(e.id,null)));
+  return entry?.attributes.initialSound ?? nounCandidate(token)?.initialSound;
+}

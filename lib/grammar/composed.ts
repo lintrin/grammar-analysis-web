@@ -1,8 +1,8 @@
-import type { AnalysisResult, Pattern, Role } from "./protocol.ts";
+import type { AnalysisResult, Pattern, Purpose, Role } from "./protocol.ts";
 import type { Token } from "./tokens.ts";
 import { parsePredicate, type Predicate, lexicalForm } from "./predicate.ts";
 import { nounPhrase, objectPhrase, directObject, type Phrase } from "./phrases.ts";
-import { adjectives, beForms, nouns, directObjectPronouns, subjectPronouns } from "./vocabulary.ts";
+import { adjectives, adjectiveSupports, beForms, nounCandidate, directObjectPronouns, subjectPronouns } from "./vocabulary.ts";
 import { diagnose, budgetMessage } from "./feedback.ts";
 import { tenseLabel, voiceLabel } from "./classification.ts";
 
@@ -11,13 +11,14 @@ type Match = { subject: Phrase; predicate: Predicate; ordered: Token[]; pattern:
 const beWords = new Set([...beForms, "be", "been", "being"]);
 
 /** Whole-frame matching: failed candidates expose neither nodes nor automatic edits. */
-export function analyzeComposed(tokens: Token[], punctuation: string | null, result: AnalysisResult, consume: () => boolean): string | null {
+export function analyzeComposed(tokens: Token[], punctuation: string | null, result: AnalysisResult, consume: () => boolean, recordPurpose?: (purpose: Purpose) => void): string | null {
   const first = tokens[0]?.normalized;
   const question = beForms.includes(first) || ["have", "has", "had"].includes(first);
   // Plain be + complement continues through the existing purpose rules.
   const trigger = tokens.some((token, i) => (beForms.includes(token.normalized) || ["have", "has", "had"].includes(token.normalized))
-    && tokens.slice(i + 1).some(t => lexicalForm(t.normalized) || beWords.has(t.normalized)));
+    && tokens.slice(i + 1).some(t => lexicalForm(t) || beWords.has(t.normalized)));
   if (!trigger) return null;
+  recordPurpose?.(question ? "interrogative" : "declarative");
   diagnose(result, "unsupported-structure");
   const unsupported = "未匹配当前支持的谓语组合；新结构仅提供分析与形式提示，暂不提供自动纠错。";
   if (punctuation !== null && punctuation !== (question ? "?" : ".")) { diagnose(result, "punctuation"); return unsupported; }
@@ -43,7 +44,7 @@ export function analyzeComposed(tokens: Token[], punctuation: string | null, res
       if (negatives.length && ordered[1]?.normalized !== "not") continue;
       const subjectWord = tokens[subject.start].normalized;
       const recipientSubject = (subject.end === subject.start + 1 && subjectPronouns.has(subjectWord) && subjectWord !== "it")
-        || nouns[tokens[subject.end - 1].normalized]?.person === true;
+        || nounCandidate(tokens[subject.end - 1])?.person === true;
       const parts = predicate.voice === "passive" ? passiveParts(ordered, predicate, recipientSubject) : activeParts(ordered, predicate, consume);
       if (parts === "budget") { diagnose(result, "budget-exceeded"); return budgetMessage; }
       for (const frame of parts) matches.push({ subject, predicate, ordered, pattern: predicate.voice === "passive" ? (frame.some(p => p.role === "object") ? "SVO" : "SV") : predicate.pattern, parts: frame });
@@ -94,7 +95,7 @@ function activeParts(tokens: Token[], predicate: Predicate, consume: () => boole
   const start = predicate.end;
   let end = tokens.length;
   const extras: Part[] = [];
-  if (predicate.lexical?.base === "go" && tokens.at(-2)?.normalized === "to" && tokens.at(-1)?.normalized === "school") {
+  if (predicate.lexical?.fixedTail === "to school" && tokens.at(-2)?.normalized === "to" && tokens.at(-1)?.normalized === "school") {
     end -= 2; extras.push({ role: "adverbial", phrase: { start: end, end: end + 2, thirdPerson: false, attributes: [] }, explanation: "to school 是 go 的固定目的地状语，说明动作的目的地。" });
   }
   const part = (role: Role, phrase: Phrase, explanation: string): Part => ({ role, phrase, explanation });
@@ -106,12 +107,12 @@ function activeParts(tokens: Token[], predicate: Predicate, consume: () => boole
       return object ? [[part("object", object, objectExplanation), ...extras]] : [];
     }
     case "SVC": {
-      const complement = end === start + 1 && adjectives.has(tokens[start].normalized) ? { start, end, thirdPerson: false, attributes: [] } : directObject(tokens, start, end);
+      const complement = end === start + 1 && adjectiveSupports(tokens[start],"subject-complement") ? { start, end, thirdPerson: false, attributes: [] } : directObject(tokens, start, end);
       return complement ? [[part("complement", complement, "表语通过系动词 be 说明主语的身份或性质，属于完成时的系表结构。")]] : [];
     }
     case "SVOC": {
       const object = objectPhrase(tokens, start, end - 1);
-      return object && adjectives.has(tokens[end - 1]?.normalized) ? [[part("object", object, objectExplanation), part("complement", { start: end - 1, end, thirdPerson: false, attributes: [] }, "宾语补足语用单个形容词说明宾语的性质或状态。"), ...extras]] : [];
+      return object && adjectiveSupports(tokens[end - 1],"object-complement") ? [[part("object", object, objectExplanation), part("complement", { start: end - 1, end, thirdPerson: false, attributes: [] }, "宾语补足语用单个形容词说明宾语的性质或状态。"), ...extras]] : [];
     }
     case "SVOO": {
       const matches: Part[][] = [];

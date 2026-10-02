@@ -1,20 +1,21 @@
-import type { AnalysisResult } from "./protocol.ts";
+import type { AnalysisResult, Purpose } from "./protocol.ts";
 import type { Token } from "./tokens.ts";
-import { adjectives, determiners, verbForms, simpleVerbs, beForms } from "./vocabulary.ts";
+import { adjectives, determiners, selectedVerb, surfaceCandidates, interpretationChoices, framePermits, verbForms, simpleVerbs, beForms } from "./vocabulary.ts";
 import { nounPhrase, directObject } from "./phrases.ts";
 import { analyzeDeclarative } from "./simple.ts";
 import { analyzeComposed } from "./composed.ts";
 import { analyzeExtended } from "./extended.ts";
 import { createBoundaryBudget, forkCandidate } from "./context.ts";
 import { suggest } from "./suggestions.ts";
-import { diagnose, hasReason } from "./feedback.ts";
+import { diagnose, hasReason, budgetMessage } from "./feedback.ts";
 
 /** Reorder token references, never input text: every explicit range stays in the original string. */
-export function analyzePurpose(tokens: Token[], punctuation: string | null, result: AnalysisResult, consumeBoundary = createBoundaryBudget()): string {
+function analyzePurposeCandidate(tokens: Token[], punctuation: string | null, result: AnalysisResult, consumeBoundary: () => boolean, recordPurpose: (purpose: Purpose) => void): string {
+  recordPurpose("declarative");
   diagnose(result, "unsupported-structure");
-  const composed = analyzeComposed(tokens, punctuation, result, consumeBoundary);
+  const composed = analyzeComposed(tokens, punctuation, result, consumeBoundary, recordPurpose);
   if (composed !== null) return composed;
-  const extended = analyzeExtended(tokens, punctuation, result, consumeBoundary);
+  const extended = analyzeExtended(tokens, punctuation, result, consumeBoundary, recordPurpose);
   if (extended !== null) return extended;
   const first = tokens[0]?.normalized;
   const unsupported = "未匹配当前支持的句子用途结构，或句末标点与结构不匹配。";
@@ -30,13 +31,14 @@ export function analyzePurpose(tokens: Token[], punctuation: string | null, resu
     return message;
   };
   if (["do", "does", "did"].includes(first)) {
+    recordPurpose("interrogative");
     if (punctuation && punctuation !== "?") return wrongPunctuation();
     for (let v = 2; v < tokens.length; v++) {
       const subject = nounPhrase(tokens, 1, v);
-      const form = [...verbForms, ...simpleVerbs].find(f => [f.base, f.third, f.past].includes(tokens[v].normalized));
+      const form = selectedVerb(tokens[v]);
       if (!subject || !form) continue;
       const past = first === "did";
-      const lexical = { ...tokens[v], normalized: past ? form.past : subject.thirdPerson ? form.third : form.base };
+      const lexical = { ...tokens[v], finiteTense: past ? "past" as const : "present" as const, normalized: past ? form.past : subject.thirdPerson ? form.third : form.base };
       const { candidate, message } = tryParse([...tokens.slice(1, v), lexical, ...tokens.slice(v + 1)]);
       if (hasReason(candidate, "budget-exceeded")) { result.reasons = candidate.reasons; return message; }
       if (candidate.status !== "complete") continue;
@@ -56,6 +58,7 @@ export function analyzePurpose(tokens: Token[], punctuation: string | null, resu
     return unsupported;
   }
   if (beForms.includes(first)) {
+    recordPurpose("interrogative");
     if (punctuation && punctuation !== "?") return wrongPunctuation();
     const parsed = [];
     for (let split = 2; split < tokens.length; split++) {
@@ -72,6 +75,7 @@ export function analyzePurpose(tokens: Token[], punctuation: string | null, resu
     return accept(candidate, `已匹配 be 疑问句规则 QUESTION-BE-001。${message}`, "interrogative");
   }
   if (first === "how" || first === "what") {
+    recordPurpose("exclamatory");
     if (punctuation && punctuation !== "!") return wrongPunctuation();
     const last = tokens.at(-1)!;
     if (!beForms.includes(last.normalized)) return unsupported;
@@ -109,10 +113,10 @@ export function analyzePurpose(tokens: Token[], punctuation: string | null, resu
     const m = tokens.findIndex(t => t.normalized === "can");
     const subject = nounPhrase(tokens, 0, m);
     const lexical = tokens[m + 1];
-    const form = [...verbForms, ...simpleVerbs].find(f => [f.base, f.third, f.past].includes(lexical?.normalized));
+    const form = lexical && selectedVerb(lexical);
     if (!subject || !lexical || (!form && !["be", ...beForms].includes(lexical.normalized))) return unsupported;
     const normalized = form ? subject.thirdPerson ? form.third : form.base : m === 1 && first === "i" ? "am" : subject.thirdPerson ? "is" : "are";
-    const { candidate, message } = tryParse([...tokens.slice(0, m), { ...lexical, normalized }, ...tokens.slice(m + 2)]);
+    const { candidate, message } = tryParse([...tokens.slice(0, m), { ...lexical, normalized, finiteTense: "present" }, ...tokens.slice(m + 2)]);
     if (hasReason(candidate, "budget-exceeded")) { result.reasons = candidate.reasons; return message; }
     if (candidate.status !== "complete") return unsupported;
     if (lexical.normalized !== (form?.base ?? "be")) {
@@ -130,9 +134,10 @@ export function analyzePurpose(tokens: Token[], punctuation: string | null, resu
   }
   const imperativeForm = [...verbForms, ...simpleVerbs].some(f => f.base === first) || first === "be";
   if (imperativeForm) {
+    recordPurpose("imperative");
     if (punctuation && ![".", "!"].includes(punctuation)) return wrongPunctuation();
     const implicit: Token = { text: "you", normalized: "you", start: 0, end: 0 };
-    const verb = first === "be" ? { ...tokens[0], normalized: "are" } : tokens[0];
+    const verb: Token = { ...tokens[0], normalized: first === "be" ? "are" : first, finiteTense: "present" };
     const { candidate, message } = tryParse([implicit, verb, ...tokens.slice(1)]);
     if (hasReason(candidate, "budget-exceeded")) { result.reasons = candidate.reasons; return message; }
     if (candidate.status !== "complete") return unsupported;
@@ -147,4 +152,54 @@ export function analyzePurpose(tokens: Token[], punctuation: string | null, resu
   }
   if (punctuation && punctuation !== ".") return wrongPunctuation();
   return analyzeDeclarative(tokens, result, consumeBoundary);
+}
+
+/** All lexical interpretations spend the same budget as clause/phrase boundaries. */
+export function analyzePurpose(tokens: Token[], punctuation: string | null, result: AnalysisResult, consume = createBoundaryBudget()): string {
+  const choices: { index: number; ids: string[] }[] = [];
+  for (const [index, token] of tokens.entries()) {
+    if (surfaceCandidates(token.normalized,consume) === null) { diagnose(result,"budget-exceeded"); return budgetMessage; }
+    const ids = interpretationChoices(token.normalized);
+    if (ids.length > 1) choices.push({ index, ids });
+  }
+  const parsed: { candidate: AnalysisResult; message: string }[] = [];
+  let exhausted = false;
+  const visit = (position: number, ordered: Token[]) => {
+    if (exhausted) return;
+    if (position < choices.length) {
+      const { index, ids } = choices[position];
+      for (const id of ids) {
+        if (!consume()) { exhausted = true; return; }
+        const next = [...ordered]; next[index] = { ...next[index], lexiconChoice: id };
+        visit(position + 1,next);
+      }
+      return;
+    }
+    const candidate = forkCandidate(result);
+    // Keep the parser branch's purpose even when the public partial result has
+    // no classification. Missing punctuation cannot change audited permissions.
+    const context: { purpose: Purpose } = { purpose: "declarative" };
+    let message = analyzePurposeCandidate(ordered,punctuation,candidate,consume,purpose => { context.purpose = purpose; });
+    if (hasReason(candidate,"budget-exceeded")) { exhausted = true; return; }
+    if (["complete","partial"].includes(candidate.status)) {
+      const purpose = candidate.purpose ?? context.purpose;
+      const forbidden = ordered.some(token => {
+        const verb = selectedVerb(token,undefined,["base","third","past","participle","progressive"]);
+        return verb && !framePermits(verb,purpose,ordered.some(t => t.normalized === "not"));
+      });
+      if (forbidden) { Object.assign(candidate,forkCandidate(candidate)); diagnose(candidate,"unsupported-structure"); message = "词条存在，但该搭配不允许当前用途或极性。"; }
+    }
+    parsed.push({ candidate,message });
+  };
+  visit(0,tokens);
+  if (exhausted) { diagnose(result,"budget-exceeded"); return budgetMessage; }
+  const complete = parsed.filter(p => p.candidate.status === "complete");
+  const partial = parsed.filter(p => p.candidate.status === "partial");
+  if (complete.length > 1 || (!complete.length && partial.length > 1)) {
+    result.status = "ambiguous"; diagnose(result,"ambiguous");
+    return "存在多个词条或动词搭配的完整解释，无法唯一确定结构。";
+  }
+  const accepted = complete[0] ?? partial[0] ?? parsed.find(p => p.candidate.status === "ambiguous") ?? parsed[0];
+  if (accepted) { Object.assign(result,accepted.candidate); return accepted.message; }
+  diagnose(result,"unsupported-structure"); return "未匹配当前支持的结构。";
 }

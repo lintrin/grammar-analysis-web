@@ -100,9 +100,9 @@ for (const [overlap, input] of [
 });
 test('teaching examples match their declared purpose and supported scope', async () => {
   const { exampleGroups } = await import('../lib/grammar/learning.ts');
-  assert.equal(exampleGroups.length, 9);
+  assert.equal(exampleGroups.length, 10);
   for (const group of exampleGroups) for (const example of group.examples) {
-    const expected = group.title === '词典范围示例' ? 'unsupported' : ['基础纠错', '否定句纠错'].includes(example.title) ? 'partial' : 'complete';
+    const expected = example.title === '同形歧义' ? 'ambiguous' : group.title === '词典范围示例' ? 'unsupported' : ['基础纠错', '否定句纠错'].includes(example.title) ? 'partial' : 'complete';
     assert.equal(analyzeSentence(example.text).status, expected, example.title);
   }
 });

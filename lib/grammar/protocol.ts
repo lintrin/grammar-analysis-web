@@ -1,4 +1,4 @@
-export const RULE_VERSION = "0.14.3";
+export const RULE_VERSION = "0.15.0";
 export const MAX_INPUT_LENGTH = 1000;
 export type Range = { start: number; end: number };
 export type Purpose = "declarative" | "interrogative" | "imperative" | "exclamatory";
@@ -20,7 +20,7 @@ export type Correction = {
 export type ReasonCode = "unknown-word" | "unsupported-structure" | "form-mismatch" | "punctuation" | "ambiguous" | "budget-exceeded" | "invalid-input";
 export type AnalysisReason = { code: ReasonCode; ranges: Range[]; clauseIndex?: 1 | 2 };
 export type AnalysisResult = {
-  input: string; inputVersion: number; ruleVersion: string;
+  input: string; inputVersion: number; ruleVersion: string; lexiconVersion: string; lexiconHash: string;
   status: "complete" | "partial" | "unsupported" | "ambiguous" | "invalid";
   purpose: Purpose | null;
   pattern: Pattern | null;
@@ -37,6 +37,7 @@ export function validateAnalysisResult(value: unknown): asserts value is Analysi
   if (!object(value)) fail("结果不是对象");
   const r = value as Record<string, unknown>;
   if (typeof r.input !== "string" || !Number.isSafeInteger(r.inputVersion) || (r.inputVersion as number) < 0 || !nonempty(r.ruleVersion)) fail("输入元信息");
+  if (!nonempty(r.lexiconVersion) || typeof r.lexiconHash !== "string" || !/^[a-f0-9]{64}$/.test(r.lexiconHash)) fail("词典元信息");
   const input = r.input as string;
   if (!["complete", "partial", "unsupported", "ambiguous", "invalid"].includes(r.status as string)) fail("状态");
   for (const [field, allowed] of [

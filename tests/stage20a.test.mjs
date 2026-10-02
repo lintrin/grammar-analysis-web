@@ -10,6 +10,9 @@ import { nouns, adjectives, adjectiveInitialSounds, lexicalVerbs, determiners, s
 
 const seed = JSON.parse(readFileSync(new URL('../data/lexicon/seed.json', import.meta.url), 'utf8'));
 const clone = v => structuredClone(v);
+const oldSurfaces = new Set(seed.entries.flatMap(e => e.forms.map(f => f.surface)));
+const oldAdjectives = new Set(seed.entries.filter(e => e.partOfSpeech === 'adjective').map(e => e.lemma));
+const oldVerbLemmas = new Set(seed.entries.filter(e => e.partOfSpeech === 'verb').map(e => e.lemma));
 function working(t, seeded = true) {
   const db = openDatabase(':memory:'); t.after(() => db.close()); migrate(db); if (seeded) importData(db, seed); return db;
 }
@@ -21,17 +24,18 @@ test('20A manual seed retains every old surface, form kind, property and members
   const db = working(t);
   assert.equal(seed.entries.length, 91);
   assert.equal(seed.entries.reduce((n, e) => n + e.forms.length, 0), 161);
-  assert.deepEqual(new Set(seed.entries.flatMap(e => e.forms.map(f => f.surface))), knownWords);
+  assert.deepEqual(new Set(seed.entries.flatMap(e => e.forms.map(f => f.surface))), new Set([...knownWords].filter(w => oldSurfaces.has(w))));
   const rows = query(db).map(r => r.entry);
   const nounRows = rows.filter(e => e.partOfSpeech === 'noun'); assert.equal(nounRows.length, 14);
   const flatNouns = Object.fromEntries(nounRows.flatMap(e => e.forms.map(f => [f.surface, { plural: f.kind === 'plural', person: e.attributes.person, initialSound: f.initialSound }])));
-  assert.deepEqual(flatNouns, nouns);
+  assert.deepEqual(flatNouns, Object.fromEntries(Object.entries(nouns).filter(([w]) => oldSurfaces.has(w))));
   const adjectiveRows = rows.filter(e => e.partOfSpeech === 'adjective'); assert.equal(adjectiveRows.length, 9);
-  assert.deepEqual(new Set(adjectiveRows.map(e => e.lemma)), adjectives);
-  assert.deepEqual(Object.fromEntries(adjectiveRows.map(e => [e.lemma, e.attributes.initialSound])), adjectiveInitialSounds);
+  assert.deepEqual(new Set(adjectiveRows.map(e => e.lemma)), new Set([...adjectives].filter(w => oldAdjectives.has(w))));
+  assert.deepEqual(Object.fromEntries(adjectiveRows.map(e => [e.lemma, e.attributes.initialSound])), Object.fromEntries(Object.entries(adjectiveInitialSounds).filter(([w]) => oldAdjectives.has(w))));
   for (const e of adjectiveRows) assert.deepEqual(e.attributes.uses, ['attribute','object-complement','subject-complement']);
   const verbs = rows.filter(e => e.partOfSpeech === 'verb'); assert.equal(verbs.length, 14);
-  for (const old of lexicalVerbs) {
+  const oldVerbs = lexicalVerbs.filter(v => oldVerbLemmas.has(v.base)); assert.equal(oldVerbs.length,14);
+  for (const old of oldVerbs) {
     const e = verbs.find(e => e.lemma === old.base);
     assert.deepEqual(Object.fromEntries(e.forms.map(f => [f.kind, f.surface])), { base: old.base, third: old.third, past: old.past, participle: old.participle, progressive: old.progressive });
     assert.equal(e.frames[0].pattern, old.pattern);

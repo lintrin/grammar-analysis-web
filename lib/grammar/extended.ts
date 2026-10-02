@@ -1,6 +1,6 @@
-import type { AnalysisResult } from "./protocol.ts";
+import type { AnalysisResult, Purpose } from "./protocol.ts";
 import type { Token } from "./tokens.ts";
-import { beForms, simpleVerbs, verbForms } from "./vocabulary.ts";
+import { beForms, selectedVerb } from "./vocabulary.ts";
 import { nounPhrase } from "./phrases.ts";
 import { analyzeDeclarative } from "./simple.ts";
 import { forkCandidate } from "./context.ts";
@@ -10,10 +10,11 @@ import { diagnose, hasReason, budgetMessage } from "./feedback.ts";
 const unsupported = "未匹配当前限定的否定陈述句或 can 疑问句；否定疑问、缩写及其他搭配尚未支持。";
 
 /** Match the whole frame before exposing any correction. Keep every original token offset. */
-export function analyzeExtended(tokens: Token[], punctuation: string | null, result: AnalysisResult, consumeBoundary: () => boolean): string | null {
+export function analyzeExtended(tokens: Token[], punctuation: string | null, result: AnalysisResult, consumeBoundary: () => boolean, recordPurpose?: (purpose: Purpose) => void): string | null {
   const question = tokens[0]?.normalized === "can";
   const negatives = tokens.filter(t => t.normalized === "not");
   if (!question && !negatives.length) return null;
+  recordPurpose?.(question ? "interrogative" : "declarative");
   diagnose(result, "unsupported-structure");
   if (punctuation !== null && punctuation !== (question ? "?" : ".")) { diagnose(result, "punctuation"); return unsupported; }
   if (question ? negatives.length > 0 : negatives.length !== 1) return unsupported;
@@ -32,14 +33,14 @@ export function analyzeExtended(tokens: Token[], punctuation: string | null, res
     const v = question ? m : beNegative ? m : m + 2;
     const lexical = tokens[v];
     if (!lexical) continue;
-    const form = [...verbForms, ...simpleVerbs].find(f => [f.base, f.third, f.past].includes(lexical.normalized));
+    const form = selectedVerb(lexical);
     if (!beNegative && !form && (doNegative || !["be", ...beForms].includes(lexical.normalized))) continue;
     const normalized = beNegative ? lexical.normalized : doNegative && aux === "did" ? form!.past
       : form ? subject.thirdPerson ? form.third : form.base
       : m === subjectStart + 1 && tokens[subjectStart].normalized === "i" ? "am" : subject.thirdPerson ? "is" : "are";
     const candidate = forkCandidate(result);
     const tailStart = beNegative ? m + 2 : v + 1;
-    const message = analyzeDeclarative([...tokens.slice(subjectStart, m), { ...lexical, normalized }, ...tokens.slice(tailStart)], candidate, consumeBoundary);
+    const message = analyzeDeclarative([...tokens.slice(subjectStart, m), { ...lexical, normalized, finiteTense: doNegative && aux === "did" ? "past" : "present" }, ...tokens.slice(tailStart)], candidate, consumeBoundary);
     if (hasReason(candidate, "budget-exceeded")) { result.reasons = candidate.reasons; return message; }
     if (beNegative) {
       if (!["complete", "partial"].includes(candidate.status)) continue;

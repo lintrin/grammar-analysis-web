@@ -12900,7 +12900,8 @@
         "reasons": [
           {
             "code": "unsupported-structure",
-            "ranges": []
+            "ranges": [],
+            "clauseIndex": 1
           }
         ]
       }
@@ -12924,7 +12925,8 @@
         "reasons": [
           {
             "code": "unsupported-structure",
-            "ranges": []
+            "ranges": [],
+            "clauseIndex": 2
           }
         ]
       }

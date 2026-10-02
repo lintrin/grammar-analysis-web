@@ -33,7 +33,7 @@ export function instrumentBoundaries(input, limit = 4000) {
 
 export const exhaustedCases = [
   { input: 'Our teacher gave her a new picture.', limit: 0 },
-  { input: 'Our father smiled and their teacher gave her a new picture.', limit: 0, clauseIndex: 2 },
-  { input: 'Our father smiled because their teacher gave her a new picture.', limit: 0, clauseIndex: 2 },
-  { input: 'If our father smiled, their teacher gave her a new picture.', limit: 0, clauseIndex: 2 },
+  { input: 'Our father smiled and their teacher gave her a new picture.', limit: 0, clauseIndex: 1 },
+  { input: 'Our father smiled because their teacher gave her a new picture.', limit: 0, clauseIndex: 1 },
+  { input: 'If our father smiled, their teacher gave her a new picture.', limit: 0, clauseIndex: 1 },
 ];

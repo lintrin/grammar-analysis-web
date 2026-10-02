@@ -1,3 +1,4 @@
+import { LEXICON_VERSION, LEXICON_HASH } from "../lib/grammar/vocabulary.ts";
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { analyzeSentence, tokenize, validateAnalysisResult, VOCABULARY } from '../lib/grammar.ts';
@@ -85,7 +86,7 @@ test('dictionary is closed and has no inherited property lookups', () => {
   assert.equal(analyzeSentence('constructor gave him a book.').status, 'unsupported');
 });
 function protocol() {
-  return { input: 'Does she give him a useful book?', inputVersion: 2, ruleVersion: 'test-1',
+  return { input: 'Does she give him a useful book?', inputVersion: 2, ruleVersion: 'test-1', lexiconVersion: LEXICON_VERSION, lexiconHash: LEXICON_HASH,
     status: 'partial', purpose: 'interrogative', pattern: 'SVOO', complexity: 'simple', tense: 'present', aspect: 'simple', voice: 'active', reasons: [{ code: 'form-mismatch', ranges: [] }],
     messages: ['Protocol fixture only.'], corrections: [], nodes: [
       { id: 's', role: 'subject', parentId: null, ranges: [{ start: 5, end: 8 }], implicit: false, ruleId: 'fixture', explanation: 'subject' },

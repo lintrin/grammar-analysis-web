@@ -1,9 +1,9 @@
 import type { AnalysisResult, Role } from "./protocol.ts";
 import type { Token } from "./tokens.ts";
-import { adjectives, verbForms, simpleVerbs, beForms } from "./vocabulary.ts";
+import { adjectiveSupports, selectedVerb, verbForms, simpleVerbs, beForms } from "./vocabulary.ts";
 import { nounPhrase, directObject, objectPhrase, type Phrase } from "./phrases.ts";
 import { createBoundaryBudget } from "./context.ts";
-import { finiteAgreement } from "./predicate.ts";
+import { finiteAgreement, lexicalTenses } from "./predicate.ts";
 import { suggest } from "./suggestions.ts";
 import { diagnose, budgetMessage } from "./feedback.ts";
 
@@ -12,7 +12,7 @@ export function analyzeDeclarative(tokens: Token[], result: AnalysisResult, cons
   let end = tokens.length;
   let adverb: Token | null = ["today", "yesterday"].includes(tokens.at(-1)?.normalized ?? "") ? tokens[--end] : null;
   // Fixed destination frame only, not a general preposition grammar.
-  if (!adverb && tokens.at(-2)?.normalized === "to" && tokens.at(-1)?.normalized === "school" && tokens.some(t => ["go", "goes", "went"].includes(t.normalized))) {
+  if (!adverb && tokens.at(-2)?.normalized === "to" && tokens.at(-1)?.normalized === "school" && tokens.some(t => selectedVerb(t)?.fixedTail === "to school")) {
     end -= 2;
     adverb = { start: tokens[end].start, end: tokens[end + 1].end, text: result.input.slice(tokens[end].start, tokens[end + 1].end), normalized: "to school" };
   }
@@ -22,7 +22,7 @@ export function analyzeDeclarative(tokens: Token[], result: AnalysisResult, cons
   const candidates: Candidate[] = [];
   // At most 1000 code units and a closed vocabulary: enumerate phrase boundaries within a fixed budget.
   for (let v = 1; v < end - 2; v++) {
-    const form = verbForms.find(verb => [verb.base, verb.third, verb.past].includes(tokens[v].normalized));
+    const form = selectedVerb(tokens[v], verbForms);
     if (!form) continue;
     const subject = nounPhrase(tokens, 0, v);
     if (!subject) continue;
@@ -30,8 +30,7 @@ export function analyzeDeclarative(tokens: Token[], result: AnalysisResult, cons
       if (!consumeBoundary()) { diagnose(result, "budget-exceeded"); return budgetMessage; }
       const recipient = nounPhrase(tokens, v + 1, split, true);
       const object = directObject(tokens, split, end);
-      if (recipient && object) candidates.push({ subject, verbIndex: v, verb: form,
-        tense: tokens[v].normalized === form.past ? "past" : "present", recipient, object });
+      if (recipient && object) for (const tense of lexicalTenses(tokens[v],form,subject.thirdPerson,adverb?.normalized)) candidates.push({ subject, verbIndex: v, verb: form, tense, recipient, object });
     }
   }
   if (!candidates.length) return ("未匹配词典及动词搭配限定的五种句型结构。");
@@ -72,22 +71,23 @@ export function analyzeDeclarative(tokens: Token[], result: AnalysisResult, cons
 function analyzeSimplePatterns(tokens: Token[], end: number, adverb: Token | null, result: AnalysisResult): string | null {
   type Match = { subject: Phrase; v: number; pattern: "SV" | "SVO" | "SVC" | "SVOC"; tense: "present" | "past"; expected: string; object?: Phrase; complement?: Phrase };
   const matches: Match[] = [];
-  const adjective = (start: number, stop: number): Phrase | null => stop === start + 1 && adjectives.has(tokens[start].normalized)
+  const adjective = (start: number, stop: number, use: string): Phrase | null => stop === start + 1 && adjectiveSupports(tokens[start],use)
     ? { start, end: stop, thirdPerson: false, attributes: [] } : null;
   for (let v = 1; v < end; v++) {
     const word = tokens[v].normalized;
-    const form = simpleVerbs.find(f => [f.base, f.third, f.past].some(value => value === word));
+    const form = selectedVerb(tokens[v], simpleVerbs);
     const isBe = beForms.includes(word);
     if (!form && !isBe) continue;
     const subject = nounPhrase(tokens, 0, v);
     if (!subject) continue;
-    const past = isBe ? ["was", "were"].includes(word) : word === form!.past;
+    for (const tense of isBe ? [["was", "were"].includes(word) ? "past" : "present"] as const : lexicalTenses(tokens[v],form!,subject.thirdPerson,adverb?.normalized)) {
+    const past = tense === "past";
     const isI = v === 1 && tokens[0].normalized === "i";
     const expected = isBe ? finiteAgreement(word, subject.thirdPerson, isI)!.expected
       : past ? form!.past : subject.thirdPerson ? form!.third : form!.base;
     const common = { subject, v, tense: past ? "past" as const : "present" as const, expected };
     if (isBe) {
-      const complement = adjective(v + 1, end) ?? directObject(tokens, v + 1, end);
+      const complement = adjective(v + 1, end,"subject-complement") ?? directObject(tokens, v + 1, end);
       if (complement) matches.push({ ...common, pattern: "SVC", complement });
     } else if (form!.pattern === "SV") {
       if (v + 1 === end) matches.push({ ...common, pattern: "SV" });
@@ -96,10 +96,11 @@ function analyzeSimplePatterns(tokens: Token[], end: number, adverb: Token | nul
       if (object) matches.push({ ...common, pattern: "SVO", object });
     } else {
       // Single adjective object complement only; noun complements and other frames are deferred.
-      const complement = adjective(end - 1, end);
+      const complement = adjective(end - 1, end,"object-complement");
       const object = objectPhrase(tokens, v + 1, end - 1);
       if (complement && object) matches.push({ ...common, pattern: "SVOC", object, complement });
     }
+  }
   }
   if (!matches.length) return null;
   if (matches.length > 1) { result.status = "ambiguous"; diagnose(result, "ambiguous"); return "存在多个可能的成分边界，无法唯一确定结构。"; }

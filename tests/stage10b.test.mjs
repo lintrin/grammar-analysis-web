@@ -47,8 +47,8 @@ test('if clauses share the boundary budget without leaking tentative nodes or ed
   const input = 'If she does not give him a book, he does not give her a book';
   const r = { ...analyzeSentence('unknown'), input, messages: [] };
   let boundaries = 0;
-  const message = analyzeComplex(tokenize(input), null, r, () => ++boundaries <= 8);
-  assert.match(message, /第 2 分句.*计算预算/); assert.equal(boundaries, 9);
+  const message = analyzeComplex(tokenize(input), null, r, () => ++boundaries <= 15);
+  assert.match(message, /第 2 分句.*计算预算/); assert.equal(boundaries, 16);
   assert.equal(r.status, 'unsupported'); assert.deepEqual(r.nodes, []); assert.deepEqual(r.corrections, []);
 });
 test('if input limit preserves positions and rejects excess UTF-16 units', () => {

@@ -44,9 +44,9 @@ test('both clause parses consume one shared boundary budget without leaking edit
   const input = 'She does not give him a book and he does not give her a book';
   const result = { ...analyzeSentence('unknown'), input, messages: [] };
   let boundaries = 0;
-  const message = analyzeCompound(tokenize(input), null, result, () => ++boundaries <= 8);
+  const message = analyzeCompound(tokenize(input), null, result, () => ++boundaries <= 15);
   assert.match(message, /第 2 分句.*计算预算/);
-  assert.equal(boundaries, 9);
+  assert.equal(boundaries, 16);
   assert.equal(result.status, 'unsupported');
   assert.deepEqual(result.nodes, []); assert.deepEqual(result.corrections, []);
 });

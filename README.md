@@ -4,13 +4,13 @@
 
 阶段 1–12 ✅ 已完成，历史开发与验收见 [开发计划](docs/development-plan.md)、[后续开发计划](docs/follow-up-development-plan.md) 和 [阶段 12 验收](docs/stage12-scope.md)。本轮阶段 13–18 ✅ 已完成；实施记录见 [谓语扩展执行计划](docs/predicate-expansion-plan.md)。
 
-下一轮按阶段 19–25 规划本地 SQLite 数据库词典、审核快照与词汇扩容、实义 have、限定否定缩写及谓语纠错；范围、依赖和验收门槛见 [后续计划](docs/next-development-plan.md)。数据库维护词典，分析仍在浏览器内使用打包快照，输入句子不入库。计划已补充历史验收语料基线、词条修改后重新审核，以及规则与词典版本联合校验。阶段 19 ✅ 已完成：固定范围、数据库设计、416 个未来开发答案、历史开发基线和 65 项迁移；阶段交付的工程、开发/构建浏览器复核通过；测试去重及审查完整性修复后 1422 项全部通过，见 [阶段 19 验收与测试清理](docs/stage19-scope.md)。阶段 20A ✅ 已完成本地建库、旧词入库与维护命令，见 [20A 记录](docs/stage20a-scope.md)；当前支持范围仍以 0.14.3 为准。
+下一轮按阶段 19–25 规划本地 SQLite 数据库词典、审核快照与词汇扩容、实义 have、限定否定缩写及谓语纠错；范围、依赖和验收门槛见 [后续计划](docs/next-development-plan.md)。数据库维护词典，分析仍在浏览器内使用打包快照，输入句子不入库。计划已补充历史验收语料基线、词条修改后重新审核，以及规则与词典版本联合校验。阶段 19 ✅ 已完成：固定范围、数据库设计、416 个未来开发答案、历史开发基线和 65 项迁移；阶段交付的工程、开发/构建浏览器复核通过；测试去重及审查完整性修复后 1422 项全部通过，见 [阶段 19 验收与测试清理](docs/stage19-scope.md)。阶段 20A ✅ 已完成本地建库、旧词入库与维护命令，见 [20A 记录](docs/stage20a-scope.md)；20B/C ✅ 已完成审核发布、确定性重建与客户端快照接入，见 [20B/C 验收](docs/stage20bc-scope.md)。阶段 20 ✅；阶段 21 ✅ 已完成首批词汇扩容，1730 项测试及开发/构建浏览器验收通过，见 [21 记录](docs/stage21-scope.md)；下一步阶段 22 实义 have。
 
 ## 当前进度
 
-当前规则 **0.14.3**。保留五种基本句型、四种简单句用途、限定 do/be/can 否定与一般疑问，以及两个完整陈述分句的 and/but、后置 because、前置 if。新增现在/过去进行时、完成时、限定被动语态，以及完成进行、完成被动、进行被动。完整谓语、时态、体和语态按原文标注，多分句分别展示各自分类。
+当前规则 **0.15.0**。保留五种基本句型、四种简单句用途、限定 do/be/can 否定与一般疑问，以及两个完整陈述分句的 and/but、后置 because、前置 if。新增现在/过去进行时、完成时、限定被动语态，以及完成进行、完成被动、进行被动。完整谓语、时态、体和语态按原文标注，多分句分别展示各自分类。
 
-完整词形、被动转换、错误状态与限制见 [当前本地分析范围](docs/predicate-expansion-scope.md)。仍使用人工小词典，不代表支持任意英文。实义动词 have、SV/SVOC 被动、将来时、缩写、否定疑问、特殊疑问、通用介词短语、新 can 链及完成进行被动不在本轮范围内。
+完整词形、被动转换、错误状态与限制见 [谓语范围](docs/predicate-expansion-scope.md) 与 [新增词汇范围](docs/lexicon-expansion-scope.md)。现有 44 组可数名词、24 个形容词、26 个实义动词词元；read 同形须依据明确形式线索区分时态，否则保留歧义。使用人工维护并经审核发布的词典快照（1.1.0），不代表支持任意英文。实义动词 have、SV/SVOC 被动、将来时、缩写、否定疑问、特殊疑问、通用介词短语、新 can 链及完成进行被动不在本轮范围内。
 
 新谓语组合暂不提供自动修改建议。原有主谓一致、do/does/did 后原形、can 后原形三类纠错保留；每次应用一条并重新分析，编辑输入立即使旧结果和建议失效。未知词可键盘定位，范围外与语境歧义明确提示；未命中纠错不代表句子完全正确。
 
@@ -74,6 +74,8 @@ npm run lexicon -- query --lemma give --pos verb
 npm run lexicon -- show --revision verb:lexical:give:r1
 ```
 
+当前词典可在空工作库执行 `init` 后用 `rebuild` 重建全部 148 个已审核词条；旧 `seed.json` 仅为阶段 20 初次迁移的 91 词条。`stage21-import.json` 保存新增 57 个完整草稿，继续扩容须先 query/show 审查、以当前哈希 review，再选择全部修订 publish 新版本、更新联合清单并 generate-client/verify，不能直接改客户端 JSON。
+
 `init` / `migrate` 按 Drizzle journal 执行 SQL 并核对已应用迁移的 SHA-256；重复执行无操作。种子完整迁移旧人工词典，共 91 个词条、161 条词形；同 ID 同内容重复导入无操作，冲突整批回滚。数据库插入触发器同时阻止 REPLACE 覆盖冻结记录，保护不依赖 recursive_triggers 设置。普通导入只能创建草稿，拒绝审核及发布字段。
 
 修改词条时，先从 `show` 输出提取完整 `entry` 对象保存为 JSON，保留 `id`，将 `revisionId` 改为新 ID，人工修改属性、词形或搭配；然后执行：
@@ -85,7 +87,38 @@ npm run lexicon -- validate
 
 `revise` 创建下一版草稿，旧修订保留；不接受局部补丁或继承审核。新增词条使用 `{ sources, entries }` 导入格式，可参考种子。`--db <path>` 可指定独立工作库；导入、查询、修订和校验要求库已初始化。删除 `.lexicon/` 后可由迁移及种子重建初始草稿库。
 
-本阶段仅提供维护工作库。审核、不可变发布和发布重建在 20B 实施，客户端生成及分析器接入在 20C 实施。当前网页仍读取人工 TypeScript 词典，构建与分析不读取 SQLite；数据库没有输入句子、分析结果或历史记录表。完整验收见 [阶段 20A](docs/stage20a-scope.md)。
+20B/C 已完成：网页只读取随应用打包的生成快照；构建验证固定发布、客户端产物及规则/词典联合清单，不读取 SQLite。数据库没有输入句子、分析结果或历史记录表，完整验收见 [20B/C](docs/stage20bc-scope.md)。
+
+从当前固定发布重建工作库（使用一个已初始化的空库）：
+
+```sh
+npm run lexicon -- init --db .lexicon/rebuilt.sqlite
+npm run lexicon -- rebuild --db .lexicon/rebuilt.sqlite
+npm run lexicon -- validate --db .lexicon/rebuilt.sqlite
+npm run lexicon -- verify
+```
+
+审核前用 `show` 查看完整修订及其 `contentHash`，人工核对词形、搭配、用途、首音和来源后，显式绑定该预览哈希：
+
+```sh
+npm run lexicon -- review --revision <修订ID> --hash <预览contentHash> --reviewer <审核者> --decision approve
+npm run lexicon -- publish --file <发布选择清单.json> --out data/lexicon/releases/<新版本>.json
+npm run lexicon -- export-release --version <已发布版本> --out <导出路径.json>
+```
+
+发布选择清单为 `{ "lexiconVersion": "新版本", "revisionIds": ["明确选择的已审核修订ID"] }`，每词条仅选一个修订。旧发布版本不可覆盖；修改须 `revise` 建新草稿并重新审核。发布成功但输出失败时用 `export-release` 恢复完整文件。普通 `import` 不接受审核字段。
+
+采用新发布时，人工更新 `data/analysis-manifest.json` 的 `ruleVersion`、`lexiconVersion`、`lexiconHash`、`lexiconFormatVersion`，然后显式生成并验证客户端产物：
+
+```sh
+npm run lexicon -- generate-client
+npm run lexicon -- verify
+npm run build
+```
+
+构建不会自动生成或审核数据，缺失/非法发布、错误联合版本或被篡改的快照都会明确失败。`rebuild` 只接受仓库清单锁定的发布，不把任意外部文件的哈希当作作者签名。结果协议必填词典版本与哈希；词典组合变化会保留输入并清除旧结果，旧建议拒绝应用。
+
+本次 20B/C 验收：1476 项测试及类型、ESLint、构建通过；开发和构建浏览器均通过键盘、手机、固定答案、断网及隐私回归，真实开发热更新失效已验证。
 
 ## 技术栈
 
@@ -115,6 +148,7 @@ npm run lexicon -- validate
 - `tests/stage12-performance.test.mjs`：1000 字符边界、共享预算及耗尽降级
 - `tests/stage13.test.mjs` 至 `tests/stage18.test.mjs`：谓语扩展、协议、独立答案与预算回归
 - `tests/fixtures/predicate-development.json`、`predicate-acceptance.json`：人工固定开发与独立答案
+- `tests/stage21.test.mjs`、`tests/ui-stage21.mjs`：新词固定答案、审核发布重现、同形预算、用途/基础纠错及浏览器验收
 - `tests/stage19.test.mjs`、`tests/fixtures/lexicon-development.json`：未来人工答案完整性、范围和数量（不表示未来能力已实现）
 - `tests/fixtures/lexicon-migrations.json`：历史样例审查、原 fixture 与逐阶段迁移答案
 - `tests/baselines/`、`tests/helpers/historical-independence.mjs`：固定历史开发语料和独立性保护

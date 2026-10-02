@@ -29,6 +29,7 @@ const examples = [
   { title: "范围提示", text: "The weather is beautiful today." },
 ];
 export const exampleGroups = [
+  { title: "新增常用词汇", scope: "44 组可数名词、24 个形容词、26 个动词词元；按限定搭配分析。read 同形句可能无法唯一确定时态。", examples: [{ title: "人物接受者", text: "The doctor teaches the children a useful book." }, { title: "不规则复数", text: "The women carry the apples." }, { title: "新词完成时", text: "The nurse has written a letter." }, { title: "新词宾补", text: "She keeps the door clean." }, { title: "同形歧义", text: "They read books." }] },
   { title: "常用谓语组合", scope: "完成进行、完成被动、进行被动；不支持完成进行被动或新的 can 组合。", examples: [{ title: "完成进行", text: "She has been sleeping." }, { title: "完成被动", text: "A book has been given to her." }, { title: "进行被动", text: "She is being given a book." }] },
   { title: "被动语态", scope: "限定 SVO/SVOO 被动转换；接受者与施事分别用 to/by 说明，句型按表层成分标注。", examples: [{ title: "被动 · 宾语提升", text: "The book was liked by her." }, { title: "被动 · 接受者提升", text: "She is given a book." }, { title: "被动 · 直接宾语提升", text: "A book is given to her." }] },
   { title: "完成时", scope: "现在/过去完成时，含 been + 表语；助动词承担人称，实义动词使用过去分词。", examples: [{ title: "完成 · 不规则分词", text: "She has given him a book." }, { title: "完成 · 系表", text: "They had been kind." }] },
