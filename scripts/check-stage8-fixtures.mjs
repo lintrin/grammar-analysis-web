@@ -15,7 +15,7 @@ for (const fixture of plan.fixtures) {
   // Protocol checks verify literal positions and hierarchy, not future grammar support.
   for (const [text, answer] of [[input, expected], ...(afterApply ? [[afterApply.input, afterApply]] : [])]) {
     validateAnalysisResult({ input: text, inputVersion: 0, ruleVersion: plan.targetRuleVersion,
-      purpose: null, pattern: null, complexity: null, tense: null, ...answer,
+      purpose: null, pattern: null, complexity: null, tense: null, aspect: null, voice: null, ...answer,
       messages: ['Planned fixture'], nodes: answer.nodes.map(n => ({ ...n, id: n.key, parentId: n.parentKey, ruleId: 'PLANNED', explanation: 'Handwritten expected role' })),
       corrections: answer.corrections.map((c, i) => ({ ...c, id: `planned-${i}`, context: 'Planned context', reason: 'Planned correction' })) });
   }

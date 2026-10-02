@@ -28,7 +28,9 @@
               "pattern": "SV",
               "purpose": "declarative",
               "tense": "present",
-              "kind": "independent"
+              "kind": "independent",
+              "aspect": "simple",
+              "voice": "active"
             }
           },
           {
@@ -70,7 +72,9 @@
               "pattern": "SV",
               "purpose": "declarative",
               "tense": "present",
-              "kind": "independent"
+              "kind": "independent",
+              "aspect": "simple",
+              "voice": "active"
             }
           },
           {
@@ -111,7 +115,10 @@
             "relation": "addition"
           }
         ],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
       }
     },
     {
@@ -139,7 +146,9 @@
               "pattern": "SVO",
               "purpose": "declarative",
               "tense": "present",
-              "kind": "independent"
+              "kind": "independent",
+              "aspect": "simple",
+              "voice": "active"
             }
           },
           {
@@ -193,7 +202,9 @@
               "pattern": "SVO",
               "purpose": "declarative",
               "tense": "present",
-              "kind": "independent"
+              "kind": "independent",
+              "aspect": "simple",
+              "voice": "active"
             }
           },
           {
@@ -250,7 +261,10 @@
             "relation": "contrast"
           }
         ],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
       }
     },
     {
@@ -278,7 +292,9 @@
               "pattern": "SVC",
               "purpose": "declarative",
               "tense": "present",
-              "kind": "independent"
+              "kind": "independent",
+              "aspect": "simple",
+              "voice": "active"
             }
           },
           {
@@ -332,7 +348,9 @@
               "pattern": "SVOC",
               "purpose": "declarative",
               "tense": "past",
-              "kind": "independent"
+              "kind": "independent",
+              "aspect": "simple",
+              "voice": "active"
             }
           },
           {
@@ -397,7 +415,10 @@
             "relation": "addition"
           }
         ],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
       }
     },
     {
@@ -425,7 +446,9 @@
               "pattern": "SVOO",
               "purpose": "declarative",
               "tense": "past",
-              "kind": "independent"
+              "kind": "independent",
+              "aspect": "simple",
+              "voice": "active"
             }
           },
           {
@@ -491,7 +514,9 @@
               "pattern": "SV",
               "purpose": "declarative",
               "tense": "present",
-              "kind": "independent"
+              "kind": "independent",
+              "aspect": "simple",
+              "voice": "active"
             }
           },
           {
@@ -532,7 +557,10 @@
             "relation": "contrast"
           }
         ],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
       }
     },
     {
@@ -560,7 +588,9 @@
               "pattern": "SV",
               "purpose": "declarative",
               "tense": "present",
-              "kind": "independent"
+              "kind": "independent",
+              "aspect": "simple",
+              "voice": "active"
             }
           },
           {
@@ -602,7 +632,9 @@
               "pattern": "SVOO",
               "purpose": "declarative",
               "tense": "past",
-              "kind": "independent"
+              "kind": "independent",
+              "aspect": "simple",
+              "voice": "active"
             }
           },
           {
@@ -667,7 +699,10 @@
             "relation": "contrast"
           }
         ],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
       }
     },
     {
@@ -695,7 +730,9 @@
               "pattern": "SV",
               "purpose": "declarative",
               "tense": null,
-              "kind": "independent"
+              "kind": "independent",
+              "aspect": "simple",
+              "voice": "active"
             }
           },
           {
@@ -749,7 +786,9 @@
               "pattern": "SV",
               "purpose": "declarative",
               "tense": "past",
-              "kind": "independent"
+              "kind": "independent",
+              "aspect": "simple",
+              "voice": "active"
             }
           },
           {
@@ -806,7 +845,10 @@
             "relation": "addition"
           }
         ],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
       }
     },
     {
@@ -834,7 +876,9 @@
               "pattern": "SVOO",
               "purpose": "declarative",
               "tense": "present",
-              "kind": "independent"
+              "kind": "independent",
+              "aspect": "simple",
+              "voice": "active"
             }
           },
           {
@@ -924,7 +968,9 @@
               "pattern": "SVC",
               "purpose": "declarative",
               "tense": "present",
-              "kind": "independent"
+              "kind": "independent",
+              "aspect": "simple",
+              "voice": "active"
             }
           },
           {
@@ -977,7 +1023,10 @@
             "relation": "addition"
           }
         ],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
       }
     },
     {
@@ -1005,7 +1054,9 @@
               "pattern": "SVO",
               "purpose": "declarative",
               "tense": "present",
-              "kind": "independent"
+              "kind": "independent",
+              "aspect": "simple",
+              "voice": "active"
             }
           },
           {
@@ -1059,7 +1110,9 @@
               "pattern": "SVO",
               "purpose": "declarative",
               "tense": "past",
-              "kind": "independent"
+              "kind": "independent",
+              "aspect": "simple",
+              "voice": "active"
             }
           },
           {
@@ -1116,7 +1169,10 @@
             "relation": "contrast"
           }
         ],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
       }
     },
     {
@@ -1144,7 +1200,9 @@
               "pattern": "SVC",
               "purpose": "declarative",
               "tense": "present",
-              "kind": "independent"
+              "kind": "independent",
+              "aspect": "simple",
+              "voice": "active"
             }
           },
           {
@@ -1210,7 +1268,9 @@
               "pattern": "SVOC",
               "purpose": "declarative",
               "tense": "past",
-              "kind": "independent"
+              "kind": "independent",
+              "aspect": "simple",
+              "voice": "active"
             }
           },
           {
@@ -1287,7 +1347,10 @@
             "relation": "addition"
           }
         ],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
       }
     },
     {
@@ -1315,7 +1378,9 @@
               "pattern": "SVO",
               "purpose": "declarative",
               "tense": "past",
-              "kind": "independent"
+              "kind": "independent",
+              "aspect": "simple",
+              "voice": "active"
             }
           },
           {
@@ -1369,7 +1434,9 @@
               "pattern": "SVO",
               "purpose": "declarative",
               "tense": "present",
-              "kind": "independent"
+              "kind": "independent",
+              "aspect": "simple",
+              "voice": "active"
             }
           },
           {
@@ -1422,7 +1489,10 @@
             "relation": "contrast"
           }
         ],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
       }
     },
     {
@@ -1450,7 +1520,9 @@
               "pattern": "SVC",
               "purpose": "declarative",
               "tense": "present",
-              "kind": "independent"
+              "kind": "independent",
+              "aspect": "simple",
+              "voice": "active"
             }
           },
           {
@@ -1504,7 +1576,9 @@
               "pattern": "SVC",
               "purpose": "declarative",
               "tense": "past",
-              "kind": "independent"
+              "kind": "independent",
+              "aspect": "simple",
+              "voice": "active"
             }
           },
           {
@@ -1557,7 +1631,10 @@
             "relation": "addition"
           }
         ],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
       }
     },
     {
@@ -1585,7 +1662,9 @@
               "pattern": "SVOO",
               "purpose": "declarative",
               "tense": null,
-              "kind": "independent"
+              "kind": "independent",
+              "aspect": "simple",
+              "voice": "active"
             }
           },
           {
@@ -1655,7 +1734,9 @@
               "pattern": "SVC",
               "purpose": "declarative",
               "tense": null,
-              "kind": "independent"
+              "kind": "independent",
+              "aspect": "simple",
+              "voice": "active"
             }
           },
           {
@@ -1712,7 +1793,10 @@
             "relation": "contrast"
           }
         ],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
       }
     },
     {
@@ -1740,7 +1824,9 @@
               "pattern": "SV",
               "purpose": "declarative",
               "tense": "present",
-              "kind": "independent"
+              "kind": "independent",
+              "aspect": "simple",
+              "voice": "active"
             }
           },
           {
@@ -1782,7 +1868,9 @@
               "pattern": "SV",
               "purpose": "declarative",
               "tense": "present",
-              "kind": "independent"
+              "kind": "independent",
+              "aspect": "simple",
+              "voice": "active"
             }
           },
           {
@@ -1823,7 +1911,10 @@
             "relation": "addition"
           }
         ],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
       }
     },
     {
@@ -1836,7 +1927,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -1849,7 +1948,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -1862,7 +1969,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -1875,7 +1990,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -1888,7 +2011,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -1901,7 +2032,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -1914,7 +2053,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -1927,7 +2074,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -1940,7 +2095,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -1953,7 +2116,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -1966,7 +2137,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -1979,7 +2158,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -1992,7 +2179,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -2005,7 +2200,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -2018,7 +2221,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -2031,7 +2242,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -2044,7 +2263,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -2057,7 +2284,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -2070,7 +2305,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -2083,7 +2326,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -2096,7 +2347,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -2109,7 +2368,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -2122,7 +2389,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -2135,7 +2410,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -2148,7 +2431,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -2161,7 +2452,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "invalid-input",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -2174,7 +2473,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -2187,7 +2494,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -2200,7 +2515,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
       }
     }
   ]

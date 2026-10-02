@@ -42,8 +42,8 @@ for (const f of stage12.fixtures) test(`stage 12 independent ${f.id}: ${f.input}
 for (const f of stage12.boundaries) test(`stage 12 independent contrast: ${f.input}`, () => {
   const result = analyzeSentence(f.input);
   assert.equal(result.status, f.status);
-  assert.equal(result.reasons[0].code, f.code);
-  assert.deepEqual(result.nodes, []);
+  if (f.status === 'complete') compareStage9(expectedStage12(f), result);
+  else { assert.equal(result.reasons[0].code, f.code); assert.deepEqual(result.nodes, []); }
   assert.deepEqual(result.corrections, []);
   validateAnalysisResult(result);
 });

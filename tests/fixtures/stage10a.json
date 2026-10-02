@@ -28,7 +28,9 @@
               "pattern": "SV",
               "purpose": "declarative",
               "tense": "present",
-              "kind": "main"
+              "kind": "main",
+              "aspect": "simple",
+              "voice": "active"
             }
           },
           {
@@ -70,7 +72,9 @@
               "pattern": "SVO",
               "purpose": "declarative",
               "tense": "present",
-              "kind": "subordinate"
+              "kind": "subordinate",
+              "aspect": "simple",
+              "voice": "active"
             }
           },
           {
@@ -123,7 +127,10 @@
             "relation": "cause"
           }
         ],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
       }
     },
     {
@@ -151,7 +158,9 @@
               "pattern": "SVO",
               "purpose": "declarative",
               "tense": "present",
-              "kind": "main"
+              "kind": "main",
+              "aspect": "simple",
+              "voice": "active"
             }
           },
           {
@@ -205,7 +214,9 @@
               "pattern": "SVC",
               "purpose": "declarative",
               "tense": "present",
-              "kind": "subordinate"
+              "kind": "subordinate",
+              "aspect": "simple",
+              "voice": "active"
             }
           },
           {
@@ -258,7 +269,10 @@
             "relation": "cause"
           }
         ],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
       }
     },
     {
@@ -286,7 +300,9 @@
               "pattern": "SVC",
               "purpose": "declarative",
               "tense": "present",
-              "kind": "main"
+              "kind": "main",
+              "aspect": "simple",
+              "voice": "active"
             }
           },
           {
@@ -340,7 +356,9 @@
               "pattern": "SVOC",
               "purpose": "declarative",
               "tense": "past",
-              "kind": "subordinate"
+              "kind": "subordinate",
+              "aspect": "simple",
+              "voice": "active"
             }
           },
           {
@@ -405,7 +423,10 @@
             "relation": "cause"
           }
         ],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
       }
     },
     {
@@ -433,7 +454,9 @@
               "pattern": "SV",
               "purpose": "declarative",
               "tense": "past",
-              "kind": "main"
+              "kind": "main",
+              "aspect": "simple",
+              "voice": "active"
             }
           },
           {
@@ -475,7 +498,9 @@
               "pattern": "SVOO",
               "purpose": "declarative",
               "tense": "past",
-              "kind": "subordinate"
+              "kind": "subordinate",
+              "aspect": "simple",
+              "voice": "active"
             }
           },
           {
@@ -540,7 +565,10 @@
             "relation": "cause"
           }
         ],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
       }
     },
     {
@@ -568,7 +596,9 @@
               "pattern": "SVOO",
               "purpose": "declarative",
               "tense": "past",
-              "kind": "main"
+              "kind": "main",
+              "aspect": "simple",
+              "voice": "active"
             }
           },
           {
@@ -634,7 +664,9 @@
               "pattern": "SV",
               "purpose": "declarative",
               "tense": "present",
-              "kind": "subordinate"
+              "kind": "subordinate",
+              "aspect": "simple",
+              "voice": "active"
             }
           },
           {
@@ -675,7 +707,10 @@
             "relation": "cause"
           }
         ],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
       }
     },
     {
@@ -703,7 +738,9 @@
               "pattern": "SV",
               "purpose": "declarative",
               "tense": null,
-              "kind": "main"
+              "kind": "main",
+              "aspect": "simple",
+              "voice": "active"
             }
           },
           {
@@ -757,7 +794,9 @@
               "pattern": "SV",
               "purpose": "declarative",
               "tense": "past",
-              "kind": "subordinate"
+              "kind": "subordinate",
+              "aspect": "simple",
+              "voice": "active"
             }
           },
           {
@@ -810,7 +849,10 @@
             "relation": "cause"
           }
         ],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
       }
     },
     {
@@ -838,7 +880,9 @@
               "pattern": "SVOO",
               "purpose": "declarative",
               "tense": "present",
-              "kind": "main"
+              "kind": "main",
+              "aspect": "simple",
+              "voice": "active"
             }
           },
           {
@@ -928,7 +972,9 @@
               "pattern": "SVC",
               "purpose": "declarative",
               "tense": "present",
-              "kind": "subordinate"
+              "kind": "subordinate",
+              "aspect": "simple",
+              "voice": "active"
             }
           },
           {
@@ -981,7 +1027,10 @@
             "relation": "cause"
           }
         ],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
       }
     },
     {
@@ -1009,7 +1058,9 @@
               "pattern": "SVO",
               "purpose": "declarative",
               "tense": "present",
-              "kind": "main"
+              "kind": "main",
+              "aspect": "simple",
+              "voice": "active"
             }
           },
           {
@@ -1063,7 +1114,9 @@
               "pattern": "SVO",
               "purpose": "declarative",
               "tense": "past",
-              "kind": "subordinate"
+              "kind": "subordinate",
+              "aspect": "simple",
+              "voice": "active"
             }
           },
           {
@@ -1116,7 +1169,10 @@
             "relation": "cause"
           }
         ],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
       }
     },
     {
@@ -1144,7 +1200,9 @@
               "pattern": "SVOC",
               "purpose": "declarative",
               "tense": "past",
-              "kind": "main"
+              "kind": "main",
+              "aspect": "simple",
+              "voice": "active"
             }
           },
           {
@@ -1222,7 +1280,9 @@
               "pattern": "SVC",
               "purpose": "declarative",
               "tense": "present",
-              "kind": "subordinate"
+              "kind": "subordinate",
+              "aspect": "simple",
+              "voice": "active"
             }
           },
           {
@@ -1287,7 +1347,10 @@
             "relation": "cause"
           }
         ],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
       }
     },
     {
@@ -1315,7 +1378,9 @@
               "pattern": "SVO",
               "purpose": "declarative",
               "tense": "past",
-              "kind": "main"
+              "kind": "main",
+              "aspect": "simple",
+              "voice": "active"
             }
           },
           {
@@ -1369,7 +1434,9 @@
               "pattern": "SVO",
               "purpose": "declarative",
               "tense": "present",
-              "kind": "subordinate"
+              "kind": "subordinate",
+              "aspect": "simple",
+              "voice": "active"
             }
           },
           {
@@ -1422,7 +1489,10 @@
             "relation": "cause"
           }
         ],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
       }
     },
     {
@@ -1450,7 +1520,9 @@
               "pattern": "SVC",
               "purpose": "declarative",
               "tense": "present",
-              "kind": "main"
+              "kind": "main",
+              "aspect": "simple",
+              "voice": "active"
             }
           },
           {
@@ -1504,7 +1576,9 @@
               "pattern": "SVC",
               "purpose": "declarative",
               "tense": "past",
-              "kind": "subordinate"
+              "kind": "subordinate",
+              "aspect": "simple",
+              "voice": "active"
             }
           },
           {
@@ -1557,7 +1631,10 @@
             "relation": "cause"
           }
         ],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
       }
     },
     {
@@ -1585,7 +1662,9 @@
               "pattern": "SVOO",
               "purpose": "declarative",
               "tense": null,
-              "kind": "main"
+              "kind": "main",
+              "aspect": "simple",
+              "voice": "active"
             }
           },
           {
@@ -1655,7 +1734,9 @@
               "pattern": "SVC",
               "purpose": "declarative",
               "tense": null,
-              "kind": "subordinate"
+              "kind": "subordinate",
+              "aspect": "simple",
+              "voice": "active"
             }
           },
           {
@@ -1712,7 +1793,10 @@
             "relation": "cause"
           }
         ],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
       }
     },
     {
@@ -1725,7 +1809,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -1738,7 +1830,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -1751,7 +1851,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -1764,7 +1872,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -1777,7 +1893,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -1790,7 +1914,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -1803,7 +1935,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -1816,7 +1956,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -1829,7 +1977,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -1842,7 +1998,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -1855,7 +2019,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -1868,7 +2040,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -1881,7 +2061,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -1894,25 +2082,137 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
       }
     },
     {
       "id": "boundary-15",
       "input": "If she sleeps, he smiles.",
       "expected": {
-        "status": "unsupported",
-        "purpose": null,
+        "status": "complete",
+        "purpose": "declarative",
+        "complexity": "complex",
         "pattern": null,
-        "complexity": null,
         "tense": null,
-        "nodes": [],
-        "corrections": []
-      },
-      "migration": {
-        "targetRuleVersion": "0.8.0",
-        "fixtureId": "if-01",
-        "reason": "Stage 10B adds preposed if with one required comma; preserve the original 0.7.0 rejection."
+        "nodes": [
+          {
+            "key": "clause-1",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 13
+              }
+            ],
+            "clause": {
+              "pattern": "SV",
+              "purpose": "declarative",
+              "tense": "present",
+              "kind": "subordinate",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-1-part-1",
+            "role": "subject",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 6
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-2",
+            "role": "verb",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 7,
+                "end": 13
+              }
+            ]
+          },
+          {
+            "key": "clause-2",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 15,
+                "end": 24
+              }
+            ],
+            "clause": {
+              "pattern": "SV",
+              "purpose": "declarative",
+              "tense": "present",
+              "kind": "main",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-2-part-1",
+            "role": "subject",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 15,
+                "end": 17
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-2",
+            "role": "verb",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 18,
+                "end": 24
+              }
+            ]
+          },
+          {
+            "key": "connector",
+            "role": "connector",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 2
+              },
+              {
+                "start": 13,
+                "end": 14
+              }
+            ],
+            "relation": "condition"
+          }
+        ],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
       }
     },
     {
@@ -1925,7 +2225,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -1938,7 +2246,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -1951,20 +2267,133 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
       }
     },
     {
       "id": "boundary-19",
       "input": "She smiles because he is sleeping.",
       "expected": {
-        "status": "unsupported",
-        "purpose": null,
+        "status": "complete",
+        "purpose": "declarative",
+        "complexity": "complex",
         "pattern": null,
-        "complexity": null,
         "tense": null,
-        "nodes": [],
-        "corrections": []
+        "aspect": null,
+        "voice": null,
+        "corrections": [],
+        "nodes": [
+          {
+            "key": "0-subject",
+            "role": "subject",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ]
+          },
+          {
+            "key": "0-verb",
+            "role": "verb",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 10
+              }
+            ]
+          },
+          {
+            "key": "clause-1",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 10
+              }
+            ],
+            "clause": {
+              "kind": "main",
+              "purpose": "declarative",
+              "pattern": "SV",
+              "tense": "present",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "1-subject",
+            "role": "subject",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 19,
+                "end": 21
+              }
+            ]
+          },
+          {
+            "key": "1-verb",
+            "role": "verb",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 22,
+                "end": 33
+              }
+            ]
+          },
+          {
+            "key": "clause-2",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 19,
+                "end": 33
+              }
+            ],
+            "clause": {
+              "kind": "subordinate",
+              "purpose": "declarative",
+              "pattern": "SV",
+              "tense": "present",
+              "aspect": "progressive",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "connector",
+            "role": "connector",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 18
+              }
+            ],
+            "relation": "cause"
+          }
+        ],
+        "reasons": []
       }
     },
     {
@@ -1977,7 +2406,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -1990,7 +2427,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -2003,7 +2448,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -2016,7 +2469,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -2029,7 +2490,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -2042,7 +2511,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -2055,7 +2532,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -2068,7 +2553,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -2081,7 +2574,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -2094,7 +2595,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -2107,7 +2616,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "invalid-input",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -2120,7 +2637,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -2133,7 +2658,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
       }
     },
     {
@@ -2146,7 +2679,15 @@
         "complexity": null,
         "tense": null,
         "nodes": [],
-        "corrections": []
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
       }
     }
   ]

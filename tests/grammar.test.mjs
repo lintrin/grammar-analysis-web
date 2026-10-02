@@ -2,6 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { analyzeSentence, tokenize, validateAnalysisResult, VOCABULARY } from '../lib/grammar.ts';
 
+import { expectedStage12 } from './helpers/stage12-fixtures.mjs';
+import { compareStage9 } from './helpers/stage9-fixtures.mjs';
 import { compareStage8Input } from './helpers/stage8-fixtures.mjs';
 
 // Expected roles, tense and boundaries are specified independently of engine output.
@@ -48,8 +50,8 @@ const boundaries = [
   ['The weather is beautiful today.', 'unsupported'], ['Does she give him a book, today?', 'unsupported'],
   ['Give me book.', 'unsupported'], ['What a useful book!', 'unsupported'],
   ['She gave him a mysterious book.', 'unsupported'], ['She gave him a book and a pen.', 'unsupported'],
-  ['The teacher who smiled gave me a book.', 'unsupported'], ['A book was given to me.', 'unsupported'],
-  ['She has given him a book.', 'unsupported'],
+  ['The teacher who smiled gave me a book.', 'unsupported'], ['A book was given to me.', 'complete'],
+  ['She has given him a book.', 'complete'],
   ['She gave him a book 😀.', 'unsupported'], ['She gave him a book, today.', 'unsupported'],
   ['She gave her book.', 'unsupported'], ['She gave him an old book.', 'complete'],
   ['She gave him a old book.', 'unsupported'], ['She gave him this books.', 'unsupported'],
@@ -59,7 +61,11 @@ const boundaries = [
 for (const [input, status] of boundaries) test(`boundary: ${input.slice(0, 65) || '(empty)'}`, () => {
   const r = analyzeSentence(input);
   assert.equal(r.status, status);
-  if (status === 'complete') compareStage8Input(input, r);
+  if (status === 'complete') {
+    if (input === 'She has given him a book.') compareStage9(expectedStage12({ input, group: 'simple', clauses: [{ pattern: 'SVOO', tense: 'present', aspect: 'perfect', voice: 'active', parts: [['subject','She'],['verb','has given'],['indirectObject','him'],['object','a book']] }] }), r);
+    else if (input === 'A book was given to me.') compareStage9(expectedStage12({ input, group: 'simple', clauses: [{ pattern: 'SV', tense: 'past', aspect: 'simple', voice: 'passive', parts: [['subject','A book'],['verb','was given'],['adverbial','to me']] }] }), r);
+    else compareStage8Input(input, r);
+  }
   else { assert.equal(r.pattern, null); assert.deepEqual(r.nodes, []); }
   if (status === "partial") assert.ok(r.corrections.length > 0); else assert.deepEqual(r.corrections, []);
   assert.ok(r.messages.length >= 2); validateAnalysisResult(r);
@@ -80,7 +86,7 @@ test('dictionary is closed and has no inherited property lookups', () => {
 });
 function protocol() {
   return { input: 'Does she give him a useful book?', inputVersion: 2, ruleVersion: 'test-1',
-    status: 'partial', purpose: 'interrogative', pattern: 'SVOO', complexity: 'simple', tense: 'present',
+    status: 'partial', purpose: 'interrogative', pattern: 'SVOO', complexity: 'simple', tense: 'present', aspect: 'simple', voice: 'active', reasons: [{ code: 'form-mismatch', ranges: [] }],
     messages: ['Protocol fixture only.'], corrections: [], nodes: [
       { id: 's', role: 'subject', parentId: null, ranges: [{ start: 5, end: 8 }], implicit: false, ruleId: 'fixture', explanation: 'subject' },
       { id: 'v', role: 'verb', parentId: null, ranges: [{ start: 0, end: 4 }, { start: 9, end: 13 }], implicit: false, ruleId: 'fixture', explanation: 'discontinuous verb' },

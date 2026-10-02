@@ -41,7 +41,7 @@ try {
         await back.waitFor(); assert.equal(await back.evaluate(el => el === document.activeElement), true);
         assert.equal(await displayedText(), text);
         assert.equal(await page.locator('.result-overview h3').innerText(), titles[clause.pattern]);
-        assert.match(await page.locator('.tense-badge').innerText(), clause.tense === null ? /can/ : clause.tense === 'past' ? /一般过去时/ : /一般现在时/);
+        assert.match(await page.locator('.tense-badge').innerText(), clause.tense === null ? /can/ : clause.tense === 'past' ? /过去/ : /现在/);
         await back.press('Enter');
         assert.equal(await button.evaluate(el => el === document.activeElement), true);
         assert.equal(await displayedText(), f.input);
@@ -56,6 +56,7 @@ try {
   await context.setOffline(true);
   for (const f of stage12.fixtures) await checkFixture(f);
   for (const f of stage12.boundaries) {
+    if (f.status === 'complete') { await checkFixture(f); continue; }
     await sentence.fill(f.input); await analyze.click(); await waitStatus(f.status);
     assert.equal(await sentence.inputValue(), f.input);
     assert.equal(await page.locator('.sentence-part').count(), 0);

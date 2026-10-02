@@ -15,8 +15,9 @@ let rejected = 0;
 for (const f of stage12.boundaries) {
   const r = analyzeSentence(f.input);
   try {
-    assert.equal(r.status, f.status); assert.equal(r.reasons[0].code, f.code);
-    assert.deepEqual(r.nodes, []); assert.deepEqual(r.corrections, []); rejected++;
+    assert.equal(r.status, f.status);
+    if (f.status === 'complete') compareStage9(expectedStage12(f), r);
+    else { assert.equal(r.reasons[0].code, f.code); assert.deepEqual(r.nodes, []); } assert.deepEqual(r.corrections, []); rejected++;
   } catch (error) { failures.push(`${f.input}: ${error.message}`); }
 }
 console.log(JSON.stringify({ ruleVersion: RULE_VERSION, groups, contrasts: { total: stage12.boundaries.length, matched: rejected }, failures }, null, 2));

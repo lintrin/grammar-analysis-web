@@ -8,7 +8,7 @@ import { analyzeCompound } from "./grammar/compound.ts";
 import { diagnose } from "./grammar/feedback.ts";
 
 export { RULE_VERSION, MAX_INPUT_LENGTH, validateAnalysisResult } from "./grammar/protocol.ts";
-export type { Range, Role, Purpose, Pattern, Tense, ComponentNode, Correction, AnalysisResult, AnalysisReason, ReasonCode } from "./grammar/protocol.ts";
+export type { Range, Role, Purpose, Pattern, Tense, Aspect, Voice, ComponentNode, Correction, AnalysisResult, AnalysisReason, ReasonCode } from "./grammar/protocol.ts";
 export { tokenize } from "./grammar/tokens.ts";
 export type { Token } from "./grammar/tokens.ts";
 export { VOCABULARY } from "./grammar/vocabulary.ts";
@@ -30,8 +30,8 @@ export function applyCorrection(result: AnalysisResult, id: string, input: strin
 export function analyzeSentence(input: string, inputVersion = 0): AnalysisResult {
   const result: AnalysisResult = {
     input, inputVersion, ruleVersion: RULE_VERSION, status: "unsupported", purpose: null,
-    pattern: null, complexity: null, tense: null, nodes: [], corrections: [], reasons: [],
-    messages: ["当前仅分析闭合词典内的五种句型、四种简单句用途及两个完整陈述分句的 and/but 并列句、后置无逗号 because 原因从句和前置带逗号 if 条件从句；纠错仅覆盖简单句的主谓一致、do/does/did 后原形及 can 后原形。"],
+    pattern: null, complexity: null, tense: null, aspect: null, voice: null, nodes: [], corrections: [], reasons: [],
+    messages: ["当前仅分析闭合词典内的五种句型、四种简单句用途、现在/过去进行时与完成时、限定被动及三种常用谓语组合，陈述结构可用于两个完整分句的 and/but、后置无逗号 because、前置带逗号 if；自动纠错仅覆盖原有简单句的主谓一致、do/does/did 后原形及 can 后原形，新谓语组合暂不提供自动纠错。"],
   };
   const finish = (message?: string) => {
     if (message) result.messages.unshift(message);

@@ -22,8 +22,8 @@ export function expectedStage12(fixture) {
     for (const [role, text, attributes = []] of clause.parts) {
       const position = locate(text);
       let node = parts.get(role);
-      if (!node) {
-        node = { key: `${index}-${role}`, role, parentKey, implicit: false, ranges: [] };
+      if (!node || role === 'adverbial') {
+        node = { key: `${index}-${role}${node ? `-${nodes.length}` : ''}`, role, parentKey, implicit: false, ranges: [] };
         parts.set(role, node); nodes.push(node);
       } else assert.equal(role, 'verb', 'Only explicitly split verb fragments may share a role');
       node.ranges.push(position);
@@ -40,12 +40,12 @@ export function expectedStage12(fixture) {
       const kind = fixture.group === 'compound' ? 'independent' : (index === (fixture.group === 'if' ? 1 : 0) ? 'main' : 'subordinate');
       nodes.push({ key: parentKey, role: 'clause', parentKey: null, implicit: false,
         ranges: [{ start: nodes[start].ranges[0].start, end: cursor }],
-        clause: { kind, purpose: 'declarative', pattern: clause.pattern, tense: clause.tense } });
+        clause: { kind, purpose: 'declarative', pattern: clause.pattern, tense: clause.tense, aspect: clause.aspect, voice: clause.voice } });
       if (index === 0) for (const text of fixture.group === 'if' ? fixture.connector.slice(1) : fixture.connector) connectorRanges.push(locate(text));
     }
   }
   assert.match(fixture.input.slice(cursor), /^[.!?]?\s*$/, 'Unaccounted trailing text');
   if (multiple) nodes.push({ key: 'connector', role: 'connector', parentKey: null, implicit: false, ranges: connectorRanges, relation: fixture.relation });
   return { status: 'complete', purpose: fixture.purpose ?? 'declarative', complexity: multiple ? (fixture.group === 'compound' ? 'compound' : 'complex') : 'simple',
-    pattern: multiple ? null : fixture.clauses[0].pattern, tense: multiple ? null : fixture.clauses[0].tense, corrections: [], nodes };
+    pattern: multiple ? null : fixture.clauses[0].pattern, tense: multiple ? null : fixture.clauses[0].tense, aspect: multiple ? null : fixture.clauses[0].aspect, voice: multiple ? null : fixture.clauses[0].voice, corrections: [], nodes };
 }

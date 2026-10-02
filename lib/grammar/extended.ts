@@ -51,7 +51,7 @@ export function analyzeExtended(tokens: Token[], punctuation: string | null, res
       if (wrongAux || wrongBase) {
         candidate.status = "partial"; candidate.purpose = null; candidate.pattern = null;
         diagnose(candidate, "form-mismatch");
-        candidate.complexity = null; candidate.tense = null; candidate.nodes = [];
+        candidate.complexity = null; candidate.tense = null; candidate.aspect = null; candidate.voice = null; candidate.nodes = [];
         if (wrongAux) suggest(candidate, auxiliary, subject.thirdPerson ? "does" : "do", "AGREEMENT-001", "否定陈述句的 do/does 需要与主语的人称和单复数一致。");
         if (wrongBase) suggest(candidate, lexical, form?.base ?? "be", doNegative ? "DO-BASE-001" : "MODAL-BASE-001",
           doNegative ? "do/does/did 已承担时态和人称变化，not 后的实义动词使用原形。" : "can 后的动词使用原形，否定词和疑问语序不改变这一要求。");

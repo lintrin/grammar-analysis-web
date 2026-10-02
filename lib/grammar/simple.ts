@@ -3,6 +3,7 @@ import type { Token } from "./tokens.ts";
 import { adjectives, verbForms, simpleVerbs, beForms } from "./vocabulary.ts";
 import { nounPhrase, directObject, objectPhrase, type Phrase } from "./phrases.ts";
 import { createBoundaryBudget } from "./context.ts";
+import { finiteAgreement } from "./predicate.ts";
 import { suggest } from "./suggestions.ts";
 import { diagnose, budgetMessage } from "./feedback.ts";
 
@@ -47,7 +48,7 @@ export function analyzeDeclarative(tokens: Token[], result: AnalysisResult, cons
     return ("yesterday 与当前一般现在时规则不匹配，无法可靠分析。时态纠错尚未支持。");
   }
   result.status = "complete"; result.purpose = "declarative"; result.pattern = "SVOO";
-  result.complexity = "simple"; result.tense = c.tense;
+  result.complexity = "simple"; result.tense = c.tense; result.aspect = "simple"; result.voice = "active";
   result.reasons = [];
   const add = (role: Role, start: number, stop: number, explanation: string, parentId: string | null = null) => {
     const id = `node-${result.nodes.length + 1}`;
@@ -82,7 +83,7 @@ function analyzeSimplePatterns(tokens: Token[], end: number, adverb: Token | nul
     if (!subject) continue;
     const past = isBe ? ["was", "were"].includes(word) : word === form!.past;
     const isI = v === 1 && tokens[0].normalized === "i";
-    const expected = isBe ? (past ? (subject.thirdPerson || isI ? "was" : "were") : (isI ? "am" : subject.thirdPerson ? "is" : "are"))
+    const expected = isBe ? finiteAgreement(word, subject.thirdPerson, isI)!.expected
       : past ? form!.past : subject.thirdPerson ? form!.third : form!.base;
     const common = { subject, v, tense: past ? "past" as const : "present" as const, expected };
     if (isBe) {
@@ -111,7 +112,7 @@ function analyzeSimplePatterns(tokens: Token[], end: number, adverb: Token | nul
   }
   if (c.tense === "present" && adverb?.normalized === "yesterday") { diagnose(result, "form-mismatch"); return "yesterday 与当前一般现在时规则不匹配，无法可靠分析。时态纠错尚未支持。"; }
   result.status = "complete"; result.pattern = c.pattern; result.purpose = "declarative";
-  result.complexity = "simple"; result.tense = c.tense;
+  result.complexity = "simple"; result.tense = c.tense; result.aspect = "simple"; result.voice = "active";
   result.reasons = [];
   const ruleId = `${c.pattern}-001`;
   const add = (role: Role, phrase: Phrase, explanation: string) => {

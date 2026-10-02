@@ -5,10 +5,10 @@ export function diagnose(result: AnalysisResult, code: ReasonCode, ranges: Range
   result.reasons = [{ code, ranges: ranges.map(q => ({ ...q })), ...(clauseIndex ? { clauseIndex } : {}) }];
 }
 export function hasReason(result: AnalysisResult, code: ReasonCode): boolean {
-  return result.reasons?.some(reason => reason.code === code) ?? false;
+  return result.reasons.some(reason => reason.code === code);
 }
 export function clauseReasons(candidate: AnalysisResult, index: 1 | 2): AnalysisReason[] {
-  return (candidate.reasons ?? []).map(reason => ({ ...reason, ranges: reason.ranges.map(q => ({ ...q })), clauseIndex: index }));
+  return candidate.reasons.map(reason => ({ ...reason, ranges: reason.ranges.map(q => ({ ...q })), clauseIndex: index }));
 }
 export const reasonLabels: Record<ReasonCode, string> = {
   "unknown-word": "词典未覆盖", "unsupported-structure": "结构超出范围", "form-mismatch": "形式与规则不匹配",

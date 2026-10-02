@@ -3,6 +3,7 @@ import type { Token } from "./tokens.ts";
 import { adjectives, determiners, verbForms, simpleVerbs, beForms } from "./vocabulary.ts";
 import { nounPhrase, directObject } from "./phrases.ts";
 import { analyzeDeclarative } from "./simple.ts";
+import { analyzeComposed } from "./composed.ts";
 import { analyzeExtended } from "./extended.ts";
 import { createBoundaryBudget, forkCandidate } from "./context.ts";
 import { suggest } from "./suggestions.ts";
@@ -11,6 +12,8 @@ import { diagnose, hasReason } from "./feedback.ts";
 /** Reorder token references, never input text: every explicit range stays in the original string. */
 export function analyzePurpose(tokens: Token[], punctuation: string | null, result: AnalysisResult, consumeBoundary = createBoundaryBudget()): string {
   diagnose(result, "unsupported-structure");
+  const composed = analyzeComposed(tokens, punctuation, result, consumeBoundary);
+  if (composed !== null) return composed;
   const extended = analyzeExtended(tokens, punctuation, result, consumeBoundary);
   if (extended !== null) return extended;
   const first = tokens[0]?.normalized;

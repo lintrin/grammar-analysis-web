@@ -61,10 +61,10 @@ test('if analysis does not mutate answers or share nodes across calls', () => {
   const r = analyzeSentence(f.input); r.nodes[0].clause.kind = 'main'; r.nodes[1].ranges[0].start++;
   compareStage10b(f.expected, analyzeSentence(f.input)); assert.equal(JSON.stringify(f), before);
 });
-test('stage 10A if migration preserves its historical rejection and persists after 0.8.0', async () => {
+test('stage 10A fixed answers directly describe the current supported if structure', async () => {
   const { stage10a, compareStage10a } = await import('./helpers/stage10a-fixtures.mjs');
-  const f = stage10a.fixtures.find(f => f.migration);
-  assert.equal(f.expected.status, 'unsupported');
-  compareStage10a(f.expected, { ...f.expected, input: f.input, ruleVersion: '0.7.0' });
-  for (const ruleVersion of ['0.8.0', '0.9.0', '0.10.0']) compareStage10a(f.expected, { ...analyzeSentence(f.input), ruleVersion });
+  const f = stage10a.fixtures.find(f => f.input.startsWith('If '));
+  assert.equal(f.expected.status, 'complete');
+  compareStage10a(f.expected, analyzeSentence(f.input));
+  assert.throws(() => compareStage10a(f.expected, { ...analyzeSentence(f.input), status: 'unsupported' }));
 });

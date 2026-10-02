@@ -9,7 +9,7 @@ try {
   page.on('pageerror', error => errors.push(String(error)));
   page.on('console', message => messages.push(message.text()));
   page.on('request', request => requests.push([request.url(), request.postData()]));
-  await page.goto('http://127.0.0.1:5188');
+  await page.goto(process.env.CLAUSE_BASE_URL ?? 'http://127.0.0.1:5188');
   await page.waitForLoadState('networkidle');
   console.log('Rendered buttons:', await page.getByRole('button').allTextContents());
   const sentence = page.getByRole('textbox', { name: '需要分析的英文句子' });
@@ -75,7 +75,7 @@ try {
     await page.getByRole('tab', { name: '成分解析' }).click();
   };
   await waitStatus('等待分析');
-  assert.equal(await page.locator('.example-group').count(), 5);
+  assert.equal(await page.locator('.example-group').count(), 9);
   await page.getByText('当前范围与键盘操作', { exact: true }).focus(); await page.keyboard.press('Enter');
   assert.equal(await page.locator('.support-help').getAttribute('open'), '');
   assert.match(await page.locator('.support-help').innerText(), /输入限制.*词典覆盖.*分句顺序/s);

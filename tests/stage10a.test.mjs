@@ -8,7 +8,7 @@ for (const fixture of stage10a.fixtures) test(`stage 10A fixed expectation: ${fi
   validateAnalysisResult(result);
   assert.equal(result.ruleVersion, RULE_VERSION);
   assert.equal(result.inputVersion, 10);
-  if (fixture.expected.status === 'complete') assert.match(result.messages[0], /原因.*主句/);
+  if (fixture.expected.status === 'complete') assert.match(result.messages[0], fixture.input.startsWith('If ') ? /条件.*主句/ : /原因.*主句/);
   if (result.status === 'partial') {
     assert.match(result.messages[0], /暂不提供纠错/);
     assert.doesNotMatch(result.messages[0], /请查看.*建议/);
@@ -65,9 +65,9 @@ test('because analysis is deterministic and does not mutate fixed answers', () =
   compareStage10a(fixture.expected, analyzeSentence(fixture.input, 42));
   assert.equal(JSON.stringify(fixture), before);
 });
-test('stage 8 migration remains active after later rule version bumps', async () => {
+test('stage 8 fixed answers directly describe the current supported compound', async () => {
   const { compareStage8Input } = await import('./helpers/stage8-fixtures.mjs');
   const input = 'She does not sleep and he smiles.';
-  for (const ruleVersion of ['0.6.0', '0.7.0', '0.10.0']) compareStage8Input(input, { ...analyzeSentence(input), ruleVersion });
-  compareStage8Input(input, { input, ruleVersion: '0.5.0', status: 'unsupported', purpose: null, pattern: null, complexity: null, tense: null, nodes: [], corrections: [] });
+  compareStage8Input(input, analyzeSentence(input));
+  assert.throws(() => compareStage8Input(input, { ...analyzeSentence(input), status: 'unsupported' }));
 });

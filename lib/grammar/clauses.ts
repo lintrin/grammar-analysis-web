@@ -56,13 +56,13 @@ export function analyzeClauses(tokens: Token[], punctuation: string | null, resu
     const group = groups[index];
     nodes.push({ id: clauseId, role: "clause", parentId: null, implicit: false,
       ranges: [{ start: group[0].start, end: group.at(-1)!.end }], ruleId, explanation: `${conditional ? (index === 0 ? "条件从句" : "主句") : causal ? (index === 0 ? "主句" : "原因从句") : `第 ${index + 1} 分句`}是完整陈述结构。${explanation}`,
-      clause: { kind: complex ? (index === (conditional ? 1 : 0) ? "main" : "subordinate") : "independent", purpose: "declarative", pattern: candidate.pattern!, tense: candidate.tense } });
+      clause: { kind: complex ? (index === (conditional ? 1 : 0) ? "main" : "subordinate") : "independent", purpose: "declarative", pattern: candidate.pattern!, tense: candidate.tense, aspect: candidate.aspect, voice: candidate.voice } });
     for (const node of candidate.nodes) nodes.push({ ...node, id: `${clauseId}-${node.id}`, parentId: node.parentId === null ? clauseId : `${clauseId}-${node.parentId}` });
   }
   nodes.push({ id: "connector", role: "connector", parentId: null, implicit: false,
     ranges: (comma ? [comma, connector] : [connector]).sort((a, b) => a.start - b.start).map(({ start, end }) => ({ start, end })),
     ruleId, relation, explanation: `${explanation}${comma ? " 原文逗号标记两个分句之间的停顿，保留在连接节点中。" : ""}` });
   result.status = "complete"; result.purpose = "declarative"; result.complexity = complex ? "complex" : "compound";
-  result.pattern = null; result.tense = null; result.corrections = []; result.reasons = []; result.nodes = nodes;
+  result.pattern = null; result.tense = null; result.aspect = null; result.voice = null; result.corrections = []; result.reasons = []; result.nodes = nodes;
   return `已匹配${conditional ? "前置条件从句" : causal ? "后置原因从句" : "两个完整分句的并列句"}规则 ${ruleId}。${explanation} 句型与时态分别按分句展示；${complex ? "主从句" : "并列句"}暂不提供纠错。`;
 }

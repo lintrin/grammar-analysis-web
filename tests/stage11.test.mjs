@@ -14,7 +14,7 @@ for (const f of fixtures) test(`stage 11 manual reason: ${f.input || '(empty)'}`
   if (f.adjectiveOverlap) adjectives.add(f.adjectiveOverlap);
   try {
     if (f.entry) {
-      result = { ...analyzeSentence('She sleeps.'), input: f.input, nodes: [], corrections: [], reasons: [], status: 'unsupported', purpose: null, pattern: null, complexity: null, tense: null };
+      result = { ...analyzeSentence('She sleeps.'), input: f.input, nodes: [], corrections: [], reasons: [], status: 'unsupported', purpose: null, pattern: null, complexity: null, tense: null, aspect: null, voice: null };
       let remaining = f.budget;
       const entry = f.entry === 'complex' ? analyzeComplex : analyzePurpose;
       result.messages = [entry(tokenize(f.input), null, result, () => --remaining >= 0)];
@@ -62,9 +62,9 @@ test('reason protocol rejects non-string codes even when they coerce to supporte
     assert.throws(() => validateAnalysisResult(result), /^Error: 分析数据无效：分析原因$/);
   }
 });
-test('complete results reject a failure reason and historical protocol remains compatible', () => {
+test('complete results reject missing reasons and failure reasons', () => {
   const r = analyzeSentence('She sleeps.');
-  delete r.reasons; validateAnalysisResult(r);
+  delete r.reasons; assert.throws(() => validateAnalysisResult(r), /分析数据无效/);
   r.reasons = [{ code: 'unsupported-structure', ranges: [] }];
   assert.throws(() => validateAnalysisResult(r), /分析数据无效/);
 });
@@ -100,7 +100,7 @@ for (const [overlap, input] of [
 });
 test('teaching examples match their declared purpose and supported scope', async () => {
   const { exampleGroups } = await import('../lib/grammar/learning.ts');
-  assert.equal(exampleGroups.length, 5);
+  assert.equal(exampleGroups.length, 9);
   for (const group of exampleGroups) for (const example of group.examples) {
     const expected = group.title === '词典范围示例' ? 'unsupported' : ['基础纠错', '否定句纠错'].includes(example.title) ? 'partial' : 'complete';
     assert.equal(analyzeSentence(example.text).status, expected, example.title);

@@ -15,7 +15,7 @@ export const performanceCases = [
 ];
 
 export function instrumentBoundaries(input, limit = 4000) {
-  const result = { ...analyzeSentence('She sleeps.'), input, status: 'unsupported', purpose: null, pattern: null, complexity: null, tense: null, nodes: [], corrections: [], reasons: [] };
+  const result = { ...analyzeSentence('She sleeps.'), input, status: 'unsupported', purpose: null, pattern: null, complexity: null, tense: null, aspect: null, voice: null, nodes: [], corrections: [], reasons: [] };
   const tokens = tokenize(input);
   const punctuation = /[.!?]/.test(tokens.at(-1).text) ? tokens.pop().text : null;
   const spend = createBoundaryBudget(limit);

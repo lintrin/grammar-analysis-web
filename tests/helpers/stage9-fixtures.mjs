@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 export const stage9 = JSON.parse(readFileSync(new URL('../fixtures/stage9.json', import.meta.url), 'utf8'));
 export function compareStage9(expected, result) {
-  for (const field of ['status', 'purpose', 'pattern', 'complexity', 'tense']) assert.equal(result[field], expected[field], `${result.input}: ${field}`);
+  for (const field of ['status', 'purpose', 'pattern', 'complexity', 'tense', 'aspect', 'voice']) assert.equal(result[field], expected[field], `${result.input}: ${field}`);
   const canonical = (nodes, keyField, parentField) => {
     const byKey = new Map(nodes.map(n => [n[keyField], n]));
     const signature = n => `${n.role}:${JSON.stringify(n.ranges)}`;

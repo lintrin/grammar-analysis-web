@@ -1,14 +1,16 @@
-export const RULE_VERSION = "0.9.0";
+export const RULE_VERSION = "0.14.3";
 export const MAX_INPUT_LENGTH = 1000;
 export type Range = { start: number; end: number };
 export type Purpose = "declarative" | "interrogative" | "imperative" | "exclamatory";
 export type Pattern = "SV" | "SVO" | "SVC" | "SVOO" | "SVOC";
 export type Tense = "present" | "past" | null;
+export type Aspect = "simple" | "progressive" | "perfect" | "perfect-progressive" | null;
+export type Voice = "active" | "passive" | null;
 export type Role = "subject" | "verb" | "indirectObject" | "object" | "complement" | "adverbial" | "attribute" | "clause" | "connector";
 export type ComponentNode = {
   id: string; role: Role; parentId: string | null; ranges: Range[];
   implicit: boolean; ruleId: string; explanation: string;
-  clause?: { kind: "independent" | "main" | "subordinate"; purpose: Purpose; pattern: Pattern; tense: Tense };
+  clause?: { kind: "independent" | "main" | "subordinate"; purpose: Purpose; pattern: Pattern; tense: Tense; aspect: Aspect; voice: Voice };
   relation?: "addition" | "contrast" | "cause" | "condition";
 };
 export type Correction = {
@@ -23,10 +25,9 @@ export type AnalysisResult = {
   purpose: Purpose | null;
   pattern: Pattern | null;
   complexity: "simple" | "compound" | "complex" | null;
-  tense: Tense;
+  tense: Tense; aspect: Aspect; voice: Voice;
   nodes: ComponentNode[]; corrections: Correction[]; messages: string[];
-  /** Optional for historical protocol fixtures; current rules always provide it. */
-  reasons?: AnalysisReason[];
+  reasons: AnalysisReason[];
 };
 /** Reject malformed data before rendering or applying edits. This is separate from linguistic correctness. */
 export function validateAnalysisResult(value: unknown): asserts value is AnalysisResult {
@@ -40,9 +41,9 @@ export function validateAnalysisResult(value: unknown): asserts value is Analysi
   if (!["complete", "partial", "unsupported", "ambiguous", "invalid"].includes(r.status as string)) fail("状态");
   for (const [field, allowed] of [
     ["purpose", ["declarative", "interrogative", "imperative", "exclamatory"]],
-    ["pattern", ["SV", "SVO", "SVC", "SVOO", "SVOC"]], ["complexity", ["simple", "compound", "complex"]], ["tense", ["present", "past"]],
+    ["pattern", ["SV", "SVO", "SVC", "SVOO", "SVOC"]], ["complexity", ["simple", "compound", "complex"]], ["tense", ["present", "past"]], ["aspect", ["simple", "progressive", "perfect", "perfect-progressive"]], ["voice", ["active", "passive"]],
   ] as const) if (r[field] !== null && !allowed.includes(r[field] as never)) fail(field);
-  if (r.status === "complete" && (!r.purpose || !r.complexity || (r.complexity === "simple" && !r.pattern))) fail("完整结果缺少分类");
+  if (r.status === "complete" && (!r.purpose || !r.complexity || (r.complexity === "simple" && (!r.pattern || !r.aspect || !r.voice)))) fail("完整结果缺少分类");
   if (!Array.isArray(r.messages) || !r.messages.every(nonempty) || !Array.isArray(r.nodes) || !Array.isArray(r.corrections)) fail("结果列表");
   const range = (v: unknown, insertion = false): Range => {
     if (!object(v) || !Number.isSafeInteger(v.start) || !Number.isSafeInteger(v.end)) fail("位置类型");
@@ -53,7 +54,7 @@ export function validateAnalysisResult(value: unknown): asserts value is Analysi
     return q;
   };
   const nodes = r.nodes as unknown[];
-  if (r.reasons !== undefined) {
+  {
     if (!Array.isArray(r.reasons) || (r.status === "complete" ? r.reasons.length !== 0 : r.reasons.length === 0)) fail("分析原因列表");
     const states: Record<ReasonCode, string[]> = {
       "unknown-word": ["unsupported"], "unsupported-structure": ["unsupported"], "form-mismatch": ["partial", "unsupported"],
@@ -73,7 +74,7 @@ export function validateAnalysisResult(value: unknown): asserts value is Analysi
     const node = raw as ComponentNode;
     const metadata = raw as Record<string, unknown>;
     const classification = metadata.clause;
-    if (classification !== undefined && (node.role !== "clause" || !object(classification) || !["independent", "main", "subordinate"].includes(classification.kind as string) || !["declarative", "interrogative", "imperative", "exclamatory"].includes(classification.purpose as string) || !["SV", "SVO", "SVC", "SVOO", "SVOC"].includes(classification.pattern as string) || ![null, "present", "past"].includes(classification.tense as string | null))) fail("分句分类");
+    if (classification !== undefined && (node.role !== "clause" || !object(classification) || !["independent", "main", "subordinate"].includes(classification.kind as string) || !["declarative", "interrogative", "imperative", "exclamatory"].includes(classification.purpose as string) || !["SV", "SVO", "SVC", "SVOO", "SVOC"].includes(classification.pattern as string) || ![null, "present", "past"].includes(classification.tense as string | null) || ![null, "simple", "progressive", "perfect", "perfect-progressive"].includes(classification.aspect as string | null) || ![null, "active", "passive"].includes(classification.voice as string | null))) fail("分句分类");
     if (metadata.relation !== undefined && (node.role !== "connector" || !["addition", "contrast", "cause", "condition"].includes(metadata.relation as string))) fail("连接关系");
     if (node.implicit ? node.ranges.length !== 0 : node.ranges.length === 0) fail("隐含成分位置");
     let previousEnd = -1;
@@ -103,9 +104,9 @@ export function validateAnalysisResult(value: unknown): asserts value is Analysi
     const clauses = roots.filter(n => n.role === "clause");
     const connector = roots.find(n => n.role === "connector");
     const conditional = complex && connector?.relation === "condition";
-    if (r.purpose !== "declarative" || r.pattern !== null || r.tense !== null || (r.corrections as unknown[]).length || roots.length !== 3 || clauses.length !== 2 || !connector?.relation) fail("多分句整体分类与关系");
+    if (r.purpose !== "declarative" || r.pattern !== null || r.tense !== null || r.aspect !== null || r.voice !== null || (r.corrections as unknown[]).length || roots.length !== 3 || clauses.length !== 2 || !connector?.relation) fail("多分句整体分类与关系");
     for (const clause of clauses) {
-      if (clause.implicit || clause.ranges.length !== 1 || clause.clause?.purpose !== "declarative") fail("分句分类");
+      if (clause.implicit || clause.ranges.length !== 1 || (clause.clause?.purpose !== "declarative" || !clause.clause.aspect || !clause.clause.voice)) fail("分句分类");
       const parts = [...byId.values()].filter(n => n.parentId === clause.id);
       for (const role of ["subject", "verb"]) if (parts.filter(n => n.role === role && !n.implicit).length !== 1) fail("分句缺少显式主谓");
     }
