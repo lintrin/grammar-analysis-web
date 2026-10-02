@@ -1,11 +1,11 @@
 import type { AnalysisResult, Role } from "./protocol.ts";
 import type { Token } from "./tokens.ts";
 import { adjectives, verbForms, simpleVerbs, beForms } from "./vocabulary.ts";
-import { nounPhrase, directObject, type Phrase } from "./phrases.ts";
+import { nounPhrase, directObject, objectPhrase, type Phrase } from "./phrases.ts";
 import { createBoundaryBudget } from "./context.ts";
 import { suggest } from "./suggestions.ts";
 
-export function analyzeDeclarative(tokens: Token[], result: AnalysisResult): string {
+export function analyzeDeclarative(tokens: Token[], result: AnalysisResult, consumeBoundary = createBoundaryBudget()): string {
   let end = tokens.length;
   let adverb: Token | null = ["today", "yesterday"].includes(tokens.at(-1)?.normalized ?? "") ? tokens[--end] : null;
   // Fixed destination frame only, not a general preposition grammar.
@@ -18,7 +18,6 @@ export function analyzeDeclarative(tokens: Token[], result: AnalysisResult): str
   type Candidate = { subject: Phrase; verbIndex: number; verb: typeof verbForms[number]; tense: "present" | "past"; recipient: Phrase; object: Phrase };
   const candidates: Candidate[] = [];
   // At most 1000 code units and a closed vocabulary: enumerate phrase boundaries within a fixed budget.
-  const consumeBoundary = createBoundaryBudget();
   for (let v = 1; v < end - 2; v++) {
     const form = verbForms.find(verb => [verb.base, verb.third, verb.past].includes(tokens[v].normalized));
     if (!form) continue;
@@ -67,7 +66,6 @@ export function analyzeDeclarative(tokens: Token[], result: AnalysisResult): str
 function analyzeSimplePatterns(tokens: Token[], end: number, adverb: Token | null, result: AnalysisResult): string | null {
   type Match = { subject: Phrase; v: number; pattern: "SV" | "SVO" | "SVC" | "SVOC"; tense: "present" | "past"; expected: string; object?: Phrase; complement?: Phrase };
   const matches: Match[] = [];
-  const objectPhrase = (start: number, stop: number) => nounPhrase(tokens, start, stop, true) ?? directObject(tokens, start, stop);
   const adjective = (start: number, stop: number): Phrase | null => stop === start + 1 && adjectives.has(tokens[start].normalized)
     ? { start, end: stop, thirdPerson: false, attributes: [] } : null;
   for (let v = 1; v < end; v++) {
@@ -88,12 +86,12 @@ function analyzeSimplePatterns(tokens: Token[], end: number, adverb: Token | nul
     } else if (form!.pattern === "SV") {
       if (v + 1 === end) matches.push({ ...common, pattern: "SV" });
     } else if (form!.pattern === "SVO") {
-      const object = objectPhrase(v + 1, end);
+      const object = objectPhrase(tokens, v + 1, end);
       if (object) matches.push({ ...common, pattern: "SVO", object });
     } else {
       // Single adjective object complement only; noun complements and other frames are deferred.
       const complement = adjective(end - 1, end);
-      const object = objectPhrase(v + 1, end - 1);
+      const object = objectPhrase(tokens, v + 1, end - 1);
       if (complement && object) matches.push({ ...common, pattern: "SVOC", object, complement });
     }
   }

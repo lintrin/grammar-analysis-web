@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { analyzeSentence, applyCorrection, validateAnalysisResult } from '../lib/grammar.ts';
+import { compareStage8Input } from './helpers/stage8-fixtures.mjs';
 // Fixed expectations declared before testing; five errors and five controls for each category.
 const groups = [
   ['AGREEMENT-001', [
@@ -57,7 +58,10 @@ for (const input of [
   'Can she go to school?', 'She will goes to school.', 'She can can go to school.',
   'What my book it is!', 'Does she go to schools?', 'She gave him this books.',
 ]) test(`no unsafe suggestion: ${input}`, () => {
-  const r = analyzeSentence(input); assert.notEqual(r.status, 'complete'); assert.deepEqual(r.corrections, []);
+  const r = analyzeSentence(input);
+  if (input === 'Can she go to school?') compareStage8Input(input, r);
+  else assert.notEqual(r.status, 'complete');
+  assert.deepEqual(r.corrections, []);
 });
 test('case, spacing, exact ranges and version guard', () => {
   const input = '  SHE  GO TO SCHOOL.  ', r = analyzeSentence(input, 5);

@@ -2,6 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { analyzeSentence, tokenize, validateAnalysisResult, VOCABULARY } from '../lib/grammar.ts';
 
+import { compareStage8Input } from './helpers/stage8-fixtures.mjs';
+
 // Expected roles, tense and boundaries are specified independently of engine output.
 const fixtures = [
   ['The teacher gave the students a useful book yesterday.', 'past', ['The teacher', 'gave', 'the students', 'a useful book', 'yesterday']],
@@ -49,15 +51,16 @@ const boundaries = [
   ['The teacher who smiled gave me a book.', 'unsupported'], ['A book was given to me.', 'unsupported'],
   ['She has given him a book.', 'unsupported'],
   ['She gave him a book 😀.', 'unsupported'], ['She gave him a book, today.', 'unsupported'],
-  ['She gave her book.', 'unsupported'], ['She gave him an old book.', 'unsupported'],
+  ['She gave her book.', 'unsupported'], ['She gave him an old book.', 'complete'],
   ['She gave him a old book.', 'unsupported'], ['She gave him this books.', 'unsupported'],
   ['She give him a book.', 'partial'], ['They gives him a book.', 'partial'],
   ['She gives him a book yesterday.', 'unsupported'],
 ];
 for (const [input, status] of boundaries) test(`boundary: ${input.slice(0, 65) || '(empty)'}`, () => {
   const r = analyzeSentence(input);
-  assert.equal(r.status, status); assert.equal(r.pattern, null);
-  assert.deepEqual(r.nodes, []);
+  assert.equal(r.status, status);
+  if (status === 'complete') compareStage8Input(input, r);
+  else { assert.equal(r.pattern, null); assert.deepEqual(r.nodes, []); }
   if (status === "partial") assert.ok(r.corrections.length > 0); else assert.deepEqual(r.corrections, []);
   assert.ok(r.messages.length >= 2); validateAnalysisResult(r);
 });

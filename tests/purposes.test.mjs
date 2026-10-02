@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { analyzeSentence, validateAnalysisResult } from '../lib/grammar.ts';
+import { compareStage8Input } from './helpers/stage8-fixtures.mjs';
 const fixtures = [
   ['Does she sleep?', 'interrogative', 'SV', 'present', ['she', 'Does … sleep']],
   ['Do the boys like her?', 'interrogative', 'SVO', 'present', ['the boys', 'Do … like', 'her']],
@@ -84,5 +85,6 @@ for (const input of ['What a useful book it is!', 'What useful books they are!',
   });
 }
 for (const input of ['What book it is!', 'What a books they are!', 'What an old book it is!']) test(`What keeps existing noun restrictions: ${input}`, () => {
-  assert.equal(analyzeSentence(input).status, 'unsupported');
+  if (input === 'What an old book it is!') compareStage8Input(input, analyzeSentence(input));
+  else assert.equal(analyzeSentence(input).status, 'unsupported');
 });

@@ -1,5 +1,5 @@
 import type { Token } from "./tokens.ts";
-import { nouns, adjectives, determiners, subjectPronouns, objectPronouns } from "./vocabulary.ts";
+import { nouns, adjectives, adjectiveInitialSounds, directObjectPronouns, determiners, subjectPronouns, objectPronouns } from "./vocabulary.ts";
 
 export type Phrase = { start: number; end: number; thirdPerson: boolean; attributes: number[] };
 export function nounPhrase(tokens: Token[], start: number, end: number, recipient = false): Phrase | null {
@@ -16,8 +16,10 @@ export function nounPhrase(tokens: Token[], start: number, end: number, recipien
   const determiner = hasDeterminer ? words[0] : null;
   if (noun.plural && determiner && ["a", "an", "this", "that"].includes(determiner)) return null;
   if (!noun.plural && determiner && ["these", "those"].includes(determiner)) return null;
-  // a/an needs pronunciation data to be reliable; this milestone accepts only audited combinations.
-  if (determiner === "an" || (determiner === "a" && words[1] === "old")) return null;
+  if (determiner === "a" || determiner === "an") {
+    const initialSound = adjectiveInitialSounds[words[1]] ?? nouns[words[1]]?.initialSound;
+    if (!initialSound || determiner !== (initialSound === "vowel" ? "an" : "a")) return null;
+  }
   const modifierStart = start + (hasDeterminer ? 1 : 0);
   const attributes = [];
   for (let i = modifierStart; i < end - 1; i++) {
@@ -30,4 +32,12 @@ export function directObject(tokens: Token[], start: number, end: number): Phras
   // Same noun phrase grammar; object pronouns are deferred to avoid lexical ambiguity.
   if (end <= start || !nouns[tokens[end - 1].normalized]) return null;
   return nounPhrase(tokens, start, end);
+}
+
+/** SVO/SVOC objects are independent of SVOO's person-only recipient grammar. */
+export function objectPhrase(tokens: Token[], start: number, end: number): Phrase | null {
+  if (end === start + 1 && directObjectPronouns.has(tokens[start].normalized)) {
+    return { start, end, thirdPerson: false, attributes: [] };
+  }
+  return directObject(tokens, start, end);
 }

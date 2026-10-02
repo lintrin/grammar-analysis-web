@@ -1,6 +1,6 @@
 # 阶段 8 · 固定范围与人工预期
 
-固定日期：2026-10-02。目标规则版本 `0.5.0`，状态 **⬜ 待实现**。当前运行版本仍为 `0.4.0`；本文件和样例完整性检查不代表新增语法已经通过验收。
+固定日期：2026-10-02。规则版本 `0.5.0`，状态 **✅ 已完成**。固定预期已通过语法比对与浏览器验收；完整性检查仍只验证预期数据自身，实际证据见 [阶段 8 验证](local-analysis-scope.md)。
 
 ## 词汇、搭配与语序
 
@@ -46,20 +46,20 @@ SVOO 接受者继续仅为原有宾格代词（不含 it）或人物名词短语
 
 [tests/fixtures/stage8.json](../tests/fixtures/stage8.json) 是人工选择句子、成分和编辑内容的固定答案，包含 **75 个输入**：6 组结构各 5 个正确句（30）、5 个新增纠错上下文各 5 个错误句（25）、20 个范围边界；25 个错误句各附一个正确对照和应用后预期。对照另含用途、句型、时态、成分、原文区间和层级。
 
-其中包含大小写、多空格、名词形容词嵌套、隐含主语、不连续动词、不同人称和数、时间冲突、缩写、标点及过期修改。原有重复词和双错误回归继续保留，阶段 8 实现时还需验证新上下文的重复词及多错误组合。
+其中包含大小写、多空格、名词形容词嵌套、隐含主语、不连续动词、不同人称和数、时间冲突、缩写、标点及过期修改。原有重复词和双错误回归继续保留，`tests/stage8-boundaries.test.mjs` 已补充新上下文的重复词、多错误组合、大小写保留和原文位置回归。
 
-样例中的 `[start,end)` 为原始 UTF-16 区间，`key/parentKey` 表示预期层级，不要求实现采用相同 ID。固定 JSON 不由分析器生成；完整性命令仅检查位置、层级、编辑及覆盖数量。纠错语法与中文解释需在实施时独立核对。
+样例中的 `[start,end)` 为原始 UTF-16 区间，`key/parentKey` 表示预期层级，不要求实现采用相同 ID。固定 JSON 不由分析器生成；完整性命令仅检查位置、层级、编辑及覆盖数量。纠错语法与中文解释已按固定范围独立核对，范围外的语言正确性仍不作保证。
 
 ```sh
 # 阶段 7：仅检查预期数据自身，不调用分析器验证未来支持
 node --experimental-strip-types scripts/check-stage8-fixtures.mjs
-# 阶段 8：实现 0.5.0 后逐项比对分析和修改、重新分析及过期保护
+# 阶段 8：逐项比对分析和修改、重新分析及过期保护
 node --experimental-strip-types scripts/check-stage8-fixtures.mjs --implemented
 ```
 
 ## 旧边界迁移清单
 
-阶段 7 不修改旧测试行为。阶段 8 对应能力实现后保留原句，并迁移以下预期；新的答案已包含在固定清单中。
+阶段 7 保持了旧测试行为；阶段 8 现已保留原句并迁移以下预期，同时复用固定清单中的完整断言。
 
 | 旧样例位置与原句 | 0.4.0 原预期 | 0.5.0 目标 | 固定样例与原因 |
 |---|---|---|---|
@@ -67,12 +67,12 @@ node --experimental-strip-types scripts/check-stage8-fixtures.mjs --implemented
 | grammar.test.mjs：`She gave him an old book.` | unsupported | complete / SVOO / declarative / past / 无建议 | article-02，old 元音首音允许 an |
 | purposes.test.mjs：`What an old book it is!` | unsupported | complete / SVC / exclamatory / present / 无建议 | article-03，复用新增冠词短语，不放宽 What 限定词 |
 
-保留全部位置、非法协议、失效行为测试。`a old book`、`this books`、`What my book it is!`、未知词、schools、will 等边界保持原预期。上述 25 个错误句此前未承诺支持，本清单固定其未来 partial 与编辑预期；只有规则实现后才加入语法验收。
+保留全部位置、非法协议、失效行为测试。`a old book`、`this books`、`What my book it is!`、未知词、schools、will 等边界保持原预期。上述 25 个错误句此前未承诺支持，本清单固定其未来 partial 与编辑预期；现已加入 `npm test` 的语法验收和独立正确对照。
 
 ## 模块边界与验收
 
-`lib/grammar.ts` 保留 analyzeSentence、applyCorrection、tokenize、VOCABULARY、结果类型及校验的公开入口。内部按职责分为 protocol、tokens、vocabulary、phrases、simple、purposes、suggestions 和 context；依赖单向流向基础模块，不从内部反向导入公开入口。
+`lib/grammar.ts` 保留 analyzeSentence、applyCorrection、tokenize、VOCABULARY、结果类型及校验的公开入口。内部按职责分为 protocol、tokens、vocabulary、phrases、simple、purposes、suggestions、extended 和 context；依赖单向流向基础模块，不从内部反向导入公开入口。
 
-用途规则只重排原始 Token 引用，必要时仅调整 normalized 以复用句型；text/start/end 必须保留原文。context 隔离候选的成分和建议，边界预算沿用原有 4000 次 SVOO 枚举限制；其他候选仍受输入长度和唯一匹配限制。新增规则必须复用这些约束，预算不能被包装解析无限重置。此轮不引入通用语法框架或变更 0.4.0 输出。
+用途规则只重排原始 Token 引用，必要时仅调整 normalized 以复用句型；text/start/end 必须保留原文。context 隔离候选的成分和建议，每次用途解析共享 4000 次边界预算，新增结构枚举与 SVOO 候选解析共用同一计数器；同时保留输入长度和唯一匹配限制。新增支持仅按已固定范围改变旧边界预期。
 
-阶段 8 完成需通过固定样例的语法比对、原测试迁移后的全量回归、类型/ESLint/构建及本阶段键盘、手机、断网、纠错与失效交互；阶段 7 的完整性检查不代替这些门槛。
+阶段 8 已通过固定样例的语法比对、383 项全量回归、类型/ESLint/构建及键盘、手机、断网、纠错与失效交互；阶段 7 的完整性检查不代替这些门槛。

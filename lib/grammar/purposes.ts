@@ -3,16 +3,20 @@ import type { Token } from "./tokens.ts";
 import { adjectives, determiners, verbForms, simpleVerbs, beForms } from "./vocabulary.ts";
 import { nounPhrase, directObject } from "./phrases.ts";
 import { analyzeDeclarative } from "./simple.ts";
-import { forkCandidate } from "./context.ts";
+import { analyzeExtended } from "./extended.ts";
+import { createBoundaryBudget, forkCandidate } from "./context.ts";
 import { suggest } from "./suggestions.ts";
 
 /** Reorder token references, never input text: every explicit range stays in the original string. */
 export function analyzePurpose(tokens: Token[], punctuation: string | null, result: AnalysisResult): string {
+  const consumeBoundary = createBoundaryBudget();
+  const extended = analyzeExtended(tokens, punctuation, result, consumeBoundary);
+  if (extended !== null) return extended;
   const first = tokens[0]?.normalized;
   const unsupported = "未匹配当前支持的句子用途结构，或句末标点与结构不匹配。";
   const tryParse = (ordered: Token[]) => {
     const candidate = forkCandidate(result);
-    const message = analyzeDeclarative(ordered, candidate);
+    const message = analyzeDeclarative(ordered, candidate, consumeBoundary);
     return { candidate, message };
   };
   const accept = (candidate: AnalysisResult, message: string, purpose: AnalysisResult["purpose"]) => {
@@ -130,5 +134,5 @@ export function analyzePurpose(tokens: Token[], punctuation: string | null, resu
     return accept(candidate, `已匹配祈使句规则 IMPERATIVE-001。${message}`, "imperative");
   }
   if (punctuation && punctuation !== ".") return unsupported;
-  return analyzeDeclarative(tokens, result);
+  return analyzeDeclarative(tokens, result, consumeBoundary);
 }

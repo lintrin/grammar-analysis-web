@@ -6,15 +6,8 @@ const plan = JSON.parse(await readFile(new URL('../tests/fixtures/stage8.json', 
 const implemented = process.argv.includes('--implemented');
 const ids = new Set();
 const counts = new Map();
-const canonicalNodes = nodes => nodes.map(n => ({ role: n.role, parentRole: n.parentKey === null ? null : nodes.find(p => p.key === n.parentKey)?.role,
-  implicit: n.implicit, ranges: n.ranges })).sort((a, b) => JSON.stringify(a).localeCompare(JSON.stringify(b)));
-const compare = (input, expected, result) => {
-  assert.equal(result.status, expected.status, input);
-  for (const field of ['purpose', 'pattern', 'complexity', 'tense']) if (field in expected) assert.equal(result[field], expected[field], `${input}: ${field}`);
-  const nodes = result.nodes.map(n => ({ ...n, key: n.id, parentKey: n.parentId }));
-  assert.deepEqual(canonicalNodes(nodes), canonicalNodes(expected.nodes), `${input}: nodes`);
-  assert.deepEqual(result.corrections.map(c => ({ ruleId: c.ruleId, edits: c.edits })), expected.corrections, `${input}: corrections`);
-};
+import { compare } from "../tests/helpers/stage8-fixtures.mjs";
+
 for (const fixture of plan.fixtures) {
   const { id, group, input, expected, afterApply } = fixture;
   assert.ok(!ids.has(id), `Duplicate fixture: ${id}`); ids.add(id);
@@ -45,4 +38,4 @@ for (const fixture of plan.fixtures) {
 }
 for (const group of ['negative-do', 'negative-be', 'negative-can', 'question-can', 'article', 'object-pronoun', 'agreement-negative-do', 'base-negative-do', 'agreement-negative-be', 'base-negative-can', 'base-question-can']) assert.ok(counts.get(group) >= 5, group);
 assert.ok(counts.get('boundary') >= 15);
-console.log(`${implemented ? 'Grammar acceptance' : 'Fixture integrity only (grammar support pending)'}: ${ids.size} fixtures, ${plan.fixtures.filter(f => f.afterApply).length} paired controls.`);
+console.log(`${implemented ? 'Grammar acceptance' : 'Fixture integrity only (grammar not checked)'}: ${ids.size} fixtures, ${plan.fixtures.filter(f => f.afterApply).length} paired controls.`);

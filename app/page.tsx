@@ -19,6 +19,13 @@ const examples = [
   { title: "感叹句", text: "What a useful book it is!" },
   { title: "基础纠错", text: "She go to school." },
   { title: "情态动词", text: "She can go to school." },
+  { title: "否定陈述", text: "She does not like the book." },
+  { title: "否定表语", text: "The book is not useful." },
+  { title: "can 否定", text: "She can not go to school." },
+  { title: "can 疑问", text: "Can she give him a book?" },
+  { title: "冠词短语", text: "It is an old book." },
+  { title: "宾语代词", text: "We found it useful." },
+  { title: "否定句纠错", text: "She do not likes books." },
   { title: "范围提示", text: "The weather is beautiful today." },
 ];
 const labels: Record<Role, { role: string; code: string; color: string }> = {
@@ -109,7 +116,7 @@ export default function Home() {
             <div className="section-heading"><span className="small-icon"><Feather size={18}/></span><h2>输入英文句子</h2><span className="step-label">01</span></div>
             <label htmlFor="sentence" className="sr-only">需要分析的英文句子</label>
             <textarea id="sentence" value={input} onChange={e => editInput(e.target.value)} onKeyDown={e => { if (e.key === "Enter" && (e.metaKey || e.ctrlKey) && !e.nativeEvent.isComposing) { e.preventDefault(); analyze(); } }} spellCheck={false} placeholder="试着输入一个英文句子…" aria-describedby="scope-hint input-count"/>
-            <div className="input-meta"><span>限定词汇 · 五种句型 · 四种用途</span><span id="input-count">{input.length}/1000</span></div>
+            <div className="input-meta"><span>限定词汇 · 简单句 · 支持限定否定句</span><span id="input-count">{input.length}/1000</span></div>
             <button className="analyze-button" onClick={() => analyze()} disabled={busy} aria-keyshortcuts="Control+Enter Meta+Enter"><ScanText size={18}/>{busy ? "正在分析…" : "分析句子"}</button>
             <div className="input-hint" id="scope-hint">Ctrl / ⌘ + Enter 分析 · 一般现在时与过去时</div>
           </section>
@@ -141,7 +148,7 @@ export default function Home() {
                   {children.length > 0 && <div className="nested-parts"><p>短语内部成分</p>{children.map(child => <button className="nested-part attribute" key={child.id} onClick={() => setSelectedId(child.id)}>{labels[child.role].role} · {nodeText(result, child)}</button>)}</div>}
                 </div></div>}
                 <div className="structure-heading"><h3>句子骨架</h3><span>THE BIG PICTURE</span></div><div className="structure-strip">{roots.filter(n => n.role !== "adverbial").map((node, i) => { const label = labelFor(node.role); return <div className="structure-item" key={node.id}>{i > 0 && <span className="structure-plus">+</span>}<span className={`structure-pill ${label.color}`}>{label.code}</span><span>{label.role}</span></div>; })}</div>
-                <div className="learning-note"><span className="note-icon"><Sparkles size={18}/></span><div><h4>一个值得记住的结构</h4><p>{result.purpose === "imperative" ? "祈使句用动词原形表达要求，主语 you 通常省略。" : result.purpose === "exclamatory" ? "What/How 将强调的表语提前，后面保留主语与系动词。" : result.purpose === "interrogative" ? "一般疑问句将助动词或系动词提前。do/does/did 与实义动词共同组成动词成分，可跨越主语。" : patternDetail?.note}</p></div></div>
+                <div className="learning-note"><span className="note-icon"><Sparkles size={18}/></span><div><h4>一个值得记住的结构</h4><p>{result.purpose === "imperative" ? "祈使句用动词原形表达要求，主语 you 通常省略。" : result.purpose === "exclamatory" ? "What/How 将强调的表语提前，后面保留主语与系动词。" : result.purpose === "interrogative" ? "一般疑问句将助动词、can 或系动词提前。do/does/did 和 can 与后面的原形动词共同组成动词成分，可跨越主语。" : result.nodes.some(n => n.ruleId.startsWith("NEGATIVE-")) ? "not 是否定谓语的一部分。do/does/did 后使用动词原形；be 保留人称和时态；can 后同样接原形。" : patternDetail?.note}</p></div></div>
               </>}
             </>}
           </div>

@@ -1,6 +1,6 @@
 {
   "targetRuleVersion": "0.5.0",
-  "state": "planned",
+  "state": "implemented",
   "authorship": "Handwritten grammar expectations and sentence partitions; no analyzer-generated answers.",
   "fixtures": [
     {

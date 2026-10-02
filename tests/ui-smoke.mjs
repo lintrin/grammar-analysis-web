@@ -110,6 +110,36 @@ try {
       assert.match(await page.locator('.detail-callout').innerText(), /强调成分/);
     }
   }
+  for (const [text, count, detail] of [
+    ['She does not like the book.', 3, /否定谓语/],
+    ['The book is not useful.', 3, /否定的系动词/],
+    ['She can not go to school.', 3, /否定谓语/],
+    ['Can she give him a book?', 5, /一般疑问句/],
+    ['It is an old book.', 3, null],
+    ['We found it useful.', 4, null],
+  ]) {
+    await sentence.fill(text); await sentence.press('Control+Enter'); await waitStatus('规则分析完成'); await checkParts(count);
+    assert.equal((await page.locator('.part-text, .sentence-gap').allTextContents()).join(''), text);
+    if (detail) {
+      await page.locator('.sentence-part.verb').first().focus(); await page.keyboard.press('Enter');
+      assert.match(await page.locator('.detail-callout').innerText(), detail);
+      if (text.startsWith('Can')) assert.equal(await page.locator('.sentence-part[aria-pressed="true"]').count(), 2);
+    }
+    if (text === 'It is an old book.') {
+      await page.locator('.sentence-part').filter({ hasText: 'an old book' }).click();
+      await page.getByRole('button', { name: '定语 · old' }).click();
+      assert.match(await page.locator('.detail-callout').innerText(), /修饰短语/);
+    }
+  }
+  await sentence.fill('She do not likes books.'); await analyze.click(); await waitStatus('部分支持');
+  await page.getByRole('tab', { name: '语法检查' }).click();
+  assert.equal(await page.locator('.correction-card').count(), 2);
+  await page.getByRole('button', { name: '应用此建议并重新分析' }).first().click(); await waitStatus('部分支持');
+  assert.equal(await sentence.inputValue(), 'She does not likes books.');
+  assert.equal(await page.locator('.correction-card').count(), 1);
+  await page.getByRole('button', { name: '应用此建议并重新分析' }).click(); await waitStatus('规则分析完成');
+  assert.equal(await sentence.inputValue(), 'She does not like books.');
+  await page.getByRole('tab', { name: '成分解析' }).click();
   await sentence.fill('Do she gives him a book?'); await analyze.click(); await waitStatus('部分支持');
   await page.getByRole('tab', { name: '语法检查' }).click();
   assert.equal(await page.locator('.correction-card').count(), 2);
@@ -159,8 +189,32 @@ try {
   await page.screenshot({ path: '/tmp/clause-mobile.png', fullPage: true });
   await page.setViewportSize({ width: 1280, height: 1000 });
   await page.screenshot({ path: '/tmp/clause-desktop.png', fullPage: true });
+  await page.setViewportSize({ width: 390, height: 844 });
+  const expandedPrivateSentence = 'The good teacher does not give the girls an old gift today.';
+  await sentence.fill(expandedPrivateSentence); await sentence.press('Meta+Enter'); await waitStatus('规则分析完成');
+  await checkParts(5);
+  await sentence.fill('She do not likes books.'); await analyze.click(); await waitStatus('部分支持');
+  await page.getByRole('tab', { name: '语法检查' }).click();
+  await page.locator('.result-card').scrollIntoViewIfNeeded();
+  await page.screenshot({ path: '/tmp/clause-stage8-corrections-mobile.png' });
+  await page.getByRole('button', { name: '应用此建议并重新分析' }).first().focus(); await page.keyboard.press('Enter'); await waitStatus('部分支持');
+  await page.getByRole('button', { name: '应用此建议并重新分析' }).focus(); await page.keyboard.press('Enter'); await waitStatus('规则分析完成');
+  assert.equal(await sentence.inputValue(), 'She does not like books.');
+  await sentence.fill('Can she is an old teacher?'); await analyze.click(); await waitStatus('部分支持');
+  await page.getByRole('button', { name: '应用此建议并重新分析' }).click(); await waitStatus('规则分析完成');
+  assert.equal(await sentence.inputValue(), 'Can she be an old teacher?');
+  await page.getByRole('tab', { name: '成分解析' }).click(); await checkParts(4);
+  assert.match(await page.locator('.tense-badge').innerText(), /can/);
+  await page.locator('.sentence-part.verb').first().focus(); await page.keyboard.press('Enter');
+  assert.equal(await page.locator('.sentence-part[aria-pressed="true"]').count(), 2);
+  assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
+  await page.locator('.result-card').scrollIntoViewIfNeeded();
+  await page.screenshot({ path: '/tmp/clause-stage8-question-mobile.png' });
+  assert.equal(requests.length, 0, 'expanded offline analysis and edits make no HTTP requests');
+  for (const privateText of [expandedPrivateSentence, 'She do not likes books.', 'Can she is an old teacher?']) assert.equal(messages.some(m => m.includes(privateText)), false);
+  assert.equal(await page.evaluate(() => Object.keys(localStorage).length + Object.keys(sessionStorage).length), 0);
   await context.setOffline(false); await page.reload(); await page.waitForLoadState('networkidle');
-  await waitStatus('等待分析'); assert.notEqual(await sentence.inputValue(), privateSentence);
+  await waitStatus('等待分析'); assert.notEqual(await sentence.inputValue(), privateSentence); assert.notEqual(await sentence.inputValue(), 'Can she be an old teacher?');
   assert.deepEqual(errors, []);
   console.log('PASS: analysis, nesting, stale input, keyboard, failure/retry, scope, offline, privacy and mobile.');
 } finally { await browser.close(); }
