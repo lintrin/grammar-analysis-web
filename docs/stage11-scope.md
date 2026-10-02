@@ -29,3 +29,7 @@
 状态 **✅ 已完成**。原因代码在白名单查询前必须为字符串，拒绝数组、字符串包装对象和可转换成合法代码的对象，避免隐式转换绕过未知词位置校验。规则版本保持 `0.9.0`。
 
 新增一项回归覆盖 8 种非字符串代码，各检查保留区间和空区间两种情况；修复前复现“未抛出预期异常”，修复后 `npm test` **638 项通过，0 失败**。类型检查、修改文件 ESLint、构建和差异检查通过；浏览器验收沿用上方已通过记录，本次修复未重新运行浏览器。日志：`/tmp/clause-reason-type-red.log`、`/tmp/clause-reason-type-tests.log`、`/tmp/clause-reason-type-types.log`、`/tmp/clause-reason-type-lint.log`、`/tmp/clause-reason-type-build.log`。
+
+## 后续验收
+
+[阶段 12](stage12-scope.md) ✅ 已完成 40 个新独立答案、20 个边界、710 项全量测试及工程、性能和两种本地服务的浏览器验收。规则仍为 0.9.0；本页上方保留阶段 11 交付时的记录。
