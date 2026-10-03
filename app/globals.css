@@ -16,3 +16,16 @@
 
 .clause-navigation{display:flex;align-items:center;gap:12px;margin-bottom:18px;font-size:12px;color:#65748d}.clause-navigation .nested-part{margin:0}
 .support-help{font-size:12px;line-height:1.8;color:#65748d;margin-top:14px;overflow-wrap:anywhere}.support-help summary{cursor:pointer;color:#315c9e}.support-help p{margin-top:8px}.example-group h3{font-size:13px;margin-top:18px;color:#50617c}.example-group>p{font-size:11px;line-height:1.8;color:#73839b;margin-top:6px}.analysis-feedback{border:1px solid #e5ecf7;border-radius:8px;padding:12px 14px;font-size:12px;line-height:1.8;color:#65748d;margin-bottom:16px;overflow-wrap:anywhere}.analysis-feedback p:first-child{font-weight:600}.word-location{font-size:12px;color:#315c9e;line-height:1.8;margin-bottom:16px;overflow-wrap:anywhere}
+
+/* Collapsible example directory. */
+.example-group{border-top:1px solid #eef1f6}
+.example-group>summary{display:flex;align-items:center;gap:8px;padding:14px 0;cursor:pointer;list-style:none;font-size:13px;font-weight:600;color:#50617c}
+.example-group>summary::-webkit-details-marker{display:none}
+.example-group>summary:hover{color:#315c9e}
+.example-group>summary:focus-visible{outline:3px solid #adc4eb;outline-offset:2px;border-radius:4px}
+.example-group-chevron{flex-shrink:0;transition:transform .18s}
+.example-group[open]>summary .example-group-chevron{transform:rotate(90deg)}
+.example-group-count{margin-left:auto;font-size:11px;font-weight:500;color:#8492a7;background:#f1f4f8;border-radius:5px;padding:2px 6px}
+.example-group-content{margin:0 0 14px 7px;padding-left:15px;border-left:1px solid #dce4ef}
+.example-group-content>p{font-size:11px;line-height:1.8;color:#73839b;margin:0 0 8px}
+.example-group-content .example{gap:9px;padding:12px 0}

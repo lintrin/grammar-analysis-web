@@ -1,5 +1,7 @@
 # 阶段 11：学习反馈与范围说明
 
+> 已归档（2026-10-03）：本页保留对应阶段的计划、范围与验收记录；文中“当前”和“下一步”属于当时版本。现行能力见 [项目说明](../../README.md#当前进度)，后续开发见 [阶段 27–32 计划](../structure-development-plan.md)，历史导航见 [归档索引](README.md)。
+
 规则版本 `0.9.0`；状态 **✅ 已完成**（2026-10-02）。本页范围和人工原因答案先于实现固定。
 
 - 保留五种句型、四种简单句用途、and/but、后置无逗号 because 和前置带逗号 if 范围；补充 `reasons`，代码为 unknown-word / unsupported-structure / form-mismatch / punctuation / ambiguous / budget-exceeded，输入为空或过长另用 invalid-input。规则分支产生原因，不从中文消息或词的出现推测。

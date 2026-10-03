@@ -1,6 +1,6 @@
 # Clause · 阶段 20 数据库与发布协议设计
 
-阶段 19 固定设计；阶段 20A ✅ 已完成建库与草稿维护及验收，20B/C ✅ 已完成，见 [验收记录](stage20bc-scope.md)。本文件定义直接升级的唯一协议，不要求兼容旧库、结果或快照。当前生产分析使用已审核发布的生成快照。
+阶段 19 固定设计；阶段 20A ✅ 已完成建库与草稿维护及验收，20B/C ✅ 已完成，见 [验收记录](archive/stage20bc-scope.md)。本文件定义直接升级的唯一协议，不要求兼容旧库、结果或快照。当前生产分析使用已审核发布的生成快照。
 
 ## 数据实体与约束
 
@@ -50,7 +50,7 @@ be 的 SVC、go 的固定 to school、SVOO 人物接受者、SVO/SVOC 的宾格�
 
 阶段 20A 已交付 init/migrate、import、query、revise、validate 和完整修订 show；20B/C 已交付审核、发布、重建及客户端命令。完整维护 CLI 交付命令：init/migrate、import、query（lemma/surface/POS）、revise、validate、review、publish、export-release、rebuild、generate-client、verify。无环境数据库时 build 仍使用固定发布和生成客户端，缺失/非法则明确失败，不回退旧手写词典。构建不得悄悄生成或审核新内容；生成是显式开发命令，verify 检查确定性。
 
-当前联合清单为规则 `0.18.1` + 词典 `1.3.0`，222 个完整词条；1.0.0/1.1.0/1.2.0 的历史发布仍冻结保存。阶段 26 从开源固定词形子集新增 73 个审核动词，见 [阶段 26](stage26-scope.md)。新增 57 条草稿来源、逐词范围和发布重现见 [阶段 21](stage21-scope.md)。`rebuild` 使用当前清单锁定的版本，不默认回到旧种子。
+当前联合清单为规则 `0.18.1` + 词典 `1.3.0`，222 个完整词条；1.0.0/1.1.0/1.2.0 的历史发布仍冻结保存。阶段 26 从开源固定词形子集新增 73 个审核动词，见 [阶段 26](archive/stage26-scope.md)。新增 57 条草稿来源、逐词范围和发布重现见 [阶段 21](archive/stage21-scope.md)。`rebuild` 使用当前清单锁定的版本，不默认回到旧种子。
 
 ## 分析版本与失效
 
@@ -74,4 +74,4 @@ be 的 SVC、go 的固定 to school、SVOO 人物接受者、SVO/SVOC 的宾格�
 
 SQL 的 person/initial_sound/adjective_uses_json/marker_kind 是 attributes 的约束辅助列，validate 检查与完整属性一致。词条内容哈希覆盖稳定 entry/revision ID、完整规范化词形/搭配及展开来源。来源记录以新 ID/version 更新，原记录均冻结；CLI 修改一律创建完整新修订。冻结表的 BEFORE INSERT 保护同时覆盖主键、修订编号唯一键与显式 rowid 冲突，拒绝 REPLACE 的隐式删除，不依赖 recursive_triggers。迁移使用生成 schema SQL 和独立 custom guard SQL，两者及 Drizzle snapshots/journal 均纳入仓库。维护迁移在单一事务中执行并检查文件摘要，不能悄悄改写已应用迁移。
 
-审核/发布表与基础冻结约束在 20A 建库时预置，20A 交付时尚无审核/发布 CLI、发布产物或重建功能；后续 20B/C 已交付并验收。记录见 [20A](stage20a-scope.md)。
+审核/发布表与基础冻结约束在 20A 建库时预置，20A 交付时尚无审核/发布 CLI、发布产物或重建功能；后续 20B/C 已交付并验收。记录见 [20A](archive/stage20a-scope.md)。
