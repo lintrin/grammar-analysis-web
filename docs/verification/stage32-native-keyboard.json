@@ -1,0 +1,46 @@
+{
+  "browser": "Codex in-app browser on macOS",
+  "flows": [
+    {
+      "url": "http://127.0.0.1:5188",
+      "query": "fed",
+      "keys": [
+        "Return",
+        "Tab",
+        "Space",
+        "Down",
+        "Down",
+        "Down",
+        "Return"
+      ],
+      "filter": "verb",
+      "visibleEntry": "feed",
+      "visibleMatchedForms": [
+        "participle",
+        "past"
+      ],
+      "filterRetainsFocus": true
+    },
+    {
+      "url": "http://127.0.0.1:5189",
+      "query": "fed",
+      "keys": [
+        "Return",
+        "Tab",
+        "Space",
+        "Down",
+        "Down",
+        "Down",
+        "Return"
+      ],
+      "filter": "verb",
+      "visibleEntry": "feed",
+      "visibleMatchedForms": [
+        "participle",
+        "past"
+      ],
+      "filterRetainsFocus": true
+    }
+  ],
+  "verification": "Observed fresh native accessibility tree: 动词 selected, 找到 1 个词条, feed heading, both fed identities; native popup operated by keyboard."
+}

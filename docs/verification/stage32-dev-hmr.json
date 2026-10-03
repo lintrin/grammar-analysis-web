@@ -1,0 +1,26 @@
+{
+  "browser": "147.0.7727.15",
+  "ruleVersion": "0.22.4",
+  "realFileWatcherWithoutReload": true,
+  "variants": [
+    {
+      "field": "ruleVersion",
+      "oldResultAndSuggestionCleared": true,
+      "inputRetained": true
+    },
+    {
+      "field": "lexiconVersion",
+      "oldResultAndSuggestionCleared": true,
+      "inputRetained": true
+    },
+    {
+      "field": "lexiconHash",
+      "oldResultAndSuggestionCleared": true,
+      "inputRetained": true
+    }
+  ],
+  "heldOldIdentityCallbackRejected": true,
+  "originalBytesRestored": true,
+  "pageErrors": [],
+  "privateInputInRequestsOrConsole": false
+}

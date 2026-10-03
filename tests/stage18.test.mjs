@@ -11,7 +11,7 @@ import { predicatePerformanceCases } from './helpers/predicate-performance.mjs';
 const acceptance = JSON.parse(readFileSync(new URL('./fixtures/predicate-acceptance.json', import.meta.url), 'utf8'));
 test('stage 18 has 60 independent fixed answers, ten per capability, and 30 new contrasts', () => {
   assert.equal(acceptance.ruleVersion, "0.14.3");
-  assert.equal(RULE_VERSION, "0.22.3");
+  assert.equal(RULE_VERSION, "0.22.4");
   assert.equal(acceptance.fixtures.length, 60); assert.equal(acceptance.boundaries.length, 30);
   for (const category of ['progressive','perfect','passive','perfect-progressive','perfect-passive','progressive-passive']) assert.equal(acceptance.fixtures.filter(f => f.category === category).length,10);
   checkHistoricalIndependence([...acceptance.fixtures, ...acceptance.boundaries], 18);

@@ -1,0 +1,35 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {createHash} from 'node:crypto';
+import {normalizeHistoricalInput,baselineHash} from './historical-independence.mjs';
+export const STAGE32_BASELINE_HASH='cd94838068f974f5a23213aa76830e5662e16b1ec91d032779c375bf4a9ce3cd';
+export const STAGE32_ACCEPTANCE_HASH='309a54dd821ecdf2a7c777698140494ab48fd865e8a17a5675404525cfd16f2b';
+export const STAGE32_QUERIES_HASH='8991a94b2db3ee355b9049893707b9aa1a6fc1e3da530a1f97fb7c6630940c8f';
+export function validateStage32Baseline(baseline){
+ assert.ok(baseline,'Missing stage32 baseline');const {contentHash,...payload}=baseline;
+ assert.equal(contentHash,STAGE32_BASELINE_HASH,'Frozen baseline hash changed');assert.equal(baselineHash(payload),contentHash,'Frozen baseline content changed');
+ assert.equal(baseline.baselineCommit,'4a2a242a8e7835e18a958d483454cb33f2186c68');assert.equal(baseline.sources.length,331);assert.equal(baseline.inputs.length,13067);
+ const sources=new Set(baseline.sources.map(s=>s.path)),inputs=new Set();assert.equal(sources.size,331);
+ for(const s of baseline.sources)assert.match(s.sha256,/^[a-f0-9]{64}$/);
+ for(const row of baseline.inputs){assert.equal(row.input,normalizeHistoricalInput(row.input));assert.ok(row.sources.length&&row.sources.every(s=>sources.has(s)),'Missing provenance');assert.equal(inputs.has(row.input),false,'Duplicate baseline');inputs.add(row.input);}return inputs;
+}
+export const loadStage32Baseline=()=>{const b=JSON.parse(readFileSync(new URL('../baselines/stage32-development.json',import.meta.url)));validateStage32Baseline(b);return b;};
+export function checkStage32Independence(fixtures,baseline=loadStage32Baseline()){
+ const old=validateStage32Baseline(baseline),unique=new Set();for(const f of fixtures){const key=normalizeHistoricalInput(f.input);assert.equal(old.has(key),false,`Historical/development input reused: ${f.input}`);assert.equal(unique.has(key),false,`Duplicate independent input: ${f.input}`);unique.add(key);}
+}
+function load(name,hash){const bytes=readFileSync(new URL(`../fixtures/stage32-${name}.json`,import.meta.url));assert.equal(createHash('sha256').update(bytes).digest('hex'),hash,'Human answers changed after first execution');return JSON.parse(bytes);}
+export function loadStage32Acceptance(){const data=load('acceptance',STAGE32_ACCEPTANCE_HASH);assert.equal(data.baselineHash,STAGE32_BASELINE_HASH);assert.equal(data.status,'human-fixed-before-first-analysis');assert.equal(data.fixtures.length,186);assert.equal(new Set(data.fixtures.map(f=>f.id )).size,186);
+ for(const [category,count]of Object.entries({will:30,location:20,wh:30,multiframe:20,safe:20,'no-auto':20,boundary:20,control:21,reviewed:5}))assert.equal(data.fixtures.filter(f=>f.category===category).length,count);
+ assert.ok(data.fixtures.filter(f=>f.kind==='correct'&&f.abilities.length>1).length>=25);checkStage32Independence(data.fixtures);return data;
+}
+export function loadStage32Queries(){const data=load('queries',STAGE32_QUERIES_HASH),old=JSON.parse(readFileSync(new URL('../fixtures/stage31-queries.json',import.meta.url))).fixtures;
+ assert.equal(data.fixtures.length,21);const key=f=>`${normalizeHistoricalInput(f.query)}|${f.pos}`;assert.equal(new Set(data.fixtures.map(key)).size,21);
+ assert.equal(data.fixtures.filter(f=>f.independent!==false).length,20);
+ for(const f of data.fixtures.filter(f=>f.independent!==false)){assert.equal(['read','given','children'].includes(normalizeHistoricalInput(f.query)),false,'UI query example reused');assert.equal(old.some(o=>key(o)===key(f)),false,'Historical query/filter workflow reused');}return data;
+}
+export function compareStage32(expected,result){
+ for(const key of ['status','purpose','pattern','complexity','tense','modal','questionType','aspect','voice','reasons'])assert.deepEqual(result[key],expected[key],`${result.input}: ${key}`);
+ const canonical=(nodes,key,parent)=>{const map=new Map(nodes.map(n=>[n[key],n]));const sig=n=>`${n.role}:${JSON.stringify(n.ranges)}`;return nodes.map(n=>({role:n.role,implicit:n.implicit,ranges:n.ranges,ruleId:n.ruleId,parent:n[parent]===null?null:sig(map.get(n[parent])),clause:n.clause??null,relation:n.relation??null})).sort((a,b)=>JSON.stringify(a).localeCompare(JSON.stringify(b)));};
+ assert.deepEqual(canonical(result.nodes,'id','parentId'),canonical(expected.nodes,'key','parentKey'),`${result.input}: roles, original ranges, ownership, clauses and rule IDs`);
+ assert.deepEqual(result.corrections.map(({ruleId,edits})=>({ruleId,edits})),expected.corrections,`${result.input}: exact edits`);
+}

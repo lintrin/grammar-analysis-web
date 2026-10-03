@@ -1,0 +1,107 @@
+{
+  "ruleVersion": "0.22.4",
+  "node": "v24.14.1",
+  "platform": "darwin",
+  "initialization": {
+    "importMs": 30.259,
+    "indexSurfaces": 580
+  },
+  "snapshotBytes": 213658,
+  "snapshotGzipBytes": 16194,
+  "candidates": {
+    "read": 6,
+    "her": 2,
+    "carried": 2
+  },
+  "cases": [
+    {
+      "id": "read-her-question",
+      "status": "complete",
+      "utf16Length": 1000,
+      "samples": 100,
+      "boundaryAttempts": 461,
+      "accepted": 461,
+      "medianMs": 12.793209000000047,
+      "p95Ms": 14.622291000000018,
+      "maxMs": 19.06537499999999
+    },
+    {
+      "id": "recipient-her",
+      "status": "complete",
+      "utf16Length": 1000,
+      "samples": 100,
+      "boundaryAttempts": 303,
+      "accepted": 303,
+      "medianMs": 7.842292000000043,
+      "p95Ms": 9.441667000000052,
+      "maxMs": 11.446292000000085
+    },
+    {
+      "id": "carried-her-passive",
+      "status": "complete",
+      "utf16Length": 1000,
+      "samples": 100,
+      "boundaryAttempts": 154,
+      "accepted": 154,
+      "medianMs": 2.166374999999789,
+      "p95Ms": 2.389458999999988,
+      "maxMs": 3.0850829999999405
+    },
+    {
+      "id": "read-mixed-ambiguity",
+      "status": "ambiguous",
+      "utf16Length": 1000,
+      "samples": 100,
+      "boundaryAttempts": 83,
+      "accepted": 83,
+      "medianMs": 1.7424580000001697,
+      "p95Ms": 2.018000000000029,
+      "maxMs": 2.4813749999998436
+    },
+    {
+      "id": "will-read-many-attributes",
+      "status": "complete",
+      "utf16Length": 1000,
+      "samples": 100,
+      "boundaryAttempts": 604,
+      "accepted": 604,
+      "medianMs": 12.269125000000258,
+      "p95Ms": 13.40887500000008,
+      "maxMs": 14.76412500000015
+    },
+    {
+      "id": "location-phrase-attributes",
+      "status": "complete",
+      "utf16Length": 1000,
+      "samples": 100,
+      "boundaryAttempts": 158,
+      "accepted": 158,
+      "medianMs": 2.299750000000131,
+      "p95Ms": 2.5451250000000982,
+      "maxMs": 3.6067080000002534
+    },
+    {
+      "id": "wh-second-frame-many-attributes",
+      "status": "complete",
+      "utf16Length": 1000,
+      "samples": 100,
+      "boundaryAttempts": 453,
+      "accepted": 453,
+      "medianMs": 15.246374999999716,
+      "p95Ms": 15.891499999999724,
+      "maxMs": 16.577790999999706
+    },
+    {
+      "id": "open-second-frame-many-attributes",
+      "status": "complete",
+      "utf16Length": 1000,
+      "samples": 100,
+      "boundaryAttempts": 299,
+      "accepted": 299,
+      "medianMs": 3.9266670000006343,
+      "p95Ms": 4.16058300000077,
+      "maxMs": 4.519416000000092
+    }
+  ],
+  "limitation": "Local synchronous timings and one cold vocabulary module import including dependency loading. Browser rendering measured separately."
+}

@@ -12,7 +12,7 @@ export function analyzeWh(tokens:Token[],punctuation:string|null,result:Analysis
   const wh=tokens[0]?.normalized;
   if(tokens[0]?.whSubject || !whMarkers.has(wh))return null;
   // Preserve the established full what exclamation, including punctuation handling.
-  if(wh==='what' && (determiners.has(tokens[1]?.normalized)||adjectives.has(tokens[1]?.normalized)||(tokens[1]&&nounCandidate(tokens[1]))))return null;
+  if(wh==='what' && !tokens.some(t=>['can','will'].includes(t.normalized)) && (determiners.has(tokens[1]?.normalized)||adjectives.has(tokens[1]?.normalized)||(tokens[1]&&nounCandidate(tokens[1]))))return null;
   record('interrogative');diagnose(result,'unsupported-structure');
   const unsupported='首批特殊疑问仅支持肯定单简单句的主语、直接宾语或限定状语提问；不支持其它谓语链、强调 do 或需要语境的重排。';
   if(punctuation&&punctuation!=='?'){diagnose(result,'punctuation');return unsupported;}

@@ -1,0 +1,519 @@
+{
+  "status": "human-fixed-before-first-query",
+  "authorship": "20 new inflected-surface plus verb-filter workflows, expected identity/forms/frames from the audited release. Reviewed teaching insertions exercise UI only and are not independent grammar inputs.",
+  "fixtures": [
+    {
+      "id": "query-01",
+      "query": "given",
+      "pos": "verb",
+      "ids": [
+        "verb:lexical:give"
+      ],
+      "formKinds": [
+        "participle"
+      ],
+      "patterns": [
+        "SVOO"
+      ],
+      "example": "She gave him a book yesterday.",
+      "workflow": [
+        "keyboard-search",
+        "filter",
+        "inspect-forms-and-frame",
+        "show-source",
+        "insert-reviewed-example",
+        "clear-old-result",
+        "focus-editor",
+        "explicit-analyze"
+      ]
+    },
+    {
+      "id": "query-02",
+      "query": "chosen",
+      "pos": "verb",
+      "ids": [
+        "verb:lexical:choose"
+      ],
+      "formKinds": [
+        "participle"
+      ],
+      "patterns": [
+        "SVO"
+      ],
+      "example": "She chose the picture yesterday.",
+      "workflow": [
+        "keyboard-search",
+        "filter",
+        "inspect-forms-and-frame",
+        "show-source",
+        "insert-reviewed-example",
+        "clear-old-result",
+        "focus-editor",
+        "explicit-analyze"
+      ]
+    },
+    {
+      "id": "query-03",
+      "query": "drew",
+      "pos": "verb",
+      "ids": [
+        "verb:lexical:draw"
+      ],
+      "formKinds": [
+        "past"
+      ],
+      "patterns": [
+        "SVO"
+      ],
+      "example": "She drew the picture yesterday.",
+      "workflow": [
+        "keyboard-search",
+        "filter",
+        "inspect-forms-and-frame",
+        "show-source",
+        "insert-reviewed-example",
+        "clear-old-result",
+        "focus-editor",
+        "explicit-analyze"
+      ]
+    },
+    {
+      "id": "query-04",
+      "query": "swum",
+      "pos": "verb",
+      "ids": [
+        "verb:lexical:swim"
+      ],
+      "formKinds": [
+        "participle"
+      ],
+      "patterns": [
+        "SV"
+      ],
+      "example": "She swam yesterday.",
+      "workflow": [
+        "keyboard-search",
+        "filter",
+        "inspect-forms-and-frame",
+        "show-source",
+        "insert-reviewed-example",
+        "clear-old-result",
+        "focus-editor",
+        "explicit-analyze"
+      ]
+    },
+    {
+      "id": "query-05",
+      "query": "taught",
+      "pos": "verb",
+      "ids": [
+        "verb:lexical:teach"
+      ],
+      "formKinds": [
+        "participle",
+        "past"
+      ],
+      "patterns": [
+        "SVOO"
+      ],
+      "example": "She taught him a book yesterday.",
+      "workflow": [
+        "keyboard-search",
+        "filter",
+        "inspect-forms-and-frame",
+        "show-source",
+        "insert-reviewed-example",
+        "clear-old-result",
+        "focus-editor",
+        "explicit-analyze"
+      ]
+    },
+    {
+      "id": "query-06",
+      "query": "told",
+      "pos": "verb",
+      "ids": [
+        "verb:lexical:tell"
+      ],
+      "formKinds": [
+        "participle",
+        "past"
+      ],
+      "patterns": [
+        "SVOO"
+      ],
+      "example": "She told him a book yesterday.",
+      "workflow": [
+        "keyboard-search",
+        "filter",
+        "inspect-forms-and-frame",
+        "show-source",
+        "insert-reviewed-example",
+        "clear-old-result",
+        "focus-editor",
+        "explicit-analyze"
+      ]
+    },
+    {
+      "id": "query-07",
+      "query": "bought",
+      "pos": "verb",
+      "ids": [
+        "verb:lexical:buy"
+      ],
+      "formKinds": [
+        "participle",
+        "past"
+      ],
+      "patterns": [
+        "SVO"
+      ],
+      "example": "She bought a gift yesterday.",
+      "workflow": [
+        "keyboard-search",
+        "filter",
+        "inspect-forms-and-frame",
+        "show-source",
+        "insert-reviewed-example",
+        "clear-old-result",
+        "focus-editor",
+        "explicit-analyze"
+      ]
+    },
+    {
+      "id": "query-08",
+      "query": "left",
+      "pos": "verb",
+      "ids": [
+        "verb:lexical:leave"
+      ],
+      "formKinds": [
+        "participle",
+        "past"
+      ],
+      "patterns": [
+        "SVO"
+      ],
+      "example": "She left the book yesterday.",
+      "workflow": [
+        "keyboard-search",
+        "filter",
+        "inspect-forms-and-frame",
+        "show-source",
+        "insert-reviewed-example",
+        "clear-old-result",
+        "focus-editor",
+        "explicit-analyze"
+      ]
+    },
+    {
+      "id": "query-09",
+      "query": "met",
+      "pos": "verb",
+      "ids": [
+        "verb:lexical:meet"
+      ],
+      "formKinds": [
+        "participle",
+        "past"
+      ],
+      "patterns": [
+        "SVO"
+      ],
+      "example": "She met the teacher yesterday.",
+      "workflow": [
+        "keyboard-search",
+        "filter",
+        "inspect-forms-and-frame",
+        "show-source",
+        "insert-reviewed-example",
+        "clear-old-result",
+        "focus-editor",
+        "explicit-analyze"
+      ]
+    },
+    {
+      "id": "query-10",
+      "query": "sent",
+      "pos": "verb",
+      "ids": [
+        "verb:lexical:send"
+      ],
+      "formKinds": [
+        "participle",
+        "past"
+      ],
+      "patterns": [
+        "SVOO"
+      ],
+      "example": "She sent him a letter yesterday.",
+      "workflow": [
+        "keyboard-search",
+        "filter",
+        "inspect-forms-and-frame",
+        "show-source",
+        "insert-reviewed-example",
+        "clear-old-result",
+        "focus-editor",
+        "explicit-analyze"
+      ]
+    },
+    {
+      "id": "query-11",
+      "query": "held",
+      "pos": "verb",
+      "ids": [
+        "verb:lexical:hold"
+      ],
+      "formKinds": [
+        "participle",
+        "past"
+      ],
+      "patterns": [
+        "SVO"
+      ],
+      "example": "She held the umbrella yesterday.",
+      "workflow": [
+        "keyboard-search",
+        "filter",
+        "inspect-forms-and-frame",
+        "show-source",
+        "insert-reviewed-example",
+        "clear-old-result",
+        "focus-editor",
+        "explicit-analyze"
+      ]
+    },
+    {
+      "id": "query-12",
+      "query": "broken",
+      "pos": "verb",
+      "ids": [
+        "verb:lexical:break"
+      ],
+      "formKinds": [
+        "participle"
+      ],
+      "patterns": [
+        "SVO"
+      ],
+      "example": "She broke the toy yesterday.",
+      "workflow": [
+        "keyboard-search",
+        "filter",
+        "inspect-forms-and-frame",
+        "show-source",
+        "insert-reviewed-example",
+        "clear-old-result",
+        "focus-editor",
+        "explicit-analyze"
+      ]
+    },
+    {
+      "id": "query-13",
+      "query": "built",
+      "pos": "verb",
+      "ids": [
+        "verb:lexical:build"
+      ],
+      "formKinds": [
+        "participle",
+        "past"
+      ],
+      "patterns": [
+        "SVO"
+      ],
+      "example": "She built the chair yesterday.",
+      "workflow": [
+        "keyboard-search",
+        "filter",
+        "inspect-forms-and-frame",
+        "show-source",
+        "insert-reviewed-example",
+        "clear-old-result",
+        "focus-editor",
+        "explicit-analyze"
+      ]
+    },
+    {
+      "id": "query-14",
+      "query": "forgotten",
+      "pos": "verb",
+      "ids": [
+        "verb:lexical:forget"
+      ],
+      "formKinds": [
+        "participle"
+      ],
+      "patterns": [
+        "SVO"
+      ],
+      "example": "She forgot the letter yesterday.",
+      "workflow": [
+        "keyboard-search",
+        "filter",
+        "inspect-forms-and-frame",
+        "show-source",
+        "insert-reviewed-example",
+        "clear-old-result",
+        "focus-editor",
+        "explicit-analyze"
+      ]
+    },
+    {
+      "id": "query-15",
+      "query": "lent",
+      "pos": "verb",
+      "ids": [
+        "verb:lexical:lend"
+      ],
+      "formKinds": [
+        "participle",
+        "past"
+      ],
+      "patterns": [
+        "SVOO"
+      ],
+      "example": "She lent him a book yesterday.",
+      "workflow": [
+        "keyboard-search",
+        "filter",
+        "inspect-forms-and-frame",
+        "show-source",
+        "insert-reviewed-example",
+        "clear-old-result",
+        "focus-editor",
+        "explicit-analyze"
+      ]
+    },
+    {
+      "id": "query-16",
+      "query": "lost",
+      "pos": "verb",
+      "ids": [
+        "verb:lexical:lose"
+      ],
+      "formKinds": [
+        "participle",
+        "past"
+      ],
+      "patterns": [
+        "SVO"
+      ],
+      "example": "She lost the pen yesterday.",
+      "workflow": [
+        "keyboard-search",
+        "filter",
+        "inspect-forms-and-frame",
+        "show-source",
+        "insert-reviewed-example",
+        "clear-old-result",
+        "focus-editor",
+        "explicit-analyze"
+      ]
+    },
+    {
+      "id": "query-17",
+      "query": "risen",
+      "pos": "verb",
+      "ids": [
+        "verb:lexical:rise"
+      ],
+      "formKinds": [
+        "participle"
+      ],
+      "patterns": [
+        "SV"
+      ],
+      "example": "She rose yesterday.",
+      "workflow": [
+        "keyboard-search",
+        "filter",
+        "inspect-forms-and-frame",
+        "show-source",
+        "insert-reviewed-example",
+        "clear-old-result",
+        "focus-editor",
+        "explicit-analyze"
+      ]
+    },
+    {
+      "id": "query-18",
+      "query": "sold",
+      "pos": "verb",
+      "ids": [
+        "verb:lexical:sell"
+      ],
+      "formKinds": [
+        "participle",
+        "past"
+      ],
+      "patterns": [
+        "SVO"
+      ],
+      "example": "She sold the car yesterday.",
+      "workflow": [
+        "keyboard-search",
+        "filter",
+        "inspect-forms-and-frame",
+        "show-source",
+        "insert-reviewed-example",
+        "clear-old-result",
+        "focus-editor",
+        "explicit-analyze"
+      ]
+    },
+    {
+      "id": "query-19",
+      "query": "stood",
+      "pos": "verb",
+      "ids": [
+        "verb:lexical:stand"
+      ],
+      "formKinds": [
+        "participle",
+        "past"
+      ],
+      "patterns": [
+        "SV"
+      ],
+      "example": "She stood yesterday.",
+      "workflow": [
+        "keyboard-search",
+        "filter",
+        "inspect-forms-and-frame",
+        "show-source",
+        "insert-reviewed-example",
+        "clear-old-result",
+        "focus-editor",
+        "explicit-analyze"
+      ]
+    },
+    {
+      "id": "query-20",
+      "query": "understood",
+      "pos": "verb",
+      "ids": [
+        "verb:lexical:understand"
+      ],
+      "formKinds": [
+        "participle",
+        "past"
+      ],
+      "patterns": [
+        "SVO"
+      ],
+      "example": "She understood the teacher yesterday.",
+      "workflow": [
+        "keyboard-search",
+        "filter",
+        "inspect-forms-and-frame",
+        "show-source",
+        "insert-reviewed-example",
+        "clear-old-result",
+        "focus-editor",
+        "explicit-analyze"
+      ]
+    }
+  ]
+}

@@ -2,15 +2,15 @@
 
 面向中文学习者的英语语法分析网页应用，输入在浏览器内通过本地词典与规则分析。
 
-阶段 1–31 ✅ 已完成。阶段 31 新增本地词汇与搭配查询，按词元/完整词形及词性查看词形、限定用法、来源与教学例句；不访问维护数据库或在线词典。当前词典 1.7.0、规则 0.22.3；5271 项测试、类型/ESLint/词典检查、构建与开发/构建浏览器验收通过，证据见 [阶段 31 交付记录](docs/archive/stage31-scope.md) 和 [被动纠错回归修复](docs/verification/stage31-review-fix.md)。已完成阶段统一收录在 [历史归档](docs/archive/README.md)。
+阶段 1–32 ✅ 已完成。当前词典 1.7.0、规则 0.22.4；5494 项测试、类型/ESLint/词典校验、构建及开发/构建浏览器验收通过。阶段 32 冻结开发来源，完成 100 个正确句、60 个对照和 20 个独立查询流程，修复错序 What + 名词短语 + can/will 的诊断。证据见 [阶段 32 交付记录](docs/archive/stage32-scope.md)；此前查询与被动纠错范围见 [阶段 31](docs/archive/stage31-scope.md)。
 
-阶段 32 **待实施**：先冻结全部开发来源，再固定新独立答案并复核本轮交付。门槛见 [结构扩展开发计划](docs/structure-development-plan.md)；阶段 31 的查询、教学句子和初稿均属于开发来源，不计为独立验收。
+本轮阶段 27–32 已交付；完成状态与后续候选见 [结构扩展开发计划](docs/structure-development-plan.md)，完整历史见 [归档索引](docs/archive/README.md)。独立验收集仅用于测试，不作为网页教学素材。
 
 当前维护文档、开发规则与历史记录的入口见 [文档导航](docs/README.md)。
 
 ## 当前进度
 
-当前规则 **0.22.3**。保留五种基本句型、四种简单句用途、限定 do/be/can 否定与一般疑问，以及两个完整陈述分句的 and/but、后置 because、前置 if。支持现在/过去进行时、完成时、限定被动语态，以及完成进行、完成被动、进行被动。完整谓语、时态、体和语态按原文标注，多分句分别展示各自分类。
+当前规则 **0.22.4**。保留五种基本句型、四种简单句用途、限定 do/be/can 否定与一般疑问，以及两个完整陈述分句的 and/but、后置 because、前置 if。支持现在/过去进行时、完成时、限定被动语态，以及完成进行、完成被动、进行被动。完整谓语、时态、体和语态按原文标注，多分句分别展示各自分类。
 
 完整词形、被动转换、错误状态与限制见 [谓语范围](docs/archive/predicate-expansion-scope.md) 与 [新增词汇范围](docs/archive/lexicon-expansion-scope.md)。现有 44 组可数名词、24 个形容词、100 个实义动词词元；read 同形须依据明确形式线索区分时态，否则保留歧义。使用人工维护并经审核发布的词典快照（1.7.0），不代表支持任意英文。新增词形来自固定版本 LemmInflect，完整 MIT 许可随网页提供；阶段 26 每个新词先开放一个审核搭配，know/need/want 等限定状态义不支持进行体，traveled/traveling 等只接受已选择的拼写。拥有义 have 支持一般现在/过去时的名词短语宾语、do 否定和 do 一般疑问；陈述可进入现有两分句框架，完成时 have 仍是助动词。否定陈述开放 12 种 do/be/can/have/will 白名单缩写，接受直/弯撇号；have 缩写仅作助动词，原文区间不展开。拥有义的其它体/语态、can、祈使、无需 do 的拥有疑问，以及 SV/SVOC 被动、其它 will 链、肯定缩写、所有格、否定疑问、范围外特殊疑问、通用介词短语、新 can 链及完成进行被动仍不支持。
 
@@ -62,7 +62,7 @@ npm run start -- --port 5188
 CLAUSE_STAGE=30 CLAUSE_BASE_URL=http://127.0.0.1:5188 node tests/ui-structure.mjs
 ```
 
-CLAUSE_STAGE 可选 27、28、29、30；CLAUSE_STRUCTURE_REPORT 可指定报告路径。真实 HMR 另在开发服务运行 CLAUSE_HMR=1 的 tests/ui-stage20.mjs（同样设置 CLAUSE_BASE_URL）。这些是开发范围回归，阶段 32 的独立验收尚未实施。阶段 31 查询使用同一 Playwright 环境，对开发与构建地址分别运行：
+CLAUSE_STAGE 可选 27、28、29、30；CLAUSE_STRUCTURE_REPORT 可指定报告路径。真实 HMR 在开发服务运行 tests/ui-stage32-hmr.mjs（同样设置 CLAUSE_BASE_URL），核验规则/词典版本/哈希变动和滞留回调。阶段 27–31 脚本属于开发范围回归，阶段 32 的独立验收另行运行。阶段 31 查询使用同一 Playwright 环境，对开发与构建地址分别运行：
 
 ```sh
 CLAUSE_BASE_URL=http://127.0.0.1:5188 node tests/ui-stage31.mjs
@@ -70,7 +70,19 @@ CLAUSE_BASE_URL=http://127.0.0.1:5188 node tests/ui-stage31.mjs
 
 覆盖 27 个桌面/手机固定查询、236 个教学例句、焦点、旧结果与待处理分析取消、离线/隐私/刷新复位。macOS headless-shell 的原生 select 弹出菜单键盘选择在真实内置浏览器补充检查，证据见阶段 31 交付记录。
 
-独立样例与性能复核：
+阶段 32 独立行为、查询与交付复核：
+
+```sh
+node scripts/stage32/freeze-development.mjs
+node --experimental-strip-types scripts/stage32/check-performance.mjs
+CLAUSE_BASE_URL=http://127.0.0.1:5188 node tests/ui-stage32.mjs
+CLAUSE_BASE_URL=http://127.0.0.1:5189 node tests/ui-stage32.mjs
+CLAUSE_BASE_URL=http://127.0.0.1:5188 node tests/ui-stage32-hmr.mjs
+```
+
+需要与阶段 31 相同的 Playwright 环境。186 个固定输入保留初稿全部原句，包含额外控制/复核回归；20 个独立查询另保留 given 教学来源回归。主脚本报告用 CLAUSE_STAGE32_REPORT 指定，HMR 报告用 CLAUSE_STAGE32_HMR_REPORT；性能数据仅说明本机条件。
+
+历史独立样例与性能复核：
 
 ```sh
 node --experimental-strip-types scripts/check-stage12-fixtures.mjs
@@ -188,11 +200,12 @@ npm run build
 - `tests/stage29-review-fixes.test.mjs`、`tests/fixtures/stage29-review-fixes.json`：宾语提问时间尾部、单处纠错与主语提问谓语范围的 40 条固定预期
 - `tests/stage19.test.mjs`、`tests/fixtures/lexicon-development.json`：未来人工答案完整性、范围和数量（不表示未来能力已实现）
 - `tests/fixtures/lexicon-migrations.json`：历史样例审查、原 fixture 与逐阶段迁移答案
+- `tests/fixtures/stage32-*.json`、`tests/stage32*.test.mjs`、`tests/ui-stage32*.mjs`：独立答案、初稿保留、交付与浏览器复核
 - `tests/baselines/`、`tests/helpers/historical-independence.mjs`：固定历史开发语料和独立性保护
 - `tests/baselines/original-fixtures/`、`tests/helpers/original-fixtures.mjs`：原始样例快照与冻结来源哈希校验；常规测试不依赖 Git 历史
-- `docs/README.md`、`docs/structure-development-plan.md`：文档导航与当前阶段 27–32 开发计划（下一阶段 32）
+- `docs/README.md`、`docs/structure-development-plan.md`：文档导航与当前阶段 27–32 开发计划（27–32 已交付）
 - `docs/lexicon-database-design.md`：现行 SQLite/审核/快照协议
-- `docs/archive/`：阶段 1–31 的历史计划、范围与验收记录
+- `docs/archive/`：阶段 1–32 的历史计划、范围与验收记录
 - `tests/ui-smoke.mjs`、`tests/ui-stage12.mjs`、`tests/ui-predicate.mjs`：可选整体验收与浏览器性能回归
 - `app/layout.tsx`：应用元信息
 - `components/ui/`：基础界面组件

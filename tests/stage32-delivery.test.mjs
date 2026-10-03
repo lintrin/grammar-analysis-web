@@ -1,0 +1,44 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {mkdtempSync,rmSync,cpSync,writeFileSync,readFileSync} from 'node:fs';
+import {tmpdir} from 'node:os';
+import {join} from 'node:path';
+import {spawnSync} from 'node:child_process';
+import {createHash} from 'node:crypto';
+import {openDatabase,migrate,query,revise} from '../scripts/lexicon/store.mjs';
+import {trustedRelease,rebuild,exportRelease,validateRelease,review,publish} from '../scripts/lexicon/release.mjs';
+import {clientSnapshot} from '../scripts/lexicon/client.mjs';
+import {canonical} from '../scripts/lexicon/data.mjs';
+import {analyzeSentence,validateAnalysisResult,applyCorrection} from '../lib/grammar.ts';
+import {loadStage32Acceptance,compareStage32} from './helpers/stage32-fixtures.mjs';
+import {instrumentBoundaries} from './helpers/stage12-performance.mjs';
+import {stage32PerformanceCases} from './helpers/stage32-performance.mjs';
+const data=loadStage32Acceptance();
+test('32 clean disk database rebuild and isolated snapshot reproduce all independent answers and controls',t=>{
+ const directory=mkdtempSync(join(tmpdir(),'clause-32-rebuild-'));t.after(()=>rmSync(directory,{recursive:true,force:true}));const db=openDatabase(join(directory,'working.sqlite'),true);t.after(()=>db.close());
+ const {release,manifest}=trustedRelease();migrate(db);assert.deepEqual(rebuild(db,release,manifest.lexiconHash),release);assert.equal(query(db).length,231);const exported=exportRelease(db,'1.7.0');assert.deepEqual(exported,release);
+ const snapshot=clientSnapshot(exported);assert.equal(canonical(snapshot)+'\n',readFileSync('lib/grammar/generated/lexicon.json','utf8'));cpSync('lib',join(directory,'lib'),{recursive:true});cpSync('data/grammar',join(directory,'data/grammar'),{recursive:true});cpSync('data/analysis-manifest.json',join(directory,'data/analysis-manifest.json'));writeFileSync(join(directory,'lib/grammar/generated/lexicon.json'),JSON.stringify(snapshot));
+ const code=`import {analyzeSentence} from ${JSON.stringify(join(directory,'lib/grammar.ts'))}; console.log(JSON.stringify(${JSON.stringify(data.fixtures.map(f=>f.input))}.map(input=>analyzeSentence(input,32))));`;
+ const child=spawnSync(process.execPath,['--experimental-strip-types','--input-type=module','-e',code],{encoding:'utf8',maxBuffer:8*1024*1024});assert.equal(child.status,0,child.stderr);JSON.parse(child.stdout).forEach((r,i)=>compareStage32(data.fixtures[i].expected,r));
+ const original=query(db,{lemma:'carry',partOfSpeech:'verb'})[0],draft=structuredClone(original.entry);draft.revisionId='verb:lexical:carry:stage32-draft';draft.frames[0].allowProgressive=false;const row=revise(db,original.entry.revisionId,draft);
+ assert.throws(()=>review(db,draft.revisionId,original.contentHash,'stage32-test-audit','approve'),/current draft hash/);const selection={lexiconVersion:'stage32-test-only',revisionIds:release.entries.map(e=>e.id===draft.id?draft.revisionId:e.revisionId)};
+ assert.throws(()=>publish(db,selection),/approved/);assert.deepEqual(exportRelease(db,'1.7.0'),release);review(db,draft.revisionId,row.contentHash,'stage32-test-audit','approve');assert.notEqual(publish(db,selection).lexiconHash,release.lexiconHash);assert.deepEqual(exportRelease(db,'1.7.0'),release);
+ const tampered=structuredClone(release);tampered.entries[0].forms[0].surface='tampered';assert.throws(()=>validateRelease(tampered));
+});
+for(const f of stage32PerformanceCases)test(`32 input and shared budget: ${f.id}`,()=>{
+ assert.equal(f.input.length,1000);assert.equal(analyzeSentence(f.input).status,f.status);assert.equal(analyzeSentence(f.input+' ').status,'invalid');const bounded=instrumentBoundaries(f.input);assert.equal(bounded.result.status,f.status);assert.ok(bounded.accepted<=4000);validateAnalysisResult(bounded.result);
+ for(const limit of [0,1,10]){const exhausted=instrumentBoundaries(f.input,limit);assert.ok(exhausted.accepted<=limit);assert.equal(exhausted.result.status,'unsupported');assert.equal(exhausted.result.reasons[0].code,'budget-exceeded');assert.deepEqual(exhausted.result.nodes,[]);assert.deepEqual(exhausted.result.corrections,[]);for(const field of ['purpose','pattern','complexity','tense','modal','questionType','aspect','voice'])assert.equal(exhausted.result[field],null);}
+});
+test('32 initial human draft is immutable and every original input remains covered',()=>{
+ const bytes=readFileSync('tests/fixtures/stage32-acceptance-initial.json');assert.equal(createHash('sha256').update(bytes).digest('hex'),'26d6b7f08bb25b63307fcf7f27243f6249e33aa988687c2c5360b96831a81fff');const initial=JSON.parse(bytes);assert.equal(initial.fixtures.length,180);for(const old of initial.fixtures)assert.ok(data.fixtures.some(f=>f.id===old.id&&f.input===old.input),'Original independent input deleted');
+});
+test('32 protected correction rejection on version/hash and missing IDs',()=>{
+ const f=data.fixtures.find(f=>f.kind==='error'),r=analyzeSentence(f.input,32);assert.throws(()=>applyCorrection(r,'missing',f.input,32));assert.throws(()=>applyCorrection({...r,lexiconHash:'f'.repeat(64)},r.corrections[0].id,f.input,32),/过期/);
+});
+test('32 every human answer satisfies the full current protocol before behavior comparison',()=>{
+ for(const f of data.fixtures){const e=f.expected;validateAnalysisResult({...e,input:f.input,inputVersion:32,ruleVersion:'0.22.4',lexiconVersion:'1.7.0',lexiconHash:'dc7e010f3314eec82a61720ad1d6249209c459236245b8f72ce9fcee5fc7bb4a',messages:['人工固定答案'],nodes:e.nodes.map(n=>({...n,id:n.key,parentId:n.parentKey,explanation:'人工固定角色和原文区间'})),corrections:e.corrections.map((c,i)=>({...c,id:`fixed-${i}`,reason:'人工固定编辑',context:f.input}))});}
+});
+test('32 original query draft remains immutable and placeholder workflow remains as regression',async()=>{
+ const bytes=readFileSync('tests/fixtures/stage32-queries-initial.json');assert.equal(createHash('sha256').update(bytes).digest('hex'),'b63f3ad8cb7ffb0350a79e4a1f0df16fa6bf68cdb6b944be26889e0d0a8a8b17');const {loadStage32Queries}=await import('./helpers/stage32-fixtures.mjs');const rows=loadStage32Queries().fixtures;
+ for(const old of JSON.parse(bytes).fixtures)assert.ok(rows.some(f=>f.id===old.id&&f.query===old.query&&f.pos===old.pos));assert.equal(rows.find(f=>f.query==='given').independent,false);assert.equal(rows.find(f=>f.query==='fed').independent,true);
+});
