@@ -1,0 +1,54 @@
+{
+  "ruleVersion": "0.22.3",
+  "lexiconVersion": "1.7.0",
+  "lexiconHash": "dc7e010f3314eec82a61720ad1d6249209c459236245b8f72ce9fcee5fc7bb4a",
+  "patterns": {
+    "SV": "主语 + 谓语",
+    "SVO": "主语 + 谓语 + 宾语",
+    "SVOO": "主语 + 谓语 + 人物接受者 + 事物",
+    "SVOC": "主语 + 谓语 + 宾语 + 单个形容词补语"
+  },
+  "purposes": {
+    "declarative": "肯定、否定陈述",
+    "interrogative": "肯定一般疑问",
+    "imperative": "肯定原形祈使"
+  },
+  "useLabels": {
+    "attribute": "可作名词前的形容词定语",
+    "object-complement": "可作已审核宾补搭配的单个形容词补语",
+    "subject-complement": "可作 be 系表的单个形容词表语",
+    "time": "限定句末时间状语；yesterday 不用于 will，when 提问不重复附加时间词",
+    "finite-be": "be 的限定形式：系表、进行或被动，取决于完整搭配与人称/时态",
+    "be-bridge": "be 原形用于 can/will be 系表；been 用于完成系表/完成组合，being 用于进行被动；不自由拼接",
+    "modal-can": "can + 原形，简单体主动及 can be 系表；肯定/否定陈述与肯定一般疑问；无完成、进行或被动情态链，拥有义 have 除外",
+    "modal-will": "will + 原形，简单体主动及 will be 系表；肯定/否定陈述（含 won’t）与肯定一般疑问；不开放完成/进行/被动、拥有义 have 或 if 条件从句内的 will",
+    "do-auxiliary": "do/does/did 用于已开放主动搭配的否定陈述与肯定疑问，其后实义动词用原形",
+    "perfect-auxiliary": "完成时助动词，后接过去分词；可进入审核的完成进行/完成被动；have/has/had + 名词短语另属拥有义",
+    "coordination": "仅连接两个完整陈述分句，不共享主语；连接前可有一个英文逗号",
+    "subordination": "because 仅后置无逗号，if 仅前置并以一个英文逗号分隔；两侧为完整陈述分句",
+    "article": "名词短语冠词；a/an 依首音匹配单数可数名词，the 可用于单数或复数",
+    "possessive": "名词前的物主限定词；不开放撇号所有格",
+    "demonstrative": "名词前的指示限定词，须匹配单复数",
+    "passive-agent": "仅在审核被动搭配中以 by 引出施事",
+    "exclamation": "限定 be 系表感叹结构，how + 单形容词或 what + a/an + 名词短语",
+    "negation": "只在已开放的助动词/情态否定陈述中使用；不支持否定疑问或否定祈使",
+    "go-destination": "to school 仅作为 go 的固定去向；to 另可用于审核被动接受者，不开放 to 不定式",
+    "passive-recipient": "审核双宾语被动中以 to 引出人物接受者",
+    "direct-object": "可作已审核宾语搭配的宾格代词；拥有义 have 仅接名词短语",
+    "recipient": "可作双宾语或审核被动的具有接受者身份的人物代词",
+    "subject": "可作显式主语代词，须符合具体搭配的主语限制",
+    "location-preposition": "仅 sleep/work/walk/run/dance/wait 的单简单句地点尾部；逐动词审核介词；简单/进行或 can/will 简单体；不开放完成、被动、分句或特殊疑问地点尾部",
+    "wh-adverbial": "肯定单句简单主动 SV/SVO 状语提问；where 限六个地点动词，when 不附时间尾部，why 不附 because 从句；不附地点尾部",
+    "wh-object": "who/what 仅肯定单句简单主动 SVO 直接宾语提问，不用于双宾语或宾补提问",
+    "wh-subject": "who/what 仅肯定单句简单主动 SV/SVO 主语提问；教学范围按单数处理，具体主语仍受搭配限制"
+  },
+  "limits": {
+    "general": "词形收录不表示任意结构可用。仅按已审核搭配；无否定疑问、自由介词附着或完成进行被动。",
+    "modal": "can/will 仅简单体主动；不继承进行、完成或被动权限。will 不进入 if 条件从句。",
+    "composed": "不带情态词的进行/完成/被动只开放肯定/否定陈述与肯定一般疑问。",
+    "location": "地点尾部仅单简单句的简单/进行或 can/will 简单体；不进入完成、被动、祈使、特殊疑问或分句。",
+    "spelling": "仅支持上列已收录拼写；未列出的地区拼写或其他变体不自动替换。",
+    "homograph": "同一拼写有多个词形身份；read/cut/hit 等需要明确时态线索，否则保留歧义。"
+  },
+  "exampleBasisRuleVersion": "0.22.2"
+}

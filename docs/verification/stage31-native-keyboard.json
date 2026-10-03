@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-03",
+  "surface": "Codex in-app browser on macOS, native accessibility/key input",
+  "ruleVersion": "0.22.3",
+  "checks": [
+    {"url":"http://127.0.0.1:5188/","query":"clean","keys":["Tab","Space","Down","Return"],"selectedFilter":"名词","expectedEntries":0,"observedEntries":0,"focus":"按词性筛选"},
+    {"url":"http://127.0.0.1:5189/","query":"clean","keys":["Tab","Space","Down","Down","Return"],"selectedFilter":"形容词","expectedEntries":1,"observedEntries":1,"observedHeading":"clean","focus":"按词性筛选"}
+  ],
+  "limitation": "Native popup keyboard selection was checked separately because macOS Chromium headless-shell does not drive select popups with key presses. Automated reports separately cover keyboard search, Tab focus and semantic filtering."
+}

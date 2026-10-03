@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-03",
+  "runtime": "v24.14.1",
+  "ruleVersion": "0.22.3",
+  "lexiconVersion": "1.7.0",
+  "tests": 5255,
+  "typecheck": true,
+  "lint": true,
+  "lexiconVerify": true,
+  "build": true,
+  "serviceLogsContainTestInputs": false,
+  "queryFixtures": 27,
+  "verbLemmas": 100,
+  "verbFrames": 105,
+  "reviewedTeachingExamples": 236,
+  "browserReports": [
+    "stage31-dev-browser.json",
+    "stage31-built-browser.json",
+    "stage31-native-keyboard.json"
+  ],
+  "stage32": "pending-independent-acceptance"
+}

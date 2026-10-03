@@ -1,0 +1,59 @@
+"use client";
+
+import { useState } from 'react';
+import { BookOpen, Search } from 'lucide-react';
+import { queryDictionary, matchingForms, dictionaryLabels, formLabels, dictionaryIdentity, dictionaryLimits, entryNotes, entrySources, entryExamples, frameCapabilities, frameExample, type DictionaryFilter, type DictionaryEntry } from '@/lib/grammar/dictionary';
+
+export function DictionaryQuery({ onExample }: { onExample: (text: string) => void }) {
+  const [query, setQuery] = useState('');
+  const [filter, setFilter] = useState<DictionaryFilter>('all');
+  const entries = queryDictionary(query, filter);
+  return <details className="dictionary-card">
+    <summary><BookOpen size={17}/><span>词汇与搭配查询</span><span className="dictionary-local">本地词典</span></summary>
+    <div className="dictionary-content">
+      <p className="dictionary-intro">查一个词，看看它在当前规则里怎么用。</p>
+      <label className="dictionary-search-label" htmlFor="dictionary-search">词元或完整词形</label>
+      <div className="dictionary-search"><Search size={16}/><input id="dictionary-search" type="search" value={query} onChange={e=>setQuery(e.target.value)} placeholder="例如 read、given、children" spellCheck={false} autoComplete="off" aria-describedby="dictionary-hint dictionary-count"/></div>
+      <label className="dictionary-search-label" htmlFor="dictionary-filter">按词性筛选</label>
+      <select id="dictionary-filter" value={filter} onChange={e=>setFilter(e.target.value as DictionaryFilter)}>{Object.entries(dictionaryLabels).map(([value,label])=><option key={value} value={value}>{label}</option>)}</select>
+      <p id="dictionary-hint" className="dictionary-hint">完整匹配，忽略大小写和首尾空白。词形收录不等于支持所有用法。</p>
+      <p id="dictionary-count" className="dictionary-count" role="status">{!query.trim() ? '输入词元或词形开始查询。' : entries.length ? `找到 ${entries.length} 个词条` : '当前词典未收录此词，或没有符合筛选的词条。未收录不表示拼写错误。'}</p>
+      <div className="dictionary-results">{entries.map(entry=><Entry key={entry.id} entry={entry} query={query} onExample={onExample}/>)}</div>
+      <p className="dictionary-hint">查询与筛选仅在本页内存中保留，刷新后复位。</p>
+    </div>
+  </details>;
+}
+function Entry({entry,query,onExample}:{entry:DictionaryEntry;query:string;onExample:(text:string)=>void}) {
+  const matched=matchingForms(entry,query);
+  return <article className="dictionary-entry">
+    <header><h3>{entry.lemma}</h3><span>{dictionaryLabels[entry.partOfSpeech]}{entry.sense==='possession'?' · 拥有义':entry.attributes.uses?.includes('perfect-auxiliary')?' · 完成时助动词':''}</span></header>
+    {matched.length>0&&<p className="dictionary-match">查询词形：{matched.map(f=>formLabels[f.kind]??f.kind).join(' / ')}</p>}
+    <dl className="dictionary-forms">{entry.forms.map(f=><div key={`${f.kind}:${f.surface}`}><dt>{formLabels[f.kind]??f.kind}</dt><dd>{f.surface}</dd></div>)}</dl>
+    <p className="dictionary-hint">{dictionaryLimits.spelling}</p>
+    {new Set(entry.forms.map(f=>f.surface)).size<entry.forms.length&&<p className="dictionary-hint">{dictionaryLimits.homograph}</p>}
+    {entryNotes(entry).map(note=><p className="dictionary-note" key={note}>{note}</p>)}
+    {(entry.partOfSpeech === 'verb' ? entry.frames : []).map(frame=>{
+      const c=frameCapabilities(entry,frame),example=frameExample(entry,frame);
+      return <section className="dictionary-frame" key={frame.id}>
+        <h4>{c.meaning}</h4><p className="dictionary-pattern">{c.title}</p>
+        <dl className="dictionary-permissions">
+          <div><dt>主语</dt><dd>{c.subject}</dd></div>
+          <div><dt>用途</dt><dd>{c.purposes.join('、')}</dd></div>
+          <div><dt>不带情态词</dt><dd>一般现在/过去时；进行：{c.progressive?'支持':'未开放'}；完成：{c.perfect?'支持':'未开放'}；被动：{c.passiveNote}</dd></div>
+          <div><dt>组合谓语</dt><dd>{[c.perfectProgressive?'完成进行':null,c.perfectPassive?'完成被动':null,c.progressivePassive?'进行被动':null].filter(Boolean).join('、')||'未开放'}</dd></div>
+          <div><dt>情态</dt><dd>{c.modals.length?`${c.modals.join(' / ')} + 原形，仅简单主动`:'未开放'}</dd></div>
+          <div><dt>特殊疑问</dt><dd>{[['主语',c.wh.subject],['宾语',c.wh.object],['状语',c.wh.adverbial]].filter(([,words])=>words.length).map(([label,words])=>`${label}：${Array.isArray(words)?words.join('/'):words}`).join('；')||'未开放'}</dd></div>
+          <div><dt>地点尾部</dt><dd>{c.location.join(' / ')||'未开放'}</dd></div>
+          <div><dt>陈述分句</dt><dd>{c.compound?'可进入既有两分句框架':'仅单句'}</dd></div>
+        </dl>
+        <ul className="dictionary-notes">{c.notes.map(note=><li key={note}>{note}</li>)}</ul>
+        <Example text={example.text} onExample={onExample}/>
+      </section>;
+    })}
+    {entry.partOfSpeech !== 'verb'&&entryExamples(entry).map(e=><Example key={e.text} text={e.text} onExample={onExample}/>)}
+    <details className="dictionary-source"><summary>版本与来源</summary><p>规则 {dictionaryIdentity.ruleVersion} · 词典 {dictionaryIdentity.lexiconVersion}</p>{entrySources(entry).map(s=><div key={s.id}><p>{s.title} · {s.license}</p><p>{s.attribution}</p>{s.id==='lemminflect-stage26'&&<a href="/licenses/lemminflect.txt" target="_blank" rel="noreferrer">查看完整 MIT 许可与署名</a>}</div>)}</details>
+  </article>;
+}
+function Example({text,onExample}:{text:string;onExample:(text:string)=>void}) {
+  return <div className="dictionary-example"><p>{text}</p><button onClick={()=>onExample(text)} aria-label={`放入例句：${text}`}>放入句子输入框</button></div>;
+}

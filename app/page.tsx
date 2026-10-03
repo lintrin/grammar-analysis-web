@@ -8,6 +8,7 @@ import { analyzeSentence, applyCorrection, getAnalysisIdentity, type AnalysisRes
 import { exampleGroups, sample } from "@/lib/grammar/learning";
 import { tenseLabel, voiceLabel } from "@/lib/grammar/classification";
 import { reasonLabels } from "@/lib/grammar/feedback";
+import { DictionaryQuery } from "@/components/dictionary-query";
 
 const labels: Record<Role, { role: string; code: string; color: string }> = {
   subject: { role: "主语", code: "S", color: "subject" },
@@ -150,6 +151,7 @@ function Workbench({ input, setInput }: { input: string; setInput: (value: strin
             <div className="input-hint" id="scope-hint">Ctrl / ⌘ + Enter 分析 · 一般时、进行时、完成时与被动</div>
             <details className="support-help"><summary>当前范围与键盘操作</summary><p>使用随应用提供的词典：44 组可数名词、24 个形容词、100 个实义动词词元。拥有义 have 仅支持一般现在/过去时的名词短语宾语、do 否定和 do 一般疑问；不支持 can、进行/完成/被动、祈使或无需 do 的拥有疑问。完成时中的 have 继续作为助动词分析。teach/tell 仅支持人物接受者加事物的双宾语；keep 仅支持单形容词宾补。100 个动词词元、105 个审核搭配。eat/read/write 新增泛指活动的主谓搭配，限人物主语；open/close 新增门窗自行开关的主谓搭配，限门、窗或 it；新主谓搭配不支持完成体、被动、祈使、地点尾部或分句，多处词形错误仅诊断、不提供自动修改。原有主谓宾用法继续支持；stay 不接表语。know、need、want 等本轮状态义不支持进行体。read、cut、hit 的原形与过去式同形，没有明确时态线索时保留歧义。支持限定被动语态、现在/过去进行时和完成时，以及完成进行、完成被动、进行被动组合的肯定、否定陈述和肯定一般疑问；完整且唯一的谓语组合支持有限 be/have 一致及实义动词唯一分词替换；多个依赖错误、桥接错误或候选不唯一时不自动修改。仅支持五种句型、四种简单句用途、两个完整陈述分句的 and/but、后置无逗号 because，以及前置带英文逗号的 if。两侧必须完整匹配。地点状语仅支持 sleep/work/walk/run/dance/wait 的单个简单句末尾 in/on/under/near 短语，逐动词限定介词，地点后可接时间词；不开放完成体、被动、分句或 SVO 后的自由附着。否定陈述支持 don&apos;t/doesn&apos;t/didn&apos;t、isn&apos;t/aren&apos;t/wasn&apos;t/weren&apos;t、can&apos;t、haven&apos;t/hasn&apos;t/hadn&apos;t，两种撇号均可；have 缩写仅作助动词，拥有义使用 do 否定。特殊疑问仅肯定单简单句的 where/when/why 状语提问和 who/what 主语或直接宾语提问，限定简单体主动 SV/SVO，不附加地点尾部；主语提问的语境一致不自动纠正。will 简单主动和 will be 系表已开放，含 won&apos;t；if 条件从句中的 will、would、其他从句、否定疑问、肯定缩写、所有格和多句尚未支持。can/will 按情态结构分类，不推断现在或过去时。</p><p>Tab 定位按钮，Enter 或空格查看成分、进入分句；返回整句后焦点回到原分句。未知词可用“查看原文”按钮定位；仅选中，不改写。修改输入立即清除旧结果。</p><p>检测顺序：输入限制 → 句末/多句 → 连接结构与标点 → 词典覆盖 → 分句顺序及规则。只展示实际检测到的原因。未命中纠错不代表完全正确；并列句与主从句暂无纠错。</p><p>新增词形数据来自 LemmInflect，使用 MIT 许可。<a href="/licenses/lemminflect.txt" target="_blank" rel="noreferrer">查看许可与署名</a>。</p></details>
           </section>
+          <DictionaryQuery onExample={text => { editInput(text); sentenceInput.current?.focus(); }}/>
           <section className="examples-card">
             <div className="section-heading"><BookOpen size={17}/><h2>从一个例句开始</h2></div>
             <p>展开分类选择例句，再点击分析。</p>

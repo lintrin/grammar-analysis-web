@@ -2,7 +2,8 @@ import type { AnalysisResult, Pattern, Purpose, Role } from "./protocol.ts";
 import type { Token } from "./tokens.ts";
 import { parsePredicate, type Predicate, lexicalForm, finiteAgreement } from "./predicate.ts";
 import { nounPhrase, objectPhrase, directObject, type Phrase } from "./phrases.ts";
-import { adjectives, adjectiveSupports, beForms, nounCandidate, directObjectPronouns, subjectPronouns } from "./vocabulary.ts";
+import { adjectives, adjectiveSupports, beForms, nounCandidate, directObjectPronouns, subjectPronouns, lexicalVerbs } from "./vocabulary.ts";
+import { isSecondFrame, secondFrameSubjectPermits } from "./frame-scope.ts";
 import { diagnose, budgetMessage } from "./feedback.ts";
 import { tenseLabel, voiceLabel } from "./classification.ts";
 import { suggest } from "./suggestions.ts";
@@ -40,6 +41,15 @@ export function analyzeComposed(tokens: Token[], punctuation: string | null, res
     const subject = nounPhrase(tokens, question ? 1 : 0, split);
     if (!subject) continue;
     const ordered = [tokens[finiteIndex], ...tokens.slice(question ? split : split + 1, end)];
+    // Only subjects allowed by the second SV sense block a perfect-passive
+    // reinterpretation. Other subjects retain the original SVO form correction.
+    // Put the parsed subject first so inverted questions use the same scope check.
+    const bridge = ordered[1]?.normalized === "not" ? 2 : 1;
+    const last = ordered[bridge + 1];
+    if (["have", "has", "had"].includes(ordered[0].normalized) && ordered[bridge]?.normalized === "been" && ordered.length === bridge + 2) {
+      const subjectFirst = [...tokens.slice(subject.start, subject.end), ...ordered];
+      if (lexicalVerbs.some(v => isSecondFrame(v) && !v.allowPerfect && v.progressive === last?.normalized && secondFrameSubjectPermits(v, subjectFirst))) continue;
+    }
     const isI = split === (question ? 2 : 1) && tokens[question ? 1 : 0].normalized === "i";
     for (const predicate of parsePredicate(ordered, subject.thirdPerson, isI)) {
       if (negatives.length && ordered[1]?.normalized !== "not") continue;

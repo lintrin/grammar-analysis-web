@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-04",
+  "url": "http://127.0.0.1:5191",
+  "browser": "147.0.7727.15",
+  "ruleVersion": "0.22.3",
+  "lexiconVersion": "1.7.0",
+  "counts": [
+    {
+      "viewport": 1280,
+      "fixedQueries": 27
+    },
+    {
+      "viewport": 390,
+      "fixedQueries": 27
+    }
+  ],
+  "reviewedExampleRoundTrips": 236,
+  "passiveCorrectionRoundTrips": 9,
+  "restrictedSubjectContrasts": 7,
+  "pendingAnalysisCancellation": true,
+  "offlineRequests": 0,
+  "pageErrors": [],
+  "storage": {
+    "local": [],
+    "session": [],
+    "databases": [],
+    "cookie": ""
+  },
+  "refreshReset": true,
+  "keyboardSearch": true,
+  "keyboardFilterFocus": true,
+  "filtering": true,
+  "exampleFocusAndInvalidation": true,
+  "limitation": "Fixed teaching/query development acceptance. Native popup keyboard selection is verified separately in the Codex in-app browser; macOS headless-shell does not drive that popup with key presses. Stage 32 independent acceptance remains pending."
+}

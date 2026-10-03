@@ -1,0 +1,2734 @@
+{
+  "review": "human-reviewed-r2-against-released-snapshot",
+  "ruleVersion": "0.22.2",
+  "examples": [
+    {
+      "entryId": "verb:lexical:accept",
+      "frameId": "accept-svo",
+      "text": "She accepted the gift yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:answer",
+      "frameId": "answer-svo",
+      "text": "She answered the letter yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:arrive",
+      "frameId": "arrive-sv",
+      "text": "She arrived yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SV",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:ask",
+      "frameId": "ask-svo",
+      "text": "She asked the teacher yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:believe",
+      "frameId": "believe-svo",
+      "text": "She believed the teacher yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:break",
+      "frameId": "break-svo",
+      "text": "She broke the toy yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:build",
+      "frameId": "build-svo",
+      "text": "She built the chair yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:buy",
+      "frameId": "buy-svo",
+      "text": "She bought a gift yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:call",
+      "frameId": "call-svo",
+      "text": "She called the doctor yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:carry",
+      "frameId": "carry-svo",
+      "text": "She carried the book yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:change",
+      "frameId": "change-svo",
+      "text": "She changed the book yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:choose",
+      "frameId": "choose-svo",
+      "text": "She chose the picture yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:clean",
+      "frameId": "clean-svo",
+      "text": "She cleaned the table yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:close",
+      "frameId": "close-sv",
+      "text": "The door closed yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SV",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:close",
+      "frameId": "close-svo",
+      "text": "She closed the window yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:collect",
+      "frameId": "collect-svo",
+      "text": "She collected the gift yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:cook",
+      "frameId": "cook-svo",
+      "text": "She cooked the egg yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:cry",
+      "frameId": "cry-sv",
+      "text": "She cried yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SV",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:cut",
+      "frameId": "cut-svo",
+      "text": "She cut the apple yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:dance",
+      "frameId": "dance-sv",
+      "text": "She danced yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SV",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:disappear",
+      "frameId": "disappear-sv",
+      "text": "She disappeared yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SV",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:draw",
+      "frameId": "draw-svo",
+      "text": "She drew the picture yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:eat",
+      "frameId": "eat-sv",
+      "text": "She ate yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SV",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:eat",
+      "frameId": "eat-svo",
+      "text": "She ate the apple yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:enjoy",
+      "frameId": "primary",
+      "text": "She enjoyed the book yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:exercise",
+      "frameId": "exercise-sv",
+      "text": "She exercised yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SV",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:exist",
+      "frameId": "exist-sv",
+      "text": "She existed yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SV",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:fall",
+      "frameId": "fall-sv",
+      "text": "She fell yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SV",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:feed",
+      "frameId": "feed-svoo",
+      "text": "She fed him the egg yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVOO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:find",
+      "frameId": "primary",
+      "text": "She found the book useful yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVOC",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:finish",
+      "frameId": "finish-svo",
+      "text": "She finished the book yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:fix",
+      "frameId": "fix-svo",
+      "text": "She fixed the chair yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:follow",
+      "frameId": "follow-svo",
+      "text": "She followed the driver yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:forget",
+      "frameId": "forget-svo",
+      "text": "She forgot the letter yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:give",
+      "frameId": "primary",
+      "text": "She gave him a book yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVOO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:go",
+      "frameId": "primary",
+      "text": "She went to school yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SV",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:greet",
+      "frameId": "greet-svo",
+      "text": "She greeted the teacher yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:hand",
+      "frameId": "hand-svoo",
+      "text": "She handed him the book yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVOO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:happen",
+      "frameId": "happen-sv",
+      "text": "It happened yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SV",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:hate",
+      "frameId": "hate-svo",
+      "text": "She hated the book yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:hear",
+      "frameId": "hear-svo",
+      "text": "She heard the singer yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:help",
+      "frameId": "help-svo",
+      "text": "She helped the child yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:hit",
+      "frameId": "hit-svo",
+      "text": "She hit the door yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:hold",
+      "frameId": "hold-svo",
+      "text": "She held the umbrella yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:join",
+      "frameId": "join-svo",
+      "text": "She joined the worker yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:jump",
+      "frameId": "jump-sv",
+      "text": "She jumped yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SV",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:keep",
+      "frameId": "keep-svoc",
+      "text": "She kept the door clean yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVOC",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:know",
+      "frameId": "know-svo",
+      "text": "She knew the teacher yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:laugh",
+      "frameId": "laugh-sv",
+      "text": "She laughed yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SV",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:leave",
+      "frameId": "leave-svo",
+      "text": "She left the book yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:lend",
+      "frameId": "primary",
+      "text": "She lent him a book yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVOO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:lift",
+      "frameId": "lift-svo",
+      "text": "She lifted the chair yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:like",
+      "frameId": "primary",
+      "text": "She liked the book yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:lose",
+      "frameId": "lose-svo",
+      "text": "She lost the pen yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:love",
+      "frameId": "love-svo",
+      "text": "She loved the child yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:make",
+      "frameId": "primary",
+      "text": "She made the teacher happy yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVOC",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:meet",
+      "frameId": "meet-svo",
+      "text": "She met the teacher yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:move",
+      "frameId": "move-svo",
+      "text": "She moved the table yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:need",
+      "frameId": "need-svo",
+      "text": "She needed the pen yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:offer",
+      "frameId": "primary",
+      "text": "She offered him a gift yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVOO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:open",
+      "frameId": "open-sv",
+      "text": "The door opened yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SV",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:open",
+      "frameId": "open-svo",
+      "text": "She opened the door yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:paint",
+      "frameId": "paint-svo",
+      "text": "She painted the door yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:pass",
+      "frameId": "pass-svoo",
+      "text": "She passed him the apple yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVOO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:play",
+      "frameId": "play-sv",
+      "text": "She played yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SV",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:promise",
+      "frameId": "promise-svoo",
+      "text": "She promised him the gift yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVOO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:read",
+      "frameId": "read-sv",
+      "text": "She read yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SV",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:read",
+      "frameId": "read-svo",
+      "text": "She read the book yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:remember",
+      "frameId": "remember-svo",
+      "text": "She remembered the friend yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:repair",
+      "frameId": "repair-svo",
+      "text": "She repaired the car yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:rest",
+      "frameId": "rest-sv",
+      "text": "She rested yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SV",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:rise",
+      "frameId": "rise-sv",
+      "text": "She rose yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SV",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:run",
+      "frameId": "primary",
+      "text": "She ran yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SV",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:save",
+      "frameId": "save-svo",
+      "text": "She saved the child yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:see",
+      "frameId": "primary",
+      "text": "She saw the teacher yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:sell",
+      "frameId": "sell-svo",
+      "text": "She sold the car yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:send",
+      "frameId": "primary",
+      "text": "She sent him a letter yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVOO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:serve",
+      "frameId": "serve-svoo",
+      "text": "She served him the egg yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVOO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:show",
+      "frameId": "primary",
+      "text": "She showed him a picture yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVOO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:sit",
+      "frameId": "sit-sv",
+      "text": "She sat yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SV",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:sleep",
+      "frameId": "primary",
+      "text": "She slept yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SV",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:smile",
+      "frameId": "primary",
+      "text": "She smiled yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SV",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:stand",
+      "frameId": "stand-sv",
+      "text": "She stood yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SV",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:start",
+      "frameId": "start-svo",
+      "text": "She started the car yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:stay",
+      "frameId": "stay-sv",
+      "text": "She stayed yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SV",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:stop",
+      "frameId": "stop-svo",
+      "text": "She stopped the bus yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:study",
+      "frameId": "study-svo",
+      "text": "She studied the picture yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:swim",
+      "frameId": "swim-sv",
+      "text": "She swam yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SV",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:take",
+      "frameId": "take-svo",
+      "text": "She took the book yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:talk",
+      "frameId": "talk-sv",
+      "text": "She talked yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SV",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:teach",
+      "frameId": "teach-svoo",
+      "text": "She taught him a book yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVOO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:tell",
+      "frameId": "tell-svoo",
+      "text": "She told him a book yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVOO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:touch",
+      "frameId": "touch-svo",
+      "text": "She touched the table yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:travel",
+      "frameId": "travel-sv",
+      "text": "She traveled yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SV",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:understand",
+      "frameId": "understand-svo",
+      "text": "She understood the teacher yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:visit",
+      "frameId": "visit-svo",
+      "text": "She visited the neighbor yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:wait",
+      "frameId": "wait-sv",
+      "text": "She waited yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SV",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:walk",
+      "frameId": "walk-sv",
+      "text": "She walked yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SV",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:want",
+      "frameId": "want-svo",
+      "text": "She wanted the gift yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:wash",
+      "frameId": "wash-svo",
+      "text": "She washed the car yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:watch",
+      "frameId": "watch-svo",
+      "text": "She watched the dancer yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:work",
+      "frameId": "work-sv",
+      "text": "She worked yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SV",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:write",
+      "frameId": "write-sv",
+      "text": "She wrote yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SV",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:lexical:write",
+      "frameId": "write-svo",
+      "text": "She wrote the letter yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "verb:possession:have",
+      "frameId": "possession-svo",
+      "text": "She had a book yesterday.",
+      "expected": {
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "adjective:lexical:angry",
+      "frameId": null,
+      "text": "She is angry.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "adjective:lexical:blue",
+      "frameId": null,
+      "text": "She is blue.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "adjective:lexical:busy",
+      "frameId": null,
+      "text": "She is busy.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "adjective:lexical:calm",
+      "frameId": null,
+      "text": "She is calm.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "adjective:lexical:clean",
+      "frameId": null,
+      "text": "She is clean.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "adjective:lexical:empty",
+      "frameId": null,
+      "text": "She is empty.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "adjective:lexical:green",
+      "frameId": null,
+      "text": "She is green.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "adjective:lexical:happy",
+      "frameId": null,
+      "text": "She is happy.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "adjective:lexical:hungry",
+      "frameId": null,
+      "text": "She is hungry.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "adjective:lexical:quiet",
+      "frameId": null,
+      "text": "She is quiet.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "adjective:lexical:red",
+      "frameId": null,
+      "text": "She is red.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "adjective:lexical:sad",
+      "frameId": null,
+      "text": "She is sad.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "adjective:lexical:short",
+      "frameId": null,
+      "text": "She is short.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "adjective:lexical:tall",
+      "frameId": null,
+      "text": "She is tall.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "adjective:lexical:tired",
+      "frameId": null,
+      "text": "She is tired.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "adjective:quality:beautiful",
+      "frameId": null,
+      "text": "She is beautiful.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "adjective:quality:big",
+      "frameId": null,
+      "text": "She is big.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "adjective:quality:good",
+      "frameId": null,
+      "text": "She is good.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "adjective:quality:kind",
+      "frameId": null,
+      "text": "She is kind.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "adjective:quality:new",
+      "frameId": null,
+      "text": "She is new.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "adjective:quality:old",
+      "frameId": null,
+      "text": "She is old.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "adjective:quality:small",
+      "frameId": null,
+      "text": "She is small.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "adjective:quality:useful",
+      "frameId": null,
+      "text": "She is useful.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "adjective:quality:young",
+      "frameId": null,
+      "text": "She is young.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:adverb:today",
+      "frameId": null,
+      "text": "She smiles today.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:adverb:yesterday",
+      "frameId": null,
+      "text": "She smiled yesterday.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:auxiliary:am",
+      "frameId": null,
+      "text": "I am kind.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:auxiliary:are",
+      "frameId": null,
+      "text": "They are kind.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:auxiliary:be",
+      "frameId": null,
+      "text": "She will be kind.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:auxiliary:been",
+      "frameId": null,
+      "text": "She has been kind.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:auxiliary:being",
+      "frameId": null,
+      "text": "The book is being given to her.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:auxiliary:can",
+      "frameId": null,
+      "text": "She can sleep.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:auxiliary:did",
+      "frameId": null,
+      "text": "Did she sleep?",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:auxiliary:do",
+      "frameId": null,
+      "text": "Do they sleep?",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:auxiliary:does",
+      "frameId": null,
+      "text": "Does she sleep?",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:auxiliary:had",
+      "frameId": null,
+      "text": "She had given him a book.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:auxiliary:has",
+      "frameId": null,
+      "text": "She has given him a book.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:auxiliary:have",
+      "frameId": null,
+      "text": "They have given her a book.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:auxiliary:is",
+      "frameId": null,
+      "text": "She is kind.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:auxiliary:was",
+      "frameId": null,
+      "text": "She was kind.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:auxiliary:were",
+      "frameId": null,
+      "text": "They were kind.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:connector:and",
+      "frameId": null,
+      "text": "She sleeps and he smiles.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:connector:because",
+      "frameId": null,
+      "text": "She smiles because she likes the book.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:connector:but",
+      "frameId": null,
+      "text": "She likes the book, but he likes the toy.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:connector:if",
+      "frameId": null,
+      "text": "If she sleeps, he smiles.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:determiner:a",
+      "frameId": null,
+      "text": "She has a book.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:determiner:an",
+      "frameId": null,
+      "text": "She has an old book.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:determiner:her",
+      "frameId": null,
+      "text": "She likes her book.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:determiner:his",
+      "frameId": null,
+      "text": "She likes his book.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:determiner:my",
+      "frameId": null,
+      "text": "She likes my book.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:determiner:our",
+      "frameId": null,
+      "text": "She likes our book.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:determiner:that",
+      "frameId": null,
+      "text": "She likes that book.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:determiner:the",
+      "frameId": null,
+      "text": "She likes the book.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:determiner:their",
+      "frameId": null,
+      "text": "She likes their book.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:determiner:these",
+      "frameId": null,
+      "text": "She likes these books.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:determiner:this",
+      "frameId": null,
+      "text": "She likes this book.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:determiner:those",
+      "frameId": null,
+      "text": "She likes those books.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:determiner:your",
+      "frameId": null,
+      "text": "She likes your book.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:marker:by",
+      "frameId": null,
+      "text": "The book was liked by her.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:marker:how",
+      "frameId": null,
+      "text": "How kind she is!",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:marker:not",
+      "frameId": null,
+      "text": "She does not like the book.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:marker:school",
+      "frameId": null,
+      "text": "She goes to school.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:marker:to",
+      "frameId": null,
+      "text": "She goes to school.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:marker:what",
+      "frameId": null,
+      "text": "What does she read?",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:object-pronoun:her",
+      "frameId": null,
+      "text": "She gives her a book.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:object-pronoun:him",
+      "frameId": null,
+      "text": "She gives him a book.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:object-pronoun:it",
+      "frameId": null,
+      "text": "She likes it.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:object-pronoun:me",
+      "frameId": null,
+      "text": "She gives me a book.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:object-pronoun:them",
+      "frameId": null,
+      "text": "She gives them a book.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:object-pronoun:us",
+      "frameId": null,
+      "text": "She gives us a book.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:object-pronoun:you",
+      "frameId": null,
+      "text": "You sleep.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:subject-pronoun:he",
+      "frameId": null,
+      "text": "He sleeps.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:subject-pronoun:i",
+      "frameId": null,
+      "text": "I sleep.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:subject-pronoun:it",
+      "frameId": null,
+      "text": "It is useful.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:subject-pronoun:she",
+      "frameId": null,
+      "text": "She sleeps.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:subject-pronoun:they",
+      "frameId": null,
+      "text": "They sleep.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:subject-pronoun:we",
+      "frameId": null,
+      "text": "We sleep.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function-word:subject-pronoun:you",
+      "frameId": null,
+      "text": "You sleep.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function:auxiliary:will",
+      "frameId": null,
+      "text": "She will read the book.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function:location:in",
+      "frameId": null,
+      "text": "She sleeps in the car.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function:location:near",
+      "frameId": null,
+      "text": "She sleeps near the table.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function:location:on",
+      "frameId": null,
+      "text": "She sleeps on the chair.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function:location:under",
+      "frameId": null,
+      "text": "She sleeps under the table.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function:question:when",
+      "frameId": null,
+      "text": "When does she sleep?",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function:question:where",
+      "frameId": null,
+      "text": "Where does she work?",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function:question:who",
+      "frameId": null,
+      "text": "Who reads the book?",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "function:question:why",
+      "frameId": null,
+      "text": "Why does she sleep?",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "noun:countable:book",
+      "frameId": null,
+      "text": "The book is useful.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "noun:countable:boy",
+      "frameId": null,
+      "text": "The boy is useful.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "noun:countable:child",
+      "frameId": null,
+      "text": "The child is useful.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "noun:countable:father",
+      "frameId": null,
+      "text": "The father is useful.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "noun:countable:friend",
+      "frameId": null,
+      "text": "The friend is useful.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "noun:countable:gift",
+      "frameId": null,
+      "text": "The gift is useful.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "noun:countable:girl",
+      "frameId": null,
+      "text": "The girl is useful.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "noun:countable:letter",
+      "frameId": null,
+      "text": "The letter is useful.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "noun:countable:mother",
+      "frameId": null,
+      "text": "The mother is useful.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "noun:countable:pen",
+      "frameId": null,
+      "text": "The pen is useful.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "noun:countable:picture",
+      "frameId": null,
+      "text": "The picture is useful.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "noun:countable:student",
+      "frameId": null,
+      "text": "The student is useful.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "noun:countable:teacher",
+      "frameId": null,
+      "text": "The teacher is useful.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "noun:countable:toy",
+      "frameId": null,
+      "text": "The toy is useful.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "noun:lexical:actor",
+      "frameId": null,
+      "text": "The actor is useful.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "noun:lexical:apple",
+      "frameId": null,
+      "text": "The apple is useful.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "noun:lexical:artist",
+      "frameId": null,
+      "text": "The artist is useful.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "noun:lexical:aunt",
+      "frameId": null,
+      "text": "The aunt is useful.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "noun:lexical:baby",
+      "frameId": null,
+      "text": "The baby is useful.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "noun:lexical:bus",
+      "frameId": null,
+      "text": "The bus is useful.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "noun:lexical:car",
+      "frameId": null,
+      "text": "The car is useful.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "noun:lexical:chair",
+      "frameId": null,
+      "text": "The chair is useful.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "noun:lexical:cousin",
+      "frameId": null,
+      "text": "The cousin is useful.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "noun:lexical:dancer",
+      "frameId": null,
+      "text": "The dancer is useful.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "noun:lexical:doctor",
+      "frameId": null,
+      "text": "The doctor is useful.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "noun:lexical:door",
+      "frameId": null,
+      "text": "The door is useful.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "noun:lexical:driver",
+      "frameId": null,
+      "text": "The driver is useful.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "noun:lexical:egg",
+      "frameId": null,
+      "text": "The egg is useful.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "noun:lexical:farmer",
+      "frameId": null,
+      "text": "The farmer is useful.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "noun:lexical:foot",
+      "frameId": null,
+      "text": "The foot is useful.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "noun:lexical:man",
+      "frameId": null,
+      "text": "The man is useful.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "noun:lexical:mouse",
+      "frameId": null,
+      "text": "The mouse is useful.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "noun:lexical:neighbor",
+      "frameId": null,
+      "text": "The neighbor is useful.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "noun:lexical:nurse",
+      "frameId": null,
+      "text": "The nurse is useful.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "noun:lexical:orange",
+      "frameId": null,
+      "text": "The orange is useful.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "noun:lexical:person",
+      "frameId": null,
+      "text": "The person is useful.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "noun:lexical:singer",
+      "frameId": null,
+      "text": "The singer is useful.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "noun:lexical:table",
+      "frameId": null,
+      "text": "The table is useful.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "noun:lexical:tooth",
+      "frameId": null,
+      "text": "The tooth is useful.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "noun:lexical:umbrella",
+      "frameId": null,
+      "text": "The umbrella is useful.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "noun:lexical:uncle",
+      "frameId": null,
+      "text": "The uncle is useful.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "noun:lexical:window",
+      "frameId": null,
+      "text": "The window is useful.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "noun:lexical:woman",
+      "frameId": null,
+      "text": "The woman is useful.",
+      "expected": {
+        "status": "complete"
+      }
+    },
+    {
+      "entryId": "noun:lexical:worker",
+      "frameId": null,
+      "text": "The worker is useful.",
+      "expected": {
+        "status": "complete"
+      }
+    }
+  ]
+}

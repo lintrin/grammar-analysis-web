@@ -16,6 +16,14 @@ export function verify(root = new URL('../../',import.meta.url)) {
   if (code.match(/RULE_VERSION = "([^"]+)"/)?.[1] !== manifest.ruleVersion) throw new Error('Rule version mismatch');
   const expected = canonical(clientSnapshot(release))+'\n';
   if (readFileSync(new URL('lib/grammar/generated/lexicon.json',root),'utf8') !== expected) throw new Error('Client snapshot mismatch');
+  const teaching = JSON.parse(readFileSync(new URL('data/grammar/query-capabilities.json',root),'utf8'));
+  const examples = JSON.parse(readFileSync(new URL('data/grammar/query-examples.json',root),'utf8'));
+  if (teaching.ruleVersion !== manifest.ruleVersion || teaching.lexiconVersion !== release.lexiconVersion || teaching.lexiconHash !== release.lexiconHash || teaching.exampleBasisRuleVersion !== examples.ruleVersion) throw new Error('Dictionary teaching metadata version mismatch');
+  for (const entry of release.entries) {
+    const keys = entry.partOfSpeech === 'verb' ? entry.frames.map(f => f.id) : [null];
+    for (const frameId of keys) if (examples.examples.filter(e => e.entryId === entry.id && e.frameId === frameId).length !== 1) throw new Error('Dictionary teaching example coverage mismatch');
+    for (const use of entry.attributes.uses ?? []) if (typeof teaching.useLabels[use] !== 'string') throw new Error('Dictionary teaching use description missing');
+  }
   return { entries: release.entries.length, lexiconVersion: release.lexiconVersion, lexiconHash: release.lexiconHash };
 }
 export function generateClient() {

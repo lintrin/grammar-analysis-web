@@ -5,11 +5,11 @@
 | 文档 | 用途 |
 |---|---|
 | [项目说明](../README.md) | 当前能力、限制、启动方式、词典维护与验证命令 |
-| [阶段 27–32 开发计划](structure-development-plan.md) | 27–30 已完成；下一次从 31 的本地查询范围与人工交互答案固定开始 |
+| [阶段 27–32 开发计划](structure-development-plan.md) | 27–31 已完成；下一次从 32 的完整开发来源冻结和独立人工答案开始 |
 | [词典数据库与发布协议](lexicon-database-design.md) | 现行 SQLite 维护、审核修订、不可变发布、快照与联合版本约束 |
 | [项目开发规则](../AGENTS.md) | 协议升级、行为回归、人工预期、完成标记和输入隐私要求 |
 
-当前规则 `0.22.2`、词典 `1.7.0`。阶段 1–30 ✅ 已完成，历史记录见 [归档索引](archive/README.md)，最新修复与证据见 [范围约束审查修复](verification/scope-review-fixes.md)，阶段 30 原交付证据保留在 [阶段 30](archive/stage30-scope.md) 和 [联合验收数据](verification/structure-delivery.json)。阶段 31、32 待实施，不以计划内容作为已实现能力。
+当前规则 `0.22.3`、词典 `1.7.0`。阶段 1–31 ✅ 已完成，历史记录见 [归档索引](archive/README.md)，当前查询范围、发现与证据见 [阶段 31](archive/stage31-scope.md) 及 [联合验收数据](verification/stage31-delivery.json)，最新复核见 [被动纠错回归修复](verification/stage31-review-fix.md)。此前 27–30 的审查记录保留在 [范围约束审查修复](verification/scope-review-fixes.md)。阶段 32 待实施，不以计划内容作为已实现能力。
 
 ## 归档约定
 
