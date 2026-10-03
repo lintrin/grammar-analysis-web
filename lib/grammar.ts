@@ -31,7 +31,7 @@ export function analyzeSentence(input: string, inputVersion = 0): AnalysisResult
   const result: AnalysisResult = {
     input, inputVersion, ruleVersion: RULE_VERSION, lexiconVersion: LEXICON_VERSION, lexiconHash: LEXICON_HASH, status: "unsupported", purpose: null,
     pattern: null, complexity: null, tense: null, aspect: null, voice: null, nodes: [], corrections: [], reasons: [],
-    messages: ["当前仅分析闭合词典内的五种句型、四种简单句用途、现在/过去进行时与完成时、限定被动及三种常用谓语组合，陈述结构可用于两个完整分句的 and/but、后置无逗号 because、前置带逗号 if；自动纠错仅覆盖原有简单句的主谓一致、do/does/did 后原形及 can 后原形，新谓语组合暂不提供自动纠错。"],
+    messages: ["当前仅分析闭合词典内的五种句型、四种简单句用途、现在/过去进行时与完成时、限定被动及三种常用谓语组合，陈述结构可用于两个完整分句的 and/but、后置无逗号 because、前置带逗号 if；自动纠错覆盖主谓一致、do/does/did 后原形、can 后原形，以及完整且唯一的谓语组合中的有限 be/have 一致和实义动词分词替换。多个依赖错误、桥接错误、多分句和不唯一的候选不提供新建议。"],
   };
   const finish = (message?: string) => {
     if (message) result.messages.unshift(message);

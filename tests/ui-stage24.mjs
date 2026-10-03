@@ -3,9 +3,10 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 const {chromium}=await import(process.env.PLAYWRIGHT_MODULE??'playwright');
 const development=JSON.parse(readFileSync(new URL('./fixtures/lexicon-development.json',import.meta.url)));
-const fixtures=development.fixtures.filter(f=>f.stage===23);
-const byId=new Map(development.fixtures.map(f=>[f.id,f]));
-const migrations=JSON.parse(readFileSync(new URL('./fixtures/lexicon-migrations.json',import.meta.url))).migrations.filter(m=>m.stage===23);
+const supplement=JSON.parse(readFileSync(new URL('./fixtures/stage24-supplement.json',import.meta.url)));
+const fixtures=[...development.fixtures.filter(f=>f.stage===24),...supplement.fixtures];
+const byId=new Map(fixtures.map(f=>[f.id,f]));
+const migrations=JSON.parse(readFileSync(new URL('./fixtures/lexicon-migrations.json',import.meta.url))).migrations.filter(m=>m.stage===24);
 const browser=await chromium.launch({headless:true,executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE});
 try{
   const context=await browser.newContext({viewport:{width:1280,height:1000}});const page=await context.newPage();const errors=[],logs=[],requests=[];
@@ -50,33 +51,42 @@ try{
     await page.getByRole('tab',{name:'成分解析',exact:true}).click();assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
   };
   for(const f of fixtures)await check(f);
-  for(const m of migrations)await check({input:m.input,expected:m.newExpected});
-  const errorsToCheck=['predicate-error-17','predicate-error-18','predicate-two-errors'];
-  for(const width of [1280,390]){
-    await page.setViewportSize({width,height:width===390?844:1000});
-    if(width===390)for(const id of ['contraction-doesnt-3','contraction-isnt-2','contraction-hasnt-3','contraction-repeat','contraction-if','contraction-outside-21'])await check(byId.get(id));
-    for(const id of errorsToCheck){
-      const f=byId.get(id);await check(f);await page.getByRole('tab',{name:/语法检查/}).click();
-      for(const [index,step] of f.steps.entries()){
-        await page.getByRole('button',{name:'应用此建议并重新分析',exact:true}).first().click();await status(index===f.steps.length-1?'complete':'partial');assert.equal(await input.inputValue(),step);
-      }
-      assert.equal(await page.locator('.correction-card').count(),0);await page.getByRole('tab',{name:'成分解析',exact:true}).click();
-      assert.equal(await displayed(),byId.get(f.controlId).input);
+  const apply=async f=>{
+    await check(f);await page.getByRole('tab',{name:/语法检查/}).click();
+    const cards=page.locator('.correction-card');
+    for(const [i,c] of f.expected.corrections.entries()){
+      assert.deepEqual(await cards.nth(i).locator('del').allTextContents(),c.edits.map(e=>e.expected));
+      assert.deepEqual(await cards.nth(i).locator('strong').allTextContents(),c.edits.map(e=>e.replacement));
+      assert.match(await cards.nth(i).innerText(),new RegExp(c.ruleId));
+      if(c.ruleId==='PREDICATE-AGREEMENT-001')assert.equal(await cards.nth(i).locator('h3').innerText(),'谓语助动词一致');
+      if(c.ruleId==='PREDICATE-FORM-001')assert.equal(await cards.nth(i).locator('h3').innerText(),'谓语分词形式');
     }
+    for(const [i,step] of f.steps.entries()){
+      await page.getByRole('button',{name:'应用此建议并重新分析',exact:true}).first().press('Enter');
+      await status(i===f.steps.length-1?'complete':'partial');assert.equal(await input.inputValue(),step);
+    }
+    assert.equal(await cards.count(),0);await page.getByRole('tab',{name:'成分解析',exact:true}).click();
+    await classification(f.control.expected);assert.equal(await displayed(),f.control.input);await parts(f.control.input,f.control.expected.nodes);
+    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
+  };
+  for(const f of fixtures.filter(f=>f.kind==='error'))await apply({...f,control:byId.get(f.controlId)});
+  for(const m of migrations)await apply({input:m.input,expected:m.newExpected,steps:[m.control.input],control:m.control});
+  await page.setViewportSize({width:390,height:844});
+  for(const id of ['predicate-error-1','predicate-error-7','predicate-error-11','predicate-error-12','predicate-error-15','predicate-question-error','predicate-uppercase-error','predicate-two-errors','stage24-contraction-error-1','stage24-contraction-error-4','stage24-contraction-error-7','stage24-contraction-error-8']){
+    const f=byId.get(id);await apply({...f,control:byId.get(f.controlId)});
   }
-  await check(byId.get('contraction-isnt-2'));await page.locator('.sentence-part.verb').press('Enter');
-  const explanation=await page.locator('.detail-callout').innerText();assert.match(explanation,/isn’t sleeping/);assert.doesNotMatch(explanation,/isn’t isn’t/);
-  await page.locator('.result-card').screenshot({path:process.env.CLAUSE_STAGE23_SCREENSHOT??'/tmp/clause-stage23-mobile.png'});
-  await check(byId.get('predicate-error-18'));await page.getByRole('tab',{name:/语法检查/}).click();
-  await input.fill('She doesn’t sleep.');assert.equal(await page.locator('.correction-card').count(),0);assert.equal(await page.locator('.sentence-part').count(),0);
+  for(const f of fixtures.filter(f=>f.kind==='boundary'))await check(f);
+  await check(byId.get('stage24-contraction-error-4'));await page.getByRole('tab',{name:/语法检查/}).click();
+  await page.locator('.result-card').screenshot({path:process.env.CLAUSE_STAGE24_SCREENSHOT??'/tmp/grammar-stage24-mobile.png'});
+  await input.fill('They haven’t slept.');assert.equal(await page.locator('.correction-card').count(),0);assert.equal(await page.locator('.sentence-part').count(),0);
   await input.press('Control+Enter');await status('complete');await page.getByRole('tab',{name:'成分解析',exact:true}).click();
-  await input.fill('She doesn’t like music.');await input.press('Control+Enter');await status('unsupported');
-  await page.getByRole('button',{name:'查看原文：music',exact:true}).press('Enter');
-  assert.deepEqual(await input.evaluate(el=>[el.selectionStart,el.selectionEnd]),[17,22]);assert.equal(await input.inputValue(),'She doesn’t like music.');
-  await input.fill('She doesn’t sleep.'.padEnd(1000,' '));await input.press('Control+Enter');await status('complete');
-  await input.fill('She doesn’t sleep.'.padEnd(1001,' '));await input.press('Control+Enter');await status('invalid');
+  await input.fill('She have given unknown books.');await input.press('Control+Enter');await status('unsupported');
+  await page.getByRole('button',{name:'查看原文：unknown',exact:true}).press('Enter');
+  assert.deepEqual(await input.evaluate(el=>[el.selectionStart,el.selectionEnd]),[15,22]);
+  await input.fill('They hasn’t slept.'.padEnd(1000,' '));await input.press('Control+Enter');await status('partial');
+  await page.getByRole('tab',{name:/语法检查/}).click();await page.getByRole('button',{name:'应用此建议并重新分析',exact:true}).click();await status('invalid');assert.equal((await input.inputValue()).length,1001);assert.equal(await page.locator('.correction-card').count(),0);
   assert.deepEqual(errors,[]);assert.deepEqual(requests,[]);assert.equal(logs.some(log=>fixtures.some(f=>log.includes(f.input))),false);
   assert.deepEqual(await page.evaluate(async()=>({local:Object.keys(localStorage),session:Object.keys(sessionStorage),databases:await indexedDB.databases(),cookie:document.cookie})),{local:[],session:[],databases:[],cookie:''});
-  await context.setOffline(false);await page.reload();await page.waitForLoadState('networkidle');assert.equal(await page.locator('.result-status').innerText(),'等待分析');assert.notEqual(await input.inputValue(),'She doesn’t like music.');
-  console.log(`PASS: ${fixtures.length} fixed answers, ${migrations.length} historical migrations, exact raw parts/classification/clause positions, do correction chains at desktop/mobile, keyboard, input limits, edit invalidation, offline privacy and reload. Chromium ${browser.version()}`);
+  await context.setOffline(false);await page.reload();await page.waitForLoadState('networkidle');assert.equal(await page.locator('.result-status').innerText(),'等待分析');
+  console.log(`PASS: ${fixtures.length} fixed answers, ${migrations.length} migrations plus full applied controls, desktop/mobile corrections, exact edits/classification/parts, keyboard, stale clearing, limits and offline privacy. Chromium ${browser.version()}`);
 }finally{await browser.close();}

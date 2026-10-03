@@ -1,6 +1,6 @@
 import { tokenize } from "./tokens.ts";
 
-export const RULE_VERSION = "0.17.0";
+export const RULE_VERSION = "0.18.0";
 export const MAX_INPUT_LENGTH = 1000;
 export type Range = { start: number; end: number };
 export type Purpose = "declarative" | "interrogative" | "imperative" | "exclamatory";

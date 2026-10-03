@@ -1,10 +1,11 @@
 import type { AnalysisResult, Pattern, Purpose, Role } from "./protocol.ts";
 import type { Token } from "./tokens.ts";
-import { parsePredicate, type Predicate, lexicalForm } from "./predicate.ts";
+import { parsePredicate, type Predicate, lexicalForm, finiteAgreement } from "./predicate.ts";
 import { nounPhrase, objectPhrase, directObject, type Phrase } from "./phrases.ts";
 import { adjectives, adjectiveSupports, beForms, nounCandidate, directObjectPronouns, subjectPronouns } from "./vocabulary.ts";
 import { diagnose, budgetMessage } from "./feedback.ts";
 import { tenseLabel, voiceLabel } from "./classification.ts";
+import { suggest } from "./suggestions.ts";
 
 type Part = { role: Role; phrase: Phrase; explanation: string };
 type Match = { subject: Phrase; predicate: Predicate; ordered: Token[]; pattern: Pattern; parts: Part[] };
@@ -20,7 +21,7 @@ export function analyzeComposed(tokens: Token[], punctuation: string | null, res
   if (!trigger) return null;
   recordPurpose?.(question ? "interrogative" : "declarative");
   diagnose(result, "unsupported-structure");
-  const unsupported = "未匹配当前支持的谓语组合；新结构仅提供分析与形式提示，暂不提供自动纠错。";
+  const unsupported = "未匹配当前支持的谓语组合；无法唯一确认完整搭配时仅提供形式提示。";
   if (punctuation !== null && punctuation !== (question ? "?" : ".")) { diagnose(result, "punctuation"); return unsupported; }
   const negatives = tokens.filter(t => t.normalized === "not");
   if ((question && negatives.length > 0) || negatives.length > 1) return unsupported;
@@ -64,7 +65,19 @@ export function analyzeComposed(tokens: Token[], punctuation: string | null, res
     result.status = "partial";
     const mismatches = [...new Set(candidates.flatMap(m => m.predicate.mismatches))];
     diagnose(result, "form-mismatch", mismatches.map(({ start, end }) => ({ start, end })).sort((a,b) => a.start - b.start));
-    return "完整短语搭配已匹配，但助动词的人称、数或后续动词形式不符合谓语组合规则；新结构暂不提供自动纠错。";
+    if (candidates.length === 1 && mismatches.length === 1 && !candidates[0].predicate.diagnosticOnly && !(candidates[0].predicate.tense === "present" && tailTime === "yesterday")) {
+      const { predicate, subject } = candidates[0];
+      const wrong = mismatches[0];
+      if (wrong === predicate.tokens[0]) {
+        const isI = subject.end === subject.start + 1 && tokens[subject.start].normalized === "i";
+        const agreement = finiteAgreement(wrong.normalized, subject.thirdPerson, isI)!;
+        suggest(result, wrong, agreement.expected, "PREDICATE-AGREEMENT-001", "完整谓语搭配已唯一确定；有限 be/have 需与主语的人称和数一致，保持当前时态与否定。");
+      } else if (predicate.lexical && wrong === predicate.tokens.at(-1)) {
+        const form = predicate.voice === "passive" || predicate.aspect === "perfect" ? "participle" : "progressive";
+        suggest(result, wrong, predicate.lexical[form], "PREDICATE-FORM-001", "完整谓语的时态、体、语态及搭配已唯一确定；实义动词需使用词典审核的相应分词形式。");
+      }
+    }
+    return "完整短语搭配已匹配，但助动词的人称、数或后续动词形式不符合谓语组合规则；仅唯一且安全的替换提供纠错建议。";
   }
   const match = candidates[0];
   if (match.predicate.tense === "present" && tailTime === "yesterday") { diagnose(result, "form-mismatch"); return "yesterday 与当前现在时规则不匹配，无法可靠分析；时态纠错尚未支持。"; }
@@ -89,7 +102,7 @@ export function analyzeComposed(tokens: Token[], punctuation: string | null, res
     explanation: `${chainText} 共同构成完整谓语，${chain[0].text} 承担人称与现在或过去时变化；实义动词为 ${predicate.lexical?.base ?? "be"}，后续动词使用${predicate.voice === "passive" || predicate.aspect === "perfect" ? "过去分词" : "现在分词"}形式，使用${tenseLabel(predicate.tense, predicate.aspect)}、${voiceLabel(predicate.voice)}。${question ? "助动词提前，主语不属于谓语区间。" : ""}${chain.some(t => t.normalized === "not") ? "not 是否定谓语的一部分。" : ""}` });
   for (const part of match.parts) addPhrase(part.role, part.phrase, match.ordered, part.explanation);
   for (const part of adverbials) addPhrase(part.role, part.phrase, tokens, part.explanation);
-  return `已匹配${tenseLabel(predicate.tense, predicate.aspect)}、${voiceLabel(predicate.voice)}的完整谓语组合。新结构暂不提供自动纠错；规则匹配不代表所有语法问题均已检查。`;
+  return `已匹配${tenseLabel(predicate.tense, predicate.aspect)}、${voiceLabel(predicate.voice)}的完整谓语组合。规则匹配不代表所有语法问题均已检查。`;
 }
 
 function activeParts(tokens: Token[], predicate: Predicate, consume: () => boolean): Part[][] | "budget" {

@@ -11,7 +11,7 @@ for(const f of development.fixtures.filter(f=>f.stage===23)) test(`23 fixed answ
   assert.equal(r.input,f.input);validateAnalysisResult(r);
 });
 // These three pre-existing future answers exercise only the existing do rule IDs.
-// New be/have predicate corrections remain stage 24 work.
+// Predicate be/have corrections are covered by the fixed stage 24 answers below.
 for(const id of ['predicate-error-17','predicate-error-18','predicate-two-errors']) test(`23 existing do correction: ${id}`,()=>{
   const f=byId.get(id);const r=analyzeSentence(f.input,23);compareLexiconExpectation(f.expected,r);
   let input=f.input;
@@ -41,7 +41,7 @@ for(const [input,edits,steps] of [
   const complete=analyzeSentence(text);assert.equal(complete.status,'complete');assert.deepEqual(complete.corrections,[]);
   assert.throws(()=>applyCorrection(r,r.corrections[0].id,text,23),/过期/);
 });
-for(const input of ["They isn't sleeping.","She haven't slept.","She isn't sleep.","Don't sleep.","She doesn't like books and he don't sleep."]) test(`23 no premature predicate or cross-clause edit: ${input}`,()=>{
+for(const input of ["Don't sleep.","She doesn't like books and he don't sleep."]) test(`23 no cross-clause or negative imperative edit: ${input}`,()=>{
   const r=analyzeSentence(input);assert.notEqual(r.status,'complete');assert.deepEqual(r.corrections,[]);assert.deepEqual(r.nodes,[]);
 });
 test('23 unknown words retain repeated raw offsets; ordinary prototype names are not contractions',()=>{
@@ -79,4 +79,10 @@ for(const target of ['component','reason','edit'])test(`23 range validation reje
   if(target==='reason')r.reasons[0].ranges=[{start:4,end:6}];
   if(target==='edit')r.corrections[0].edits=[{range:{start:4,end:6},expected:'do',replacement:'does'}];
   assert.throws(()=>validateAnalysisResult(r),/拆分缩写/);
+});
+
+for(const [input,baseId] of [["They isn't sleeping.","predicate-error-19"],["She haven't slept.","predicate-error-20"],["She isn't sleep.","predicate-error-12"]])test(`23 contraction migrated to safe predicate correction: ${input}`,()=>{
+ const expected=structuredClone(byId.get(baseId).expected);
+ if(input==="She isn't sleep."){expected.reasons[0].ranges=[{start:10,end:15}];expected.corrections[0].edits[0].range={start:10,end:15};}
+ compareLexiconExpectation(expected,analyzeSentence(input));
 });

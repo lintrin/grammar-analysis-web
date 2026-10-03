@@ -248,7 +248,7 @@ test('20C interrogative-only frame preserves partial question corrections and re
   'Do she give him a book': {status:'partial',code:'form-mismatch',corrections:[{ruleId:'AGREEMENT-001',edits:[{range:{start:0,end:2},expected:'Do',replacement:'Does'}]}]},
   'Does she gives him a book': {status:'partial',code:'form-mismatch',corrections:[{ruleId:'DO-BASE-001',edits:[{range:{start:9,end:14},expected:'gives',replacement:'give'}]}]},
   'Can she gives him a book': {status:'partial',code:'form-mismatch',corrections:[{ruleId:'MODAL-BASE-001',edits:[{range:{start:8,end:13},expected:'gives',replacement:'give'}]}]},
-  'Has she give him a book': {status:'partial',code:'form-mismatch',corrections:[]},
+  'Has she give him a book': {status:'partial',code:'form-mismatch',corrections:[{ruleId:'PREDICATE-FORM-001',edits:[{range:{start:8,end:12},expected:'give',replacement:'given'}]}]},
   'Has she given him a book':'complete',
   'Does she give him a book':'complete', 'She gives him a book':'unsupported', 'She give him a book':'unsupported',
 }));

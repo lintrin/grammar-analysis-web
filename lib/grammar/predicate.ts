@@ -27,6 +27,7 @@ export type Predicate = {
   lexical: LexicalVerb | null; pattern: Pattern; tense: Exclude<Tense, null>;
   aspect: Exclude<Aspect, null>; voice: Exclude<Voice, null>;
   tokens: Token[]; end: number; mismatches: Token[];
+  diagnosticOnly?: boolean;
 };
 
 /** Parse a finite auxiliary chain first; phrase roles are decided by its audited frame. */
@@ -39,12 +40,13 @@ export function parsePredicate(tokens: Token[], thirdPerson: boolean, isI: boole
   const matches: Predicate[] = [];
   const add = (index: number, aspect: Predicate["aspect"], voice: Predicate["voice"], form: "progressive" | "participle", bridges: string[] = []) => {
     const lexical = lexicalForm(tokens[index] ?? "");
-    if (lexical && voice === "active" && aspect === "progressive" && lexical.passivePromotion === null && tokens[index].normalized === lexical.participle && lexical.participle !== lexical.base && lexical.participle !== lexical.third && !progressiveParticipleHints.has(lexical.base)) return;
+    const participleHint = lexical && voice === "active" && aspect === "progressive" && lexical.passivePromotion === null && tokens[index].normalized === lexical.participle && lexical.participle !== lexical.base && lexical.participle !== lexical.third;
+    if (participleHint && !progressiveParticipleHints.has(lexical.base)) return;
     if (!lexical || (voice === "passive" && lexical.passivePromotion === null) || (aspect.includes("progressive") && !lexical.allowProgressive) || (aspect.includes("perfect") && !lexical.allowPerfect)) return;
     const mismatches = finite.normalized === agreement.expected ? [] : [finite];
     if (tokens[index].normalized !== lexical[form]) mismatches.push(tokens[index]);
     for (const [offset, expected] of bridges.entries()) if (tokens[start + offset].normalized !== expected) mismatches.push(tokens[start + offset]);
-    matches.push({ lexical, pattern: lexical.pattern, tense: agreement.tense, aspect, voice, tokens: tokens.slice(0, index + 1), end: index + 1, mismatches });
+    matches.push({ lexical, pattern: lexical.pattern, tense: agreement.tense, aspect, voice, tokens: tokens.slice(0, index + 1), end: index + 1, mismatches, diagnosticOnly: !!participleHint });
   };
   if (beForms.includes(finite.normalized)) {
     add(start, "progressive", "active", "progressive");

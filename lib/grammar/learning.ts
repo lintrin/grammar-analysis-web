@@ -29,13 +29,14 @@ const examples = [
   { title: "范围提示", text: "The weather is beautiful today." },
 ];
 export const exampleGroups = [
+  { title: "谓语安全纠错", scope: "只在完整搭配、唯一时态/体/语态且单处可安全替换时提供建议；桥接错误、多个依赖错误及分句不自动修改。", examples: [{ title: "谓语 · 一致纠错", text: "She have given him a book." }, { title: "谓语 · 分词纠错", text: "She is sleep." }, { title: "谓语 · 缩写纠错", text: "They isn’t sleeping." }, { title: "谓语 · 多候选提示", text: "She is give her books." }] },
   { title: "否定缩写", scope: "11 种白名单否定缩写仅用于已有否定陈述结构，支持直撇号与弯撇号；have 缩写仅作助动词。保留原文，基础 do/can 纠错可用于缩写。", examples: [{ title: "缩写 · do", text: "She doesn’t like the book." }, { title: "缩写 · be", text: "She isn’t sleeping." }, { title: "缩写 · have", text: "She hasn’t given him a book." }, { title: "缩写 · can", text: "She can’t go to school." }, { title: "缩写 · 分句", text: "If she isn’t sleeping, he hasn’t smiled." }, { title: "缩写 · 基础纠错", text: "She don’t likes books." }] },
   { title: "拥有义 have", scope: "have/has/had + 名词短语宾语，仅一般现在/过去时、do 否定和 do 一般疑问。完成时中的 have 仍是助动词；拥有义不支持 can、进行/完成/被动或祈使。", examples: [{ title: "拥有 · 现在时", text: "She has a book." }, { title: "拥有 · 过去时", text: "They had an old toy." }, { title: "拥有 · 否定", text: "She does not have a pen." }, { title: "拥有 · 疑问", text: "Does she have a book?" }, { title: "拥有 · 基础纠错", text: "She have a book." }, { title: "助动词身份对照", text: "She has given him a book." }] },
   { title: "新增常用词汇", scope: "44 组可数名词、24 个形容词、27 个动词词元；按限定搭配分析。read 同形句可能无法唯一确定时态。", examples: [{ title: "人物接受者", text: "The doctor teaches the children a useful book." }, { title: "不规则复数", text: "The women carry the apples." }, { title: "新词完成时", text: "The nurse has written a letter." }, { title: "新词宾补", text: "She keeps the door clean." }, { title: "同形歧义", text: "They read books." }] },
   { title: "常用谓语组合", scope: "完成进行、完成被动、进行被动；不支持完成进行被动或新的 can 组合。", examples: [{ title: "完成进行", text: "She has been sleeping." }, { title: "完成被动", text: "A book has been given to her." }, { title: "进行被动", text: "She is being given a book." }] },
   { title: "被动语态", scope: "限定 SVO/SVOO 被动转换；接受者与施事分别用 to/by 说明，句型按表层成分标注。", examples: [{ title: "被动 · 宾语提升", text: "The book was liked by her." }, { title: "被动 · 接受者提升", text: "She is given a book." }, { title: "被动 · 直接宾语提升", text: "A book is given to her." }] },
   { title: "完成时", scope: "现在/过去完成时，含 been + 表语；助动词承担人称，实义动词使用过去分词。", examples: [{ title: "完成 · 不规则分词", text: "She has given him a book." }, { title: "完成 · 系表", text: "They had been kind." }] },
-  { title: "进行时", scope: "现在/过去进行时；否定和肯定一般疑问，新谓语组合暂不提供自动纠错。", examples: [{ title: "进行 · 陈述", text: "She is sleeping." }, { title: "进行 · 疑问", text: "Were they giving her a book?" }] },
+  { title: "进行时", scope: "现在/过去进行时；否定和肯定一般疑问，完整且唯一的结构支持安全的一致及分词替换。", examples: [{ title: "进行 · 陈述", text: "She is sleeping." }, { title: "进行 · 疑问", text: "Were they giving her a book?" }] },
   { title: "简单句与限定纠错", scope: "五种句型、四种用途；支持一般现在/过去时和限定 can。纠错例句会显示形式不匹配。", examples: examples.slice(0, 19) },
   { title: "if 条件从句", scope: "仅前置 If + 条件从句, + 主句，必须有一个英文逗号。两侧完整陈述，不推断语义或时态搭配。", examples: examples.slice(19, 21) },
   { title: "because 原因从句", scope: "仅主句 + because + 原因从句，无逗号。两侧均有显式主语。", examples: examples.slice(21, 23) },

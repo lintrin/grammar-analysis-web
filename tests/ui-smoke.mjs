@@ -75,7 +75,7 @@ try {
     await page.getByRole('tab', { name: '成分解析' }).click();
   };
   await waitStatus('等待分析');
-  assert.equal(await page.locator('.example-group').count(), 12);
+  assert.equal(await page.locator('.example-group').count(), 13);
   await page.getByText('当前范围与键盘操作', { exact: true }).focus(); await page.keyboard.press('Enter');
   assert.equal(await page.locator('.support-help').getAttribute('open'), '');
   assert.match(await page.locator('.support-help').innerText(), /输入限制.*词典覆盖.*分句顺序/s);

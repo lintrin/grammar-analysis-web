@@ -12,6 +12,6 @@ export function suggest(result: AnalysisResult, token: Token, replacement: strin
   const text = original === original.toUpperCase() ? replacement.toUpperCase()
     : /^[A-Z]/.test(original) ? replacement[0].toUpperCase() + replacement.slice(1) : replacement;
   result.corrections.push({ id: `correction-${result.corrections.length + 1}`, ruleId, reason,
-    context: "仅适用于当前词典和完整匹配的简单句结构；不检查语义或复杂时态。",
+    context: "仅适用于当前词典和完整匹配的简单句结构；不推断语义、时态或用户意图。",
     edits: [{ range: { start: token.start, end: token.end }, expected: original, replacement: text }] });
 }

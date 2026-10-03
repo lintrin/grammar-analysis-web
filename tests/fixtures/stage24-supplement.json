@@ -1,0 +1,718 @@
+{
+  "status": "human-fixed-before-implementation",
+  "basisRuleVersion": "0.17.0",
+  "fixtures": [
+    {
+      "id": "stage24-contraction-error-1",
+      "stage": 24,
+      "input": "She aren’t sleeping.",
+      "kind": "error",
+      "controlId": "stage24-contraction-control-1",
+      "steps": [
+        "She isn’t sleeping."
+      ],
+      "expected": {
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "status": "partial",
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": [
+              {
+                "start": 4,
+                "end": 10
+              }
+            ]
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "PREDICATE-AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 4,
+                  "end": 10
+                },
+                "expected": "aren’t",
+                "replacement": "isn’t"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "stage24-contraction-control-1",
+      "stage": 24,
+      "input": "She isn’t sleeping.",
+      "kind": "correct",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "progressive",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ]
+          },
+          {
+            "key": "verb",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 18
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "stage24-contraction-error-2",
+      "stage": 24,
+      "input": "They wasn’t smiling.",
+      "kind": "error",
+      "controlId": "stage24-contraction-control-2",
+      "steps": [
+        "They weren’t smiling."
+      ],
+      "expected": {
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "status": "partial",
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": [
+              {
+                "start": 5,
+                "end": 11
+              }
+            ]
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "PREDICATE-AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 5,
+                  "end": 11
+                },
+                "expected": "wasn’t",
+                "replacement": "weren’t"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "stage24-contraction-control-2",
+      "stage": 24,
+      "input": "They weren’t smiling.",
+      "kind": "correct",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "progressive",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ]
+          },
+          {
+            "key": "verb",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 20
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "stage24-contraction-error-3",
+      "stage": 24,
+      "input": "He weren't running.",
+      "kind": "error",
+      "controlId": "stage24-contraction-control-3",
+      "steps": [
+        "He wasn't running."
+      ],
+      "expected": {
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "status": "partial",
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": [
+              {
+                "start": 3,
+                "end": 10
+              }
+            ]
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "PREDICATE-AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 3,
+                  "end": 10
+                },
+                "expected": "weren't",
+                "replacement": "wasn't"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "stage24-contraction-control-3",
+      "stage": 24,
+      "input": "He wasn't running.",
+      "kind": "correct",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "progressive",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 2
+              }
+            ]
+          },
+          {
+            "key": "verb",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 17
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "stage24-contraction-error-4",
+      "stage": 24,
+      "input": "They hasn’t slept.",
+      "kind": "error",
+      "controlId": "stage24-contraction-control-4",
+      "steps": [
+        "They haven’t slept."
+      ],
+      "expected": {
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "status": "partial",
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": [
+              {
+                "start": 5,
+                "end": 11
+              }
+            ]
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "PREDICATE-AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 5,
+                  "end": 11
+                },
+                "expected": "hasn’t",
+                "replacement": "haven’t"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "stage24-contraction-control-4",
+      "stage": 24,
+      "input": "They haven’t slept.",
+      "kind": "correct",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "perfect",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ]
+          },
+          {
+            "key": "verb",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 18
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "stage24-contraction-error-5",
+      "stage": 24,
+      "input": "He haven't smiled.",
+      "kind": "error",
+      "controlId": "stage24-contraction-control-5",
+      "steps": [
+        "He hasn't smiled."
+      ],
+      "expected": {
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "status": "partial",
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": [
+              {
+                "start": 3,
+                "end": 10
+              }
+            ]
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "PREDICATE-AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 3,
+                  "end": 10
+                },
+                "expected": "haven't",
+                "replacement": "hasn't"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "stage24-contraction-control-5",
+      "stage": 24,
+      "input": "He hasn't smiled.",
+      "kind": "correct",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "perfect",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 2
+              }
+            ]
+          },
+          {
+            "key": "verb",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 16
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "stage24-contraction-error-6",
+      "stage": 24,
+      "input": "They hasn't been running.",
+      "kind": "error",
+      "controlId": "stage24-contraction-control-6",
+      "steps": [
+        "They haven't been running."
+      ],
+      "expected": {
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "status": "partial",
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": [
+              {
+                "start": 5,
+                "end": 11
+              }
+            ]
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "PREDICATE-AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 5,
+                  "end": 11
+                },
+                "expected": "hasn't",
+                "replacement": "haven't"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "stage24-contraction-control-6",
+      "stage": 24,
+      "input": "They haven't been running.",
+      "kind": "correct",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "perfect-progressive",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ]
+          },
+          {
+            "key": "verb",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 25
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "stage24-contraction-error-7",
+      "stage": 24,
+      "input": "The books isn’t seen.",
+      "kind": "error",
+      "controlId": "stage24-contraction-control-7",
+      "steps": [
+        "The books aren’t seen."
+      ],
+      "expected": {
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "status": "partial",
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": [
+              {
+                "start": 10,
+                "end": 15
+              }
+            ]
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "PREDICATE-AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 10,
+                  "end": 15
+                },
+                "expected": "isn’t",
+                "replacement": "aren’t"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "stage24-contraction-control-7",
+      "stage": 24,
+      "input": "The books aren’t seen.",
+      "kind": "correct",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "simple",
+        "voice": "passive",
+        "nodes": [
+          {
+            "key": "subject",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 9
+              }
+            ]
+          },
+          {
+            "key": "verb",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 21
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "stage24-contraction-error-8",
+      "stage": 24,
+      "input": "  THEY  ISN'T  SLEEPING.  ",
+      "kind": "error",
+      "controlId": "stage24-contraction-control-8",
+      "steps": [
+        "  THEY  AREN'T  SLEEPING.  "
+      ],
+      "expected": {
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "status": "partial",
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": [
+              {
+                "start": 8,
+                "end": 13
+              }
+            ]
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "PREDICATE-AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 8,
+                  "end": 13
+                },
+                "expected": "ISN'T",
+                "replacement": "AREN'T"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "stage24-contraction-control-8",
+      "stage": 24,
+      "input": "  THEY  AREN'T  SLEEPING.  ",
+      "kind": "correct",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "progressive",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 2,
+                "end": 6
+              }
+            ]
+          },
+          {
+            "key": "verb",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 8,
+                "end": 24
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    }
+  ]
+}

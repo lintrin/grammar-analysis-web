@@ -64,7 +64,14 @@ try {
       assert.equal(await page.locator('.sentence-part').count(),fixture.expected.nodes.filter(n=>n.parentKey===null).reduce((n,node)=>n+node.ranges.length,0));
       await classification(fixture.expected);
     } else assert.equal(await page.locator('.sentence-part').count(), 0);
-    assert.equal(await page.locator('.correction-card').count(), 0);
+    await page.getByRole('tab', { name: '语法检查' }).click();
+    assert.equal(await page.locator('.correction-card').count(), fixture.expected?.corrections.length ?? 0);
+    for(const [i,c] of (fixture.expected?.corrections ?? []).entries()) {
+      const card=page.locator('.correction-card').nth(i);
+      assert.deepEqual(await card.locator('del').allTextContents(),c.edits.map(e=>e.expected));
+      assert.deepEqual(await card.locator('strong').allTextContents(),c.edits.map(e=>e.replacement));
+    }
+    await page.getByRole('tab', { name: '成分解析' }).click();
   }
   await page.setViewportSize({ width: 390, height: 844 });
   for (const category of new Set(fixtures.map(f => f.category))) {
