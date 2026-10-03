@@ -89,7 +89,7 @@
     {"id":"independent-outside-09","input":"Our toys have been made useful.","status":"unsupported","code":"unsupported-structure"},
     {"id":"independent-outside-10","input":"Who has seen our gifts?","status":"unsupported","code":"unknown-word"},
     {"id":"independent-outside-11","input":"Your father will be smiling.","status":"unsupported","code":"unknown-word"},
-    {"id":"independent-outside-12","input":"My mother hasn't smiled.","status":"unsupported","code":"punctuation"},
+    {"id":"independent-outside-12","input":"My mother hasn't smiled.","expected":{"status":"complete","purpose":"declarative","complexity":"simple","pattern":"SV","tense":"present","aspect":"perfect","voice":"active","corrections":[],"nodes":[{"key":"0-subject","role":"subject","parentKey":null,"implicit":false,"ranges":[{"start":0,"end":9}]},{"key":"0-verb","role":"verb","parentKey":null,"implicit":false,"ranges":[{"start":10,"end":23}]}],"reasons":[]}},
     {"id":"independent-outside-13","input":"Our teacher has not not slept.","status":"unsupported","code":"unsupported-structure"},
     {"id":"independent-outside-14","input":"The gift is being given for the girl.","status":"unsupported","code":"unknown-word"},
     {"id":"independent-outside-15","input":"Our mother has been smiling and sleeping.","status":"unsupported","code":"unsupported-structure"}

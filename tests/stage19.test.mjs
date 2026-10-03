@@ -34,7 +34,7 @@ test('a changed original fixture snapshot cannot legitimize a changed migration 
 
 test('stage 19 retains frozen basis and future scope', () => {
   assert.equal(development.basisRuleVersion, '0.14.3');
-  assert.equal(RULE_VERSION, '0.15.1');
+  assert.equal(RULE_VERSION, '0.17.0');
   assert.equal(development.status, 'human-fixed-future-expectations');
   assert.equal(development.formatVersion, 1);
   assert.equal(development.fixtures.length, 416);

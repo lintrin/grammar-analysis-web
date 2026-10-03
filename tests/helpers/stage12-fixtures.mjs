@@ -4,6 +4,7 @@ export const stage12 = JSON.parse(readFileSync(new URL('../fixtures/stage12.json
 
 // Locate only hand-declared text partitions. No tokenization or linguistic inference.
 export function expectedStage12(fixture) {
+  if (fixture.expected) return fixture.expected;
   const nodes = [];
   let cursor = 0;
   const locate = text => {

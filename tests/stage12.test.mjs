@@ -4,6 +4,7 @@ import assert from 'node:assert/strict';
 import { analyzeSentence, validateAnalysisResult } from '../lib/grammar.ts';
 import { compareStage9 } from './helpers/stage9-fixtures.mjs';
 import { stage12, expectedStage12 } from './helpers/stage12-fixtures.mjs';
+import { compareLexiconExpectation } from './helpers/lexicon-expectations.mjs';
 
 test('stage 12 uses 40 new in-scope inputs and 20 new contrasts after completion of the rules', () => {
   assert.equal(stage12.fixtures.length, 40);
@@ -22,9 +23,12 @@ for (const f of stage12.fixtures) test(`stage 12 independent ${f.id}: ${f.input}
 });
 for (const f of stage12.boundaries) test(`stage 12 independent contrast: ${f.input}`, () => {
   const result = analyzeSentence(f.input);
-  assert.equal(result.status, f.status);
-  if (f.status === 'complete') compareStage9(expectedStage12(f), result);
-  else { assert.equal(result.reasons[0].code, f.code); assert.deepEqual(result.nodes, []); }
+  if (f.expected) compareLexiconExpectation(f.expected, result);
+  else {
+    assert.equal(result.status, f.status);
+    if (f.status === 'complete') compareStage9(expectedStage12(f), result);
+    else { assert.equal(result.reasons[0].code, f.code); assert.deepEqual(result.nodes, []); }
+  }
   assert.deepEqual(result.corrections, []);
   validateAnalysisResult(result);
 });

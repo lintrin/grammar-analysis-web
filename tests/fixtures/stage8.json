@@ -1989,21 +1989,53 @@
       "group": "boundary",
       "input": "She doesn't like books.",
       "expected": {
-        "status": "unsupported",
-        "nodes": [],
+        "status": "complete",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "pattern": "SVO",
+        "tense": "present",
+        "aspect": "simple",
+        "voice": "active",
         "corrections": [],
-        "purpose": null,
-        "pattern": null,
-        "complexity": null,
-        "tense": null,
-        "aspect": null,
-        "voice": null,
-        "reasons": [
+        "nodes": [
           {
-            "code": "unsupported-structure",
-            "ranges": []
+            "key": "0-subject",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ]
+          },
+          {
+            "key": "0-verb",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 16
+              }
+            ]
+          },
+          {
+            "key": "0-object",
+            "role": "object",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 17,
+                "end": 22
+              }
+            ]
           }
-        ]
+        ],
+        "reasons": []
       }
     },
     {
@@ -2011,21 +2043,53 @@
       "group": "boundary",
       "input": "She isn't kind.",
       "expected": {
-        "status": "unsupported",
-        "nodes": [],
+        "status": "complete",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "pattern": "SVC",
+        "tense": "present",
+        "aspect": "simple",
+        "voice": "active",
         "corrections": [],
-        "purpose": null,
-        "pattern": null,
-        "complexity": null,
-        "tense": null,
-        "aspect": null,
-        "voice": null,
-        "reasons": [
+        "nodes": [
           {
-            "code": "unsupported-structure",
-            "ranges": []
+            "key": "0-subject",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ]
+          },
+          {
+            "key": "0-verb",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 9
+              }
+            ]
+          },
+          {
+            "key": "0-complement",
+            "role": "complement",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 14
+              }
+            ]
           }
-        ]
+        ],
+        "reasons": []
       }
     },
     {
@@ -2033,21 +2097,53 @@
       "group": "boundary",
       "input": "She can't go to school.",
       "expected": {
-        "status": "unsupported",
-        "nodes": [],
-        "corrections": [],
-        "purpose": null,
-        "pattern": null,
-        "complexity": null,
+        "status": "complete",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "pattern": "SV",
         "tense": null,
-        "aspect": null,
-        "voice": null,
-        "reasons": [
+        "aspect": "simple",
+        "voice": "active",
+        "corrections": [],
+        "nodes": [
           {
-            "code": "unsupported-structure",
-            "ranges": []
+            "key": "0-subject",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ]
+          },
+          {
+            "key": "0-verb",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 12
+              }
+            ]
+          },
+          {
+            "key": "0-adverbial",
+            "role": "adverbial",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 13,
+                "end": 22
+              }
+            ]
           }
-        ]
+        ],
+        "reasons": []
       }
     },
     {

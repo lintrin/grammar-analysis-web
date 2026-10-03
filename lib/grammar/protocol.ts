@@ -1,4 +1,6 @@
-export const RULE_VERSION = "0.15.1";
+import { tokenize } from "./tokens.ts";
+
+export const RULE_VERSION = "0.17.0";
 export const MAX_INPUT_LENGTH = 1000;
 export type Range = { start: number; end: number };
 export type Purpose = "declarative" | "interrogative" | "imperative" | "exclamatory";
@@ -39,6 +41,7 @@ export function validateAnalysisResult(value: unknown): asserts value is Analysi
   if (typeof r.input !== "string" || !Number.isSafeInteger(r.inputVersion) || (r.inputVersion as number) < 0 || !nonempty(r.ruleVersion)) fail("输入元信息");
   if (!nonempty(r.lexiconVersion) || typeof r.lexiconHash !== "string" || !/^[a-f0-9]{64}$/.test(r.lexiconHash)) fail("词典元信息");
   const input = r.input as string;
+  let contractions: ReturnType<typeof tokenize> | undefined;
   if (!["complete", "partial", "unsupported", "ambiguous", "invalid"].includes(r.status as string)) fail("状态");
   for (const [field, allowed] of [
     ["purpose", ["declarative", "interrogative", "imperative", "exclamatory"]],
@@ -52,6 +55,9 @@ export function validateAnalysisResult(value: unknown): asserts value is Analysi
     if (q.start < 0 || q.end > input.length || q.start > q.end || (!insertion && q.start === q.end)) fail("位置边界");
     // Never split a UTF-16 surrogate pair.
     for (const p of [q.start, q.end]) if (p > 0 && p < input.length && /[\uD800-\uDBFF]/.test(input[p - 1]) && /[\uDC00-\uDFFF]/.test(input[p])) fail("位置拆分字符");
+    // Failure results without positions (including oversized inputs) need no token scan.
+    contractions ??= tokenize(input).filter(t => t.contraction && t.normalized !== "not");
+    for (const p of [q.start, q.end]) if (contractions.some(t => t.start < p && p < t.end)) fail("位置拆分缩写");
     return q;
   };
   const nodes = r.nodes as unknown[];

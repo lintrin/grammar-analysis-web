@@ -1,6 +1,6 @@
 /** Hand-authored local rules; public API retained across internal rule modules. */
 import { RULE_VERSION, MAX_INPUT_LENGTH, validateAnalysisResult, type AnalysisResult } from "./grammar/protocol.ts";
-import { tokenize } from "./grammar/tokens.ts";
+import { tokenize, isWordToken } from "./grammar/tokens.ts";
 import { knownWords, LEXICON_VERSION, LEXICON_HASH } from "./grammar/vocabulary.ts";
 import { analyzePurpose } from "./grammar/purposes.ts";
 import { analyzeComplex } from "./grammar/complex.ts";
@@ -54,7 +54,7 @@ export function analyzeSentence(input: string, inputVersion = 0): AnalysisResult
   if (punctuation) tokens.pop();
   if (tokens.some(t => ["because", "if"].includes(t.normalized))) return finish(analyzeComplex(tokens, punctuation, result));
   if (tokens.some(t => ["and", "but"].includes(t.normalized))) return finish(analyzeCompound(tokens, punctuation, result));
-  if (tokens.some(t => !/^[A-Za-z]+$/.test(t.text))) {
+  if (tokens.some(t => !isWordToken(t))) {
     diagnose(result, "punctuation");
     return finish("本阶段支持英文单词和可选的句末句号、问号或感叹号；其他符号尚未支持。");
   }

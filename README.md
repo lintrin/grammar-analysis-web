@@ -4,15 +4,15 @@
 
 阶段 1–12 ✅ 已完成，历史开发与验收见 [开发计划](docs/development-plan.md)、[后续开发计划](docs/follow-up-development-plan.md) 和 [阶段 12 验收](docs/stage12-scope.md)。本轮阶段 13–18 ✅ 已完成；实施记录见 [谓语扩展执行计划](docs/predicate-expansion-plan.md)。
 
-下一轮按阶段 19–25 规划本地 SQLite 数据库词典、审核快照与词汇扩容、实义 have、限定否定缩写及谓语纠错；范围、依赖和验收门槛见 [后续计划](docs/next-development-plan.md)。数据库维护词典，分析仍在浏览器内使用打包快照，输入句子不入库。计划已补充历史验收语料基线、词条修改后重新审核，以及规则与词典版本联合校验。阶段 19 ✅ 已完成：固定范围、数据库设计、416 个未来开发答案、历史开发基线和 65 项迁移；阶段交付的工程、开发/构建浏览器复核通过；测试去重及审查完整性修复后 1422 项全部通过，见 [阶段 19 验收与测试清理](docs/stage19-scope.md)。阶段 20A ✅ 已完成本地建库、旧词入库与维护命令，见 [20A 记录](docs/stage20a-scope.md)；20B/C ✅ 已完成审核发布、确定性重建与客户端快照接入，见 [20B/C 验收](docs/stage20bc-scope.md)。阶段 20 ✅；阶段 21 ✅ 已完成首批词汇扩容及审查修复，1739 项测试及开发/构建浏览器验收通过，见 [21 记录](docs/stage21-scope.md)；下一步阶段 22 实义 have。
+下一轮按阶段 19–25 规划本地 SQLite 数据库词典、审核快照与词汇扩容、实义 have、限定否定缩写及谓语纠错；范围、依赖和验收门槛见 [后续计划](docs/next-development-plan.md)。数据库维护词典，分析仍在浏览器内使用打包快照，输入句子不入库。计划已补充历史验收语料基线、词条修改后重新审核，以及规则与词典版本联合校验。阶段 19 ✅ 已完成：固定范围、数据库设计、416 个未来开发答案、历史开发基线和 65 项迁移；阶段交付的工程、开发/构建浏览器复核通过；测试去重及审查完整性修复后 1422 项全部通过，见 [阶段 19 验收与测试清理](docs/stage19-scope.md)。阶段 20A ✅ 已完成本地建库、旧词入库与维护命令，见 [20A 记录](docs/stage20a-scope.md)；20B/C ✅ 已完成审核发布、确定性重建与客户端快照接入，见 [20B/C 验收](docs/stage20bc-scope.md)。阶段 20 ✅；阶段 21 ✅ 已完成首批词汇扩容及审查修复，1739 项测试及开发/构建浏览器验收通过，见 [21 记录](docs/stage21-scope.md)；阶段 22 ✅ 已完成拥有义 have、基础纠错与 4 项历史迁移，1799 项测试及开发/构建浏览器验收通过，见 [22 记录](docs/stage22-scope.md)；阶段 23 ✅ 已完成 11 种限定否定缩写、原文区间校验与 11 项历史迁移，1887 项测试及开发/构建浏览器验收通过，见 [23 记录](docs/stage23-scope.md)；下一步阶段 24 既有谓语组合的安全纠错。
 
 ## 当前进度
 
-当前规则 **0.15.1**。保留五种基本句型、四种简单句用途、限定 do/be/can 否定与一般疑问，以及两个完整陈述分句的 and/but、后置 because、前置 if。新增现在/过去进行时、完成时、限定被动语态，以及完成进行、完成被动、进行被动。完整谓语、时态、体和语态按原文标注，多分句分别展示各自分类。
+当前规则 **0.17.0**。保留五种基本句型、四种简单句用途、限定 do/be/can 否定与一般疑问，以及两个完整陈述分句的 and/but、后置 because、前置 if。新增现在/过去进行时、完成时、限定被动语态，以及完成进行、完成被动、进行被动。完整谓语、时态、体和语态按原文标注，多分句分别展示各自分类。
 
-完整词形、被动转换、错误状态与限制见 [谓语范围](docs/predicate-expansion-scope.md) 与 [新增词汇范围](docs/lexicon-expansion-scope.md)。现有 44 组可数名词、24 个形容词、26 个实义动词词元；read 同形须依据明确形式线索区分时态，否则保留歧义。使用人工维护并经审核发布的词典快照（1.1.0），不代表支持任意英文。实义动词 have、SV/SVOC 被动、将来时、缩写、否定疑问、特殊疑问、通用介词短语、新 can 链及完成进行被动不在本轮范围内。
+完整词形、被动转换、错误状态与限制见 [谓语范围](docs/predicate-expansion-scope.md) 与 [新增词汇范围](docs/lexicon-expansion-scope.md)。现有 44 组可数名词、24 个形容词、27 个实义动词词元；read 同形须依据明确形式线索区分时态，否则保留歧义。使用人工维护并经审核发布的词典快照（1.2.0），不代表支持任意英文。拥有义 have 支持一般现在/过去时的名词短语宾语、do 否定和 do 一般疑问；陈述可进入现有两分句框架，完成时 have 仍是助动词。否定陈述开放 11 种 do/be/can/have 白名单缩写，接受直/弯撇号；have 缩写仅作助动词，原文区间不展开。拥有义的其它体/语态、can、祈使、无需 do 的拥有疑问，以及 SV/SVOC 被动、将来时、肯定缩写、所有格、否定疑问、特殊疑问、通用介词短语、新 can 链及完成进行被动仍不支持。
 
-新谓语组合暂不提供自动修改建议。原有主谓一致、do/does/did 后原形、can 后原形三类纠错保留；每次应用一条并重新分析，编辑输入立即使旧结果和建议失效。未知词可键盘定位，范围外与语境歧义明确提示；未命中纠错不代表句子完全正确。
+新谓语组合暂不提供自动修改建议。原有主谓一致、do/does/did 后原形、can 后原形三类纠错保留，并复用于基础否定缩写；每次应用一条并重新分析，编辑输入立即使旧结果和建议失效。未知词可键盘定位，范围外与语境歧义明确提示；未命中纠错不代表句子完全正确。
 
 ## 运行与隐私
 
@@ -74,7 +74,7 @@ npm run lexicon -- query --lemma give --pos verb
 npm run lexicon -- show --revision verb:lexical:give:r1
 ```
 
-当前词典可在空工作库执行 `init` 后用 `rebuild` 重建全部 148 个已审核词条；旧 `seed.json` 仅为阶段 20 初次迁移的 91 词条。`stage21-import.json` 保存新增 57 个完整草稿，继续扩容须先 query/show 审查、以当前哈希 review，再选择全部修订 publish 新版本、更新联合清单并 generate-client/verify，不能直接改客户端 JSON。
+当前词典可在空工作库执行 `init` 后用 `rebuild` 重建全部 149 个已审核词条；旧 `seed.json` 仅为阶段 20 初次迁移的 91 词条。`stage21-import.json` 保存阶段 21 新增 57 个完整草稿，`stage22-import.json` 保存拥有义 have 草稿，`stage22-selection.json` 显式选择 1.2.0 的全部修订。继续扩容须先 query/show 审查、以当前哈希 review，再选择全部修订 publish 新版本、更新联合清单并 generate-client/verify，不能直接改客户端 JSON。
 
 `init` / `migrate` 按 Drizzle journal 执行 SQL 并核对已应用迁移的 SHA-256；重复执行无操作。种子完整迁移旧人工词典，共 91 个词条、161 条词形；同 ID 同内容重复导入无操作，冲突整批回滚。数据库插入触发器同时阻止 REPLACE 覆盖冻结记录，保护不依赖 recursive_triggers 设置。普通导入只能创建草稿，拒绝审核及发布字段。
 
@@ -148,6 +148,8 @@ npm run build
 - `tests/stage12-performance.test.mjs`：1000 字符边界、共享预算及耗尽降级
 - `tests/stage13.test.mjs` 至 `tests/stage18.test.mjs`：谓语扩展、协议、独立答案与预算回归
 - `tests/fixtures/predicate-development.json`、`predicate-acceptance.json`：人工固定开发与独立答案
+- `tests/stage23.test.mjs`、`tests/ui-stage23.mjs`：57 个缩写人工答案、11 项历史迁移、完整 token 编辑与原文区间、基础纠错及浏览器验收
+- `tests/stage22.test.mjs`、`tests/ui-stage22.mjs`：拥有义/助动词区分、53 个人工答案、10 对基础纠错、4 项历史迁移、发布重现及浏览器验收
 - `tests/stage21.test.mjs`、`tests/ui-stage21.mjs`：新词固定答案、审核发布重现、同形预算、用途/基础纠错及浏览器验收
 - `tests/stage19.test.mjs`、`tests/fixtures/lexicon-development.json`：未来人工答案完整性、范围和数量（不表示未来能力已实现）
 - `tests/fixtures/lexicon-migrations.json`：历史样例审查、原 fixture 与逐阶段迁移答案

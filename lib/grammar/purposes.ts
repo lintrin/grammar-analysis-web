@@ -1,6 +1,6 @@
 import type { AnalysisResult, Purpose } from "./protocol.ts";
 import type { Token } from "./tokens.ts";
-import { adjectives, determiners, selectedVerb, surfaceCandidates, interpretationChoices, framePermits, verbForms, simpleVerbs, beForms } from "./vocabulary.ts";
+import { adjectives, determiners, selectedVerb, surfaceCandidates, interpretationChoices, framePermits, verbForms, simpleVerbs, beForms, isPossession } from "./vocabulary.ts";
 import { nounPhrase, directObject } from "./phrases.ts";
 import { analyzeDeclarative } from "./simple.ts";
 import { analyzeComposed } from "./composed.ts";
@@ -13,12 +13,15 @@ import { diagnose, hasReason, budgetMessage } from "./feedback.ts";
 function analyzePurposeCandidate(tokens: Token[], punctuation: string | null, result: AnalysisResult, consumeBoundary: () => boolean, recordPurpose: (purpose: Purpose) => void): string {
   recordPurpose("declarative");
   diagnose(result, "unsupported-structure");
+  if (tokens[0]?.contraction) return "否定缩写仅支持显式主语的否定陈述句；否定疑问和祈使尚未开放。";
   const composed = analyzeComposed(tokens, punctuation, result, consumeBoundary, recordPurpose);
   if (composed !== null) return composed;
   const extended = analyzeExtended(tokens, punctuation, result, consumeBoundary, recordPurpose);
   if (extended !== null) return extended;
   const first = tokens[0]?.normalized;
   const unsupported = "未匹配当前支持的句子用途结构，或句末标点与结构不匹配。";
+  // Finite have inversion is reserved for complete auxiliary chains above.
+  if (["have", "has", "had"].includes(first)) return unsupported;
   const wrongPunctuation = () => { diagnose(result, "punctuation"); return unsupported; };
   const tryParse = (ordered: Token[]) => {
     const candidate = forkCandidate(result);
@@ -44,7 +47,8 @@ function analyzePurposeCandidate(tokens: Token[], punctuation: string | null, re
       if (candidate.status !== "complete") continue;
       if ((!past && first !== (subject.thirdPerson ? "does" : "do")) || tokens[v].normalized !== form.base) {
         result.status = "partial";
-        diagnose(result, "form-mismatch");
+        const wrong = [...(!past && first !== (subject.thirdPerson ? "does" : "do") ? [tokens[0]] : []), ...(tokens[v].normalized !== form.base ? [tokens[v]] : [])];
+        diagnose(result, "form-mismatch", isPossession(form) ? wrong.map(({start,end}) => ({start,end})) : []);
         if (!past && first !== (subject.thirdPerson ? "does" : "do")) suggest(result, tokens[0], subject.thirdPerson ? "does" : "do", "AGREEMENT-001", "一般现在时疑问句的 do/does 需要与主语一致。");
         if (tokens[v].normalized !== form.base) suggest(result, tokens[v], form.base, "DO-BASE-001", "do/does/did 已承担时态与人称变化，其后的实义动词应使用原形。");
         return "疑问句短语已匹配，但助动词与主语或其后动词形式不符合当前规则；请查看语法检查中的限定纠错建议。";
@@ -114,6 +118,7 @@ function analyzePurposeCandidate(tokens: Token[], punctuation: string | null, re
     const subject = nounPhrase(tokens, 0, m);
     const lexical = tokens[m + 1];
     const form = lexical && selectedVerb(lexical);
+    if (isPossession(form)) return unsupported;
     if (!subject || !lexical || (!form && !["be", ...beForms].includes(lexical.normalized))) return unsupported;
     const normalized = form ? subject.thirdPerson ? form.third : form.base : m === 1 && first === "i" ? "am" : subject.thirdPerson ? "is" : "are";
     const { candidate, message } = tryParse([...tokens.slice(0, m), { ...lexical, normalized, finiteTense: "present" }, ...tokens.slice(m + 2)]);

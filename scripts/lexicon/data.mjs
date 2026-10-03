@@ -64,7 +64,7 @@ export function normalizeEntry(raw) {
         (f.passivePromotion !== null && f.passivePromotion !== (f.pattern === 'SVOO' ? 'direct-object-or-recipient' : f.pattern === 'SVO' ? 'direct-object' : null)) ||
         (f.fixedTail !== null && (entry.lemma !== 'go' || f.pattern !== 'SV')) ||
         (copula ? f.pattern !== 'SVC' || f.allowProgressive || f.passivePromotion !== null : f.pattern === 'SVC') ||
-        (entry.sense === 'possession' && entry.lemma === 'have' && (f.pattern !== 'SVO' || f.allowProgressive || f.allowPerfect || f.passivePromotion !== null))) throw new Error('Unsupported frame combination');
+        (entry.sense === 'possession' && entry.lemma === 'have' && (f.pattern !== 'SVO' || f.allowProgressive || f.allowPerfect || f.passivePromotion !== null || f.allowedPurposes.some(p => !['declarative','interrogative'].includes(p))))) throw new Error('Unsupported frame combination');
     f.allowedPurposes.sort(); f.allowedPolarities.sort();
   }
   if (entry.attributes.uses) entry.attributes.uses.sort();

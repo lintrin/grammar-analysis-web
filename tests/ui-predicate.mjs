@@ -58,8 +58,12 @@ try {
   await context.setOffline(true); requests.length = 0;
   for (const fixture of fixtures) await check(fixture);
   for (const fixture of boundaries) {
-    await input.fill(fixture.input); await input.press('Control+Enter'); await wait(fixture.status);
-    assert.equal(await page.locator('.sentence-part').count(), 0);
+    await input.fill(fixture.input); await input.press('Control+Enter'); await wait(fixture.expected?.status ?? fixture.status);
+    if(fixture.expected?.status === 'complete') {
+      assert.equal(await displayed(),fixture.input);
+      assert.equal(await page.locator('.sentence-part').count(),fixture.expected.nodes.filter(n=>n.parentKey===null).reduce((n,node)=>n+node.ranges.length,0));
+      await classification(fixture.expected);
+    } else assert.equal(await page.locator('.sentence-part').count(), 0);
     assert.equal(await page.locator('.correction-card').count(), 0);
   }
   await page.setViewportSize({ width: 390, height: 844 });

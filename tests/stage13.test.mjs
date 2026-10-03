@@ -8,6 +8,8 @@ import { forkCandidate } from '../lib/grammar/context.ts';
 import { tenseLabel, voiceLabel } from '../lib/grammar/classification.ts';
 import { development } from './helpers/predicate-fixtures.mjs';
 import { expectedStage12 } from './helpers/stage12-fixtures.mjs';
+import { loadOriginalFixture } from './helpers/original-fixtures.mjs';
+const originalDevelopment = loadOriginalFixture('tests/fixtures/predicate-development.json');
 
 test('stage 13 manual answers fix six capability groups and their original-text partitions before implementation', () => {
   for (const category of ['progressive','perfect','passive','perfect-progressive','perfect-passive','progressive-passive']) {
@@ -17,8 +19,8 @@ test('stage 13 manual answers fix six capability groups and their original-text 
     assert.ok(fixtures.filter(f => f.purpose === 'interrogative').length >= 3);
   }
   for (const stage of [14,15,16,17]) {
-    assert.ok(development.boundaries.filter(f => f.stage === stage && f.status === 'partial').length >= 10);
-    assert.ok(development.boundaries.filter(f => f.stage === stage && f.status === 'unsupported').length >= 10);
+    assert.ok(originalDevelopment.boundaries.filter(f => f.stage === stage && f.status === 'partial').length >= 10);
+    assert.ok(originalDevelopment.boundaries.filter(f => f.stage === stage && f.status === 'unsupported').length >= 10);
   }
   for (const fixture of development.fixtures) {
     const expected = expectedStage12(fixture);
@@ -28,7 +30,7 @@ test('stage 13 manual answers fix six capability groups and their original-text 
 });
 
 test('stage 13 audited participles include irregular and doubled-letter forms', () => {
-  assert.equal(lexicalVerbs.length, 26);
+  assert.equal(lexicalVerbs.length, 27);
   for (const [base, participle, progressive] of [['give','given','giving'],['show','shown','showing'],['go','gone','going'],['run','run','running'],['see','seen','seeing'],['make','made','making']]) {
     assert.equal(lexicalForm(participle).base, base);
     assert.equal(lexicalForm(progressive).base, base);

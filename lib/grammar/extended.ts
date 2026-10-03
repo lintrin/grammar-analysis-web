@@ -1,13 +1,13 @@
 import type { AnalysisResult, Purpose } from "./protocol.ts";
 import type { Token } from "./tokens.ts";
-import { beForms, selectedVerb } from "./vocabulary.ts";
+import { beForms, selectedVerb, isPossession } from "./vocabulary.ts";
 import { nounPhrase } from "./phrases.ts";
 import { analyzeDeclarative } from "./simple.ts";
 import { forkCandidate } from "./context.ts";
 import { suggest } from "./suggestions.ts";
 import { diagnose, hasReason, budgetMessage } from "./feedback.ts";
 
-const unsupported = "未匹配当前限定的否定陈述句或 can 疑问句；否定疑问、缩写及其他搭配尚未支持。";
+const unsupported = "未匹配当前限定的否定陈述句或 can 疑问句；否定疑问及其他搭配尚未支持，否定缩写仅限白名单陈述结构。";
 
 /** Match the whole frame before exposing any correction. Keep every original token offset. */
 export function analyzeExtended(tokens: Token[], punctuation: string | null, result: AnalysisResult, consumeBoundary: () => boolean, recordPurpose?: (purpose: Purpose) => void): string | null {
@@ -34,6 +34,7 @@ export function analyzeExtended(tokens: Token[], punctuation: string | null, res
     const lexical = tokens[v];
     if (!lexical) continue;
     const form = selectedVerb(lexical);
+    if (!doNegative && isPossession(form)) continue;
     if (!beNegative && !form && (doNegative || !["be", ...beForms].includes(lexical.normalized))) continue;
     const normalized = beNegative ? lexical.normalized : doNegative && aux === "did" ? form!.past
       : form ? subject.thirdPerson ? form.third : form.base
@@ -51,7 +52,8 @@ export function analyzeExtended(tokens: Token[], punctuation: string | null, res
       const wrongBase = lexical.normalized !== (form?.base ?? "be");
       if (wrongAux || wrongBase) {
         candidate.status = "partial"; candidate.purpose = null; candidate.pattern = null;
-        diagnose(candidate, "form-mismatch");
+        const wrong = [...(wrongAux ? [auxiliary] : []), ...(wrongBase ? [lexical] : [])];
+        diagnose(candidate, "form-mismatch", isPossession(form) || auxiliary.contraction ? wrong.map(({start,end}) => ({start,end})) : []);
         candidate.complexity = null; candidate.tense = null; candidate.aspect = null; candidate.voice = null; candidate.nodes = [];
         if (wrongAux) suggest(candidate, auxiliary, subject.thirdPerson ? "does" : "do", "AGREEMENT-001", "否定陈述句的 do/does 需要与主语的人称和单复数一致。");
         if (wrongBase) suggest(candidate, lexical, form?.base ?? "be", doNegative ? "DO-BASE-001" : "MODAL-BASE-001",

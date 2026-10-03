@@ -1,5 +1,5 @@
 import type { AnalysisResult, ComponentNode } from "./protocol.ts";
-import type { Token } from "./tokens.ts";
+import { isWordToken, type Token } from "./tokens.ts";
 import { analyzePurpose } from "./purposes.ts";
 import { knownWords } from "./vocabulary.ts";
 import { createBoundaryBudget, forkCandidate } from "./context.ts";
@@ -23,7 +23,7 @@ export function analyzeClauses(tokens: Token[], punctuation: string | null, resu
   const comma = conditional ? commas[0] : !causal && tokens[split - 1]?.text === "," ? tokens[split - 1] : null;
   const commaIndex = conditional ? tokens.indexOf(comma!) : -1;
   const groups = conditional ? [tokens.slice(1, commaIndex), tokens.slice(commaIndex + 1)] : [tokens.slice(0, split - (comma ? 1 : 0)), tokens.slice(split + 1)];
-  if (groups.some(group => group.some(t => !/^[A-Za-z]+$/.test(t.text)))) { diagnose(result, "punctuation"); return unsupported; }
+  if (groups.some(group => group.some(t => !isWordToken(t)))) { diagnose(result, "punctuation"); return unsupported; }
   if (groups.some(group => !group.length)) return unsupported;
   const candidates: AnalysisResult[] = [];
   const unknownReasons = groups.flatMap((group, index) => {

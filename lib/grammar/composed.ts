@@ -82,10 +82,11 @@ export function analyzeComposed(tokens: Token[], punctuation: string | null, res
   };
   addPhrase("subject", match.subject, tokens, predicate.voice === "passive" ? `${predicate.lexical!.base} 的主动搭配为 ${predicate.pattern}；本句将${predicate.pattern === "SVOO" && match.pattern === "SVO" ? "接受者" : "原宾语"}提升为被动句主语，句型按原文实际成分标为 ${match.pattern}。` : "主语说明句子谈论的人或事物；使用原文中的人称代词或完整名词短语。");
   const chain = predicate.tokens;
+  const chainText = question ? chain.map(t => t.text).join(" ") : result.input.slice(chain[0].start, chain.at(-1)!.end);
   const ranges = question ? [{ start: chain[0].start, end: chain[0].end }, { start: chain[1].start, end: chain.at(-1)!.end }]
     : [{ start: chain[0].start, end: chain.at(-1)!.end }];
   result.nodes.push({ id: `node-${result.nodes.length + 1}`, role: "verb", parentId: null, implicit: false, ruleId, ranges,
-    explanation: `${chain.map(t => t.text).join(" ")} 共同构成完整谓语，${chain[0].text} 承担人称与现在或过去时变化；实义动词为 ${predicate.lexical?.base ?? "be"}，后续动词使用${predicate.voice === "passive" || predicate.aspect === "perfect" ? "过去分词" : "现在分词"}形式，使用${tenseLabel(predicate.tense, predicate.aspect)}、${voiceLabel(predicate.voice)}。${question ? "助动词提前，主语不属于谓语区间。" : ""}${chain.some(t => t.normalized === "not") ? "not 是否定谓语的一部分。" : ""}` });
+    explanation: `${chainText} 共同构成完整谓语，${chain[0].text} 承担人称与现在或过去时变化；实义动词为 ${predicate.lexical?.base ?? "be"}，后续动词使用${predicate.voice === "passive" || predicate.aspect === "perfect" ? "过去分词" : "现在分词"}形式，使用${tenseLabel(predicate.tense, predicate.aspect)}、${voiceLabel(predicate.voice)}。${question ? "助动词提前，主语不属于谓语区间。" : ""}${chain.some(t => t.normalized === "not") ? "not 是否定谓语的一部分。" : ""}` });
   for (const part of match.parts) addPhrase(part.role, part.phrase, match.ordered, part.explanation);
   for (const part of adverbials) addPhrase(part.role, part.phrase, tokens, part.explanation);
   return `已匹配${tenseLabel(predicate.tense, predicate.aspect)}、${voiceLabel(predicate.voice)}的完整谓语组合。新结构暂不提供自动纠错；规则匹配不代表所有语法问题均已检查。`;

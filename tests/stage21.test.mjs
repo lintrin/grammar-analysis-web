@@ -11,7 +11,7 @@ for(const f of development.fixtures.filter(f=>f.stage===21)) test(`21 fixed answ
 });
 
 import {openDatabase,migrate,importData,query} from '../scripts/lexicon/store.mjs';
-import {validateRelease,rebuild,review,publish,trustedRelease} from '../scripts/lexicon/release.mjs';
+import {validateRelease,rebuild,review,publish} from '../scripts/lexicon/release.mjs';
 import {canonical} from '../scripts/lexicon/data.mjs';
 import {analyzePurpose} from '../lib/grammar/purposes.ts';
 import {tokenize} from '../lib/grammar/tokens.ts';
@@ -19,7 +19,7 @@ import {forkCandidate,createBoundaryBudget} from '../lib/grammar/context.ts';
 import {surfaceCandidates} from '../lib/grammar/vocabulary.ts';
 const draft=JSON.parse(readFileSync('data/lexicon/stage21-import.json','utf8'));
 const old=validateRelease(JSON.parse(readFileSync('data/lexicon/releases/1.0.0.json','utf8')));
-const current=trustedRelease().release;
+const current=validateRelease(JSON.parse(readFileSync('data/lexicon/releases/1.1.0.json','utf8')));
 test('21 audit preserves all reviewed old entries and exactly the human-fixed new inventory',()=>{
   assert.equal(old.lexiconHash,'e68bedb119d05e817277071ad694d835f0744c5d244d916ae8a7c22763733a36');
   assert.equal(current.entries.length,148);assert.equal(draft.entries.length,57);

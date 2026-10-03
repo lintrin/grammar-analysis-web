@@ -1,8 +1,14 @@
 import type { AnalysisResult } from "./protocol.ts";
-import type { Token } from "./tokens.ts";
+import { contractNegativeAuxiliary, type Token } from "./tokens.ts";
 
 export function suggest(result: AnalysisResult, token: Token, replacement: string, ruleId: string, reason: string) {
   const original = token.text;
+  if (token.contraction) {
+    // Edit the whole contraction and retain its negative polarity and apostrophe.
+    const contracted = contractNegativeAuxiliary(replacement, token.contraction.apostrophe);
+    if (token.normalized === "not" || !contracted) return;
+    replacement = contracted;
+  }
   const text = original === original.toUpperCase() ? replacement.toUpperCase()
     : /^[A-Z]/.test(original) ? replacement[0].toUpperCase() + replacement.slice(1) : replacement;
   result.corrections.push({ id: `correction-${result.corrections.length + 1}`, ruleId, reason,

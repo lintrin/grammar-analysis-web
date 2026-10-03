@@ -53,7 +53,7 @@
     {"input":"If the girls sleep their mother smiles.","status":"unsupported","code":"punctuation"},
     {"input":"If the boys run,, their father smiles.","status":"unsupported","code":"punctuation"},
     {"input":"If the boys run, she will give them a pen.","status":"unsupported","code":"unknown-word"},
-    {"input":"Our friends don't see the gift.","status":"unsupported","code":"punctuation"},
+    {"input":"Our friends don't see the gift.","expected":{"status":"complete","purpose":"declarative","complexity":"simple","pattern":"SVO","tense":"present","aspect":"simple","voice":"active","corrections":[],"nodes":[{"key":"0-subject","role":"subject","parentKey":null,"implicit":false,"ranges":[{"start":0,"end":11}]},{"key":"0-verb","role":"verb","parentKey":null,"implicit":false,"ranges":[{"start":12,"end":21}]},{"key":"0-object","role":"object","parentKey":null,"implicit":false,"ranges":[{"start":22,"end":30}]}],"reasons":[]}},
     {"input":"The new letter was sent.","status":"complete","group":"simple","purpose":"declarative","clauses":[{"pattern":"SV","tense":"past","aspect":"simple","voice":"passive","parts":[["subject","The new letter",["new"]],["verb","was sent"]]}]},
     {"input":"Their teacher is running.","status":"complete","group":"simple","purpose":"declarative","clauses":[{"pattern":"SV","tense":"present","aspect":"progressive","voice":"active","parts":[["subject","Their teacher"],["verb","is running"]]}]},
     {"input":"Your father has given me a gift.","status":"complete","group":"simple","purpose":"declarative","clauses":[{"pattern":"SVOO","tense":"present","aspect":"perfect","voice":"active","parts":[["subject","Your father"],["verb","has given"],["indirectObject","me"],["object","a gift"]]}]},

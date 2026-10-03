@@ -4,7 +4,7 @@ import type { Pattern, Purpose } from "./protocol.ts";
 export const LEXICON_VERSION = snapshot.lexiconVersion;
 export const LEXICON_HASH = snapshot.lexiconHash;
 export type VerbFrame = {
-  entryId: string; frameId: string; base: string; third: string; past: string; participle: string; progressive: string;
+  entryId: string; frameId: string; sense: string; base: string; third: string; past: string; participle: string; progressive: string;
   pattern: Exclude<Pattern, "SVC">; allowProgressive: boolean; allowPerfect: boolean;
   passivePromotion: string | null; fixedTail: string | null; allowedPurposes: Purpose[]; allowedPolarities: string[];
 };
@@ -23,13 +23,14 @@ export const subjectPronouns = markers("subject-pronoun");
 export const determiners = markers("determiner");
 export const beForms = [...markers("auxiliary", "finite-be")];
 export const lexicalVerbs: VerbFrame[] = entries.filter(e => e.partOfSpeech === "verb").flatMap(e => e.frames.map(f => ({
-  entryId: e.id, frameId: f.id,
+  entryId: e.id, frameId: f.id, sense: e.sense,
   ...Object.fromEntries(e.forms.map(form => [form.kind, form.surface])) as Pick<VerbFrame, "base" | "third" | "past" | "participle" | "progressive">,
   pattern: f.pattern as VerbFrame["pattern"], allowProgressive: f.allowProgressive, allowPerfect: f.allowPerfect,
   passivePromotion: f.passivePromotion, fixedTail: f.fixedTail, allowedPurposes: f.allowedPurposes as Purpose[], allowedPolarities: f.allowedPolarities,
 })));
 export const verbForms = lexicalVerbs.filter(v => v.pattern === "SVOO");
 export const simpleVerbs = lexicalVerbs.filter(v => v.pattern !== "SVOO");
+export const isPossession = (v: VerbFrame | undefined) => v?.base === "have" && v.sense === "possession";
 export const VOCABULARY = {
   nouns: Object.keys(nouns), adjectives: [...adjectives], determiners: [...determiners],
   pronouns: [...new Set([...subjectPronouns, ...objectPronouns])],

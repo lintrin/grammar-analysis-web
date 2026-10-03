@@ -56,6 +56,14 @@ try {
   await context.setOffline(true);
   for (const f of stage12.fixtures) await checkFixture(f);
   for (const f of stage12.boundaries) {
+    if (f.expected) {
+      await sentence.fill(f.input); await sentence.press('Control+Enter'); await waitStatus(f.expected.status);
+      assert.equal(await sentence.inputValue(), f.input); assert.equal(await displayedText(), f.input);
+      assert.equal(await page.locator('.result-overview h3').innerText(), titles[f.expected.pattern]);
+      assert.deepEqual(await page.locator('.sentence-part .part-text').allTextContents(),f.expected.nodes.filter(n=>n.parentKey===null).flatMap(n=>n.ranges.map(q=>f.input.slice(q.start,q.end))));
+      assert.equal(await page.locator('.analysis-feedback').count(),0);assert.equal(await page.locator('.correction-card').count(),0);
+      continue;
+    }
     if (f.status === 'complete') { await checkFixture(f); continue; }
     await sentence.fill(f.input); await analyze.click(); await waitStatus(f.status);
     assert.equal(await sentence.inputValue(), f.input);

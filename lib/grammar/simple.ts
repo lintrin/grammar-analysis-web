@@ -1,6 +1,6 @@
 import type { AnalysisResult, Role } from "./protocol.ts";
 import type { Token } from "./tokens.ts";
-import { adjectiveSupports, selectedVerb, verbForms, simpleVerbs, beForms } from "./vocabulary.ts";
+import { adjectiveSupports, selectedVerb, verbForms, simpleVerbs, beForms, isPossession } from "./vocabulary.ts";
 import { nounPhrase, directObject, objectPhrase, type Phrase } from "./phrases.ts";
 import { createBoundaryBudget } from "./context.ts";
 import { finiteAgreement, lexicalTenses } from "./predicate.ts";
@@ -92,7 +92,7 @@ function analyzeSimplePatterns(tokens: Token[], end: number, adverb: Token | nul
     } else if (form!.pattern === "SV") {
       if (v + 1 === end) matches.push({ ...common, pattern: "SV" });
     } else if (form!.pattern === "SVO") {
-      const object = objectPhrase(tokens, v + 1, end);
+      const object = isPossession(form) ? directObject(tokens, v + 1, end) : objectPhrase(tokens, v + 1, end);
       if (object) matches.push({ ...common, pattern: "SVO", object });
     } else {
       // Single adjective object complement only; noun complements and other frames are deferred.
@@ -105,9 +105,10 @@ function analyzeSimplePatterns(tokens: Token[], end: number, adverb: Token | nul
   if (!matches.length) return null;
   if (matches.length > 1) { result.status = "ambiguous"; diagnose(result, "ambiguous"); return "存在多个可能的成分边界，无法唯一确定结构。"; }
   const c = matches[0];
+  const possession = isPossession(selectedVerb(tokens[c.v], simpleVerbs));
   if (tokens[c.v].normalized !== c.expected) {
     result.status = "partial";
-    diagnose(result, "form-mismatch");
+    diagnose(result, "form-mismatch", possession || tokens[c.v].contraction ? [{ start: tokens[c.v].start, end: tokens[c.v].end }] : []);
     if (c.tense === "past" || adverb?.normalized !== "yesterday") suggest(result, tokens[c.v], c.expected, "AGREEMENT-001", "动词形式需要与主语的人称和单复数一致；be 同时保留原句的现在或过去时。");
     return "短语结构已匹配，但主语与动词形式不在此规则的支持条件内；请查看语法检查中的限定纠错建议。";
   }
@@ -124,8 +125,8 @@ function analyzeSimplePatterns(tokens: Token[], end: number, adverb: Token | nul
       ranges: [{ start: tokens[i].start, end: tokens[i].end }], explanation: `形容词 ${tokens[i].text} 修饰短语的中心名词 ${tokens[phrase.end - 1].text}。` });
   };
   add("subject", c.subject, "主语说明句子谈论的人或事物；由人称代词或简单名词短语构成。");
-  add("verb", { start: c.v, end: c.v + 1, thirdPerson: false, attributes: [] }, `${tokens[c.v].text} 是句子的${c.pattern === "SVC" ? "系动词，连接主语和表语" : "谓语动词，表示动作"}，使用${c.tense === "past" ? "一般过去时" : "一般现在时"}。`);
-  if (c.object) add("object", c.object, "宾语说明动作涉及的人或事物；由宾格代词或简单名词短语构成。");
+  add("verb", { start: c.v, end: c.v + 1, thirdPerson: false, attributes: [] }, `${tokens[c.v].text} 是句子的${c.pattern === "SVC" ? "系动词，连接主语和表语" : possession ? "实义谓语动词 have，表示拥有" : "谓语动词，表示动作"}，使用${c.tense === "past" ? "一般过去时" : "一般现在时"}。`);
+  if (c.object) add("object", c.object, possession ? "宾语表示拥有的事物；本规则限定为已支持的名词短语。" : "宾语说明动作涉及的人或事物；由宾格代词或简单名词短语构成。");
   if (c.complement) add("complement", c.complement, c.pattern === "SVC" ? "表语通过系动词说明主语的身份或性质，不是动作的接受者。" : "宾语补足语用形容词说明宾语的性质或状态，与宾语一起表达完整意思。");
   if (adverb) result.nodes.push({ id: `node-${result.nodes.length + 1}`, role: "adverbial", parentId: null, implicit: false, ruleId,
     ranges: [{ start: adverb.start, end: adverb.end }], explanation: `${adverb.text} 说明动作或状态发生的${adverb.normalized === "to school" ? "目的地" : "时间"}。` });
