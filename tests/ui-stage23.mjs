@@ -28,7 +28,7 @@ try{
     assert.deepEqual(await page.locator('.sentence-part .part-text').allTextContents(),texts);
   };
   await page.getByText('当前范围与键盘操作',{exact:true}).click();assert.match(await page.locator('.support-help').innerText(),/否定陈述支持 don't\/doesn't\/didn't/);
-  assert.equal(await page.locator('.example-group').count(),13);
+  assert.equal(await page.locator('.example-group').count(),14);
   await context.setOffline(true);requests.length=0;
   const check=async f=>{
     const previous=await input.inputValue();await input.fill(f.input);

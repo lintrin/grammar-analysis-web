@@ -4,7 +4,7 @@ import {readFileSync} from 'node:fs';
 import {analyzeSentence,applyCorrection,LEXICON_VERSION,LEXICON_HASH} from '../lib/grammar.ts';
 import {compareLexiconExpectation} from './helpers/lexicon-expectations.mjs';
 import {openDatabase,migrate,importData,query} from '../scripts/lexicon/store.mjs';
-import {validateRelease,rebuild,review,publish,trustedRelease} from '../scripts/lexicon/release.mjs';
+import {validateRelease,rebuild,review,publish} from '../scripts/lexicon/release.mjs';
 import {canonical,normalizeEntry} from '../scripts/lexicon/data.mjs';
 import {surfaceCandidates} from '../lib/grammar/vocabulary.ts';
 import {analyzePurpose} from '../lib/grammar/purposes.ts';
@@ -31,7 +31,7 @@ for(const m of migrations.migrations.filter(m=>m.stage===22)) test(`22 historica
 });
 const old=validateRelease(JSON.parse(readFileSync('data/lexicon/releases/1.1.0.json')));
 const draft=JSON.parse(readFileSync('data/lexicon/stage22-import.json'));
-const current=trustedRelease().release;
+const current=validateRelease(JSON.parse(readFileSync('data/lexicon/releases/1.2.0.json')));
 test('22 audited possession frame preserves all old entries, auxiliaries and restrictions',()=>{
   assert.equal(current.entries.length,149);assert.equal(draft.entries.length,1);
   for(const entry of old.entries) assert.deepEqual(current.entries.find(e=>e.id===entry.id),entry);

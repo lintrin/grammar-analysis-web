@@ -12,7 +12,7 @@ try {
   const input=page.getByRole('textbox',{name:'需要分析的英文句子'});
   const labels={complete:'规则分析完成',unsupported:'超出当前范围',partial:'部分支持',ambiguous:'存在歧义',invalid:'请检查输入'};
   const status=s=>page.locator('.result-status').filter({hasText:labels[s]}).waitFor();
-  await page.getByText('当前范围与键盘操作',{exact:true}).click();assert.match(await page.locator('.support-help').innerText(),/27 个实义动词/);assert.match(await page.locator('.support-help').innerText(),/拥有义 have/);
+  await page.getByText('当前范围与键盘操作',{exact:true}).click();assert.match(await page.locator('.support-help').innerText(),/100 个实义动词/);assert.match(await page.locator('.support-help').innerText(),/拥有义 have/);
   await context.setOffline(true);requests.length=0;
   const check=async f=>{
     await input.fill(f.input);assert.equal(await page.locator('.sentence-part').count(),0);await input.press('Control+Enter');await status(f.expected.status);

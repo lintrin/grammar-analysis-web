@@ -7,8 +7,8 @@ import {compareLexiconExpectation} from './helpers/lexicon-expectations.mjs';
 
 const acceptance = loadStage25Acceptance();
 test('25 fixed independent corpus and current release identity', () => {
-  assert.equal(RULE_VERSION, '0.18.0'); assert.equal(LEXICON_VERSION, '1.2.0');
-  assert.equal(LEXICON_HASH, '1ca918e6aece84056d8548cf3b6ac9f0cad3945acdc1bf861bc9cba13645bbce');
+  assert.equal(RULE_VERSION, '0.18.1'); assert.equal(LEXICON_VERSION, '1.3.0');
+  assert.equal(LEXICON_HASH, '186cc285dde606b71eea12526a65aa0a0290f585987b99e1bc9a530b480abf1c');
   assert.equal(acceptance.fixtures.length, 120);
 });
 for (const fixture of acceptance.fixtures) test(`25 independent ${fixture.id}: ${fixture.input}`, () => {

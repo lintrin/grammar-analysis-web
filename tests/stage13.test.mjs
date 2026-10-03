@@ -30,7 +30,7 @@ test('stage 13 manual answers fix six capability groups and their original-text 
 });
 
 test('stage 13 audited participles include irregular and doubled-letter forms', () => {
-  assert.equal(lexicalVerbs.length, 27);
+  assert.equal(lexicalVerbs.length, 100);
   for (const [base, participle, progressive] of [['give','given','giving'],['show','shown','showing'],['go','gone','going'],['run','run','running'],['see','seen','seeing'],['make','made','making']]) {
     assert.equal(lexicalForm(participle).base, base);
     assert.equal(lexicalForm(progressive).base, base);

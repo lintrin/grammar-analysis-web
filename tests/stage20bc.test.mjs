@@ -64,7 +64,7 @@ test('20B dedicated rebuild reproduces trusted release including frozen approval
   assert.throws(() => rebuild(db,release,'0'.repeat(64)), /Untrusted/);
   assert.equal(query(db).length,0);
   assert.deepEqual(rebuild(db,release,app.lexiconHash),release);
-  assert.equal(query(db).length,149); assert.equal(query(db).every(r => r.status === 'approved'),true);
+  assert.equal(query(db).length,222); assert.equal(query(db).every(r => r.status === 'approved'),true);
   assert.deepEqual(exportRelease(db,release.lexiconVersion),release);
   assert.throws(() => rebuild(db,release,app.lexiconHash), /empty/);
 });
@@ -80,8 +80,8 @@ for (const [label, change] of [
 });
 test('20C client has every same-surface candidate and deterministic reviewed provenance', () => {
   const r = trustedRelease().release;
-  assert.equal(verify().entries,149);
-  assert.equal(clientSnapshot(r).entries.length,149);
+  assert.equal(verify().entries,222);
+  assert.equal(clientSnapshot(r).entries.length,222);
   assert.equal(surfaceCandidates('her',() => true).length,2);
   assert.equal(surfaceCandidates('sent',() => true).length,2);
   assert.equal(verbCandidates('sent',() => true).length,1);
@@ -155,7 +155,7 @@ test('20C frame aspect and purpose restrictions reject rather than infer capabil
 test('20C verify rejects manifest, release and generated snapshot tampering in clean environment', t => {
   const dir = mkdtempSync(join(tmpdir(),'clause-verify-')); t.after(() => rmSync(dir,{ recursive: true,force: true }));
   for (const path of ['lib','data']) cpSync(path,join(dir,path),{ recursive: true });
-  const root = new URL('file://'+dir+'/'); assert.equal(verify(root).entries,149);
+  const root = new URL('file://'+dir+'/'); assert.equal(verify(root).entries,222);
   const mp = join(dir,'data/analysis-manifest.json'), source = readFileSync(mp,'utf8');
   for (const field of ['ruleVersion','lexiconVersion','lexiconHash','lexiconFormatVersion']) {
     const m = JSON.parse(source); m[field] = field === 'lexiconFormatVersion' ? 2 : 'invalid'; writeFileSync(mp,JSON.stringify(m)); assert.throws(() => verify(root));

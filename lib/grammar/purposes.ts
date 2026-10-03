@@ -1,6 +1,6 @@
 import type { AnalysisResult, Purpose } from "./protocol.ts";
 import type { Token } from "./tokens.ts";
-import { adjectives, determiners, selectedVerb, surfaceCandidates, interpretationChoices, framePermits, verbForms, simpleVerbs, beForms, isPossession } from "./vocabulary.ts";
+import { adjectives, adjectiveSupports, nounCandidate, determiners, selectedVerb, surfaceCandidates, interpretationChoices, framePermits, verbForms, simpleVerbs, beForms, isPossession } from "./vocabulary.ts";
 import { nounPhrase, directObject } from "./phrases.ts";
 import { analyzeDeclarative } from "./simple.ts";
 import { analyzeComposed } from "./composed.ts";
@@ -161,11 +161,25 @@ function analyzePurposeCandidate(tokens: Token[], punctuation: string | null, re
 
 /** All lexical interpretations spend the same budget as clause/phrase boundaries. */
 export function analyzePurpose(tokens: Token[], punctuation: string | null, result: AnalysisResult, consume = createBoundaryBudget()): string {
+  // In this closed grammar, a determiner followed by adjective-only modifiers
+  // and a noun cannot contain a finite verb before that noun. Keep noun/verb
+  // homographs and unanchored adjective/verb alternatives fully enumerated.
+  const attributes = new Set<number>();
+  for (let start = 0; start < tokens.length; start++) {
+    if (!determiners.has(tokens[start].normalized)) continue;
+    let end = start + 1;
+    while (end < tokens.length && adjectives.has(tokens[end].normalized) && !nounCandidate(tokens[end])) end++;
+    if (end > start + 1 && end < tokens.length && nounCandidate(tokens[end])) {
+      for (let i = start + 1; i < end; i++) attributes.add(i);
+    }
+  }
   const choices: { index: number; ids: string[] }[] = [];
+  const forcedChoices = new Map<number,string>();
   for (const [index, token] of tokens.entries()) {
     if (surfaceCandidates(token.normalized,consume) === null) { diagnose(result,"budget-exceeded"); return budgetMessage; }
-    const ids = interpretationChoices(token.normalized);
+    const ids = interpretationChoices(token.normalized).filter(id => !attributes.has(index) || adjectiveSupports({...token,lexiconChoice:id},"attribute"));
     if (ids.length > 1) choices.push({ index, ids });
+    else if (attributes.has(index) && ids.length === 1) forcedChoices.set(index,ids[0]);
   }
   const parsed: { candidate: AnalysisResult; message: string }[] = [];
   let exhausted = false;
@@ -196,7 +210,7 @@ export function analyzePurpose(tokens: Token[], punctuation: string | null, resu
     }
     parsed.push({ candidate,message });
   };
-  visit(0,tokens);
+  visit(0,tokens.map((token,index)=>forcedChoices.has(index)?{...token,lexiconChoice:forcedChoices.get(index)!}:token));
   if (exhausted) { diagnose(result,"budget-exceeded"); return budgetMessage; }
   const complete = parsed.filter(p => p.candidate.status === "complete");
   const partial = parsed.filter(p => p.candidate.status === "partial");

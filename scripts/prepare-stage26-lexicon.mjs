@@ -1,0 +1,54 @@
+// Offline draft adapter. Grammatical frames and chosen spellings come from the
+// fixed scope, never from parser output or an inflection generator's first hit.
+import {readFileSync} from 'node:fs';
+import {createHash} from 'node:crypto';
+import {fileURLToPath} from 'node:url';
+import {normalizeEntry} from './lexicon/data.mjs';
+import {atomicWrite} from './lexicon/release.mjs';
+
+export function prepareVerbExpansion(scope, sourceFiles, provenance) {
+  if (scope.sourceCommit !== provenance.commit) throw new Error('Source commit mismatch');
+  for (const [name, bytes] of Object.entries(sourceFiles)) {
+    if (createHash('sha256').update(bytes).digest('hex') !== provenance.subsetFiles[name]) throw new Error(`Source hash mismatch: ${name}`);
+  }
+  const rows = sourceFiles['verbs.csv'].toString().trim().split('\n').map(line => line.split(','));
+  const tags = {VB:'base',VBZ:'third',VBD:'past',VBN:'participle',VBG:'progressive'};
+  const overrides = sourceFiles['overrides.csv'].toString().trim().split('\n').filter(Boolean).map(line => line.split(','));
+  if (new Set(rows.map(r=>r[0])).size !== rows.length || rows.length !== scope.verbs.length) throw new Error('Duplicate or missing source row');
+  const morphologySource = 'lemminflect-stage26';
+  const frameSource = 'clause-stage26-scope';
+  const entries = scope.verbs.map(v => {
+    const row = rows.find(r=>r[0]===v.lemma && r[1]==='verb');
+    if (!row || row.length !== 6) throw new Error(`Missing verb row: ${v.lemma}`);
+    const candidates = {base:[row[0]],past:row[2].split('/'),participle:(row[3] || row[2]).split('/'),progressive:row[4].split('/'),third:row[5].split('/')};
+    for (const [lemma,tag,forms] of overrides) if (lemma===v.lemma) {
+      if (!tags[tag]) throw new Error('Unsupported override tag');
+      candidates[tags[tag]] = forms.split('/');
+    }
+    for (const [kind,form] of Object.entries(v.forms)) if (!candidates[kind]?.includes(form)) throw new Error(`Unreviewed source spelling: ${v.lemma}/${kind}/${form}`);
+    const id = `verb:lexical:${v.lemma}`;
+    return normalizeEntry({id,revisionId:`${id}:r1`,lemma:v.lemma,partOfSpeech:'verb',sense:'lexical',attributes:{},
+      forms:Object.entries(v.forms).map(([kind,surface])=>({kind,surface,initialSound:null})),
+      frames:[{id:`${v.lemma}-${v.pattern.toLowerCase()}`,pattern:v.pattern,recipient:v.pattern==='SVOO'?'person':null,complement:null,
+        allowProgressive:v.progressive,allowPerfect:v.perfect,passivePromotion:v.passive?(v.pattern==='SVOO'?'direct-object-or-recipient':'direct-object'):null,
+        allowedPurposes:['declarative','interrogative',...(v.imperative?['imperative']:[])],allowedPolarities:['positive','negative'],fixedTail:null}],
+      sourceIds:[morphologySource,frameSource]});
+  });
+  return {sources:[
+    {id:morphologySource,version:provenance.commit,title:'LemmInflect dictionary verb rows and overrides (73 selected lemmas)',license:'MIT',attribution:'Copyright (C) 2019 Brad Jascob. https://github.com/bjascob/LemmInflect; full notice: /licenses/lemminflect.txt'},
+    {id:frameSource,version:'1',title:'Clause stage 26 fixed teaching senses, spellings and single frames',license:'MIT',attribution:'Copyright (c) 2026 lintrin; project-maintained restricted verb frames'},
+  ],entries};
+}
+
+export function loadVerbExpansion() {
+  const root = new URL('../data/lexicon/',import.meta.url);
+  const read = path => readFileSync(new URL(path,root));
+  return prepareVerbExpansion(JSON.parse(read('stage26-scope.json')),
+    Object.fromEntries(['verbs.csv','overrides.csv','LICENSE'].map(name=>[name,read(`sources/lemminflect/${name}`)])),
+    JSON.parse(read('sources/lemminflect/provenance.json')));
+}
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  const draft = loadVerbExpansion();
+  atomicWrite(new URL('../data/lexicon/stage26-import.json',import.meta.url).pathname,draft);
+  console.log(`Prepared ${draft.entries.length} offline drafts; review and publish remain explicit lexicon commands.`);
+}
