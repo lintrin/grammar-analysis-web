@@ -15,6 +15,13 @@
       "when": 1790959875688,
       "tag": "0001_lexicon_guards",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1791021600000,
+      "tag": "0002_location_tail",
+      "breakpoints": true
     }
   ]
 }

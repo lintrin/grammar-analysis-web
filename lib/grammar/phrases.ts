@@ -3,6 +3,7 @@ import { nounCandidate, adjectiveSupports, initialSound, directObjectPronouns, d
 
 export type Phrase = { start: number; end: number; thirdPerson: boolean; attributes: number[] };
 export function nounPhrase(tokens: Token[], start: number, end: number, recipient = false): Phrase | null {
+  if(end===start+1&&tokens[start]?.whSubject)return {start,end,thirdPerson:true,attributes:[]};
   const words = tokens.slice(start, end).map(t => t.normalized);
   if (!words.length) return null;
   const pronouns = recipient ? objectPronouns : subjectPronouns;
@@ -30,12 +31,14 @@ export function nounPhrase(tokens: Token[], start: number, end: number, recipien
 }
 export function directObject(tokens: Token[], start: number, end: number): Phrase | null {
   // Same noun phrase grammar; object pronouns are deferred to avoid lexical ambiguity.
+  if(end===start+1&&tokens[start]?.whObject)return {start,end,thirdPerson:false,attributes:[]};
   if (end <= start || !nounCandidate(tokens[end - 1])) return null;
   return nounPhrase(tokens, start, end);
 }
 
 /** SVO/SVOC objects are independent of SVOO's person-only recipient grammar. */
 export function objectPhrase(tokens: Token[], start: number, end: number): Phrase | null {
+  if(end===start+1&&tokens[start]?.whObject)return {start,end,thirdPerson:false,attributes:[]};
   if (end === start + 1 && directObjectPronouns.has(tokens[start].normalized)) {
     return { start, end, thirdPerson: false, attributes: [] };
   }

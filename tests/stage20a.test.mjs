@@ -68,7 +68,7 @@ test('20A retains fixed frames, same-surface forms and cross-category candidates
 
 test('20A migration and seed import are idempotent without rewriting revisions', t => {
   const db = working(t, false);
-  assert.deepEqual(migrate(db), { migrations: 2 });
+  assert.deepEqual(migrate(db), { migrations: 3 });
   assert.deepEqual(importData(db, seed), { inserted: 91, unchanged: 0 });
   const before = query(db);
   assert.deepEqual(importData(db, seed), { inserted: 0, unchanged: 91 }); assert.deepEqual(query(db), before);

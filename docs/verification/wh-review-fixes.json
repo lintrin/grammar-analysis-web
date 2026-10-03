@@ -1,0 +1,784 @@
+{
+  "date": "2026-10-03",
+  "manifest": {
+    "lexiconFormatVersion": 1,
+    "lexiconHash": "dc7e010f3314eec82a61720ad1d6249209c459236245b8f72ce9fcee5fc7bb4a",
+    "lexiconVersion": "1.7.0",
+    "ruleVersion": "0.22.1"
+  },
+  "tests": {
+    "total": 3470,
+    "passed": 3470,
+    "failed": 0,
+    "skipped": 0
+  },
+  "checks": {
+    "typescript": "passed",
+    "eslint": "passed with no warnings",
+    "build": "passed",
+    "lexiconVerify": "passed",
+    "unstagedDiff": "passed",
+    "stagedDiff": "passed"
+  },
+  "reviewFixtures": {
+    "file": "tests/fixtures/stage29-review-fixes.json",
+    "sha256": "8392301ec6f58ba2f54ee489dc65765add4c6585bfc81c6cfaec9a7c18612aea",
+    "total": 40
+  },
+  "browserAcceptance": {
+    "development": {
+      "fixedAnswers": 183,
+      "report": {
+        "browser": "147.0.7727.15",
+        "correct": 106,
+        "safeCorrections": 19,
+        "refusalControls": 56,
+        "navigation": {
+          "domContentLoadedMs": 172.5,
+          "loadMs": 217.70000000298023
+        },
+        "timing": [
+          {
+            "id": "read-her-question",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 14.300000004470348
+          },
+          {
+            "id": "read-her-question",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 13.799999997019768
+          },
+          {
+            "id": "read-her-question",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 13
+          },
+          {
+            "id": "read-her-question",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 13.899999998509884
+          },
+          {
+            "id": "read-her-question",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 11.800000004470348
+          },
+          {
+            "id": "recipient-her",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 11.399999998509884
+          },
+          {
+            "id": "recipient-her",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 11
+          },
+          {
+            "id": "recipient-her",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 10.100000001490116
+          },
+          {
+            "id": "recipient-her",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 10.299999997019768
+          },
+          {
+            "id": "recipient-her",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 10.5
+          },
+          {
+            "id": "carried-her-passive",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 9.600000001490116
+          },
+          {
+            "id": "carried-her-passive",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 7.600000001490116
+          },
+          {
+            "id": "carried-her-passive",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 7.399999998509884
+          },
+          {
+            "id": "carried-her-passive",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 8.299999997019768
+          },
+          {
+            "id": "carried-her-passive",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 7.200000002980232
+          },
+          {
+            "id": "read-mixed-ambiguity",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 5.899999998509884
+          },
+          {
+            "id": "read-mixed-ambiguity",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 5.600000001490116
+          },
+          {
+            "id": "read-mixed-ambiguity",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 5.299999997019768
+          },
+          {
+            "id": "read-mixed-ambiguity",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 5.600000001490116
+          },
+          {
+            "id": "read-mixed-ambiguity",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 5.600000001490116
+          },
+          {
+            "id": "new-verb-1000",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 8.300000004470348
+          },
+          {
+            "id": "new-verb-1000",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 9.199999995529652
+          },
+          {
+            "id": "new-verb-1000",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 8.5
+          },
+          {
+            "id": "new-verb-1000",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 8.5
+          },
+          {
+            "id": "new-verb-1000",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 9.700000002980232
+          },
+          {
+            "id": "clean-modifiers-1000",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 9.100000001490116
+          },
+          {
+            "id": "clean-modifiers-1000",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 10
+          },
+          {
+            "id": "clean-modifiers-1000",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 8.600000001490116
+          },
+          {
+            "id": "clean-modifiers-1000",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 8.700000002980232
+          },
+          {
+            "id": "clean-modifiers-1000",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 8.5
+          },
+          {
+            "id": "read-her-question",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 11.399999998509884
+          },
+          {
+            "id": "read-her-question",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 11.799999997019768
+          },
+          {
+            "id": "read-her-question",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 11.299999997019768
+          },
+          {
+            "id": "read-her-question",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 11.299999997019768
+          },
+          {
+            "id": "read-her-question",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 11.200000002980232
+          },
+          {
+            "id": "recipient-her",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 9.599999994039536
+          },
+          {
+            "id": "recipient-her",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 10.099999994039536
+          },
+          {
+            "id": "recipient-her",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 9.399999998509884
+          },
+          {
+            "id": "recipient-her",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 10.699999995529652
+          },
+          {
+            "id": "recipient-her",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 9.399999998509884
+          },
+          {
+            "id": "carried-her-passive",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 35.80000000447035
+          },
+          {
+            "id": "carried-her-passive",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 37.19999999552965
+          },
+          {
+            "id": "carried-her-passive",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 36.79999999701977
+          },
+          {
+            "id": "carried-her-passive",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 36.100000001490116
+          },
+          {
+            "id": "carried-her-passive",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 7.0999999940395355
+          },
+          {
+            "id": "read-mixed-ambiguity",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 5.0999999940395355
+          },
+          {
+            "id": "read-mixed-ambiguity",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 5.399999998509884
+          },
+          {
+            "id": "read-mixed-ambiguity",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 5.399999998509884
+          },
+          {
+            "id": "read-mixed-ambiguity",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 5.5
+          },
+          {
+            "id": "read-mixed-ambiguity",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 5.300000004470348
+          },
+          {
+            "id": "new-verb-1000",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 7.5999999940395355
+          },
+          {
+            "id": "new-verb-1000",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 8.600000001490116
+          },
+          {
+            "id": "new-verb-1000",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 9.300000004470348
+          },
+          {
+            "id": "new-verb-1000",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 9.700000002980232
+          },
+          {
+            "id": "new-verb-1000",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 8.400000005960464
+          },
+          {
+            "id": "clean-modifiers-1000",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 9
+          },
+          {
+            "id": "clean-modifiers-1000",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 9.5
+          },
+          {
+            "id": "clean-modifiers-1000",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 8.700000002980232
+          },
+          {
+            "id": "clean-modifiers-1000",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 8.699999995529652
+          },
+          {
+            "id": "clean-modifiers-1000",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 9
+          }
+        ],
+        "longTasks": [],
+        "limitation": "Local click-to-result including React, five samples at each width. Navigation is overall page loading, not isolated dictionary initialization."
+      }
+    },
+    "build": {
+      "fixedAnswers": 183,
+      "report": {
+        "browser": "147.0.7727.15",
+        "correct": 106,
+        "safeCorrections": 19,
+        "refusalControls": 56,
+        "navigation": {
+          "domContentLoadedMs": 69.39999999850988,
+          "loadMs": 82.10000000149012
+        },
+        "timing": [
+          {
+            "id": "read-her-question",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 11.399999998509884
+          },
+          {
+            "id": "read-her-question",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 10.199999995529652
+          },
+          {
+            "id": "read-her-question",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 9.400000005960464
+          },
+          {
+            "id": "read-her-question",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 10.399999998509884
+          },
+          {
+            "id": "read-her-question",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 8.5
+          },
+          {
+            "id": "recipient-her",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 7.899999998509884
+          },
+          {
+            "id": "recipient-her",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 6.600000001490116
+          },
+          {
+            "id": "recipient-her",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 6.299999997019768
+          },
+          {
+            "id": "recipient-her",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 6.5
+          },
+          {
+            "id": "recipient-her",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 6.5
+          },
+          {
+            "id": "carried-her-passive",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 3.5
+          },
+          {
+            "id": "carried-her-passive",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 3
+          },
+          {
+            "id": "carried-her-passive",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 3.0999999940395355
+          },
+          {
+            "id": "carried-her-passive",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 3.100000001490116
+          },
+          {
+            "id": "carried-her-passive",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 2.7999999970197678
+          },
+          {
+            "id": "read-mixed-ambiguity",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 1.8999999985098839
+          },
+          {
+            "id": "read-mixed-ambiguity",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 2.2000000029802322
+          },
+          {
+            "id": "read-mixed-ambiguity",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 1.7999999970197678
+          },
+          {
+            "id": "read-mixed-ambiguity",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 2
+          },
+          {
+            "id": "read-mixed-ambiguity",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 2
+          },
+          {
+            "id": "new-verb-1000",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 4.899999998509884
+          },
+          {
+            "id": "new-verb-1000",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 5.199999995529652
+          },
+          {
+            "id": "new-verb-1000",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 5.100000001490116
+          },
+          {
+            "id": "new-verb-1000",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 4.5
+          },
+          {
+            "id": "new-verb-1000",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 4.299999997019768
+          },
+          {
+            "id": "clean-modifiers-1000",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 5
+          },
+          {
+            "id": "clean-modifiers-1000",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 4.199999995529652
+          },
+          {
+            "id": "clean-modifiers-1000",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 4.5
+          },
+          {
+            "id": "clean-modifiers-1000",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 4.600000001490116
+          },
+          {
+            "id": "clean-modifiers-1000",
+            "viewport": 1280,
+            "utf16Length": 1000,
+            "renderMs": 4.399999998509884
+          },
+          {
+            "id": "read-her-question",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 8
+          },
+          {
+            "id": "read-her-question",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 9.600000001490116
+          },
+          {
+            "id": "read-her-question",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 7.300000004470348
+          },
+          {
+            "id": "read-her-question",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 7.399999998509884
+          },
+          {
+            "id": "read-her-question",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 7.0999999940395355
+          },
+          {
+            "id": "recipient-her",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 5.899999998509884
+          },
+          {
+            "id": "recipient-her",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 6.100000001490116
+          },
+          {
+            "id": "recipient-her",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 5.600000001490116
+          },
+          {
+            "id": "recipient-her",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 5.799999997019768
+          },
+          {
+            "id": "recipient-her",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 5.899999998509884
+          },
+          {
+            "id": "carried-her-passive",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 3.100000001490116
+          },
+          {
+            "id": "carried-her-passive",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 2.399999998509884
+          },
+          {
+            "id": "carried-her-passive",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 2.600000001490116
+          },
+          {
+            "id": "carried-her-passive",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 2.600000001490116
+          },
+          {
+            "id": "carried-her-passive",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 2.600000001490116
+          },
+          {
+            "id": "read-mixed-ambiguity",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 1.7999999970197678
+          },
+          {
+            "id": "read-mixed-ambiguity",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 1.6000000014901161
+          },
+          {
+            "id": "read-mixed-ambiguity",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 1.8000000044703484
+          },
+          {
+            "id": "read-mixed-ambiguity",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 1.6000000014901161
+          },
+          {
+            "id": "read-mixed-ambiguity",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 1.7999999970197678
+          },
+          {
+            "id": "new-verb-1000",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 3.600000001490116
+          },
+          {
+            "id": "new-verb-1000",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 4
+          },
+          {
+            "id": "new-verb-1000",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 4
+          },
+          {
+            "id": "new-verb-1000",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 3.899999998509884
+          },
+          {
+            "id": "new-verb-1000",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 4
+          },
+          {
+            "id": "clean-modifiers-1000",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 4.800000004470348
+          },
+          {
+            "id": "clean-modifiers-1000",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 4
+          },
+          {
+            "id": "clean-modifiers-1000",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 4
+          },
+          {
+            "id": "clean-modifiers-1000",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 4.200000002980232
+          },
+          {
+            "id": "clean-modifiers-1000",
+            "viewport": 390,
+            "utf16Length": 1000,
+            "renderMs": 5
+          }
+        ],
+        "longTasks": [],
+        "limitation": "Local click-to-result including React, five samples at each width. Navigation is overall page loading, not isolated dictionary initialization."
+      }
+    }
+  }
+}

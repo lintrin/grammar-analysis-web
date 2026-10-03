@@ -63,7 +63,7 @@ for (const [input, status] of boundaries) test(`boundary: ${input.slice(0, 65) |
   const r = analyzeSentence(input);
   assert.equal(r.status, status);
   if (status === 'complete') {
-    if (input === 'She has given him a book.') compareStage9(expectedStage12({ input, group: 'simple', clauses: [{ pattern: 'SVOO', tense: 'present', aspect: 'perfect', voice: 'active', parts: [['subject','She'],['verb','has given'],['indirectObject','him'],['object','a book']] }] }), r);
+    if (input === 'She has given him a book.') compareStage9(expectedStage12({ input, group: 'simple', clauses: [{ pattern: 'SVOO', tense: 'present', modal: null, questionType: null, aspect: 'perfect', voice: 'active', parts: [['subject','She'],['verb','has given'],['indirectObject','him'],['object','a book']] }] }), r);
     else if (input === 'A book was given to me.') compareStage9(expectedStage12({ input, group: 'simple', clauses: [{ pattern: 'SV', tense: 'past', aspect: 'simple', voice: 'passive', parts: [['subject','A book'],['verb','was given'],['adverbial','to me']] }] }), r);
     else compareStage8Input(input, r);
   }
@@ -87,7 +87,7 @@ test('dictionary is closed and has no inherited property lookups', () => {
 });
 function protocol() {
   return { input: 'Does she give him a useful book?', inputVersion: 2, ruleVersion: 'test-1', lexiconVersion: LEXICON_VERSION, lexiconHash: LEXICON_HASH,
-    status: 'partial', purpose: 'interrogative', pattern: 'SVOO', complexity: 'simple', tense: 'present', aspect: 'simple', voice: 'active', reasons: [{ code: 'form-mismatch', ranges: [] }],
+    status: 'partial', purpose: 'interrogative', pattern: 'SVOO', complexity: 'simple', tense: 'present', modal: null, questionType: null, aspect: 'simple', voice: 'active', reasons: [{ code: 'form-mismatch', ranges: [] }],
     messages: ['Protocol fixture only.'], corrections: [], nodes: [
       { id: 's', role: 'subject', parentId: null, ranges: [{ start: 5, end: 8 }], implicit: false, ruleId: 'fixture', explanation: 'subject' },
       { id: 'v', role: 'verb', parentId: null, ranges: [{ start: 0, end: 4 }, { start: 9, end: 13 }], implicit: false, ruleId: 'fixture', explanation: 'discontinuous verb' },

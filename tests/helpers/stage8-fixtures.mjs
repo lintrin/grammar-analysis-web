@@ -1,3 +1,4 @@
+import { migrateClassification } from "./classification-migration.mjs";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { compareStage9 } from './stage9-fixtures.mjs';
@@ -12,8 +13,9 @@ export function compareStage8Input(input, result) {
 const canonicalNodes = nodes => nodes.map(n => ({ role: n.role, parentRole: n.parentKey === null ? null : nodes.find(p => p.key === n.parentKey)?.role,
   implicit: n.implicit, ranges: n.ranges })).sort((a, b) => JSON.stringify(a).localeCompare(JSON.stringify(b)));
 export const compare = (input, expected, result) => {
+  expected=migrateClassification(expected,input);
   assert.equal(result.status, expected.status, input);
-  for (const field of ['purpose', 'pattern', 'complexity', 'tense', 'aspect', 'voice']) assert.equal(result[field], expected[field], `${input}: ${field}`);
+  for (const field of ['purpose', 'pattern', 'complexity', 'tense', 'modal', 'questionType', 'aspect', 'voice']) assert.equal(result[field], expected[field], `${input}: ${field}`);
   if (expected.complexity === 'compound' || expected.complexity === 'complex') return compareStage9(expected, result);
   const nodes = result.nodes.map(n => ({ ...n, key: n.id, parentKey: n.parentId }));
   assert.deepEqual(canonicalNodes(nodes), canonicalNodes(expected.nodes), `${input}: nodes`);

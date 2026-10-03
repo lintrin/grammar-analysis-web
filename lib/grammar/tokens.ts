@@ -1,10 +1,10 @@
 import type { Range } from "./protocol.ts";
 
 const negativeContractions: Record<string, string> = {
-  "don't": "do", "doesn't": "does", "didn't": "did", "isn't": "is", "aren't": "are",
+  "won't": "will", "don't": "do", "doesn't": "does", "didn't": "did", "isn't": "is", "aren't": "are",
   "wasn't": "was", "weren't": "were", "can't": "can", "haven't": "have", "hasn't": "has", "hadn't": "had",
 };
-export type Token = Range & { text: string; normalized: string; contraction?: { auxiliary: string; apostrophe: "'" | "’" }; lexiconChoice?: string; finiteTense?: "present" | "past" };
+export type Token = Range & { text: string; normalized: string; contraction?: { auxiliary: string; apostrophe: "'" | "’" }; whSubject?: boolean; whObject?: boolean; lexiconChoice?: string; finiteTense?: "present" | "past" };
 export function isWordToken(token: Token): boolean {
   return !!token.contraction || /^[A-Za-z]+$/.test(token.text);
 }

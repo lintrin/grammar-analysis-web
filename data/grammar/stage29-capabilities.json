@@ -1,0 +1,99 @@
+{
+  "stage": 29,
+  "patterns": [
+    "SV",
+    "SVO"
+  ],
+  "purpose": "interrogative",
+  "polarity": "positive",
+  "aspect": "simple",
+  "voice": "active",
+  "clausePositions": [
+    "single"
+  ],
+  "adverbial": {
+    "words": [
+      "where",
+      "when",
+      "why"
+    ],
+    "auxiliaries": [
+      "do",
+      "does",
+      "did",
+      "can",
+      "will"
+    ],
+    "whereFrames": [
+      "sleep-sv",
+      "work-sv",
+      "walk-sv",
+      "run-sv",
+      "dance-sv",
+      "wait-sv"
+    ],
+    "whereLocationTail": false,
+    "whenTimeTail": false,
+    "whyReasonClause": false,
+    "locationTail": false
+  },
+  "object": {
+    "words": [
+      "who",
+      "what"
+    ],
+    "pattern": "SVO",
+    "auxiliaries": [
+      "do",
+      "does",
+      "did",
+      "can",
+      "will"
+    ],
+    "possessionModal": false
+  },
+  "subject": {
+    "words": [
+      "who",
+      "what"
+    ],
+    "tenses": [
+      "present",
+      "past"
+    ],
+    "modals": [
+      "can",
+      "will"
+    ],
+    "defaultNumber": "singular-teaching-scope",
+    "contextAgreementCorrection": false,
+    "emphaticDo": false
+  },
+  "correctionRequires": [
+    "inverted-order",
+    "unique-frame",
+    "single-form-error",
+    "complete-tail"
+  ],
+  "timeWords": {
+    "object": [
+      "today",
+      "yesterday"
+    ],
+    "subject": [
+      "today",
+      "yesterday"
+    ],
+    "adverbial": {
+      "where": [
+        "today",
+        "yesterday"
+      ],
+      "when": [],
+      "why": [
+        "today",
+        "yesterday"
+      ]
+    }
+  }
+}

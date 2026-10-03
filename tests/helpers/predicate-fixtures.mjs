@@ -1,3 +1,4 @@
+import { migratedBehavior } from "./classification-migration.mjs";
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { analyzeSentence, validateAnalysisResult } from '../../lib/grammar.ts';
@@ -30,6 +31,8 @@ export function checkPredicate(fixture) {
 }
 export function checkBoundary(fixture) {
   const result = analyzeSentence(fixture.input);
+  const migration=migratedBehavior(fixture.input);
+  if (migration) { compareLexiconExpectation(migration.expected,result);return; }
   if (fixture.expected) {
     compareLexiconExpectation(fixture.expected, result);
     validateAnalysisResult(result);

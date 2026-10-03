@@ -17,7 +17,8 @@ const {fixtures} = JSON.parse(answerBytes);
 const byId = new Map(fixtures.map(f=>[f.id,f]));
 const draft = JSON.parse(readFileSync('data/lexicon/stage26-import.json'));
 const old = validateRelease(JSON.parse(readFileSync('data/lexicon/releases/1.2.0.json')));
-const current = trustedRelease().release;
+const current = validateRelease(JSON.parse(readFileSync('data/lexicon/releases/1.3.0.json')));
+assert.ok(trustedRelease().release.entries.some(e=>e.lemma==='will'));
 
 test('26 human-fixed inventory and full answers precede analyzer checks',()=>{
   assert.equal(createHash('sha256').update(answerBytes).digest('hex'),'45a39ee3e0b14dec5727028859d5342df597c417b35e5a28cb3a9e4f1038bb0e');

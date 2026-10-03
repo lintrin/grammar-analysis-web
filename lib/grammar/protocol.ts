@@ -1,10 +1,12 @@
 import { tokenize } from "./tokens.ts";
 
-export const RULE_VERSION = "0.18.1";
+export const RULE_VERSION = "0.22.2";
 export const MAX_INPUT_LENGTH = 1000;
 export type Range = { start: number; end: number };
 export type Purpose = "declarative" | "interrogative" | "imperative" | "exclamatory";
 export type Pattern = "SV" | "SVO" | "SVC" | "SVOO" | "SVOC";
+export type QuestionType = "yes-no" | "wh-subject" | "wh-object" | "wh-adverbial" | null;
+export type Modal = "can" | "will" | null;
 export type Tense = "present" | "past" | null;
 export type Aspect = "simple" | "progressive" | "perfect" | "perfect-progressive" | null;
 export type Voice = "active" | "passive" | null;
@@ -12,7 +14,7 @@ export type Role = "subject" | "verb" | "indirectObject" | "object" | "complemen
 export type ComponentNode = {
   id: string; role: Role; parentId: string | null; ranges: Range[];
   implicit: boolean; ruleId: string; explanation: string;
-  clause?: { kind: "independent" | "main" | "subordinate"; purpose: Purpose; pattern: Pattern; tense: Tense; aspect: Aspect; voice: Voice };
+  clause?: { kind: "independent" | "main" | "subordinate"; purpose: Purpose; pattern: Pattern; tense: Tense; modal: Modal; questionType: QuestionType; aspect: Aspect; voice: Voice };
   relation?: "addition" | "contrast" | "cause" | "condition";
 };
 export type Correction = {
@@ -27,7 +29,7 @@ export type AnalysisResult = {
   purpose: Purpose | null;
   pattern: Pattern | null;
   complexity: "simple" | "compound" | "complex" | null;
-  tense: Tense; aspect: Aspect; voice: Voice;
+  tense: Tense; modal: Modal; questionType: QuestionType; aspect: Aspect; voice: Voice;
   nodes: ComponentNode[]; corrections: Correction[]; messages: string[];
   reasons: AnalysisReason[];
 };
@@ -45,7 +47,7 @@ export function validateAnalysisResult(value: unknown): asserts value is Analysi
   if (!["complete", "partial", "unsupported", "ambiguous", "invalid"].includes(r.status as string)) fail("状态");
   for (const [field, allowed] of [
     ["purpose", ["declarative", "interrogative", "imperative", "exclamatory"]],
-    ["pattern", ["SV", "SVO", "SVC", "SVOO", "SVOC"]], ["complexity", ["simple", "compound", "complex"]], ["tense", ["present", "past"]], ["aspect", ["simple", "progressive", "perfect", "perfect-progressive"]], ["voice", ["active", "passive"]],
+    ["pattern", ["SV", "SVO", "SVC", "SVOO", "SVOC"]], ["complexity", ["simple", "compound", "complex"]], ["questionType", ["yes-no","wh-subject","wh-object","wh-adverbial"]], ["modal", ["can", "will"]], ["tense", ["present", "past"]], ["aspect", ["simple", "progressive", "perfect", "perfect-progressive"]], ["voice", ["active", "passive"]],
   ] as const) if (r[field] !== null && !allowed.includes(r[field] as never)) fail(field);
   if (r.status === "complete" && (!r.purpose || !r.complexity || (r.complexity === "simple" && (!r.pattern || !r.aspect || !r.voice)))) fail("完整结果缺少分类");
   if (!Array.isArray(r.messages) || !r.messages.every(nonempty) || !Array.isArray(r.nodes) || !Array.isArray(r.corrections)) fail("结果列表");
@@ -60,6 +62,9 @@ export function validateAnalysisResult(value: unknown): asserts value is Analysi
     for (const p of [q.start, q.end]) if (contractions.some(t => t.start < p && p < t.end)) fail("位置拆分缩写");
     return q;
   };
+  if (r.modal !== null && (r.status !== "complete" || r.tense !== null || r.aspect !== "simple" || r.voice !== "active" || r.complexity !== "simple")) fail("情态分类组合");
+  if (r.questionType !== null && (r.status !== "complete" || r.purpose !== "interrogative" || r.complexity !== "simple")) fail("疑问分类组合");
+  if (r.status === "complete" && r.purpose === "interrogative" && r.questionType === null) fail("疑问分类缺失");
   const nodes = r.nodes as unknown[];
   {
     if (!Array.isArray(r.reasons) || (r.status === "complete" ? r.reasons.length !== 0 : r.reasons.length === 0)) fail("分析原因列表");
@@ -81,7 +86,7 @@ export function validateAnalysisResult(value: unknown): asserts value is Analysi
     const node = raw as ComponentNode;
     const metadata = raw as Record<string, unknown>;
     const classification = metadata.clause;
-    if (classification !== undefined && (node.role !== "clause" || !object(classification) || !["independent", "main", "subordinate"].includes(classification.kind as string) || !["declarative", "interrogative", "imperative", "exclamatory"].includes(classification.purpose as string) || !["SV", "SVO", "SVC", "SVOO", "SVOC"].includes(classification.pattern as string) || ![null, "present", "past"].includes(classification.tense as string | null) || ![null, "simple", "progressive", "perfect", "perfect-progressive"].includes(classification.aspect as string | null) || ![null, "active", "passive"].includes(classification.voice as string | null))) fail("分句分类");
+    if (classification !== undefined && (node.role !== "clause" || !object(classification) || !["independent", "main", "subordinate"].includes(classification.kind as string) || !["declarative", "interrogative", "imperative", "exclamatory"].includes(classification.purpose as string) || !["SV", "SVO", "SVC", "SVOO", "SVOC"].includes(classification.pattern as string) || ![null,"yes-no","wh-subject","wh-object","wh-adverbial"].includes(classification.questionType as string | null) || ![null, "can", "will"].includes(classification.modal as string | null) || ![null, "present", "past"].includes(classification.tense as string | null) || ![null, "simple", "progressive", "perfect", "perfect-progressive"].includes(classification.aspect as string | null) || ![null, "active", "passive"].includes(classification.voice as string | null))) fail("分句分类");
     if (metadata.relation !== undefined && (node.role !== "connector" || !["addition", "contrast", "cause", "condition"].includes(metadata.relation as string))) fail("连接关系");
     if (node.implicit ? node.ranges.length !== 0 : node.ranges.length === 0) fail("隐含成分位置");
     let previousEnd = -1;
@@ -100,6 +105,14 @@ export function validateAnalysisResult(value: unknown): asserts value is Analysi
     }
   }
   if (r.status === "complete" && ![...byId.values()].some(n => !n.implicit)) fail("完整结果缺少原文成分");
+  const verifyModal = (classification: {modal: unknown;tense: unknown;purpose: unknown}, parts: ComponentNode[]) => {
+    const verbs = parts.filter(n=>n.role==="verb");
+    const modalTokens = tokenize(input).filter(t=>["can","will"].includes(t.normalized)&&verbs.some(n=>n.ranges.some(q=>q.start<=t.start&&q.end>=t.end)));
+    const actual = modalTokens[0]?.normalized ?? null;
+    if(classification.modal !== actual || (classification.purpose !== "imperative" && classification.tense === null && actual === null)) fail("情态原文与分类不一致");
+  };
+  if(r.status === "complete" && r.complexity === "simple") verifyModal({modal:r.modal,tense:r.tense,purpose:r.purpose},[...byId.values()]);
+  if(r.status === "complete") for(const node of byId.values()) if(node.clause) verifyModal(node.clause,[...byId.values()].filter(n=>n.parentId === node.id));
   const explicit = [...byId.values()].filter(n => !n.implicit);
   for (let i = 0; i < explicit.length; i++) for (let j = i + 1; j < explicit.length; j++) {
     const a = explicit[i], b = explicit[j];
@@ -111,9 +124,10 @@ export function validateAnalysisResult(value: unknown): asserts value is Analysi
     const clauses = roots.filter(n => n.role === "clause");
     const connector = roots.find(n => n.role === "connector");
     const conditional = complex && connector?.relation === "condition";
-    if (r.purpose !== "declarative" || r.pattern !== null || r.tense !== null || r.aspect !== null || r.voice !== null || (r.corrections as unknown[]).length || roots.length !== 3 || clauses.length !== 2 || !connector?.relation) fail("多分句整体分类与关系");
+    if (r.questionType !== null || r.modal !== null || r.purpose !== "declarative" || r.pattern !== null || r.tense !== null || r.aspect !== null || r.voice !== null || (r.corrections as unknown[]).length || roots.length !== 3 || clauses.length !== 2 || !connector?.relation) fail("多分句整体分类与关系");
     for (const clause of clauses) {
-      if (clause.implicit || clause.ranges.length !== 1 || (clause.clause?.purpose !== "declarative" || !clause.clause.aspect || !clause.clause.voice)) fail("分句分类");
+      if (clause.implicit || clause.ranges.length !== 1 || (clause.clause?.questionType !== null || clause.clause?.purpose !== "declarative" || !clause.clause.aspect || !clause.clause.voice)) fail("分句分类");
+      if (clause.clause?.modal !== null && (clause.clause?.tense !== null || clause.clause?.aspect !== "simple" || clause.clause?.voice !== "active")) fail("分句情态分类组合");
       const parts = [...byId.values()].filter(n => n.parentId === clause.id);
       for (const role of ["subject", "verb"]) if (parts.filter(n => n.role === role && !n.implicit).length !== 1) fail("分句缺少显式主谓");
     }
@@ -135,6 +149,13 @@ export function validateAnalysisResult(value: unknown): asserts value is Analysi
     let end = 0;
     for (const q of ranges) { if (input.slice(end, q.start).trim()) fail("多分句存在未归属原文"); end = q.end; }
     if (!/^\s*\.?\s*$/.test(input.slice(end))) fail("多分句末尾原文");
+  }
+  if (typeof r.questionType === "string" && r.questionType.startsWith("wh-")) {
+    if (!["SV","SVO"].includes(r.pattern as string) || r.aspect !== "simple" || r.voice !== "active") fail("特殊疑问句型组合");
+    const role = {"wh-subject":"subject","wh-object":"object","wh-adverbial":"adverbial"}[r.questionType as "wh-subject"|"wh-object"|"wh-adverbial"];
+    const first = tokenize(input)[0];
+    const word = first?.normalized;
+    if (!(r.questionType === "wh-adverbial" ? ["where","when","why"] : ["who","what"]).includes(word) || ![...byId.values()].some(n=>n.role===role&&!n.implicit&&n.ranges.length===1&&n.ranges[0].start===first.start&&n.ranges[0].end===first.end) || (r.questionType === "wh-object" && r.pattern !== "SVO")) fail("特殊疑问原文角色");
   }
   const ids = new Set<string>();
   for (const raw of r.corrections as unknown[]) {

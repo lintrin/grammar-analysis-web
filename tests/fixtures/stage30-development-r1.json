@@ -1,0 +1,4607 @@
+{
+  "authorship": "Manual second-frame senses, subject scope, roles and complete control answers before stage30 execution; old SVO cases retained.",
+  "fixtures": [
+    {
+      "id": "30-1",
+      "kind": "correct",
+      "lemma": "eat",
+      "frame": "new",
+      "input": "She eats.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 8
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-2",
+      "kind": "correct",
+      "lemma": "eat",
+      "frame": "new",
+      "input": "She ate.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 7
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-3",
+      "kind": "correct",
+      "lemma": "eat",
+      "frame": "new",
+      "input": "She does not eat.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 16
+              }
+            ],
+            "ruleId": "NEGATIVE-DO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-4",
+      "kind": "correct",
+      "lemma": "eat",
+      "frame": "new",
+      "input": "She can eat.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "can",
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 7
+              },
+              {
+                "start": 8,
+                "end": 11
+              }
+            ],
+            "ruleId": "MODAL-CAN-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-5",
+      "kind": "correct",
+      "lemma": "eat",
+      "frame": "new",
+      "input": "She will eat.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 12
+              }
+            ],
+            "ruleId": "MODAL-WILL-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-6",
+      "kind": "correct",
+      "lemma": "eat",
+      "frame": "new",
+      "input": "Does she eat?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "yes-no",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              },
+              {
+                "start": 9,
+                "end": 12
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 8
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-7",
+      "kind": "correct",
+      "lemma": "eat",
+      "frame": "new",
+      "input": "She is eating.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": null,
+        "aspect": "progressive",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 13
+              }
+            ],
+            "ruleId": "PREDICATE-PROGRESSIVE-ACTIVE"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-8",
+      "kind": "correct",
+      "lemma": "eat",
+      "frame": "new",
+      "input": "Who eats?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-subject",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "WH-SUBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 8
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-9",
+      "kind": "correct",
+      "lemma": "eat",
+      "frame": "new",
+      "input": "When will she eat?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 9
+              },
+              {
+                "start": 14,
+                "end": 17
+              }
+            ],
+            "ruleId": "QUESTION-WILL-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 13
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-10",
+      "kind": "correct",
+      "lemma": "eat",
+      "frame": "old",
+      "input": "She eats the apple.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 8
+              }
+            ],
+            "ruleId": "SVO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 18
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-11",
+      "kind": "correct",
+      "lemma": "eat",
+      "frame": "old",
+      "input": "She ate the apple.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 7
+              }
+            ],
+            "ruleId": "SVO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 8,
+                "end": 17
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-12",
+      "kind": "correct",
+      "lemma": "eat",
+      "frame": "old",
+      "input": "She will eat the apple.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 12
+              }
+            ],
+            "ruleId": "MODAL-WILL-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 13,
+                "end": 22
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-13",
+      "kind": "correct",
+      "lemma": "eat",
+      "frame": "old",
+      "input": "She is eating the apple.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": null,
+        "aspect": "progressive",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 13
+              }
+            ],
+            "ruleId": "PREDICATE-PROGRESSIVE-ACTIVE"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 14,
+                "end": 23
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-14",
+      "kind": "error",
+      "lemma": "eat",
+      "input": "She eat.",
+      "controlId": "30-1",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 4,
+                  "end": 7
+                },
+                "expected": "eat",
+                "replacement": "eats"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "30-15",
+      "kind": "error",
+      "lemma": "eat",
+      "input": "She will eats.",
+      "controlId": "30-5",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "MODAL-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 9,
+                  "end": 13
+                },
+                "expected": "eats",
+                "replacement": "eat"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "30-16",
+      "kind": "correct",
+      "lemma": "read",
+      "frame": "new",
+      "input": "She reads.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 9
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-17",
+      "kind": "correct",
+      "lemma": "read",
+      "frame": "new",
+      "input": "She read.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 8
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-18",
+      "kind": "correct",
+      "lemma": "read",
+      "frame": "new",
+      "input": "She does not read.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 17
+              }
+            ],
+            "ruleId": "NEGATIVE-DO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-19",
+      "kind": "correct",
+      "lemma": "read",
+      "frame": "new",
+      "input": "She can read.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "can",
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 7
+              },
+              {
+                "start": 8,
+                "end": 12
+              }
+            ],
+            "ruleId": "MODAL-CAN-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-20",
+      "kind": "correct",
+      "lemma": "read",
+      "frame": "new",
+      "input": "She will read.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 13
+              }
+            ],
+            "ruleId": "MODAL-WILL-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-21",
+      "kind": "correct",
+      "lemma": "read",
+      "frame": "new",
+      "input": "Does she read?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "yes-no",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              },
+              {
+                "start": 9,
+                "end": 13
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 8
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-22",
+      "kind": "correct",
+      "lemma": "read",
+      "frame": "new",
+      "input": "She is reading.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": null,
+        "aspect": "progressive",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 14
+              }
+            ],
+            "ruleId": "PREDICATE-PROGRESSIVE-ACTIVE"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-23",
+      "kind": "correct",
+      "lemma": "read",
+      "frame": "new",
+      "input": "Who reads?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-subject",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "WH-SUBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 9
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-24",
+      "kind": "correct",
+      "lemma": "read",
+      "frame": "new",
+      "input": "When will she read?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 9
+              },
+              {
+                "start": 14,
+                "end": 18
+              }
+            ],
+            "ruleId": "QUESTION-WILL-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 13
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-25",
+      "kind": "correct",
+      "lemma": "read",
+      "frame": "old",
+      "input": "She reads the book.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 9
+              }
+            ],
+            "ruleId": "SVO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 18
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-26",
+      "kind": "correct",
+      "lemma": "read",
+      "frame": "old",
+      "input": "She read the book.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 8
+              }
+            ],
+            "ruleId": "SVO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 17
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-27",
+      "kind": "correct",
+      "lemma": "read",
+      "frame": "old",
+      "input": "She will read the book.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 13
+              }
+            ],
+            "ruleId": "MODAL-WILL-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 14,
+                "end": 22
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-28",
+      "kind": "correct",
+      "lemma": "read",
+      "frame": "old",
+      "input": "She is reading the book.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": null,
+        "aspect": "progressive",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 14
+              }
+            ],
+            "ruleId": "PREDICATE-PROGRESSIVE-ACTIVE"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 15,
+                "end": 23
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-29",
+      "kind": "error",
+      "lemma": "read",
+      "input": "She read.",
+      "controlId": "30-16",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 4,
+                  "end": 8
+                },
+                "expected": "read",
+                "replacement": "reads"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "30-30",
+      "kind": "error",
+      "lemma": "read",
+      "input": "She will reads.",
+      "controlId": "30-20",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "MODAL-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 9,
+                  "end": 14
+                },
+                "expected": "reads",
+                "replacement": "read"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "30-31",
+      "kind": "correct",
+      "lemma": "write",
+      "frame": "new",
+      "input": "She writes.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 10
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-32",
+      "kind": "correct",
+      "lemma": "write",
+      "frame": "new",
+      "input": "She wrote.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 9
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-33",
+      "kind": "correct",
+      "lemma": "write",
+      "frame": "new",
+      "input": "She does not write.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 18
+              }
+            ],
+            "ruleId": "NEGATIVE-DO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-34",
+      "kind": "correct",
+      "lemma": "write",
+      "frame": "new",
+      "input": "She can write.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "can",
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 7
+              },
+              {
+                "start": 8,
+                "end": 13
+              }
+            ],
+            "ruleId": "MODAL-CAN-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-35",
+      "kind": "correct",
+      "lemma": "write",
+      "frame": "new",
+      "input": "She will write.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 14
+              }
+            ],
+            "ruleId": "MODAL-WILL-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-36",
+      "kind": "correct",
+      "lemma": "write",
+      "frame": "new",
+      "input": "Does she write?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "yes-no",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              },
+              {
+                "start": 9,
+                "end": 14
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 8
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-37",
+      "kind": "correct",
+      "lemma": "write",
+      "frame": "new",
+      "input": "She is writing.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": null,
+        "aspect": "progressive",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 14
+              }
+            ],
+            "ruleId": "PREDICATE-PROGRESSIVE-ACTIVE"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-38",
+      "kind": "correct",
+      "lemma": "write",
+      "frame": "new",
+      "input": "Who writes?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-subject",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "WH-SUBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 10
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-39",
+      "kind": "correct",
+      "lemma": "write",
+      "frame": "new",
+      "input": "When will she write?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 9
+              },
+              {
+                "start": 14,
+                "end": 19
+              }
+            ],
+            "ruleId": "QUESTION-WILL-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 13
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-40",
+      "kind": "correct",
+      "lemma": "write",
+      "frame": "old",
+      "input": "She writes the letter.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 10
+              }
+            ],
+            "ruleId": "SVO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 21
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-41",
+      "kind": "correct",
+      "lemma": "write",
+      "frame": "old",
+      "input": "She wrote the letter.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 9
+              }
+            ],
+            "ruleId": "SVO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 20
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-42",
+      "kind": "correct",
+      "lemma": "write",
+      "frame": "old",
+      "input": "She will write the letter.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 14
+              }
+            ],
+            "ruleId": "MODAL-WILL-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 15,
+                "end": 25
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-43",
+      "kind": "correct",
+      "lemma": "write",
+      "frame": "old",
+      "input": "She is writing the letter.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": null,
+        "aspect": "progressive",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 14
+              }
+            ],
+            "ruleId": "PREDICATE-PROGRESSIVE-ACTIVE"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 15,
+                "end": 25
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-44",
+      "kind": "error",
+      "lemma": "write",
+      "input": "She write.",
+      "controlId": "30-31",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 4,
+                  "end": 9
+                },
+                "expected": "write",
+                "replacement": "writes"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "30-45",
+      "kind": "error",
+      "lemma": "write",
+      "input": "She will writes.",
+      "controlId": "30-35",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "MODAL-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 9,
+                  "end": 15
+                },
+                "expected": "writes",
+                "replacement": "write"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "30-46",
+      "kind": "correct",
+      "lemma": "open",
+      "frame": "new",
+      "input": "The door opens.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 8
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 14
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-47",
+      "kind": "correct",
+      "lemma": "open",
+      "frame": "new",
+      "input": "The door opened.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 8
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 15
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-48",
+      "kind": "correct",
+      "lemma": "open",
+      "frame": "new",
+      "input": "The door does not open.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 8
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 22
+              }
+            ],
+            "ruleId": "NEGATIVE-DO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-49",
+      "kind": "correct",
+      "lemma": "open",
+      "frame": "new",
+      "input": "The door can open.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "can",
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 8
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 12
+              },
+              {
+                "start": 13,
+                "end": 17
+              }
+            ],
+            "ruleId": "MODAL-CAN-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-50",
+      "kind": "correct",
+      "lemma": "open",
+      "frame": "new",
+      "input": "The door will open.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 8
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 18
+              }
+            ],
+            "ruleId": "MODAL-WILL-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-51",
+      "kind": "correct",
+      "lemma": "open",
+      "frame": "new",
+      "input": "Does the door open?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "yes-no",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              },
+              {
+                "start": 14,
+                "end": 18
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 13
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-52",
+      "kind": "correct",
+      "lemma": "open",
+      "frame": "new",
+      "input": "The door is opening.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": null,
+        "aspect": "progressive",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 8
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 19
+              }
+            ],
+            "ruleId": "PREDICATE-PROGRESSIVE-ACTIVE"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-53",
+      "kind": "correct",
+      "lemma": "open",
+      "frame": "new",
+      "input": "What opens?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-subject",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ],
+            "ruleId": "WH-SUBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 10
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-54",
+      "kind": "correct",
+      "lemma": "open",
+      "frame": "new",
+      "input": "When will the door open?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 9
+              },
+              {
+                "start": 19,
+                "end": 23
+              }
+            ],
+            "ruleId": "QUESTION-WILL-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 18
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-55",
+      "kind": "correct",
+      "lemma": "open",
+      "frame": "old",
+      "input": "She opens the door.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 9
+              }
+            ],
+            "ruleId": "SVO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 18
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-56",
+      "kind": "correct",
+      "lemma": "open",
+      "frame": "old",
+      "input": "She opened the door.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 10
+              }
+            ],
+            "ruleId": "SVO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 19
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-57",
+      "kind": "correct",
+      "lemma": "open",
+      "frame": "old",
+      "input": "She will open the door.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 13
+              }
+            ],
+            "ruleId": "MODAL-WILL-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 14,
+                "end": 22
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-58",
+      "kind": "correct",
+      "lemma": "open",
+      "frame": "old",
+      "input": "She is opening the door.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": null,
+        "aspect": "progressive",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 14
+              }
+            ],
+            "ruleId": "PREDICATE-PROGRESSIVE-ACTIVE"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 15,
+                "end": 23
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-59",
+      "kind": "error",
+      "lemma": "open",
+      "input": "The door open.",
+      "controlId": "30-46",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 9,
+                  "end": 13
+                },
+                "expected": "open",
+                "replacement": "opens"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "30-60",
+      "kind": "error",
+      "lemma": "open",
+      "input": "The door will opens.",
+      "controlId": "30-50",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "MODAL-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 14,
+                  "end": 19
+                },
+                "expected": "opens",
+                "replacement": "open"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "30-61",
+      "kind": "correct",
+      "lemma": "close",
+      "frame": "new",
+      "input": "The window closes.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 10
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 17
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-62",
+      "kind": "correct",
+      "lemma": "close",
+      "frame": "new",
+      "input": "The window closed.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 10
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 17
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-63",
+      "kind": "correct",
+      "lemma": "close",
+      "frame": "new",
+      "input": "The window does not close.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 10
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 25
+              }
+            ],
+            "ruleId": "NEGATIVE-DO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-64",
+      "kind": "correct",
+      "lemma": "close",
+      "frame": "new",
+      "input": "The window can close.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "can",
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 10
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 14
+              },
+              {
+                "start": 15,
+                "end": 20
+              }
+            ],
+            "ruleId": "MODAL-CAN-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-65",
+      "kind": "correct",
+      "lemma": "close",
+      "frame": "new",
+      "input": "The window will close.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 10
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 21
+              }
+            ],
+            "ruleId": "MODAL-WILL-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-66",
+      "kind": "correct",
+      "lemma": "close",
+      "frame": "new",
+      "input": "Does the window close?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "yes-no",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              },
+              {
+                "start": 16,
+                "end": 21
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 15
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-67",
+      "kind": "correct",
+      "lemma": "close",
+      "frame": "new",
+      "input": "The window is closing.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": null,
+        "aspect": "progressive",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 10
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 21
+              }
+            ],
+            "ruleId": "PREDICATE-PROGRESSIVE-ACTIVE"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-68",
+      "kind": "correct",
+      "lemma": "close",
+      "frame": "new",
+      "input": "What closes?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-subject",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ],
+            "ruleId": "WH-SUBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 11
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-69",
+      "kind": "correct",
+      "lemma": "close",
+      "frame": "new",
+      "input": "When will the window close?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 9
+              },
+              {
+                "start": 21,
+                "end": 26
+              }
+            ],
+            "ruleId": "QUESTION-WILL-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 20
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-70",
+      "kind": "correct",
+      "lemma": "close",
+      "frame": "old",
+      "input": "She closes the window.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 10
+              }
+            ],
+            "ruleId": "SVO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 21
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-71",
+      "kind": "correct",
+      "lemma": "close",
+      "frame": "old",
+      "input": "She closed the window.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 10
+              }
+            ],
+            "ruleId": "SVO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 21
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-72",
+      "kind": "correct",
+      "lemma": "close",
+      "frame": "old",
+      "input": "She will close the window.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 14
+              }
+            ],
+            "ruleId": "MODAL-WILL-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 15,
+                "end": 25
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-73",
+      "kind": "correct",
+      "lemma": "close",
+      "frame": "old",
+      "input": "She is closing the window.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": null,
+        "aspect": "progressive",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 14
+              }
+            ],
+            "ruleId": "PREDICATE-PROGRESSIVE-ACTIVE"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 15,
+                "end": 25
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-74",
+      "kind": "error",
+      "lemma": "close",
+      "input": "The window close.",
+      "controlId": "30-61",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 11,
+                  "end": 16
+                },
+                "expected": "close",
+                "replacement": "closes"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "30-75",
+      "kind": "error",
+      "lemma": "close",
+      "input": "The window will closes.",
+      "controlId": "30-65",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "MODAL-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 16,
+                  "end": 22
+                },
+                "expected": "closes",
+                "replacement": "close"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "30-76",
+      "kind": "boundary",
+      "input": "They read.",
+      "expected": {
+        "status": "ambiguous",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "ambiguous",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-77",
+      "kind": "boundary",
+      "input": "She is eat.",
+      "expected": {
+        "status": "ambiguous",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "ambiguous",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-78",
+      "kind": "boundary",
+      "input": "The door is open.",
+      "expected": {
+        "status": "ambiguous",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "ambiguous",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-79",
+      "kind": "boundary",
+      "input": "The window is close.",
+      "expected": {
+        "status": "ambiguous",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "ambiguous",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-80",
+      "kind": "boundary",
+      "input": "She has eaten.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-81",
+      "kind": "boundary",
+      "input": "She has read.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-82",
+      "kind": "boundary",
+      "input": "She has written.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-83",
+      "kind": "boundary",
+      "input": "The door has opened.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-84",
+      "kind": "boundary",
+      "input": "The window has closed.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-85",
+      "kind": "boundary",
+      "input": "She opens.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-86",
+      "kind": "boundary",
+      "input": "She closes.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-87",
+      "kind": "boundary",
+      "input": "It eats.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-88",
+      "kind": "boundary",
+      "input": "It reads.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-89",
+      "kind": "boundary",
+      "input": "It writes.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-90",
+      "kind": "boundary",
+      "input": "The book opens.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-91",
+      "kind": "boundary",
+      "input": "The teacher closes.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-92",
+      "kind": "boundary",
+      "input": "She eats near the table.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-93",
+      "kind": "boundary",
+      "input": "The door opens near the table.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-94",
+      "kind": "boundary",
+      "input": "Eat.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-95",
+      "kind": "boundary",
+      "input": "Read.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-96",
+      "kind": "boundary",
+      "input": "Write.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-97",
+      "kind": "boundary",
+      "input": "Open.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-98",
+      "kind": "boundary",
+      "input": "Close.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-99",
+      "kind": "boundary",
+      "input": "She eats the book the toy.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-100",
+      "kind": "boundary",
+      "input": "She reads the book useful.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-101",
+      "kind": "boundary",
+      "input": "She writes the letter the book.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-102",
+      "kind": "boundary",
+      "input": "The door opens the door clean.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-103",
+      "kind": "boundary",
+      "input": "The window closes the window clean.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-104",
+      "kind": "boundary",
+      "input": "She eats and he sleeps.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": [],
+            "clauseIndex": 1
+          }
+        ],
+        "corrections": []
+      }
+    }
+  ]
+}

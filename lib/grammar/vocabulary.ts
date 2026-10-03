@@ -17,6 +17,8 @@ for (const entry of entries) {
   if (entry.partOfSpeech === "adjective") { adjectives.add(entry.lemma); adjectiveInitialSounds[entry.lemma] = entry.attributes.initialSound as "vowel" | "consonant"; }
 }
 const markers = (kind: string, use?: string) => new Set(entries.filter(e => e.attributes.markerKind === kind && (!use || e.attributes.uses?.includes(use))).flatMap(e => e.forms.map(f => f.surface)));
+export const whMarkers = new Set(entries.filter(e=>e.attributes.uses?.some(u=>["wh-subject","wh-object","wh-adverbial"].includes(u))).map(e=>e.lemma));
+export const locationMarkers = markers("marker", "location-preposition");
 export const directObjectPronouns = markers("object-pronoun", "direct-object");
 export const objectPronouns = markers("object-pronoun", "recipient");
 export const subjectPronouns = markers("subject-pronoun");

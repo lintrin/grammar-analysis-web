@@ -1,3 +1,4 @@
+import { migrateClassification } from "./helpers/classification-migration.mjs";
 import { LEXICON_VERSION, LEXICON_HASH } from "../lib/grammar/vocabulary.ts";
 import test from 'node:test';
 import assert from 'node:assert/strict';
@@ -23,14 +24,15 @@ test('stage 13 manual answers fix six capability groups and their original-text 
     assert.ok(originalDevelopment.boundaries.filter(f => f.stage === stage && f.status === 'unsupported').length >= 10);
   }
   for (const fixture of development.fixtures) {
-    const expected = expectedStage12(fixture);
-    validateAnalysisResult({ ...expected, input: fixture.input, inputVersion: 0, ruleVersion: 'planned', lexiconVersion: LEXICON_VERSION, lexiconHash: LEXICON_HASH, reasons: [], messages: ['人工固定答案'],
+    const expected = migrateClassification(expectedStage12(fixture),fixture.input);
+    validateAnalysisResult({ ...migrateClassification(expected,fixture.input), input: fixture.input, inputVersion: 0, ruleVersion: 'planned', lexiconVersion: LEXICON_VERSION, lexiconHash: LEXICON_HASH, reasons: [], messages: ['人工固定答案'],
       nodes: expected.nodes.map(n => ({ ...n, id: n.key, parentId: n.parentKey, ruleId: 'PLANNED', explanation: '人工标注的分类与成分区间' })) });
   }
 });
 
 test('stage 13 audited participles include irregular and doubled-letter forms', () => {
-  assert.equal(lexicalVerbs.length, 100);
+  assert.equal(lexicalVerbs.length, 105);
+  assert.equal(new Set(lexicalVerbs.map(v=>v.base)).size,100);
   for (const [base, participle, progressive] of [['give','given','giving'],['show','shown','showing'],['go','gone','going'],['run','run','running'],['see','seen','seeing'],['make','made','making']]) {
     assert.equal(lexicalForm(participle).base, base);
     assert.equal(lexicalForm(progressive).base, base);

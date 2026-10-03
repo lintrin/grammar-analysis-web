@@ -1,7 +1,8 @@
 import type { AnalysisResult, ComponentNode } from "./protocol.ts";
 import { isWordToken, type Token } from "./tokens.ts";
 import { analyzePurpose } from "./purposes.ts";
-import { knownWords } from "./vocabulary.ts";
+import { knownWords, locationMarkers, whMarkers, verbCandidates } from "./vocabulary.ts";
+import { isSecondFrame } from "./frame-scope.ts";
 import { createBoundaryBudget, forkCandidate } from "./context.ts";
 import { diagnose, clauseReasons } from "./feedback.ts";
 
@@ -14,7 +15,6 @@ export function analyzeClauses(tokens: Token[], punctuation: string | null, resu
   const connectors = tokens.filter(t => ["and", "but", "because", "if"].includes(t.normalized));
   const unsupported = conditional ? "当前条件从句仅支持句首 If + 条件从句, + 主句，必须有一个英文逗号；两侧须为显式主语的完整陈述结构。主从句暂不提供纠错。" : causal ? "当前原因从句仅支持主句 + because + 原因从句，无逗号；两侧须为显式主语的完整陈述结构。主从句暂不提供纠错。" : "当前并列句仅支持两个显式主语的完整陈述分句，由一个 and/but 连接；可在连接词前加一个逗号。并列句暂不提供纠错。";
   if (connectors.length !== 1 || (conditional ? connectors[0].normalized !== "if" : causal ? connectors[0].normalized !== "because" : !["and", "but"].includes(connectors[0].normalized))) return unsupported;
-  if (punctuation !== null && punctuation !== ".") { diagnose(result, "punctuation"); return unsupported; }
   const connector = connectors[0];
   const split = tokens.indexOf(connector);
   const commas = tokens.filter(t => t.text === ",");
@@ -25,6 +25,10 @@ export function analyzeClauses(tokens: Token[], punctuation: string | null, resu
   const groups = conditional ? [tokens.slice(1, commaIndex), tokens.slice(commaIndex + 1)] : [tokens.slice(0, split - (comma ? 1 : 0)), tokens.slice(split + 1)];
   if (groups.some(group => group.some(t => !isWordToken(t)))) { diagnose(result, "punctuation"); return unsupported; }
   if (groups.some(group => !group.length)) return unsupported;
+  if(groups.some(group=>whMarkers.has(group[0]?.normalized))) { diagnose(result,"unsupported-structure",[],whMarkers.has(groups[0][0]?.normalized)?1:2);return "特殊疑问首批只开放单个简单句；尚未开放分句载体。"; }
+  if (punctuation !== null && punctuation !== ".") { diagnose(result, "punctuation"); return unsupported; }
+  if (groups.some(group=>group.some(t=>locationMarkers.has(t.normalized)))) { diagnose(result,"unsupported-structure",[],groups[0].some(t=>locationMarkers.has(t.normalized))?1:2);return "地点短语首批仅开放单简单句，尚未开放分句载体。"; }
+  if (conditional && groups[0].some(t=>t.normalized === "will")) return "首批范围尚未开放 if 条件从句中的 will；这不表示所有这种用法都有语法错误。";
   const candidates: AnalysisResult[] = [];
   const unknownReasons = groups.flatMap((group, index) => {
     const ranges = group.filter(t => !knownWords.has(t.normalized)).map(({ start, end }) => ({ start, end }));
@@ -45,6 +49,14 @@ export function analyzeClauses(tokens: Token[], punctuation: string | null, resu
       const detail = candidate.status === "partial" ? "该分句的动词形式不符合当前规则。" : message;
       return `第 ${index + 1} 分句未完整匹配限定陈述结构。${detail} ${unsupported}`;
     }
+    if(candidate.pattern === "SV" && candidate.voice === "active") {
+      const verb = candidate.nodes.find(n=>n.role === "verb")!;
+      for(const token of group.filter(t=>verb.ranges.some(q=>q.start<=t.start&&q.end>=t.end))) {
+        const choices=verbCandidates(token.normalized,consumeBoundary);
+        if(choices===null) { diagnose(result,"budget-exceeded",[],(index+1) as 1|2);return "分句候选预算已耗尽。"; }
+        if(choices.some(isSecondFrame)) { diagnose(result,"unsupported-structure",[],(index+1) as 1|2);return "五个新增 SV 搭配首批仅开放单简单句，不自动继承分句权限。"; }
+      }
+    }
     candidates.push(candidate);
   }
   const ruleId = conditional ? "IF-001" : causal ? "BECAUSE-001" : "COMPOUND-001";
@@ -56,7 +68,7 @@ export function analyzeClauses(tokens: Token[], punctuation: string | null, resu
     const group = groups[index];
     nodes.push({ id: clauseId, role: "clause", parentId: null, implicit: false,
       ranges: [{ start: group[0].start, end: group.at(-1)!.end }], ruleId, explanation: `${conditional ? (index === 0 ? "条件从句" : "主句") : causal ? (index === 0 ? "主句" : "原因从句") : `第 ${index + 1} 分句`}是完整陈述结构。${explanation}`,
-      clause: { kind: complex ? (index === (conditional ? 1 : 0) ? "main" : "subordinate") : "independent", purpose: "declarative", pattern: candidate.pattern!, tense: candidate.tense, aspect: candidate.aspect, voice: candidate.voice } });
+      clause: { kind: complex ? (index === (conditional ? 1 : 0) ? "main" : "subordinate") : "independent", purpose: "declarative", pattern: candidate.pattern!, tense: candidate.tense, modal: candidate.modal, questionType: null, aspect: candidate.aspect, voice: candidate.voice } });
     for (const node of candidate.nodes) nodes.push({ ...node, id: `${clauseId}-${node.id}`, parentId: node.parentId === null ? clauseId : `${clauseId}-${node.parentId}` });
   }
   nodes.push({ id: "connector", role: "connector", parentId: null, implicit: false,

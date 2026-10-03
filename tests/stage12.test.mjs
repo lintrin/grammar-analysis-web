@@ -1,3 +1,4 @@
+import { migratedBehavior } from "./helpers/classification-migration.mjs";
 import test from 'node:test';
 import { checkHistoricalIndependence } from './helpers/historical-independence.mjs';
 import assert from 'node:assert/strict';
@@ -23,7 +24,8 @@ for (const f of stage12.fixtures) test(`stage 12 independent ${f.id}: ${f.input}
 });
 for (const f of stage12.boundaries) test(`stage 12 independent contrast: ${f.input}`, () => {
   const result = analyzeSentence(f.input);
-  if (f.expected) compareLexiconExpectation(f.expected, result);
+  if (migratedBehavior(f.input)) compareLexiconExpectation(migratedBehavior(f.input).expected,result);
+  else if (f.expected) compareLexiconExpectation(f.expected, result);
   else {
     assert.equal(result.status, f.status);
     if (f.status === 'complete') compareStage9(expectedStage12(f), result);

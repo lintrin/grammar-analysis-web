@@ -38,7 +38,7 @@ export const lexiconFrames = sqliteTable("lexicon_frames", {
   check("frame_recipient", sql`${t.recipient} IS NULL OR ${t.recipient} = 'person'`),
   check("frame_complement", sql`${t.complement} IS NULL OR ${t.complement} IN ('single-adjective','noun-or-single-adjective')`),
   check("frame_passive", sql`${t.passivePromotion} IS NULL OR ${t.passivePromotion} IN ('direct-object','direct-object-or-recipient')`),
-  check("frame_tail", sql`${t.fixedTail} IS NULL OR ${t.fixedTail} = 'to school'`),
+  check("frame_tail", sql`${t.fixedTail} IS NULL OR ${t.fixedTail} IN ('to school','location:in,on,near','location:in,on,under,near')`),
   check("frame_shape", sql`(${t.pattern} = 'SVOO') = (${t.recipient} IS NOT NULL) AND
     (${t.pattern} IN ('SVC','SVOC')) = (${t.complement} IS NOT NULL) AND
     (${t.passivePromotion} IS NULL OR (${t.pattern} = 'SVO' AND ${t.passivePromotion} = 'direct-object') OR (${t.pattern} = 'SVOO' AND ${t.passivePromotion} = 'direct-object-or-recipient')) AND

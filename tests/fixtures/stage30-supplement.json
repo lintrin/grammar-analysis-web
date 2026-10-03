@@ -1,0 +1,193 @@
+{
+  "authorship": "Explicit cross-capability scope, manually fixed full roles/classifications/rule IDs before supplemental behavior execution.",
+  "fixtures": [
+    {
+      "id": "30-can-negative-sv",
+      "kind": "correct",
+      "input": "She can not read.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "can",
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 16
+              }
+            ],
+            "ruleId": "NEGATIVE-CAN-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-wont-sv",
+      "kind": "correct",
+      "input": "The door won’t open.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 8
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 19
+              }
+            ],
+            "ruleId": "NEGATIVE-WILL-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-progressive-question",
+      "kind": "correct",
+      "input": "Is she writing?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "yes-no",
+        "aspect": "progressive",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 2
+              },
+              {
+                "start": 7,
+                "end": 14
+              }
+            ],
+            "ruleId": "PREDICATE-PROGRESSIVE-ACTIVE"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 6
+              }
+            ],
+            "ruleId": "PREDICATE-PROGRESSIVE-ACTIVE"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "30-old-passive",
+      "kind": "correct",
+      "input": "The door is opened.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "passive",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 8
+              }
+            ],
+            "ruleId": "PREDICATE-SIMPLE-PASSIVE"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 18
+              }
+            ],
+            "ruleId": "PREDICATE-SIMPLE-PASSIVE"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    }
+  ]
+}

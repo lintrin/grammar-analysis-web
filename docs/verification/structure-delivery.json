@@ -1,0 +1,164 @@
+{
+  "date": "2026-10-03",
+  "manifest": {
+    "lexiconFormatVersion": 1,
+    "lexiconHash": "dc7e010f3314eec82a61720ad1d6249209c459236245b8f72ce9fcee5fc7bb4a",
+    "lexiconVersion": "1.7.0",
+    "ruleVersion": "0.22.0"
+  },
+  "runtime": {
+    "node": "v24.14.1",
+    "chromium": "147.0.7727.15",
+    "platform": "macOS arm64"
+  },
+  "dictionary": {
+    "entries": 231,
+    "lexicalLemmas": 100,
+    "lexicalFrames": 105,
+    "snapshotBytes": 213658,
+    "gzipBytes": 16194
+  },
+  "tests": {
+    "total": 3429,
+    "passed": 3429,
+    "failed": 0,
+    "skipped": 0
+  },
+  "checks": {
+    "typescript": "passed",
+    "eslint": "passed with no warnings",
+    "build": "passed",
+    "lexiconVerify": "passed",
+    "historicalStage12Stage18Stage9": "passed",
+    "historicalStage25": "passed",
+    "realHmrVersionHashAndHeldTask": "passed"
+  },
+  "browserAssertions": [
+    "every frozen status, classification, node role, original UTF-16 range and rule ID",
+    "correction exact edits and complete reanalysis controls",
+    "1280px desktop and 390px mobile",
+    "1000/1001 input boundary and shared-budget pressure",
+    "offline analysis and correction",
+    "input absent from requests, console, server logs and browser storage",
+    "refresh resets default sentence"
+  ],
+  "stages": [
+    {
+      "stage": 27,
+      "status": "complete",
+      "fixture": "tests/fixtures/stage27-development.json",
+      "fixtureHash": "eeb07adc4ee3058842bb222f86be9d2ab0c2a2c6c1d716f662ae49723da9fef9",
+      "browser": {
+        "dev": {
+          "report": "stage27-dev-browser.json",
+          "browser": "147.0.7727.15",
+          "correct": 52,
+          "safeCorrections": 15,
+          "refusalControls": 25,
+          "pressureSamples": 60,
+          "maxRenderMs": 42.5,
+          "longTasks": 0
+        },
+        "built": {
+          "report": "stage27-built-browser.json",
+          "browser": "147.0.7727.15",
+          "correct": 52,
+          "safeCorrections": 15,
+          "refusalControls": 25,
+          "pressureSamples": 60,
+          "maxRenderMs": 10.5,
+          "longTasks": 0
+        }
+      }
+    },
+    {
+      "stage": 28,
+      "status": "complete",
+      "fixture": "tests/fixtures/stage28-development.json",
+      "fixtureHash": "cc486237ad22de513e8f6052b8d4cd65b9e5a7aafdaf9cd44610a23803a7cb91",
+      "browser": {
+        "dev": {
+          "report": "stage28-dev-browser.json",
+          "browser": "147.0.7727.15",
+          "correct": 48,
+          "safeCorrections": 12,
+          "refusalControls": 24,
+          "pressureSamples": 60,
+          "maxRenderMs": 40.899999998509884,
+          "longTasks": 0
+        },
+        "built": {
+          "report": "stage28-built-browser.json",
+          "browser": "147.0.7727.15",
+          "correct": 48,
+          "safeCorrections": 12,
+          "refusalControls": 24,
+          "pressureSamples": 60,
+          "maxRenderMs": 10.199999995529652,
+          "longTasks": 0
+        }
+      }
+    },
+    {
+      "stage": 29,
+      "status": "complete",
+      "fixture": "tests/fixtures/stage29-development.json",
+      "fixtureHash": "4c69888afb86ce650971cef8545f717ac58f9f59e77f232b55b1485433616c44",
+      "browser": {
+        "dev": {
+          "report": "stage29-dev-browser.json",
+          "browser": "147.0.7727.15",
+          "correct": 95,
+          "safeCorrections": 15,
+          "refusalControls": 33,
+          "pressureSamples": 60,
+          "maxRenderMs": 40.80000000447035,
+          "longTasks": 0
+        },
+        "built": {
+          "report": "stage29-built-browser.json",
+          "browser": "147.0.7727.15",
+          "correct": 95,
+          "safeCorrections": 15,
+          "refusalControls": 33,
+          "pressureSamples": 60,
+          "maxRenderMs": 10.100000001490116,
+          "longTasks": 0
+        }
+      }
+    },
+    {
+      "stage": 30,
+      "status": "complete",
+      "fixture": "tests/fixtures/stage30-development.json",
+      "fixtureHash": "ae99f9081d292bec85a133c7c6adac44553ee0f9d56f0fcc836f3ab0e12e9d68",
+      "browser": {
+        "dev": {
+          "report": "stage30-dev-browser.json",
+          "browser": "147.0.7727.15",
+          "correct": 69,
+          "safeCorrections": 10,
+          "refusalControls": 29,
+          "pressureSamples": 80,
+          "maxRenderMs": 39.5,
+          "longTasks": 0
+        },
+        "built": {
+          "report": "stage30-built-browser.json",
+          "browser": "147.0.7727.15",
+          "correct": 69,
+          "safeCorrections": 10,
+          "refusalControls": 29,
+          "pressureSamples": 80,
+          "maxRenderMs": 11.099999994039536,
+          "longTasks": 0
+        }
+      }
+    }
+  ],
+  "nextStages": {
+    "31": "pending",
+    "32": "pending"
+  },
+  "limitation": "Local measurements include browser rendering; navigation is page loading, not isolated dictionary initialization. These development fixtures are not stage32 independent acceptance inputs."
+}

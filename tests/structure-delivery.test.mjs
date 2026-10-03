@@ -1,0 +1,63 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {createHash} from 'node:crypto';
+import {openDatabase,migrate,importData,query,revise,validateDatabase} from '../scripts/lexicon/store.mjs';
+import {validateRelease,rebuild,exportRelease,publish,review} from '../scripts/lexicon/release.mjs';
+import {canonical,normalizeEntry} from '../scripts/lexicon/data.mjs';
+import {analyzeSentence,applyCorrection} from '../lib/grammar.ts';
+import {verbCandidates,surfaceCandidates,lexicalVerbs} from '../lib/grammar/vocabulary.ts';
+import {instrumentBoundaries} from './helpers/stage12-performance.mjs';
+import {compareLexiconExpectation} from './helpers/lexicon-expectations.mjs';
+const read=path=>JSON.parse(readFileSync(path));
+for(const [stage,from,to]of [[27,'1.3.0','1.4.0'],[28,'1.4.0','1.5.0'],[29,'1.5.0','1.6.0'],[30,'1.6.0','1.7.0']])test(`${stage} fixed draft/selection replays hash-bound reviews from an empty database`,t=>{
+ const previous=validateRelease(read(`data/lexicon/releases/${from}.json`)),expected=validateRelease(read(`data/lexicon/releases/${to}.json`));
+ const db=openDatabase(':memory:',true);t.after(()=>db.close());migrate(db);rebuild(db,previous,previous.lexiconHash);
+ const draft=read(`data/lexicon/stage${stage}-import.json`);importData(db,{sources:draft.sources,entries:[]});
+ for(const e of draft.entries){const original=previous.entries.find(old=>old.id===e.id);if(original)revise(db,original.revisionId,e);else importData(db,{sources:[],entries:[e]});}
+ const selection=read(`data/lexicon/stage${stage}-selection.json`);
+ assert.throws(()=>publish(db,selection),/approved/);
+ for(const row of query(db).filter(r=>r.status==='draft')){
+  assert.throws(()=>review(db,row.entry.revisionId,'0'.repeat(64),'stage-fixed-scope-audit','approve'),/current draft hash/);
+  review(db,row.entry.revisionId,row.contentHash,`stage${stage}-fixed-scope-audit`,'approve');
+ }
+ assert.equal(canonical(publish(db,selection)),canonical(expected));assert.deepEqual(exportRelease(db,from),previous);validateDatabase(db);
+});
+test('30 five new frames preserve every old frame, 100 lemmas and all real candidate identities',()=>{
+ const old=validateRelease(read('data/lexicon/releases/1.6.0.json')),current=validateRelease(read('data/lexicon/releases/1.7.0.json'));
+ assert.equal(current.entries.length,231);assert.equal(lexicalVerbs.length,105);assert.equal(new Set(lexicalVerbs.map(v=>v.entryId)).size,100);
+ const scope=read('data/grammar/stage30-capabilities.json');
+ for(const lemma of ['eat','read','write','open','close']){
+  const before=old.entries.find(e=>e.partOfSpeech==='verb'&&e.lemma===lemma),after=current.entries.find(e=>e.id===before.id);
+  assert.deepEqual(after.forms,before.forms);for(const f of before.frames)assert.deepEqual(after.frames.find(n=>n.id===f.id),f);
+  const f=after.frames.find(f=>f.id===`${lemma}-sv`),s=scope.frames[f.id];assert.equal(f.allowProgressive,s.allowProgressive);assert.equal(f.allowPerfect,s.allowPerfect);assert.equal(f.passivePromotion,null);assert.equal(f.fixedTail,null);
+  assert.deepEqual(new Set(verbCandidates(lemma,()=>true).map(v=>v.frameId)),new Set([`${lemma}-sv`,`${lemma}-svo`]));
+ }
+ assert.equal(surfaceCandidates('read',()=>true).length,6);assert.equal(verbCandidates('read',()=>true).length,2);
+});
+test('28 audited location tail rejects wrong frame/lemma/preposition payload',()=>{
+ const draft=read('data/lexicon/stage28-import.json'),e=draft.entries.find(e=>e.lemma==='work');
+ for(const mutate of [x=>x.frames[0].fixedTail='location:in,on,under,near',x=>x.frames[0].fixedTail='location:near,in,on',x=>x.lemma='read']){const bad=structuredClone(e);mutate(bad);assert.throws(()=>normalizeEntry(bad));}
+});
+test('30 real overlapping surfaces consume the shared budget without losing frames',()=>{
+ for(const [input,status]of [['She reads.','complete'],['She reads the book.','complete'],['She is reading.','complete'],['What does she read?','complete'],['They read.','ambiguous'],['She is eat.','ambiguous'],['She eats and he sleeps.','unsupported']]){
+  const bounded=instrumentBoundaries(input);assert.equal(bounded.result.status,status);assert.ok(bounded.accepted<=4000);
+  const empty=instrumentBoundaries(input,0);assert.equal(empty.attempts,1);assert.equal(empty.result.reasons[0].code,'budget-exceeded');assert.deepEqual(empty.result.nodes,[]);assert.deepEqual(empty.result.corrections,[]);
+ }
+ const long=('The '+'tall '.repeat(145)+'teacher will read.').padEnd(1000,' ');assert.equal(analyzeSentence(long).status,'complete');assert.equal(analyzeSentence(long+' ').status,'invalid');
+ const explosion=('She '+'read '.repeat(180)).padEnd(1000,' ');const bounded=instrumentBoundaries(explosion);assert.ok(bounded.accepted<=4000);assert.equal(bounded.result.reasons[0].code,'budget-exceeded');assert.deepEqual(bounded.result.nodes,[]);assert.deepEqual(bounded.result.corrections,[]);
+});
+test('27-30 historical behavior migrations retain old sources and complete corrected controls',()=>{
+ const {migrations}=read('tests/fixtures/structure-migrations.json');assert.equal(new Set(migrations.map(m=>m.input)).size,migrations.length);
+ for(const m of migrations){compareLexiconExpectation(m.expected,analyzeSentence(m.input));if(m.control){const r=analyzeSentence(m.input);const next=applyCorrection(r,r.corrections[0].id,m.input,0);assert.equal(next,m.control.input);compareLexiconExpectation(m.control.expected,analyzeSentence(next));}}
+ const revision=read('tests/fixtures/stage30-development.json').revisions[0];assert.equal(createHash('sha256').update(readFileSync('tests/fixtures/stage30-development-r1.json')).digest('hex'),revision.fromSha256);
+});
+
+for(const [stage,digest]of [[29,'915a1101f339498dd011c8f954a74b3804c0b34b276be1abfb4a135fd6716391'],[30,'a90f48857dae1f79c6f219ae4361fc0fd1a9bc4ff02dce4058dae88f7c9ded84']]){
+ const bytes=readFileSync(`tests/fixtures/stage${stage}-supplement.json`);
+ test(`${stage} explicit combination supplement stays fixed`,()=>assert.equal(createHash('sha256').update(bytes).digest('hex'),digest));
+ for(const f of JSON.parse(bytes).fixtures)test(`${stage} cross-capability ${f.id}`,()=>{
+  const r=analyzeSentence(f.input);compareLexiconExpectation(f.expected,r);
+  if(f.expected.status==='complete'){const signature=nodes=>nodes.map(n=>({role:n.role,ranges:n.ranges,ruleId:n.ruleId})).sort((a,b)=>JSON.stringify(a).localeCompare(JSON.stringify(b)));assert.deepEqual(signature(r.nodes),signature(f.expected.nodes));}
+ });
+}

@@ -50,7 +50,7 @@ be 的 SVC、go 的固定 to school、SVOO 人物接受者、SVO/SVOC 的宾格�
 
 阶段 20A 已交付 init/migrate、import、query、revise、validate 和完整修订 show；20B/C 已交付审核、发布、重建及客户端命令。完整维护 CLI 交付命令：init/migrate、import、query（lemma/surface/POS）、revise、validate、review、publish、export-release、rebuild、generate-client、verify。无环境数据库时 build 仍使用固定发布和生成客户端，缺失/非法则明确失败，不回退旧手写词典。构建不得悄悄生成或审核新内容；生成是显式开发命令，verify 检查确定性。
 
-当前联合清单为规则 `0.18.1` + 词典 `1.3.0`，222 个完整词条；1.0.0/1.1.0/1.2.0 的历史发布仍冻结保存。阶段 26 从开源固定词形子集新增 73 个审核动词，见 [阶段 26](archive/stage26-scope.md)。新增 57 条草稿来源、逐词范围和发布重现见 [阶段 21](archive/stage21-scope.md)。`rebuild` 使用当前清单锁定的版本，不默认回到旧种子。
+当前联合清单为规则 `0.22.2` + 词典 `1.7.0`，231 个完整词条、100 个实义词元与 105 个实义搭配；1.0.0–1.6.0 的历史发布仍冻结保存。阶段 26 从开源固定词形子集新增 73 个审核动词，见 [阶段 26](archive/stage26-scope.md)。新增 57 条草稿来源、逐词范围和发布重现见 [阶段 21](archive/stage21-scope.md)。`rebuild` 使用当前清单锁定的版本，不默认回到旧种子。
 
 ## 分析版本与失效
 
@@ -61,6 +61,14 @@ be 的 SVC、go 的固定 to school、SVOO 人物接受者、SVO/SVOC 的宾格�
 界面监听整个组合；变化时清除结果/建议、保留输入，分析开始捕获组合，结束再核对，旧组合的延迟结果不得显示。热更新同样验证此行为。分析只读已打包快照，不进行在线词典刷新、不上传句子。
 
 统一 candidate 查询覆盖简单句、所有用途、谓语链和两分句。枚举候选与完整搭配使用同一次共享计算预算；耗尽返回 budget-exceeded，无节点/建议。同形/多搭配能产生多个完整有效解释时返回 ambiguous，不以 first/find 偷选。初始化体积、时间及候选数需在 20C 实测。
+
+## 阶段 27–30 当前约束
+
+frame 的 fixedTail 仍为必填字段，有限域为 null、"to school"、"location:in,on,near"、"location:in,on,under,near"。null 不提供额外尾部；to school 保留 go 的固定尾部；location 只为六个审核 SV 提供可省略的单地点短语许可。schema、SQL 0002、CLI 与客户端共同校验，不增加可选字段或旧格式默认值。迁移逐列保留既有行并重建全部 frame 冻结及集合触发器。
+
+阶段 27–30 import/selection 与不可变发布 1.4.0–1.7.0 可在空库逐阶段重建。will、地点介词、疑问功能词均经词典审核接入；eat/read/write/open/close 的原 SVO 不变，新 SV 使用独立稳定 frameId。data/grammar 能力矩阵限制每个新 frame 的用途与结构组合，候选必须保留 entryId/frameId 身份，不能跨搭配合并。
+
+结果协议新增必填 modal 与 questionType，顶层和各分句均显式给值；旧缺字段结果拒绝。当前规则版本、词典版本和哈希共同绑定分析与建议。完整实现及验收见 [阶段 30](archive/stage30-scope.md)。
 
 ## 阶段 20 验收门槛
 

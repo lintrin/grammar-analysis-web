@@ -1,3 +1,5 @@
+import { migratedBehavior } from "./helpers/classification-migration.mjs";
+import { compareLexiconExpectation } from "./helpers/lexicon-expectations.mjs";
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { analyzeSentence, applyCorrection, validateAnalysisResult } from '../lib/grammar.ts';
@@ -55,6 +57,7 @@ for (const input of [
   'What my book it is!', 'Does she go to schools?', 'She gave him this books.',
 ]) test(`no unsafe suggestion: ${input}`, () => {
   const r = analyzeSentence(input);
+  if(migratedBehavior(input)) {const m=migratedBehavior(input);compareLexiconExpectation(m.expected,r);const next=applyCorrection(r,r.corrections[0].id,input,0);assert.equal(next,m.control.input);compareLexiconExpectation(m.control.expected,analyzeSentence(next));return;}
   if (input === 'Can she go to school?') compareStage8Input(input, r);
   else assert.notEqual(r.status, 'complete');
   assert.deepEqual(r.corrections, []);

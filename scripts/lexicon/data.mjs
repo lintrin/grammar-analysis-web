@@ -16,13 +16,13 @@ const set = schema => z.array(schema).min(1).refine(a => new Set(a).size === a.l
 const noun = z.object({ person: z.boolean(), initialSound: sound }).strict();
 const adjective = z.object({ initialSound: sound, uses: set(z.enum(['attribute', 'subject-complement', 'object-complement'])) }).strict();
 const verb = z.object({}).strict();
-const functional = z.object({ markerKind: markers, uses: set(z.enum(['direct-object', 'recipient', 'finite-be', 'be-bridge', 'perfect-auxiliary', 'do-auxiliary', 'modal-can', 'time', 'coordination', 'subordination', 'article', 'possessive', 'demonstrative', 'subject', 'passive-agent', 'passive-recipient', 'go-destination', 'exclamation', 'negation'])) }).strict();
+const functional = z.object({ markerKind: markers, uses: set(z.enum(['direct-object', 'recipient', 'finite-be', 'be-bridge', 'perfect-auxiliary', 'do-auxiliary', 'modal-can', 'modal-will', 'time', 'coordination', 'subordination', 'article', 'possessive', 'demonstrative', 'subject', 'passive-agent', 'passive-recipient', 'go-destination', 'exclamation', 'negation', 'location-preposition', 'wh-subject', 'wh-object', 'wh-adverbial'])) }).strict();
 const frame = z.object({
   id: nonempty, pattern: z.enum(['SV', 'SVO', 'SVC', 'SVOO', 'SVOC']), recipient: z.literal('person').nullable(),
   complement: z.enum(['single-adjective', 'noun-or-single-adjective']).nullable(),
   allowProgressive: z.boolean(), allowPerfect: z.boolean(), passivePromotion: z.enum(['direct-object', 'direct-object-or-recipient']).nullable(),
   allowedPurposes: set(z.enum(['declarative', 'interrogative', 'imperative', 'exclamatory'])),
-  allowedPolarities: set(z.enum(['positive', 'negative'])), fixedTail: z.literal('to school').nullable(),
+  allowedPolarities: set(z.enum(['positive', 'negative'])), fixedTail: z.enum(['to school','location:in,on,near','location:in,on,under,near']).nullable(),
 }).strict();
 const entrySchema = z.object({
   id: nonempty, revisionId: nonempty, lemma: word, partOfSpeech: z.enum(['noun', 'adjective', 'verb', 'function-word']), sense: nonempty,
@@ -43,9 +43,9 @@ export function normalizeEntry(raw) {
     const allowed = {
       determiner: ['article', 'possessive', 'demonstrative'],
       'subject-pronoun': ['subject'], 'object-pronoun': ['direct-object', 'recipient'],
-      auxiliary: ['finite-be', 'be-bridge', 'perfect-auxiliary', 'do-auxiliary', 'modal-can'],
+      auxiliary: ['finite-be', 'be-bridge', 'perfect-auxiliary', 'do-auxiliary', 'modal-can', 'modal-will'],
       adverb: ['time'], connector: ['coordination', 'subordination'],
-      marker: ['passive-agent', 'passive-recipient', 'go-destination', 'exclamation', 'negation'],
+      marker: ['passive-agent', 'passive-recipient', 'go-destination', 'exclamation', 'negation', 'location-preposition', 'wh-subject', 'wh-object', 'wh-adverbial'],
     }[entry.attributes.markerKind];
     if (entry.attributes.uses.some(use => !allowed.includes(use))) throw new Error('Unsupported marker use');
   }
@@ -62,7 +62,8 @@ export function normalizeEntry(raw) {
     if ((f.pattern === 'SVOO') !== (f.recipient === 'person') ||
         f.complement !== (f.pattern === 'SVOC' ? 'single-adjective' : f.pattern === 'SVC' ? 'noun-or-single-adjective' : null) ||
         (f.passivePromotion !== null && f.passivePromotion !== (f.pattern === 'SVOO' ? 'direct-object-or-recipient' : f.pattern === 'SVO' ? 'direct-object' : null)) ||
-        (f.fixedTail !== null && (entry.lemma !== 'go' || f.pattern !== 'SV')) ||
+        (f.fixedTail === 'to school' && (entry.lemma !== 'go' || f.pattern !== 'SV')) ||
+        (f.fixedTail?.startsWith('location:') && (f.pattern !== 'SV' || f.fixedTail !== ({sleep:'location:in,on,under,near',work:'location:in,on,near',walk:'location:in,on,near',run:'location:in,on,near',dance:'location:in,on,near',wait:'location:in,on,under,near'})[entry.lemma])) ||
         (copula ? f.pattern !== 'SVC' || f.allowProgressive || f.passivePromotion !== null : f.pattern === 'SVC') ||
         (entry.sense === 'possession' && entry.lemma === 'have' && (f.pattern !== 'SVO' || f.allowProgressive || f.allowPerfect || f.passivePromotion !== null || f.allowedPurposes.some(p => !['declarative','interrogative'].includes(p))))) throw new Error('Unsupported frame combination');
     f.allowedPurposes.sort(); f.allowedPolarities.sort();

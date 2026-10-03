@@ -2,7 +2,7 @@ import type { AnalysisResult } from "./protocol.ts";
 
 /** Isolate tentative nodes and edits; a rejected purpose must not leak suggestions. */
 export function forkCandidate(result: AnalysisResult): AnalysisResult {
-  return { ...result, status: "unsupported", purpose: null, pattern: null, complexity: null, tense: null, aspect: null, voice: null, nodes: [], corrections: [], reasons: [], messages: [...result.messages] };
+  return { ...result, status: "unsupported", purpose: null, pattern: null, complexity: null, tense: null, modal: null, questionType: null, aspect: null, voice: null, nodes: [], corrections: [], reasons: [], messages: [...result.messages] };
 }
 
 /** Preserve the existing SVOO boundary limit; reusable by future frame rules. */

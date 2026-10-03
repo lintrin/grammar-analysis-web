@@ -4,6 +4,10 @@ import { adjectives, adjectiveSupports, nounCandidate, determiners, selectedVerb
 import { nounPhrase, directObject } from "./phrases.ts";
 import { analyzeDeclarative } from "./simple.ts";
 import { analyzeComposed } from "./composed.ts";
+import { isSecondFrame, secondFrameSubjectPermits } from "./frame-scope.ts";
+import { analyzeWh } from "./questions.ts";
+import { analyzeLocation } from "./location.ts";
+import { analyzeWill } from "./modal.ts";
 import { analyzeExtended } from "./extended.ts";
 import { createBoundaryBudget, forkCandidate } from "./context.ts";
 import { suggest } from "./suggestions.ts";
@@ -14,6 +18,12 @@ function analyzePurposeCandidate(tokens: Token[], punctuation: string | null, re
   recordPurpose("declarative");
   diagnose(result, "unsupported-structure");
   if (tokens[0]?.contraction) return "否定缩写仅支持显式主语的否定陈述句；否定疑问和祈使尚未开放。";
+  const wh=analyzeWh(tokens,punctuation,result,consumeBoundary,recordPurpose,analyzePurposeCandidate);
+  if(wh!==null)return wh;
+  const location=analyzeLocation(tokens,punctuation,result,consumeBoundary,recordPurpose,analyzePurposeCandidate);
+  if(location!==null)return location;
+  const will = analyzeWill(tokens,punctuation,result,consumeBoundary,recordPurpose);
+  if (will !== null) return will;
   const composed = analyzeComposed(tokens, punctuation, result, consumeBoundary, recordPurpose);
   if (composed !== null) return composed;
   const extended = analyzeExtended(tokens, punctuation, result, consumeBoundary, recordPurpose);
@@ -78,7 +88,7 @@ function analyzePurposeCandidate(tokens: Token[], punctuation: string | null, re
     if (verb) { verb.ruleId = "QUESTION-BE-001"; verb.explanation = `${tokens[0].text} 是提前到主语之前的系动词，连接主语与表语，构成一般疑问句。`; }
     return accept(candidate, `已匹配 be 疑问句规则 QUESTION-BE-001。${message}`, "interrogative");
   }
-  if (first === "how" || first === "what") {
+  if (first === "how" || (first === "what" && !tokens[0]?.whSubject)) {
     recordPurpose("exclamatory");
     if (punctuation && punctuation !== "!") return wrongPunctuation();
     const last = tokens.at(-1)!;
@@ -181,6 +191,18 @@ export function analyzePurpose(tokens: Token[], punctuation: string | null, resu
     if (ids.length > 1) choices.push({ index, ids });
     else if (attributes.has(index) && ids.length === 1) forcedChoices.set(index,ids[0]);
   }
+  // This parser enumerates every branch before accepting a result. If the
+  // interpretation tree alone exceeds the public budget, reserve its first
+  // edges before expensive whole-sentence parsing. A shortfall has exactly the
+  // same no-result outcome; successful reservations are consumed once below.
+  let width = 1, edges = 0;
+  for (const choice of choices) { width = Math.min(4001,width * choice.ids.length); edges = Math.min(4001,edges + width); }
+  let reservedEdges = 0;
+  if (edges > 4000) for (let i = 0; i < 4001; i++) {
+    if (!consume()) { diagnose(result,"budget-exceeded"); return budgetMessage; }
+    reservedEdges++;
+  }
+  const consumeChoice = () => reservedEdges > 0 ? (reservedEdges--,true) : consume();
   const parsed: { candidate: AnalysisResult; message: string }[] = [];
   let exhausted = false;
   const visit = (position: number, ordered: Token[]) => {
@@ -188,7 +210,7 @@ export function analyzePurpose(tokens: Token[], punctuation: string | null, resu
     if (position < choices.length) {
       const { index, ids } = choices[position];
       for (const id of ids) {
-        if (!consume()) { exhausted = true; return; }
+        if (!consumeChoice()) { exhausted = true; return; }
         const next = [...ordered]; next[index] = { ...next[index], lexiconChoice: id };
         visit(position + 1,next);
       }
@@ -202,11 +224,19 @@ export function analyzePurpose(tokens: Token[], punctuation: string | null, resu
     if (hasReason(candidate,"budget-exceeded")) { exhausted = true; return; }
     if (["complete","partial"].includes(candidate.status)) {
       const purpose = candidate.purpose ?? context.purpose;
+      let secondFrame = false;
       const forbidden = ordered.some(token => {
         const verb = selectedVerb(token,undefined,["base","third","past","participle","progressive"]);
-        return verb && !framePermits(verb,purpose,ordered.some(t => t.normalized === "not"));
+        if (verb && isSecondFrame(verb)) secondFrame = true;
+        return verb && (!framePermits(verb,purpose,ordered.some(t => t.normalized === "not")) || !secondFrameSubjectPermits(verb,ordered));
       });
       if (forbidden) { Object.assign(candidate,forkCandidate(candidate)); diagnose(candidate,"unsupported-structure"); message = "词条存在，但该搭配不允许当前用途或极性。"; }
+      // New SV frames require one form error. Preserve the original SVO rules
+      // and keep the diagnostic candidate for ambiguity checks across frames.
+      else if (secondFrame && candidate.corrections.flatMap(c => c.edits).length > 1) {
+        candidate.corrections = [];
+        message = "新增主谓搭配存在多处词形错误，只保留诊断，不提供自动修改。";
+      }
     }
     parsed.push({ candidate,message });
   };
@@ -216,9 +246,13 @@ export function analyzePurpose(tokens: Token[], punctuation: string | null, resu
   const partial = parsed.filter(p => p.candidate.status === "partial");
   if (complete.length > 1 || (!complete.length && partial.length > 1)) {
     result.status = "ambiguous"; diagnose(result,"ambiguous");
-    return "存在多个词条或动词搭配的完整解释，无法唯一确定结构。";
+    return "存在多个有效的词条、动词搭配或词形解释，无法唯一确定结构。";
   }
   const accepted = complete[0] ?? partial[0] ?? parsed.find(p => p.candidate.status === "ambiguous") ?? parsed[0];
-  if (accepted) { Object.assign(result,accepted.candidate); return accepted.message; }
+  if (accepted) {
+    if (accepted.candidate.status === "complete" && tokens.some(t=>t.normalized === "can")) accepted.candidate.modal="can";
+    if(accepted.candidate.status === "complete" && accepted.candidate.purpose === "interrogative" && accepted.candidate.questionType === null) accepted.candidate.questionType="yes-no";
+    Object.assign(result,accepted.candidate); return accepted.message;
+  }
   diagnose(result,"unsupported-structure"); return "未匹配当前支持的结构。";
 }

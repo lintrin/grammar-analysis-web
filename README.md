@@ -2,19 +2,23 @@
 
 面向中文学习者的英语语法分析网页应用，输入在浏览器内通过本地词典与规则分析。
 
-阶段 1–26 ✅ 已完成。最近交付将实义动词扩至 100 个，当前词典 1.3.0、规则 0.18.1；2973 项测试、工程检查及开发/构建浏览器验收通过，证据见 [阶段 26 交付记录](docs/archive/stage26-scope.md)。已完成阶段的计划、范围与验收文档统一收录在 [历史归档](docs/archive/README.md)。
+阶段 1–30 ✅ 已完成。阶段 27–30 新增 will/won’t、六个动词的限定地点状语、三类特殊疑问和五个动词的第二搭配。当前词典 1.7.0、规则 0.22.2；3560 项测试、工程检查及开发/构建浏览器验收通过，最新证据见 [范围约束审查修复](docs/verification/scope-review-fixes.md)。阶段 30 原交付记录保存在 [交付文档](docs/archive/stage30-scope.md) 与 [联合验收数据](docs/verification/structure-delivery.json)。已完成阶段的计划、范围与验收文档统一收录在 [历史归档](docs/archive/README.md)。
 
-下一轮阶段 27–32 **待实施**：will 表达与情态分类 → 限定地点状语 → 特殊疑问 → 常用动词多搭配 → 支持词汇查询 → 独立复核与本地交付。具体范围、人工答案与验收门槛见 [结构扩展开发计划](docs/structure-development-plan.md)，下一次从 27A 的范围、协议与人工答案固定开始；本次计划不改变当前能力。
+阶段 31、32 **待实施**：支持词汇与搭配查询 → 独立复核与本轮交付。已完成范围及后续门槛见 [结构扩展开发计划](docs/structure-development-plan.md)，下一次从阶段 31 的本地查询范围与人工交互答案固定开始。
 
 当前维护文档、开发规则与历史记录的入口见 [文档导航](docs/README.md)。
 
 ## 当前进度
 
-当前规则 **0.18.1**。保留五种基本句型、四种简单句用途、限定 do/be/can 否定与一般疑问，以及两个完整陈述分句的 and/but、后置 because、前置 if。支持现在/过去进行时、完成时、限定被动语态，以及完成进行、完成被动、进行被动。完整谓语、时态、体和语态按原文标注，多分句分别展示各自分类。
+当前规则 **0.22.2**。保留五种基本句型、四种简单句用途、限定 do/be/can 否定与一般疑问，以及两个完整陈述分句的 and/but、后置 because、前置 if。支持现在/过去进行时、完成时、限定被动语态，以及完成进行、完成被动、进行被动。完整谓语、时态、体和语态按原文标注，多分句分别展示各自分类。
 
-完整词形、被动转换、错误状态与限制见 [谓语范围](docs/archive/predicate-expansion-scope.md) 与 [新增词汇范围](docs/archive/lexicon-expansion-scope.md)。现有 44 组可数名词、24 个形容词、100 个实义动词词元；read 同形须依据明确形式线索区分时态，否则保留歧义。使用人工维护并经审核发布的词典快照（1.3.0），不代表支持任意英文。新增词形来自固定版本 LemmInflect，完整 MIT 许可随网页提供；每个新词先开放一个审核搭配，know/need/want 等限定状态义不支持进行体，traveled/traveling 等只接受已选择的拼写。拥有义 have 支持一般现在/过去时的名词短语宾语、do 否定和 do 一般疑问；陈述可进入现有两分句框架，完成时 have 仍是助动词。否定陈述开放 11 种 do/be/can/have 白名单缩写，接受直/弯撇号；have 缩写仅作助动词，原文区间不展开。拥有义的其它体/语态、can、祈使、无需 do 的拥有疑问，以及 SV/SVOC 被动、将来时、肯定缩写、所有格、否定疑问、特殊疑问、通用介词短语、新 can 链及完成进行被动仍不支持。
+完整词形、被动转换、错误状态与限制见 [谓语范围](docs/archive/predicate-expansion-scope.md) 与 [新增词汇范围](docs/archive/lexicon-expansion-scope.md)。现有 44 组可数名词、24 个形容词、100 个实义动词词元；read 同形须依据明确形式线索区分时态，否则保留歧义。使用人工维护并经审核发布的词典快照（1.7.0），不代表支持任意英文。新增词形来自固定版本 LemmInflect，完整 MIT 许可随网页提供；阶段 26 每个新词先开放一个审核搭配，know/need/want 等限定状态义不支持进行体，traveled/traveling 等只接受已选择的拼写。拥有义 have 支持一般现在/过去时的名词短语宾语、do 否定和 do 一般疑问；陈述可进入现有两分句框架，完成时 have 仍是助动词。否定陈述开放 12 种 do/be/can/have/will 白名单缩写，接受直/弯撇号；have 缩写仅作助动词，原文区间不展开。拥有义的其它体/语态、can、祈使、无需 do 的拥有疑问，以及 SV/SVOC 被动、其它 will 链、肯定缩写、所有格、否定疑问、范围外特殊疑问、通用介词短语、新 can 链及完成进行被动仍不支持。
 
-完整且唯一的谓语组合支持有限 be/have 一致和实义动词唯一分词替换；保持时态、体、语态，多个依赖错误、桥接错误或候选不唯一时不提供建议。原有主谓一致、do/does/did 后原形、can 后原形三类纠错保留，并复用于基础否定缩写；每次应用一条并重新分析，编辑输入立即使旧结果和建议失效。未知词可键盘定位，范围外与语境歧义明确提示；未命中纠错不代表句子完全正确。
+阶段 27 的 will 简单主动结构覆盖五种句型与 will be 系表，否定支持 will not/won’t；可进入既有陈述分句，但 if 条件从句内暂不开放 will。顶层和分句均有必填 modal 分类。阶段 28 仅 sleep/work/walk/run/dance/wait 的单简单句 SV 开放审核的 in/on/under/near 地点尾部，允许简单体、进行体和 can/will 简单体；完整地点短语标为状语，内部前置形容词保留定语层级。
+
+阶段 29 仅肯定、简单主动、单句：where/when/why 状语提问及 who/what 主语或直接宾语提问，结果明确 questionType；where 限六个地点动词，特殊疑问不附加地点尾部。主语和直接宾语提问可带句末 today/yesterday（will 不带 yesterday）；完成、进行、被动结构及其错误形式统一提示超出范围，不显示词形纠错。阶段 30 新增 eat/read/write 的人物主语 SV 和 open/close 的 door/window/it（含 what 主语提问）SV，保留原 SVO。新搭配只在单处词形错误时提供建议，多处错误仅诊断；逐项限制用途、体、情态和主语；不自动继承完成、被动、祈使、分句或地点权限。完整范围见 [阶段 27](docs/archive/stage27-scope.md)、[28](docs/archive/stage28-scope.md)、[29](docs/archive/stage29-scope.md)、[30](docs/archive/stage30-scope.md) 及 data/grammar 能力矩阵。
+
+完整且唯一的谓语组合支持有限 be/have 一致和实义动词唯一分词替换；保持时态、体、语态，多个依赖错误、桥接错误或候选不唯一时不提供建议。原有主谓一致、do/does/did 后原形、can/will 后原形三类纠错保留，并复用于基础否定缩写；每次应用一条并重新分析，编辑输入立即使旧结果和建议失效。未知词可键盘定位，范围外与语境歧义明确提示；未命中纠错不代表句子完全正确。
 
 ## 运行与隐私
 
@@ -36,6 +40,8 @@ npm run dev -- --host 127.0.0.1 --port 5188
 ```sh
 npm test
 npx tsc --noEmit
+npm run lint
+npm run lexicon -- verify
 npm run build
 ```
 
@@ -47,6 +53,14 @@ npm run start -- --port 5188
 ```
 
 访问 `http://127.0.0.1:5188`。本轮交付是本地网页运行；完整离线安装包、双击启动、PWA 和公开部署仍是独立事项。构建保留环境代理与 Vinext 路由分类提示，具体证据见 [本轮范围与验收](docs/archive/predicate-expansion-scope.md)。
+
+阶段 27–30 浏览器回归共用 tests/ui-structure.mjs。安装 Playwright/Chromium 后，设置 PLAYWRIGHT_MODULE 为模块绝对路径、PLAYWRIGHT_CHROMIUM_EXECUTABLE 为浏览器可执行文件；本机已有工具可直接复用。启动对应服务，分别针对开发地址和构建地址运行：
+
+```sh
+CLAUSE_STAGE=30 CLAUSE_BASE_URL=http://127.0.0.1:5188 node tests/ui-structure.mjs
+```
+
+CLAUSE_STAGE 可选 27、28、29、30；CLAUSE_STRUCTURE_REPORT 可指定报告路径。真实 HMR 另在开发服务运行 CLAUSE_HMR=1 的 tests/ui-stage20.mjs（同样设置 CLAUSE_BASE_URL）。这些是开发范围回归，阶段 32 的独立验收尚未实施。
 
 独立样例与性能复核：
 
@@ -79,7 +93,7 @@ npm run lexicon -- query --lemma give --pos verb
 npm run lexicon -- show --revision verb:lexical:give:r1
 ```
 
-当前词典可在空工作库执行 `init` 后用 `rebuild` 重建全部 222 个已审核词条；旧 `seed.json` 仅为阶段 20 初次迁移的 91 词条。`stage21-import.json` 保存阶段 21 新增 57 个完整草稿，`stage22-import.json` 保存拥有义 have 草稿，`stage22-selection.json` 显式选择 1.2.0 的全部修订。`stage26-scope.json` 固定新增 73 个词的教学范围；`sources/lemminflect/` 保留原始子集、上游修正、哈希和许可。`node scripts/prepare-stage26-lexicon.mjs` 离线重现 `stage26-import.json` 草稿，`stage26-selection.json` 显式选择 1.3.0 的全部修订。继续扩容须先 query/show 审查、以当前哈希 review，再选择全部修订 publish 新版本、更新联合清单并 generate-client/verify，不能直接改客户端 JSON。
+当前词典可在空工作库执行 `init` 后用 `rebuild` 重建全部 231 个已审核词条；旧 `seed.json` 仅为阶段 20 初次迁移的 91 词条。`stage21-import.json` 保存阶段 21 新增 57 个完整草稿，`stage22-import.json` 保存拥有义 have 草稿，`stage22-selection.json` 显式选择 1.2.0 的全部修订。`stage26-scope.json` 固定新增 73 个词的教学范围；`sources/lemminflect/` 保留原始子集、上游修正、哈希和许可。`node scripts/prepare-stage26-lexicon.mjs` 离线重现 `stage26-import.json` 草稿，`stage26-selection.json` 显式选择 1.3.0 的全部修订。阶段 27–30 各自的 import/selection 清单固定词条与修订选择，1.4.0–1.7.0 发布逐个保留；当前含 100 个实义动词词元、105 个实义搭配。阶段 28 复用必填 fixedTail 的有限域记录地点许可，数据库迁移 0002 同步校验并保留冻结触发器。继续扩容须先 query/show 审查、以当前哈希 review，再选择全部修订 publish 新版本、更新联合清单并 generate-client/verify，不能直接改客户端 JSON。
 
 `init` / `migrate` 按 Drizzle journal 执行 SQL 并核对已应用迁移的 SHA-256；重复执行无操作。种子完整迁移旧人工词典，共 91 个词条、161 条词形；同 ID 同内容重复导入无操作，冲突整批回滚。数据库插入触发器同时阻止 REPLACE 覆盖冻结记录，保护不依赖 recursive_triggers 设置。普通导入只能创建草稿，拒绝审核及发布字段。
 
@@ -159,13 +173,15 @@ npm run build
 - `tests/stage23.test.mjs`、`tests/ui-stage23.mjs`：57 个缩写人工答案、11 项历史迁移、完整 token 编辑与原文区间、基础纠错及浏览器验收
 - `tests/stage22.test.mjs`、`tests/ui-stage22.mjs`：拥有义/助动词区分、53 个人工答案、10 对基础纠错、4 项历史迁移、发布重现及浏览器验收
 - `tests/stage21.test.mjs`、`tests/ui-stage21.mjs`：新词固定答案、审核发布重现、同形预算、用途/基础纠错及浏览器验收
+- `tests/stage29-30-review-fixes.test.mjs`、`tests/fixtures/stage29-30-review-fixes.json`：特殊疑问地点尾部拒绝、新 SV 单处纠错门槛及原 SVO 的 89 条固定预期
+- `tests/stage29-review-fixes.test.mjs`、`tests/fixtures/stage29-review-fixes.json`：宾语提问时间尾部、单处纠错与主语提问谓语范围的 40 条固定预期
 - `tests/stage19.test.mjs`、`tests/fixtures/lexicon-development.json`：未来人工答案完整性、范围和数量（不表示未来能力已实现）
 - `tests/fixtures/lexicon-migrations.json`：历史样例审查、原 fixture 与逐阶段迁移答案
 - `tests/baselines/`、`tests/helpers/historical-independence.mjs`：固定历史开发语料和独立性保护
 - `tests/baselines/original-fixtures/`、`tests/helpers/original-fixtures.mjs`：原始样例快照与冻结来源哈希校验；常规测试不依赖 Git 历史
 - `docs/README.md`、`docs/structure-development-plan.md`：文档导航与当前阶段 27–32 开发计划
 - `docs/lexicon-database-design.md`：现行 SQLite/审核/快照协议
-- `docs/archive/`：阶段 1–26 的历史计划、范围与验收记录
+- `docs/archive/`：阶段 1–30 的历史计划、范围与验收记录
 - `tests/ui-smoke.mjs`、`tests/ui-stage12.mjs`、`tests/ui-predicate.mjs`：可选整体验收与浏览器性能回归
 - `app/layout.tsx`：应用元信息
 - `components/ui/`：基础界面组件

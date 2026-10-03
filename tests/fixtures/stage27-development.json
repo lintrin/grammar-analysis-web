@@ -1,0 +1,4130 @@
+{
+  "authorship": "Manual grammatical roles, original fragments and edits frozen before new behavior execution; ranges mechanically located without parser imports.",
+  "fixtures": [
+    {
+      "id": "27-1",
+      "kind": "correct",
+      "input": "She will sleep.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 14
+              }
+            ],
+            "ruleId": "MODAL-WILL-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-2",
+      "kind": "correct",
+      "input": "She will not sleep.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 18
+              }
+            ],
+            "ruleId": "NEGATIVE-WILL-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-3",
+      "kind": "correct",
+      "input": "She won't sleep.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "4",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "5",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 15
+              }
+            ],
+            "ruleId": "NEGATIVE-WILL-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-4",
+      "kind": "correct",
+      "input": "She won’t sleep.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "6",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "7",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 15
+              }
+            ],
+            "ruleId": "NEGATIVE-WILL-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-5",
+      "kind": "correct",
+      "input": "Will she sleep?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "8",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              },
+              {
+                "start": 9,
+                "end": 14
+              }
+            ],
+            "ruleId": "QUESTION-WILL-001"
+          },
+          {
+            "key": "9",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 8
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-6",
+      "kind": "correct",
+      "input": "She will sleep",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "11",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "12",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 14
+              }
+            ],
+            "ruleId": "MODAL-WILL-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-7",
+      "kind": "correct",
+      "input": "She   will   sleep.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "13",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "14",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 18
+              }
+            ],
+            "ruleId": "MODAL-WILL-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-8",
+      "kind": "correct",
+      "input": "She WILL SLEEP.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "15",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "16",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 14
+              }
+            ],
+            "ruleId": "MODAL-WILL-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-9",
+      "kind": "correct",
+      "input": "She will read the book.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "17",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SVO-001"
+          },
+          {
+            "key": "18",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 13
+              }
+            ],
+            "ruleId": "MODAL-WILL-001"
+          },
+          {
+            "key": "19",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 14,
+                "end": 22
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-10",
+      "kind": "correct",
+      "input": "She will not read the book.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "20",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SVO-001"
+          },
+          {
+            "key": "21",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 17
+              }
+            ],
+            "ruleId": "NEGATIVE-WILL-001"
+          },
+          {
+            "key": "22",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 18,
+                "end": 26
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-11",
+      "kind": "correct",
+      "input": "She won't read the book.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "23",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SVO-001"
+          },
+          {
+            "key": "24",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 14
+              }
+            ],
+            "ruleId": "NEGATIVE-WILL-001"
+          },
+          {
+            "key": "25",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 15,
+                "end": 23
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-12",
+      "kind": "correct",
+      "input": "She won’t read the book.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "26",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SVO-001"
+          },
+          {
+            "key": "27",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 14
+              }
+            ],
+            "ruleId": "NEGATIVE-WILL-001"
+          },
+          {
+            "key": "28",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 15,
+                "end": 23
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-13",
+      "kind": "correct",
+      "input": "Will she read the book?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "29",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              },
+              {
+                "start": 9,
+                "end": 13
+              }
+            ],
+            "ruleId": "QUESTION-WILL-001"
+          },
+          {
+            "key": "30",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 8
+              }
+            ],
+            "ruleId": "SVO-001"
+          },
+          {
+            "key": "32",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 14,
+                "end": 22
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-14",
+      "kind": "correct",
+      "input": "She will read the book",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "33",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SVO-001"
+          },
+          {
+            "key": "34",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 13
+              }
+            ],
+            "ruleId": "MODAL-WILL-001"
+          },
+          {
+            "key": "35",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 14,
+                "end": 22
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-15",
+      "kind": "correct",
+      "input": "She   will   read the book.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "36",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SVO-001"
+          },
+          {
+            "key": "37",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 17
+              }
+            ],
+            "ruleId": "MODAL-WILL-001"
+          },
+          {
+            "key": "38",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 18,
+                "end": 26
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-16",
+      "kind": "correct",
+      "input": "She WILL READ the book.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "39",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SVO-001"
+          },
+          {
+            "key": "40",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 13
+              }
+            ],
+            "ruleId": "MODAL-WILL-001"
+          },
+          {
+            "key": "41",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 14,
+                "end": 22
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-17",
+      "kind": "correct",
+      "input": "The book will be useful.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "42",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 8
+              }
+            ],
+            "ruleId": "SVC-001"
+          },
+          {
+            "key": "43",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 16
+              }
+            ],
+            "ruleId": "MODAL-WILL-001"
+          },
+          {
+            "key": "44",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 17,
+                "end": 23
+              }
+            ],
+            "ruleId": "SVC-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-18",
+      "kind": "correct",
+      "input": "The book will not be useful.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "45",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 8
+              }
+            ],
+            "ruleId": "SVC-001"
+          },
+          {
+            "key": "46",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 20
+              }
+            ],
+            "ruleId": "NEGATIVE-WILL-001"
+          },
+          {
+            "key": "47",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 21,
+                "end": 27
+              }
+            ],
+            "ruleId": "SVC-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-19",
+      "kind": "correct",
+      "input": "The book won't be useful.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "48",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 8
+              }
+            ],
+            "ruleId": "SVC-001"
+          },
+          {
+            "key": "49",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 17
+              }
+            ],
+            "ruleId": "NEGATIVE-WILL-001"
+          },
+          {
+            "key": "50",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 18,
+                "end": 24
+              }
+            ],
+            "ruleId": "SVC-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-20",
+      "kind": "correct",
+      "input": "The book won’t be useful.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "51",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 8
+              }
+            ],
+            "ruleId": "SVC-001"
+          },
+          {
+            "key": "52",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 17
+              }
+            ],
+            "ruleId": "NEGATIVE-WILL-001"
+          },
+          {
+            "key": "53",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 18,
+                "end": 24
+              }
+            ],
+            "ruleId": "SVC-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-21",
+      "kind": "correct",
+      "input": "Will the book be useful?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "54",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              },
+              {
+                "start": 14,
+                "end": 16
+              }
+            ],
+            "ruleId": "QUESTION-WILL-001"
+          },
+          {
+            "key": "55",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 13
+              }
+            ],
+            "ruleId": "SVC-001"
+          },
+          {
+            "key": "57",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 17,
+                "end": 23
+              }
+            ],
+            "ruleId": "SVC-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-22",
+      "kind": "correct",
+      "input": "The book will be useful",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "58",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 8
+              }
+            ],
+            "ruleId": "SVC-001"
+          },
+          {
+            "key": "59",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 16
+              }
+            ],
+            "ruleId": "MODAL-WILL-001"
+          },
+          {
+            "key": "60",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 17,
+                "end": 23
+              }
+            ],
+            "ruleId": "SVC-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-23",
+      "kind": "correct",
+      "input": "The book   will   be useful.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "61",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 8
+              }
+            ],
+            "ruleId": "SVC-001"
+          },
+          {
+            "key": "62",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 20
+              }
+            ],
+            "ruleId": "MODAL-WILL-001"
+          },
+          {
+            "key": "63",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 21,
+                "end": 27
+              }
+            ],
+            "ruleId": "SVC-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-24",
+      "kind": "correct",
+      "input": "The book WILL BE useful.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "64",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 8
+              }
+            ],
+            "ruleId": "SVC-001"
+          },
+          {
+            "key": "65",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 16
+              }
+            ],
+            "ruleId": "MODAL-WILL-001"
+          },
+          {
+            "key": "66",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 17,
+                "end": 23
+              }
+            ],
+            "ruleId": "SVC-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-25",
+      "kind": "correct",
+      "input": "She will give him a book.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVOO",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "67",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SVOO-001"
+          },
+          {
+            "key": "68",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 13
+              }
+            ],
+            "ruleId": "MODAL-WILL-001"
+          },
+          {
+            "key": "69",
+            "parentKey": null,
+            "role": "indirectObject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 14,
+                "end": 17
+              }
+            ],
+            "ruleId": "SVOO-001"
+          },
+          {
+            "key": "70",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 18,
+                "end": 24
+              }
+            ],
+            "ruleId": "SVOO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-26",
+      "kind": "correct",
+      "input": "She will not give him a book.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVOO",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "71",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SVOO-001"
+          },
+          {
+            "key": "72",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 17
+              }
+            ],
+            "ruleId": "NEGATIVE-WILL-001"
+          },
+          {
+            "key": "73",
+            "parentKey": null,
+            "role": "indirectObject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 18,
+                "end": 21
+              }
+            ],
+            "ruleId": "SVOO-001"
+          },
+          {
+            "key": "74",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 22,
+                "end": 28
+              }
+            ],
+            "ruleId": "SVOO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-27",
+      "kind": "correct",
+      "input": "She won't give him a book.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVOO",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "75",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SVOO-001"
+          },
+          {
+            "key": "76",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 14
+              }
+            ],
+            "ruleId": "NEGATIVE-WILL-001"
+          },
+          {
+            "key": "77",
+            "parentKey": null,
+            "role": "indirectObject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 15,
+                "end": 18
+              }
+            ],
+            "ruleId": "SVOO-001"
+          },
+          {
+            "key": "78",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 19,
+                "end": 25
+              }
+            ],
+            "ruleId": "SVOO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-28",
+      "kind": "correct",
+      "input": "She won’t give him a book.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVOO",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "79",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SVOO-001"
+          },
+          {
+            "key": "80",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 14
+              }
+            ],
+            "ruleId": "NEGATIVE-WILL-001"
+          },
+          {
+            "key": "81",
+            "parentKey": null,
+            "role": "indirectObject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 15,
+                "end": 18
+              }
+            ],
+            "ruleId": "SVOO-001"
+          },
+          {
+            "key": "82",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 19,
+                "end": 25
+              }
+            ],
+            "ruleId": "SVOO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-29",
+      "kind": "correct",
+      "input": "Will she give him a book?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVOO",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "83",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              },
+              {
+                "start": 9,
+                "end": 13
+              }
+            ],
+            "ruleId": "QUESTION-WILL-001"
+          },
+          {
+            "key": "84",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 8
+              }
+            ],
+            "ruleId": "SVOO-001"
+          },
+          {
+            "key": "86",
+            "parentKey": null,
+            "role": "indirectObject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 14,
+                "end": 17
+              }
+            ],
+            "ruleId": "SVOO-001"
+          },
+          {
+            "key": "87",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 18,
+                "end": 24
+              }
+            ],
+            "ruleId": "SVOO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-30",
+      "kind": "correct",
+      "input": "She will give him a book",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVOO",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "88",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SVOO-001"
+          },
+          {
+            "key": "89",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 13
+              }
+            ],
+            "ruleId": "MODAL-WILL-001"
+          },
+          {
+            "key": "90",
+            "parentKey": null,
+            "role": "indirectObject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 14,
+                "end": 17
+              }
+            ],
+            "ruleId": "SVOO-001"
+          },
+          {
+            "key": "91",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 18,
+                "end": 24
+              }
+            ],
+            "ruleId": "SVOO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-31",
+      "kind": "correct",
+      "input": "She   will   give him a book.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVOO",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "92",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SVOO-001"
+          },
+          {
+            "key": "93",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 17
+              }
+            ],
+            "ruleId": "MODAL-WILL-001"
+          },
+          {
+            "key": "94",
+            "parentKey": null,
+            "role": "indirectObject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 18,
+                "end": 21
+              }
+            ],
+            "ruleId": "SVOO-001"
+          },
+          {
+            "key": "95",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 22,
+                "end": 28
+              }
+            ],
+            "ruleId": "SVOO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-32",
+      "kind": "correct",
+      "input": "She WILL GIVE him a book.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVOO",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "96",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SVOO-001"
+          },
+          {
+            "key": "97",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 13
+              }
+            ],
+            "ruleId": "MODAL-WILL-001"
+          },
+          {
+            "key": "98",
+            "parentKey": null,
+            "role": "indirectObject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 14,
+                "end": 17
+              }
+            ],
+            "ruleId": "SVOO-001"
+          },
+          {
+            "key": "99",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 18,
+                "end": 24
+              }
+            ],
+            "ruleId": "SVOO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-33",
+      "kind": "correct",
+      "input": "She will keep the door clean.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVOC",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "100",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SVOC-001"
+          },
+          {
+            "key": "101",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 13
+              }
+            ],
+            "ruleId": "MODAL-WILL-001"
+          },
+          {
+            "key": "102",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 14,
+                "end": 22
+              }
+            ],
+            "ruleId": "SVOC-001"
+          },
+          {
+            "key": "103",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 23,
+                "end": 28
+              }
+            ],
+            "ruleId": "SVOC-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-34",
+      "kind": "correct",
+      "input": "She will not keep the door clean.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVOC",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "104",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SVOC-001"
+          },
+          {
+            "key": "105",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 17
+              }
+            ],
+            "ruleId": "NEGATIVE-WILL-001"
+          },
+          {
+            "key": "106",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 18,
+                "end": 26
+              }
+            ],
+            "ruleId": "SVOC-001"
+          },
+          {
+            "key": "107",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 27,
+                "end": 32
+              }
+            ],
+            "ruleId": "SVOC-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-35",
+      "kind": "correct",
+      "input": "She won't keep the door clean.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVOC",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "108",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SVOC-001"
+          },
+          {
+            "key": "109",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 14
+              }
+            ],
+            "ruleId": "NEGATIVE-WILL-001"
+          },
+          {
+            "key": "110",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 15,
+                "end": 23
+              }
+            ],
+            "ruleId": "SVOC-001"
+          },
+          {
+            "key": "111",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 24,
+                "end": 29
+              }
+            ],
+            "ruleId": "SVOC-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-36",
+      "kind": "correct",
+      "input": "She won’t keep the door clean.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVOC",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "112",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SVOC-001"
+          },
+          {
+            "key": "113",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 14
+              }
+            ],
+            "ruleId": "NEGATIVE-WILL-001"
+          },
+          {
+            "key": "114",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 15,
+                "end": 23
+              }
+            ],
+            "ruleId": "SVOC-001"
+          },
+          {
+            "key": "115",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 24,
+                "end": 29
+              }
+            ],
+            "ruleId": "SVOC-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-37",
+      "kind": "correct",
+      "input": "Will she keep the door clean?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVOC",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "116",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              },
+              {
+                "start": 9,
+                "end": 13
+              }
+            ],
+            "ruleId": "QUESTION-WILL-001"
+          },
+          {
+            "key": "117",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 8
+              }
+            ],
+            "ruleId": "SVOC-001"
+          },
+          {
+            "key": "119",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 14,
+                "end": 22
+              }
+            ],
+            "ruleId": "SVOC-001"
+          },
+          {
+            "key": "120",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 23,
+                "end": 28
+              }
+            ],
+            "ruleId": "SVOC-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-38",
+      "kind": "correct",
+      "input": "She will keep the door clean",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVOC",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "121",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SVOC-001"
+          },
+          {
+            "key": "122",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 13
+              }
+            ],
+            "ruleId": "MODAL-WILL-001"
+          },
+          {
+            "key": "123",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 14,
+                "end": 22
+              }
+            ],
+            "ruleId": "SVOC-001"
+          },
+          {
+            "key": "124",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 23,
+                "end": 28
+              }
+            ],
+            "ruleId": "SVOC-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-39",
+      "kind": "correct",
+      "input": "She   will   keep the door clean.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVOC",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "125",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SVOC-001"
+          },
+          {
+            "key": "126",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 17
+              }
+            ],
+            "ruleId": "MODAL-WILL-001"
+          },
+          {
+            "key": "127",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 18,
+                "end": 26
+              }
+            ],
+            "ruleId": "SVOC-001"
+          },
+          {
+            "key": "128",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 27,
+                "end": 32
+              }
+            ],
+            "ruleId": "SVOC-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-40",
+      "kind": "correct",
+      "input": "She WILL KEEP the door clean.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVOC",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "129",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SVOC-001"
+          },
+          {
+            "key": "130",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 13
+              }
+            ],
+            "ruleId": "MODAL-WILL-001"
+          },
+          {
+            "key": "131",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 14,
+                "end": 22
+              }
+            ],
+            "ruleId": "SVOC-001"
+          },
+          {
+            "key": "132",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 23,
+                "end": 28
+              }
+            ],
+            "ruleId": "SVOC-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-41",
+      "kind": "error",
+      "input": "She will sleeps.",
+      "controlId": "27-1",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "MODAL-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 9,
+                  "end": 15
+                },
+                "expected": "sleeps",
+                "replacement": "sleep"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "27-42",
+      "kind": "error",
+      "input": "She will not sleeps.",
+      "controlId": "27-2",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "MODAL-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 13,
+                  "end": 19
+                },
+                "expected": "sleeps",
+                "replacement": "sleep"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "27-43",
+      "kind": "error",
+      "input": "She won't sleeps.",
+      "controlId": "27-3",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "MODAL-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 10,
+                  "end": 16
+                },
+                "expected": "sleeps",
+                "replacement": "sleep"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "27-44",
+      "kind": "error",
+      "input": "She will reads the book.",
+      "controlId": "27-9",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "MODAL-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 9,
+                  "end": 14
+                },
+                "expected": "reads",
+                "replacement": "read"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "27-45",
+      "kind": "error",
+      "input": "She will not reads the book.",
+      "controlId": "27-10",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "MODAL-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 13,
+                  "end": 18
+                },
+                "expected": "reads",
+                "replacement": "read"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "27-46",
+      "kind": "error",
+      "input": "She won't reads the book.",
+      "controlId": "27-11",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "MODAL-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 10,
+                  "end": 15
+                },
+                "expected": "reads",
+                "replacement": "read"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "27-47",
+      "kind": "error",
+      "input": "The book will is useful.",
+      "controlId": "27-17",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "MODAL-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 14,
+                  "end": 16
+                },
+                "expected": "is",
+                "replacement": "be"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "27-48",
+      "kind": "error",
+      "input": "The book will not is useful.",
+      "controlId": "27-18",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "MODAL-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 18,
+                  "end": 20
+                },
+                "expected": "is",
+                "replacement": "be"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "27-49",
+      "kind": "error",
+      "input": "The book won't is useful.",
+      "controlId": "27-19",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "MODAL-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 15,
+                  "end": 17
+                },
+                "expected": "is",
+                "replacement": "be"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "27-50",
+      "kind": "error",
+      "input": "She will gives him a book.",
+      "controlId": "27-25",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "MODAL-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 9,
+                  "end": 14
+                },
+                "expected": "gives",
+                "replacement": "give"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "27-51",
+      "kind": "error",
+      "input": "She will not gives him a book.",
+      "controlId": "27-26",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "MODAL-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 13,
+                  "end": 18
+                },
+                "expected": "gives",
+                "replacement": "give"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "27-52",
+      "kind": "error",
+      "input": "She won't gives him a book.",
+      "controlId": "27-27",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "MODAL-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 10,
+                  "end": 15
+                },
+                "expected": "gives",
+                "replacement": "give"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "27-53",
+      "kind": "error",
+      "input": "She will keeps the door clean.",
+      "controlId": "27-33",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "MODAL-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 9,
+                  "end": 14
+                },
+                "expected": "keeps",
+                "replacement": "keep"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "27-54",
+      "kind": "error",
+      "input": "She will not keeps the door clean.",
+      "controlId": "27-34",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "MODAL-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 13,
+                  "end": 18
+                },
+                "expected": "keeps",
+                "replacement": "keep"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "27-55",
+      "kind": "error",
+      "input": "She won't keeps the door clean.",
+      "controlId": "27-35",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "MODAL-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 10,
+                  "end": 15
+                },
+                "expected": "keeps",
+                "replacement": "keep"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "27-56",
+      "kind": "boundary",
+      "input": "She will have a book.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-57",
+      "kind": "boundary",
+      "input": "She will be reading the book.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-58",
+      "kind": "boundary",
+      "input": "She will have read the book.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-59",
+      "kind": "boundary",
+      "input": "The book will be read.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-60",
+      "kind": "boundary",
+      "input": "Will she not read the book?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-61",
+      "kind": "boundary",
+      "input": "Won't she read the book?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-62",
+      "kind": "boundary",
+      "input": "She will not not read the book.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-63",
+      "kind": "boundary",
+      "input": "She does will read the book.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-64",
+      "kind": "boundary",
+      "input": "She will reads.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-65",
+      "kind": "boundary",
+      "input": "She will give the book.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-66",
+      "kind": "boundary",
+      "input": "She will keep the door.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-67",
+      "kind": "boundary",
+      "input": "She will go the school.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-68",
+      "kind": "boundary",
+      "input": "She will read the book yesterday.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-69",
+      "kind": "boundary",
+      "input": "She will read the book?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "punctuation",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-70",
+      "kind": "boundary",
+      "input": "Will she read the book.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "punctuation",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-71",
+      "kind": "boundary",
+      "input": "She will.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-72",
+      "kind": "boundary",
+      "input": "Will she?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-73",
+      "kind": "boundary",
+      "input": "She will not.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-74",
+      "kind": "boundary",
+      "input": "She will be.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-75",
+      "kind": "boundary",
+      "input": "She will read book.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-76",
+      "kind": "boundary",
+      "input": "She will give it a book.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-77",
+      "kind": "boundary",
+      "input": "She will keep the door a book.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-78",
+      "kind": "boundary",
+      "input": "She will read the book today yesterday.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-79",
+      "kind": "boundary",
+      "input": "She will can read the book.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "27-80",
+      "kind": "boundary",
+      "input": "She will read the book 😀.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "punctuation",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    }
+  ],
+  "revisions": [
+    {
+      "fromSha256": "09b563d50517dcd6607003b3fc6820aabf1a2fff5ae9aee9ecb9036e3c0d28c5",
+      "reason": "人工规则ID补全：既有核心解析器为所有非谓语成分使用句型ID，进行体核心使用 PREDICATE-PROGRESSIVE-ACTIVE；WH 与 LOCATION 节点使用独立ID。纠正机械生成器的默认ID，范围/角色/分类/诊断/编辑不变。按代码中显式规则定义固定，无分析器输出导入。",
+      "changes": [
+        {
+          "fixtureId": "27-1",
+          "key": "0",
+          "from": "MODAL-WILL-001",
+          "to": "SV-001"
+        },
+        {
+          "fixtureId": "27-2",
+          "key": "2",
+          "from": "MODAL-WILL-001",
+          "to": "SV-001"
+        },
+        {
+          "fixtureId": "27-3",
+          "key": "4",
+          "from": "MODAL-WILL-001",
+          "to": "SV-001"
+        },
+        {
+          "fixtureId": "27-4",
+          "key": "6",
+          "from": "MODAL-WILL-001",
+          "to": "SV-001"
+        },
+        {
+          "fixtureId": "27-5",
+          "key": "9",
+          "from": "MODAL-WILL-001",
+          "to": "SV-001"
+        },
+        {
+          "fixtureId": "27-6",
+          "key": "11",
+          "from": "MODAL-WILL-001",
+          "to": "SV-001"
+        },
+        {
+          "fixtureId": "27-7",
+          "key": "13",
+          "from": "MODAL-WILL-001",
+          "to": "SV-001"
+        },
+        {
+          "fixtureId": "27-8",
+          "key": "15",
+          "from": "MODAL-WILL-001",
+          "to": "SV-001"
+        },
+        {
+          "fixtureId": "27-9",
+          "key": "17",
+          "from": "MODAL-WILL-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "27-9",
+          "key": "19",
+          "from": "MODAL-WILL-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "27-10",
+          "key": "20",
+          "from": "MODAL-WILL-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "27-10",
+          "key": "22",
+          "from": "MODAL-WILL-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "27-11",
+          "key": "23",
+          "from": "MODAL-WILL-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "27-11",
+          "key": "25",
+          "from": "MODAL-WILL-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "27-12",
+          "key": "26",
+          "from": "MODAL-WILL-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "27-12",
+          "key": "28",
+          "from": "MODAL-WILL-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "27-13",
+          "key": "30",
+          "from": "MODAL-WILL-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "27-13",
+          "key": "32",
+          "from": "MODAL-WILL-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "27-14",
+          "key": "33",
+          "from": "MODAL-WILL-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "27-14",
+          "key": "35",
+          "from": "MODAL-WILL-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "27-15",
+          "key": "36",
+          "from": "MODAL-WILL-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "27-15",
+          "key": "38",
+          "from": "MODAL-WILL-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "27-16",
+          "key": "39",
+          "from": "MODAL-WILL-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "27-16",
+          "key": "41",
+          "from": "MODAL-WILL-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "27-17",
+          "key": "42",
+          "from": "MODAL-WILL-001",
+          "to": "SVC-001"
+        },
+        {
+          "fixtureId": "27-17",
+          "key": "44",
+          "from": "MODAL-WILL-001",
+          "to": "SVC-001"
+        },
+        {
+          "fixtureId": "27-18",
+          "key": "45",
+          "from": "MODAL-WILL-001",
+          "to": "SVC-001"
+        },
+        {
+          "fixtureId": "27-18",
+          "key": "47",
+          "from": "MODAL-WILL-001",
+          "to": "SVC-001"
+        },
+        {
+          "fixtureId": "27-19",
+          "key": "48",
+          "from": "MODAL-WILL-001",
+          "to": "SVC-001"
+        },
+        {
+          "fixtureId": "27-19",
+          "key": "50",
+          "from": "MODAL-WILL-001",
+          "to": "SVC-001"
+        },
+        {
+          "fixtureId": "27-20",
+          "key": "51",
+          "from": "MODAL-WILL-001",
+          "to": "SVC-001"
+        },
+        {
+          "fixtureId": "27-20",
+          "key": "53",
+          "from": "MODAL-WILL-001",
+          "to": "SVC-001"
+        },
+        {
+          "fixtureId": "27-21",
+          "key": "55",
+          "from": "MODAL-WILL-001",
+          "to": "SVC-001"
+        },
+        {
+          "fixtureId": "27-21",
+          "key": "57",
+          "from": "MODAL-WILL-001",
+          "to": "SVC-001"
+        },
+        {
+          "fixtureId": "27-22",
+          "key": "58",
+          "from": "MODAL-WILL-001",
+          "to": "SVC-001"
+        },
+        {
+          "fixtureId": "27-22",
+          "key": "60",
+          "from": "MODAL-WILL-001",
+          "to": "SVC-001"
+        },
+        {
+          "fixtureId": "27-23",
+          "key": "61",
+          "from": "MODAL-WILL-001",
+          "to": "SVC-001"
+        },
+        {
+          "fixtureId": "27-23",
+          "key": "63",
+          "from": "MODAL-WILL-001",
+          "to": "SVC-001"
+        },
+        {
+          "fixtureId": "27-24",
+          "key": "64",
+          "from": "MODAL-WILL-001",
+          "to": "SVC-001"
+        },
+        {
+          "fixtureId": "27-24",
+          "key": "66",
+          "from": "MODAL-WILL-001",
+          "to": "SVC-001"
+        },
+        {
+          "fixtureId": "27-25",
+          "key": "67",
+          "from": "MODAL-WILL-001",
+          "to": "SVOO-001"
+        },
+        {
+          "fixtureId": "27-25",
+          "key": "69",
+          "from": "MODAL-WILL-001",
+          "to": "SVOO-001"
+        },
+        {
+          "fixtureId": "27-25",
+          "key": "70",
+          "from": "MODAL-WILL-001",
+          "to": "SVOO-001"
+        },
+        {
+          "fixtureId": "27-26",
+          "key": "71",
+          "from": "MODAL-WILL-001",
+          "to": "SVOO-001"
+        },
+        {
+          "fixtureId": "27-26",
+          "key": "73",
+          "from": "MODAL-WILL-001",
+          "to": "SVOO-001"
+        },
+        {
+          "fixtureId": "27-26",
+          "key": "74",
+          "from": "MODAL-WILL-001",
+          "to": "SVOO-001"
+        },
+        {
+          "fixtureId": "27-27",
+          "key": "75",
+          "from": "MODAL-WILL-001",
+          "to": "SVOO-001"
+        },
+        {
+          "fixtureId": "27-27",
+          "key": "77",
+          "from": "MODAL-WILL-001",
+          "to": "SVOO-001"
+        },
+        {
+          "fixtureId": "27-27",
+          "key": "78",
+          "from": "MODAL-WILL-001",
+          "to": "SVOO-001"
+        },
+        {
+          "fixtureId": "27-28",
+          "key": "79",
+          "from": "MODAL-WILL-001",
+          "to": "SVOO-001"
+        },
+        {
+          "fixtureId": "27-28",
+          "key": "81",
+          "from": "MODAL-WILL-001",
+          "to": "SVOO-001"
+        },
+        {
+          "fixtureId": "27-28",
+          "key": "82",
+          "from": "MODAL-WILL-001",
+          "to": "SVOO-001"
+        },
+        {
+          "fixtureId": "27-29",
+          "key": "84",
+          "from": "MODAL-WILL-001",
+          "to": "SVOO-001"
+        },
+        {
+          "fixtureId": "27-29",
+          "key": "86",
+          "from": "MODAL-WILL-001",
+          "to": "SVOO-001"
+        },
+        {
+          "fixtureId": "27-29",
+          "key": "87",
+          "from": "MODAL-WILL-001",
+          "to": "SVOO-001"
+        },
+        {
+          "fixtureId": "27-30",
+          "key": "88",
+          "from": "MODAL-WILL-001",
+          "to": "SVOO-001"
+        },
+        {
+          "fixtureId": "27-30",
+          "key": "90",
+          "from": "MODAL-WILL-001",
+          "to": "SVOO-001"
+        },
+        {
+          "fixtureId": "27-30",
+          "key": "91",
+          "from": "MODAL-WILL-001",
+          "to": "SVOO-001"
+        },
+        {
+          "fixtureId": "27-31",
+          "key": "92",
+          "from": "MODAL-WILL-001",
+          "to": "SVOO-001"
+        },
+        {
+          "fixtureId": "27-31",
+          "key": "94",
+          "from": "MODAL-WILL-001",
+          "to": "SVOO-001"
+        },
+        {
+          "fixtureId": "27-31",
+          "key": "95",
+          "from": "MODAL-WILL-001",
+          "to": "SVOO-001"
+        },
+        {
+          "fixtureId": "27-32",
+          "key": "96",
+          "from": "MODAL-WILL-001",
+          "to": "SVOO-001"
+        },
+        {
+          "fixtureId": "27-32",
+          "key": "98",
+          "from": "MODAL-WILL-001",
+          "to": "SVOO-001"
+        },
+        {
+          "fixtureId": "27-32",
+          "key": "99",
+          "from": "MODAL-WILL-001",
+          "to": "SVOO-001"
+        },
+        {
+          "fixtureId": "27-33",
+          "key": "100",
+          "from": "MODAL-WILL-001",
+          "to": "SVOC-001"
+        },
+        {
+          "fixtureId": "27-33",
+          "key": "102",
+          "from": "MODAL-WILL-001",
+          "to": "SVOC-001"
+        },
+        {
+          "fixtureId": "27-33",
+          "key": "103",
+          "from": "MODAL-WILL-001",
+          "to": "SVOC-001"
+        },
+        {
+          "fixtureId": "27-34",
+          "key": "104",
+          "from": "MODAL-WILL-001",
+          "to": "SVOC-001"
+        },
+        {
+          "fixtureId": "27-34",
+          "key": "106",
+          "from": "MODAL-WILL-001",
+          "to": "SVOC-001"
+        },
+        {
+          "fixtureId": "27-34",
+          "key": "107",
+          "from": "MODAL-WILL-001",
+          "to": "SVOC-001"
+        },
+        {
+          "fixtureId": "27-35",
+          "key": "108",
+          "from": "MODAL-WILL-001",
+          "to": "SVOC-001"
+        },
+        {
+          "fixtureId": "27-35",
+          "key": "110",
+          "from": "MODAL-WILL-001",
+          "to": "SVOC-001"
+        },
+        {
+          "fixtureId": "27-35",
+          "key": "111",
+          "from": "MODAL-WILL-001",
+          "to": "SVOC-001"
+        },
+        {
+          "fixtureId": "27-36",
+          "key": "112",
+          "from": "MODAL-WILL-001",
+          "to": "SVOC-001"
+        },
+        {
+          "fixtureId": "27-36",
+          "key": "114",
+          "from": "MODAL-WILL-001",
+          "to": "SVOC-001"
+        },
+        {
+          "fixtureId": "27-36",
+          "key": "115",
+          "from": "MODAL-WILL-001",
+          "to": "SVOC-001"
+        },
+        {
+          "fixtureId": "27-37",
+          "key": "117",
+          "from": "MODAL-WILL-001",
+          "to": "SVOC-001"
+        },
+        {
+          "fixtureId": "27-37",
+          "key": "119",
+          "from": "MODAL-WILL-001",
+          "to": "SVOC-001"
+        },
+        {
+          "fixtureId": "27-37",
+          "key": "120",
+          "from": "MODAL-WILL-001",
+          "to": "SVOC-001"
+        },
+        {
+          "fixtureId": "27-38",
+          "key": "121",
+          "from": "MODAL-WILL-001",
+          "to": "SVOC-001"
+        },
+        {
+          "fixtureId": "27-38",
+          "key": "123",
+          "from": "MODAL-WILL-001",
+          "to": "SVOC-001"
+        },
+        {
+          "fixtureId": "27-38",
+          "key": "124",
+          "from": "MODAL-WILL-001",
+          "to": "SVOC-001"
+        },
+        {
+          "fixtureId": "27-39",
+          "key": "125",
+          "from": "MODAL-WILL-001",
+          "to": "SVOC-001"
+        },
+        {
+          "fixtureId": "27-39",
+          "key": "127",
+          "from": "MODAL-WILL-001",
+          "to": "SVOC-001"
+        },
+        {
+          "fixtureId": "27-39",
+          "key": "128",
+          "from": "MODAL-WILL-001",
+          "to": "SVOC-001"
+        },
+        {
+          "fixtureId": "27-40",
+          "key": "129",
+          "from": "MODAL-WILL-001",
+          "to": "SVOC-001"
+        },
+        {
+          "fixtureId": "27-40",
+          "key": "131",
+          "from": "MODAL-WILL-001",
+          "to": "SVOC-001"
+        },
+        {
+          "fixtureId": "27-40",
+          "key": "132",
+          "from": "MODAL-WILL-001",
+          "to": "SVOC-001"
+        }
+      ]
+    }
+  ]
+}

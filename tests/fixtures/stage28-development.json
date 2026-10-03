@@ -1,0 +1,4196 @@
+{
+  "authorship": "Manual roles/fragments/classifications/edits frozen before new stage28 behavior; no analyzer imports.",
+  "fixtures": [
+    {
+      "id": "28-1",
+      "kind": "correct",
+      "input": "She sleeps near the table.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 10
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 25
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-2",
+      "kind": "correct",
+      "input": "She slept in the car.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 9
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 20
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-3",
+      "kind": "correct",
+      "input": "She will sleep near the table.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 14
+              }
+            ],
+            "ruleId": "MODAL-WILL-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 15,
+                "end": 29
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-4",
+      "kind": "correct",
+      "input": "She can sleep on the table.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "can",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 7
+              },
+              {
+                "start": 8,
+                "end": 13
+              }
+            ],
+            "ruleId": "MODAL-CAN-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 14,
+                "end": 26
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-5",
+      "kind": "correct",
+      "input": "She is sleeping under the table.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "aspect": "progressive",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "PREDICATE-PROGRESSIVE-ACTIVE"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 15
+              }
+            ],
+            "ruleId": "PREDICATE-PROGRESSIVE-ACTIVE"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 16,
+                "end": 31
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-6",
+      "kind": "correct",
+      "input": "Does she sleep near the tall table?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              },
+              {
+                "start": 9,
+                "end": 14
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 8
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 15,
+                "end": 34
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          },
+          {
+            "key": "4",
+            "parentKey": "3",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 24,
+                "end": 28
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-7",
+      "kind": "correct",
+      "input": "She does not sleep in the car today.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 18
+              }
+            ],
+            "ruleId": "NEGATIVE-DO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 19,
+                "end": 29
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 30,
+                "end": 35
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-8",
+      "kind": "correct",
+      "input": "She was not sleeping near the table yesterday.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "aspect": "progressive",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "PREDICATE-PROGRESSIVE-ACTIVE"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 20
+              }
+            ],
+            "ruleId": "PREDICATE-PROGRESSIVE-ACTIVE"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 21,
+                "end": 35
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 36,
+                "end": 45
+              }
+            ],
+            "ruleId": "PREDICATE-PROGRESSIVE-ACTIVE"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-9",
+      "kind": "error",
+      "input": "She sleep near the table.",
+      "controlId": "28-1",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 4,
+                  "end": 9
+                },
+                "expected": "sleep",
+                "replacement": "sleeps"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "28-10",
+      "kind": "error",
+      "input": "She will sleeps near the table.",
+      "controlId": "28-3",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "MODAL-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 9,
+                  "end": 15
+                },
+                "expected": "sleeps",
+                "replacement": "sleep"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "28-11",
+      "kind": "correct",
+      "input": "She works near the table.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 9
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 24
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-12",
+      "kind": "correct",
+      "input": "She worked in the car.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 10
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 21
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-13",
+      "kind": "correct",
+      "input": "She will work near the table.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 13
+              }
+            ],
+            "ruleId": "MODAL-WILL-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 14,
+                "end": 28
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-14",
+      "kind": "correct",
+      "input": "She can work on the table.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "can",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 7
+              },
+              {
+                "start": 8,
+                "end": 12
+              }
+            ],
+            "ruleId": "MODAL-CAN-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 13,
+                "end": 25
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-15",
+      "kind": "correct",
+      "input": "She is working on the table.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "aspect": "progressive",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "PREDICATE-PROGRESSIVE-ACTIVE"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 14
+              }
+            ],
+            "ruleId": "PREDICATE-PROGRESSIVE-ACTIVE"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 15,
+                "end": 27
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-16",
+      "kind": "correct",
+      "input": "Does she work near the tall table?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              },
+              {
+                "start": 9,
+                "end": 13
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 8
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 14,
+                "end": 33
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          },
+          {
+            "key": "4",
+            "parentKey": "3",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 23,
+                "end": 27
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-17",
+      "kind": "correct",
+      "input": "She does not work in the car today.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 17
+              }
+            ],
+            "ruleId": "NEGATIVE-DO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 18,
+                "end": 28
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 29,
+                "end": 34
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-18",
+      "kind": "correct",
+      "input": "She was not working near the table yesterday.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "aspect": "progressive",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "PREDICATE-PROGRESSIVE-ACTIVE"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 19
+              }
+            ],
+            "ruleId": "PREDICATE-PROGRESSIVE-ACTIVE"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 20,
+                "end": 34
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 35,
+                "end": 44
+              }
+            ],
+            "ruleId": "PREDICATE-PROGRESSIVE-ACTIVE"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-19",
+      "kind": "error",
+      "input": "She work near the table.",
+      "controlId": "28-11",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 4,
+                  "end": 8
+                },
+                "expected": "work",
+                "replacement": "works"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "28-20",
+      "kind": "error",
+      "input": "She will works near the table.",
+      "controlId": "28-13",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "MODAL-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 9,
+                  "end": 14
+                },
+                "expected": "works",
+                "replacement": "work"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "28-21",
+      "kind": "correct",
+      "input": "She walks near the table.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 9
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 24
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-22",
+      "kind": "correct",
+      "input": "She walked in the car.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 10
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 21
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-23",
+      "kind": "correct",
+      "input": "She will walk near the table.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 13
+              }
+            ],
+            "ruleId": "MODAL-WILL-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 14,
+                "end": 28
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-24",
+      "kind": "correct",
+      "input": "She can walk on the table.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "can",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 7
+              },
+              {
+                "start": 8,
+                "end": 12
+              }
+            ],
+            "ruleId": "MODAL-CAN-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 13,
+                "end": 25
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-25",
+      "kind": "correct",
+      "input": "She is walking on the table.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "aspect": "progressive",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "PREDICATE-PROGRESSIVE-ACTIVE"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 14
+              }
+            ],
+            "ruleId": "PREDICATE-PROGRESSIVE-ACTIVE"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 15,
+                "end": 27
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-26",
+      "kind": "correct",
+      "input": "Does she walk near the tall table?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              },
+              {
+                "start": 9,
+                "end": 13
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 8
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 14,
+                "end": 33
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          },
+          {
+            "key": "4",
+            "parentKey": "3",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 23,
+                "end": 27
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-27",
+      "kind": "correct",
+      "input": "She does not walk in the car today.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 17
+              }
+            ],
+            "ruleId": "NEGATIVE-DO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 18,
+                "end": 28
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 29,
+                "end": 34
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-28",
+      "kind": "correct",
+      "input": "She was not walking near the table yesterday.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "aspect": "progressive",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "PREDICATE-PROGRESSIVE-ACTIVE"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 19
+              }
+            ],
+            "ruleId": "PREDICATE-PROGRESSIVE-ACTIVE"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 20,
+                "end": 34
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 35,
+                "end": 44
+              }
+            ],
+            "ruleId": "PREDICATE-PROGRESSIVE-ACTIVE"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-29",
+      "kind": "error",
+      "input": "She walk near the table.",
+      "controlId": "28-21",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 4,
+                  "end": 8
+                },
+                "expected": "walk",
+                "replacement": "walks"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "28-30",
+      "kind": "error",
+      "input": "She will walks near the table.",
+      "controlId": "28-23",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "MODAL-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 9,
+                  "end": 14
+                },
+                "expected": "walks",
+                "replacement": "walk"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "28-31",
+      "kind": "correct",
+      "input": "She runs near the table.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 8
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 23
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-32",
+      "kind": "correct",
+      "input": "She ran in the car.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 7
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 8,
+                "end": 18
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-33",
+      "kind": "correct",
+      "input": "She will run near the table.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 12
+              }
+            ],
+            "ruleId": "MODAL-WILL-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 13,
+                "end": 27
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-34",
+      "kind": "correct",
+      "input": "She can run on the table.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "can",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 7
+              },
+              {
+                "start": 8,
+                "end": 11
+              }
+            ],
+            "ruleId": "MODAL-CAN-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 12,
+                "end": 24
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-35",
+      "kind": "correct",
+      "input": "She is running on the table.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "aspect": "progressive",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "PREDICATE-PROGRESSIVE-ACTIVE"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 14
+              }
+            ],
+            "ruleId": "PREDICATE-PROGRESSIVE-ACTIVE"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 15,
+                "end": 27
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-36",
+      "kind": "correct",
+      "input": "Does she run near the tall table?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              },
+              {
+                "start": 9,
+                "end": 12
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 8
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 13,
+                "end": 32
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          },
+          {
+            "key": "4",
+            "parentKey": "3",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 22,
+                "end": 26
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-37",
+      "kind": "correct",
+      "input": "She does not run in the car today.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 16
+              }
+            ],
+            "ruleId": "NEGATIVE-DO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 17,
+                "end": 27
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 28,
+                "end": 33
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-38",
+      "kind": "correct",
+      "input": "She was not running near the table yesterday.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "aspect": "progressive",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "PREDICATE-PROGRESSIVE-ACTIVE"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 19
+              }
+            ],
+            "ruleId": "PREDICATE-PROGRESSIVE-ACTIVE"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 20,
+                "end": 34
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 35,
+                "end": 44
+              }
+            ],
+            "ruleId": "PREDICATE-PROGRESSIVE-ACTIVE"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-39",
+      "kind": "error",
+      "input": "She run near the table.",
+      "controlId": "28-31",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 4,
+                  "end": 7
+                },
+                "expected": "run",
+                "replacement": "runs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "28-40",
+      "kind": "error",
+      "input": "She will runs near the table.",
+      "controlId": "28-33",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "MODAL-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 9,
+                  "end": 13
+                },
+                "expected": "runs",
+                "replacement": "run"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "28-41",
+      "kind": "correct",
+      "input": "She dances near the table.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 10
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 25
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-42",
+      "kind": "correct",
+      "input": "She danced in the car.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 10
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 21
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-43",
+      "kind": "correct",
+      "input": "She will dance near the table.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 14
+              }
+            ],
+            "ruleId": "MODAL-WILL-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 15,
+                "end": 29
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-44",
+      "kind": "correct",
+      "input": "She can dance on the table.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "can",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 7
+              },
+              {
+                "start": 8,
+                "end": 13
+              }
+            ],
+            "ruleId": "MODAL-CAN-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 14,
+                "end": 26
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-45",
+      "kind": "correct",
+      "input": "She is dancing on the table.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "aspect": "progressive",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "PREDICATE-PROGRESSIVE-ACTIVE"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 14
+              }
+            ],
+            "ruleId": "PREDICATE-PROGRESSIVE-ACTIVE"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 15,
+                "end": 27
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-46",
+      "kind": "correct",
+      "input": "Does she dance near the tall table?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              },
+              {
+                "start": 9,
+                "end": 14
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 8
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 15,
+                "end": 34
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          },
+          {
+            "key": "4",
+            "parentKey": "3",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 24,
+                "end": 28
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-47",
+      "kind": "correct",
+      "input": "She does not dance in the car today.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 18
+              }
+            ],
+            "ruleId": "NEGATIVE-DO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 19,
+                "end": 29
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 30,
+                "end": 35
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-48",
+      "kind": "correct",
+      "input": "She was not dancing near the table yesterday.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "aspect": "progressive",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "PREDICATE-PROGRESSIVE-ACTIVE"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 19
+              }
+            ],
+            "ruleId": "PREDICATE-PROGRESSIVE-ACTIVE"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 20,
+                "end": 34
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 35,
+                "end": 44
+              }
+            ],
+            "ruleId": "PREDICATE-PROGRESSIVE-ACTIVE"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-49",
+      "kind": "error",
+      "input": "She dance near the table.",
+      "controlId": "28-41",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 4,
+                  "end": 9
+                },
+                "expected": "dance",
+                "replacement": "dances"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "28-50",
+      "kind": "error",
+      "input": "She will dances near the table.",
+      "controlId": "28-43",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "MODAL-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 9,
+                  "end": 15
+                },
+                "expected": "dances",
+                "replacement": "dance"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "28-51",
+      "kind": "correct",
+      "input": "She waits near the table.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 9
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 24
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-52",
+      "kind": "correct",
+      "input": "She waited in the car.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 10
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 21
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-53",
+      "kind": "correct",
+      "input": "She will wait near the table.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 13
+              }
+            ],
+            "ruleId": "MODAL-WILL-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 14,
+                "end": 28
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-54",
+      "kind": "correct",
+      "input": "She can wait on the table.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "can",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 7
+              },
+              {
+                "start": 8,
+                "end": 12
+              }
+            ],
+            "ruleId": "MODAL-CAN-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 13,
+                "end": 25
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-55",
+      "kind": "correct",
+      "input": "She is waiting under the table.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "aspect": "progressive",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "PREDICATE-PROGRESSIVE-ACTIVE"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 14
+              }
+            ],
+            "ruleId": "PREDICATE-PROGRESSIVE-ACTIVE"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 15,
+                "end": 30
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-56",
+      "kind": "correct",
+      "input": "Does she wait near the tall table?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              },
+              {
+                "start": 9,
+                "end": 13
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 8
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 14,
+                "end": 33
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          },
+          {
+            "key": "4",
+            "parentKey": "3",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 23,
+                "end": 27
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-57",
+      "kind": "correct",
+      "input": "She does not wait in the car today.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 17
+              }
+            ],
+            "ruleId": "NEGATIVE-DO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 18,
+                "end": 28
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 29,
+                "end": 34
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-58",
+      "kind": "correct",
+      "input": "She was not waiting near the table yesterday.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "aspect": "progressive",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "PREDICATE-PROGRESSIVE-ACTIVE"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 19
+              }
+            ],
+            "ruleId": "PREDICATE-PROGRESSIVE-ACTIVE"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 20,
+                "end": 34
+              }
+            ],
+            "ruleId": "LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 35,
+                "end": 44
+              }
+            ],
+            "ruleId": "PREDICATE-PROGRESSIVE-ACTIVE"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-59",
+      "kind": "error",
+      "input": "She wait near the table.",
+      "controlId": "28-51",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 4,
+                  "end": 8
+                },
+                "expected": "wait",
+                "replacement": "waits"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "28-60",
+      "kind": "error",
+      "input": "She will waits near the table.",
+      "controlId": "28-53",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "MODAL-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 9,
+                  "end": 14
+                },
+                "expected": "waits",
+                "replacement": "wait"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "28-61",
+      "kind": "boundary",
+      "input": "She sleeps near.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-62",
+      "kind": "boundary",
+      "input": "She sleeps near him.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-63",
+      "kind": "boundary",
+      "input": "She sleeps near table.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-64",
+      "kind": "boundary",
+      "input": "She sleeps in school.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-65",
+      "kind": "boundary",
+      "input": "She sleeps in the table near the car.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-66",
+      "kind": "boundary",
+      "input": "Near the table she sleeps.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-67",
+      "kind": "boundary",
+      "input": "She sleeps today near the table.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-68",
+      "kind": "boundary",
+      "input": "She sees the teacher near the table.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-69",
+      "kind": "boundary",
+      "input": "The book is near the table.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-70",
+      "kind": "boundary",
+      "input": "She has slept near the table.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-71",
+      "kind": "boundary",
+      "input": "She had slept near the table.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-72",
+      "kind": "boundary",
+      "input": "She has been sleeping near the table.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-73",
+      "kind": "boundary",
+      "input": "Sleep near the table.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-74",
+      "kind": "boundary",
+      "input": "Does she not sleep near the table?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-75",
+      "kind": "boundary",
+      "input": "She arrives near the table.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-76",
+      "kind": "boundary",
+      "input": "She goes near the table.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-77",
+      "kind": "boundary",
+      "input": "She works under the table.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-78",
+      "kind": "boundary",
+      "input": "She dances under the table.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-79",
+      "kind": "boundary",
+      "input": "She runs under the table.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-80",
+      "kind": "boundary",
+      "input": "She walks under the table.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-81",
+      "kind": "boundary",
+      "input": "She sleeps near this tables.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-82",
+      "kind": "boundary",
+      "input": "She sleeps near a old table.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-83",
+      "kind": "boundary",
+      "input": "She sleeps near the the table.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "28-84",
+      "kind": "boundary",
+      "input": "She sleeps near the table and he smiles.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": [],
+            "clauseIndex": 1
+          }
+        ],
+        "corrections": []
+      }
+    }
+  ],
+  "revisions": [
+    {
+      "fromSha256": "0bc3c4f3eab5bab87e18fac6f55bdff2f30a77a9d25da897fe4feda42451ecd1",
+      "reason": "人工规则ID补全：既有核心解析器为所有非谓语成分使用句型ID，进行体核心使用 PREDICATE-PROGRESSIVE-ACTIVE；WH 与 LOCATION 节点使用独立ID。纠正机械生成器的默认ID，范围/角色/分类/诊断/编辑不变。按代码中显式规则定义固定，无分析器输出导入。",
+      "changes": [
+        {
+          "fixtureId": "28-5",
+          "key": "0",
+          "from": "SV-001",
+          "to": "PREDICATE-PROGRESSIVE-ACTIVE"
+        },
+        {
+          "fixtureId": "28-8",
+          "key": "0",
+          "from": "SV-001",
+          "to": "PREDICATE-PROGRESSIVE-ACTIVE"
+        },
+        {
+          "fixtureId": "28-8",
+          "key": "3",
+          "from": "SV-001",
+          "to": "PREDICATE-PROGRESSIVE-ACTIVE"
+        },
+        {
+          "fixtureId": "28-15",
+          "key": "0",
+          "from": "SV-001",
+          "to": "PREDICATE-PROGRESSIVE-ACTIVE"
+        },
+        {
+          "fixtureId": "28-18",
+          "key": "0",
+          "from": "SV-001",
+          "to": "PREDICATE-PROGRESSIVE-ACTIVE"
+        },
+        {
+          "fixtureId": "28-18",
+          "key": "3",
+          "from": "SV-001",
+          "to": "PREDICATE-PROGRESSIVE-ACTIVE"
+        },
+        {
+          "fixtureId": "28-25",
+          "key": "0",
+          "from": "SV-001",
+          "to": "PREDICATE-PROGRESSIVE-ACTIVE"
+        },
+        {
+          "fixtureId": "28-28",
+          "key": "0",
+          "from": "SV-001",
+          "to": "PREDICATE-PROGRESSIVE-ACTIVE"
+        },
+        {
+          "fixtureId": "28-28",
+          "key": "3",
+          "from": "SV-001",
+          "to": "PREDICATE-PROGRESSIVE-ACTIVE"
+        },
+        {
+          "fixtureId": "28-35",
+          "key": "0",
+          "from": "SV-001",
+          "to": "PREDICATE-PROGRESSIVE-ACTIVE"
+        },
+        {
+          "fixtureId": "28-38",
+          "key": "0",
+          "from": "SV-001",
+          "to": "PREDICATE-PROGRESSIVE-ACTIVE"
+        },
+        {
+          "fixtureId": "28-38",
+          "key": "3",
+          "from": "SV-001",
+          "to": "PREDICATE-PROGRESSIVE-ACTIVE"
+        },
+        {
+          "fixtureId": "28-45",
+          "key": "0",
+          "from": "SV-001",
+          "to": "PREDICATE-PROGRESSIVE-ACTIVE"
+        },
+        {
+          "fixtureId": "28-48",
+          "key": "0",
+          "from": "SV-001",
+          "to": "PREDICATE-PROGRESSIVE-ACTIVE"
+        },
+        {
+          "fixtureId": "28-48",
+          "key": "3",
+          "from": "SV-001",
+          "to": "PREDICATE-PROGRESSIVE-ACTIVE"
+        },
+        {
+          "fixtureId": "28-55",
+          "key": "0",
+          "from": "SV-001",
+          "to": "PREDICATE-PROGRESSIVE-ACTIVE"
+        },
+        {
+          "fixtureId": "28-58",
+          "key": "0",
+          "from": "SV-001",
+          "to": "PREDICATE-PROGRESSIVE-ACTIVE"
+        },
+        {
+          "fixtureId": "28-58",
+          "key": "3",
+          "from": "SV-001",
+          "to": "PREDICATE-PROGRESSIVE-ACTIVE"
+        }
+      ]
+    }
+  ]
+}
