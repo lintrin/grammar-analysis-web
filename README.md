@@ -4,7 +4,7 @@
 
 阶段 1–12 ✅ 已完成，历史开发与验收见 [开发计划](docs/development-plan.md)、[后续开发计划](docs/follow-up-development-plan.md) 和 [阶段 12 验收](docs/stage12-scope.md)。本轮阶段 13–18 ✅ 已完成；实施记录见 [谓语扩展执行计划](docs/predicate-expansion-plan.md)。
 
-下一轮按阶段 19–25 规划本地 SQLite 数据库词典、审核快照与词汇扩容、实义 have、限定否定缩写及谓语纠错；范围、依赖和验收门槛见 [后续计划](docs/next-development-plan.md)。数据库维护词典，分析仍在浏览器内使用打包快照，输入句子不入库。计划已补充历史验收语料基线、词条修改后重新审核，以及规则与词典版本联合校验。阶段 19 ✅ 已完成：固定范围、数据库设计、416 个未来开发答案、历史开发基线和 65 项迁移；阶段交付的工程、开发/构建浏览器复核通过；测试去重及审查完整性修复后 1422 项全部通过，见 [阶段 19 验收与测试清理](docs/stage19-scope.md)。阶段 20A ✅ 已完成本地建库、旧词入库与维护命令，见 [20A 记录](docs/stage20a-scope.md)；20B/C ✅ 已完成审核发布、确定性重建与客户端快照接入，见 [20B/C 验收](docs/stage20bc-scope.md)。阶段 20 ✅；阶段 21 ✅ 已完成首批词汇扩容及审查修复，1739 项测试及开发/构建浏览器验收通过，见 [21 记录](docs/stage21-scope.md)；阶段 22 ✅ 已完成拥有义 have、基础纠错与 4 项历史迁移，1799 项测试及开发/构建浏览器验收通过，见 [22 记录](docs/stage22-scope.md)；阶段 23 ✅ 已完成 11 种限定否定缩写、原文区间校验与 11 项历史迁移，1887 项测试及开发/构建浏览器验收通过，见 [23 记录](docs/stage23-scope.md)；阶段 24 ✅ 已完成限定 be/have 一致、唯一分词替换与 50 项历史迁移，2024 项测试及开发/构建浏览器验收通过，见 [24 记录](docs/stage24-scope.md)；下一步阶段 25 独立复核与交付。
+阶段 19–25 已交付本地 SQLite 数据库词典、审核快照与词汇扩容、实义 have、限定否定缩写及谓语纠错；范围、依赖和验收门槛见 [后续计划](docs/next-development-plan.md)。数据库维护词典，分析仍在浏览器内使用打包快照，输入句子不入库。计划已补充历史验收语料基线、词条修改后重新审核，以及规则与词典版本联合校验。阶段 19 ✅ 已完成：固定范围、数据库设计、416 个未来开发答案、历史开发基线和 65 项迁移；阶段交付的工程、开发/构建浏览器复核通过；测试去重及审查完整性修复后 1422 项全部通过，见 [阶段 19 验收与测试清理](docs/stage19-scope.md)。阶段 20A ✅ 已完成本地建库、旧词入库与维护命令，见 [20A 记录](docs/stage20a-scope.md)；20B/C ✅ 已完成审核发布、确定性重建与客户端快照接入，见 [20B/C 验收](docs/stage20bc-scope.md)。阶段 20 ✅；阶段 21 ✅ 已完成首批词汇扩容及审查修复，1739 项测试及开发/构建浏览器验收通过，见 [21 记录](docs/stage21-scope.md)；阶段 22 ✅ 已完成拥有义 have、基础纠错与 4 项历史迁移，1799 项测试及开发/构建浏览器验收通过，见 [22 记录](docs/stage22-scope.md)；阶段 23 ✅ 已完成 11 种限定否定缩写、原文区间校验与 11 项历史迁移，1887 项测试及开发/构建浏览器验收通过，见 [23 记录](docs/stage23-scope.md)；阶段 24 ✅ 已完成限定 be/have 一致、唯一分词替换与 50 项历史迁移，2024 项测试及开发/构建浏览器验收通过，见 [24 记录](docs/stage24-scope.md)；阶段 25 ✅ 已完成 80 个新独立正确答案与 40 个对照、2154 项测试、空库重建、开发/构建/无数据库隔离目录浏览器及性能隐私验收，见 [25 交付记录](docs/stage25-scope.md)。本轮本地交付完成，规则仍为 0.18.0、词典 1.2.0。
 
 ## 当前进度
 
@@ -53,12 +53,15 @@ node --experimental-strip-types scripts/check-stage12-fixtures.mjs
 node --experimental-strip-types scripts/check-stage12-performance.mjs
 node --experimental-strip-types scripts/check-predicate-fixtures.mjs
 node --experimental-strip-types scripts/check-predicate-performance.mjs
+node --experimental-strip-types scripts/check-stage25-fixtures.mjs
+node --experimental-strip-types scripts/check-stage25-performance.mjs
 ```
 
-常规 `npm test` 可在源码导出或缺少历史提交的浅克隆中运行。以下独立命令核验历史来源，需要 Git 可执行文件及包含固定基线提交 `9708002c8606afaebfc5bd9b7b80537e20149cfe` 的仓库历史：
+常规 `npm test` 可在源码导出或缺少历史提交的浅克隆中运行。以下独立命令核验历史来源，需要 Git 可执行文件及包含阶段 12/18 固定提交 `9708002c8606afaebfc5bd9b7b80537e20149cfe`、阶段 25 固定提交 `5c527e892e2adf8341655f2242896c4106d9c020` 的仓库历史：
 
 ```sh
 node scripts/check-historical-baselines.mjs
+node --experimental-strip-types scripts/check-stage25-baseline.mjs
 ```
 
 ## 本地词典维护
@@ -148,6 +151,8 @@ npm run build
 - `tests/stage12-performance.test.mjs`：1000 字符边界、共享预算及耗尽降级
 - `tests/stage13.test.mjs` 至 `tests/stage18.test.mjs`：谓语扩展、协议、独立答案与预算回归
 - `tests/fixtures/predicate-development.json`、`predicate-acceptance.json`：人工固定开发与独立答案
+- `tests/stage25.test.mjs`、`stage25-delivery.test.mjs`、`ui-stage25.mjs`：120 个新独立人工答案、固定来源与哈希、完整纠错闭环、磁盘空库重建与重新审核、高候选词形及交付浏览器复核
+- `tests/baselines/stage25-development.json`、`tests/fixtures/lexicon-acceptance.json`：阶段 25 的冻结开发/历史清单和独立答案
 - `tests/stage24.test.mjs`、`tests/ui-stage24.mjs`：82 个固定答案、50 项历史迁移、三类纠错门槛、精确编辑与应用后的完整结果、过期拒绝及浏览器验收
 - `tests/stage23.test.mjs`、`tests/ui-stage23.mjs`：57 个缩写人工答案、11 项历史迁移、完整 token 编辑与原文区间、基础纠错及浏览器验收
 - `tests/stage22.test.mjs`、`tests/ui-stage22.mjs`：拥有义/助动词区分、53 个人工答案、10 对基础纠错、4 项历史迁移、发布重现及浏览器验收
