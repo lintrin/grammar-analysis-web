@@ -46,8 +46,8 @@ try{
         assert.equal(await button.evaluate(el=>el===document.activeElement),true);assert.equal(await displayed(),f.input);
       }
     }else assert.equal(await page.locator('.sentence-part').count(),0);
-    await page.getByRole('tab',{name:/语法检查/}).click();assert.equal(await page.locator('.correction-card').count(),f.expected.corrections.length);
-    await page.getByRole('tab',{name:'成分解析',exact:true}).click();assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
+    await page.getByRole('tab', { name: '语法检查与成分解析', exact: true }).click();assert.equal(await page.locator('.correction-card').count(),f.expected.corrections.length);
+    await page.getByRole('tab', { name: '语法检查与成分解析', exact: true }).click();assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
   };
   for(const f of fixtures)await check(f);
   for(const m of migrations)await check({input:m.input,expected:m.newExpected});
@@ -56,20 +56,20 @@ try{
     await page.setViewportSize({width,height:width===390?844:1000});
     if(width===390)for(const id of ['contraction-doesnt-3','contraction-isnt-2','contraction-hasnt-3','contraction-repeat','contraction-if','contraction-outside-21'])await check(byId.get(id));
     for(const id of errorsToCheck){
-      const f=byId.get(id);await check(f);await page.getByRole('tab',{name:/语法检查/}).click();
+      const f=byId.get(id);await check(f);await page.getByRole('tab', { name: '语法检查与成分解析', exact: true }).click();
       for(const [index,step] of f.steps.entries()){
         await page.getByRole('button',{name:'应用此建议并重新分析',exact:true}).first().click();await status(index===f.steps.length-1?'complete':'partial');assert.equal(await input.inputValue(),step);
       }
-      assert.equal(await page.locator('.correction-card').count(),0);await page.getByRole('tab',{name:'成分解析',exact:true}).click();
+      assert.equal(await page.locator('.correction-card').count(),0);await page.getByRole('tab', { name: '语法检查与成分解析', exact: true }).click();
       assert.equal(await displayed(),byId.get(f.controlId).input);
     }
   }
   await check(byId.get('contraction-isnt-2'));await page.locator('.sentence-part.verb').press('Enter');
   const explanation=await page.locator('.detail-callout').innerText();assert.match(explanation,/isn’t sleeping/);assert.doesNotMatch(explanation,/isn’t isn’t/);
   await page.locator('.result-card').screenshot({path:process.env.CLAUSE_STAGE23_SCREENSHOT??'/tmp/clause-stage23-mobile.png'});
-  await check(byId.get('predicate-error-18'));await page.getByRole('tab',{name:/语法检查/}).click();
+  await check(byId.get('predicate-error-18'));await page.getByRole('tab', { name: '语法检查与成分解析', exact: true }).click();
   await input.fill('She doesn’t sleep.');assert.equal(await page.locator('.correction-card').count(),0);assert.equal(await page.locator('.sentence-part').count(),0);
-  await input.press('Control+Enter');await status('complete');await page.getByRole('tab',{name:'成分解析',exact:true}).click();
+  await input.press('Control+Enter');await status('complete');await page.getByRole('tab', { name: '语法检查与成分解析', exact: true }).click();
   await input.fill('She doesn’t like music.');await input.press('Control+Enter');await status('unsupported');
   await page.getByRole('button',{name:'查看原文：music',exact:true}).press('Enter');
   assert.deepEqual(await input.evaluate(el=>[el.selectionStart,el.selectionEnd]),[17,22]);assert.equal(await input.inputValue(),'She doesn’t like music.');

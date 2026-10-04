@@ -31,9 +31,9 @@ try {
   }
   await page.setViewportSize({width:390,height:844});
   for(const id of ['noun-person-subject','lexicon-read-homograph','verb-read-perfect','verb-keep-third']) {const f=fixtures.find(f=>f.id===id);assert.ok(f,id);await check(f);}
-  await input.fill('The doctor walk.');await input.press('Control+Enter');await status('partial');await page.getByRole('tab',{name:/语法检查/}).click();
+  await input.fill('The doctor walk.');await input.press('Control+Enter');await status('partial');await page.getByRole('tab', { name: '语法检查与成分解析', exact: true }).click();
   assert.equal(await page.locator('.correction-card').count(),1);await page.getByRole('button',{name:'应用此建议并重新分析',exact:true}).click();await status('complete');assert.equal(await input.inputValue(),'The doctor walks.');
-  await page.getByRole('tab',{name:'成分解析',exact:true}).click();
+  await page.getByRole('tab', { name: '语法检查与成分解析', exact: true }).click();
   const compound=fixtures.find(f=>f.expected.complexity==='compound'&&f.expected.status==='complete');assert.ok(compound);await check(compound);
   const clause=page.locator('.sentence-part.clause').first();await clause.press('Enter');const back=page.getByRole('button',{name:'返回整句',exact:true});await back.waitFor();assert.equal(await back.evaluate(el=>el===document.activeElement),true);await back.press('Enter');assert.equal(await clause.evaluate(el=>el===document.activeElement),true);
   await input.fill('The nurse has written a letter.');await input.press('Control+Enter');await status('complete');await page.locator('.result-card').screenshot({path:process.env.CLAUSE_STAGE21_SCREENSHOT??'/tmp/clause-stage21-mobile.png'});

@@ -12,7 +12,7 @@ try{
  await page.addInitScript(()=>{const timer=window.setTimeout;window.setTimeout=(cb,delay,...args)=>{if(window.stage32Hold&&delay===0&&String(cb).includes('requestId')){window.stage32Held=()=>cb(...args);return timer(()=>{},600000);}return timer(cb,delay,...args);};});
  await page.goto(process.env.CLAUSE_BASE_URL??'http://127.0.0.1:5188');await page.waitForLoadState('networkidle');
  const input=page.getByRole('textbox',{name:'需要分析的英文句子'}),status=text=>page.locator('.result-status').filter({hasText:text}).waitFor();
- const show=async()=>{await input.fill(error.input);await input.press('Control+Enter');await status('部分支持');await page.getByRole('tab',{name:/语法检查/}).click();assert.equal(await page.locator('.correction-card').count(),1);};
+ const show=async()=>{await input.fill(error.input);await input.press('Control+Enter');await status('部分支持');await page.getByRole('tab', { name: '语法检查与成分解析', exact: true }).click();assert.equal(await page.locator('.correction-card').count(),1);};
  const variant=(field,value)=>{
   changed=true;
   const snapshot=JSON.parse(originals[files[1]]),manifest=JSON.parse(originals[files[2]]),metadata=JSON.parse(originals[files[3]]);

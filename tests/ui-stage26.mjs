@@ -59,7 +59,7 @@ try {
   assert.equal(license.status(),200); assert.match(await license.text(),/Copyright \(C\) 2019 Brad Jascob/);
   await context.setOffline(true); requests.length = 0;
   const check = async f => {
-    await page.getByRole('tab',{name:'成分解析',exact:true}).click();
+    await page.getByRole('tab', { name: '语法检查与成分解析', exact: true }).click();
     await input.fill(f.input); assert.equal(await page.locator('.sentence-part').count(),0);
     await input.press('Control+Enter'); await status(f.expected.status); assert.equal(await input.inputValue(),f.input);
     if (f.expected.status==='complete') {
@@ -81,7 +81,7 @@ try {
         }
       }
     } else assert.equal(await page.locator('.sentence-part').count(),0);
-    await page.getByRole('tab',{name:/语法检查/}).click(); assert.equal(await page.locator('.correction-card').count(),f.expected.corrections.length);
+    await page.getByRole('tab', { name: '语法检查与成分解析', exact: true }).click(); assert.equal(await page.locator('.correction-card').count(),f.expected.corrections.length);
     for (const [i,c] of f.expected.corrections.entries()) {
       const card = page.locator('.correction-card').nth(i);
       assert.deepEqual(await card.locator('del').allTextContents(),c.edits.map(e=>e.expected));
@@ -97,7 +97,7 @@ try {
       await check(f); await page.getByRole('button',{name:'应用此建议并重新分析',exact:true}).press('Enter');
       await status('complete'); const control = byId.get(f.controlId);
       assert.equal(await input.inputValue(),control.input); assert.equal(await page.locator('.correction-card').count(),0);
-      await page.getByRole('tab',{name:'成分解析',exact:true}).click();
+      await page.getByRole('tab', { name: '语法检查与成分解析', exact: true }).click();
       await classification(control.expected); assert.equal(await displayed(),control.input);
       await parts(control.input,control.expected.nodes.filter(n=>n.parentKey===null),control.expected.nodes);
     }
@@ -109,7 +109,7 @@ try {
   for (const [text,s] of [['','invalid'],['x'.repeat(1001),'invalid'],[byId.get('negative-perfect-choose').input.padEnd(1000,' '),'complete']]) {
     await input.fill(text); await input.press('Control+Enter'); await status(s);
   }
-  await page.getByRole('tab',{name:'成分解析',exact:true}).click();
+  await page.getByRole('tab', { name: '语法检查与成分解析', exact: true }).click();
   const timing = [];
   await page.evaluate(() => {
     window.stage26LongTasks=[];

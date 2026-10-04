@@ -57,14 +57,14 @@ try {
  assert.equal(await page.getByRole('link',{name:'查看完整 MIT 许可与署名'}).getAttribute('href'),'/licenses/lemminflect.txt');
  // Existing correction, query changes preserve it; inserting a reviewed example clears it and focuses the editor.
  await input.fill('She go to school.');await input.press('Control+Enter');await page.locator('.result-status').filter({hasText:'部分支持'}).waitFor();
- await page.getByRole('tab',{name:/语法检查/}).click();assert.equal(await page.locator('.correction-card').count(),1);
+ await page.getByRole('tab', { name: '语法检查与成分解析', exact: true }).click();assert.equal(await page.locator('.correction-card').count(),1);
  await search.fill('read');await filter.selectOption('verb');assert.equal(await page.locator('.correction-card').count(),1);
  await page.getByRole('button',{name:'放入例句：She read yesterday.',exact:true}).press('Enter');
  assert.equal(await input.inputValue(),'She read yesterday.');assert.equal(await input.evaluate(e=>e===document.activeElement),true);
  assert.equal(await page.locator('.result-status').innerText(),'等待分析');assert.equal(await page.locator('.correction-card').count(),0);
  await input.press('Meta+Enter');await page.locator('.result-status').filter({hasText:'规则分析完成'}).waitFor();
  // All 231 released entries have reviewed examples; all 236 example buttons round-trip through the existing flow.
- await page.getByRole('tab',{name:'成分解析',exact:true}).click();
+ await page.getByRole('tab', { name: '语法检查与成分解析', exact: true }).click();
  for(const [i,e] of examples.entries()){
   const entry=snapshot.entries.find(x=>x.id===e.entryId);
   try { await search.fill(entry.lemma);await filter.selectOption(entry.partOfSpeech); }
@@ -89,7 +89,7 @@ try {
  await page.evaluate(()=>{window.setTimeout=window.stage31OriginalTimeout;});
  for(const [text,status]of [['She has been reading.','超出当前范围'],['Has the door been opening?','超出当前范围'],['She went to school yesterday.','超出当前范围']]){
   await input.fill(text);await input.press('Control+Enter');await page.locator('.result-status').filter({hasText:status}).waitFor();
-  await page.getByRole('tab',{name:/语法检查/}).click();assert.equal(await page.locator('.correction-card').count(),0);
+  await page.getByRole('tab', { name: '语法检查与成分解析', exact: true }).click();assert.equal(await page.locator('.correction-card').count(),0);
  }
  // Subjects outside the second SV scope retain the unique original passive correction.
  const passiveCorrections=[
@@ -109,10 +109,10 @@ try {
   await page.getByRole('button',{name:'应用此建议并重新分析',exact:true}).click();
   assert.equal(await input.inputValue(),corrected);await page.locator('.result-status').filter({hasText:'规则分析完成'}).waitFor();
   assert.equal(await page.locator('.correction-card').count(),0);
-  await page.getByRole('tab',{name:'成分解析',exact:true}).click();
+  await page.getByRole('tab', { name: '语法检查与成分解析', exact: true }).click();
   assert.equal((await page.locator('.part-text,.sentence-gap').allTextContents()).join(''),corrected);
   assert.match(await page.locator('.result-body').innerText(),/完成时.*被动语态/);
-  await page.getByRole('tab',{name:/语法检查/}).click();
+  await page.getByRole('tab', { name: '语法检查与成分解析', exact: true }).click();
  }
  const restrictedSubjects=[
   'The teacher has been reading.','Has the teacher been reading?',

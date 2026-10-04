@@ -7,6 +7,7 @@
 | [项目说明](../README.md) | 当前能力、限制、启动方式、词典维护与验证命令 |
 | [阶段 27–32 开发计划](structure-development-plan.md) | 27–32 已交付；保留原门槛与后续候选 |
 | [词典数据库与发布协议](lexicon-database-design.md) | 现行 SQLite 维护、审核修订、不可变发布、快照与联合版本约束 |
+| [单 tab 分析流程](analysis-flow.md) | 先检查语法，通过后自动解析成分；人工预期与浏览器验收 |
 | [项目开发规则](../AGENTS.md) | 协议升级、行为回归、人工预期、完成标记和输入隐私要求 |
 
 当前规则 `0.22.4`、词典 `1.7.0`。阶段 1–32 ✅ 已完成，历史记录见 [归档索引](archive/README.md)，当前查询范围、发现与证据见 [阶段 31](archive/stage31-scope.md) 及 [联合验收数据](verification/stage31-delivery.json)，最新复核见 [被动纠错回归修复](verification/stage31-review-fix.md)。此前 27–30 的审查记录保留在 [范围约束审查修复](verification/scope-review-fixes.md)。阶段 32 独立复核、首次发现、人工修订和最终交付见 [交付记录](archive/stage32-scope.md) 与 [联合证据](verification/stage32-delivery.json)。

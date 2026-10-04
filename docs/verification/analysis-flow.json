@@ -1,0 +1,138 @@
+{
+  "date": "2026-10-04",
+  "engineering": {
+    "tests": 5497,
+    "failed": 0,
+    "typecheck": "passed",
+    "lint": "passed",
+    "lexiconVerification": "passed",
+    "build": "passed",
+    "diffCheck": "passed"
+  },
+  "flow": {
+    "dev": {
+      "passed": true,
+      "viewports": [
+        1280,
+        390
+      ],
+      "singleTab": true,
+      "checksBeforeParts": true,
+      "appliedCorrectionRechecked": true,
+      "nonCompleteBlocked": true,
+      "navigationAndAttributes": true,
+      "pendingEditCancelled": true,
+      "offlineRequests": 0,
+      "storage": {
+        "local": [],
+        "session": [],
+        "databases": [],
+        "cookie": ""
+      },
+      "pageErrors": []
+    },
+    "built": {
+      "passed": true,
+      "viewports": [
+        1280,
+        390
+      ],
+      "singleTab": true,
+      "checksBeforeParts": true,
+      "appliedCorrectionRechecked": true,
+      "nonCompleteBlocked": true,
+      "navigationAndAttributes": true,
+      "pendingEditCancelled": true,
+      "offlineRequests": 0,
+      "storage": {
+        "local": [],
+        "session": [],
+        "databases": [],
+        "cookie": ""
+      },
+      "pageErrors": []
+    }
+  },
+  "existingStage32Regression": {
+    "dev": {
+      "browser": "147.0.7727.15",
+      "counts": [
+        {
+          "viewport": 1280,
+          "independentInputs": 186,
+          "appliedControls": 20,
+          "independentQueryFlows": 20,
+          "additionalQueryRegressions": 1
+        },
+        {
+          "viewport": 390,
+          "independentInputs": 186,
+          "appliedControls": 20,
+          "independentQueryFlows": 20,
+          "additionalQueryRegressions": 1
+        }
+      ],
+      "ruleVersion": "0.22.4",
+      "lexiconVersion": "1.7.0",
+      "offlineRequests": 0,
+      "pageErrors": [],
+      "storage": {
+        "local": [],
+        "session": [],
+        "databases": [],
+        "cookie": ""
+      },
+      "refreshReset": true,
+      "keyboardShortcuts": [
+        "Control+Enter",
+        "Meta+Enter"
+      ],
+      "querySearchAndFilterFocus": true,
+      "queryExamplesInvalidateAndFocus": true,
+      "pendingEditAndInsertionCancellation": true,
+      "continuousClicks": true,
+      "failureRetry": true,
+      "unknownWordOriginalSelection": true
+    },
+    "built": {
+      "browser": "147.0.7727.15",
+      "counts": [
+        {
+          "viewport": 1280,
+          "independentInputs": 186,
+          "appliedControls": 20,
+          "independentQueryFlows": 20,
+          "additionalQueryRegressions": 1
+        },
+        {
+          "viewport": 390,
+          "independentInputs": 186,
+          "appliedControls": 20,
+          "independentQueryFlows": 20,
+          "additionalQueryRegressions": 1
+        }
+      ],
+      "ruleVersion": "0.22.4",
+      "lexiconVersion": "1.7.0",
+      "offlineRequests": 0,
+      "pageErrors": [],
+      "storage": {
+        "local": [],
+        "session": [],
+        "databases": [],
+        "cookie": ""
+      },
+      "refreshReset": true,
+      "keyboardShortcuts": [
+        "Control+Enter",
+        "Meta+Enter"
+      ],
+      "querySearchAndFilterFocus": true,
+      "queryExamplesInvalidateAndFocus": true,
+      "pendingEditAndInsertionCancellation": true,
+      "continuousClicks": true,
+      "failureRetry": true,
+      "unknownWordOriginalSelection": true
+    }
+  }
+}

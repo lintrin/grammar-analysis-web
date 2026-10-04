@@ -55,3 +55,7 @@
 .dictionary-source{font-size:10px;line-height:1.8;color:#8492a7;margin-top:16px}.dictionary-source summary{cursor:pointer}.dictionary-source p{margin-top:6px}.dictionary-source a{color:#315c9e;text-decoration:underline}
 @media(max-width:850px){.dictionary-card{grid-column:1/-1;margin-top:0}}
 @media(max-width:570px){.dictionary-card{margin-top:0}.dictionary-card>summary{padding:18px 20px}.dictionary-content{padding:0 20px 18px}}
+
+.analysis-step-heading{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px;flex-wrap:wrap}.analysis-step-heading h3{font-size:14px;font-weight:600;color:#314566}.analysis-step-heading h3>span{font-size:11px;color:#8a98ac;margin-right:8px}.check-status{font-size:11px;border-radius:5px;padding:5px 8px}.check-status.passed{color:#27846f;background:#edf8f4}.check-status.blocked{color:#9a6627;background:#fff5e7}.component-analysis{border-top:1px solid var(--border);margin-top:24px;padding-top:24px}.analysis-waiting{margin-top:24px;border-top:1px solid var(--border);padding-top:20px;font-size:12px;line-height:1.8;color:#73839b}
+.check-details{font-size:12px;color:#73839b;margin:-8px 0 16px}.check-details summary{cursor:pointer}.check-details p{margin-top:10px;line-height:1.8;overflow-wrap:anywhere}.grammar-checks>p{font-size:12px;color:#73839b;line-height:1.8}
+.analysis-step-heading .step-label{font-size:11px;font-family:inherit}

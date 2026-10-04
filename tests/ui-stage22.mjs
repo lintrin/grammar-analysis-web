@@ -24,12 +24,12 @@ try {
         if(f.id==='have-correct-1')assert.match(await page.locator('.learning-note').innerText(),/拥有义 have 仅接名词短语宾语/);
       }
     }else assert.equal(await page.locator('.sentence-part').count(),0);
-    await page.getByRole('tab',{name:/语法检查/}).click();assert.equal(await page.locator('.correction-card').count(),f.expected.corrections.length);
+    await page.getByRole('tab', { name: '语法检查与成分解析', exact: true }).click();assert.equal(await page.locator('.correction-card').count(),f.expected.corrections.length);
     if(f.kind==='error'){
       for(const step of f.steps){await page.getByRole('button',{name:'应用此建议并重新分析',exact:true}).first().click();await status('complete');assert.equal(await input.inputValue(),step);}
       assert.equal(await page.locator('.correction-card').count(),0);
     }
-    await page.getByRole('tab',{name:'成分解析',exact:true}).click();assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
+    await page.getByRole('tab', { name: '语法检查与成分解析', exact: true }).click();assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
   };
   for(const f of fixtures)await check(f);
   await page.setViewportSize({width:390,height:844});
@@ -38,9 +38,9 @@ try {
   await page.locator('.sentence-part.verb').press('Enter');assert.match(await page.locator('.detail-callout').innerText(),/实义.*have.*拥有/);
   await check(fixtures.find(f=>f.id==='have-compound'));
   const clause=page.locator('.sentence-part.clause').first();await clause.press('Enter');const back=page.getByRole('button',{name:'返回整句',exact:true});await back.waitFor();assert.equal(await back.evaluate(el=>el===document.activeElement),true);await back.press('Enter');assert.equal(await clause.evaluate(el=>el===document.activeElement),true);
-  await input.fill('She have a book.');await input.press('Control+Enter');await status('partial');await page.getByRole('tab',{name:/语法检查/}).click();assert.equal(await page.locator('.correction-card').count(),1);
+  await input.fill('She have a book.');await input.press('Control+Enter');await status('partial');await page.getByRole('tab', { name: '语法检查与成分解析', exact: true }).click();assert.equal(await page.locator('.correction-card').count(),1);
   await input.fill('She has a pen.');assert.equal(await page.locator('.correction-card').count(),0);assert.equal(await page.locator('.sentence-part').count(),0);
-  await input.press('Control+Enter');await status('complete');await page.getByRole('tab',{name:'成分解析',exact:true}).click();
+  await input.press('Control+Enter');await status('complete');await page.getByRole('tab', { name: '语法检查与成分解析', exact: true }).click();
   await page.locator('.result-card').screenshot({path:process.env.CLAUSE_STAGE22_SCREENSHOT??'/tmp/clause-stage22-mobile.png'});
   // Same public input limit, substantive text and deterministic positions at the boundary.
   await input.fill('She has a book.'.padEnd(1000,' '));await input.press('Control+Enter');await status('complete');

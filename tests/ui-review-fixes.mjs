@@ -15,7 +15,7 @@ try {
     inputs.push(text);await input.fill(text);await input.press('Control+Enter');await page.locator('.result-status').filter({hasText:labels[status]}).waitFor();
     if(reason) assert.match(await page.locator('.analysis-feedback').innerText(),reason);
     if(status!=='complete') assert.equal(await page.locator('.sentence-part').count(),0);
-    await page.getByRole('tab',{name:/语法检查/}).click();assert.equal(await page.locator('.correction-card').count(),corrections);await page.getByRole('tab',{name:'成分解析',exact:true}).click();
+    await page.getByRole('tab', { name: '语法检查与成分解析', exact: true }).click();assert.equal(await page.locator('.correction-card').count(),corrections);await page.getByRole('tab', { name: '语法检查与成分解析', exact: true }).click();
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
   };
   await context.setOffline(true);requests.length=0;

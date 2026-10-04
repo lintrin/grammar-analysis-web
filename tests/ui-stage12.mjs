@@ -47,9 +47,9 @@ try {
         assert.equal(await displayedText(), f.input);
       }
     }
-    await page.getByRole('tab', { name: '语法检查' }).click();
+    await page.getByRole('tab', { name: '语法检查与成分解析', exact: true }).click();
     assert.equal(await page.locator('.correction-card').count(), 0);
-    await page.getByRole('tab', { name: '成分解析' }).click();
+    await page.getByRole('tab', { name: '语法检查与成分解析', exact: true }).click();
     await noOverflow();
   };
   requests.length = 0;

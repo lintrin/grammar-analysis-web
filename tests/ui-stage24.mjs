@@ -47,12 +47,12 @@ try{
         assert.equal(await button.evaluate(el=>el===document.activeElement),true);assert.equal(await displayed(),f.input);
       }
     }else assert.equal(await page.locator('.sentence-part').count(),0);
-    await page.getByRole('tab',{name:/语法检查/}).click();assert.equal(await page.locator('.correction-card').count(),f.expected.corrections.length);
-    await page.getByRole('tab',{name:'成分解析',exact:true}).click();assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
+    await page.getByRole('tab', { name: '语法检查与成分解析', exact: true }).click();assert.equal(await page.locator('.correction-card').count(),f.expected.corrections.length);
+    await page.getByRole('tab', { name: '语法检查与成分解析', exact: true }).click();assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
   };
   for(const f of fixtures)await check(f);
   const apply=async f=>{
-    await check(f);await page.getByRole('tab',{name:/语法检查/}).click();
+    await check(f);await page.getByRole('tab', { name: '语法检查与成分解析', exact: true }).click();
     const cards=page.locator('.correction-card');
     for(const [i,c] of f.expected.corrections.entries()){
       assert.deepEqual(await cards.nth(i).locator('del').allTextContents(),c.edits.map(e=>e.expected));
@@ -65,7 +65,7 @@ try{
       await page.getByRole('button',{name:'应用此建议并重新分析',exact:true}).first().press('Enter');
       await status(i===f.steps.length-1?'complete':'partial');assert.equal(await input.inputValue(),step);
     }
-    assert.equal(await cards.count(),0);await page.getByRole('tab',{name:'成分解析',exact:true}).click();
+    assert.equal(await cards.count(),0);await page.getByRole('tab', { name: '语法检查与成分解析', exact: true }).click();
     await classification(f.control.expected);assert.equal(await displayed(),f.control.input);await parts(f.control.input,f.control.expected.nodes);
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
   };
@@ -76,15 +76,15 @@ try{
     const f=byId.get(id);await apply({...f,control:byId.get(f.controlId)});
   }
   for(const f of fixtures.filter(f=>f.kind==='boundary'))await check(f);
-  await check(byId.get('stage24-contraction-error-4'));await page.getByRole('tab',{name:/语法检查/}).click();
+  await check(byId.get('stage24-contraction-error-4'));await page.getByRole('tab', { name: '语法检查与成分解析', exact: true }).click();
   await page.locator('.result-card').screenshot({path:process.env.CLAUSE_STAGE24_SCREENSHOT??'/tmp/grammar-stage24-mobile.png'});
   await input.fill('They haven’t slept.');assert.equal(await page.locator('.correction-card').count(),0);assert.equal(await page.locator('.sentence-part').count(),0);
-  await input.press('Control+Enter');await status('complete');await page.getByRole('tab',{name:'成分解析',exact:true}).click();
+  await input.press('Control+Enter');await status('complete');await page.getByRole('tab', { name: '语法检查与成分解析', exact: true }).click();
   await input.fill('She have given unknown books.');await input.press('Control+Enter');await status('unsupported');
   await page.getByRole('button',{name:'查看原文：unknown',exact:true}).press('Enter');
   assert.deepEqual(await input.evaluate(el=>[el.selectionStart,el.selectionEnd]),[15,22]);
   await input.fill('They hasn’t slept.'.padEnd(1000,' '));await input.press('Control+Enter');await status('partial');
-  await page.getByRole('tab',{name:/语法检查/}).click();await page.getByRole('button',{name:'应用此建议并重新分析',exact:true}).click();await status('invalid');assert.equal((await input.inputValue()).length,1001);assert.equal(await page.locator('.correction-card').count(),0);
+  await page.getByRole('tab', { name: '语法检查与成分解析', exact: true }).click();await page.getByRole('button',{name:'应用此建议并重新分析',exact:true}).click();await status('invalid');assert.equal((await input.inputValue()).length,1001);assert.equal(await page.locator('.correction-card').count(),0);
   assert.deepEqual(errors,[]);assert.deepEqual(requests,[]);assert.equal(logs.some(log=>fixtures.some(f=>log.includes(f.input))),false);
   assert.deepEqual(await page.evaluate(async()=>({local:Object.keys(localStorage),session:Object.keys(sessionStorage),databases:await indexedDB.databases(),cookie:document.cookie})),{local:[],session:[],databases:[],cookie:''});
   await context.setOffline(false);await page.reload();await page.waitForLoadState('networkidle');assert.equal(await page.locator('.result-status').innerText(),'等待分析');

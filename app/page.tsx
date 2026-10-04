@@ -46,7 +46,6 @@ function Workbench({ input, setInput }: { input: string; setInput: (value: strin
   const [result, setResult] = useState<AnalysisResult | null>(null);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [activeClauseId, setActiveClauseId] = useState<string | null>(null);
-  const [tab, setTab] = useState<"parts" | "checks">("parts");
   const [busy, setBusy] = useState(false);
   const [failure, setFailure] = useState<string | null>(null);
   const version = useRef(0);
@@ -79,7 +78,7 @@ function Workbench({ input, setInput }: { input: string; setInput: (value: strin
       try {
         const next = analyzeSentence(text, inputVersion);
         if (version.current !== inputVersion || request.current !== requestId || getAnalysisIdentity() !== capturedKey) return;
-        setResult(next); setSelectedId(next.nodes[0]?.id ?? null);
+        setResult(next); setSelectedId(next.status === "complete" ? next.nodes[0]?.id ?? null : null);
       } catch {
         if (version.current === inputVersion && request.current === requestId && getAnalysisIdentity() === capturedKey) setFailure("本次分析失败，输入已保留，请重试。");
       } finally {
@@ -102,6 +101,7 @@ function Workbench({ input, setInput }: { input: string; setInput: (value: strin
       setFailure("建议已失效，请重新分析当前输入。");
     }
   }
+  const checkPassed = result?.status === "complete";
   const activeClause = result?.nodes.find(n => n.id === activeClauseId);
   const roots = result?.nodes.filter(n => n.parentId === activeClauseId) ?? [];
   if ((result?.complexity === "compound" || result?.complexity === "complex") && activeClauseId === null) roots.sort((a, b) => a.ranges[0].start - b.ranges[0].start);
@@ -139,7 +139,7 @@ function Workbench({ input, setInput }: { input: string; setInput: (value: strin
   return <div className="app-shell">
     <header className="topbar"><Link href="/" className="brand"><span className="brand-mark"><Braces size={23}/></span><span>clause<span className="brand-period">.</span></span></Link><span className="topbar-caption">ENGLISH, IN STRUCTURE</span><span className="header-help"><CircleHelp size={16}/> 句子分析工作台</span></header>
     <main className="workspace">
-      <div className="page-heading"><div><div className="eyebrow"><span/> YOUR GRAMMAR WORKSPACE</div><h1>让每个句子，都清晰可见<span>。</span></h1><p>从句式到成分，读懂英语的内在结构。</p></div><span className="mode-tag"><Layers3 size={15}/> 本地规则 · 五种句型</span></div>
+      <div className="page-heading"><div><div className="eyebrow"><span/> YOUR GRAMMAR WORKSPACE</div><h1>让每个句子，都清晰可见<span>。</span></h1><p>先检查语法，再读懂句子的成分与结构。</p></div><span className="mode-tag"><Layers3 size={15}/> 本地规则 · 五种句型</span></div>
       <div className="work-grid">
         <aside className="input-column">
           <section className="input-card">
@@ -148,7 +148,7 @@ function Workbench({ input, setInput }: { input: string; setInput: (value: strin
             <textarea ref={sentenceInput} id="sentence" value={input} onChange={e => editInput(e.target.value)} onKeyDown={e => { if (e.key === "Enter" && (e.metaKey || e.ctrlKey) && !e.nativeEvent.isComposing) { e.preventDefault(); analyze(); } }} spellCheck={false} placeholder="试着输入一个英文句子…" aria-describedby="scope-hint input-count"/>
             <div className="input-meta"><span>限定词汇 · 简单句、并列句与 because / if 从句</span><span id="input-count">{input.length}/1000</span></div>
             <button className="analyze-button" onClick={() => analyze()} disabled={busy} aria-keyshortcuts="Control+Enter Meta+Enter"><ScanText size={18}/>{busy ? "正在分析…" : "分析句子"}</button>
-            <div className="input-hint" id="scope-hint">Ctrl / ⌘ + Enter 分析 · 一般时、进行时、完成时与被动</div>
+            <div className="input-hint" id="scope-hint">Ctrl / ⌘ + Enter 分析 · 先检查语法，通过后自动解析成分</div>
             <details className="support-help"><summary>当前范围与键盘操作</summary><p>使用随应用提供的词典：44 组可数名词、24 个形容词、100 个实义动词词元。拥有义 have 仅支持一般现在/过去时的名词短语宾语、do 否定和 do 一般疑问；不支持 can、进行/完成/被动、祈使或无需 do 的拥有疑问。完成时中的 have 继续作为助动词分析。teach/tell 仅支持人物接受者加事物的双宾语；keep 仅支持单形容词宾补。100 个动词词元、105 个审核搭配。eat/read/write 新增泛指活动的主谓搭配，限人物主语；open/close 新增门窗自行开关的主谓搭配，限门、窗或 it；新主谓搭配不支持完成体、被动、祈使、地点尾部或分句，多处词形错误仅诊断、不提供自动修改。原有主谓宾用法继续支持；stay 不接表语。know、need、want 等本轮状态义不支持进行体。read、cut、hit 的原形与过去式同形，没有明确时态线索时保留歧义。支持限定被动语态、现在/过去进行时和完成时，以及完成进行、完成被动、进行被动组合的肯定、否定陈述和肯定一般疑问；完整且唯一的谓语组合支持有限 be/have 一致及实义动词唯一分词替换；多个依赖错误、桥接错误或候选不唯一时不自动修改。仅支持五种句型、四种简单句用途、两个完整陈述分句的 and/but、后置无逗号 because，以及前置带英文逗号的 if。两侧必须完整匹配。地点状语仅支持 sleep/work/walk/run/dance/wait 的单个简单句末尾 in/on/under/near 短语，逐动词限定介词，地点后可接时间词；不开放完成体、被动、分句或 SVO 后的自由附着。否定陈述支持 don&apos;t/doesn&apos;t/didn&apos;t、isn&apos;t/aren&apos;t/wasn&apos;t/weren&apos;t、can&apos;t、haven&apos;t/hasn&apos;t/hadn&apos;t，两种撇号均可；have 缩写仅作助动词，拥有义使用 do 否定。特殊疑问仅肯定单简单句的 where/when/why 状语提问和 who/what 主语或直接宾语提问，限定简单体主动 SV/SVO，不附加地点尾部；主语提问的语境一致不自动纠正。will 简单主动和 will be 系表已开放，含 won&apos;t；if 条件从句中的 will、would、其他从句、否定疑问、肯定缩写、所有格和多句尚未支持。can/will 按情态结构分类，不推断现在或过去时。</p><p>Tab 定位按钮，Enter 或空格查看成分、进入分句；返回整句后焦点回到原分句。未知词可用“查看原文”按钮定位；仅选中，不改写。修改输入立即清除旧结果。</p><p>检测顺序：输入限制 → 句末/多句 → 连接结构与标点 → 词典覆盖 → 分句顺序及规则。只展示实际检测到的原因。未命中纠错不代表完全正确；并列句与主从句暂无纠错。</p><p>新增词形数据来自 LemmInflect，使用 MIT 许可。<a href="/licenses/lemminflect.txt" target="_blank" rel="noreferrer">查看许可与署名</a>。</p></details>
           </section>
           <DictionaryQuery onExample={text => { editInput(text); sentenceInput.current?.focus(); }}/>
@@ -168,17 +168,22 @@ function Workbench({ input, setInput }: { input: string; setInput: (value: strin
         <section className="result-card" aria-busy={busy}>
           <div className="result-header"><div className="section-heading"><span className="small-icon blue"><Layers3 size={18}/></span><h2>分析结果</h2></div><span className="result-status" role="status">{busy ? "正在分析" : failure ? "分析失败" : result ? statusLabels[result.status] : "等待分析"}</span></div>
           <div className="result-tabs" role="tablist" aria-label="分析视图">
-            <button id="parts-tab" role="tab" aria-selected={tab === "parts"} aria-controls="result-panel" className={tab === "parts" ? "active" : ""} onClick={() => setTab("parts")}>成分解析</button>
-            <button id="checks-tab" role="tab" aria-selected={tab === "checks"} aria-controls="result-panel" className={tab === "checks" ? "active" : ""} onClick={() => setTab("checks")}>语法检查 {result && result.corrections.length > 0 && <b>{result.corrections.length}</b>}</button>
+            <button id="analysis-tab" role="tab" aria-selected="true" aria-controls="result-panel" className="active">语法检查与成分解析</button>
           </div>
-          <div className="result-body" id="result-panel" role="tabpanel" aria-labelledby={tab === "parts" ? "parts-tab" : "checks-tab"}>
+          <div className="result-body" id="result-panel" role="tabpanel" aria-labelledby="analysis-tab">
             {failure && <p className="analysis-message" role="alert">{failure}</p>}
-            {!result && !failure && <div className="empty-result"><ScanText size={28}/><h3>{busy ? "正在运行本地规则…" : "准备好，拆解下一个句子"}</h3><p>{busy ? "分析结果只对应本次输入。" : "输入或选择一个例句，再点击“分析句子”。修改输入会立即清除旧标注。"}</p></div>}
+            {!result && !failure && <div className="empty-result"><ScanText size={28}/><h3>{busy ? "正在运行本地规则…" : "准备好，拆解下一个句子"}</h3><p>{busy ? "正在检查当前输入，通过后自动解析成分。" : "输入或选择一个例句，再点击“分析句子”。先检查语法，通过后在这里显示成分解析。"}</p></div>}
             {result && <>
-              <div className="analysis-message" role="status">{result.messages.map(message => <p key={message}>{message}</p>)}</div>
-              {!!result.reasons.length && <section className="analysis-feedback" aria-label="分析原因"><p role="status">{result.reasons.map((reason, i) => <span key={i}>{i > 0 ? "；" : ""}{reason.clauseIndex ? `第 ${reason.clauseIndex} 分句：` : ""}{reasonLabels[reason.code]}</span>)}</p><p>只展示按检测顺序发现的原因，范围限制不等于语法错误。可展开“当前范围与键盘操作”查看说明。</p>{result.reasons.flatMap((reason, i) => reason.code === "unknown-word" ? reason.ranges.map(range => <button className="nested-part" key={`${i}-${range.start}`} onClick={() => locateWord(range)}>查看原文：{result.input.slice(range.start, range.end)}{reason.clauseIndex ? `（第 ${reason.clauseIndex} 分句）` : ""}</button>) : [])}</section>}
-              {locatedWord && <p className="word-location" role="status">{locatedWord}</p>}
-              {tab === "checks" ? <div className="grammar-checks"><p className="check-scope">{complex ? "主从句暂不提供可应用纠错建议；分句完整匹配不代表所有语法检查已通过。" : result.complexity === "compound" ? "并列句暂不提供可应用纠错建议；分句完整匹配不代表所有语法检查已通过。" : "完整且唯一的谓语组合支持有限 be/have 一致及实义动词唯一分词替换；保留主谓一致、do/does/did 后原形和 can/will 后原形建议。多个依赖错误、桥接错误或候选不唯一时不给建议。并列句与主从句暂不提供纠错；未命中规则不代表句子完全正确。"}</p>{result.corrections.length === 0 ? <p>当前未命中可应用的纠错建议。</p> : result.corrections.map(c => <article className="correction-card" key={c.id}><h3>{c.ruleId === "PREDICATE-AGREEMENT-001" ? "谓语助动词一致" : c.ruleId === "PREDICATE-FORM-001" ? "谓语分词形式" : c.ruleId === "AGREEMENT-001" ? "主谓一致" : c.ruleId === "DO-BASE-001" ? "助动词后的动词原形" : "情态动词后的动词原形"}</h3><p>{c.reason}</p>{c.edits.map(e => <p className="correction-edit" key={e.range.start}><del>{e.expected}</del><span aria-hidden="true"> → </span><strong>{e.replacement}</strong></p>)}<p className="rule-reference">{c.context} 规则：{c.ruleId}</p><button className="apply-correction" onClick={() => apply(c.id)} disabled={busy}>应用此建议并重新分析</button></article>)}</div> : result.status === "complete" && <>
+              <section className="grammar-checks" aria-labelledby="grammar-check-heading">
+                <div className="analysis-step-heading"><h3 id="grammar-check-heading"><span>01</span> 语法检查</h3><span className={`check-status ${checkPassed ? "passed" : "blocked"}`} role="status">{checkPassed ? "当前规则检查通过" : result.corrections.length ? "发现语法问题" : "暂未通过检查"}</span></div>
+                <div className="analysis-message" role="status"><p>{result.messages[0]}</p></div>
+                {result.messages.length > 1 && <details className="check-details"><summary>查看检查范围与说明</summary>{result.messages.slice(1).map(message => <p key={message}>{message}</p>)}</details>}
+                {!!result.reasons.length && <section className="analysis-feedback" aria-label="分析原因"><p role="status">{result.reasons.map((reason, i) => <span key={i}>{i > 0 ? "；" : ""}{reason.clauseIndex ? `第 ${reason.clauseIndex} 分句：` : ""}{reasonLabels[reason.code]}</span>)}</p><p>只展示按检测顺序发现的原因，范围限制不等于语法错误。可展开“当前范围与键盘操作”查看说明。</p>{result.reasons.flatMap((reason, i) => reason.code === "unknown-word" ? reason.ranges.map(range => <button className="nested-part" key={`${i}-${range.start}`} onClick={() => locateWord(range)}>查看原文：{result.input.slice(range.start, range.end)}{reason.clauseIndex ? `（第 ${reason.clauseIndex} 分句）` : ""}</button>) : [])}</section>}
+                {locatedWord && <p className="word-location" role="status">{locatedWord}</p>}
+                <p className="check-scope">{complex ? "主从句暂不提供可应用纠错建议；本次通过仅表示完整匹配当前规则，不涵盖所有语法。" : result.complexity === "compound" ? "并列句暂不提供可应用纠错建议；本次通过仅表示完整匹配当前规则，不涵盖所有语法。" : "检查仅覆盖当前词典与已支持的句式；未命中纠错不代表句子完全正确。"}</p>{result.corrections.length === 0 ? <p>当前未命中可应用的纠错建议。</p> : result.corrections.map(c => <article className="correction-card" key={c.id}><h3>{c.ruleId === "PREDICATE-AGREEMENT-001" ? "谓语助动词一致" : c.ruleId === "PREDICATE-FORM-001" ? "谓语分词形式" : c.ruleId === "AGREEMENT-001" ? "主谓一致" : c.ruleId === "DO-BASE-001" ? "助动词后的动词原形" : "情态动词后的动词原形"}</h3><p>{c.reason}</p>{c.edits.map(e => <p className="correction-edit" key={e.range.start}><del>{e.expected}</del><span aria-hidden="true"> → </span><strong>{e.replacement}</strong></p>)}<p className="rule-reference">{c.context} 规则：{c.ruleId}</p><button className="apply-correction" onClick={() => apply(c.id)} disabled={busy}>应用此建议并重新分析</button></article>)}
+              </section>
+              {checkPassed ? <section className="component-analysis" aria-labelledby="component-analysis-heading">
+                <div className="analysis-step-heading"><h3 id="component-analysis-heading"><span>02</span> 成分解析</h3><span className="step-label">自动解析</span></div>
                 {activeClause && <div className="clause-navigation"><button ref={backButton} className="nested-part" onClick={() => { setActiveClauseId(null); setSelectedId(activeClause.id); }}>返回整句</button><span role="status">{complex ? `正在查看${activeClause.clause?.kind === "main" ? "主句" : subordinateLabel}` : `正在查看第 ${result.nodes.filter(n => n.role === "clause").findIndex(n => n.id === activeClause.id) + 1} 分句`}</span></div>}
                 <div className="result-overview"><div><span className="mini-label">句式结构</span><h3>{multiClauseOverview ? (complex ? (conditional ? "条件从句 + 主句" : "主句 + 原因从句") : "两个完整分句") : patternDetail?.title}</h3><p>{purpose === "interrogative" && result.questionType ? questionLabels[result.questionType] : purpose ? purposeLabels[purpose] : "用途待确定"} <span>·</span> {multiClauseOverview ? (complex ? "主从复合句" : "并列句") : activeClause ? (complex ? (activeClause.clause?.kind === "main" ? "主句" : subordinateLabel) : "独立分句") : "简单句"}</p></div><div className="tense-badge">{multiClauseOverview ? "时态按分句查看" : tense === null ? (purpose === "imperative" ? "动词原形 · 祈使" : (activeClause?.clause?.modal ?? result.modal) === "will" ? "will 表达（常见将来用法）" : "can 情态结构") : tenseLabel(tense ?? null, aspect ?? null)}<span>{multiClauseOverview ? (complex ? (conditional ? "if 表示条件" : "because 表示原因") : "and / but 连接") : voiceLabel(voice ?? null)}</span></div></div>
                 <div className="sentence-board" ref={board}><div className="board-caption"><span>{multiClauseOverview ? "选择分句进入，或查看连接关系" : "点击成分，查看解析"}</span><span>SENTENCE BREAKDOWN</span></div><div className="sentence-parts">{spans.map(({ node, range }, index) => {
@@ -195,7 +200,7 @@ function Workbench({ input, setInput }: { input: string; setInput: (value: strin
                 </div></div>}
                 <div className="structure-heading"><h3>句子骨架</h3><span>THE BIG PICTURE</span></div><div className="structure-strip">{roots.filter(n => n.role !== "adverbial").map((node, i) => { const label = labelFor(node.role, node); return <div className="structure-item" key={node.id}>{i > 0 && <span className="structure-plus">+</span>}<span className={`structure-pill ${label.color}`}>{label.code}</span><span>{label.role}</span></div>; })}</div>
                 <div className="learning-note"><span className="note-icon"><Sparkles size={18}/></span><div><h4>一个值得记住的结构</h4><p>{multiClauseOverview ? (complex ? (conditional ? "if 引导前置条件从句，提出主句成立的条件；逗号分隔条件从句与主句。两侧分别保留自己的句型与时态，不推断条件的语义或时态搭配。" : "because 引导原因从句，说明主句发生的原因。主句与原因从句保留自己的主语、谓语、句型和时态；选择分句查看内部结构。") : "and 表示并列添加，but 表示转折。每个分句保留自己的主语、谓语、句型和时态；选择分句查看内部结构。") : purpose === "imperative" ? "祈使句用动词原形表达要求，主语 you 通常省略。" : purpose === "exclamatory" ? "What/How 将强调的表语提前，后面保留主语与系动词。" : purpose === "interrogative" ? "一般疑问和宾语/状语提问将限定助动词提前，谓语区间跨越主语；who/what 主语提问保留主语在前，不需要 do 倒装。" : roots.some(n => n.ruleId.startsWith("NEGATIVE-")) ? "not 是否定谓语的一部分。do/does/did 后使用动词原形；be 保留人称和时态；can 后同样接原形。" : patternDetail?.note}</p></div></div>
-              </>}
+              </section> : <div className="analysis-waiting" role="status">成分解析等待语法检查通过。{result.corrections.length ? "请应用建议或修改句子后重新分析。" : "请根据上方原因修改输入；当前无可自动应用的建议。"}</div>}
             </>}
           </div>
         </section>
