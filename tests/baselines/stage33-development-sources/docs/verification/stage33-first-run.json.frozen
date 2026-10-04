@@ -1,0 +1,3268 @@
+{
+  "stage": 33,
+  "phase": "33A-first-runtime-gap-check",
+  "ruleVersion": "0.22.4",
+  "lexiconVersion": "1.7.0",
+  "lexiconHash": "dc7e010f3314eec82a61720ad1d6249209c459236245b8f72ce9fcee5fc7bb4a",
+  "scopeHash": "7fa77a63f29a80547e812ef339bb1200419082b2295c5db289057da3e1eade70",
+  "expectationsChanged": false,
+  "total": 128,
+  "pass": 44,
+  "fail": 84,
+  "counts": {
+    "correct": {
+      "total": 48,
+      "failed": 48
+    },
+    "error": {
+      "total": 16,
+      "failed": 16
+    },
+    "control": {
+      "total": 15,
+      "failed": 15
+    },
+    "boundary": {
+      "total": 46,
+      "failed": 2
+    },
+    "migration": {
+      "total": 3,
+      "failed": 3
+    }
+  },
+  "rows": [
+    {
+      "id": "33-affirmative-01",
+      "kind": "correct",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-affirmative-02",
+      "kind": "correct",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-affirmative-03",
+      "kind": "correct",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-affirmative-04",
+      "kind": "correct",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-affirmative-05",
+      "kind": "correct",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-affirmative-06",
+      "kind": "correct",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-affirmative-07",
+      "kind": "correct",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-affirmative-08",
+      "kind": "correct",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-affirmative-09",
+      "kind": "correct",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unknown-word",
+            "ranges": [
+              {
+                "start": 4,
+                "end": 8
+              }
+            ]
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-affirmative-10",
+      "kind": "correct",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-affirmative-11",
+      "kind": "correct",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-affirmative-12",
+      "kind": "correct",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-negative-01",
+      "kind": "correct",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-negative-02",
+      "kind": "correct",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-negative-03",
+      "kind": "correct",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-negative-04",
+      "kind": "correct",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-negative-05",
+      "kind": "correct",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-negative-06",
+      "kind": "correct",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-negative-07",
+      "kind": "correct",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-negative-08",
+      "kind": "correct",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-negative-09",
+      "kind": "correct",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-negative-10",
+      "kind": "correct",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-negative-11",
+      "kind": "correct",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-negative-12",
+      "kind": "correct",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-yes-no-01",
+      "kind": "correct",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-yes-no-02",
+      "kind": "correct",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-yes-no-03",
+      "kind": "correct",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-yes-no-04",
+      "kind": "correct",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-yes-no-05",
+      "kind": "correct",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-yes-no-06",
+      "kind": "correct",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-yes-no-07",
+      "kind": "correct",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-yes-no-08",
+      "kind": "correct",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-yes-no-09",
+      "kind": "correct",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-yes-no-10",
+      "kind": "correct",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unknown-word",
+            "ranges": [
+              {
+                "start": 7,
+                "end": 10
+              }
+            ]
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-yes-no-11",
+      "kind": "correct",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unknown-word",
+            "ranges": [
+              {
+                "start": 10,
+                "end": 14
+              }
+            ]
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-yes-no-12",
+      "kind": "correct",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-where-01",
+      "kind": "correct",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-where-02",
+      "kind": "correct",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-where-03",
+      "kind": "correct",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-where-04",
+      "kind": "correct",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-where-05",
+      "kind": "correct",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-where-06",
+      "kind": "correct",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-where-07",
+      "kind": "correct",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-where-08",
+      "kind": "correct",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-where-09",
+      "kind": "correct",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-where-10",
+      "kind": "correct",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-where-11",
+      "kind": "correct",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-where-12",
+      "kind": "correct",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-affirmative-01-control",
+      "kind": "control",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-error-01",
+      "kind": "error",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'partial'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-affirmative-02-control",
+      "kind": "control",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-error-02",
+      "kind": "error",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'partial'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-affirmative-03-control",
+      "kind": "control",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-error-03",
+      "kind": "error",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'partial'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-affirmative-04-control",
+      "kind": "control",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-error-04",
+      "kind": "error",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'partial'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-negative-01-control",
+      "kind": "control",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-error-05",
+      "kind": "error",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'partial'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-negative-02-control",
+      "kind": "control",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-error-06",
+      "kind": "error",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'partial'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-negative-03-control",
+      "kind": "control",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-error-07",
+      "kind": "error",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'partial'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-negative-04-control",
+      "kind": "control",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-error-08",
+      "kind": "error",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'partial'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-yes-no-01-control",
+      "kind": "control",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-error-09",
+      "kind": "error",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'partial'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-yes-no-02-control",
+      "kind": "control",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-error-10",
+      "kind": "error",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'partial'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-yes-no-03-control",
+      "kind": "control",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-error-11",
+      "kind": "error",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'partial'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-yes-no-04-control",
+      "kind": "control",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-error-12",
+      "kind": "error",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'partial'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-where-01-control",
+      "kind": "control",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-error-13",
+      "kind": "error",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'partial'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-error-14",
+      "kind": "error",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'partial'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-where-02-control",
+      "kind": "control",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-error-15",
+      "kind": "error",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'partial'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-where-03-control",
+      "kind": "control",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-error-16",
+      "kind": "error",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'partial'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-boundary-01",
+      "kind": "boundary",
+      "pass": true,
+      "difference": null,
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unknown-word",
+            "ranges": [
+              {
+                "start": 19,
+                "end": 25
+              }
+            ]
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-boundary-02",
+      "kind": "boundary",
+      "pass": true,
+      "difference": null,
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unknown-word",
+            "ranges": [
+              {
+                "start": 13,
+                "end": 18
+              }
+            ]
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-boundary-03",
+      "kind": "boundary",
+      "pass": true,
+      "difference": null,
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unknown-word",
+            "ranges": [
+              {
+                "start": 12,
+                "end": 18
+              }
+            ]
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-boundary-04",
+      "kind": "boundary",
+      "pass": true,
+      "difference": null,
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-boundary-05",
+      "kind": "boundary",
+      "pass": true,
+      "difference": null,
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-boundary-06",
+      "kind": "boundary",
+      "pass": true,
+      "difference": null,
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-boundary-07",
+      "kind": "boundary",
+      "pass": true,
+      "difference": null,
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-boundary-08",
+      "kind": "boundary",
+      "pass": true,
+      "difference": null,
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-boundary-09",
+      "kind": "boundary",
+      "pass": true,
+      "difference": null,
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-boundary-10",
+      "kind": "boundary",
+      "pass": true,
+      "difference": null,
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-boundary-11",
+      "kind": "boundary",
+      "pass": true,
+      "difference": null,
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-boundary-12",
+      "kind": "boundary",
+      "pass": true,
+      "difference": null,
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-boundary-13",
+      "kind": "boundary",
+      "pass": true,
+      "difference": null,
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-boundary-14",
+      "kind": "boundary",
+      "pass": true,
+      "difference": null,
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-boundary-15",
+      "kind": "boundary",
+      "pass": true,
+      "difference": null,
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-boundary-16",
+      "kind": "boundary",
+      "pass": true,
+      "difference": null,
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-boundary-17",
+      "kind": "boundary",
+      "pass": true,
+      "difference": null,
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-boundary-18",
+      "kind": "boundary",
+      "pass": true,
+      "difference": null,
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-boundary-19",
+      "kind": "boundary",
+      "pass": true,
+      "difference": null,
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-boundary-20",
+      "kind": "boundary",
+      "pass": true,
+      "difference": null,
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-boundary-21",
+      "kind": "boundary",
+      "pass": true,
+      "difference": null,
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-boundary-22",
+      "kind": "boundary",
+      "pass": true,
+      "difference": null,
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-boundary-23",
+      "kind": "boundary",
+      "pass": true,
+      "difference": null,
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-boundary-24",
+      "kind": "boundary",
+      "pass": true,
+      "difference": null,
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-boundary-25",
+      "kind": "boundary",
+      "pass": true,
+      "difference": null,
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-boundary-26",
+      "kind": "boundary",
+      "pass": true,
+      "difference": null,
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-boundary-27",
+      "kind": "boundary",
+      "pass": true,
+      "difference": null,
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-boundary-28",
+      "kind": "boundary",
+      "pass": true,
+      "difference": null,
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-boundary-29",
+      "kind": "boundary",
+      "pass": true,
+      "difference": null,
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-boundary-30",
+      "kind": "boundary",
+      "pass": true,
+      "difference": null,
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-boundary-31",
+      "kind": "boundary",
+      "pass": true,
+      "difference": null,
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-boundary-32",
+      "kind": "boundary",
+      "pass": true,
+      "difference": null,
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-boundary-33",
+      "kind": "boundary",
+      "pass": true,
+      "difference": null,
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-boundary-34",
+      "kind": "boundary",
+      "pass": true,
+      "difference": null,
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-boundary-35",
+      "kind": "boundary",
+      "pass": true,
+      "difference": null,
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": [],
+            "clauseIndex": 1
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-boundary-36",
+      "kind": "boundary",
+      "pass": true,
+      "difference": null,
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": [],
+            "clauseIndex": 2
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-boundary-37",
+      "kind": "boundary",
+      "pass": false,
+      "difference": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n    {\n+     code: 'unsupported-structure',\n-     code: 'punctuation',\n      ranges: []\n    }\n  ]\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-boundary-38",
+      "kind": "boundary",
+      "pass": true,
+      "difference": null,
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "punctuation",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-boundary-39",
+      "kind": "boundary",
+      "pass": true,
+      "difference": null,
+      "observed": {
+        "status": "invalid",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "punctuation",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-boundary-40",
+      "kind": "boundary",
+      "pass": true,
+      "difference": null,
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-boundary-41",
+      "kind": "boundary",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'partial'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-boundary-42",
+      "kind": "boundary",
+      "pass": true,
+      "difference": null,
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-boundary-43",
+      "kind": "boundary",
+      "pass": true,
+      "difference": null,
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "punctuation",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-boundary-44",
+      "kind": "boundary",
+      "pass": true,
+      "difference": null,
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-boundary-45",
+      "kind": "boundary",
+      "pass": true,
+      "difference": null,
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-boundary-46",
+      "kind": "boundary",
+      "pass": true,
+      "difference": null,
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-migration-1",
+      "kind": "migration",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-migration-2",
+      "kind": "migration",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33-migration-3",
+      "kind": "migration",
+      "pass": false,
+      "difference": "status\n+ actual - expected\n\n+ 'unsupported'\n- 'complete'\n",
+      "observed": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "nodes": [],
+        "corrections": []
+      }
+    }
+  ]
+}

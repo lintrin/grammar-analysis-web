@@ -1,0 +1,10 @@
+{
+  "stage": 33,
+  "phase": "33E-final-log-review",
+  "observed": "Development server captured React warning: Encountered two children with the same key, 地点表语 · 现在时.",
+  "source": "app/page.tsx teaching buttons used e.title as React key; new stage33d location examples share tense-based titles.",
+  "impact": "React list keys are not unique within the new category; warning confirmed. No grammar answer mismatch or lost button was observed.",
+  "fix": "Use the full teaching sentence e.text as the key; retain every original title and example.",
+  "answersChanged": false,
+  "independentFirstBehaviorReportUnchanged": true
+}

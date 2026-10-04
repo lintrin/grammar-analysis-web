@@ -1,0 +1,9 @@
+{
+  "sources": [{"id":"clause-stage22-manual","version":"1","title":"Clause stage 19 human-fixed possession have scope","license":"MIT","attribution":"Copyright (c) 2026 lintrin; project-maintained restricted possession frame"}],
+  "entries": [{
+    "id":"verb:possession:have","revisionId":"verb:possession:have:r1","lemma":"have","partOfSpeech":"verb","sense":"possession","attributes":{},
+    "forms":[{"kind":"base","surface":"have","initialSound":null},{"kind":"third","surface":"has","initialSound":null},{"kind":"past","surface":"had","initialSound":null},{"kind":"participle","surface":"had","initialSound":null},{"kind":"progressive","surface":"having","initialSound":null}],
+    "frames":[{"id":"possession-svo","pattern":"SVO","recipient":null,"complement":null,"allowProgressive":false,"allowPerfect":false,"passivePromotion":null,"allowedPurposes":["declarative","interrogative"],"allowedPolarities":["positive","negative"],"fixedTail":null}],
+    "sourceIds":["clause-stage22-manual"]
+  }]
+}

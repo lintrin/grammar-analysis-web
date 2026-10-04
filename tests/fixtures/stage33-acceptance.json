@@ -1,0 +1,5301 @@
+{
+  "stage": 33,
+  "phase": "33E",
+  "status": "human-fixed-before-first-analysis",
+  "baselineHash": "cbf0335c950d49de9626e03e09956bcdf91e20ee245eed6970201b52bf4ed180",
+  "authorship": "New manually chosen grammatical slots, exact UTF-16 spans, rules and edits; source-only arithmetic. 40 correct + 12 errors + 12 complete controls + 24 refusals. All normalized inputs excluded from frozen historical/development/UI/docs corpus.",
+  "fixtures": [
+    {
+      "id": "33e-affirmative-01",
+      "category": "affirmative",
+      "kind": "correct",
+      "input": "Her clean bag is in our green car.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 13
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": "0",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 9
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 14,
+                "end": 16
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 17,
+                "end": 33
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "4",
+            "parentKey": "3",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 24,
+                "end": 29
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-affirmative-02",
+      "category": "affirmative",
+      "kind": "correct",
+      "input": "Your tired workers were in those empty buses.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 18
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": "0",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 10
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 19,
+                "end": 23
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 24,
+                "end": 44
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "4",
+            "parentKey": "3",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 33,
+                "end": 38
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-affirmative-03",
+      "category": "affirmative",
+      "kind": "correct",
+      "input": "Our red umbrella is on this short table.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 16
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": "0",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 7
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 17,
+                "end": 19
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 20,
+                "end": 39
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "4",
+            "parentKey": "3",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 28,
+                "end": 33
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-affirmative-04",
+      "category": "affirmative",
+      "kind": "correct",
+      "input": "The hungry mouse was on her new chair.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 16
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": "0",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 10
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 17,
+                "end": 20
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 21,
+                "end": 37
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "4",
+            "parentKey": "3",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 28,
+                "end": 31
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-affirmative-05",
+      "category": "affirmative",
+      "kind": "correct",
+      "input": "Those blue gifts are under our tall tables.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 16
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": "0",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 10
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 17,
+                "end": 20
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 21,
+                "end": 42
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "4",
+            "parentKey": "3",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 31,
+                "end": 35
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-affirmative-06",
+      "category": "affirmative",
+      "kind": "correct",
+      "input": "A quiet baby was under your old chairs.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 12
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": "0",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 2,
+                "end": 7
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 13,
+                "end": 16
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 17,
+                "end": 38
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "4",
+            "parentKey": "3",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 28,
+                "end": 31
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-affirmative-07",
+      "category": "affirmative",
+      "kind": "correct",
+      "input": "Our calm artist is near these clean tables.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 15
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": "0",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 8
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 16,
+                "end": 18
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 19,
+                "end": 42
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "4",
+            "parentKey": "3",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 30,
+                "end": 35
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-affirmative-08",
+      "category": "affirmative",
+      "kind": "correct",
+      "input": "Their old letters were near that small chair.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 17
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": "0",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 9
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 18,
+                "end": 22
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 23,
+                "end": 44
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "4",
+            "parentKey": "3",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 33,
+                "end": 38
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-affirmative-09",
+      "category": "affirmative",
+      "kind": "correct",
+      "input": "I am near your beautiful cars.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 1
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 2,
+                "end": 4
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 29
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": "2",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 15,
+                "end": 24
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-affirmative-10",
+      "category": "affirmative",
+      "kind": "correct",
+      "input": "  YOU  ARE  NEAR  OUR  RED  BUSES  ",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 2,
+                "end": 5
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 7,
+                "end": 10
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 12,
+                "end": 33
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": "2",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 23,
+                "end": 26
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-negative-01",
+      "category": "negative",
+      "kind": "correct",
+      "input": "His new picture is not in her clean bus.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 15
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": "0",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 7
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 16,
+                "end": 22
+              }
+            ],
+            "ruleId": "NEGATIVE-BE-LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 23,
+                "end": 39
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "4",
+            "parentKey": "3",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 30,
+                "end": 35
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-negative-02",
+      "category": "negative",
+      "kind": "correct",
+      "input": "Our quiet cousins weren't in the small cars.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 17
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": "0",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 9
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 18,
+                "end": 25
+              }
+            ],
+            "ruleId": "NEGATIVE-BE-LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 26,
+                "end": 43
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "4",
+            "parentKey": "3",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 33,
+                "end": 38
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-negative-03",
+      "category": "negative",
+      "kind": "correct",
+      "input": "Your beautiful apples aren’t on these old tables.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 21
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": "0",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 14
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 22,
+                "end": 28
+              }
+            ],
+            "ruleId": "NEGATIVE-BE-LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 29,
+                "end": 48
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "4",
+            "parentKey": "3",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 38,
+                "end": 41
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-negative-04",
+      "category": "negative",
+      "kind": "correct",
+      "input": "The tired uncle wasn't on that blue chair.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 15
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": "0",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 9
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 16,
+                "end": 22
+              }
+            ],
+            "ruleId": "NEGATIVE-BE-LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 23,
+                "end": 41
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "4",
+            "parentKey": "3",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 31,
+                "end": 35
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-negative-05",
+      "category": "negative",
+      "kind": "correct",
+      "input": "I am not under your clean table.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 1
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 2,
+                "end": 8
+              }
+            ],
+            "ruleId": "NEGATIVE-BE-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 31
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": "2",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 20,
+                "end": 25
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-negative-06",
+      "category": "negative",
+      "kind": "correct",
+      "input": "You were not under our short chairs.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 12
+              }
+            ],
+            "ruleId": "NEGATIVE-BE-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 13,
+                "end": 35
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": "2",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 23,
+                "end": 28
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-negative-07",
+      "category": "negative",
+      "kind": "correct",
+      "input": "The angry farmer isn't near these empty buses.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 16
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": "0",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 9
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 17,
+                "end": 22
+              }
+            ],
+            "ruleId": "NEGATIVE-BE-LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 23,
+                "end": 45
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "4",
+            "parentKey": "3",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 34,
+                "end": 39
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-negative-08",
+      "category": "negative",
+      "kind": "correct",
+      "input": "These hungry mice weren’t near her green car.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 17
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": "0",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 12
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 18,
+                "end": 25
+              }
+            ],
+            "ruleId": "NEGATIVE-BE-LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 26,
+                "end": 44
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "4",
+            "parentKey": "3",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 35,
+                "end": 40
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-negative-09",
+      "category": "negative",
+      "kind": "correct",
+      "input": "A sad singer is not near their tall table",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 12
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": "0",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 2,
+                "end": 5
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 13,
+                "end": 19
+              }
+            ],
+            "ruleId": "NEGATIVE-BE-LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 20,
+                "end": 41
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "4",
+            "parentKey": "3",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 31,
+                "end": 35
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-negative-10",
+      "category": "negative",
+      "kind": "correct",
+      "input": "  OUR  GOOD  FRIENDS  ARE  NOT  NEAR  HIS  NEW  CHAIRS.  ",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 2,
+                "end": 20
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": "0",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 7,
+                "end": 11
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 22,
+                "end": 30
+              }
+            ],
+            "ruleId": "NEGATIVE-BE-LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 32,
+                "end": 54
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "4",
+            "parentKey": "3",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 43,
+                "end": 46
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-yes-no-01",
+      "category": "yes-no",
+      "kind": "correct",
+      "input": "Is your good friend in our old bus?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "yes-no",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 19
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": "0",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 8,
+                "end": 12
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 2
+              }
+            ],
+            "ruleId": "QUESTION-BE-LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 20,
+                "end": 34
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "4",
+            "parentKey": "3",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 27,
+                "end": 30
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-yes-no-02",
+      "category": "yes-no",
+      "kind": "correct",
+      "input": "Were their green umbrellas in these clean cars?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": "yes-no",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 26
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": "0",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 16
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ],
+            "ruleId": "QUESTION-BE-LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 27,
+                "end": 46
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "4",
+            "parentKey": "3",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 36,
+                "end": 41
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-yes-no-03",
+      "category": "yes-no",
+      "kind": "correct",
+      "input": "Are his blue pens on your short tables?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "yes-no",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 17
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": "0",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 8,
+                "end": 12
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "QUESTION-BE-LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 18,
+                "end": 38
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "4",
+            "parentKey": "3",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 26,
+                "end": 31
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-yes-no-04",
+      "category": "yes-no",
+      "kind": "correct",
+      "input": "Was our hungry dancer on that empty chair?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": "yes-no",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 21
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": "0",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 8,
+                "end": 14
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "QUESTION-BE-LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 22,
+                "end": 41
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "4",
+            "parentKey": "3",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 30,
+                "end": 35
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-yes-no-05",
+      "category": "yes-no",
+      "kind": "correct",
+      "input": "Am I under those beautiful tables?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "yes-no",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 4
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 2
+              }
+            ],
+            "ruleId": "QUESTION-BE-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 33
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": "2",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 17,
+                "end": 26
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-yes-no-06",
+      "category": "yes-no",
+      "kind": "correct",
+      "input": "Were you under their green chairs?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": "yes-no",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 8
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ],
+            "ruleId": "QUESTION-BE-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 33
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": "2",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 21,
+                "end": 26
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-yes-no-07",
+      "category": "yes-no",
+      "kind": "correct",
+      "input": "Is the busy doctor near her new table?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "yes-no",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 18
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": "0",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 7,
+                "end": 11
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 2
+              }
+            ],
+            "ruleId": "QUESTION-BE-LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 19,
+                "end": 37
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "4",
+            "parentKey": "3",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 28,
+                "end": 31
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-yes-no-08",
+      "category": "yes-no",
+      "kind": "correct",
+      "input": "Were these small eggs near our tall chairs?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": "yes-no",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 21
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": "0",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 16
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ],
+            "ruleId": "QUESTION-BE-LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 22,
+                "end": 42
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "4",
+            "parentKey": "3",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 31,
+                "end": 35
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-yes-no-09",
+      "category": "yes-no",
+      "kind": "correct",
+      "input": "Is his clean tooth near your red cars",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "yes-no",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 18
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": "0",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 7,
+                "end": 12
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 2
+              }
+            ],
+            "ruleId": "QUESTION-BE-LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 19,
+                "end": 37
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "4",
+            "parentKey": "3",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 29,
+                "end": 32
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-yes-no-10",
+      "category": "yes-no",
+      "kind": "correct",
+      "input": "  ARE  OUR  YOUNG  ACTORS  NEAR  THOSE  BIG  BUSES?  ",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "yes-no",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 7,
+                "end": 25
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": "0",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 12,
+                "end": 17
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 2,
+                "end": 5
+              }
+            ],
+            "ruleId": "QUESTION-BE-LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 27,
+                "end": 50
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "4",
+            "parentKey": "3",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 40,
+                "end": 43
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-where-01",
+      "category": "where",
+      "kind": "correct",
+      "input": "Where is her tired aunt?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-complement",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 23
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": "0",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 13,
+                "end": 18
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 8
+              }
+            ],
+            "ruleId": "QUESTION-BE-LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 5
+              }
+            ],
+            "ruleId": "WH-COMPLEMENT-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-where-02",
+      "category": "where",
+      "kind": "correct",
+      "input": "Where were our hungry neighbors?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": "wh-complement",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 31
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": "0",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 15,
+                "end": 21
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 10
+              }
+            ],
+            "ruleId": "QUESTION-BE-LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 5
+              }
+            ],
+            "ruleId": "WH-COMPLEMENT-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-where-03",
+      "category": "where",
+      "kind": "correct",
+      "input": "Where are those clean teeth?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-complement",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 27
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": "0",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 16,
+                "end": 21
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 9
+              }
+            ],
+            "ruleId": "QUESTION-BE-LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 5
+              }
+            ],
+            "ruleId": "WH-COMPLEMENT-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-where-04",
+      "category": "where",
+      "kind": "correct",
+      "input": "Where was your short umbrella?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": "wh-complement",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 29
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": "0",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 15,
+                "end": 20
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 9
+              }
+            ],
+            "ruleId": "QUESTION-BE-LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 5
+              }
+            ],
+            "ruleId": "WH-COMPLEMENT-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-where-05",
+      "category": "where",
+      "kind": "correct",
+      "input": "Where is a calm doctor?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-complement",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 22
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": "0",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 15
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 8
+              }
+            ],
+            "ruleId": "QUESTION-BE-LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 5
+              }
+            ],
+            "ruleId": "WH-COMPLEMENT-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-where-06",
+      "category": "where",
+      "kind": "correct",
+      "input": "Where were their beautiful women?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": "wh-complement",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 32
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": "0",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 17,
+                "end": 26
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 10
+              }
+            ],
+            "ruleId": "QUESTION-BE-LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 5
+              }
+            ],
+            "ruleId": "WH-COMPLEMENT-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-where-07",
+      "category": "where",
+      "kind": "correct",
+      "input": "Where are his busy students?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-complement",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 27
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": "0",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 14,
+                "end": 18
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 9
+              }
+            ],
+            "ruleId": "QUESTION-BE-LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 5
+              }
+            ],
+            "ruleId": "WH-COMPLEMENT-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-where-08",
+      "category": "where",
+      "kind": "correct",
+      "input": "Where was this empty window?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": "wh-complement",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 27
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": "0",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 15,
+                "end": 20
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 9
+              }
+            ],
+            "ruleId": "QUESTION-BE-LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 5
+              }
+            ],
+            "ruleId": "WH-COMPLEMENT-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-where-09",
+      "category": "where",
+      "kind": "correct",
+      "input": "Where is our useful gift",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-complement",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 24
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": "0",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 13,
+                "end": 19
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 8
+              }
+            ],
+            "ruleId": "QUESTION-BE-LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 5
+              }
+            ],
+            "ruleId": "WH-COMPLEMENT-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-where-10",
+      "category": "where",
+      "kind": "correct",
+      "input": "  WHERE  ARE  YOUR  SAD  CHILDREN?  ",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-complement",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 14,
+                "end": 33
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": "0",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 20,
+                "end": 23
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 12
+              }
+            ],
+            "ruleId": "QUESTION-BE-LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 2,
+                "end": 7
+              }
+            ],
+            "ruleId": "WH-COMPLEMENT-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-control-01",
+      "category": "affirmative",
+      "kind": "control",
+      "input": "The quiet mice are near your green bus.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 14
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": "0",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 9
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 15,
+                "end": 18
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 19,
+                "end": 38
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "4",
+            "parentKey": "3",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 29,
+                "end": 34
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-error-01",
+      "category": "affirmative",
+      "kind": "error",
+      "input": "The quiet mice is near your green bus.",
+      "controlId": "33e-control-01",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 15,
+                  "end": 17
+                },
+                "expected": "is",
+                "replacement": "are"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "33e-control-02",
+      "category": "affirmative",
+      "kind": "control",
+      "input": "I was in their empty car.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 1
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 2,
+                "end": 5
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 24
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": "2",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 15,
+                "end": 20
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-error-02",
+      "category": "affirmative",
+      "kind": "error",
+      "input": "I were in their empty car.",
+      "controlId": "33e-control-02",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 2,
+                  "end": 6
+                },
+                "expected": "were",
+                "replacement": "was"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "33e-control-03",
+      "category": "affirmative",
+      "kind": "control",
+      "input": "Your busy aunt was under my new table.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 14
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": "0",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 9
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 15,
+                "end": 18
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 19,
+                "end": 37
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "4",
+            "parentKey": "3",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 28,
+                "end": 31
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-error-03",
+      "category": "affirmative",
+      "kind": "error",
+      "input": "Your busy aunt were under my new table.",
+      "controlId": "33e-control-03",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 15,
+                  "end": 19
+                },
+                "expected": "were",
+                "replacement": "was"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "33e-control-04",
+      "category": "negative",
+      "kind": "control",
+      "input": "Our green bags aren't under those short chairs.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 14
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": "0",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 9
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 15,
+                "end": 21
+              }
+            ],
+            "ruleId": "NEGATIVE-BE-LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 22,
+                "end": 46
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "4",
+            "parentKey": "3",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 34,
+                "end": 39
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-error-04",
+      "category": "negative",
+      "kind": "error",
+      "input": "Our green bags isn't under those short chairs.",
+      "controlId": "33e-control-04",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": [
+              {
+                "start": 15,
+                "end": 20
+              }
+            ]
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 15,
+                  "end": 20
+                },
+                "expected": "isn't",
+                "replacement": "aren't"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "33e-control-05",
+      "category": "negative",
+      "kind": "control",
+      "input": "The calm neighbor wasn’t on your big table.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 17
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": "0",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 8
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 18,
+                "end": 24
+              }
+            ],
+            "ruleId": "NEGATIVE-BE-LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 25,
+                "end": 42
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "4",
+            "parentKey": "3",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 33,
+                "end": 36
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-error-05",
+      "category": "negative",
+      "kind": "error",
+      "input": "The calm neighbor weren’t on your big table.",
+      "controlId": "33e-control-05",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": [
+              {
+                "start": 18,
+                "end": 25
+              }
+            ]
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 18,
+                  "end": 25
+                },
+                "expected": "weren’t",
+                "replacement": "wasn’t"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "33e-control-06",
+      "category": "negative",
+      "kind": "control",
+      "input": "You are not near her clean chairs.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 11
+              }
+            ],
+            "ruleId": "NEGATIVE-BE-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 12,
+                "end": 33
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": "2",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 21,
+                "end": 26
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-error-06",
+      "category": "negative",
+      "kind": "error",
+      "input": "You is not near her clean chairs.",
+      "controlId": "33e-control-06",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 4,
+                  "end": 6
+                },
+                "expected": "is",
+                "replacement": "are"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "33e-control-07",
+      "category": "yes-no",
+      "kind": "control",
+      "input": "Are those tired singers in our red buses?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "yes-no",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 23
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": "0",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 15
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "QUESTION-BE-LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 24,
+                "end": 40
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "4",
+            "parentKey": "3",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 31,
+                "end": 34
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-error-07",
+      "category": "yes-no",
+      "kind": "error",
+      "input": "Is those tired singers in our red buses?",
+      "controlId": "33e-control-07",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 0,
+                  "end": 2
+                },
+                "expected": "Is",
+                "replacement": "Are"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "33e-control-08",
+      "category": "yes-no",
+      "kind": "control",
+      "input": "Were you near my empty bus?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": "yes-no",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 8
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ],
+            "ruleId": "QUESTION-BE-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 26
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": "2",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 17,
+                "end": 22
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-error-08",
+      "category": "yes-no",
+      "kind": "error",
+      "input": "Was you near my empty bus?",
+      "controlId": "33e-control-08",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 0,
+                  "end": 3
+                },
+                "expected": "Was",
+                "replacement": "Were"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "33e-control-09",
+      "category": "yes-no",
+      "kind": "control",
+      "input": "Was the small orange under our green chair?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": "yes-no",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 20
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": "0",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 8,
+                "end": 13
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "QUESTION-BE-LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 21,
+                "end": 42
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "4",
+            "parentKey": "3",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 31,
+                "end": 36
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-error-09",
+      "category": "yes-no",
+      "kind": "error",
+      "input": "Were the small orange under our green chair?",
+      "controlId": "33e-control-09",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 0,
+                  "end": 4
+                },
+                "expected": "Were",
+                "replacement": "Was"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "33e-control-10",
+      "category": "where",
+      "kind": "control",
+      "input": "Where are your quiet uncles?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-complement",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 27
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": "0",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 15,
+                "end": 20
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 9
+              }
+            ],
+            "ruleId": "QUESTION-BE-LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 5
+              }
+            ],
+            "ruleId": "WH-COMPLEMENT-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-error-10",
+      "category": "where",
+      "kind": "error",
+      "input": "Where is your quiet uncles?",
+      "controlId": "33e-control-10",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 6,
+                  "end": 8
+                },
+                "expected": "is",
+                "replacement": "are"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "33e-control-11",
+      "category": "where",
+      "kind": "control",
+      "input": "Where was her angry mother?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": "wh-complement",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 26
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": "0",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 14,
+                "end": 19
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 9
+              }
+            ],
+            "ruleId": "QUESTION-BE-LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 5
+              }
+            ],
+            "ruleId": "WH-COMPLEMENT-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-error-11",
+      "category": "where",
+      "kind": "error",
+      "input": "Where were her angry mother?",
+      "controlId": "33e-control-11",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 6,
+                  "end": 10
+                },
+                "expected": "were",
+                "replacement": "was"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "33e-control-12",
+      "category": "where",
+      "kind": "control",
+      "input": "Where were those old feet?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": "wh-complement",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 25
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": "0",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 17,
+                "end": 20
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 10
+              }
+            ],
+            "ruleId": "QUESTION-BE-LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 5
+              }
+            ],
+            "ruleId": "WH-COMPLEMENT-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-error-12",
+      "category": "where",
+      "kind": "error",
+      "input": "Where was those old feet?",
+      "controlId": "33e-control-12",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 6,
+                  "end": 9
+                },
+                "expected": "was",
+                "replacement": "were"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "33e-boundary-01",
+      "category": "boundary",
+      "kind": "boundary",
+      "input": "Her quiet cousin is near the satellite.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unknown-word",
+            "ranges": [
+              {
+                "start": 29,
+                "end": 38
+              }
+            ]
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-boundary-02",
+      "category": "boundary",
+      "kind": "boundary",
+      "input": "Where were the blue robots?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unknown-word",
+            "ranges": [
+              {
+                "start": 20,
+                "end": 26
+              }
+            ]
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-boundary-03",
+      "category": "boundary",
+      "kind": "boundary",
+      "input": "Our red bag is in that short chair.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-boundary-04",
+      "category": "boundary",
+      "kind": "boundary",
+      "input": "His clean pen is on your big bus.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-boundary-05",
+      "category": "boundary",
+      "kind": "boundary",
+      "input": "My old umbrella was under their red car.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-boundary-06",
+      "category": "boundary",
+      "kind": "boundary",
+      "input": "Our calm doctor is near her empty window.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-boundary-07",
+      "category": "boundary",
+      "kind": "boundary",
+      "input": "Your green pen is under chair.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-boundary-08",
+      "category": "boundary",
+      "kind": "boundary",
+      "input": "Her tired uncle was near an buses.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-boundary-09",
+      "category": "boundary",
+      "kind": "boundary",
+      "input": "Those blue eggs are on this tables.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-boundary-10",
+      "category": "boundary",
+      "kind": "boundary",
+      "input": "Our calm artist is under her.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-boundary-11",
+      "category": "boundary",
+      "kind": "boundary",
+      "input": "His short pencil is on that new table.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unknown-word",
+            "ranges": [
+              {
+                "start": 10,
+                "end": 16
+              }
+            ]
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-boundary-12",
+      "category": "boundary",
+      "kind": "boundary",
+      "input": "Your useful gift is near our green car today.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-boundary-13",
+      "category": "boundary",
+      "kind": "boundary",
+      "input": "Their old picture can be on my short chair.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-boundary-14",
+      "category": "boundary",
+      "kind": "boundary",
+      "input": "Our clean bags will be under those big tables.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-boundary-15",
+      "category": "boundary",
+      "kind": "boundary",
+      "input": "Her quiet aunt has been in that empty bus.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-boundary-16",
+      "category": "boundary",
+      "kind": "boundary",
+      "input": "His red picture is being near these cars.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-boundary-17",
+      "category": "boundary",
+      "kind": "boundary",
+      "input": "Our old bag is kept under your clean chair.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-boundary-18",
+      "category": "boundary",
+      "kind": "boundary",
+      "input": "Where your tired mother was?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-boundary-19",
+      "category": "boundary",
+      "kind": "boundary",
+      "input": "Where is her calm uncle near the bus?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-boundary-20",
+      "category": "boundary",
+      "kind": "boundary",
+      "input": "Are our new pens not on the chair?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-boundary-21",
+      "category": "boundary",
+      "kind": "boundary",
+      "input": "Why was their hungry mouse?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-boundary-22",
+      "category": "boundary",
+      "kind": "boundary",
+      "input": "Our clean bag is under your table and she sleeps.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": [],
+            "clauseIndex": 1
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-boundary-23",
+      "category": "boundary",
+      "kind": "boundary",
+      "input": "Where are the clean bags.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "punctuation",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "33e-boundary-24",
+      "category": "boundary",
+      "kind": "boundary",
+      "input": "Her tired aunt was on my blue chair..",
+      "expected": {
+        "status": "invalid",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "punctuation",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    }
+  ]
+}

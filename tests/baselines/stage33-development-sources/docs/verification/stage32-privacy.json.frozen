@@ -1,0 +1,13 @@
+{
+  "testedFixedInputs": 207,
+  "privateInputPresentInServiceLogs": false,
+  "querySentinelPresentInServiceLogs": false,
+  "services": [
+    "dev:5188",
+    "isolated-build:5189"
+  ],
+  "buildDirectory": "/tmp/clause-stage32-isolated",
+  "maintenanceDatabasePresentInBuildDirectory": false,
+  "isolation": "Only copied dist; no data/lib/source/maintenance working library. Wrangler uses its own Miniflare cache metadata.sqlite under state, unrelated to the vocabulary maintenance database.",
+  "networkAndBrowserStorage": "See both stage32 browser reports; zero requests while offline, no fixed inputs in console or storage."
+}

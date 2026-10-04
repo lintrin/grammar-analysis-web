@@ -1,0 +1,39 @@
+{
+  "browser": "147.0.7727.15",
+  "checks": [
+    {
+      "id": "already-queued-callback-rejected-after-edit",
+      "passed": true
+    },
+    {
+      "id": "already-queued-callback-rejected-after-query-example",
+      "passed": true
+    },
+    {
+      "id": "real-file-hmr-ruleVersion",
+      "passed": true,
+      "withoutReload": true
+    },
+    {
+      "id": "real-file-hmr-lexiconVersion",
+      "passed": true,
+      "withoutReload": true
+    },
+    {
+      "id": "real-file-hmr-lexiconHash",
+      "passed": true,
+      "withoutReload": true
+    },
+    {
+      "id": "real-file-hmr-rejects-held-old-identity-callback",
+      "passed": true
+    },
+    {
+      "id": "controlled-analyzer-failure-retains-input-and-retry-succeeds",
+      "passed": true
+    }
+  ],
+  "originalBytesRestored": true,
+  "errors": [],
+  "harness": "Held actual analyzer setTimeout callbacks are invoked after cancellation to exercise version/request guards. Failure injected temporarily into analyzer source, restored byte-for-byte. Identity changes use real source file watcher."
+}

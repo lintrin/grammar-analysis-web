@@ -1,0 +1,260 @@
+{
+  "review": "human-fixed-before-stage33d-implementation",
+  "ruleVersion": "0.23.1",
+  "lexiconVersion": "1.8.1",
+  "examples": [
+    {
+      "entryId": "function-word:auxiliary:am",
+      "frameId": "location",
+      "title": "地点表语",
+      "text": "I am in the car.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "function-word:auxiliary:is",
+      "frameId": "location",
+      "title": "地点表语",
+      "text": "The bag is under the table.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "function-word:auxiliary:are",
+      "frameId": "location",
+      "title": "地点表语",
+      "text": "The books are on the chair.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "function-word:auxiliary:was",
+      "frameId": "location",
+      "title": "地点表语",
+      "text": "The book was near the bus.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "function-word:auxiliary:were",
+      "frameId": "location",
+      "title": "地点表语",
+      "text": "The bags were in the cars.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "function:question:where",
+      "frameId": null,
+      "title": "地点表语提问",
+      "text": "Where is the book?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": "wh-complement"
+      }
+    },
+    {
+      "entryId": "function:question:where",
+      "frameId": null,
+      "title": "动作状语提问",
+      "text": "Where does she work?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": "wh-adverbial"
+      }
+    },
+    {
+      "entryId": "function:location:in",
+      "frameId": null,
+      "title": "地点表语",
+      "text": "The book is in the car.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "function:location:on",
+      "frameId": null,
+      "title": "地点表语",
+      "text": "The bag is on the table.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "function:location:under",
+      "frameId": null,
+      "title": "既有地点状语",
+      "text": "She sleeps under the table.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    },
+    {
+      "entryId": "function:location:near",
+      "frameId": null,
+      "title": "地点表语",
+      "text": "The book is near the bus.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "simple",
+        "voice": "active",
+        "modal": null,
+        "questionType": null
+      }
+    }
+  ],
+  "queries": [
+    {
+      "word": "in",
+      "heads": [
+        "bus",
+        "car"
+      ],
+      "verbs": [
+        "dance",
+        "run",
+        "sleep",
+        "wait",
+        "walk",
+        "work"
+      ]
+    },
+    {
+      "word": "on",
+      "heads": [
+        "chair",
+        "table"
+      ],
+      "verbs": [
+        "dance",
+        "run",
+        "sleep",
+        "wait",
+        "walk",
+        "work"
+      ]
+    },
+    {
+      "word": "under",
+      "heads": [
+        "chair",
+        "table"
+      ],
+      "verbs": [
+        "sleep",
+        "wait"
+      ]
+    },
+    {
+      "word": "near",
+      "heads": [
+        "bus",
+        "car",
+        "chair",
+        "table"
+      ],
+      "verbs": [
+        "dance",
+        "run",
+        "sleep",
+        "wait",
+        "walk",
+        "work"
+      ]
+    }
+  ],
+  "boundaries": [
+    "The book will be in the car.",
+    "The book has been on the table.",
+    "Where is not the book?",
+    "The book is near the bag."
+  ]
+}

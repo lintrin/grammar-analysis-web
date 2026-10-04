@@ -1,0 +1,15 @@
+{
+  "repository": "https://github.com/bjascob/LemmInflect",
+  "commit": "b7699808106a4ce843fc7f0e8e5d87fcb84cc636",
+  "license": "MIT",
+  "files": {
+    "infl_lu.csv.gz": "8c44bd5bec62488bef043f98b0cab022a431d6cb03954864ea70334530908ba7",
+    "infl_overrides.csv": "c6ccfd2f17d706cf259c6cf96cbb89b5a641a584c2456755808425821c7652e8"
+  },
+  "subsetFiles": {
+    "verbs.csv": "164ea8429c67f08a9f95c6f41afe08656383521cfbb29613d94c96eeafd5c5dc",
+    "overrides.csv": "d35e5bea8b6bf68835902604c6615766131c98dd22ac5e243da1da7c9e7f3fb6",
+    "LICENSE": "8e69f1c68fc9f23bd5065a6266f6febb5aaa83a43b41070276760807037abc85"
+  },
+  "selection": "73 human-selected verbs; verb rows retained verbatim by CSV field. English frequency is not a ranking claim."
+}

@@ -1,0 +1,2791 @@
+{
+  "targetRuleVersion": "0.7.0",
+  "state": "implemented",
+  "authorship": "Hand-authored classifications and component partitions; no analyzer-generated expectations.",
+  "fixtures": [
+    {
+      "id": "because-01",
+      "input": "She smiles because she likes the book.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "complexity": "complex",
+        "pattern": null,
+        "tense": null,
+        "nodes": [
+          {
+            "key": "clause-1",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 10
+              }
+            ],
+            "clause": {
+              "pattern": "SV",
+              "purpose": "declarative",
+              "tense": "present",
+              "kind": "main",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-1-part-1",
+            "role": "subject",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-2",
+            "role": "verb",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 10
+              }
+            ]
+          },
+          {
+            "key": "clause-2",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 19,
+                "end": 37
+              }
+            ],
+            "clause": {
+              "pattern": "SVO",
+              "purpose": "declarative",
+              "tense": "present",
+              "kind": "subordinate",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-2-part-1",
+            "role": "subject",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 19,
+                "end": 22
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-2",
+            "role": "verb",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 23,
+                "end": 28
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-3",
+            "role": "object",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 29,
+                "end": 37
+              }
+            ]
+          },
+          {
+            "key": "connector",
+            "role": "connector",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 18
+              }
+            ],
+            "relation": "cause"
+          }
+        ],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "because-02",
+      "input": "He likes the book because it is useful.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "complexity": "complex",
+        "pattern": null,
+        "tense": null,
+        "nodes": [
+          {
+            "key": "clause-1",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 17
+              }
+            ],
+            "clause": {
+              "pattern": "SVO",
+              "purpose": "declarative",
+              "tense": "present",
+              "kind": "main",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-1-part-1",
+            "role": "subject",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 2
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-2",
+            "role": "verb",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 8
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-3",
+            "role": "object",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 17
+              }
+            ]
+          },
+          {
+            "key": "clause-2",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 26,
+                "end": 38
+              }
+            ],
+            "clause": {
+              "pattern": "SVC",
+              "purpose": "declarative",
+              "tense": "present",
+              "kind": "subordinate",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-2-part-1",
+            "role": "subject",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 26,
+                "end": 28
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-2",
+            "role": "verb",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 29,
+                "end": 31
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-3",
+            "role": "complement",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 32,
+                "end": 38
+              }
+            ]
+          },
+          {
+            "key": "connector",
+            "role": "connector",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 18,
+                "end": 25
+              }
+            ],
+            "relation": "cause"
+          }
+        ],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "because-03",
+      "input": "She is kind because we found it useful.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "complexity": "complex",
+        "pattern": null,
+        "tense": null,
+        "nodes": [
+          {
+            "key": "clause-1",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 11
+              }
+            ],
+            "clause": {
+              "pattern": "SVC",
+              "purpose": "declarative",
+              "tense": "present",
+              "kind": "main",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-1-part-1",
+            "role": "subject",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-2",
+            "role": "verb",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 6
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-3",
+            "role": "complement",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 7,
+                "end": 11
+              }
+            ]
+          },
+          {
+            "key": "clause-2",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 20,
+                "end": 38
+              }
+            ],
+            "clause": {
+              "pattern": "SVOC",
+              "purpose": "declarative",
+              "tense": "past",
+              "kind": "subordinate",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-2-part-1",
+            "role": "subject",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 20,
+                "end": 22
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-2",
+            "role": "verb",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 23,
+                "end": 28
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-3",
+            "role": "object",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 29,
+                "end": 31
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-4",
+            "role": "complement",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 32,
+                "end": 38
+              }
+            ]
+          },
+          {
+            "key": "connector",
+            "role": "connector",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 12,
+                "end": 19
+              }
+            ],
+            "relation": "cause"
+          }
+        ],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "because-04",
+      "input": "They smiled because she gave him a book.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "complexity": "complex",
+        "pattern": null,
+        "tense": null,
+        "nodes": [
+          {
+            "key": "clause-1",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 11
+              }
+            ],
+            "clause": {
+              "pattern": "SV",
+              "purpose": "declarative",
+              "tense": "past",
+              "kind": "main",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-1-part-1",
+            "role": "subject",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-2",
+            "role": "verb",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 11
+              }
+            ]
+          },
+          {
+            "key": "clause-2",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 20,
+                "end": 39
+              }
+            ],
+            "clause": {
+              "pattern": "SVOO",
+              "purpose": "declarative",
+              "tense": "past",
+              "kind": "subordinate",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-2-part-1",
+            "role": "subject",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 20,
+                "end": 23
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-2",
+            "role": "verb",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 24,
+                "end": 28
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-3",
+            "role": "indirectObject",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 29,
+                "end": 32
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-4",
+            "role": "object",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 33,
+                "end": 39
+              }
+            ]
+          },
+          {
+            "key": "connector",
+            "role": "connector",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 12,
+                "end": 19
+              }
+            ],
+            "relation": "cause"
+          }
+        ],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "because-05",
+      "input": "She gave him a book because he smiles.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "complexity": "complex",
+        "pattern": null,
+        "tense": null,
+        "nodes": [
+          {
+            "key": "clause-1",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 19
+              }
+            ],
+            "clause": {
+              "pattern": "SVOO",
+              "purpose": "declarative",
+              "tense": "past",
+              "kind": "main",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-1-part-1",
+            "role": "subject",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-2",
+            "role": "verb",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 8
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-3",
+            "role": "indirectObject",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 12
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-4",
+            "role": "object",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 13,
+                "end": 19
+              }
+            ]
+          },
+          {
+            "key": "clause-2",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 28,
+                "end": 37
+              }
+            ],
+            "clause": {
+              "pattern": "SV",
+              "purpose": "declarative",
+              "tense": "present",
+              "kind": "subordinate",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-2-part-1",
+            "role": "subject",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 28,
+                "end": 30
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-2",
+            "role": "verb",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 31,
+                "end": 37
+              }
+            ]
+          },
+          {
+            "key": "connector",
+            "role": "connector",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 20,
+                "end": 27
+              }
+            ],
+            "relation": "cause"
+          }
+        ],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "because-06",
+      "input": "She can not go to school because he smiled yesterday.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "complexity": "complex",
+        "pattern": null,
+        "tense": null,
+        "nodes": [
+          {
+            "key": "clause-1",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 24
+              }
+            ],
+            "clause": {
+              "pattern": "SV",
+              "purpose": "declarative",
+              "tense": null,
+              "kind": "main",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-1-part-1",
+            "role": "subject",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-2",
+            "role": "verb",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 14
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-3",
+            "role": "adverbial",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 15,
+                "end": 24
+              }
+            ]
+          },
+          {
+            "key": "clause-2",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 33,
+                "end": 52
+              }
+            ],
+            "clause": {
+              "pattern": "SV",
+              "purpose": "declarative",
+              "tense": "past",
+              "kind": "subordinate",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-2-part-1",
+            "role": "subject",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 33,
+                "end": 35
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-2",
+            "role": "verb",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 36,
+                "end": 42
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-3",
+            "role": "adverbial",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 43,
+                "end": 52
+              }
+            ]
+          },
+          {
+            "key": "connector",
+            "role": "connector",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 25,
+                "end": 32
+              }
+            ],
+            "relation": "cause"
+          }
+        ],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "because-07",
+      "input": "The young teacher gives her an old book because the book is useful.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "complexity": "complex",
+        "pattern": null,
+        "tense": null,
+        "nodes": [
+          {
+            "key": "clause-1",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 39
+              }
+            ],
+            "clause": {
+              "pattern": "SVOO",
+              "purpose": "declarative",
+              "tense": "present",
+              "kind": "main",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-1-part-1",
+            "role": "subject",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 17
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-1-attribute-1",
+            "role": "attribute",
+            "parentKey": "clause-1-part-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 9
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-2",
+            "role": "verb",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 18,
+                "end": 23
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-3",
+            "role": "indirectObject",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 24,
+                "end": 27
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-4",
+            "role": "object",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 28,
+                "end": 39
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-4-attribute-1",
+            "role": "attribute",
+            "parentKey": "clause-1-part-4",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 31,
+                "end": 34
+              }
+            ]
+          },
+          {
+            "key": "clause-2",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 48,
+                "end": 66
+              }
+            ],
+            "clause": {
+              "pattern": "SVC",
+              "purpose": "declarative",
+              "tense": "present",
+              "kind": "subordinate",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-2-part-1",
+            "role": "subject",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 48,
+                "end": 56
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-2",
+            "role": "verb",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 57,
+                "end": 59
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-3",
+            "role": "complement",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 60,
+                "end": 66
+              }
+            ]
+          },
+          {
+            "key": "connector",
+            "role": "connector",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 40,
+                "end": 47
+              }
+            ],
+            "relation": "cause"
+          }
+        ],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "because-08",
+      "input": "  SHE  sees it  BECAUSE  she  liked it.  ",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "complexity": "complex",
+        "pattern": null,
+        "tense": null,
+        "nodes": [
+          {
+            "key": "clause-1",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 2,
+                "end": 14
+              }
+            ],
+            "clause": {
+              "pattern": "SVO",
+              "purpose": "declarative",
+              "tense": "present",
+              "kind": "main",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-1-part-1",
+            "role": "subject",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 2,
+                "end": 5
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-2",
+            "role": "verb",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 7,
+                "end": 11
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-3",
+            "role": "object",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 12,
+                "end": 14
+              }
+            ]
+          },
+          {
+            "key": "clause-2",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 25,
+                "end": 38
+              }
+            ],
+            "clause": {
+              "pattern": "SVO",
+              "purpose": "declarative",
+              "tense": "past",
+              "kind": "subordinate",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-2-part-1",
+            "role": "subject",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 25,
+                "end": 28
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-2",
+            "role": "verb",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 30,
+                "end": 35
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-3",
+            "role": "object",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 36,
+                "end": 38
+              }
+            ]
+          },
+          {
+            "key": "connector",
+            "role": "connector",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 16,
+                "end": 23
+              }
+            ],
+            "relation": "cause"
+          }
+        ],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "because-09",
+      "input": "She found the old book useful because it is an old book.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "complexity": "complex",
+        "pattern": null,
+        "tense": null,
+        "nodes": [
+          {
+            "key": "clause-1",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 29
+              }
+            ],
+            "clause": {
+              "pattern": "SVOC",
+              "purpose": "declarative",
+              "tense": "past",
+              "kind": "main",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-1-part-1",
+            "role": "subject",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-2",
+            "role": "verb",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 9
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-3",
+            "role": "object",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 22
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-3-attribute-1",
+            "role": "attribute",
+            "parentKey": "clause-1-part-3",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 14,
+                "end": 17
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-4",
+            "role": "complement",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 23,
+                "end": 29
+              }
+            ]
+          },
+          {
+            "key": "clause-2",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 38,
+                "end": 55
+              }
+            ],
+            "clause": {
+              "pattern": "SVC",
+              "purpose": "declarative",
+              "tense": "present",
+              "kind": "subordinate",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-2-part-1",
+            "role": "subject",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 38,
+                "end": 40
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-2",
+            "role": "verb",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 41,
+                "end": 43
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-3",
+            "role": "complement",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 44,
+                "end": 55
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-3-attribute-1",
+            "role": "attribute",
+            "parentKey": "clause-2-part-3",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 47,
+                "end": 50
+              }
+            ]
+          },
+          {
+            "key": "connector",
+            "role": "connector",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 30,
+                "end": 37
+              }
+            ],
+            "relation": "cause"
+          }
+        ],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "because-10",
+      "input": "She did not like books because he does not see them.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "complexity": "complex",
+        "pattern": null,
+        "tense": null,
+        "nodes": [
+          {
+            "key": "clause-1",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 22
+              }
+            ],
+            "clause": {
+              "pattern": "SVO",
+              "purpose": "declarative",
+              "tense": "past",
+              "kind": "main",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-1-part-1",
+            "role": "subject",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-2",
+            "role": "verb",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 16
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-3",
+            "role": "object",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 17,
+                "end": 22
+              }
+            ]
+          },
+          {
+            "key": "clause-2",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 31,
+                "end": 51
+              }
+            ],
+            "clause": {
+              "pattern": "SVO",
+              "purpose": "declarative",
+              "tense": "present",
+              "kind": "subordinate",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-2-part-1",
+            "role": "subject",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 31,
+                "end": 33
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-2",
+            "role": "verb",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 34,
+                "end": 46
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-3",
+            "role": "object",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 47,
+                "end": 51
+              }
+            ]
+          },
+          {
+            "key": "connector",
+            "role": "connector",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 23,
+                "end": 30
+              }
+            ],
+            "relation": "cause"
+          }
+        ],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "because-11",
+      "input": "I am not kind because they were kind.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "complexity": "complex",
+        "pattern": null,
+        "tense": null,
+        "nodes": [
+          {
+            "key": "clause-1",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 13
+              }
+            ],
+            "clause": {
+              "pattern": "SVC",
+              "purpose": "declarative",
+              "tense": "present",
+              "kind": "main",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-1-part-1",
+            "role": "subject",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 1
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-2",
+            "role": "verb",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 2,
+                "end": 8
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-3",
+            "role": "complement",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 13
+              }
+            ]
+          },
+          {
+            "key": "clause-2",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 22,
+                "end": 36
+              }
+            ],
+            "clause": {
+              "pattern": "SVC",
+              "purpose": "declarative",
+              "tense": "past",
+              "kind": "subordinate",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-2-part-1",
+            "role": "subject",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 22,
+                "end": 26
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-2",
+            "role": "verb",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 27,
+                "end": 31
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-3",
+            "role": "complement",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 32,
+                "end": 36
+              }
+            ]
+          },
+          {
+            "key": "connector",
+            "role": "connector",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 14,
+                "end": 21
+              }
+            ],
+            "relation": "cause"
+          }
+        ],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "because-12",
+      "input": "She can give him a gift because he can be kind",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "complexity": "complex",
+        "pattern": null,
+        "tense": null,
+        "nodes": [
+          {
+            "key": "clause-1",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 23
+              }
+            ],
+            "clause": {
+              "pattern": "SVOO",
+              "purpose": "declarative",
+              "tense": null,
+              "kind": "main",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-1-part-1",
+            "role": "subject",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-2",
+            "role": "verb",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 7
+              },
+              {
+                "start": 8,
+                "end": 12
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-3",
+            "role": "indirectObject",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 13,
+                "end": 16
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-4",
+            "role": "object",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 17,
+                "end": 23
+              }
+            ]
+          },
+          {
+            "key": "clause-2",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 32,
+                "end": 46
+              }
+            ],
+            "clause": {
+              "pattern": "SVC",
+              "purpose": "declarative",
+              "tense": null,
+              "kind": "subordinate",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-2-part-1",
+            "role": "subject",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 32,
+                "end": 34
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-2",
+            "role": "verb",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 35,
+                "end": 38
+              },
+              {
+                "start": 39,
+                "end": 41
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-3",
+            "role": "complement",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 42,
+                "end": 46
+              }
+            ]
+          },
+          {
+            "key": "connector",
+            "role": "connector",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 24,
+                "end": 31
+              }
+            ],
+            "relation": "cause"
+          }
+        ],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "boundary-01",
+      "input": "Because she likes the book, she smiles.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-02",
+      "input": "She smiles, because she likes the book.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-03",
+      "input": "She smiles because, she likes the book.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-04",
+      "input": "She smiles because she likes the book,",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-05",
+      "input": "She smiles because likes the book.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-06",
+      "input": "Smile because she likes the book.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-07",
+      "input": "She smiles because be kind.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-08",
+      "input": "She smiles because how kind he is",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-09",
+      "input": "She smiles because she likes the book?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-10",
+      "input": "Does she smile because she likes the book?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-11",
+      "input": "She smiles because she likes the book!",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-12",
+      "input": "She sleeps because he smiles because he is kind.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-13",
+      "input": "She sleeps and he smiles because he is kind.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-14",
+      "input": "She sleeps because he smiles but he is kind.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-15",
+      "input": "If she sleeps, he smiles.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "complexity": "complex",
+        "pattern": null,
+        "tense": null,
+        "nodes": [
+          {
+            "key": "clause-1",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 13
+              }
+            ],
+            "clause": {
+              "pattern": "SV",
+              "purpose": "declarative",
+              "tense": "present",
+              "kind": "subordinate",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-1-part-1",
+            "role": "subject",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 6
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-2",
+            "role": "verb",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 7,
+                "end": 13
+              }
+            ]
+          },
+          {
+            "key": "clause-2",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 15,
+                "end": 24
+              }
+            ],
+            "clause": {
+              "pattern": "SV",
+              "purpose": "declarative",
+              "tense": "present",
+              "kind": "main",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-2-part-1",
+            "role": "subject",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 15,
+                "end": 17
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-2",
+            "role": "verb",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 18,
+                "end": 24
+              }
+            ]
+          },
+          {
+            "key": "connector",
+            "role": "connector",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 2
+              },
+              {
+                "start": 13,
+                "end": 14
+              }
+            ],
+            "relation": "condition"
+          }
+        ],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "boundary-16",
+      "input": "She smiles because he says she is kind.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-17",
+      "input": "She smiles because the boy who sleeps is kind.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-18",
+      "input": "She smiles because he will sleep.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-19",
+      "input": "She smiles because he is sleeping.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "complexity": "complex",
+        "pattern": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "corrections": [],
+        "nodes": [
+          {
+            "key": "0-subject",
+            "role": "subject",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ]
+          },
+          {
+            "key": "0-verb",
+            "role": "verb",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 10
+              }
+            ]
+          },
+          {
+            "key": "clause-1",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 10
+              }
+            ],
+            "clause": {
+              "kind": "main",
+              "purpose": "declarative",
+              "pattern": "SV",
+              "tense": "present",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "1-subject",
+            "role": "subject",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 19,
+                "end": 21
+              }
+            ]
+          },
+          {
+            "key": "1-verb",
+            "role": "verb",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 22,
+                "end": 33
+              }
+            ]
+          },
+          {
+            "key": "clause-2",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 19,
+                "end": 33
+              }
+            ],
+            "clause": {
+              "kind": "subordinate",
+              "purpose": "declarative",
+              "pattern": "SV",
+              "tense": "present",
+              "aspect": "progressive",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "connector",
+            "role": "connector",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 18
+              }
+            ],
+            "relation": "cause"
+          }
+        ],
+        "reasons": []
+      }
+    },
+    {
+      "id": "boundary-20",
+      "input": "She smiles because he likes the weather.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-21",
+      "input": "She sleep because he smiles.",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-22",
+      "input": "She smiles because he smile.",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-23",
+      "input": "She smiles because he do not likes books.",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-24",
+      "input": "She smiles because he can is kind.",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-25",
+      "input": "She smiles because he are kind.",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-26",
+      "input": "She sleeps because he runs yesterday.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-27",
+      "input": "She smiles because he gives it a book.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-28",
+      "input": "She smiles because",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-29",
+      "input": "because he smiles.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-30",
+      "input": "She smiles. Because he likes books.",
+      "expected": {
+        "status": "invalid",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "invalid-input",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-31",
+      "input": "She smiles; because he likes books.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-32",
+      "input": "She do not likes books because he likes the weather.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-33",
+      "input": "She smiles because he doesn't sleep.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "complexity": "complex",
+        "pattern": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "corrections": [],
+        "nodes": [
+          {
+            "key": "0-subject",
+            "role": "subject",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ]
+          },
+          {
+            "key": "0-verb",
+            "role": "verb",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 10
+              }
+            ]
+          },
+          {
+            "key": "clause-1",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 10
+              }
+            ],
+            "clause": {
+              "kind": "main",
+              "purpose": "declarative",
+              "pattern": "SV",
+              "tense": "present",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "1-subject",
+            "role": "subject",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 19,
+                "end": 21
+              }
+            ]
+          },
+          {
+            "key": "1-verb",
+            "role": "verb",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 22,
+                "end": 35
+              }
+            ]
+          },
+          {
+            "key": "clause-2",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 19,
+                "end": 35
+              }
+            ],
+            "clause": {
+              "kind": "subordinate",
+              "purpose": "declarative",
+              "pattern": "SV",
+              "tense": "present",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "connector",
+            "role": "connector",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 18
+              }
+            ],
+            "relation": "cause"
+          }
+        ],
+        "reasons": []
+      }
+    }
+  ]
+}

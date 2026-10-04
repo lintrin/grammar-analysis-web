@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-04",
+  "stage": "33D",
+  "ruleVersion": "0.23.1",
+  "lexiconVersion": "1.8.1",
+  "test": {
+    "total": 5682,
+    "passed": 5682,
+    "failed": 0,
+    "newStage33D": 23
+  },
+  "checks": {
+    "typescript": "passed",
+    "eslint": "passed",
+    "lexiconVerify": "passed, 232 entries",
+    "build": "passed",
+    "workingDiffCheck": "passed",
+    "stagedDiffCheck": "passed"
+  },
+  "fixedTeachingExamples": 11,
+  "browserChecks": 26,
+  "notes": [
+    "Two new teaching groups added; all original 18 retained and every example still analyzed with original expected status.",
+    "Historical query fixtures and examples unchanged.",
+    "Build route classification and proxy warnings pre-existing.",
+    "Privacy/offline/performance joint gates remain 33F."
+  ]
+}

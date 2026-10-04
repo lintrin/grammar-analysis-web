@@ -1,0 +1,66 @@
+{
+  "date": "2026-10-04",
+  "status": "complete",
+  "node": "v24.14.1",
+  "platform": "darwin",
+  "ruleVersion": "0.22.4",
+  "lexiconVersion": "1.7.0",
+  "lexiconHash": "dc7e010f3314eec82a61720ad1d6249209c459236245b8f72ce9fcee5fc7bb4a",
+  "baseline": {
+    "commit": "4a2a242a8e7835e18a958d483454cb33f2186c68",
+    "sources": 331,
+    "strings": 13067,
+    "contentHash": "cd94838068f974f5a23213aa76830e5662e16b1ec91d032779c375bf4a9ce3cd",
+    "reconstructedFromImmutableSources": true
+  },
+  "humanAnswers": {
+    "hash": "309a54dd821ecdf2a7c777698140494ab48fd865e8a17a5675404525cfd16f2b",
+    "initialHash": "26d6b7f08bb25b63307fcf7f27243f6249e33aa988687c2c5360b96831a81fff",
+    "initialInputs": 180,
+    "retainedOriginalInputs": 180,
+    "finalInputs": 186,
+    "correct": 100,
+    "crossCapabilityCorrect": 31,
+    "safeErrors": 20,
+    "noAutomaticCorrection": 20,
+    "scopeBoundaries": 20,
+    "additionalControls": 21,
+    "reviewedOriginals": 5
+  },
+  "queries": {
+    "hash": "8991a94b2db3ee355b9049893707b9aa1a6fc1e3da530a1f97fb7c6630940c8f",
+    "independent": 20,
+    "additionalPlaceholderRegression": 1,
+    "initialBytesAndAllIdsRetained": true
+  },
+  "engineering": {
+    "tests": 5494,
+    "passed": 5494,
+    "failed": 0,
+    "skipped": 0,
+    "historicalTestsRetained": 5271,
+    "newStage32Tests": 223,
+    "typescript": true,
+    "eslint": true,
+    "lexiconVerify": true,
+    "build": true,
+    "gitDiffCheck": true,
+    "stagedDiffCheck": true,
+    "cleanDatabaseRebuildAndIsolatedAnswerReplay": true,
+    "unreviewedStaleAndTamperedPublicationRejected": true
+  },
+  "browserReports": [
+    "stage32-dev-browser.json",
+    "stage32-built-browser.json",
+    "stage32-native-keyboard.json",
+    "stage32-dev-hmr.json"
+  ],
+  "performanceReport": "stage32-performance.json",
+  "privacyReport": "stage32-privacy.json",
+  "firstRunReport": "stage32-first-run.json",
+  "limitations": [
+    "Local macOS evidence with Chromium 147.0.7727.15; not a performance guarantee for other devices.",
+    "Prepared-dependency local web application; no public deployment or installation/PWA artifact.",
+    "Existing proxy/Vinext route classification build notices remain."
+  ]
+}

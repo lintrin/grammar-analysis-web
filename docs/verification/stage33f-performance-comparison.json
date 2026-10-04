@@ -1,0 +1,124 @@
+{
+  "baselineRef": "0c5dbfb4940efd87ba87c7530f747168bcc1f003",
+  "baselineRule": "0.22.4",
+  "currentRule": "0.23.1",
+  "method": "Fresh isolated git archive of HEAD. Identical Node runtime and 100 synchronous samples per case. Browser built baseline/current run 10 interactions per old case; timings include automation, DOM wait and rendering.",
+  "legacyCases": [
+    {
+      "id": "read-her-question",
+      "medianRatio": 1.0088006502931057,
+      "p95Ratio": 1.0265861411047519
+    },
+    {
+      "id": "recipient-her",
+      "medianRatio": 1.0465395410412959,
+      "p95Ratio": 1.0295495331494948
+    },
+    {
+      "id": "carried-her-passive",
+      "medianRatio": 1.0055862961451771,
+      "p95Ratio": 1.020885474543647
+    },
+    {
+      "id": "read-mixed-ambiguity",
+      "medianRatio": 0.9951569743337574,
+      "p95Ratio": 1.0544338077567437
+    },
+    {
+      "id": "will-read-many-attributes",
+      "medianRatio": 1.002006054601762,
+      "p95Ratio": 1.0294375743162938
+    },
+    {
+      "id": "location-phrase-attributes",
+      "medianRatio": 1.0150449878112262,
+      "p95Ratio": 1.0084640800419746
+    },
+    {
+      "id": "wh-second-frame-many-attributes",
+      "medianRatio": 0.9986889925983256,
+      "p95Ratio": 1.0215862959270796
+    },
+    {
+      "id": "open-second-frame-many-attributes",
+      "medianRatio": 0.9989157222329617,
+      "p95Ratio": 0.9890681918168627
+    }
+  ],
+  "snapshot": {
+    "baselineBytes": 213658,
+    "currentBytes": 226424,
+    "baselineGzipBytes": 16194,
+    "currentGzipBytes": 16904
+  },
+  "browserEvidence": "stage33f-browser-performance.json",
+  "newCases": [
+    {
+      "id": "be-location-long-subject",
+      "status": "complete",
+      "utf16Length": 1000,
+      "samples": 100,
+      "boundaryAttempts": 155,
+      "accepted": 155,
+      "medianMs": 2.9870410000003176,
+      "p95Ms": 3.3169159999997646,
+      "maxMs": 3.9529160000001866
+    },
+    {
+      "id": "be-location-long-complement",
+      "status": "complete",
+      "utf16Length": 1000,
+      "samples": 100,
+      "boundaryAttempts": 155,
+      "accepted": 155,
+      "medianMs": 1.623207999999977,
+      "p95Ms": 1.7838339999998425,
+      "maxMs": 1.8149579999999332
+    },
+    {
+      "id": "negative-location-long-complement",
+      "status": "complete",
+      "utf16Length": 1000,
+      "samples": 100,
+      "boundaryAttempts": 156,
+      "accepted": 156,
+      "medianMs": 1.807292000000416,
+      "p95Ms": 1.9914589999998498,
+      "maxMs": 2.8369999999995343
+    },
+    {
+      "id": "question-location-long-subject",
+      "status": "complete",
+      "utf16Length": 1000,
+      "samples": 100,
+      "boundaryAttempts": 155,
+      "accepted": 155,
+      "medianMs": 2.9675420000003214,
+      "p95Ms": 3.125666999999339,
+      "maxMs": 3.2258750000000873
+    },
+    {
+      "id": "where-long-subject",
+      "status": "complete",
+      "utf16Length": 1000,
+      "samples": 100,
+      "boundaryAttempts": 153,
+      "accepted": 153,
+      "medianMs": 1.725083000000268,
+      "p95Ms": 1.878167000000758,
+      "maxMs": 2.6227920000001177
+    },
+    {
+      "id": "location-agreement-long-complement",
+      "status": "partial",
+      "utf16Length": 1000,
+      "samples": 100,
+      "boundaryAttempts": 157,
+      "accepted": 157,
+      "medianMs": 1.4614170000004378,
+      "p95Ms": 1.5809170000002268,
+      "maxMs": 1.6229999999995925
+    }
+  ],
+  "conclusion": "No material slowdown observed in this local run; not a cross-device guarantee or statistical benchmark. Zero observed browser long tasks in both baseline/current 80 interactions and current full-flow checks."
+}

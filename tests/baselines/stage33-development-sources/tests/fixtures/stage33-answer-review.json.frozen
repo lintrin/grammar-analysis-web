@@ -1,0 +1,28 @@
+{
+  "stage": 33,
+  "timing": "Source-only review before first stage33 analyzer execution",
+  "initialFiles": [
+    "tests/fixtures/stage33-development-initial.json",
+    "tests/fixtures/stage33-migrations-initial.json"
+  ],
+  "changes": [
+    {
+      "ids": [
+        "33-where-04",
+        "33-where-05"
+      ],
+      "reason": "he overlaps Where and we overlaps were in naive substring arithmetic; locate subject after explicitly supplied verb; role and classification unchanged"
+    },
+    {
+      "ids": [
+        "33-boundary-41"
+      ],
+      "reason": "I isn't has one finite-be form error but no representable amn't replacement; preserve partial form-mismatch with whole contraction range and zero edits; do not expand to am not"
+    },
+    {
+      "file": "data/lexicon/stage33-location-policy-design.json",
+      "reason": "Use exact entryId/frameId identities from source snapshot; legacy frame IDs differ; new format fields require new reviewed revisions rather than changing approved row hashes"
+    }
+  ],
+  "outputDerived": false
+}

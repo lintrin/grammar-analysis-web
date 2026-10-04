@@ -1,0 +1,119 @@
+{
+  "stage": "33F",
+  "status": "complete",
+  "stage33Status": "complete",
+  "date": "2026-10-04",
+  "ruleVersion": "0.23.1",
+  "lexiconVersion": "1.8.1",
+  "lexiconFormatVersion": 2,
+  "lexiconHash": "d6112e8843db6228ff4228ad80c074469c14c39f8ee97684f01574ab8af85ac8",
+  "engineering": {
+    "testsPassed": 5797,
+    "testsFailed": 0,
+    "newDeliveryTests": 16,
+    "typecheck": "pass",
+    "eslint": "pass; zero warnings",
+    "lexiconVerify": "pass",
+    "build": "pass; final production source identical before and after temporary HMR/failure probes",
+    "diffCheck": "pass",
+    "cachedDiffCheck": "pass"
+  },
+  "database": {
+    "emptyDiskSqliteRebuild": true,
+    "entries": 232,
+    "deterministicReleaseExport": true,
+    "deterministicClientSnapshot": true,
+    "isolatedStaticSnapshotAnswers": 88,
+    "rejected": [
+      "unreviewed-release",
+      "stale-review-hash",
+      "tampered-release",
+      "frozen-frame-update"
+    ],
+    "oldReleasesAndFixturesPreserved": true
+  },
+  "browser": {
+    "dev": 34,
+    "built": 34,
+    "realHmrAndCallbackFailure": 7,
+    "isolatedNoMaintenanceDatabase": 2,
+    "total": 77,
+    "viewports": [
+      1280,
+      390
+    ],
+    "screenshotsInspected": true
+  },
+  "privacy": "See stage33f-privacy.json; zero action requests online/offline, no private test input in console/server logs/storage, refresh resets.",
+  "performance": {
+    "freshBaselineRef": "0c5dbfb4940efd87ba87c7530f747168bcc1f003",
+    "nodeSamplesPerCase": 100,
+    "oldCases": 8,
+    "newLocationCases": 6,
+    "sharedBudget": 4000,
+    "inputUtf16Limit": 1000,
+    "browserBaselineInteractions": 80,
+    "browserCurrentInteractions": 80,
+    "observedLongTasks": 0,
+    "limitation": "Local measurements only; browser timings include automation/render waits."
+  },
+  "frozenAnswersUnchanged": true,
+  "developmentArchiveVerifiedWithoutRewrite": true,
+  "temporarySourceBytesRestored": true,
+  "next": "Stage 34 scope and human answers; 34–37 remain pending.",
+  "artifacts": [
+    {
+      "path": "docs/verification/stage33f-browser-performance.json",
+      "sha256": "bcf3e750c376e90b5637200daa030430d15c124cb5d2de638527809dec5267ad"
+    },
+    {
+      "path": "docs/verification/stage33f-built-1280.png",
+      "sha256": "030e619b12a1e551375e0b79d5fdd05c9851c15cd88eda6525916762d3d6731b"
+    },
+    {
+      "path": "docs/verification/stage33f-built-390.png",
+      "sha256": "0a73356e9b506861bec453b387b8b1c4bbc66b05b6e702f538bd9c51e9e4c6ab"
+    },
+    {
+      "path": "docs/verification/stage33f-built-browser.json",
+      "sha256": "ed7b32cc24bc513a4358e3b2997ef147e4cc09bb55cfdd03c25fc48cd9a263a0"
+    },
+    {
+      "path": "docs/verification/stage33f-dev-1280.png",
+      "sha256": "030e619b12a1e551375e0b79d5fdd05c9851c15cd88eda6525916762d3d6731b"
+    },
+    {
+      "path": "docs/verification/stage33f-dev-390.png",
+      "sha256": "0a73356e9b506861bec453b387b8b1c4bbc66b05b6e702f538bd9c51e9e4c6ab"
+    },
+    {
+      "path": "docs/verification/stage33f-dev-browser.json",
+      "sha256": "14447179f6e0803bbbc16351f75c9083052e3c4ee0cd06ed2e9cd6fc08064c18"
+    },
+    {
+      "path": "docs/verification/stage33f-hmr-browser.json",
+      "sha256": "3595fe694801e98a74b35649e291c72db08c204e6db05f44c9faeaa60151a216"
+    },
+    {
+      "path": "docs/verification/stage33f-no-database-browser.json",
+      "sha256": "47023738680b5e57270bda5c9612857e130528971de34ced6a6c82929e55c66a"
+    },
+    {
+      "path": "docs/verification/stage33f-performance-baseline.json",
+      "sha256": "1fbd287cce39294c5faa6257c5d203d6a40c561e0e26eaf9099ac2d6bd1c207a"
+    },
+    {
+      "path": "docs/verification/stage33f-performance-comparison.json",
+      "sha256": "844bbb14cd0deb9f3a73772095fbe0f91aa1b7a9b135f20da77eb81e9acf34d5"
+    },
+    {
+      "path": "docs/verification/stage33f-performance-current.json",
+      "sha256": "d814b55fc5e8e7aefd2e8f6b805df840dc05b23f49d5f1848197e70d32a8b4bd"
+    },
+    {
+      "path": "docs/verification/stage33f-privacy.json",
+      "sha256": "3803a0d146e4511d942072a947dc3a304973e33f0cb61922a9f0c4529c441d27"
+    }
+  ],
+  "remainingBlockers": []
+}

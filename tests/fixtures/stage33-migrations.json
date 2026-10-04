@@ -1,0 +1,277 @@
+{
+  "stage": 33,
+  "status": "planned-not-applied",
+  "migrations": [
+    {
+      "input": "The book is near the table.",
+      "source": {
+        "path": "tests/fixtures/stage28-development.json",
+        "id": "28-69",
+        "sha256": "cc486237ad22de513e8f6052b8d4cd65b9e5a7aafdaf9cd44610a23803a7cb91"
+      },
+      "original": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      },
+      "reason": "Stage33 explicitly licenses finite-be location complement or where complement; historical originals remain frozen; apply separate current-regression migration in 33B/C.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 8
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 11
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 12,
+                "end": 26
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "input": "Where is the book?",
+      "source": {
+        "path": "tests/fixtures/stage29-development.json",
+        "id": "29-111",
+        "sha256": "4c69888afb86ce650971cef8545f717ac58f9f59e77f232b55b1485433616c44"
+      },
+      "original": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      },
+      "reason": "Stage33 explicitly licenses finite-be location complement or where complement; historical originals remain frozen; apply separate current-regression migration in 33B/C.",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-complement",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 17
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 8
+              }
+            ],
+            "ruleId": "QUESTION-BE-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 5
+              }
+            ],
+            "ruleId": "WH-COMPLEMENT-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "input": "Our kind artist is near the empty chair.",
+      "source": {
+        "path": "tests/fixtures/stage32-acceptance.json",
+        "id": "boundary-13",
+        "sha256": "309a54dd821ecdf2a7c777698140494ab48fd865e8a17a5675404525cfd16f2b"
+      },
+      "original": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      },
+      "reason": "Stage33 explicitly licenses finite-be location complement or where complement; historical originals remain frozen; apply separate current-regression migration in 33B/C.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 15
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "1",
+            "parentKey": "0",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 8
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 16,
+                "end": 18
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "complement",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 19,
+                "end": 39
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          },
+          {
+            "key": "4",
+            "parentKey": "3",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 28,
+                "end": 33
+              }
+            ],
+            "ruleId": "SVC-LOCATION-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    }
+  ]
+}

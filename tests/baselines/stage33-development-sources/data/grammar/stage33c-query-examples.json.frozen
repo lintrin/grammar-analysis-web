@@ -1,0 +1,10 @@
+{
+  "review": "human-fixed-before-running-bag-query-example",
+  "ruleVersion": "0.23.1",
+  "examples": [{
+    "entryId": "noun:lexical:bag",
+    "frameId": null,
+    "text": "The bag is useful.",
+    "expected": {"status":"complete","purpose":"declarative","pattern":"SVC","complexity":"simple","tense":"present","aspect":"simple","voice":"active","modal":null,"questionType":null}
+  }]
+}

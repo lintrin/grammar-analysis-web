@@ -1,0 +1,57 @@
+{
+  "date": "2026-10-04",
+  "stage": "33E",
+  "ruleVersion": "0.23.1",
+  "lexiconVersion": "1.8.1",
+  "test": {
+    "total": 5781,
+    "passed": 5781,
+    "failed": 0,
+    "newStage33E": 99
+  },
+  "independent": {
+    "correct": 40,
+    "error": 12,
+    "control": 12,
+    "boundary": 24,
+    "queryWorkflows": 8,
+    "firstPassed": 96,
+    "finalPassed": 96,
+    "answersChanged": false
+  },
+  "sources": {
+    "archived": 422,
+    "capturedUniqueRawInputs": 4403,
+    "initialExclusionItems": 15650,
+    "supplementalHistoricalBrowserInputs": 3,
+    "effectiveExclusionItems": 15653,
+    "initialFreezeUnchanged": true,
+    "firstReportUnchanged": true
+  },
+  "browser": {
+    "total": 80,
+    "passed": 80,
+    "services": [
+      "development",
+      "build"
+    ],
+    "widths": [
+      1280,
+      390
+    ],
+    "postKeyFixTotal": 36,
+    "postKeyFixPassed": 36,
+    "combinedTotal": 116
+  },
+  "checks": {
+    "typescript": "passed",
+    "eslint": "passed",
+    "lexiconVerify": "passed, 232 entries",
+    "build": "passed",
+    "developmentFreeze": "passed",
+    "workingDiffCheck": "passed",
+    "stagedDiffCheck": "passed"
+  },
+  "remaining": "33F joint delivery: database, performance, offline, privacy, HMR and final feature/document audit",
+  "uiFix": "Teaching list uses complete sentence key; duplicate key warning fixed. Original labels, examples and focus behavior preserved."
+}

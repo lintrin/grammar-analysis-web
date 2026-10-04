@@ -1,0 +1,6895 @@
+{
+  "formatVersion": 1,
+  "status": "human-fixed-before-first-analysis",
+  "basisRuleVersion": "0.18.0",
+  "lexiconVersion": "1.2.0",
+  "baselineHash": "7a0ff0a5349c0d8eb6cf92ee071ef7e795b166c653e31a4c675fd00c476b7541",
+  "method": "Explicit human roles, fragments, modifiers, morphology, reasons and edits; mechanical offsets only; no analyzer import.",
+  "fixtures": [
+    {
+      "id": "vocabulary-01",
+      "category": "vocabulary",
+      "kind": "correct",
+      "input": "Our nurses are walking.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "progressive",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 10
+              }
+            ]
+          },
+          {
+            "key": "verb-1",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 22
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "vocabulary-02",
+      "category": "vocabulary",
+      "kind": "correct",
+      "input": "The farmer has danced.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "perfect",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 10
+              }
+            ]
+          },
+          {
+            "key": "verb-1",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 21
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "vocabulary-03",
+      "category": "vocabulary",
+      "kind": "correct",
+      "input": "The drivers laughed yesterday.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 11
+              }
+            ]
+          },
+          {
+            "key": "verb-1",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 12,
+                "end": 19
+              }
+            ]
+          },
+          {
+            "key": "adverbial-2",
+            "role": "adverbial",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 20,
+                "end": 29
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "vocabulary-04",
+      "category": "vocabulary",
+      "kind": "correct",
+      "input": "The tired baby was crying.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "progressive",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 14
+              }
+            ]
+          },
+          {
+            "key": "subject-0-attr-1",
+            "role": "attribute",
+            "parentKey": "subject-0",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 9
+              }
+            ]
+          },
+          {
+            "key": "verb-2",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 15,
+                "end": 25
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "vocabulary-05",
+      "category": "vocabulary",
+      "kind": "correct",
+      "input": "The actor has been waiting.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "perfect-progressive",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 9
+              }
+            ]
+          },
+          {
+            "key": "verb-1",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 26
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "vocabulary-06",
+      "category": "vocabulary",
+      "kind": "correct",
+      "input": "The aunt writes books.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 8
+              }
+            ]
+          },
+          {
+            "key": "verb-1",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 15
+              }
+            ]
+          },
+          {
+            "key": "object-2",
+            "role": "object",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 16,
+                "end": 21
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "vocabulary-07",
+      "category": "vocabulary",
+      "kind": "correct",
+      "input": "Our cousins bought a red car.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 11
+              }
+            ]
+          },
+          {
+            "key": "verb-1",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 12,
+                "end": 18
+              }
+            ]
+          },
+          {
+            "key": "object-2",
+            "role": "object",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 19,
+                "end": 28
+              }
+            ]
+          },
+          {
+            "key": "object-2-attr-3",
+            "role": "attribute",
+            "parentKey": "object-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 21,
+                "end": 24
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "vocabulary-08",
+      "category": "vocabulary",
+      "kind": "correct",
+      "input": "The artist is carrying an umbrella.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "progressive",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 10
+              }
+            ]
+          },
+          {
+            "key": "verb-1",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 22
+              }
+            ]
+          },
+          {
+            "key": "object-2",
+            "role": "object",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 23,
+                "end": 34
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "vocabulary-09",
+      "category": "vocabulary",
+      "kind": "correct",
+      "input": "The woman has read the old books.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "perfect",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 9
+              }
+            ]
+          },
+          {
+            "key": "verb-1",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 18
+              }
+            ]
+          },
+          {
+            "key": "object-2",
+            "role": "object",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 19,
+                "end": 32
+              }
+            ]
+          },
+          {
+            "key": "object-2-attr-3",
+            "role": "attribute",
+            "parentKey": "object-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 23,
+                "end": 26
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "vocabulary-10",
+      "category": "vocabulary",
+      "kind": "correct",
+      "input": "The doctor taught the boys a useful book.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVOO",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 10
+              }
+            ]
+          },
+          {
+            "key": "verb-1",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 17
+              }
+            ]
+          },
+          {
+            "key": "indirectObject-2",
+            "role": "indirectObject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 18,
+                "end": 26
+              }
+            ]
+          },
+          {
+            "key": "object-3",
+            "role": "object",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 27,
+                "end": 40
+              }
+            ]
+          },
+          {
+            "key": "object-3-attr-4",
+            "role": "attribute",
+            "parentKey": "object-3",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 29,
+                "end": 35
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "vocabulary-11",
+      "category": "vocabulary",
+      "kind": "correct",
+      "input": "The singer has told her a letter.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVOO",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "perfect",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 10
+              }
+            ]
+          },
+          {
+            "key": "verb-1",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 19
+              }
+            ]
+          },
+          {
+            "key": "indirectObject-2",
+            "role": "indirectObject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 20,
+                "end": 23
+              }
+            ]
+          },
+          {
+            "key": "object-3",
+            "role": "object",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 24,
+                "end": 32
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "vocabulary-12",
+      "category": "vocabulary",
+      "kind": "correct",
+      "input": "The workers keep the doors clean.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVOC",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 11
+              }
+            ]
+          },
+          {
+            "key": "verb-1",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 12,
+                "end": 16
+              }
+            ]
+          },
+          {
+            "key": "object-2",
+            "role": "object",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 17,
+                "end": 26
+              }
+            ]
+          },
+          {
+            "key": "complement-3",
+            "role": "complement",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 27,
+                "end": 32
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "vocabulary-13",
+      "category": "vocabulary",
+      "kind": "correct",
+      "input": "The mice are quiet.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 8
+              }
+            ]
+          },
+          {
+            "key": "verb-1",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 12
+              }
+            ]
+          },
+          {
+            "key": "complement-2",
+            "role": "complement",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 13,
+                "end": 18
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "vocabulary-14",
+      "category": "vocabulary",
+      "kind": "correct",
+      "input": "The orange is red.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 10
+              }
+            ]
+          },
+          {
+            "key": "verb-1",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 13
+              }
+            ]
+          },
+          {
+            "key": "complement-2",
+            "role": "complement",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 14,
+                "end": 17
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "vocabulary-15",
+      "category": "vocabulary",
+      "kind": "correct",
+      "input": "The empty bus was clean.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 13
+              }
+            ]
+          },
+          {
+            "key": "subject-0-attr-1",
+            "role": "attribute",
+            "parentKey": "subject-0",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 9
+              }
+            ]
+          },
+          {
+            "key": "verb-2",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 14,
+                "end": 17
+              }
+            ]
+          },
+          {
+            "key": "complement-3",
+            "role": "complement",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 18,
+                "end": 23
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "vocabulary-16",
+      "category": "vocabulary",
+      "kind": "correct",
+      "input": "The men were hungry.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 7
+              }
+            ]
+          },
+          {
+            "key": "verb-1",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 8,
+                "end": 12
+              }
+            ]
+          },
+          {
+            "key": "complement-2",
+            "role": "complement",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 13,
+                "end": 19
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "vocabulary-17",
+      "category": "vocabulary",
+      "kind": "correct",
+      "input": "The dancer sees the blue chairs.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 10
+              }
+            ]
+          },
+          {
+            "key": "verb-1",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 15
+              }
+            ]
+          },
+          {
+            "key": "object-2",
+            "role": "object",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 16,
+                "end": 31
+              }
+            ]
+          },
+          {
+            "key": "object-2-attr-3",
+            "role": "attribute",
+            "parentKey": "object-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 20,
+                "end": 24
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "vocabulary-18",
+      "category": "vocabulary",
+      "kind": "correct",
+      "input": "The neighbor likes the green table.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 12
+              }
+            ]
+          },
+          {
+            "key": "verb-1",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 13,
+                "end": 18
+              }
+            ]
+          },
+          {
+            "key": "object-2",
+            "role": "object",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 19,
+                "end": 34
+              }
+            ]
+          },
+          {
+            "key": "object-2-attr-3",
+            "role": "attribute",
+            "parentKey": "object-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 23,
+                "end": 28
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "vocabulary-19",
+      "category": "vocabulary",
+      "kind": "correct",
+      "input": "The uncle carries the eggs.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 9
+              }
+            ]
+          },
+          {
+            "key": "verb-1",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 17
+              }
+            ]
+          },
+          {
+            "key": "object-2",
+            "role": "object",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 18,
+                "end": 26
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "vocabulary-20",
+      "category": "vocabulary",
+      "kind": "correct",
+      "input": "The apples were bought by the nurse.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "passive",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 10
+              }
+            ]
+          },
+          {
+            "key": "verb-1",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 22
+              }
+            ]
+          },
+          {
+            "key": "adverbial-2",
+            "role": "adverbial",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 23,
+                "end": 35
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "vocabulary-21",
+      "category": "vocabulary",
+      "kind": "correct",
+      "input": "The chairs have been carried.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "perfect",
+        "voice": "passive",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 10
+              }
+            ]
+          },
+          {
+            "key": "verb-1",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 28
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "vocabulary-22",
+      "category": "vocabulary",
+      "kind": "correct",
+      "input": "The picture is being shown to the artist.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "progressive",
+        "voice": "passive",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 11
+              }
+            ]
+          },
+          {
+            "key": "verb-1",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 12,
+                "end": 26
+              }
+            ]
+          },
+          {
+            "key": "adverbial-2",
+            "role": "adverbial",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 27,
+                "end": 40
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "vocabulary-23",
+      "category": "vocabulary",
+      "kind": "correct",
+      "input": "Did the driver buy an orange?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "verb-0",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              },
+              {
+                "start": 15,
+                "end": 18
+              }
+            ]
+          },
+          {
+            "key": "subject-1",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 14
+              }
+            ]
+          },
+          {
+            "key": "object-2",
+            "role": "object",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 19,
+                "end": 28
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "vocabulary-24",
+      "category": "vocabulary",
+      "kind": "correct",
+      "input": "Has the worker written the book?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "perfect",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "verb-0",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              },
+              {
+                "start": 15,
+                "end": 22
+              }
+            ]
+          },
+          {
+            "key": "subject-1",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 14
+              }
+            ]
+          },
+          {
+            "key": "object-2",
+            "role": "object",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 23,
+                "end": 31
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "vocabulary-25",
+      "category": "vocabulary",
+      "kind": "correct",
+      "input": "Are the farmers laughing?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "progressive",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "verb-0",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              },
+              {
+                "start": 16,
+                "end": 24
+              }
+            ]
+          },
+          {
+            "key": "subject-1",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 15
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "vocabulary-26",
+      "category": "vocabulary",
+      "kind": "correct",
+      "input": "The short person is busy.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 16
+              }
+            ]
+          },
+          {
+            "key": "subject-0-attr-1",
+            "role": "attribute",
+            "parentKey": "subject-0",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 9
+              }
+            ]
+          },
+          {
+            "key": "verb-2",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 17,
+                "end": 19
+              }
+            ]
+          },
+          {
+            "key": "complement-3",
+            "role": "complement",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 20,
+                "end": 24
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "vocabulary-27",
+      "category": "vocabulary",
+      "kind": "correct",
+      "input": "The angry man was tall.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 13
+              }
+            ]
+          },
+          {
+            "key": "subject-0-attr-1",
+            "role": "attribute",
+            "parentKey": "subject-0",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 9
+              }
+            ]
+          },
+          {
+            "key": "verb-2",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 14,
+                "end": 17
+              }
+            ]
+          },
+          {
+            "key": "complement-3",
+            "role": "complement",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 18,
+                "end": 22
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "vocabulary-28",
+      "category": "vocabulary",
+      "kind": "correct",
+      "input": "The happy women are calm.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 15
+              }
+            ]
+          },
+          {
+            "key": "subject-0-attr-1",
+            "role": "attribute",
+            "parentKey": "subject-0",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 9
+              }
+            ]
+          },
+          {
+            "key": "verb-2",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 16,
+                "end": 19
+              }
+            ]
+          },
+          {
+            "key": "complement-3",
+            "role": "complement",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 20,
+                "end": 24
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "vocabulary-29",
+      "category": "vocabulary",
+      "kind": "correct",
+      "input": "The sad boy sees a small mouse.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 11
+              }
+            ]
+          },
+          {
+            "key": "subject-0-attr-1",
+            "role": "attribute",
+            "parentKey": "subject-0",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 7
+              }
+            ]
+          },
+          {
+            "key": "verb-2",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 12,
+                "end": 16
+              }
+            ]
+          },
+          {
+            "key": "object-3",
+            "role": "object",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 17,
+                "end": 30
+              }
+            ]
+          },
+          {
+            "key": "object-3-attr-4",
+            "role": "attribute",
+            "parentKey": "object-3",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 19,
+                "end": 24
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "vocabulary-30",
+      "category": "vocabulary",
+      "kind": "correct",
+      "input": "The babies have seen the toys.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "perfect",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 10
+              }
+            ]
+          },
+          {
+            "key": "verb-1",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 20
+              }
+            ]
+          },
+          {
+            "key": "object-2",
+            "role": "object",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 21,
+                "end": 29
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "possession-01",
+      "category": "possession",
+      "kind": "correct",
+      "input": "Our doctor has a blue car.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 10
+              }
+            ]
+          },
+          {
+            "key": "verb-1",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 14
+              }
+            ]
+          },
+          {
+            "key": "object-2",
+            "role": "object",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 15,
+                "end": 25
+              }
+            ]
+          },
+          {
+            "key": "object-2-attr-3",
+            "role": "attribute",
+            "parentKey": "object-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 17,
+                "end": 21
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "possession-02",
+      "category": "possession",
+      "kind": "correct",
+      "input": "The farmers have red apples.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 11
+              }
+            ]
+          },
+          {
+            "key": "verb-1",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 12,
+                "end": 16
+              }
+            ]
+          },
+          {
+            "key": "object-2",
+            "role": "object",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 17,
+                "end": 27
+              }
+            ]
+          },
+          {
+            "key": "object-2-attr-3",
+            "role": "attribute",
+            "parentKey": "object-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 17,
+                "end": 20
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "possession-03",
+      "category": "possession",
+      "kind": "correct",
+      "input": "The nurse had an old umbrella.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 9
+              }
+            ]
+          },
+          {
+            "key": "verb-1",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 13
+              }
+            ]
+          },
+          {
+            "key": "object-2",
+            "role": "object",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 14,
+                "end": 29
+              }
+            ]
+          },
+          {
+            "key": "object-2-attr-3",
+            "role": "attribute",
+            "parentKey": "object-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 17,
+                "end": 20
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "possession-04",
+      "category": "possession",
+      "kind": "correct",
+      "input": "Our uncle does not have a bus.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 9
+              }
+            ]
+          },
+          {
+            "key": "verb-1",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 23
+              }
+            ]
+          },
+          {
+            "key": "object-2",
+            "role": "object",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 24,
+                "end": 29
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "possession-05",
+      "category": "possession",
+      "kind": "correct",
+      "input": "The actors do not have green chairs.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 10
+              }
+            ]
+          },
+          {
+            "key": "verb-1",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 22
+              }
+            ]
+          },
+          {
+            "key": "object-2",
+            "role": "object",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 23,
+                "end": 35
+              }
+            ]
+          },
+          {
+            "key": "object-2-attr-3",
+            "role": "attribute",
+            "parentKey": "object-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 23,
+                "end": 28
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "possession-06",
+      "category": "possession",
+      "kind": "correct",
+      "input": "The worker did not have an egg.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 10
+              }
+            ]
+          },
+          {
+            "key": "verb-1",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 23
+              }
+            ]
+          },
+          {
+            "key": "object-2",
+            "role": "object",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 24,
+                "end": 30
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "possession-07",
+      "category": "possession",
+      "kind": "correct",
+      "input": "Does the aunt have a useful pen?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "verb-0",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              },
+              {
+                "start": 14,
+                "end": 18
+              }
+            ]
+          },
+          {
+            "key": "subject-1",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 13
+              }
+            ]
+          },
+          {
+            "key": "object-2",
+            "role": "object",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 19,
+                "end": 31
+              }
+            ]
+          },
+          {
+            "key": "object-2-attr-3",
+            "role": "attribute",
+            "parentKey": "object-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 21,
+                "end": 27
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "possession-08",
+      "category": "possession",
+      "kind": "correct",
+      "input": "Do the neighbors have old books?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "verb-0",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 2
+              },
+              {
+                "start": 17,
+                "end": 21
+              }
+            ]
+          },
+          {
+            "key": "subject-1",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 16
+              }
+            ]
+          },
+          {
+            "key": "object-2",
+            "role": "object",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 22,
+                "end": 31
+              }
+            ]
+          },
+          {
+            "key": "object-2-attr-3",
+            "role": "attribute",
+            "parentKey": "object-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 22,
+                "end": 25
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "possession-09",
+      "category": "possession",
+      "kind": "correct",
+      "input": "Did the dancer have a red picture?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "verb-0",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              },
+              {
+                "start": 15,
+                "end": 19
+              }
+            ]
+          },
+          {
+            "key": "subject-1",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 14
+              }
+            ]
+          },
+          {
+            "key": "object-2",
+            "role": "object",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 20,
+                "end": 33
+              }
+            ]
+          },
+          {
+            "key": "object-2-attr-3",
+            "role": "attribute",
+            "parentKey": "object-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 22,
+                "end": 25
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "possession-10",
+      "category": "possession",
+      "kind": "correct",
+      "input": "I have an orange today.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 1
+              }
+            ]
+          },
+          {
+            "key": "verb-1",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 2,
+                "end": 6
+              }
+            ]
+          },
+          {
+            "key": "object-2",
+            "role": "object",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 7,
+                "end": 16
+              }
+            ]
+          },
+          {
+            "key": "adverbial-3",
+            "role": "adverbial",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 17,
+                "end": 22
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "possession-11",
+      "category": "possession",
+      "kind": "correct",
+      "input": "You had the old cars yesterday.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ]
+          },
+          {
+            "key": "verb-1",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 7
+              }
+            ]
+          },
+          {
+            "key": "object-2",
+            "role": "object",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 8,
+                "end": 20
+              }
+            ]
+          },
+          {
+            "key": "object-2-attr-3",
+            "role": "attribute",
+            "parentKey": "object-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 12,
+                "end": 15
+              }
+            ]
+          },
+          {
+            "key": "adverbial-4",
+            "role": "adverbial",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 21,
+                "end": 30
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "possession-12",
+      "category": "possession",
+      "kind": "correct",
+      "input": "We have a quiet baby.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 2
+              }
+            ]
+          },
+          {
+            "key": "verb-1",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 7
+              }
+            ]
+          },
+          {
+            "key": "object-2",
+            "role": "object",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 8,
+                "end": 20
+              }
+            ]
+          },
+          {
+            "key": "object-2-attr-3",
+            "role": "attribute",
+            "parentKey": "object-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 15
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "possession-13",
+      "category": "possession",
+      "kind": "correct",
+      "input": "The woman has an empty book.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 9
+              }
+            ]
+          },
+          {
+            "key": "verb-1",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 13
+              }
+            ]
+          },
+          {
+            "key": "object-2",
+            "role": "object",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 14,
+                "end": 27
+              }
+            ]
+          },
+          {
+            "key": "object-2-attr-3",
+            "role": "attribute",
+            "parentKey": "object-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 17,
+                "end": 22
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "possession-14",
+      "category": "possession",
+      "kind": "correct",
+      "input": "  Our cousin  has  a small toy.  ",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 2,
+                "end": 12
+              }
+            ]
+          },
+          {
+            "key": "verb-1",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 14,
+                "end": 17
+              }
+            ]
+          },
+          {
+            "key": "object-2",
+            "role": "object",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 19,
+                "end": 30
+              }
+            ]
+          },
+          {
+            "key": "object-2-attr-3",
+            "role": "attribute",
+            "parentKey": "object-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 21,
+                "end": 26
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "possession-15",
+      "category": "possession",
+      "kind": "correct",
+      "input": "The people had clean feet.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 10
+              }
+            ]
+          },
+          {
+            "key": "verb-1",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 14
+              }
+            ]
+          },
+          {
+            "key": "object-2",
+            "role": "object",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 15,
+                "end": 25
+              }
+            ]
+          },
+          {
+            "key": "object-2-attr-3",
+            "role": "attribute",
+            "parentKey": "object-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 15,
+                "end": 20
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "contraction-01",
+      "category": "contraction",
+      "kind": "correct",
+      "input": "The doctors don't buy the eggs.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 11
+              }
+            ]
+          },
+          {
+            "key": "verb-1",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 12,
+                "end": 21
+              }
+            ]
+          },
+          {
+            "key": "object-2",
+            "role": "object",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 22,
+                "end": 30
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "contraction-02",
+      "category": "contraction",
+      "kind": "correct",
+      "input": "Our aunt doesn’t carry the chair.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 8
+              }
+            ]
+          },
+          {
+            "key": "verb-1",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 22
+              }
+            ]
+          },
+          {
+            "key": "object-2",
+            "role": "object",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 23,
+                "end": 32
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "contraction-03",
+      "category": "contraction",
+      "kind": "correct",
+      "input": "The cousin didn't write a letter.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 10
+              }
+            ]
+          },
+          {
+            "key": "verb-1",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 23
+              }
+            ]
+          },
+          {
+            "key": "object-2",
+            "role": "object",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 24,
+                "end": 32
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "contraction-04",
+      "category": "contraction",
+      "kind": "correct",
+      "input": "The baby isn't crying.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "progressive",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 8
+              }
+            ]
+          },
+          {
+            "key": "verb-1",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 21
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "contraction-05",
+      "category": "contraction",
+      "kind": "correct",
+      "input": "The farmers aren’t waiting.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "progressive",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 11
+              }
+            ]
+          },
+          {
+            "key": "verb-1",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 12,
+                "end": 26
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "contraction-06",
+      "category": "contraction",
+      "kind": "correct",
+      "input": "The singer wasn't dancing.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "progressive",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 10
+              }
+            ]
+          },
+          {
+            "key": "verb-1",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 25
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "contraction-07",
+      "category": "contraction",
+      "kind": "correct",
+      "input": "The drivers weren’t walking.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "progressive",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 11
+              }
+            ]
+          },
+          {
+            "key": "verb-1",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 12,
+                "end": 27
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "contraction-08",
+      "category": "contraction",
+      "kind": "correct",
+      "input": "The worker can't carry the table.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 10
+              }
+            ]
+          },
+          {
+            "key": "verb-1",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 22
+              }
+            ]
+          },
+          {
+            "key": "object-2",
+            "role": "object",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 23,
+                "end": 32
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "contraction-09",
+      "category": "contraction",
+      "kind": "correct",
+      "input": "Our nurses haven't laughed.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "perfect",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 10
+              }
+            ]
+          },
+          {
+            "key": "verb-1",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 26
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "contraction-10",
+      "category": "contraction",
+      "kind": "correct",
+      "input": "The woman hasn’t read the new book.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "perfect",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 9
+              }
+            ]
+          },
+          {
+            "key": "verb-1",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 21
+              }
+            ]
+          },
+          {
+            "key": "object-2",
+            "role": "object",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 22,
+                "end": 34
+              }
+            ]
+          },
+          {
+            "key": "object-2-attr-3",
+            "role": "attribute",
+            "parentKey": "object-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 26,
+                "end": 29
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "contraction-11",
+      "category": "contraction",
+      "kind": "correct",
+      "input": "The artist hadn't shown her a picture.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVOO",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "perfect",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 10
+              }
+            ]
+          },
+          {
+            "key": "verb-1",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 23
+              }
+            ]
+          },
+          {
+            "key": "indirectObject-2",
+            "role": "indirectObject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 24,
+                "end": 27
+              }
+            ]
+          },
+          {
+            "key": "object-3",
+            "role": "object",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 28,
+                "end": 37
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "contraction-12",
+      "category": "contraction",
+      "kind": "correct",
+      "input": "The umbrellas haven’t been carried.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "perfect",
+        "voice": "passive",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 13
+              }
+            ]
+          },
+          {
+            "key": "verb-1",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 14,
+                "end": 34
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "contraction-13",
+      "category": "contraction",
+      "kind": "correct",
+      "input": "The car isn't being seen by the driver.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "progressive",
+        "voice": "passive",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 7
+              }
+            ]
+          },
+          {
+            "key": "verb-1",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 8,
+                "end": 24
+              }
+            ]
+          },
+          {
+            "key": "adverbial-2",
+            "role": "adverbial",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 25,
+                "end": 38
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "contraction-14",
+      "category": "contraction",
+      "kind": "correct",
+      "input": "The uncle hasn’t been teaching the girls a letter.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVOO",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "perfect-progressive",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 9
+              }
+            ]
+          },
+          {
+            "key": "verb-1",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 30
+              }
+            ]
+          },
+          {
+            "key": "indirectObject-2",
+            "role": "indirectObject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 31,
+                "end": 40
+              }
+            ]
+          },
+          {
+            "key": "object-3",
+            "role": "object",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 41,
+                "end": 49
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "contraction-15",
+      "category": "contraction",
+      "kind": "correct",
+      "input": "The red bus wasn't bought by her.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "passive",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 11
+              }
+            ]
+          },
+          {
+            "key": "subject-0-attr-1",
+            "role": "attribute",
+            "parentKey": "subject-0",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 7
+              }
+            ]
+          },
+          {
+            "key": "verb-2",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 12,
+                "end": 25
+              }
+            ]
+          },
+          {
+            "key": "adverbial-3",
+            "role": "adverbial",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 26,
+                "end": 32
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "mixed-01",
+      "category": "mixed",
+      "kind": "correct",
+      "input": "The neighbors are running.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "progressive",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 13
+              }
+            ]
+          },
+          {
+            "key": "verb-1",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 14,
+                "end": 25
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "mixed-02",
+      "category": "mixed",
+      "kind": "correct",
+      "input": "The teacher had sent the nurse a useful gift.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVOO",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "perfect",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 11
+              }
+            ]
+          },
+          {
+            "key": "verb-1",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 12,
+                "end": 20
+              }
+            ]
+          },
+          {
+            "key": "indirectObject-2",
+            "role": "indirectObject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 21,
+                "end": 30
+              }
+            ]
+          },
+          {
+            "key": "object-3",
+            "role": "object",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 31,
+                "end": 44
+              }
+            ]
+          },
+          {
+            "key": "object-3-attr-4",
+            "role": "attribute",
+            "parentKey": "object-3",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 33,
+                "end": 39
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "mixed-03",
+      "category": "mixed",
+      "kind": "correct",
+      "input": "The aunt has been smiling.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "perfect-progressive",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 8
+              }
+            ]
+          },
+          {
+            "key": "verb-1",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 25
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "mixed-04",
+      "category": "mixed",
+      "kind": "correct",
+      "input": "The blue car was seen by the boy.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "simple",
+        "voice": "passive",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 12
+              }
+            ]
+          },
+          {
+            "key": "subject-0-attr-1",
+            "role": "attribute",
+            "parentKey": "subject-0",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 8
+              }
+            ]
+          },
+          {
+            "key": "verb-2",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 13,
+                "end": 21
+              }
+            ]
+          },
+          {
+            "key": "adverbial-3",
+            "role": "adverbial",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 22,
+                "end": 32
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "mixed-05",
+      "category": "mixed",
+      "kind": "correct",
+      "input": "The orange had been given to the baby.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "perfect",
+        "voice": "passive",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 10
+              }
+            ]
+          },
+          {
+            "key": "verb-1",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 25
+              }
+            ]
+          },
+          {
+            "key": "adverbial-2",
+            "role": "adverbial",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 26,
+                "end": 37
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "mixed-06",
+      "category": "mixed",
+      "kind": "correct",
+      "input": "The girl is being offered an old toy.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "progressive",
+        "voice": "passive",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 8
+              }
+            ]
+          },
+          {
+            "key": "verb-1",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 25
+              }
+            ]
+          },
+          {
+            "key": "object-2",
+            "role": "object",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 26,
+                "end": 36
+              }
+            ]
+          },
+          {
+            "key": "object-2-attr-3",
+            "role": "attribute",
+            "parentKey": "object-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 29,
+                "end": 32
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "mixed-07",
+      "category": "mixed",
+      "kind": "correct",
+      "input": "Had the uncle been showing her the cars?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVOO",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "perfect-progressive",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "verb-0",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              },
+              {
+                "start": 14,
+                "end": 26
+              }
+            ]
+          },
+          {
+            "key": "subject-1",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 13
+              }
+            ]
+          },
+          {
+            "key": "indirectObject-2",
+            "role": "indirectObject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 27,
+                "end": 30
+              }
+            ]
+          },
+          {
+            "key": "object-3",
+            "role": "object",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 31,
+                "end": 39
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "mixed-08",
+      "category": "mixed",
+      "kind": "correct",
+      "input": "Was the chair being carried by him?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "progressive",
+        "voice": "passive",
+        "nodes": [
+          {
+            "key": "verb-0",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              },
+              {
+                "start": 14,
+                "end": 27
+              }
+            ]
+          },
+          {
+            "key": "subject-1",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 13
+              }
+            ]
+          },
+          {
+            "key": "adverbial-2",
+            "role": "adverbial",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 28,
+                "end": 34
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "mixed-09",
+      "category": "mixed",
+      "kind": "correct",
+      "input": "Has the doctor been given a pen?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "aspect": "perfect",
+        "voice": "passive",
+        "nodes": [
+          {
+            "key": "verb-0",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              },
+              {
+                "start": 15,
+                "end": 25
+              }
+            ]
+          },
+          {
+            "key": "subject-1",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 14
+              }
+            ]
+          },
+          {
+            "key": "object-2",
+            "role": "object",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 26,
+                "end": 31
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "mixed-10",
+      "category": "mixed",
+      "kind": "correct",
+      "input": "The people had been kind.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "past",
+        "aspect": "perfect",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "subject-0",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 10
+              }
+            ]
+          },
+          {
+            "key": "verb-1",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 19
+              }
+            ]
+          },
+          {
+            "key": "complement-2",
+            "role": "complement",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 20,
+                "end": 24
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "mixed-11",
+      "category": "mixed",
+      "kind": "correct",
+      "input": "The artist has a car and the nurses are walking.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "complexity": "compound",
+        "pattern": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [
+          {
+            "key": "0-subject-0",
+            "role": "subject",
+            "parentKey": "clause-0",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 10
+              }
+            ]
+          },
+          {
+            "key": "0-verb-1",
+            "role": "verb",
+            "parentKey": "clause-0",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 14
+              }
+            ]
+          },
+          {
+            "key": "0-object-2",
+            "role": "object",
+            "parentKey": "clause-0",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 15,
+                "end": 20
+              }
+            ]
+          },
+          {
+            "key": "clause-0",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 20
+              }
+            ],
+            "clause": {
+              "kind": "independent",
+              "purpose": "declarative",
+              "pattern": "SVO",
+              "tense": "present",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "1-subject-0",
+            "role": "subject",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 25,
+                "end": 35
+              }
+            ]
+          },
+          {
+            "key": "1-verb-1",
+            "role": "verb",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 36,
+                "end": 47
+              }
+            ]
+          },
+          {
+            "key": "clause-1",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 25,
+                "end": 47
+              }
+            ],
+            "clause": {
+              "kind": "independent",
+              "purpose": "declarative",
+              "pattern": "SV",
+              "tense": "present",
+              "aspect": "progressive",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "connector",
+            "role": "connector",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 21,
+                "end": 24
+              }
+            ],
+            "relation": "addition"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "mixed-12",
+      "category": "mixed",
+      "kind": "correct",
+      "input": "The aunt had an umbrella but the uncle was waiting.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "complexity": "compound",
+        "pattern": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [
+          {
+            "key": "0-subject-0",
+            "role": "subject",
+            "parentKey": "clause-0",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 8
+              }
+            ]
+          },
+          {
+            "key": "0-verb-1",
+            "role": "verb",
+            "parentKey": "clause-0",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 12
+              }
+            ]
+          },
+          {
+            "key": "0-object-2",
+            "role": "object",
+            "parentKey": "clause-0",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 13,
+                "end": 24
+              }
+            ]
+          },
+          {
+            "key": "clause-0",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 24
+              }
+            ],
+            "clause": {
+              "kind": "independent",
+              "purpose": "declarative",
+              "pattern": "SVO",
+              "tense": "past",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "1-subject-0",
+            "role": "subject",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 29,
+                "end": 38
+              }
+            ]
+          },
+          {
+            "key": "1-verb-1",
+            "role": "verb",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 39,
+                "end": 50
+              }
+            ]
+          },
+          {
+            "key": "clause-1",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 29,
+                "end": 50
+              }
+            ],
+            "clause": {
+              "kind": "independent",
+              "purpose": "declarative",
+              "pattern": "SV",
+              "tense": "past",
+              "aspect": "progressive",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "connector",
+            "role": "connector",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 25,
+                "end": 28
+              }
+            ],
+            "relation": "contrast"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "mixed-13",
+      "category": "mixed",
+      "kind": "correct",
+      "input": "The worker doesn't cry because the woman has been smiling.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "complexity": "complex",
+        "pattern": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [
+          {
+            "key": "0-subject-0",
+            "role": "subject",
+            "parentKey": "clause-0",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 10
+              }
+            ]
+          },
+          {
+            "key": "0-verb-1",
+            "role": "verb",
+            "parentKey": "clause-0",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 22
+              }
+            ]
+          },
+          {
+            "key": "clause-0",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 22
+              }
+            ],
+            "clause": {
+              "kind": "main",
+              "purpose": "declarative",
+              "pattern": "SV",
+              "tense": "present",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "1-subject-0",
+            "role": "subject",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 31,
+                "end": 40
+              }
+            ]
+          },
+          {
+            "key": "1-verb-1",
+            "role": "verb",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 41,
+                "end": 57
+              }
+            ]
+          },
+          {
+            "key": "clause-1",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 31,
+                "end": 57
+              }
+            ],
+            "clause": {
+              "kind": "subordinate",
+              "purpose": "declarative",
+              "pattern": "SV",
+              "tense": "present",
+              "aspect": "perfect-progressive",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "connector",
+            "role": "connector",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 23,
+                "end": 30
+              }
+            ],
+            "relation": "cause"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "mixed-14",
+      "category": "mixed",
+      "kind": "correct",
+      "input": "If the baby isn’t sleeping, the singer has a toy.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "complexity": "complex",
+        "pattern": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [
+          {
+            "key": "0-subject-0",
+            "role": "subject",
+            "parentKey": "clause-0",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 11
+              }
+            ]
+          },
+          {
+            "key": "0-verb-1",
+            "role": "verb",
+            "parentKey": "clause-0",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 12,
+                "end": 26
+              }
+            ]
+          },
+          {
+            "key": "clause-0",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 26
+              }
+            ],
+            "clause": {
+              "kind": "subordinate",
+              "purpose": "declarative",
+              "pattern": "SV",
+              "tense": "present",
+              "aspect": "progressive",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "1-subject-0",
+            "role": "subject",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 28,
+                "end": 38
+              }
+            ]
+          },
+          {
+            "key": "1-verb-1",
+            "role": "verb",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 39,
+                "end": 42
+              }
+            ]
+          },
+          {
+            "key": "1-object-2",
+            "role": "object",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 43,
+                "end": 48
+              }
+            ]
+          },
+          {
+            "key": "clause-1",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 28,
+                "end": 48
+              }
+            ],
+            "clause": {
+              "kind": "main",
+              "purpose": "declarative",
+              "pattern": "SVO",
+              "tense": "present",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "connector",
+            "role": "connector",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 2
+              },
+              {
+                "start": 26,
+                "end": 27
+              }
+            ],
+            "relation": "condition"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "mixed-15",
+      "category": "mixed",
+      "kind": "correct",
+      "input": "The picture has been shown to her and the artist is happy.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "complexity": "compound",
+        "pattern": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [
+          {
+            "key": "0-subject-0",
+            "role": "subject",
+            "parentKey": "clause-0",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 11
+              }
+            ]
+          },
+          {
+            "key": "0-verb-1",
+            "role": "verb",
+            "parentKey": "clause-0",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 12,
+                "end": 26
+              }
+            ]
+          },
+          {
+            "key": "0-adverbial-2",
+            "role": "adverbial",
+            "parentKey": "clause-0",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 27,
+                "end": 33
+              }
+            ]
+          },
+          {
+            "key": "clause-0",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 33
+              }
+            ],
+            "clause": {
+              "kind": "independent",
+              "purpose": "declarative",
+              "pattern": "SV",
+              "tense": "present",
+              "aspect": "perfect",
+              "voice": "passive"
+            }
+          },
+          {
+            "key": "1-subject-0",
+            "role": "subject",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 38,
+                "end": 48
+              }
+            ]
+          },
+          {
+            "key": "1-verb-1",
+            "role": "verb",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 49,
+                "end": 51
+              }
+            ]
+          },
+          {
+            "key": "1-complement-2",
+            "role": "complement",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 52,
+                "end": 57
+              }
+            ]
+          },
+          {
+            "key": "clause-1",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 38,
+                "end": 57
+              }
+            ],
+            "clause": {
+              "kind": "independent",
+              "purpose": "declarative",
+              "pattern": "SVC",
+              "tense": "present",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "connector",
+            "role": "connector",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 34,
+                "end": 37
+              }
+            ],
+            "relation": "addition"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "mixed-16",
+      "category": "mixed",
+      "kind": "correct",
+      "input": "The driver is carrying a chair because the nurse has an umbrella.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "complexity": "complex",
+        "pattern": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [
+          {
+            "key": "0-subject-0",
+            "role": "subject",
+            "parentKey": "clause-0",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 10
+              }
+            ]
+          },
+          {
+            "key": "0-verb-1",
+            "role": "verb",
+            "parentKey": "clause-0",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 22
+              }
+            ]
+          },
+          {
+            "key": "0-object-2",
+            "role": "object",
+            "parentKey": "clause-0",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 23,
+                "end": 30
+              }
+            ]
+          },
+          {
+            "key": "clause-0",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 30
+              }
+            ],
+            "clause": {
+              "kind": "main",
+              "purpose": "declarative",
+              "pattern": "SVO",
+              "tense": "present",
+              "aspect": "progressive",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "1-subject-0",
+            "role": "subject",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 39,
+                "end": 48
+              }
+            ]
+          },
+          {
+            "key": "1-verb-1",
+            "role": "verb",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 49,
+                "end": 52
+              }
+            ]
+          },
+          {
+            "key": "1-object-2",
+            "role": "object",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 53,
+                "end": 64
+              }
+            ]
+          },
+          {
+            "key": "clause-1",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 39,
+                "end": 64
+              }
+            ],
+            "clause": {
+              "kind": "subordinate",
+              "purpose": "declarative",
+              "pattern": "SVO",
+              "tense": "present",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "connector",
+            "role": "connector",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 31,
+                "end": 38
+              }
+            ],
+            "relation": "cause"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "mixed-17",
+      "category": "mixed",
+      "kind": "correct",
+      "input": "If the farmer hasn’t danced, the doctors are laughing.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "complexity": "complex",
+        "pattern": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [
+          {
+            "key": "0-subject-0",
+            "role": "subject",
+            "parentKey": "clause-0",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 13
+              }
+            ]
+          },
+          {
+            "key": "0-verb-1",
+            "role": "verb",
+            "parentKey": "clause-0",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 14,
+                "end": 27
+              }
+            ]
+          },
+          {
+            "key": "clause-0",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 27
+              }
+            ],
+            "clause": {
+              "kind": "subordinate",
+              "purpose": "declarative",
+              "pattern": "SV",
+              "tense": "present",
+              "aspect": "perfect",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "1-subject-0",
+            "role": "subject",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 29,
+                "end": 40
+              }
+            ]
+          },
+          {
+            "key": "1-verb-1",
+            "role": "verb",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 41,
+                "end": 53
+              }
+            ]
+          },
+          {
+            "key": "clause-1",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 29,
+                "end": 53
+              }
+            ],
+            "clause": {
+              "kind": "main",
+              "purpose": "declarative",
+              "pattern": "SV",
+              "tense": "present",
+              "aspect": "progressive",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "connector",
+            "role": "connector",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 2
+              },
+              {
+                "start": 27,
+                "end": 28
+              }
+            ],
+            "relation": "condition"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "mixed-18",
+      "category": "mixed",
+      "kind": "correct",
+      "input": "The car was bought by the uncle but the aunt didn't like it.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "complexity": "compound",
+        "pattern": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [
+          {
+            "key": "0-subject-0",
+            "role": "subject",
+            "parentKey": "clause-0",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 7
+              }
+            ]
+          },
+          {
+            "key": "0-verb-1",
+            "role": "verb",
+            "parentKey": "clause-0",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 8,
+                "end": 18
+              }
+            ]
+          },
+          {
+            "key": "0-adverbial-2",
+            "role": "adverbial",
+            "parentKey": "clause-0",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 19,
+                "end": 31
+              }
+            ]
+          },
+          {
+            "key": "clause-0",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 31
+              }
+            ],
+            "clause": {
+              "kind": "independent",
+              "purpose": "declarative",
+              "pattern": "SV",
+              "tense": "past",
+              "aspect": "simple",
+              "voice": "passive"
+            }
+          },
+          {
+            "key": "1-subject-0",
+            "role": "subject",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 36,
+                "end": 44
+              }
+            ]
+          },
+          {
+            "key": "1-verb-1",
+            "role": "verb",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 45,
+                "end": 56
+              }
+            ]
+          },
+          {
+            "key": "1-object-2",
+            "role": "object",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 57,
+                "end": 59
+              }
+            ]
+          },
+          {
+            "key": "clause-1",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 36,
+                "end": 59
+              }
+            ],
+            "clause": {
+              "kind": "independent",
+              "purpose": "declarative",
+              "pattern": "SVO",
+              "tense": "past",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "connector",
+            "role": "connector",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 32,
+                "end": 35
+              }
+            ],
+            "relation": "contrast"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "mixed-19",
+      "category": "mixed",
+      "kind": "correct",
+      "input": "The boys have been reading books because the books are useful.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "complexity": "complex",
+        "pattern": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [
+          {
+            "key": "0-subject-0",
+            "role": "subject",
+            "parentKey": "clause-0",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 8
+              }
+            ]
+          },
+          {
+            "key": "0-verb-1",
+            "role": "verb",
+            "parentKey": "clause-0",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 26
+              }
+            ]
+          },
+          {
+            "key": "0-object-2",
+            "role": "object",
+            "parentKey": "clause-0",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 27,
+                "end": 32
+              }
+            ]
+          },
+          {
+            "key": "clause-0",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 32
+              }
+            ],
+            "clause": {
+              "kind": "main",
+              "purpose": "declarative",
+              "pattern": "SVO",
+              "tense": "present",
+              "aspect": "perfect-progressive",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "1-subject-0",
+            "role": "subject",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 41,
+                "end": 50
+              }
+            ]
+          },
+          {
+            "key": "1-verb-1",
+            "role": "verb",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 51,
+                "end": 54
+              }
+            ]
+          },
+          {
+            "key": "1-complement-2",
+            "role": "complement",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 55,
+                "end": 61
+              }
+            ]
+          },
+          {
+            "key": "clause-1",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 41,
+                "end": 61
+              }
+            ],
+            "clause": {
+              "kind": "subordinate",
+              "purpose": "declarative",
+              "pattern": "SVC",
+              "tense": "present",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "connector",
+            "role": "connector",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 33,
+                "end": 40
+              }
+            ],
+            "relation": "cause"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "mixed-20",
+      "category": "mixed",
+      "kind": "correct",
+      "input": "If the nurse had a red book, the book was being carried by him.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "complexity": "complex",
+        "pattern": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [
+          {
+            "key": "0-subject-0",
+            "role": "subject",
+            "parentKey": "clause-0",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 12
+              }
+            ]
+          },
+          {
+            "key": "0-verb-1",
+            "role": "verb",
+            "parentKey": "clause-0",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 13,
+                "end": 16
+              }
+            ]
+          },
+          {
+            "key": "0-object-2",
+            "role": "object",
+            "parentKey": "clause-0",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 17,
+                "end": 27
+              }
+            ]
+          },
+          {
+            "key": "0-object-2-attr-3",
+            "role": "attribute",
+            "parentKey": "0-object-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 19,
+                "end": 22
+              }
+            ]
+          },
+          {
+            "key": "clause-0",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 27
+              }
+            ],
+            "clause": {
+              "kind": "subordinate",
+              "purpose": "declarative",
+              "pattern": "SVO",
+              "tense": "past",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "1-subject-0",
+            "role": "subject",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 29,
+                "end": 37
+              }
+            ]
+          },
+          {
+            "key": "1-verb-1",
+            "role": "verb",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 38,
+                "end": 55
+              }
+            ]
+          },
+          {
+            "key": "1-adverbial-2",
+            "role": "adverbial",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 56,
+                "end": 62
+              }
+            ]
+          },
+          {
+            "key": "clause-1",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 29,
+                "end": 62
+              }
+            ],
+            "clause": {
+              "kind": "main",
+              "purpose": "declarative",
+              "pattern": "SV",
+              "tense": "past",
+              "aspect": "progressive",
+              "voice": "passive"
+            }
+          },
+          {
+            "key": "connector",
+            "role": "connector",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 2
+              },
+              {
+                "start": 27,
+                "end": 28
+              }
+            ],
+            "relation": "condition"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "error-01",
+      "category": "safe-correction",
+      "kind": "error",
+      "input": "Our nurses is walking.",
+      "controlId": "vocabulary-01",
+      "steps": [
+        "Our nurses are walking."
+      ],
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": [
+              {
+                "start": 11,
+                "end": 13
+              }
+            ]
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "PREDICATE-AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 11,
+                  "end": 13
+                },
+                "expected": "is",
+                "replacement": "are"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "error-02",
+      "category": "safe-correction",
+      "kind": "error",
+      "input": "The farmer have danced.",
+      "controlId": "vocabulary-02",
+      "steps": [
+        "The farmer has danced."
+      ],
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": [
+              {
+                "start": 11,
+                "end": 15
+              }
+            ]
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "PREDICATE-AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 11,
+                  "end": 15
+                },
+                "expected": "have",
+                "replacement": "has"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "error-03",
+      "category": "safe-correction",
+      "kind": "error",
+      "input": "The tired baby were crying.",
+      "controlId": "vocabulary-04",
+      "steps": [
+        "The tired baby was crying."
+      ],
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": [
+              {
+                "start": 15,
+                "end": 19
+              }
+            ]
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "PREDICATE-AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 15,
+                  "end": 19
+                },
+                "expected": "were",
+                "replacement": "was"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "error-04",
+      "category": "safe-correction",
+      "kind": "error",
+      "input": "The actor have been waiting.",
+      "controlId": "vocabulary-05",
+      "steps": [
+        "The actor has been waiting."
+      ],
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": [
+              {
+                "start": 10,
+                "end": 14
+              }
+            ]
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "PREDICATE-AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 10,
+                  "end": 14
+                },
+                "expected": "have",
+                "replacement": "has"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "error-05",
+      "category": "safe-correction",
+      "kind": "error",
+      "input": "The artist is carry an umbrella.",
+      "controlId": "vocabulary-08",
+      "steps": [
+        "The artist is carrying an umbrella."
+      ],
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": [
+              {
+                "start": 14,
+                "end": 19
+              }
+            ]
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "PREDICATE-FORM-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 14,
+                  "end": 19
+                },
+                "expected": "carry",
+                "replacement": "carrying"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "error-06",
+      "category": "safe-correction",
+      "kind": "error",
+      "input": "The woman has reads the old books.",
+      "controlId": "vocabulary-09",
+      "steps": [
+        "The woman has read the old books."
+      ],
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": [
+              {
+                "start": 14,
+                "end": 19
+              }
+            ]
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "PREDICATE-FORM-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 14,
+                  "end": 19
+                },
+                "expected": "reads",
+                "replacement": "read"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "error-07",
+      "category": "safe-correction",
+      "kind": "error",
+      "input": "The singer has tell her a letter.",
+      "controlId": "vocabulary-11",
+      "steps": [
+        "The singer has told her a letter."
+      ],
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": [
+              {
+                "start": 15,
+                "end": 19
+              }
+            ]
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "PREDICATE-FORM-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 15,
+                  "end": 19
+                },
+                "expected": "tell",
+                "replacement": "told"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "error-08",
+      "category": "safe-correction",
+      "kind": "error",
+      "input": "Has the worker wrote the book?",
+      "controlId": "vocabulary-24",
+      "steps": [
+        "Has the worker written the book?"
+      ],
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": [
+              {
+                "start": 15,
+                "end": 20
+              }
+            ]
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "PREDICATE-FORM-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 15,
+                  "end": 20
+                },
+                "expected": "wrote",
+                "replacement": "written"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "error-09",
+      "category": "safe-correction",
+      "kind": "error",
+      "input": "Our doctor have a blue car.",
+      "controlId": "possession-01",
+      "steps": [
+        "Our doctor has a blue car."
+      ],
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": [
+              {
+                "start": 11,
+                "end": 15
+              }
+            ]
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 11,
+                  "end": 15
+                },
+                "expected": "have",
+                "replacement": "has"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "error-10",
+      "category": "safe-correction",
+      "kind": "error",
+      "input": "Our uncle does not has a bus.",
+      "controlId": "possession-04",
+      "steps": [
+        "Our uncle does not have a bus."
+      ],
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": [
+              {
+                "start": 19,
+                "end": 22
+              }
+            ]
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "DO-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 19,
+                  "end": 22
+                },
+                "expected": "has",
+                "replacement": "have"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "error-11",
+      "category": "safe-correction",
+      "kind": "error",
+      "input": "Our aunt don’t carry the chair.",
+      "controlId": "contraction-02",
+      "steps": [
+        "Our aunt doesn’t carry the chair."
+      ],
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": [
+              {
+                "start": 9,
+                "end": 14
+              }
+            ]
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 9,
+                  "end": 14
+                },
+                "expected": "don’t",
+                "replacement": "doesn’t"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "error-12",
+      "category": "safe-correction",
+      "kind": "error",
+      "input": "The farmers isn’t waiting.",
+      "controlId": "contraction-05",
+      "steps": [
+        "The farmers aren’t waiting."
+      ],
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": [
+              {
+                "start": 12,
+                "end": 17
+              }
+            ]
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "PREDICATE-AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 12,
+                  "end": 17
+                },
+                "expected": "isn’t",
+                "replacement": "aren’t"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "error-13",
+      "category": "safe-correction",
+      "kind": "error",
+      "input": "Our nurses hasn't laughed.",
+      "controlId": "contraction-09",
+      "steps": [
+        "Our nurses haven't laughed."
+      ],
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": [
+              {
+                "start": 11,
+                "end": 17
+              }
+            ]
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "PREDICATE-AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 11,
+                  "end": 17
+                },
+                "expected": "hasn't",
+                "replacement": "haven't"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "error-14",
+      "category": "safe-correction",
+      "kind": "error",
+      "input": "The woman haven’t read the new book.",
+      "controlId": "contraction-10",
+      "steps": [
+        "The woman hasn’t read the new book."
+      ],
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": [
+              {
+                "start": 10,
+                "end": 17
+              }
+            ]
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "PREDICATE-AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 10,
+                  "end": 17
+                },
+                "expected": "haven’t",
+                "replacement": "hasn’t"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "error-15",
+      "category": "safe-correction",
+      "kind": "error",
+      "input": "The car isn't being see by the driver.",
+      "controlId": "contraction-13",
+      "steps": [
+        "The car isn't being seen by the driver."
+      ],
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": [
+              {
+                "start": 20,
+                "end": 23
+              }
+            ]
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "PREDICATE-FORM-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 20,
+                  "end": 23
+                },
+                "expected": "see",
+                "replacement": "seen"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-01",
+      "category": "refuse-correction",
+      "kind": "boundary",
+      "input": "The aunt is give her umbrellas.",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "corrections": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": [
+              {
+                "start": 12,
+                "end": 16
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-02",
+      "category": "refuse-correction",
+      "kind": "boundary",
+      "input": "The uncle is show her toys.",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "corrections": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": [
+              {
+                "start": 13,
+                "end": 17
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-03",
+      "category": "refuse-correction",
+      "kind": "boundary",
+      "input": "The doctor has being carrying the car.",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "corrections": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": [
+              {
+                "start": 15,
+                "end": 20
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-04",
+      "category": "refuse-correction",
+      "kind": "boundary",
+      "input": "Our nurses has be laughing.",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "corrections": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": [
+              {
+                "start": 11,
+                "end": 14
+              },
+              {
+                "start": 15,
+                "end": 17
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-05",
+      "category": "refuse-correction",
+      "kind": "boundary",
+      "input": "The farmer have danced yesterday.",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "corrections": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": [
+              {
+                "start": 11,
+                "end": 15
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-06",
+      "category": "refuse-correction",
+      "kind": "boundary",
+      "input": "The baby is cry yesterday.",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "corrections": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": [
+              {
+                "start": 12,
+                "end": 15
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-07",
+      "category": "refuse-correction",
+      "kind": "boundary",
+      "input": "The workers has carry the chairs.",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "corrections": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": [
+              {
+                "start": 12,
+                "end": 15
+              },
+              {
+                "start": 16,
+                "end": 21
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-08",
+      "category": "refuse-correction",
+      "kind": "boundary",
+      "input": "The aunt has gave him.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "corrections": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-09",
+      "category": "refuse-correction",
+      "kind": "boundary",
+      "input": "The artist is carry the chair and the nurse smiles.",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "corrections": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": [
+              {
+                "start": 14,
+                "end": 19
+              }
+            ],
+            "clauseIndex": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-10",
+      "category": "refuse-correction",
+      "kind": "boundary",
+      "input": "If the farmer have danced, the baby smiles.",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "corrections": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": [
+              {
+                "start": 14,
+                "end": 18
+              }
+            ],
+            "clauseIndex": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-11",
+      "category": "refuse-correction",
+      "kind": "boundary",
+      "input": "The nurse laughs because the boy is cry.",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "corrections": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": [
+              {
+                "start": 36,
+                "end": 39
+              }
+            ],
+            "clauseIndex": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-12",
+      "category": "refuse-correction",
+      "kind": "boundary",
+      "input": "Our uncle can have a bus.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "corrections": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-13",
+      "category": "refuse-correction",
+      "kind": "boundary",
+      "input": "The singer is having a toy.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "corrections": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-14",
+      "category": "refuse-correction",
+      "kind": "boundary",
+      "input": "The doctor has had an umbrella.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "corrections": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-15",
+      "category": "refuse-correction",
+      "kind": "boundary",
+      "input": "The blue car is had by the doctor.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "corrections": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-16",
+      "category": "refuse-correction",
+      "kind": "boundary",
+      "input": "Has the aunt a red book?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "corrections": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-17",
+      "category": "refuse-correction",
+      "kind": "boundary",
+      "input": "The neighbors read old books.",
+      "expected": {
+        "status": "ambiguous",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "corrections": [],
+        "reasons": [
+          {
+            "code": "ambiguous",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-18",
+      "category": "refuse-correction",
+      "kind": "boundary",
+      "input": "The nurses will carry the chairs.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "corrections": [],
+        "reasons": [
+          {
+            "code": "unknown-word",
+            "ranges": [
+              {
+                "start": 11,
+                "end": 15
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-19",
+      "category": "refuse-correction",
+      "kind": "boundary",
+      "input": "The farmer won't dance.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "corrections": [],
+        "reasons": [
+          {
+            "code": "punctuation",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-20",
+      "category": "refuse-correction",
+      "kind": "boundary",
+      "input": "Doesn't the worker cry?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "corrections": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-21",
+      "category": "refuse-correction",
+      "kind": "boundary",
+      "input": "The boy has gave her a toy?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "corrections": [],
+        "reasons": [
+          {
+            "code": "punctuation",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-22",
+      "category": "refuse-correction",
+      "kind": "boundary",
+      "input": "The aunt has been being offered a toy.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "corrections": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-23",
+      "category": "refuse-correction",
+      "kind": "boundary",
+      "input": "The doors are kept clean.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "corrections": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-24",
+      "category": "refuse-correction",
+      "kind": "boundary",
+      "input": "The blue car is carry to it.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "corrections": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-25",
+      "category": "refuse-correction",
+      "kind": "boundary",
+      "input": "😀 The nurse isn’t crying.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "corrections": [],
+        "reasons": [
+          {
+            "code": "punctuation",
+            "ranges": []
+          }
+        ]
+      }
+    }
+  ]
+}

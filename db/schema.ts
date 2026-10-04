@@ -31,18 +31,24 @@ export const lexiconForms = sqliteTable("lexicon_forms", {
 export const lexiconFrames = sqliteTable("lexicon_frames", {
   id: id("id"), revisionId: id("revision_id").references(() => lexiconRevisions.id), pattern: id("pattern"),
   recipient: text("recipient"), complement: text("complement"), allowProgressive: integer("allow_progressive").notNull(), allowPerfect: integer("allow_perfect").notNull(),
-  passivePromotion: text("passive_promotion"), allowedPurposesJson: id("allowed_purposes_json"), allowedPolaritiesJson: id("allowed_polarities_json"), fixedTail: text("fixed_tail"),
+  passivePromotion: text("passive_promotion"), allowedPurposesJson: id("allowed_purposes_json"), allowedPolaritiesJson: id("allowed_polarities_json"), fixedTail: text("fixed_tail"), locationJson: text("location_json"),
 }, t => [primaryKey({ columns: [t.revisionId, t.id] }),
   check("frame_id", sql`${t.id} <> ''`), check("frame_pattern", sql`${t.pattern} IN ('SV','SVO','SVC','SVOO','SVOC')`),
   check("frame_flags", sql`${t.allowProgressive} IN (0,1) AND ${t.allowPerfect} IN (0,1)`),
   check("frame_recipient", sql`${t.recipient} IS NULL OR ${t.recipient} = 'person'`),
-  check("frame_complement", sql`${t.complement} IS NULL OR ${t.complement} IN ('single-adjective','noun-or-single-adjective')`),
+  check("frame_complement", sql`${t.complement} IS NULL OR ${t.complement} IN ('single-adjective','noun-or-single-adjective','location-phrase')`),
   check("frame_passive", sql`${t.passivePromotion} IS NULL OR ${t.passivePromotion} IN ('direct-object','direct-object-or-recipient')`),
-  check("frame_tail", sql`${t.fixedTail} IS NULL OR ${t.fixedTail} IN ('to school','location:in,on,near','location:in,on,under,near')`),
+  check("frame_tail", sql`${t.fixedTail} IS NULL OR ${t.fixedTail} = 'to school'`),
   check("frame_shape", sql`(${t.pattern} = 'SVOO') = (${t.recipient} IS NOT NULL) AND
     (${t.pattern} IN ('SVC','SVOC')) = (${t.complement} IS NOT NULL) AND
     (${t.passivePromotion} IS NULL OR (${t.pattern} = 'SVO' AND ${t.passivePromotion} = 'direct-object') OR (${t.pattern} = 'SVOO' AND ${t.passivePromotion} = 'direct-object-or-recipient')) AND
     (${t.fixedTail} IS NULL OR ${t.pattern} = 'SV')`),
+  check("frame_location", sql`${t.locationJson} IS NULL OR COALESCE((json_valid(${t.locationJson}) AND json_type(${t.locationJson})='object' AND
+    json_type(${t.locationJson},'$.policyId')='text' AND json_extract(${t.locationJson},'$.policyId') IN ('basic-object-location','legacy-sv-location','legacy-sv-under-location') AND
+    json_type(${t.locationJson},'$.attachment')='text' AND json_type(${t.locationJson},'$.presence')='text' AND ${t.fixedTail} IS NULL AND
+    ((json_extract(${t.locationJson},'$.attachment')='complement' AND json_extract(${t.locationJson},'$.presence')='required' AND json_extract(${t.locationJson},'$.policyId')='basic-object-location' AND ${t.pattern}='SVC' AND ${t.complement}='location-phrase' AND ${t.allowProgressive}=0 AND ${t.allowPerfect}=0 AND ${t.passivePromotion} IS NULL) OR
+     (json_extract(${t.locationJson},'$.attachment')='adverbial' AND json_extract(${t.locationJson},'$.presence')='optional' AND json_extract(${t.locationJson},'$.policyId') IN ('legacy-sv-location','legacy-sv-under-location') AND ${t.pattern}='SV' AND ${t.complement} IS NULL))),0)`),
+  check("frame_location_complement", sql`(${t.complement}='location-phrase') IS NOT 1 OR ${t.locationJson} IS NOT NULL`),
   check("frame_json", sql`json_valid(${t.allowedPurposesJson}) AND json_valid(${t.allowedPolaritiesJson})`),
 ]);
 export const lexiconSources = sqliteTable("lexicon_sources", {
@@ -60,7 +66,7 @@ export const lexiconReviews = sqliteTable("lexicon_reviews", {
   check("review_hash", sql`length(${t.contentHash}) = 64 AND ${t.contentHash} NOT GLOB '*[^0-9a-f]*'`)]);
 export const lexiconReleases = sqliteTable("lexicon_releases", {
   lexiconVersion: id("lexicon_version").primaryKey(), formatVersion: integer("format_version").notNull(), lexiconHash: id("lexicon_hash"), publishedAt: id("published_at"),
-}, t => [check("release_version", sql`${t.lexiconVersion} <> '' AND ${t.formatVersion} = 1`),
+}, t => [check("release_version", sql`${t.lexiconVersion} <> '' AND ${t.formatVersion} = 2`),
   check("release_hash", sql`length(${t.lexiconHash}) = 64 AND ${t.lexiconHash} NOT GLOB '*[^0-9a-f]*'`)]);
 export const lexiconReleaseItems = sqliteTable("lexicon_release_items", {
   lexiconVersion: id("lexicon_version").references(() => lexiconReleases.lexiconVersion), entryId: id("entry_id").references(() => lexiconEntries.id),

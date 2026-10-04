@@ -1,0 +1,240 @@
+{
+  "status": "human-fixed-before-implementation",
+  "ruleVersion": "0.22.2",
+  "fixtures": [
+    {
+      "query": "read",
+      "pos": "all",
+      "ids": [
+        "verb:lexical:read"
+      ],
+      "formKinds": [
+        "base",
+        "participle",
+        "past"
+      ],
+      "patterns": [
+        "SV",
+        "SVO"
+      ]
+    },
+    {
+      "query": "  READS  ",
+      "pos": "all",
+      "ids": [
+        "verb:lexical:read"
+      ]
+    },
+    {
+      "query": "reading",
+      "pos": "all",
+      "ids": [
+        "verb:lexical:read"
+      ]
+    },
+    {
+      "query": "cut",
+      "pos": "all",
+      "ids": [
+        "verb:lexical:cut"
+      ],
+      "formKinds": [
+        "base",
+        "participle",
+        "past"
+      ]
+    },
+    {
+      "query": "hit",
+      "pos": "all",
+      "ids": [
+        "verb:lexical:hit"
+      ],
+      "formKinds": [
+        "base",
+        "participle",
+        "past"
+      ]
+    },
+    {
+      "query": "clean",
+      "pos": "all",
+      "ids": [
+        "adjective:lexical:clean",
+        "verb:lexical:clean"
+      ]
+    },
+    {
+      "query": "clean",
+      "pos": "adjective",
+      "ids": [
+        "adjective:lexical:clean"
+      ]
+    },
+    {
+      "query": "clean",
+      "pos": "verb",
+      "ids": [
+        "verb:lexical:clean"
+      ]
+    },
+    {
+      "query": "her",
+      "pos": "all",
+      "ids": [
+        "function-word:determiner:her",
+        "function-word:object-pronoun:her"
+      ]
+    },
+    {
+      "query": "have",
+      "pos": "all",
+      "ids": [
+        "function-word:auxiliary:have",
+        "verb:possession:have"
+      ]
+    },
+    {
+      "query": "had",
+      "pos": "all",
+      "ids": [
+        "function-word:auxiliary:had",
+        "verb:possession:have"
+      ]
+    },
+    {
+      "query": "have",
+      "pos": "verb",
+      "ids": [
+        "verb:possession:have"
+      ],
+      "patterns": [
+        "SVO"
+      ],
+      "progressive": false,
+      "perfect": false,
+      "passive": false,
+      "modals": []
+    },
+    {
+      "query": "know",
+      "pos": "verb",
+      "ids": [
+        "verb:lexical:know"
+      ],
+      "progressive": false,
+      "perfect": true,
+      "passive": true,
+      "modals": [
+        "can",
+        "will"
+      ]
+    },
+    {
+      "query": "open",
+      "pos": "verb",
+      "ids": [
+        "verb:lexical:open"
+      ],
+      "patterns": [
+        "SV",
+        "SVO"
+      ]
+    },
+    {
+      "query": "sleep",
+      "pos": "verb",
+      "ids": [
+        "verb:lexical:sleep"
+      ],
+      "location": [
+        "in",
+        "on",
+        "under",
+        "near"
+      ]
+    },
+    {
+      "query": "work",
+      "pos": "verb",
+      "ids": [
+        "verb:lexical:work"
+      ],
+      "location": [
+        "in",
+        "on",
+        "near"
+      ]
+    },
+    {
+      "query": "children",
+      "pos": "all",
+      "ids": [
+        "noun:countable:child"
+      ]
+    },
+    {
+      "query": "traveled",
+      "pos": "verb",
+      "ids": [
+        "verb:lexical:travel"
+      ],
+      "sourceLicense": "MIT"
+    },
+    {
+      "query": "travelled",
+      "pos": "all",
+      "ids": []
+    },
+    {
+      "query": "will",
+      "pos": "all",
+      "ids": [
+        "function:auxiliary:will"
+      ]
+    },
+    {
+      "query": "where",
+      "pos": "all",
+      "ids": [
+        "function:question:where"
+      ]
+    },
+    {
+      "query": "under",
+      "pos": "all",
+      "ids": [
+        "function:location:under"
+      ]
+    },
+    {
+      "query": "what",
+      "pos": "all",
+      "ids": [
+        "function-word:marker:what"
+      ]
+    },
+    {
+      "query": "book",
+      "pos": "verb",
+      "ids": [
+        "noun:countable:book"
+      ]
+    },
+    {
+      "query": "unlistedword",
+      "pos": "all",
+      "ids": []
+    },
+    {
+      "query": "",
+      "pos": "all",
+      "ids": []
+    },
+    {
+      "query": "__proto__",
+      "pos": "all",
+      "ids": []
+    }
+  ]
+}

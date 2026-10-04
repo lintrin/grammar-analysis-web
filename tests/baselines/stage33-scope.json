@@ -1,0 +1,120 @@
+{
+  "stage": 33,
+  "phase": "33A-before-first-new-behavior-check",
+  "baselineCommit": "0c5dbfb4940efd87ba87c7530f747168bcc1f003",
+  "ruleVersion": "0.22.4",
+  "lexiconVersion": "1.7.0",
+  "independentAcceptanceReady": false,
+  "extraction": "File bytes and full expected answers frozen before new behavior execution. Historical source archive and actual generated runtime inputs included as immutable references. This is a scope freeze, not the final 33E developer-input exclusion corpus.",
+  "sources": [
+    {
+      "path": "data/analysis-manifest.json",
+      "revision": "0c5dbfb4940efd87ba87c7530f747168bcc1f003",
+      "sha256": "db23498dbc80d9f29a1305922e6f6b71b24078331321c3c9158b93eda6af6e4c"
+    },
+    {
+      "path": "data/grammar/stage33-browser-expectations.json",
+      "sha256": "ff54412e58b57a0b6573b6963e00f72a71ed18182157f84a2d7275891c826564"
+    },
+    {
+      "path": "data/grammar/stage33-capabilities.json",
+      "sha256": "63baea608b118cb096da2b742b10ba092b8eab3a38a57c990371cf023816fce2"
+    },
+    {
+      "path": "data/lexicon/releases/1.7.0.json",
+      "sha256": "d6fd443a4c743e7857ebb1eef9095c82a85381fcfda3667236786aa802a5762b"
+    },
+    {
+      "path": "data/lexicon/stage33-location-policy-design.json",
+      "sha256": "1d27bda665c0254c881637182d41a6e8e81d824a28929ce19042338c7a8a3351"
+    },
+    {
+      "path": "docs/stage33-37-development-plan.md",
+      "revision": "0c5dbfb4940efd87ba87c7530f747168bcc1f003",
+      "sha256": "eb83d1f00f21a7b00279837690153591d9955b97fed4b13707d8d31885e45b79"
+    },
+    {
+      "path": "docs/stage33-development-plan.md",
+      "revision": "0c5dbfb4940efd87ba87c7530f747168bcc1f003",
+      "sha256": "6216e2eafd86bae11b74e62aa09cdd31c541efe2b3555ea9e6fc77f8aa83b07d"
+    },
+    {
+      "path": "lib/grammar/generated/lexicon.json",
+      "revision": "0c5dbfb4940efd87ba87c7530f747168bcc1f003",
+      "sha256": "24a7e6fe0f0e9e555c7ca8a9448f9004634778225299a3cbc8008cca575a12d3"
+    },
+    {
+      "path": "scripts/stage33/author-answers.py",
+      "sha256": "0be94cdc1e3af911ad6527eae3e8dd02b3f6f78ef0c093ded4f016d4b4dfaaf5"
+    },
+    {
+      "path": "scripts/stage33/check-development.mjs",
+      "sha256": "1354bb62f80050108d8770059006ea7166f9d9ebdf7959ca5b0f1acfc7965708"
+    },
+    {
+      "path": "tests/baselines/development.json",
+      "sha256": "9c6c9c4d380191e179160f0e2b2a4c7db9d1cf9243d4f620dfa7fba940b466b1"
+    },
+    {
+      "path": "tests/baselines/stage32-runtime-inputs.json",
+      "sha256": "69cab19d177a6196db310f38272cf870c8713d2700999cbc4a4144a438197bda"
+    },
+    {
+      "path": "tests/fixtures/stage28-development.json",
+      "sha256": "cc486237ad22de513e8f6052b8d4cd65b9e5a7aafdaf9cd44610a23803a7cb91"
+    },
+    {
+      "path": "tests/fixtures/stage29-development.json",
+      "sha256": "4c69888afb86ce650971cef8545f717ac58f9f59e77f232b55b1485433616c44"
+    },
+    {
+      "path": "tests/fixtures/stage32-acceptance.json",
+      "sha256": "309a54dd821ecdf2a7c777698140494ab48fd865e8a17a5675404525cfd16f2b"
+    },
+    {
+      "path": "tests/fixtures/stage33-answer-review.json",
+      "sha256": "11bac72257b20604a899825b7a572dcd8a69ab3c2d9542e68b8abe7c5bdb7631"
+    },
+    {
+      "path": "tests/fixtures/stage33-development-initial.json",
+      "sha256": "0e656fb83968ad7a0118c34303c945e205aff073ad9b7b7f05d029c6e3238157"
+    },
+    {
+      "path": "tests/fixtures/stage33-development-initial.sha256",
+      "sha256": "841c7f48d25c17d11f5d8f09a3ee76b666f183db545f8fcb7849b984c7f89e83"
+    },
+    {
+      "path": "tests/fixtures/stage33-development.json",
+      "sha256": "50757d7c07d3e874fe773171c6a370c5bac69678c04716864f971a40509002dc"
+    },
+    {
+      "path": "tests/fixtures/stage33-development.sha256",
+      "sha256": "c1632646da92f8445fbb8b6eac97d9c520ca5c91d309869c21dec6017e85974f"
+    },
+    {
+      "path": "tests/fixtures/stage33-migrations-initial.json",
+      "sha256": "73cd483229e76cb2e1f321f9dd2123fe36e81326f2a410959c368146b998e18a"
+    },
+    {
+      "path": "tests/fixtures/stage33-migrations-initial.sha256",
+      "sha256": "29ae58c197f508d50c9ae9e7d4e14ba51d134f810af712febb7524151f84870a"
+    },
+    {
+      "path": "tests/fixtures/stage33-migrations.json",
+      "sha256": "73cd483229e76cb2e1f321f9dd2123fe36e81326f2a410959c368146b998e18a"
+    },
+    {
+      "path": "tests/fixtures/stage33-migrations.sha256",
+      "sha256": "29ae58c197f508d50c9ae9e7d4e14ba51d134f810af712febb7524151f84870a"
+    },
+    {
+      "path": "tests/helpers/stage33-fixtures.mjs",
+      "sha256": "b4754ad5492e2ef3c9bd1871bcf38bb3e218496588dcad96341dff373bd4d32d"
+    },
+    {
+      "path": "tests/stage33.test.mjs",
+      "sha256": "3df73e75b6b258b005c34f4c445b0d614dfab18d12fb436fcad7ea15c23ecd07"
+    }
+  ],
+  "contentHash": "7fa77a63f29a80547e812ef339bb1200419082b2295c5db289057da3e1eade70"
+}

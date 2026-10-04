@@ -1,0 +1,317 @@
+{
+  "browser": "147.0.7727.15",
+  "baselineRef": "0c5dbfb4940efd87ba87c7530f747168bcc1f003",
+  "samplesPerCase": 10,
+  "services": [
+    {
+      "port": 5195,
+      "ruleVersion": "0.22.4",
+      "cases": [
+        {
+          "id": "read-her-question",
+          "medianInteractionMs": 45.1000000089407,
+          "p95InteractionMs": 116.6000000089407
+        },
+        {
+          "id": "recipient-her",
+          "medianInteractionMs": 39,
+          "p95InteractionMs": 44.20000000298023
+        },
+        {
+          "id": "carried-her-passive",
+          "medianInteractionMs": 45.70000000298023,
+          "p95InteractionMs": 46.8999999910593
+        },
+        {
+          "id": "read-mixed-ambiguity",
+          "medianInteractionMs": 45,
+          "p95InteractionMs": 50.20000000298023
+        },
+        {
+          "id": "will-read-many-attributes",
+          "medianInteractionMs": 45.79999999701977,
+          "p95InteractionMs": 46
+        },
+        {
+          "id": "location-phrase-attributes",
+          "medianInteractionMs": 39.400000005960464,
+          "p95InteractionMs": 44.70000000298023
+        },
+        {
+          "id": "wh-second-frame-many-attributes",
+          "medianInteractionMs": 45.1000000089407,
+          "p95InteractionMs": 48.5
+        },
+        {
+          "id": "open-second-frame-many-attributes",
+          "medianInteractionMs": 46.20000000298023,
+          "p95InteractionMs": 47.20000000298023
+        }
+      ],
+      "longTasks": [],
+      "resources": [
+        {
+          "path": "/_next/static/css/index.DilO2d_1.css",
+          "encodedBodySize": 26152,
+          "decodedBodySize": 168380,
+          "transferSize": 26452
+        },
+        {
+          "path": "/_next/static/chunks/index-DbvCq6he.js",
+          "encodedBodySize": 52113,
+          "decodedBodySize": 178802,
+          "transferSize": 52413
+        },
+        {
+          "path": "/_next/static/chunks/hash-Cp347hhd.js",
+          "encodedBodySize": 181,
+          "decodedBodySize": 256,
+          "transferSize": 481
+        },
+        {
+          "path": "/_next/static/chunks/rolldown-runtime-C60lm6uB.js",
+          "encodedBodySize": 422,
+          "decodedBodySize": 694,
+          "transferSize": 722
+        },
+        {
+          "path": "/_next/static/chunks/app-elements-H_Dr48wG.js",
+          "encodedBodySize": 4223,
+          "decodedBodySize": 12828,
+          "transferSize": 4523
+        },
+        {
+          "path": "/_next/static/chunks/framework-D_rUT4EX.js",
+          "encodedBodySize": 59092,
+          "decodedBodySize": 190152,
+          "transferSize": 59392
+        },
+        {
+          "path": "/_next/static/chunks/record-uXSNv6cl.js",
+          "encodedBodySize": 94,
+          "decodedBodySize": 79,
+          "transferSize": 394
+        },
+        {
+          "path": "/_next/static/chunks/app-rsc-cache-busting-BFsLC82b.js",
+          "encodedBodySize": 2048,
+          "decodedBodySize": 4962,
+          "transferSize": 2348
+        },
+        {
+          "path": "/_next/static/chunks/app-rsc-render-mode-CvTCGruk.js",
+          "encodedBodySize": 345,
+          "decodedBodySize": 668,
+          "transferSize": 645
+        },
+        {
+          "path": "/_next/static/chunks/protocol-headers-B9-bVeat.js",
+          "encodedBodySize": 177,
+          "decodedBodySize": 327,
+          "transferSize": 477
+        },
+        {
+          "path": "/_next/static/chunks/headers-C_MtfdF4.js",
+          "encodedBodySize": 1285,
+          "decodedBodySize": 3286,
+          "transferSize": 1585
+        },
+        {
+          "path": "/_next/static/chunks/deployment-id-DFhHa9wO.js",
+          "encodedBodySize": 103,
+          "decodedBodySize": 97,
+          "transferSize": 403
+        },
+        {
+          "path": "/_next/static/chunks/navigation-errors-D5LMQqDL.js",
+          "encodedBodySize": 1625,
+          "decodedBodySize": 4040,
+          "transferSize": 1925
+        },
+        {
+          "path": "/_next/static/chunks/layout-segment-context-Bw-9fjph.js",
+          "encodedBodySize": 369,
+          "decodedBodySize": 534,
+          "transferSize": 669
+        },
+        {
+          "path": "/_next/static/chunks/app-route-prefetch-policy-DfGECvRg.js",
+          "encodedBodySize": 530,
+          "decodedBodySize": 1018,
+          "transferSize": 830
+        },
+        {
+          "path": "/_next/static/chunks/page-DWS73F7u.js",
+          "encodedBodySize": 61933,
+          "decodedBodySize": 363546,
+          "transferSize": 62233
+        },
+        {
+          "path": "/_next/static/chunks/query-DDhZxhdQ.js",
+          "encodedBodySize": 487,
+          "decodedBodySize": 984,
+          "transferSize": 787
+        }
+      ],
+      "jsFiles": 20,
+      "jsBytes": 782799,
+      "jsGzipBytes": 191929,
+      "maintenanceDatabaseInRuntime": false
+    },
+    {
+      "port": 5194,
+      "ruleVersion": "0.23.1",
+      "cases": [
+        {
+          "id": "read-her-question",
+          "medianInteractionMs": 46.79999999701977,
+          "p95InteractionMs": 119.1000000089407
+        },
+        {
+          "id": "recipient-her",
+          "medianInteractionMs": 39.900000005960464,
+          "p95InteractionMs": 46.29999999701977
+        },
+        {
+          "id": "carried-her-passive",
+          "medianInteractionMs": 46,
+          "p95InteractionMs": 46.70000000298023
+        },
+        {
+          "id": "read-mixed-ambiguity",
+          "medianInteractionMs": 39.400000005960464,
+          "p95InteractionMs": 45.8999999910593
+        },
+        {
+          "id": "will-read-many-attributes",
+          "medianInteractionMs": 45.400000005960464,
+          "p95InteractionMs": 47.3999999910593
+        },
+        {
+          "id": "location-phrase-attributes",
+          "medianInteractionMs": 39.400000005960464,
+          "p95InteractionMs": 47.20000000298023
+        },
+        {
+          "id": "wh-second-frame-many-attributes",
+          "medianInteractionMs": 45.1000000089407,
+          "p95InteractionMs": 47.20000000298023
+        },
+        {
+          "id": "open-second-frame-many-attributes",
+          "medianInteractionMs": 46.20000000298023,
+          "p95InteractionMs": 46.70000000298023
+        }
+      ],
+      "longTasks": [],
+      "resources": [
+        {
+          "path": "/_next/static/css/index.bklHx-sK.css",
+          "encodedBodySize": 26159,
+          "decodedBodySize": 168407,
+          "transferSize": 26459
+        },
+        {
+          "path": "/_next/static/chunks/rolldown-runtime-C60lm6uB.js",
+          "encodedBodySize": 422,
+          "decodedBodySize": 694,
+          "transferSize": 722
+        },
+        {
+          "path": "/_next/static/chunks/framework-D_rUT4EX.js",
+          "encodedBodySize": 59092,
+          "decodedBodySize": 190152,
+          "transferSize": 59392
+        },
+        {
+          "path": "/_next/static/chunks/index-nkISr_w6.js",
+          "encodedBodySize": 52103,
+          "decodedBodySize": 178802,
+          "transferSize": 52403
+        },
+        {
+          "path": "/_next/static/chunks/hash-Cp347hhd.js",
+          "encodedBodySize": 181,
+          "decodedBodySize": 256,
+          "transferSize": 481
+        },
+        {
+          "path": "/_next/static/chunks/record-uXSNv6cl.js",
+          "encodedBodySize": 94,
+          "decodedBodySize": 79,
+          "transferSize": 394
+        },
+        {
+          "path": "/_next/static/chunks/app-elements-H_Dr48wG.js",
+          "encodedBodySize": 4223,
+          "decodedBodySize": 12828,
+          "transferSize": 4523
+        },
+        {
+          "path": "/_next/static/chunks/app-rsc-cache-busting-BaVULP8N.js",
+          "encodedBodySize": 2046,
+          "decodedBodySize": 4962,
+          "transferSize": 2346
+        },
+        {
+          "path": "/_next/static/chunks/app-rsc-render-mode-CvTCGruk.js",
+          "encodedBodySize": 345,
+          "decodedBodySize": 668,
+          "transferSize": 645
+        },
+        {
+          "path": "/_next/static/chunks/deployment-id-DFhHa9wO.js",
+          "encodedBodySize": 103,
+          "decodedBodySize": 97,
+          "transferSize": 403
+        },
+        {
+          "path": "/_next/static/chunks/headers-C_MtfdF4.js",
+          "encodedBodySize": 1285,
+          "decodedBodySize": 3286,
+          "transferSize": 1585
+        },
+        {
+          "path": "/_next/static/chunks/protocol-headers-B9-bVeat.js",
+          "encodedBodySize": 177,
+          "decodedBodySize": 327,
+          "transferSize": 477
+        },
+        {
+          "path": "/_next/static/chunks/layout-segment-context-Dzmu4H6x.js",
+          "encodedBodySize": 368,
+          "decodedBodySize": 534,
+          "transferSize": 668
+        },
+        {
+          "path": "/_next/static/chunks/navigation-errors-D5LMQqDL.js",
+          "encodedBodySize": 1625,
+          "decodedBodySize": 4040,
+          "transferSize": 1925
+        },
+        {
+          "path": "/_next/static/chunks/app-route-prefetch-policy-asA3mTfT.js",
+          "encodedBodySize": 530,
+          "decodedBodySize": 1018,
+          "transferSize": 830
+        },
+        {
+          "path": "/_next/static/chunks/page-D7jUonwo.js",
+          "encodedBodySize": 66143,
+          "decodedBodySize": 391049,
+          "transferSize": 66443
+        },
+        {
+          "path": "/_next/static/chunks/query-DWOJKAZx.js",
+          "encodedBodySize": 487,
+          "decodedBodySize": 984,
+          "transferSize": 787
+        }
+      ],
+      "jsFiles": 20,
+      "jsBytes": 810302,
+      "jsGzipBytes": 196127,
+      "maintenanceDatabaseInRuntime": false
+    }
+  ]
+}

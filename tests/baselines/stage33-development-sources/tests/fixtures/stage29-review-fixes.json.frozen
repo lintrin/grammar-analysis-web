@@ -1,0 +1,1597 @@
+{
+  "authorship": "Manual review-fix expectations fixed before implementation: original-text roles, classifications, rules, diagnostics, edits and controls. No analyzer-derived answers.",
+  "fixtures": [
+    {
+      "id": "object-do",
+      "kind": "correct",
+      "input": "What do they read today?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-object",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ],
+            "ruleId": "WH-OBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 8,
+                "end": 12
+              }
+            ],
+            "ruleId": "SVO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 7
+              },
+              {
+                "start": 13,
+                "end": 17
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 18,
+                "end": 23
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "object-does",
+      "kind": "correct",
+      "input": "What does she read today?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-object",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ],
+            "ruleId": "WH-OBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 13
+              }
+            ],
+            "ruleId": "SVO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 9
+              },
+              {
+                "start": 14,
+                "end": 18
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 19,
+                "end": 24
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "object-did",
+      "kind": "correct",
+      "input": "Who did she see yesterday?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": "wh-object",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "WH-OBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 8,
+                "end": 11
+              }
+            ],
+            "ruleId": "SVO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 7
+              },
+              {
+                "start": 12,
+                "end": 15
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 16,
+                "end": 25
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "object-can",
+      "kind": "correct",
+      "input": "Who can she see today?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "can",
+        "questionType": "wh-object",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "WH-OBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 8,
+                "end": 11
+              }
+            ],
+            "ruleId": "SVO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 7
+              },
+              {
+                "start": 12,
+                "end": 15
+              }
+            ],
+            "ruleId": "QUESTION-CAN-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 16,
+                "end": 21
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "object-will",
+      "kind": "correct",
+      "input": "What will she read today?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "questionType": "wh-object",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ],
+            "ruleId": "WH-OBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 13
+              }
+            ],
+            "ruleId": "SVO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 9
+              },
+              {
+                "start": 14,
+                "end": 18
+              }
+            ],
+            "ruleId": "QUESTION-WILL-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 19,
+                "end": 24
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "object-possession",
+      "kind": "correct",
+      "input": "What does she have today?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-object",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ],
+            "ruleId": "WH-OBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 13
+              }
+            ],
+            "ruleId": "SVO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 9
+              },
+              {
+                "start": 14,
+                "end": 18
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 19,
+                "end": 24
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "object-noun",
+      "kind": "correct",
+      "input": "What does the tall teacher read today?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-object",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ],
+            "ruleId": "WH-OBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 26
+              }
+            ],
+            "ruleId": "SVO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 9
+              },
+              {
+                "start": 27,
+                "end": 31
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 32,
+                "end": 37
+              }
+            ],
+            "ruleId": "SVO-001"
+          },
+          {
+            "key": "4",
+            "parentKey": "1",
+            "role": "attribute",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 14,
+                "end": 18
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "object-no-terminal",
+      "kind": "correct",
+      "input": "What does she read today",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-object",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ],
+            "ruleId": "WH-OBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 13
+              }
+            ],
+            "ruleId": "SVO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 9
+              },
+              {
+                "start": 14,
+                "end": 18
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 19,
+                "end": 24
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "subject-possession",
+      "kind": "correct",
+      "input": "Who has a book today?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-subject",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "WH-SUBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 7
+              }
+            ],
+            "ruleId": "SVO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 8,
+                "end": 14
+              }
+            ],
+            "ruleId": "SVO-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 15,
+                "end": 20
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "subject-possession-past",
+      "kind": "correct",
+      "input": "Who had a book yesterday?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": "wh-subject",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "WH-SUBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 7
+              }
+            ],
+            "ruleId": "SVO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 8,
+                "end": 14
+              }
+            ],
+            "ruleId": "SVO-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 15,
+                "end": 24
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "subject-simple",
+      "kind": "correct",
+      "input": "Who sleeps today?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-subject",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "WH-SUBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 10
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 16
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "error-does",
+      "kind": "error",
+      "input": "What does she reads today?",
+      "controlId": "object-does",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "DO-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 14,
+                  "end": 19
+                },
+                "expected": "reads",
+                "replacement": "read"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "error-did",
+      "kind": "error",
+      "input": "Who did she sees yesterday?",
+      "controlId": "object-did",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "DO-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 12,
+                  "end": 16
+                },
+                "expected": "sees",
+                "replacement": "see"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "error-can",
+      "kind": "error",
+      "input": "Who can she sees today?",
+      "controlId": "object-can",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "MODAL-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 12,
+                  "end": 16
+                },
+                "expected": "sees",
+                "replacement": "see"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "error-will",
+      "kind": "error",
+      "input": "What will she reads today?",
+      "controlId": "object-will",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "MODAL-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 14,
+                  "end": 19
+                },
+                "expected": "reads",
+                "replacement": "read"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "subject-agreement",
+      "kind": "diagnostic",
+      "input": "Who sleep today?",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "subject-possession-agreement",
+      "kind": "diagnostic",
+      "input": "Who have a book today?",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": [
+              {
+                "start": 4,
+                "end": 8
+              }
+            ]
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "boundary-0",
+      "kind": "boundary",
+      "input": "Who has slept?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "boundary-1",
+      "kind": "boundary",
+      "input": "Who has sleep?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "boundary-2",
+      "kind": "boundary",
+      "input": "Who have slept?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "boundary-3",
+      "kind": "boundary",
+      "input": "Who have sleep?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "boundary-4",
+      "kind": "boundary",
+      "input": "Who is sleeping?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "boundary-5",
+      "kind": "boundary",
+      "input": "Who is sleep?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "boundary-6",
+      "kind": "boundary",
+      "input": "Who is sleeps?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "boundary-7",
+      "kind": "boundary",
+      "input": "Who is reading the book?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "boundary-8",
+      "kind": "boundary",
+      "input": "Who is read the book?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "boundary-9",
+      "kind": "boundary",
+      "input": "Who were read the book?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "boundary-10",
+      "kind": "boundary",
+      "input": "What is seen?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "boundary-11",
+      "kind": "boundary",
+      "input": "What is see?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "boundary-12",
+      "kind": "boundary",
+      "input": "What is sees?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "boundary-13",
+      "kind": "boundary",
+      "input": "Who has been sleeping?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "boundary-14",
+      "kind": "boundary",
+      "input": "Who has been sleep?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "boundary-15",
+      "kind": "boundary",
+      "input": "What has been seen?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "boundary-16",
+      "kind": "boundary",
+      "input": "What has been see?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "boundary-17",
+      "kind": "boundary",
+      "input": "What does she read today yesterday?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "boundary-18",
+      "kind": "boundary",
+      "input": "What does she read the book today?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "boundary-19",
+      "kind": "boundary",
+      "input": "What does she not read today?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "boundary-20",
+      "kind": "boundary",
+      "input": "What will she read yesterday?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "boundary-21",
+      "kind": "boundary",
+      "input": "What do she reads today?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "boundary-22",
+      "kind": "boundary",
+      "input": "Who did sleep today?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    }
+  ],
+  "revisions": [
+    {
+      "reason": "Initial annotation incorrectly added a tense diagnostic to a WH scope refusal. The pre-existing manually frozen stage29-development.json fixture 29-132 (Where will she works yesterday?) fixes unsupported-structure only. Apply that same diagnostic policy to the object question; keep the initial bytes for audit. Roles, statuses, ranges, edits and controls are unchanged.",
+      "fromSha256": "5453cd779118397766530514b94dca74a07c3a8ace6a4a5c4e09ccf0ecd313e9",
+      "fixtureId": "boundary-20"
+    }
+  ]
+}

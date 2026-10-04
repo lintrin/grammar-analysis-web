@@ -1,0 +1,21 @@
+{
+  "basis": "Released 1.7.0 snapshot inspected directly; no expectations copied from analyzer output. Initial drafts and hashes retained.",
+  "corrections": [
+    {
+      "initial": "book / verb returned noun:countable:book",
+      "review": "noun:countable:book is partOfSpeech=noun; a verb filter must return no entry."
+    },
+    {
+      "initial": "She bought him a gift yesterday.",
+      "review": "buy-svo is SVO in release 1.7.0; double-object is outside the audited frame. Use She bought a gift yesterday. The original is retained as an unsupported boundary."
+    },
+    {
+      "initial": "She told him a story yesterday.",
+      "review": "No story form exists in release 1.7.0. tell-svoo accepts person + thing; replace the unlisted noun with the already reviewed book. Original remains an unknown-word boundary."
+    },
+    {
+      "initial": "She went to school yesterday.",
+      "review": "Historical tests/stage8-boundaries.test.mjs explicitly rejects to school + time in simple carriers. Preserve that boundary and use the existing go destination alone. Initial draft and r2 retained; no new go capability in stage 31."
+    }
+  ]
+}

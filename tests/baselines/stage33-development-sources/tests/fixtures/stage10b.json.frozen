@@ -1,0 +1,3584 @@
+{
+  "targetRuleVersion": "0.8.0",
+  "state": "implemented",
+  "authorship": "Hand-authored classifications and component partitions; no analyzer-generated expectations.",
+  "fixtures": [
+    {
+      "id": "if-01",
+      "input": "If she sleeps, he smiles.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "complexity": "complex",
+        "pattern": null,
+        "tense": null,
+        "nodes": [
+          {
+            "key": "clause-1",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 13
+              }
+            ],
+            "clause": {
+              "pattern": "SV",
+              "purpose": "declarative",
+              "tense": "present",
+              "kind": "subordinate",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-1-part-1",
+            "role": "subject",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 6
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-2",
+            "role": "verb",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 7,
+                "end": 13
+              }
+            ]
+          },
+          {
+            "key": "clause-2",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 15,
+                "end": 24
+              }
+            ],
+            "clause": {
+              "pattern": "SV",
+              "purpose": "declarative",
+              "tense": "present",
+              "kind": "main",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-2-part-1",
+            "role": "subject",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 15,
+                "end": 17
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-2",
+            "role": "verb",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 18,
+                "end": 24
+              }
+            ]
+          },
+          {
+            "key": "connector",
+            "role": "connector",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 2
+              },
+              {
+                "start": 13,
+                "end": 14
+              }
+            ],
+            "relation": "condition"
+          }
+        ],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "if-02",
+      "input": "If the book is useful, she likes it.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "complexity": "complex",
+        "pattern": null,
+        "tense": null,
+        "nodes": [
+          {
+            "key": "clause-1",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 21
+              }
+            ],
+            "clause": {
+              "pattern": "SVC",
+              "purpose": "declarative",
+              "tense": "present",
+              "kind": "subordinate",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-1-part-1",
+            "role": "subject",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 11
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-2",
+            "role": "verb",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 12,
+                "end": 14
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-3",
+            "role": "complement",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 15,
+                "end": 21
+              }
+            ]
+          },
+          {
+            "key": "clause-2",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 23,
+                "end": 35
+              }
+            ],
+            "clause": {
+              "pattern": "SVO",
+              "purpose": "declarative",
+              "tense": "present",
+              "kind": "main",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-2-part-1",
+            "role": "subject",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 23,
+                "end": 26
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-2",
+            "role": "verb",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 27,
+                "end": 32
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-3",
+            "role": "object",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 33,
+                "end": 35
+              }
+            ]
+          },
+          {
+            "key": "connector",
+            "role": "connector",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 2
+              },
+              {
+                "start": 21,
+                "end": 22
+              }
+            ],
+            "relation": "condition"
+          }
+        ],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "if-03",
+      "input": "If we found it useful, she was kind.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "complexity": "complex",
+        "pattern": null,
+        "tense": null,
+        "nodes": [
+          {
+            "key": "clause-1",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 21
+              }
+            ],
+            "clause": {
+              "pattern": "SVOC",
+              "purpose": "declarative",
+              "tense": "past",
+              "kind": "subordinate",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-1-part-1",
+            "role": "subject",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 5
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-2",
+            "role": "verb",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 11
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-3",
+            "role": "object",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 12,
+                "end": 14
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-4",
+            "role": "complement",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 15,
+                "end": 21
+              }
+            ]
+          },
+          {
+            "key": "clause-2",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 23,
+                "end": 35
+              }
+            ],
+            "clause": {
+              "pattern": "SVC",
+              "purpose": "declarative",
+              "tense": "past",
+              "kind": "main",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-2-part-1",
+            "role": "subject",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 23,
+                "end": 26
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-2",
+            "role": "verb",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 27,
+                "end": 30
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-3",
+            "role": "complement",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 31,
+                "end": 35
+              }
+            ]
+          },
+          {
+            "key": "connector",
+            "role": "connector",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 2
+              },
+              {
+                "start": 21,
+                "end": 22
+              }
+            ],
+            "relation": "condition"
+          }
+        ],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "if-04",
+      "input": "If she gave him a book, they smiled.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "complexity": "complex",
+        "pattern": null,
+        "tense": null,
+        "nodes": [
+          {
+            "key": "clause-1",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 22
+              }
+            ],
+            "clause": {
+              "pattern": "SVOO",
+              "purpose": "declarative",
+              "tense": "past",
+              "kind": "subordinate",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-1-part-1",
+            "role": "subject",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 6
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-2",
+            "role": "verb",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 7,
+                "end": 11
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-3",
+            "role": "indirectObject",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 12,
+                "end": 15
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-4",
+            "role": "object",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 16,
+                "end": 22
+              }
+            ]
+          },
+          {
+            "key": "clause-2",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 24,
+                "end": 35
+              }
+            ],
+            "clause": {
+              "pattern": "SV",
+              "purpose": "declarative",
+              "tense": "past",
+              "kind": "main",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-2-part-1",
+            "role": "subject",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 24,
+                "end": 28
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-2",
+            "role": "verb",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 29,
+                "end": 35
+              }
+            ]
+          },
+          {
+            "key": "connector",
+            "role": "connector",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 2
+              },
+              {
+                "start": 22,
+                "end": 23
+              }
+            ],
+            "relation": "condition"
+          }
+        ],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "if-05",
+      "input": "If he smiles, she gives him a new book.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "complexity": "complex",
+        "pattern": null,
+        "tense": null,
+        "nodes": [
+          {
+            "key": "clause-1",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 12
+              }
+            ],
+            "clause": {
+              "pattern": "SV",
+              "purpose": "declarative",
+              "tense": "present",
+              "kind": "subordinate",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-1-part-1",
+            "role": "subject",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 5
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-2",
+            "role": "verb",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 12
+              }
+            ]
+          },
+          {
+            "key": "clause-2",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 14,
+                "end": 38
+              }
+            ],
+            "clause": {
+              "pattern": "SVOO",
+              "purpose": "declarative",
+              "tense": "present",
+              "kind": "main",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-2-part-1",
+            "role": "subject",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 14,
+                "end": 17
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-2",
+            "role": "verb",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 18,
+                "end": 23
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-3",
+            "role": "indirectObject",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 24,
+                "end": 27
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-4",
+            "role": "object",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 28,
+                "end": 38
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-4-attribute-1",
+            "role": "attribute",
+            "parentKey": "clause-2-part-4",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 30,
+                "end": 33
+              }
+            ]
+          },
+          {
+            "key": "connector",
+            "role": "connector",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 2
+              },
+              {
+                "start": 12,
+                "end": 13
+              }
+            ],
+            "relation": "condition"
+          }
+        ],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "if-06",
+      "input": "If she can not go to school, he sleeps.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "complexity": "complex",
+        "pattern": null,
+        "tense": null,
+        "nodes": [
+          {
+            "key": "clause-1",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 27
+              }
+            ],
+            "clause": {
+              "pattern": "SV",
+              "purpose": "declarative",
+              "tense": null,
+              "kind": "subordinate",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-1-part-1",
+            "role": "subject",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 6
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-2",
+            "role": "verb",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 7,
+                "end": 17
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-3",
+            "role": "adverbial",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 18,
+                "end": 27
+              }
+            ]
+          },
+          {
+            "key": "clause-2",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 29,
+                "end": 38
+              }
+            ],
+            "clause": {
+              "pattern": "SV",
+              "purpose": "declarative",
+              "tense": "present",
+              "kind": "main",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-2-part-1",
+            "role": "subject",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 29,
+                "end": 31
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-2",
+            "role": "verb",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 32,
+                "end": 38
+              }
+            ]
+          },
+          {
+            "key": "connector",
+            "role": "connector",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 2
+              },
+              {
+                "start": 27,
+                "end": 28
+              }
+            ],
+            "relation": "condition"
+          }
+        ],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "if-07",
+      "input": "If the young teacher gives her an old book, the book is useful.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "complexity": "complex",
+        "pattern": null,
+        "tense": null,
+        "nodes": [
+          {
+            "key": "clause-1",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 42
+              }
+            ],
+            "clause": {
+              "pattern": "SVOO",
+              "purpose": "declarative",
+              "tense": "present",
+              "kind": "subordinate",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-1-part-1",
+            "role": "subject",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 20
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-1-attribute-1",
+            "role": "attribute",
+            "parentKey": "clause-1-part-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 7,
+                "end": 12
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-2",
+            "role": "verb",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 21,
+                "end": 26
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-3",
+            "role": "indirectObject",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 27,
+                "end": 30
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-4",
+            "role": "object",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 31,
+                "end": 42
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-4-attribute-1",
+            "role": "attribute",
+            "parentKey": "clause-1-part-4",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 34,
+                "end": 37
+              }
+            ]
+          },
+          {
+            "key": "clause-2",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 44,
+                "end": 62
+              }
+            ],
+            "clause": {
+              "pattern": "SVC",
+              "purpose": "declarative",
+              "tense": "present",
+              "kind": "main",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-2-part-1",
+            "role": "subject",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 44,
+                "end": 52
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-2",
+            "role": "verb",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 53,
+                "end": 55
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-3",
+            "role": "complement",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 56,
+                "end": 62
+              }
+            ]
+          },
+          {
+            "key": "connector",
+            "role": "connector",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 2
+              },
+              {
+                "start": 42,
+                "end": 43
+              }
+            ],
+            "relation": "condition"
+          }
+        ],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "if-08",
+      "input": "  IF  SHE  sees it ,  she  likes it.  ",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "complexity": "complex",
+        "pattern": null,
+        "tense": null,
+        "nodes": [
+          {
+            "key": "clause-1",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 18
+              }
+            ],
+            "clause": {
+              "pattern": "SVO",
+              "purpose": "declarative",
+              "tense": "present",
+              "kind": "subordinate",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-1-part-1",
+            "role": "subject",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 9
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-2",
+            "role": "verb",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 15
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-3",
+            "role": "object",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 16,
+                "end": 18
+              }
+            ]
+          },
+          {
+            "key": "clause-2",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 22,
+                "end": 35
+              }
+            ],
+            "clause": {
+              "pattern": "SVO",
+              "purpose": "declarative",
+              "tense": "present",
+              "kind": "main",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-2-part-1",
+            "role": "subject",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 22,
+                "end": 25
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-2",
+            "role": "verb",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 27,
+                "end": 32
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-3",
+            "role": "object",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 33,
+                "end": 35
+              }
+            ]
+          },
+          {
+            "key": "connector",
+            "role": "connector",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 2,
+                "end": 4
+              },
+              {
+                "start": 19,
+                "end": 20
+              }
+            ],
+            "relation": "condition"
+          }
+        ],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "if-09",
+      "input": "If she finds the old book useful, it is an old book.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "complexity": "complex",
+        "pattern": null,
+        "tense": null,
+        "nodes": [
+          {
+            "key": "clause-1",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 32
+              }
+            ],
+            "clause": {
+              "pattern": "SVOC",
+              "purpose": "declarative",
+              "tense": "present",
+              "kind": "subordinate",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-1-part-1",
+            "role": "subject",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 6
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-2",
+            "role": "verb",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 7,
+                "end": 12
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-3",
+            "role": "object",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 13,
+                "end": 25
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-3-attribute-1",
+            "role": "attribute",
+            "parentKey": "clause-1-part-3",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 17,
+                "end": 20
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-4",
+            "role": "complement",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 26,
+                "end": 32
+              }
+            ]
+          },
+          {
+            "key": "clause-2",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 34,
+                "end": 51
+              }
+            ],
+            "clause": {
+              "pattern": "SVC",
+              "purpose": "declarative",
+              "tense": "present",
+              "kind": "main",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-2-part-1",
+            "role": "subject",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 34,
+                "end": 36
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-2",
+            "role": "verb",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 37,
+                "end": 39
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-3",
+            "role": "complement",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 40,
+                "end": 51
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-3-attribute-1",
+            "role": "attribute",
+            "parentKey": "clause-2-part-3",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 43,
+                "end": 46
+              }
+            ]
+          },
+          {
+            "key": "connector",
+            "role": "connector",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 2
+              },
+              {
+                "start": 32,
+                "end": 33
+              }
+            ],
+            "relation": "condition"
+          }
+        ],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "if-10",
+      "input": "If she does not like books, he does not see them.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "complexity": "complex",
+        "pattern": null,
+        "tense": null,
+        "nodes": [
+          {
+            "key": "clause-1",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 26
+              }
+            ],
+            "clause": {
+              "pattern": "SVO",
+              "purpose": "declarative",
+              "tense": "present",
+              "kind": "subordinate",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-1-part-1",
+            "role": "subject",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 6
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-2",
+            "role": "verb",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 7,
+                "end": 20
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-3",
+            "role": "object",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 21,
+                "end": 26
+              }
+            ]
+          },
+          {
+            "key": "clause-2",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 28,
+                "end": 48
+              }
+            ],
+            "clause": {
+              "pattern": "SVO",
+              "purpose": "declarative",
+              "tense": "present",
+              "kind": "main",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-2-part-1",
+            "role": "subject",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 28,
+                "end": 30
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-2",
+            "role": "verb",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 31,
+                "end": 43
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-3",
+            "role": "object",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 44,
+                "end": 48
+              }
+            ]
+          },
+          {
+            "key": "connector",
+            "role": "connector",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 2
+              },
+              {
+                "start": 26,
+                "end": 27
+              }
+            ],
+            "relation": "condition"
+          }
+        ],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "if-11",
+      "input": "If I am not kind, they are kind.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "complexity": "complex",
+        "pattern": null,
+        "tense": null,
+        "nodes": [
+          {
+            "key": "clause-1",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 16
+              }
+            ],
+            "clause": {
+              "pattern": "SVC",
+              "purpose": "declarative",
+              "tense": "present",
+              "kind": "subordinate",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-1-part-1",
+            "role": "subject",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 4
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-2",
+            "role": "verb",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 11
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-3",
+            "role": "complement",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 12,
+                "end": 16
+              }
+            ]
+          },
+          {
+            "key": "clause-2",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 18,
+                "end": 31
+              }
+            ],
+            "clause": {
+              "pattern": "SVC",
+              "purpose": "declarative",
+              "tense": "present",
+              "kind": "main",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-2-part-1",
+            "role": "subject",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 18,
+                "end": 22
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-2",
+            "role": "verb",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 23,
+                "end": 26
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-3",
+            "role": "complement",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 27,
+                "end": 31
+              }
+            ]
+          },
+          {
+            "key": "connector",
+            "role": "connector",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 2
+              },
+              {
+                "start": 16,
+                "end": 17
+              }
+            ],
+            "relation": "condition"
+          }
+        ],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "if-12",
+      "input": "If he can be kind, she can give him a gift",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "complexity": "complex",
+        "pattern": null,
+        "tense": null,
+        "nodes": [
+          {
+            "key": "clause-1",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 17
+              }
+            ],
+            "clause": {
+              "pattern": "SVC",
+              "purpose": "declarative",
+              "tense": null,
+              "kind": "subordinate",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-1-part-1",
+            "role": "subject",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 5
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-2",
+            "role": "verb",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 9
+              },
+              {
+                "start": 10,
+                "end": 12
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-3",
+            "role": "complement",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 13,
+                "end": 17
+              }
+            ]
+          },
+          {
+            "key": "clause-2",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 19,
+                "end": 42
+              }
+            ],
+            "clause": {
+              "pattern": "SVOO",
+              "purpose": "declarative",
+              "tense": null,
+              "kind": "main",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-2-part-1",
+            "role": "subject",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 19,
+                "end": 22
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-2",
+            "role": "verb",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 23,
+                "end": 26
+              },
+              {
+                "start": 27,
+                "end": 31
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-3",
+            "role": "indirectObject",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 32,
+                "end": 35
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-4",
+            "role": "object",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 36,
+                "end": 42
+              }
+            ]
+          },
+          {
+            "key": "connector",
+            "role": "connector",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 2
+              },
+              {
+                "start": 17,
+                "end": 18
+              }
+            ],
+            "relation": "condition"
+          }
+        ],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "if-13",
+      "input": "If the young boy smiles today, the old teacher gives him an old book.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "complexity": "complex",
+        "pattern": null,
+        "tense": null,
+        "nodes": [
+          {
+            "key": "clause-1",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 29
+              }
+            ],
+            "clause": {
+              "pattern": "SV",
+              "purpose": "declarative",
+              "tense": "present",
+              "kind": "subordinate",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-1-part-1",
+            "role": "subject",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 16
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-1-attribute-1",
+            "role": "attribute",
+            "parentKey": "clause-1-part-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 7,
+                "end": 12
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-2",
+            "role": "verb",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 17,
+                "end": 23
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-3",
+            "role": "adverbial",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 24,
+                "end": 29
+              }
+            ]
+          },
+          {
+            "key": "clause-2",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 31,
+                "end": 68
+              }
+            ],
+            "clause": {
+              "pattern": "SVOO",
+              "purpose": "declarative",
+              "tense": "present",
+              "kind": "main",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-2-part-1",
+            "role": "subject",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 31,
+                "end": 46
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-1-attribute-1",
+            "role": "attribute",
+            "parentKey": "clause-2-part-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 35,
+                "end": 38
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-2",
+            "role": "verb",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 47,
+                "end": 52
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-3",
+            "role": "indirectObject",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 53,
+                "end": 56
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-4",
+            "role": "object",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 57,
+                "end": 68
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-4-attribute-1",
+            "role": "attribute",
+            "parentKey": "clause-2-part-4",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 60,
+                "end": 63
+              }
+            ]
+          },
+          {
+            "key": "connector",
+            "role": "connector",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 2
+              },
+              {
+                "start": 29,
+                "end": 30
+              }
+            ],
+            "relation": "condition"
+          }
+        ],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "if-14",
+      "input": "If the books were useful, we liked the small books.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "complexity": "complex",
+        "pattern": null,
+        "tense": null,
+        "nodes": [
+          {
+            "key": "clause-1",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 24
+              }
+            ],
+            "clause": {
+              "pattern": "SVC",
+              "purpose": "declarative",
+              "tense": "past",
+              "kind": "subordinate",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-1-part-1",
+            "role": "subject",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 12
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-2",
+            "role": "verb",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 13,
+                "end": 17
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-3",
+            "role": "complement",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 18,
+                "end": 24
+              }
+            ]
+          },
+          {
+            "key": "clause-2",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 26,
+                "end": 50
+              }
+            ],
+            "clause": {
+              "pattern": "SVO",
+              "purpose": "declarative",
+              "tense": "past",
+              "kind": "main",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-2-part-1",
+            "role": "subject",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 26,
+                "end": 28
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-2",
+            "role": "verb",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 29,
+                "end": 34
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-3",
+            "role": "object",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 35,
+                "end": 50
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-3-attribute-1",
+            "role": "attribute",
+            "parentKey": "clause-2-part-3",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 39,
+                "end": 44
+              }
+            ]
+          },
+          {
+            "key": "connector",
+            "role": "connector",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 2
+              },
+              {
+                "start": 24,
+                "end": 25
+              }
+            ],
+            "relation": "condition"
+          }
+        ],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "if-15",
+      "input": "If the old book is useful, she can find the new book useful.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "complexity": "complex",
+        "pattern": null,
+        "tense": null,
+        "nodes": [
+          {
+            "key": "clause-1",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 25
+              }
+            ],
+            "clause": {
+              "pattern": "SVC",
+              "purpose": "declarative",
+              "tense": "present",
+              "kind": "subordinate",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-1-part-1",
+            "role": "subject",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 15
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-1-attribute-1",
+            "role": "attribute",
+            "parentKey": "clause-1-part-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 7,
+                "end": 10
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-2",
+            "role": "verb",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 16,
+                "end": 18
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-3",
+            "role": "complement",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 19,
+                "end": 25
+              }
+            ]
+          },
+          {
+            "key": "clause-2",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 27,
+                "end": 59
+              }
+            ],
+            "clause": {
+              "pattern": "SVOC",
+              "purpose": "declarative",
+              "tense": null,
+              "kind": "main",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-2-part-1",
+            "role": "subject",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 27,
+                "end": 30
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-2",
+            "role": "verb",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 31,
+                "end": 34
+              },
+              {
+                "start": 35,
+                "end": 39
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-3",
+            "role": "object",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 40,
+                "end": 52
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-3-attribute-1",
+            "role": "attribute",
+            "parentKey": "clause-2-part-3",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 44,
+                "end": 47
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-4",
+            "role": "complement",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 53,
+                "end": 59
+              }
+            ]
+          },
+          {
+            "key": "connector",
+            "role": "connector",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 2
+              },
+              {
+                "start": 25,
+                "end": 26
+              }
+            ],
+            "relation": "condition"
+          }
+        ],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "if-16",
+      "input": "If the young teacher can give her an old book, she is kind.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "complexity": "complex",
+        "pattern": null,
+        "tense": null,
+        "nodes": [
+          {
+            "key": "clause-1",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 45
+              }
+            ],
+            "clause": {
+              "pattern": "SVOO",
+              "purpose": "declarative",
+              "tense": null,
+              "kind": "subordinate",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-1-part-1",
+            "role": "subject",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 20
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-1-attribute-1",
+            "role": "attribute",
+            "parentKey": "clause-1-part-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 7,
+                "end": 12
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-2",
+            "role": "verb",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 21,
+                "end": 24
+              },
+              {
+                "start": 25,
+                "end": 29
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-3",
+            "role": "indirectObject",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 30,
+                "end": 33
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-4",
+            "role": "object",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 34,
+                "end": 45
+              }
+            ]
+          },
+          {
+            "key": "clause-1-part-4-attribute-1",
+            "role": "attribute",
+            "parentKey": "clause-1-part-4",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 37,
+                "end": 40
+              }
+            ]
+          },
+          {
+            "key": "clause-2",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 47,
+                "end": 58
+              }
+            ],
+            "clause": {
+              "pattern": "SVC",
+              "purpose": "declarative",
+              "tense": "present",
+              "kind": "main",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "clause-2-part-1",
+            "role": "subject",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 47,
+                "end": 50
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-2",
+            "role": "verb",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 51,
+                "end": 53
+              }
+            ]
+          },
+          {
+            "key": "clause-2-part-3",
+            "role": "complement",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 54,
+                "end": 58
+              }
+            ]
+          },
+          {
+            "key": "connector",
+            "role": "connector",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 2
+              },
+              {
+                "start": 45,
+                "end": 46
+              }
+            ],
+            "relation": "condition"
+          }
+        ],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "boundary-01",
+      "input": "If she sleeps he smiles.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-02",
+      "input": "She smiles if he sleeps.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-03",
+      "input": "She smiles, if he sleeps.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-04",
+      "input": "If, she sleeps he smiles.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-05",
+      "input": "If she sleeps,, he smiles.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-06",
+      "input": "If she sleeps, he smiles,",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-07",
+      "input": "If she sleeps; he smiles.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-08",
+      "input": "If she sleeps, he smiles?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-09",
+      "input": "If she sleeps, he smiles!",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-10",
+      "input": "If sleeps, he smiles.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-11",
+      "input": "If she sleeps, smile.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-12",
+      "input": "If be kind, he smiles.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-13",
+      "input": "If she sleeps, does he smile",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-14",
+      "input": "If can she sleep, he smiles.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-15",
+      "input": "If she sleeps, how kind he is",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-16",
+      "input": "If she sleeps, if he smiles, we run.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-17",
+      "input": "If she sleeps and he smiles, we run.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-18",
+      "input": "If she sleeps, he smiles but we run.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-19",
+      "input": "If she sleeps, he smiles because he is kind.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-20",
+      "input": "If she sleeps because he is kind, we run.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-21",
+      "input": "If she sleeps, he will smile.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-22",
+      "input": "If she were kind, he would smile.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-23",
+      "input": "If she is sleeping, he smiles.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "complexity": "complex",
+        "pattern": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "corrections": [],
+        "nodes": [
+          {
+            "key": "0-subject",
+            "role": "subject",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 6
+              }
+            ]
+          },
+          {
+            "key": "0-verb",
+            "role": "verb",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 7,
+                "end": 18
+              }
+            ]
+          },
+          {
+            "key": "clause-1",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 18
+              }
+            ],
+            "clause": {
+              "kind": "subordinate",
+              "purpose": "declarative",
+              "pattern": "SV",
+              "tense": "present",
+              "aspect": "progressive",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "1-subject",
+            "role": "subject",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 20,
+                "end": 22
+              }
+            ]
+          },
+          {
+            "key": "1-verb",
+            "role": "verb",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 23,
+                "end": 29
+              }
+            ]
+          },
+          {
+            "key": "clause-2",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 20,
+                "end": 29
+              }
+            ],
+            "clause": {
+              "kind": "main",
+              "purpose": "declarative",
+              "pattern": "SV",
+              "tense": "present",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "connector",
+            "role": "connector",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 2
+              },
+              {
+                "start": 18,
+                "end": 19
+              }
+            ],
+            "relation": "condition"
+          }
+        ],
+        "reasons": []
+      }
+    },
+    {
+      "id": "boundary-24",
+      "input": "If he says she is kind, we smile.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-25",
+      "input": "If the boy who sleeps is kind, we smile.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-26",
+      "input": "If she likes the weather, he smiles.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-27",
+      "input": "If she sleep, he smiles.",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-28",
+      "input": "If she sleeps, he smile.",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-29",
+      "input": "If she do not likes books, he smiles.",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-30",
+      "input": "If she sleeps, he can is kind.",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-31",
+      "input": "If she sleeps, he are kind.",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-32",
+      "input": "If she runs yesterday, he sleeps.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-33",
+      "input": "If she gives it a book, he smiles.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-34",
+      "input": "If she sleeps,",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-35",
+      "input": "If, he smiles.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-36",
+      "input": "If she sleeps. He smiles.",
+      "expected": {
+        "status": "invalid",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "invalid-input",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-37",
+      "input": "If she doesn't sleep, he smiles.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "complexity": "complex",
+        "pattern": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "corrections": [],
+        "nodes": [
+          {
+            "key": "0-subject",
+            "role": "subject",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 6
+              }
+            ]
+          },
+          {
+            "key": "0-verb",
+            "role": "verb",
+            "parentKey": "clause-1",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 7,
+                "end": 20
+              }
+            ]
+          },
+          {
+            "key": "clause-1",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 20
+              }
+            ],
+            "clause": {
+              "kind": "subordinate",
+              "purpose": "declarative",
+              "pattern": "SV",
+              "tense": "present",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "1-subject",
+            "role": "subject",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 22,
+                "end": 24
+              }
+            ]
+          },
+          {
+            "key": "1-verb",
+            "role": "verb",
+            "parentKey": "clause-2",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 25,
+                "end": 31
+              }
+            ]
+          },
+          {
+            "key": "clause-2",
+            "role": "clause",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 22,
+                "end": 31
+              }
+            ],
+            "clause": {
+              "kind": "main",
+              "purpose": "declarative",
+              "pattern": "SV",
+              "tense": "present",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "connector",
+            "role": "connector",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 2
+              },
+              {
+                "start": 20,
+                "end": 21
+              }
+            ],
+            "relation": "condition"
+          }
+        ],
+        "reasons": []
+      }
+    },
+    {
+      "id": "boundary-38",
+      "input": "If she do not likes books, he likes the weather.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-39",
+      "input": "If she sleeps，he smiles.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "nodes": [],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    }
+  ]
+}

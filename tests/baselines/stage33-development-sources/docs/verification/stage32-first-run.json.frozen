@@ -1,0 +1,34 @@
+{
+  "baselineHash": "cd94838068f974f5a23213aa76830e5662e16b1ec91d032779c375bf4a9ce3cd",
+  "initialAcceptanceHash": "26d6b7f08bb25b63307fcf7f27243f6249e33aa988687c2c5360b96831a81fff",
+  "firstExecution": {
+    "tests": 203,
+    "passed": 196,
+    "failed": 7
+  },
+  "findings": [
+    {
+      "id": "location-10",
+      "type": "human-range-arithmetic",
+      "action": "Retain input/roles/parent; locate adjective inside its location phrase."
+    },
+    {
+      "ids": [
+        "safe-17",
+        "no-auto-06",
+        "no-auto-07",
+        "no-auto-08",
+        "no-auto-20"
+      ],
+      "type": "human-grammar-assumption",
+      "basis": "Stage21 explicitly fixes singular read as past; stage30 documents the same draft mistake. Singular third-person with bare read/cut/hit lacks a valid present form.",
+      "action": "Retain all original inputs as complete past regressions; add a genuine do-form error and plural homograph ambiguities."
+    },
+    {
+      "id": "no-auto-16",
+      "type": "implementation-diagnostic",
+      "action": "Preserve human unsupported-structure answer; prevent malformed What + NP + can/will from entering the what exclamation branch."
+    }
+  ],
+  "queryReview": "Keep given workflow as regression because the UI placeholder already advertises it; add fed as new independent query. Preserve initial query bytes and all IDs."
+}

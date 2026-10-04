@@ -1,0 +1,533 @@
+{
+  "browser": "147.0.7727.15",
+  "counts": [
+    {
+      "viewport": 1280,
+      "independentInputs": 186,
+      "appliedControls": 20,
+      "independentQueryFlows": 20,
+      "additionalQueryRegressions": 1
+    },
+    {
+      "viewport": 390,
+      "independentInputs": 186,
+      "appliedControls": 20,
+      "independentQueryFlows": 20,
+      "additionalQueryRegressions": 1
+    }
+  ],
+  "ruleVersion": "0.22.4",
+  "lexiconVersion": "1.7.0",
+  "correct": 100,
+  "safeCorrections": 20,
+  "refusalControls": 40,
+  "additionalControls": 21,
+  "reviewedOriginals": 5,
+  "navigation": {
+    "domContentLoadedMs": 63.5,
+    "loadMs": 80.70000000298023
+  },
+  "timing": [
+    {
+      "id": "read-her-question",
+      "viewport": 1280,
+      "utf16Length": 1000,
+      "renderMs": 9.599999994039536
+    },
+    {
+      "id": "read-her-question",
+      "viewport": 1280,
+      "utf16Length": 1000,
+      "renderMs": 9.700000002980232
+    },
+    {
+      "id": "read-her-question",
+      "viewport": 1280,
+      "utf16Length": 1000,
+      "renderMs": 9.399999991059303
+    },
+    {
+      "id": "read-her-question",
+      "viewport": 1280,
+      "utf16Length": 1000,
+      "renderMs": 9.099999994039536
+    },
+    {
+      "id": "read-her-question",
+      "viewport": 1280,
+      "utf16Length": 1000,
+      "renderMs": 9.5
+    },
+    {
+      "id": "recipient-her",
+      "viewport": 1280,
+      "utf16Length": 1000,
+      "renderMs": 8.200000002980232
+    },
+    {
+      "id": "recipient-her",
+      "viewport": 1280,
+      "utf16Length": 1000,
+      "renderMs": 6.799999997019768
+    },
+    {
+      "id": "recipient-her",
+      "viewport": 1280,
+      "utf16Length": 1000,
+      "renderMs": 6.9000000059604645
+    },
+    {
+      "id": "recipient-her",
+      "viewport": 1280,
+      "utf16Length": 1000,
+      "renderMs": 6.5
+    },
+    {
+      "id": "recipient-her",
+      "viewport": 1280,
+      "utf16Length": 1000,
+      "renderMs": 6.5999999940395355
+    },
+    {
+      "id": "carried-her-passive",
+      "viewport": 1280,
+      "utf16Length": 1000,
+      "renderMs": 3
+    },
+    {
+      "id": "carried-her-passive",
+      "viewport": 1280,
+      "utf16Length": 1000,
+      "renderMs": 3.0999999940395355
+    },
+    {
+      "id": "carried-her-passive",
+      "viewport": 1280,
+      "utf16Length": 1000,
+      "renderMs": 3.199999988079071
+    },
+    {
+      "id": "carried-her-passive",
+      "viewport": 1280,
+      "utf16Length": 1000,
+      "renderMs": 3.1000000089406967
+    },
+    {
+      "id": "carried-her-passive",
+      "viewport": 1280,
+      "utf16Length": 1000,
+      "renderMs": 3.2000000029802322
+    },
+    {
+      "id": "read-mixed-ambiguity",
+      "viewport": 1280,
+      "utf16Length": 1000,
+      "renderMs": 2.2999999970197678
+    },
+    {
+      "id": "read-mixed-ambiguity",
+      "viewport": 1280,
+      "utf16Length": 1000,
+      "renderMs": 2.300000011920929
+    },
+    {
+      "id": "read-mixed-ambiguity",
+      "viewport": 1280,
+      "utf16Length": 1000,
+      "renderMs": 3.2999999970197678
+    },
+    {
+      "id": "read-mixed-ambiguity",
+      "viewport": 1280,
+      "utf16Length": 1000,
+      "renderMs": 2.2000000029802322
+    },
+    {
+      "id": "read-mixed-ambiguity",
+      "viewport": 1280,
+      "utf16Length": 1000,
+      "renderMs": 2.2000000029802322
+    },
+    {
+      "id": "will-read-many-attributes",
+      "viewport": 1280,
+      "utf16Length": 1000,
+      "renderMs": 8.299999997019768
+    },
+    {
+      "id": "will-read-many-attributes",
+      "viewport": 1280,
+      "utf16Length": 1000,
+      "renderMs": 7.799999997019768
+    },
+    {
+      "id": "will-read-many-attributes",
+      "viewport": 1280,
+      "utf16Length": 1000,
+      "renderMs": 8.399999991059303
+    },
+    {
+      "id": "will-read-many-attributes",
+      "viewport": 1280,
+      "utf16Length": 1000,
+      "renderMs": 7.699999988079071
+    },
+    {
+      "id": "will-read-many-attributes",
+      "viewport": 1280,
+      "utf16Length": 1000,
+      "renderMs": 7.5
+    },
+    {
+      "id": "location-phrase-attributes",
+      "viewport": 1280,
+      "utf16Length": 1000,
+      "renderMs": 4.200000002980232
+    },
+    {
+      "id": "location-phrase-attributes",
+      "viewport": 1280,
+      "utf16Length": 1000,
+      "renderMs": 4.200000002980232
+    },
+    {
+      "id": "location-phrase-attributes",
+      "viewport": 1280,
+      "utf16Length": 1000,
+      "renderMs": 3
+    },
+    {
+      "id": "location-phrase-attributes",
+      "viewport": 1280,
+      "utf16Length": 1000,
+      "renderMs": 3.0999999940395355
+    },
+    {
+      "id": "location-phrase-attributes",
+      "viewport": 1280,
+      "utf16Length": 1000,
+      "renderMs": 2.8999999910593033
+    },
+    {
+      "id": "wh-second-frame-many-attributes",
+      "viewport": 1280,
+      "utf16Length": 1000,
+      "renderMs": 10
+    },
+    {
+      "id": "wh-second-frame-many-attributes",
+      "viewport": 1280,
+      "utf16Length": 1000,
+      "renderMs": 9.299999997019768
+    },
+    {
+      "id": "wh-second-frame-many-attributes",
+      "viewport": 1280,
+      "utf16Length": 1000,
+      "renderMs": 9.399999991059303
+    },
+    {
+      "id": "wh-second-frame-many-attributes",
+      "viewport": 1280,
+      "utf16Length": 1000,
+      "renderMs": 9
+    },
+    {
+      "id": "wh-second-frame-many-attributes",
+      "viewport": 1280,
+      "utf16Length": 1000,
+      "renderMs": 9.099999994039536
+    },
+    {
+      "id": "open-second-frame-many-attributes",
+      "viewport": 1280,
+      "utf16Length": 1000,
+      "renderMs": 5
+    },
+    {
+      "id": "open-second-frame-many-attributes",
+      "viewport": 1280,
+      "utf16Length": 1000,
+      "renderMs": 4.4000000059604645
+    },
+    {
+      "id": "open-second-frame-many-attributes",
+      "viewport": 1280,
+      "utf16Length": 1000,
+      "renderMs": 4.4000000059604645
+    },
+    {
+      "id": "open-second-frame-many-attributes",
+      "viewport": 1280,
+      "utf16Length": 1000,
+      "renderMs": 4.299999997019768
+    },
+    {
+      "id": "open-second-frame-many-attributes",
+      "viewport": 1280,
+      "utf16Length": 1000,
+      "renderMs": 4.200000002980232
+    },
+    {
+      "id": "read-her-question",
+      "viewport": 390,
+      "utf16Length": 1000,
+      "renderMs": 9.099999994039536
+    },
+    {
+      "id": "read-her-question",
+      "viewport": 390,
+      "utf16Length": 1000,
+      "renderMs": 7.9000000059604645
+    },
+    {
+      "id": "read-her-question",
+      "viewport": 390,
+      "utf16Length": 1000,
+      "renderMs": 7.700000002980232
+    },
+    {
+      "id": "read-her-question",
+      "viewport": 390,
+      "utf16Length": 1000,
+      "renderMs": 7.5999999940395355
+    },
+    {
+      "id": "read-her-question",
+      "viewport": 390,
+      "utf16Length": 1000,
+      "renderMs": 7.600000008940697
+    },
+    {
+      "id": "recipient-her",
+      "viewport": 390,
+      "utf16Length": 1000,
+      "renderMs": 8.099999994039536
+    },
+    {
+      "id": "recipient-her",
+      "viewport": 390,
+      "utf16Length": 1000,
+      "renderMs": 6.5
+    },
+    {
+      "id": "recipient-her",
+      "viewport": 390,
+      "utf16Length": 1000,
+      "renderMs": 6.5
+    },
+    {
+      "id": "recipient-her",
+      "viewport": 390,
+      "utf16Length": 1000,
+      "renderMs": 6.799999997019768
+    },
+    {
+      "id": "recipient-her",
+      "viewport": 390,
+      "utf16Length": 1000,
+      "renderMs": 6.5999999940395355
+    },
+    {
+      "id": "carried-her-passive",
+      "viewport": 390,
+      "utf16Length": 1000,
+      "renderMs": 2.7999999970197678
+    },
+    {
+      "id": "carried-her-passive",
+      "viewport": 390,
+      "utf16Length": 1000,
+      "renderMs": 2.9000000059604645
+    },
+    {
+      "id": "carried-her-passive",
+      "viewport": 390,
+      "utf16Length": 1000,
+      "renderMs": 2.9000000059604645
+    },
+    {
+      "id": "carried-her-passive",
+      "viewport": 390,
+      "utf16Length": 1000,
+      "renderMs": 3
+    },
+    {
+      "id": "carried-her-passive",
+      "viewport": 390,
+      "utf16Length": 1000,
+      "renderMs": 3.5
+    },
+    {
+      "id": "read-mixed-ambiguity",
+      "viewport": 390,
+      "utf16Length": 1000,
+      "renderMs": 2.2000000029802322
+    },
+    {
+      "id": "read-mixed-ambiguity",
+      "viewport": 390,
+      "utf16Length": 1000,
+      "renderMs": 2
+    },
+    {
+      "id": "read-mixed-ambiguity",
+      "viewport": 390,
+      "utf16Length": 1000,
+      "renderMs": 2.2000000029802322
+    },
+    {
+      "id": "read-mixed-ambiguity",
+      "viewport": 390,
+      "utf16Length": 1000,
+      "renderMs": 2.2999999970197678
+    },
+    {
+      "id": "read-mixed-ambiguity",
+      "viewport": 390,
+      "utf16Length": 1000,
+      "renderMs": 2
+    },
+    {
+      "id": "will-read-many-attributes",
+      "viewport": 390,
+      "utf16Length": 1000,
+      "renderMs": 8.699999988079071
+    },
+    {
+      "id": "will-read-many-attributes",
+      "viewport": 390,
+      "utf16Length": 1000,
+      "renderMs": 8
+    },
+    {
+      "id": "will-read-many-attributes",
+      "viewport": 390,
+      "utf16Length": 1000,
+      "renderMs": 7.9000000059604645
+    },
+    {
+      "id": "will-read-many-attributes",
+      "viewport": 390,
+      "utf16Length": 1000,
+      "renderMs": 7.700000002980232
+    },
+    {
+      "id": "will-read-many-attributes",
+      "viewport": 390,
+      "utf16Length": 1000,
+      "renderMs": 9
+    },
+    {
+      "id": "location-phrase-attributes",
+      "viewport": 390,
+      "utf16Length": 1000,
+      "renderMs": 3
+    },
+    {
+      "id": "location-phrase-attributes",
+      "viewport": 390,
+      "utf16Length": 1000,
+      "renderMs": 3.2999999970197678
+    },
+    {
+      "id": "location-phrase-attributes",
+      "viewport": 390,
+      "utf16Length": 1000,
+      "renderMs": 3.1000000089406967
+    },
+    {
+      "id": "location-phrase-attributes",
+      "viewport": 390,
+      "utf16Length": 1000,
+      "renderMs": 3
+    },
+    {
+      "id": "location-phrase-attributes",
+      "viewport": 390,
+      "utf16Length": 1000,
+      "renderMs": 3.2000000029802322
+    },
+    {
+      "id": "wh-second-frame-many-attributes",
+      "viewport": 390,
+      "utf16Length": 1000,
+      "renderMs": 10.200000002980232
+    },
+    {
+      "id": "wh-second-frame-many-attributes",
+      "viewport": 390,
+      "utf16Length": 1000,
+      "renderMs": 9.400000005960464
+    },
+    {
+      "id": "wh-second-frame-many-attributes",
+      "viewport": 390,
+      "utf16Length": 1000,
+      "renderMs": 8.599999994039536
+    },
+    {
+      "id": "wh-second-frame-many-attributes",
+      "viewport": 390,
+      "utf16Length": 1000,
+      "renderMs": 8.899999991059303
+    },
+    {
+      "id": "wh-second-frame-many-attributes",
+      "viewport": 390,
+      "utf16Length": 1000,
+      "renderMs": 10
+    },
+    {
+      "id": "open-second-frame-many-attributes",
+      "viewport": 390,
+      "utf16Length": 1000,
+      "renderMs": 3.8999999910593033
+    },
+    {
+      "id": "open-second-frame-many-attributes",
+      "viewport": 390,
+      "utf16Length": 1000,
+      "renderMs": 3.8999999910593033
+    },
+    {
+      "id": "open-second-frame-many-attributes",
+      "viewport": 390,
+      "utf16Length": 1000,
+      "renderMs": 4.300000011920929
+    },
+    {
+      "id": "open-second-frame-many-attributes",
+      "viewport": 390,
+      "utf16Length": 1000,
+      "renderMs": 4.699999988079071
+    },
+    {
+      "id": "open-second-frame-many-attributes",
+      "viewport": 390,
+      "utf16Length": 1000,
+      "renderMs": 4.5
+    }
+  ],
+  "longTasks": [],
+  "offlineRequests": 0,
+  "pageErrors": [],
+  "storage": {
+    "local": [],
+    "session": [],
+    "databases": [],
+    "cookie": ""
+  },
+  "refreshReset": true,
+  "keyboardShortcuts": [
+    "Control+Enter",
+    "Meta+Enter"
+  ],
+  "querySearchAndFilterFocus": true,
+  "queryExamplesInvalidateAndFocus": true,
+  "pendingEditAndInsertionCancellation": true,
+  "continuousClicks": true,
+  "failureRetry": true,
+  "unknownWordOriginalSelection": true,
+  "limitation": "Local fixed-input acceptance; no user inputs recorded. Five click-to-render samples per pressure case per viewport, navigation is full page loading. Native select values are chosen with semantic selectOption after real Tab focus; popup keyboard behavior was separately validated in stage31."
+}

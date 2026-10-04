@@ -1,0 +1,86 @@
+{
+  "stage": 30,
+  "frames": {
+    "eat-sv": {
+      "meaning": "泛指进食",
+      "subject": "person",
+      "allowProgressive": true,
+      "allowPerfect": false,
+      "entryId": "verb:lexical:eat"
+    },
+    "read-sv": {
+      "meaning": "泛指阅读",
+      "subject": "person",
+      "allowProgressive": true,
+      "allowPerfect": false,
+      "entryId": "verb:lexical:read"
+    },
+    "write-sv": {
+      "meaning": "泛指写作",
+      "subject": "person",
+      "allowProgressive": true,
+      "allowPerfect": false,
+      "entryId": "verb:lexical:write"
+    },
+    "open-sv": {
+      "meaning": "门或窗自行打开",
+      "subject": "door-window-it",
+      "allowProgressive": true,
+      "allowPerfect": false,
+      "entryId": "verb:lexical:open"
+    },
+    "close-sv": {
+      "meaning": "门或窗自行关闭",
+      "subject": "door-window-it",
+      "allowProgressive": true,
+      "allowPerfect": false,
+      "entryId": "verb:lexical:close"
+    }
+  },
+  "purposes": [
+    "declarative",
+    "interrogative"
+  ],
+  "polarities": {
+    "declarative": [
+      "positive",
+      "negative"
+    ],
+    "interrogative": [
+      "positive"
+    ]
+  },
+  "tenses": [
+    "present",
+    "past"
+  ],
+  "modals": [
+    "can",
+    "will"
+  ],
+  "modalAspects": [
+    "simple"
+  ],
+  "questionTypes": [
+    "yes-no",
+    "wh-subject",
+    "wh-adverbial"
+  ],
+  "whAdverbials": [
+    "when",
+    "why"
+  ],
+  "progressiveQuestionTypes": [
+    "yes-no"
+  ],
+  "clausePositions": [
+    "single"
+  ],
+  "locationTail": false,
+  "passivePromotion": null,
+  "correctionRequires": [
+    "unique-complete-candidate",
+    "single-form-error"
+  ],
+  "candidateEquivalence": "only-identical-entry-frame-form-kind-deduplication-no-cross-frame-merging"
+}

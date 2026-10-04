@@ -1,0 +1,288 @@
+{
+  "stage": 33,
+  "phase": "33E",
+  "status": "human-fixed-before-first-query",
+  "baselineHash": "cbf0335c950d49de9626e03e09956bcdf91e20ee245eed6970201b52bf4ed180",
+  "independence": "Eight new workflows use an empty mismatched POS filter followed by a target filter transition and scope/source/example inspection. Workflow signature is normalized word + ordered filters + ordered actions; words may recur because required capability families are fixed. Reviewed UI insertions are historical teaching regressions, never independent grammar samples.",
+  "fixtures": [
+    {
+      "id": "33e-query-01",
+      "query": "am",
+      "filters": [
+        "noun",
+        "function-word"
+      ],
+      "expectedIds": [
+        "function-word:auxiliary:am"
+      ],
+      "frameIds": [
+        "location",
+        "primary"
+      ],
+      "uses": [
+        "finite-be"
+      ],
+      "heads": null,
+      "legacyVerbs": null,
+      "example": "I am kind.",
+      "exampleExpectedStatus": "complete",
+      "examplePattern": "SVC",
+      "actions": [
+        "mismatched-filter-empty",
+        "switch-filter",
+        "inspect-scoped-uses",
+        "inspect-version-and-source",
+        "insert-reviewed-example",
+        "editor-focus",
+        "old-result-cleared",
+        "explicit-analyze"
+      ]
+    },
+    {
+      "id": "33e-query-02",
+      "query": "was",
+      "filters": [
+        "noun",
+        "function-word"
+      ],
+      "expectedIds": [
+        "function-word:auxiliary:was"
+      ],
+      "frameIds": [
+        "location",
+        "primary"
+      ],
+      "uses": [
+        "finite-be"
+      ],
+      "heads": null,
+      "legacyVerbs": null,
+      "example": "The book was near the bus.",
+      "exampleExpectedStatus": "complete",
+      "examplePattern": "SVC",
+      "actions": [
+        "mismatched-filter-empty",
+        "switch-filter",
+        "inspect-scoped-uses",
+        "inspect-version-and-source",
+        "insert-reviewed-example",
+        "editor-focus",
+        "old-result-cleared",
+        "explicit-analyze"
+      ]
+    },
+    {
+      "id": "33e-query-03",
+      "query": "where",
+      "filters": [
+        "noun",
+        "function-word"
+      ],
+      "expectedIds": [
+        "function:question:where"
+      ],
+      "frameIds": [],
+      "uses": [
+        "wh-adverbial",
+        "wh-complement"
+      ],
+      "heads": null,
+      "legacyVerbs": null,
+      "example": "Where is the book?",
+      "exampleExpectedStatus": "complete",
+      "examplePattern": "SVC",
+      "actions": [
+        "mismatched-filter-empty",
+        "switch-filter",
+        "inspect-scoped-uses",
+        "inspect-version-and-source",
+        "insert-reviewed-example",
+        "editor-focus",
+        "old-result-cleared",
+        "explicit-analyze"
+      ]
+    },
+    {
+      "id": "33e-query-04",
+      "query": "in",
+      "filters": [
+        "noun",
+        "function-word"
+      ],
+      "expectedIds": [
+        "function:location:in"
+      ],
+      "frameIds": [],
+      "uses": [
+        "location-preposition"
+      ],
+      "heads": [
+        "bus",
+        "car"
+      ],
+      "legacyVerbs": [
+        "dance",
+        "run",
+        "sleep",
+        "wait",
+        "walk",
+        "work"
+      ],
+      "example": "The book is in the car.",
+      "exampleExpectedStatus": "complete",
+      "examplePattern": "SVC",
+      "actions": [
+        "mismatched-filter-empty",
+        "switch-filter",
+        "inspect-scoped-uses",
+        "inspect-version-and-source",
+        "insert-reviewed-example",
+        "editor-focus",
+        "old-result-cleared",
+        "explicit-analyze"
+      ]
+    },
+    {
+      "id": "33e-query-05",
+      "query": "on",
+      "filters": [
+        "noun",
+        "function-word"
+      ],
+      "expectedIds": [
+        "function:location:on"
+      ],
+      "frameIds": [],
+      "uses": [
+        "location-preposition"
+      ],
+      "heads": [
+        "chair",
+        "table"
+      ],
+      "legacyVerbs": [
+        "dance",
+        "run",
+        "sleep",
+        "wait",
+        "walk",
+        "work"
+      ],
+      "example": "She sleeps on the chair.",
+      "exampleExpectedStatus": "complete",
+      "examplePattern": "SV",
+      "actions": [
+        "mismatched-filter-empty",
+        "switch-filter",
+        "inspect-scoped-uses",
+        "inspect-version-and-source",
+        "insert-reviewed-example",
+        "editor-focus",
+        "old-result-cleared",
+        "explicit-analyze"
+      ]
+    },
+    {
+      "id": "33e-query-06",
+      "query": "under",
+      "filters": [
+        "noun",
+        "function-word"
+      ],
+      "expectedIds": [
+        "function:location:under"
+      ],
+      "frameIds": [],
+      "uses": [
+        "location-preposition"
+      ],
+      "heads": [
+        "chair",
+        "table"
+      ],
+      "legacyVerbs": [
+        "sleep",
+        "wait"
+      ],
+      "example": "She sleeps under the table.",
+      "exampleExpectedStatus": "complete",
+      "examplePattern": "SV",
+      "actions": [
+        "mismatched-filter-empty",
+        "switch-filter",
+        "inspect-scoped-uses",
+        "inspect-version-and-source",
+        "insert-reviewed-example",
+        "editor-focus",
+        "old-result-cleared",
+        "explicit-analyze"
+      ]
+    },
+    {
+      "id": "33e-query-07",
+      "query": "near",
+      "filters": [
+        "noun",
+        "function-word"
+      ],
+      "expectedIds": [
+        "function:location:near"
+      ],
+      "frameIds": [],
+      "uses": [
+        "location-preposition"
+      ],
+      "heads": [
+        "bus",
+        "car",
+        "chair",
+        "table"
+      ],
+      "legacyVerbs": [
+        "dance",
+        "run",
+        "sleep",
+        "wait",
+        "walk",
+        "work"
+      ],
+      "example": "The book is near the bus.",
+      "exampleExpectedStatus": "complete",
+      "examplePattern": "SVC",
+      "actions": [
+        "mismatched-filter-empty",
+        "switch-filter",
+        "inspect-scoped-uses",
+        "inspect-version-and-source",
+        "insert-reviewed-example",
+        "editor-focus",
+        "old-result-cleared",
+        "explicit-analyze"
+      ]
+    },
+    {
+      "id": "33e-query-08",
+      "query": "satellite",
+      "filters": [
+        "function-word",
+        "all"
+      ],
+      "expectedIds": [],
+      "frameIds": [],
+      "uses": [],
+      "heads": null,
+      "legacyVerbs": null,
+      "example": null,
+      "exampleExpectedStatus": null,
+      "examplePattern": null,
+      "actions": [
+        "mismatched-filter-empty",
+        "switch-filter",
+        "inspect-scoped-uses",
+        "inspect-version-and-source",
+        "unlisted-not-spelling-error",
+        "no-online-lookup"
+      ]
+    }
+  ]
+}

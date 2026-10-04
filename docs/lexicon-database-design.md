@@ -13,7 +13,7 @@
 | lexicon_entries | id, created_at | PK(id)；稳定身份，非用户输入 |
 | lexicon_revisions | id, entry_id, revision_number, lemma, part_of_speech, sense, status, person, initial_sound, adjective_uses_json, marker_kind, attributes_json, content_hash | PK(id)、UNIQUE(entry_id, revision_number)；entry FK；status=draft/approved/rejected；属性按 POS 校验 |
 | lexicon_forms | revision_id, form_kind, surface, initial_sound | PK(revision_id, form_kind)；revision FK；**surface 非唯一**；noun 必须 singular/plural，verb 必须 base/third/past/participle/progressive，adjective 必须 positive |
-| lexicon_frames | id, revision_id, pattern, recipient, complement, allow_progressive, allow_perfect, passive_promotion, allowed_purposes_json, allowed_polarities_json, fixed_tail | PK(revision_id,id)；revision FK；pattern 属于五种句型，限定组合校验 |
+| lexicon_frames | id, revision_id, pattern, recipient, complement, allow_progressive, allow_perfect, passive_promotion, allowed_purposes_json, allowed_polarities_json, fixed_tail, location_json | PK(revision_id,id)；revision FK；pattern 属于五种句型，限定组合校验 |
 | lexicon_sources | id, version, title, license, attribution, frozen_hash | PK(id)；已被审核引用的来源不可修改，来源更新用新 id/version |
 | lexicon_revision_sources | revision_id, source_id | 复合 PK；两个 FK，审核必须至少有一项来源 |
 | lexicon_reviews | id, revision_id, content_hash, decision, reviewer, reviewed_at | PK(id)；revision FK；decision=approve/reject；绑定完整修订；不可修改或删除 |
@@ -40,7 +40,7 @@ be 的 SVC、go 的固定 to school、SVOO 人物接受者、SVO/SVOC 的宾格�
 
 固定格式版本 `1`。固定发布文件路径 `data/lexicon/releases/<lexiconVersion>.json`，客户端生成文件 `lib/grammar/generated/lexicon.json`，应用组合清单 `data/analysis-manifest.json`。阶段 20 初次发布只含旧词，不含阶段 19 的扩容计划数据。
 
-发布文件顶层为 `{ formatVersion, lexiconVersion, lexiconHash, sources, entries, reviews }`。每个 entry 为 `{ id, revisionId, lemma, partOfSpeech, sense, attributes, forms, frames, sourceIds, contentHash, reviewId }`。各 POS attributes 完全校验，禁止意外字段。每个 form 为 `{ kind, surface, initialSound }`，无首音需求时 initialSound=null。每个 frame 为 `{ id, pattern, recipient, complement, allowProgressive, allowPerfect, passivePromotion, allowedPurposes, allowedPolarities, fixedTail }`。review 为 `{ id, revisionId, contentHash, decision, reviewer }`；发布/审核时间戳只保存在工作库，不进入可重建快照的内容哈希。
+发布文件顶层为 `{ formatVersion, lexiconVersion, lexiconHash, sources, entries, reviews }`。每个 entry 为 `{ id, revisionId, lemma, partOfSpeech, sense, attributes, forms, frames, sourceIds, contentHash, reviewId }`。各 POS attributes 完全校验，禁止意外字段。每个 form 为 `{ kind, surface, initialSound }`，无首音需求时 initialSound=null。每个 frame 为 `{ id, pattern, recipient, complement, allowProgressive, allowPerfect, passivePromotion, allowedPurposes, allowedPolarities, fixedTail, location }`。review 为 `{ id, revisionId, contentHash, decision, reviewer }`；发布/审核时间戳只保存在工作库，不进入可重建快照的内容哈希。
 
 词形 kind 和 frame 字段按当前词典准确迁移。recipient 只为 null/person；complement 为 null/single-adjective/noun-or-single-adjective；passivePromotion 为 null/direct-object/direct-object-or-recipient。固定搭配枚举仅开放代码已实现的组合；不能通过添加任意 frame JSON 启用语法。have 的 possession frame 不允许进行、完成或被动。
 
@@ -50,7 +50,7 @@ be 的 SVC、go 的固定 to school、SVOO 人物接受者、SVO/SVOC 的宾格�
 
 阶段 20A 已交付 init/migrate、import、query、revise、validate 和完整修订 show；20B/C 已交付审核、发布、重建及客户端命令。完整维护 CLI 交付命令：init/migrate、import、query（lemma/surface/POS）、revise、validate、review、publish、export-release、rebuild、generate-client、verify。无环境数据库时 build 仍使用固定发布和生成客户端，缺失/非法则明确失败，不回退旧手写词典。构建不得悄悄生成或审核新内容；生成是显式开发命令，verify 检查确定性。
 
-当前联合清单为规则 `0.22.4` + 词典 `1.7.0`，231 个完整词条、100 个实义词元与 105 个实义搭配；1.0.0–1.6.0 的历史发布仍冻结保存。阶段 26 从开源固定词形子集新增 73 个审核动词，见 [阶段 26](archive/stage26-scope.md)。新增 57 条草稿来源、逐词范围和发布重现见 [阶段 21](archive/stage21-scope.md)。`rebuild` 使用当前清单锁定的版本，不默认回到旧种子。
+当前联合清单为规则 `0.23.1` + 词典 `1.8.1`（formatVersion=2），232 个完整词条、100 个实义词元与 105 个实义搭配；1.0.0–1.7.0 的历史发布仍冻结保存。阶段 26 从开源固定词形子集新增 73 个审核动词，见 [阶段 26](archive/stage26-scope.md)。新增 57 条草稿来源、逐词范围和发布重现见 [阶段 21](archive/stage21-scope.md)。`rebuild` 使用当前清单锁定的版本，不默认回到旧种子。
 
 ## 分析版本与失效
 
@@ -62,7 +62,7 @@ be 的 SVC、go 的固定 to school、SVOO 人物接受者、SVO/SVOC 的宾格�
 
 统一 candidate 查询覆盖简单句、所有用途、谓语链和两分句。枚举候选与完整搭配使用同一次共享计算预算；耗尽返回 budget-exceeded，无节点/建议。同形/多搭配能产生多个完整有效解释时返回 ambiguous，不以 first/find 偷选。初始化体积、时间及候选数需在 20C 实测。
 
-## 阶段 27–30 当前约束
+## 阶段 27–30 历史数据约束（格式 1）
 
 frame 的 fixedTail 仍为必填字段，有限域为 null、"to school"、"location:in,on,near"、"location:in,on,under,near"。null 不提供额外尾部；to school 保留 go 的固定尾部；location 只为六个审核 SV 提供可省略的单地点短语许可。schema、SQL 0002、CLI 与客户端共同校验，不增加可选字段或旧格式默认值。迁移逐列保留既有行并重建全部 frame 冻结及集合触发器。
 
@@ -85,3 +85,15 @@ SQL 的 person/initial_sound/adjective_uses_json/marker_kind 是 attributes 的�
 审核/发布表与基础冻结约束在 20A 建库时预置，20A 交付时尚无审核/发布 CLI、发布产物或重建功能；后续 20B/C 已交付并验收。记录见 [20A](archive/stage20a-scope.md)。
 
 阶段 31 本地查询复用该客户端快照，不读取 SQLite。能力说明与规则/发布版本和哈希绑定，教学例句逐词条/搭配固定；CLI `verify` 和构建检查元数据版本、例句覆盖和功能用途说明。详情与证据见 [阶段 31](archive/stage31-scope.md)。
+
+## 阶段 33B 当前唯一格式 2
+
+frame.location 必填，可为 null，非空时严格为 policyId、attachment、presence。新 finite-be 的独立 location 搭配为 SVC / location-phrase / basic-object-location / complement / required；primary 搭配不变。六个旧 SV 使用两种 legacy 政策 / adverbial / optional，保留原许可。fixedTail 当前仅 null / to school。地点介词必填 attributes.locationHeadPolicies，basic 政策列出已选择名词词条 ID，legacy 的 null 表示完整审核名词短语，缺键表示禁止。
+
+`legacy-sv-location` 与 `legacy-sv-under-location` 的值只能为 null，不接受中心词数组；旧 SV 解析没有按中心词限制的权限。词条归一化与集合校验使用同一政策结构，导入、修订、数据库审核、发布及发布校验均拒绝此类数组，避免审核数据含有运行时不会执行的限制。`basic-object-location` 仍要求非空、无重复的已选择名词 ID 数组。固定发布及客户端快照无需变更。
+
+where 新增 wh-complement，结果协议限定原文 where + finite-be 的简单 SVC、simple、active、无情态及角色位置和时态。词库收录不代表解析已开放，规则实现待 33C，界面及查询扩展待 33D。
+
+默认库 `.lexicon/working-v2.sqlite`；0003 仅允许空旧结构库升级，非空格式 1 数据库原子拒绝，旧发布及 SQL 0000–0002 原样保留。生产工具只接受格式 2。`current-seed.json` 为最小维护样例；stage33-import / selection / 1.8.0 为完整发布。110 条新修订重新绑定审核，121 条未改内容与审核身份保留。历史格式测试使用固定提交的测试专用工具，所有旧句子行为仍验证当前分析器。详细证据见 [33B 实施记录](stage33b-protocol-lexicon.md)。
+
+33C 在保留 1.8.0 全部词条和审核的基础上增加 bag/bags，以满足先前冻结的正确句，发布 1.8.1；地点政策不增加 bag。新解析已实现，范围见 [33C 实施记录](stage33c-location-parser.md)。

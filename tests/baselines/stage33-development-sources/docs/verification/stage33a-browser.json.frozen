@@ -1,0 +1,77 @@
+{
+  "stage": 33,
+  "phase": "33A-current-behavior-baseline-only",
+  "date": "2026-10-04",
+  "service": "development",
+  "url": "http://127.0.0.1:5188/",
+  "automation": "Codex in-app browser via cua_repl",
+  "ruleVersion": "0.22.4",
+  "lexiconVersion": "1.7.0",
+  "viewports": [
+    {
+      "width": 1280,
+      "height": 1000
+    },
+    {
+      "width": 390,
+      "height": 844
+    }
+  ],
+  "flows": [
+    {
+      "id": "default-SVOO",
+      "input": "The teacher gave the students a useful book yesterday.",
+      "result": "complete; SVOO/past; five original components"
+    },
+    {
+      "id": "desktop-old-location",
+      "input": "She sleeps near the tall table.",
+      "result": "complete SV; near the tall table is adverbial; tall child can be selected and returned"
+    },
+    {
+      "id": "desktop-old-wh",
+      "input": "Where does she work?",
+      "result": "complete wh-adverbial/SV; does and work exclude she"
+    },
+    {
+      "id": "mobile-old-negative-correction",
+      "input": "She aren't happy.",
+      "control": "She isn't happy.",
+      "result": "partial one whole-contraction AGREEMENT-001 edit; apply Enter yields complete SVC"
+    },
+    {
+      "id": "edit-invalidation",
+      "input": "She smiles.",
+      "result": "old nodes and suggestions disappear; waiting for analysis"
+    },
+    {
+      "id": "mobile-query",
+      "query": "where",
+      "pos": "function-word",
+      "result": "one function-word entry; old action-adverbial description; example inserted with Enter and analyzed with Meta+Enter"
+    },
+    {
+      "id": "refresh-reset",
+      "result": "default sentence, waiting state, collapsed dictionary; empty search and all POS from default controls"
+    }
+  ],
+  "shortcuts": [
+    "Control+Enter",
+    "Meta+Enter"
+  ],
+  "mobileNoHorizontalOverflow": true,
+  "capturedErrorLogs": [],
+  "screenshot": "docs/verification/stage33a-mobile.png",
+  "screenshotManuallyReviewed": true,
+  "newStage33BehaviorTestedInBrowser": false,
+  "offlineAuditPerformed": false,
+  "persistentStorageAuditPerformed": false,
+  "finalBuildBrowserAcceptancePerformed": false,
+  "hmrAndPerformanceAcceptancePerformed": false,
+  "notes": [
+    "Only synthetic project fixture/example inputs used",
+    "Python Playwright was unavailable; used the built-in purpose-specific browser API",
+    "Viewport override reset and default page restored after checks",
+    "This evidence is a baseline, not stage33 feature delivery"
+  ]
+}

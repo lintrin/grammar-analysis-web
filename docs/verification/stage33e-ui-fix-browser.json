@@ -1,0 +1,262 @@
+{
+  "stage": "33E",
+  "fix": "Complete sentence key replaces repeated title; teaching buttons preserve button focus, dictionary insertions use editor focus",
+  "checks": [
+    {
+      "service": "development",
+      "viewport": 1280,
+      "flow": "teaching-button-after-key-fix",
+      "exampleNumber": 1,
+      "passed": true
+    },
+    {
+      "service": "development",
+      "viewport": 1280,
+      "flow": "teaching-button-after-key-fix",
+      "exampleNumber": 2,
+      "passed": true
+    },
+    {
+      "service": "development",
+      "viewport": 1280,
+      "flow": "teaching-button-after-key-fix",
+      "exampleNumber": 3,
+      "passed": true
+    },
+    {
+      "service": "development",
+      "viewport": 1280,
+      "flow": "teaching-button-after-key-fix",
+      "exampleNumber": 4,
+      "passed": true
+    },
+    {
+      "service": "development",
+      "viewport": 1280,
+      "flow": "teaching-button-after-key-fix",
+      "exampleNumber": 5,
+      "passed": true
+    },
+    {
+      "service": "development",
+      "viewport": 1280,
+      "flow": "teaching-button-after-key-fix",
+      "exampleNumber": 6,
+      "passed": true
+    },
+    {
+      "service": "development",
+      "viewport": 1280,
+      "flow": "teaching-button-after-key-fix",
+      "exampleNumber": 7,
+      "passed": true
+    },
+    {
+      "service": "development",
+      "viewport": 1280,
+      "flow": "teaching-button-after-key-fix",
+      "exampleNumber": 8,
+      "passed": true
+    },
+    {
+      "service": "development",
+      "viewport": 1280,
+      "flow": "no-duplicate-key-console-warning",
+      "passed": true,
+      "duplicateWarnings": 0,
+      "otherWarningsOrErrors": 0
+    },
+    {
+      "service": "development",
+      "viewport": 390,
+      "flow": "teaching-button-after-key-fix",
+      "exampleNumber": 1,
+      "passed": true
+    },
+    {
+      "service": "development",
+      "viewport": 390,
+      "flow": "teaching-button-after-key-fix",
+      "exampleNumber": 2,
+      "passed": true
+    },
+    {
+      "service": "development",
+      "viewport": 390,
+      "flow": "teaching-button-after-key-fix",
+      "exampleNumber": 3,
+      "passed": true
+    },
+    {
+      "service": "development",
+      "viewport": 390,
+      "flow": "teaching-button-after-key-fix",
+      "exampleNumber": 4,
+      "passed": true
+    },
+    {
+      "service": "development",
+      "viewport": 390,
+      "flow": "teaching-button-after-key-fix",
+      "exampleNumber": 5,
+      "passed": true
+    },
+    {
+      "service": "development",
+      "viewport": 390,
+      "flow": "teaching-button-after-key-fix",
+      "exampleNumber": 6,
+      "passed": true
+    },
+    {
+      "service": "development",
+      "viewport": 390,
+      "flow": "teaching-button-after-key-fix",
+      "exampleNumber": 7,
+      "passed": true
+    },
+    {
+      "service": "development",
+      "viewport": 390,
+      "flow": "teaching-button-after-key-fix",
+      "exampleNumber": 8,
+      "passed": true
+    },
+    {
+      "service": "development",
+      "viewport": 390,
+      "flow": "no-duplicate-key-console-warning",
+      "passed": true,
+      "duplicateWarnings": 0,
+      "otherWarningsOrErrors": 0
+    },
+    {
+      "service": "build",
+      "viewport": 1280,
+      "flow": "teaching-button-after-key-fix",
+      "exampleNumber": 1,
+      "passed": true
+    },
+    {
+      "service": "build",
+      "viewport": 1280,
+      "flow": "teaching-button-after-key-fix",
+      "exampleNumber": 2,
+      "passed": true
+    },
+    {
+      "service": "build",
+      "viewport": 1280,
+      "flow": "teaching-button-after-key-fix",
+      "exampleNumber": 3,
+      "passed": true
+    },
+    {
+      "service": "build",
+      "viewport": 1280,
+      "flow": "teaching-button-after-key-fix",
+      "exampleNumber": 4,
+      "passed": true
+    },
+    {
+      "service": "build",
+      "viewport": 1280,
+      "flow": "teaching-button-after-key-fix",
+      "exampleNumber": 5,
+      "passed": true
+    },
+    {
+      "service": "build",
+      "viewport": 1280,
+      "flow": "teaching-button-after-key-fix",
+      "exampleNumber": 6,
+      "passed": true
+    },
+    {
+      "service": "build",
+      "viewport": 1280,
+      "flow": "teaching-button-after-key-fix",
+      "exampleNumber": 7,
+      "passed": true
+    },
+    {
+      "service": "build",
+      "viewport": 1280,
+      "flow": "teaching-button-after-key-fix",
+      "exampleNumber": 8,
+      "passed": true
+    },
+    {
+      "service": "build",
+      "viewport": 1280,
+      "flow": "no-duplicate-key-console-warning",
+      "passed": true,
+      "duplicateWarnings": 0,
+      "otherWarningsOrErrors": 0
+    },
+    {
+      "service": "build",
+      "viewport": 390,
+      "flow": "teaching-button-after-key-fix",
+      "exampleNumber": 1,
+      "passed": true
+    },
+    {
+      "service": "build",
+      "viewport": 390,
+      "flow": "teaching-button-after-key-fix",
+      "exampleNumber": 2,
+      "passed": true
+    },
+    {
+      "service": "build",
+      "viewport": 390,
+      "flow": "teaching-button-after-key-fix",
+      "exampleNumber": 3,
+      "passed": true
+    },
+    {
+      "service": "build",
+      "viewport": 390,
+      "flow": "teaching-button-after-key-fix",
+      "exampleNumber": 4,
+      "passed": true
+    },
+    {
+      "service": "build",
+      "viewport": 390,
+      "flow": "teaching-button-after-key-fix",
+      "exampleNumber": 5,
+      "passed": true
+    },
+    {
+      "service": "build",
+      "viewport": 390,
+      "flow": "teaching-button-after-key-fix",
+      "exampleNumber": 6,
+      "passed": true
+    },
+    {
+      "service": "build",
+      "viewport": 390,
+      "flow": "teaching-button-after-key-fix",
+      "exampleNumber": 7,
+      "passed": true
+    },
+    {
+      "service": "build",
+      "viewport": 390,
+      "flow": "teaching-button-after-key-fix",
+      "exampleNumber": 8,
+      "passed": true
+    },
+    {
+      "service": "build",
+      "viewport": 390,
+      "flow": "no-duplicate-key-console-warning",
+      "passed": true,
+      "duplicateWarnings": 0,
+      "otherWarningsOrErrors": 0
+    }
+  ]
+}

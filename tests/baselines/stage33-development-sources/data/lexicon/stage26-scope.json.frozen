@@ -1,0 +1,1321 @@
+{
+  "scopeVersion": 1,
+  "targetVerbLemmas": 100,
+  "sourceCommit": "b7699808106a4ce843fc7f0e8e5d87fcb84cc636",
+  "verbs": [
+    {
+      "lemma": "arrive",
+      "forms": {
+        "base": "arrive",
+        "third": "arrives",
+        "past": "arrived",
+        "participle": "arrived",
+        "progressive": "arriving"
+      },
+      "pattern": "SV",
+      "progressive": true,
+      "perfect": true,
+      "passive": false,
+      "imperative": true,
+      "object": null,
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "stay",
+      "forms": {
+        "base": "stay",
+        "third": "stays",
+        "past": "stayed",
+        "participle": "stayed",
+        "progressive": "staying"
+      },
+      "pattern": "SV",
+      "progressive": true,
+      "perfect": true,
+      "passive": false,
+      "imperative": true,
+      "object": null,
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "work",
+      "forms": {
+        "base": "work",
+        "third": "works",
+        "past": "worked",
+        "participle": "worked",
+        "progressive": "working"
+      },
+      "pattern": "SV",
+      "progressive": true,
+      "perfect": true,
+      "passive": false,
+      "imperative": true,
+      "object": null,
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "play",
+      "forms": {
+        "base": "play",
+        "third": "plays",
+        "past": "played",
+        "participle": "played",
+        "progressive": "playing"
+      },
+      "pattern": "SV",
+      "progressive": true,
+      "perfect": true,
+      "passive": false,
+      "imperative": true,
+      "object": null,
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "talk",
+      "forms": {
+        "base": "talk",
+        "third": "talks",
+        "past": "talked",
+        "participle": "talked",
+        "progressive": "talking"
+      },
+      "pattern": "SV",
+      "progressive": true,
+      "perfect": true,
+      "passive": false,
+      "imperative": true,
+      "object": null,
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "travel",
+      "forms": {
+        "base": "travel",
+        "third": "travels",
+        "past": "traveled",
+        "participle": "traveled",
+        "progressive": "traveling"
+      },
+      "pattern": "SV",
+      "progressive": true,
+      "perfect": true,
+      "passive": false,
+      "imperative": true,
+      "object": null,
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "jump",
+      "forms": {
+        "base": "jump",
+        "third": "jumps",
+        "past": "jumped",
+        "participle": "jumped",
+        "progressive": "jumping"
+      },
+      "pattern": "SV",
+      "progressive": true,
+      "perfect": true,
+      "passive": false,
+      "imperative": true,
+      "object": null,
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "swim",
+      "forms": {
+        "base": "swim",
+        "third": "swims",
+        "past": "swam",
+        "participle": "swum",
+        "progressive": "swimming"
+      },
+      "pattern": "SV",
+      "progressive": true,
+      "perfect": true,
+      "passive": false,
+      "imperative": true,
+      "object": null,
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "sit",
+      "forms": {
+        "base": "sit",
+        "third": "sits",
+        "past": "sat",
+        "participle": "sat",
+        "progressive": "sitting"
+      },
+      "pattern": "SV",
+      "progressive": true,
+      "perfect": true,
+      "passive": false,
+      "imperative": true,
+      "object": null,
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "stand",
+      "forms": {
+        "base": "stand",
+        "third": "stands",
+        "past": "stood",
+        "participle": "stood",
+        "progressive": "standing"
+      },
+      "pattern": "SV",
+      "progressive": true,
+      "perfect": true,
+      "passive": false,
+      "imperative": true,
+      "object": null,
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "fall",
+      "forms": {
+        "base": "fall",
+        "third": "falls",
+        "past": "fell",
+        "participle": "fallen",
+        "progressive": "falling"
+      },
+      "pattern": "SV",
+      "progressive": true,
+      "perfect": true,
+      "passive": false,
+      "imperative": true,
+      "object": null,
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "rise",
+      "forms": {
+        "base": "rise",
+        "third": "rises",
+        "past": "rose",
+        "participle": "risen",
+        "progressive": "rising"
+      },
+      "pattern": "SV",
+      "progressive": true,
+      "perfect": true,
+      "passive": false,
+      "imperative": true,
+      "object": null,
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "exercise",
+      "forms": {
+        "base": "exercise",
+        "third": "exercises",
+        "past": "exercised",
+        "participle": "exercised",
+        "progressive": "exercising"
+      },
+      "pattern": "SV",
+      "progressive": true,
+      "perfect": true,
+      "passive": false,
+      "imperative": true,
+      "object": null,
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "rest",
+      "forms": {
+        "base": "rest",
+        "third": "rests",
+        "past": "rested",
+        "participle": "rested",
+        "progressive": "resting"
+      },
+      "pattern": "SV",
+      "progressive": true,
+      "perfect": true,
+      "passive": false,
+      "imperative": true,
+      "object": null,
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "disappear",
+      "forms": {
+        "base": "disappear",
+        "third": "disappears",
+        "past": "disappeared",
+        "participle": "disappeared",
+        "progressive": "disappearing"
+      },
+      "pattern": "SV",
+      "progressive": true,
+      "perfect": true,
+      "passive": false,
+      "imperative": true,
+      "object": null,
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "happen",
+      "forms": {
+        "base": "happen",
+        "third": "happens",
+        "past": "happened",
+        "participle": "happened",
+        "progressive": "happening"
+      },
+      "pattern": "SV",
+      "progressive": true,
+      "perfect": true,
+      "passive": false,
+      "imperative": false,
+      "object": null,
+      "recipient": null,
+      "subject": "It"
+    },
+    {
+      "lemma": "exist",
+      "forms": {
+        "base": "exist",
+        "third": "exists",
+        "past": "existed",
+        "participle": "existed",
+        "progressive": "existing"
+      },
+      "pattern": "SV",
+      "progressive": false,
+      "perfect": true,
+      "passive": false,
+      "imperative": false,
+      "object": null,
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "eat",
+      "forms": {
+        "base": "eat",
+        "third": "eats",
+        "past": "ate",
+        "participle": "eaten",
+        "progressive": "eating"
+      },
+      "pattern": "SVO",
+      "progressive": true,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "apple",
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "take",
+      "forms": {
+        "base": "take",
+        "third": "takes",
+        "past": "took",
+        "participle": "taken",
+        "progressive": "taking"
+      },
+      "pattern": "SVO",
+      "progressive": true,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "book",
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "greet",
+      "forms": {
+        "base": "greet",
+        "third": "greets",
+        "past": "greeted",
+        "participle": "greeted",
+        "progressive": "greeting"
+      },
+      "pattern": "SVO",
+      "progressive": true,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "teacher",
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "build",
+      "forms": {
+        "base": "build",
+        "third": "builds",
+        "past": "built",
+        "participle": "built",
+        "progressive": "building"
+      },
+      "pattern": "SVO",
+      "progressive": true,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "chair",
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "open",
+      "forms": {
+        "base": "open",
+        "third": "opens",
+        "past": "opened",
+        "participle": "opened",
+        "progressive": "opening"
+      },
+      "pattern": "SVO",
+      "progressive": true,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "door",
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "close",
+      "forms": {
+        "base": "close",
+        "third": "closes",
+        "past": "closed",
+        "participle": "closed",
+        "progressive": "closing"
+      },
+      "pattern": "SVO",
+      "progressive": true,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "window",
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "clean",
+      "forms": {
+        "base": "clean",
+        "third": "cleans",
+        "past": "cleaned",
+        "participle": "cleaned",
+        "progressive": "cleaning"
+      },
+      "pattern": "SVO",
+      "progressive": true,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "table",
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "wash",
+      "forms": {
+        "base": "wash",
+        "third": "washes",
+        "past": "washed",
+        "participle": "washed",
+        "progressive": "washing"
+      },
+      "pattern": "SVO",
+      "progressive": true,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "car",
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "cook",
+      "forms": {
+        "base": "cook",
+        "third": "cooks",
+        "past": "cooked",
+        "participle": "cooked",
+        "progressive": "cooking"
+      },
+      "pattern": "SVO",
+      "progressive": true,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "egg",
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "cut",
+      "forms": {
+        "base": "cut",
+        "third": "cuts",
+        "past": "cut",
+        "participle": "cut",
+        "progressive": "cutting"
+      },
+      "pattern": "SVO",
+      "progressive": true,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "apple",
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "lift",
+      "forms": {
+        "base": "lift",
+        "third": "lifts",
+        "past": "lifted",
+        "participle": "lifted",
+        "progressive": "lifting"
+      },
+      "pattern": "SVO",
+      "progressive": true,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "chair",
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "hit",
+      "forms": {
+        "base": "hit",
+        "third": "hits",
+        "past": "hit",
+        "participle": "hit",
+        "progressive": "hitting"
+      },
+      "pattern": "SVO",
+      "progressive": true,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "door",
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "hold",
+      "forms": {
+        "base": "hold",
+        "third": "holds",
+        "past": "held",
+        "participle": "held",
+        "progressive": "holding"
+      },
+      "pattern": "SVO",
+      "progressive": true,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "umbrella",
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "leave",
+      "forms": {
+        "base": "leave",
+        "third": "leaves",
+        "past": "left",
+        "participle": "left",
+        "progressive": "leaving"
+      },
+      "pattern": "SVO",
+      "progressive": true,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "book",
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "meet",
+      "forms": {
+        "base": "meet",
+        "third": "meets",
+        "past": "met",
+        "participle": "met",
+        "progressive": "meeting"
+      },
+      "pattern": "SVO",
+      "progressive": true,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "teacher",
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "call",
+      "forms": {
+        "base": "call",
+        "third": "calls",
+        "past": "called",
+        "participle": "called",
+        "progressive": "calling"
+      },
+      "pattern": "SVO",
+      "progressive": true,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "doctor",
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "help",
+      "forms": {
+        "base": "help",
+        "third": "helps",
+        "past": "helped",
+        "participle": "helped",
+        "progressive": "helping"
+      },
+      "pattern": "SVO",
+      "progressive": true,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "child",
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "need",
+      "forms": {
+        "base": "need",
+        "third": "needs",
+        "past": "needed",
+        "participle": "needed",
+        "progressive": "needing"
+      },
+      "pattern": "SVO",
+      "progressive": false,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "pen",
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "want",
+      "forms": {
+        "base": "want",
+        "third": "wants",
+        "past": "wanted",
+        "participle": "wanted",
+        "progressive": "wanting"
+      },
+      "pattern": "SVO",
+      "progressive": false,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "gift",
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "love",
+      "forms": {
+        "base": "love",
+        "third": "loves",
+        "past": "loved",
+        "participle": "loved",
+        "progressive": "loving"
+      },
+      "pattern": "SVO",
+      "progressive": false,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "child",
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "hate",
+      "forms": {
+        "base": "hate",
+        "third": "hates",
+        "past": "hated",
+        "participle": "hated",
+        "progressive": "hating"
+      },
+      "pattern": "SVO",
+      "progressive": false,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "book",
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "know",
+      "forms": {
+        "base": "know",
+        "third": "knows",
+        "past": "knew",
+        "participle": "known",
+        "progressive": "knowing"
+      },
+      "pattern": "SVO",
+      "progressive": false,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "teacher",
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "understand",
+      "forms": {
+        "base": "understand",
+        "third": "understands",
+        "past": "understood",
+        "participle": "understood",
+        "progressive": "understanding"
+      },
+      "pattern": "SVO",
+      "progressive": false,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "teacher",
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "remember",
+      "forms": {
+        "base": "remember",
+        "third": "remembers",
+        "past": "remembered",
+        "participle": "remembered",
+        "progressive": "remembering"
+      },
+      "pattern": "SVO",
+      "progressive": false,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "friend",
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "forget",
+      "forms": {
+        "base": "forget",
+        "third": "forgets",
+        "past": "forgot",
+        "participle": "forgotten",
+        "progressive": "forgetting"
+      },
+      "pattern": "SVO",
+      "progressive": true,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "letter",
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "believe",
+      "forms": {
+        "base": "believe",
+        "third": "believes",
+        "past": "believed",
+        "participle": "believed",
+        "progressive": "believing"
+      },
+      "pattern": "SVO",
+      "progressive": false,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "teacher",
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "hear",
+      "forms": {
+        "base": "hear",
+        "third": "hears",
+        "past": "heard",
+        "participle": "heard",
+        "progressive": "hearing"
+      },
+      "pattern": "SVO",
+      "progressive": false,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "singer",
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "watch",
+      "forms": {
+        "base": "watch",
+        "third": "watches",
+        "past": "watched",
+        "participle": "watched",
+        "progressive": "watching"
+      },
+      "pattern": "SVO",
+      "progressive": true,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "dancer",
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "study",
+      "forms": {
+        "base": "study",
+        "third": "studies",
+        "past": "studied",
+        "participle": "studied",
+        "progressive": "studying"
+      },
+      "pattern": "SVO",
+      "progressive": true,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "picture",
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "finish",
+      "forms": {
+        "base": "finish",
+        "third": "finishes",
+        "past": "finished",
+        "participle": "finished",
+        "progressive": "finishing"
+      },
+      "pattern": "SVO",
+      "progressive": true,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "book",
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "start",
+      "forms": {
+        "base": "start",
+        "third": "starts",
+        "past": "started",
+        "participle": "started",
+        "progressive": "starting"
+      },
+      "pattern": "SVO",
+      "progressive": true,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "car",
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "stop",
+      "forms": {
+        "base": "stop",
+        "third": "stops",
+        "past": "stopped",
+        "participle": "stopped",
+        "progressive": "stopping"
+      },
+      "pattern": "SVO",
+      "progressive": true,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "bus",
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "change",
+      "forms": {
+        "base": "change",
+        "third": "changes",
+        "past": "changed",
+        "participle": "changed",
+        "progressive": "changing"
+      },
+      "pattern": "SVO",
+      "progressive": true,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "book",
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "choose",
+      "forms": {
+        "base": "choose",
+        "third": "chooses",
+        "past": "chose",
+        "participle": "chosen",
+        "progressive": "choosing"
+      },
+      "pattern": "SVO",
+      "progressive": true,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "picture",
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "answer",
+      "forms": {
+        "base": "answer",
+        "third": "answers",
+        "past": "answered",
+        "participle": "answered",
+        "progressive": "answering"
+      },
+      "pattern": "SVO",
+      "progressive": true,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "letter",
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "ask",
+      "forms": {
+        "base": "ask",
+        "third": "asks",
+        "past": "asked",
+        "participle": "asked",
+        "progressive": "asking"
+      },
+      "pattern": "SVO",
+      "progressive": true,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "teacher",
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "visit",
+      "forms": {
+        "base": "visit",
+        "third": "visits",
+        "past": "visited",
+        "participle": "visited",
+        "progressive": "visiting"
+      },
+      "pattern": "SVO",
+      "progressive": true,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "neighbor",
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "join",
+      "forms": {
+        "base": "join",
+        "third": "joins",
+        "past": "joined",
+        "participle": "joined",
+        "progressive": "joining"
+      },
+      "pattern": "SVO",
+      "progressive": true,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "worker",
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "move",
+      "forms": {
+        "base": "move",
+        "third": "moves",
+        "past": "moved",
+        "participle": "moved",
+        "progressive": "moving"
+      },
+      "pattern": "SVO",
+      "progressive": true,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "table",
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "collect",
+      "forms": {
+        "base": "collect",
+        "third": "collects",
+        "past": "collected",
+        "participle": "collected",
+        "progressive": "collecting"
+      },
+      "pattern": "SVO",
+      "progressive": true,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "gift",
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "draw",
+      "forms": {
+        "base": "draw",
+        "third": "draws",
+        "past": "drew",
+        "participle": "drawn",
+        "progressive": "drawing"
+      },
+      "pattern": "SVO",
+      "progressive": true,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "picture",
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "paint",
+      "forms": {
+        "base": "paint",
+        "third": "paints",
+        "past": "painted",
+        "participle": "painted",
+        "progressive": "painting"
+      },
+      "pattern": "SVO",
+      "progressive": true,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "door",
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "break",
+      "forms": {
+        "base": "break",
+        "third": "breaks",
+        "past": "broke",
+        "participle": "broken",
+        "progressive": "breaking"
+      },
+      "pattern": "SVO",
+      "progressive": true,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "toy",
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "fix",
+      "forms": {
+        "base": "fix",
+        "third": "fixes",
+        "past": "fixed",
+        "participle": "fixed",
+        "progressive": "fixing"
+      },
+      "pattern": "SVO",
+      "progressive": true,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "chair",
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "repair",
+      "forms": {
+        "base": "repair",
+        "third": "repairs",
+        "past": "repaired",
+        "participle": "repaired",
+        "progressive": "repairing"
+      },
+      "pattern": "SVO",
+      "progressive": true,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "car",
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "save",
+      "forms": {
+        "base": "save",
+        "third": "saves",
+        "past": "saved",
+        "participle": "saved",
+        "progressive": "saving"
+      },
+      "pattern": "SVO",
+      "progressive": true,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "child",
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "lose",
+      "forms": {
+        "base": "lose",
+        "third": "loses",
+        "past": "lost",
+        "participle": "lost",
+        "progressive": "losing"
+      },
+      "pattern": "SVO",
+      "progressive": true,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "pen",
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "touch",
+      "forms": {
+        "base": "touch",
+        "third": "touches",
+        "past": "touched",
+        "participle": "touched",
+        "progressive": "touching"
+      },
+      "pattern": "SVO",
+      "progressive": true,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "table",
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "sell",
+      "forms": {
+        "base": "sell",
+        "third": "sells",
+        "past": "sold",
+        "participle": "sold",
+        "progressive": "selling"
+      },
+      "pattern": "SVO",
+      "progressive": true,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "car",
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "accept",
+      "forms": {
+        "base": "accept",
+        "third": "accepts",
+        "past": "accepted",
+        "participle": "accepted",
+        "progressive": "accepting"
+      },
+      "pattern": "SVO",
+      "progressive": true,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "gift",
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "follow",
+      "forms": {
+        "base": "follow",
+        "third": "follows",
+        "past": "followed",
+        "participle": "followed",
+        "progressive": "following"
+      },
+      "pattern": "SVO",
+      "progressive": true,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "driver",
+      "recipient": null,
+      "subject": "She"
+    },
+    {
+      "lemma": "hand",
+      "forms": {
+        "base": "hand",
+        "third": "hands",
+        "past": "handed",
+        "participle": "handed",
+        "progressive": "handing"
+      },
+      "pattern": "SVOO",
+      "progressive": true,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "book",
+      "recipient": "him",
+      "subject": "She"
+    },
+    {
+      "lemma": "feed",
+      "forms": {
+        "base": "feed",
+        "third": "feeds",
+        "past": "fed",
+        "participle": "fed",
+        "progressive": "feeding"
+      },
+      "pattern": "SVOO",
+      "progressive": true,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "egg",
+      "recipient": "him",
+      "subject": "She"
+    },
+    {
+      "lemma": "pass",
+      "forms": {
+        "base": "pass",
+        "third": "passes",
+        "past": "passed",
+        "participle": "passed",
+        "progressive": "passing"
+      },
+      "pattern": "SVOO",
+      "progressive": true,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "apple",
+      "recipient": "him",
+      "subject": "She"
+    },
+    {
+      "lemma": "promise",
+      "forms": {
+        "base": "promise",
+        "third": "promises",
+        "past": "promised",
+        "participle": "promised",
+        "progressive": "promising"
+      },
+      "pattern": "SVOO",
+      "progressive": true,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "gift",
+      "recipient": "him",
+      "subject": "She"
+    },
+    {
+      "lemma": "serve",
+      "forms": {
+        "base": "serve",
+        "third": "serves",
+        "past": "served",
+        "participle": "served",
+        "progressive": "serving"
+      },
+      "pattern": "SVOO",
+      "progressive": true,
+      "perfect": true,
+      "passive": true,
+      "imperative": true,
+      "object": "egg",
+      "recipient": "him",
+      "subject": "She"
+    }
+  ]
+}

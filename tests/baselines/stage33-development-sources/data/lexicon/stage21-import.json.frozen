@@ -1,0 +1,1921 @@
+{
+  "sources": [
+    {
+      "id": "clause-stage21-manual",
+      "version": "1",
+      "title": "Clause stage 19 human-fixed stage 21 vocabulary",
+      "license": "MIT",
+      "attribution": "Copyright (c) 2026 lintrin; project-maintained restricted vocabulary and frames"
+    }
+  ],
+  "entries": [
+    {
+      "id": "noun:lexical:doctor",
+      "revisionId": "noun:lexical:doctor:r1",
+      "lemma": "doctor",
+      "partOfSpeech": "noun",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {
+        "person": true,
+        "initialSound": "consonant"
+      },
+      "forms": [
+        {
+          "kind": "singular",
+          "surface": "doctor",
+          "initialSound": "consonant"
+        },
+        {
+          "kind": "plural",
+          "surface": "doctors",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": []
+    },
+    {
+      "id": "noun:lexical:nurse",
+      "revisionId": "noun:lexical:nurse:r1",
+      "lemma": "nurse",
+      "partOfSpeech": "noun",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {
+        "person": true,
+        "initialSound": "consonant"
+      },
+      "forms": [
+        {
+          "kind": "singular",
+          "surface": "nurse",
+          "initialSound": "consonant"
+        },
+        {
+          "kind": "plural",
+          "surface": "nurses",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": []
+    },
+    {
+      "id": "noun:lexical:worker",
+      "revisionId": "noun:lexical:worker:r1",
+      "lemma": "worker",
+      "partOfSpeech": "noun",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {
+        "person": true,
+        "initialSound": "consonant"
+      },
+      "forms": [
+        {
+          "kind": "singular",
+          "surface": "worker",
+          "initialSound": "consonant"
+        },
+        {
+          "kind": "plural",
+          "surface": "workers",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": []
+    },
+    {
+      "id": "noun:lexical:farmer",
+      "revisionId": "noun:lexical:farmer:r1",
+      "lemma": "farmer",
+      "partOfSpeech": "noun",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {
+        "person": true,
+        "initialSound": "consonant"
+      },
+      "forms": [
+        {
+          "kind": "singular",
+          "surface": "farmer",
+          "initialSound": "consonant"
+        },
+        {
+          "kind": "plural",
+          "surface": "farmers",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": []
+    },
+    {
+      "id": "noun:lexical:driver",
+      "revisionId": "noun:lexical:driver:r1",
+      "lemma": "driver",
+      "partOfSpeech": "noun",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {
+        "person": true,
+        "initialSound": "consonant"
+      },
+      "forms": [
+        {
+          "kind": "singular",
+          "surface": "driver",
+          "initialSound": "consonant"
+        },
+        {
+          "kind": "plural",
+          "surface": "drivers",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": []
+    },
+    {
+      "id": "noun:lexical:singer",
+      "revisionId": "noun:lexical:singer:r1",
+      "lemma": "singer",
+      "partOfSpeech": "noun",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {
+        "person": true,
+        "initialSound": "consonant"
+      },
+      "forms": [
+        {
+          "kind": "singular",
+          "surface": "singer",
+          "initialSound": "consonant"
+        },
+        {
+          "kind": "plural",
+          "surface": "singers",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": []
+    },
+    {
+      "id": "noun:lexical:dancer",
+      "revisionId": "noun:lexical:dancer:r1",
+      "lemma": "dancer",
+      "partOfSpeech": "noun",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {
+        "person": true,
+        "initialSound": "consonant"
+      },
+      "forms": [
+        {
+          "kind": "singular",
+          "surface": "dancer",
+          "initialSound": "consonant"
+        },
+        {
+          "kind": "plural",
+          "surface": "dancers",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": []
+    },
+    {
+      "id": "noun:lexical:artist",
+      "revisionId": "noun:lexical:artist:r1",
+      "lemma": "artist",
+      "partOfSpeech": "noun",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {
+        "person": true,
+        "initialSound": "vowel"
+      },
+      "forms": [
+        {
+          "kind": "singular",
+          "surface": "artist",
+          "initialSound": "vowel"
+        },
+        {
+          "kind": "plural",
+          "surface": "artists",
+          "initialSound": "vowel"
+        }
+      ],
+      "frames": []
+    },
+    {
+      "id": "noun:lexical:actor",
+      "revisionId": "noun:lexical:actor:r1",
+      "lemma": "actor",
+      "partOfSpeech": "noun",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {
+        "person": true,
+        "initialSound": "vowel"
+      },
+      "forms": [
+        {
+          "kind": "singular",
+          "surface": "actor",
+          "initialSound": "vowel"
+        },
+        {
+          "kind": "plural",
+          "surface": "actors",
+          "initialSound": "vowel"
+        }
+      ],
+      "frames": []
+    },
+    {
+      "id": "noun:lexical:uncle",
+      "revisionId": "noun:lexical:uncle:r1",
+      "lemma": "uncle",
+      "partOfSpeech": "noun",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {
+        "person": true,
+        "initialSound": "vowel"
+      },
+      "forms": [
+        {
+          "kind": "singular",
+          "surface": "uncle",
+          "initialSound": "vowel"
+        },
+        {
+          "kind": "plural",
+          "surface": "uncles",
+          "initialSound": "vowel"
+        }
+      ],
+      "frames": []
+    },
+    {
+      "id": "noun:lexical:aunt",
+      "revisionId": "noun:lexical:aunt:r1",
+      "lemma": "aunt",
+      "partOfSpeech": "noun",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {
+        "person": true,
+        "initialSound": "vowel"
+      },
+      "forms": [
+        {
+          "kind": "singular",
+          "surface": "aunt",
+          "initialSound": "vowel"
+        },
+        {
+          "kind": "plural",
+          "surface": "aunts",
+          "initialSound": "vowel"
+        }
+      ],
+      "frames": []
+    },
+    {
+      "id": "noun:lexical:cousin",
+      "revisionId": "noun:lexical:cousin:r1",
+      "lemma": "cousin",
+      "partOfSpeech": "noun",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {
+        "person": true,
+        "initialSound": "consonant"
+      },
+      "forms": [
+        {
+          "kind": "singular",
+          "surface": "cousin",
+          "initialSound": "consonant"
+        },
+        {
+          "kind": "plural",
+          "surface": "cousins",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": []
+    },
+    {
+      "id": "noun:lexical:neighbor",
+      "revisionId": "noun:lexical:neighbor:r1",
+      "lemma": "neighbor",
+      "partOfSpeech": "noun",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {
+        "person": true,
+        "initialSound": "consonant"
+      },
+      "forms": [
+        {
+          "kind": "singular",
+          "surface": "neighbor",
+          "initialSound": "consonant"
+        },
+        {
+          "kind": "plural",
+          "surface": "neighbors",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": []
+    },
+    {
+      "id": "noun:lexical:man",
+      "revisionId": "noun:lexical:man:r1",
+      "lemma": "man",
+      "partOfSpeech": "noun",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {
+        "person": true,
+        "initialSound": "consonant"
+      },
+      "forms": [
+        {
+          "kind": "singular",
+          "surface": "man",
+          "initialSound": "consonant"
+        },
+        {
+          "kind": "plural",
+          "surface": "men",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": []
+    },
+    {
+      "id": "noun:lexical:woman",
+      "revisionId": "noun:lexical:woman:r1",
+      "lemma": "woman",
+      "partOfSpeech": "noun",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {
+        "person": true,
+        "initialSound": "consonant"
+      },
+      "forms": [
+        {
+          "kind": "singular",
+          "surface": "woman",
+          "initialSound": "consonant"
+        },
+        {
+          "kind": "plural",
+          "surface": "women",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": []
+    },
+    {
+      "id": "noun:lexical:baby",
+      "revisionId": "noun:lexical:baby:r1",
+      "lemma": "baby",
+      "partOfSpeech": "noun",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {
+        "person": true,
+        "initialSound": "consonant"
+      },
+      "forms": [
+        {
+          "kind": "singular",
+          "surface": "baby",
+          "initialSound": "consonant"
+        },
+        {
+          "kind": "plural",
+          "surface": "babies",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": []
+    },
+    {
+      "id": "noun:lexical:person",
+      "revisionId": "noun:lexical:person:r1",
+      "lemma": "person",
+      "partOfSpeech": "noun",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {
+        "person": true,
+        "initialSound": "consonant"
+      },
+      "forms": [
+        {
+          "kind": "singular",
+          "surface": "person",
+          "initialSound": "consonant"
+        },
+        {
+          "kind": "plural",
+          "surface": "people",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": []
+    },
+    {
+      "id": "noun:lexical:mouse",
+      "revisionId": "noun:lexical:mouse:r1",
+      "lemma": "mouse",
+      "partOfSpeech": "noun",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {
+        "person": false,
+        "initialSound": "consonant"
+      },
+      "forms": [
+        {
+          "kind": "singular",
+          "surface": "mouse",
+          "initialSound": "consonant"
+        },
+        {
+          "kind": "plural",
+          "surface": "mice",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": []
+    },
+    {
+      "id": "noun:lexical:foot",
+      "revisionId": "noun:lexical:foot:r1",
+      "lemma": "foot",
+      "partOfSpeech": "noun",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {
+        "person": false,
+        "initialSound": "consonant"
+      },
+      "forms": [
+        {
+          "kind": "singular",
+          "surface": "foot",
+          "initialSound": "consonant"
+        },
+        {
+          "kind": "plural",
+          "surface": "feet",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": []
+    },
+    {
+      "id": "noun:lexical:tooth",
+      "revisionId": "noun:lexical:tooth:r1",
+      "lemma": "tooth",
+      "partOfSpeech": "noun",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {
+        "person": false,
+        "initialSound": "consonant"
+      },
+      "forms": [
+        {
+          "kind": "singular",
+          "surface": "tooth",
+          "initialSound": "consonant"
+        },
+        {
+          "kind": "plural",
+          "surface": "teeth",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": []
+    },
+    {
+      "id": "noun:lexical:apple",
+      "revisionId": "noun:lexical:apple:r1",
+      "lemma": "apple",
+      "partOfSpeech": "noun",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {
+        "person": false,
+        "initialSound": "vowel"
+      },
+      "forms": [
+        {
+          "kind": "singular",
+          "surface": "apple",
+          "initialSound": "vowel"
+        },
+        {
+          "kind": "plural",
+          "surface": "apples",
+          "initialSound": "vowel"
+        }
+      ],
+      "frames": []
+    },
+    {
+      "id": "noun:lexical:egg",
+      "revisionId": "noun:lexical:egg:r1",
+      "lemma": "egg",
+      "partOfSpeech": "noun",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {
+        "person": false,
+        "initialSound": "vowel"
+      },
+      "forms": [
+        {
+          "kind": "singular",
+          "surface": "egg",
+          "initialSound": "vowel"
+        },
+        {
+          "kind": "plural",
+          "surface": "eggs",
+          "initialSound": "vowel"
+        }
+      ],
+      "frames": []
+    },
+    {
+      "id": "noun:lexical:orange",
+      "revisionId": "noun:lexical:orange:r1",
+      "lemma": "orange",
+      "partOfSpeech": "noun",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {
+        "person": false,
+        "initialSound": "vowel"
+      },
+      "forms": [
+        {
+          "kind": "singular",
+          "surface": "orange",
+          "initialSound": "vowel"
+        },
+        {
+          "kind": "plural",
+          "surface": "oranges",
+          "initialSound": "vowel"
+        }
+      ],
+      "frames": []
+    },
+    {
+      "id": "noun:lexical:umbrella",
+      "revisionId": "noun:lexical:umbrella:r1",
+      "lemma": "umbrella",
+      "partOfSpeech": "noun",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {
+        "person": false,
+        "initialSound": "vowel"
+      },
+      "forms": [
+        {
+          "kind": "singular",
+          "surface": "umbrella",
+          "initialSound": "vowel"
+        },
+        {
+          "kind": "plural",
+          "surface": "umbrellas",
+          "initialSound": "vowel"
+        }
+      ],
+      "frames": []
+    },
+    {
+      "id": "noun:lexical:car",
+      "revisionId": "noun:lexical:car:r1",
+      "lemma": "car",
+      "partOfSpeech": "noun",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {
+        "person": false,
+        "initialSound": "consonant"
+      },
+      "forms": [
+        {
+          "kind": "singular",
+          "surface": "car",
+          "initialSound": "consonant"
+        },
+        {
+          "kind": "plural",
+          "surface": "cars",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": []
+    },
+    {
+      "id": "noun:lexical:bus",
+      "revisionId": "noun:lexical:bus:r1",
+      "lemma": "bus",
+      "partOfSpeech": "noun",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {
+        "person": false,
+        "initialSound": "consonant"
+      },
+      "forms": [
+        {
+          "kind": "singular",
+          "surface": "bus",
+          "initialSound": "consonant"
+        },
+        {
+          "kind": "plural",
+          "surface": "buses",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": []
+    },
+    {
+      "id": "noun:lexical:chair",
+      "revisionId": "noun:lexical:chair:r1",
+      "lemma": "chair",
+      "partOfSpeech": "noun",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {
+        "person": false,
+        "initialSound": "consonant"
+      },
+      "forms": [
+        {
+          "kind": "singular",
+          "surface": "chair",
+          "initialSound": "consonant"
+        },
+        {
+          "kind": "plural",
+          "surface": "chairs",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": []
+    },
+    {
+      "id": "noun:lexical:table",
+      "revisionId": "noun:lexical:table:r1",
+      "lemma": "table",
+      "partOfSpeech": "noun",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {
+        "person": false,
+        "initialSound": "consonant"
+      },
+      "forms": [
+        {
+          "kind": "singular",
+          "surface": "table",
+          "initialSound": "consonant"
+        },
+        {
+          "kind": "plural",
+          "surface": "tables",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": []
+    },
+    {
+      "id": "noun:lexical:door",
+      "revisionId": "noun:lexical:door:r1",
+      "lemma": "door",
+      "partOfSpeech": "noun",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {
+        "person": false,
+        "initialSound": "consonant"
+      },
+      "forms": [
+        {
+          "kind": "singular",
+          "surface": "door",
+          "initialSound": "consonant"
+        },
+        {
+          "kind": "plural",
+          "surface": "doors",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": []
+    },
+    {
+      "id": "noun:lexical:window",
+      "revisionId": "noun:lexical:window:r1",
+      "lemma": "window",
+      "partOfSpeech": "noun",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {
+        "person": false,
+        "initialSound": "consonant"
+      },
+      "forms": [
+        {
+          "kind": "singular",
+          "surface": "window",
+          "initialSound": "consonant"
+        },
+        {
+          "kind": "plural",
+          "surface": "windows",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": []
+    },
+    {
+      "id": "adjective:lexical:happy",
+      "revisionId": "adjective:lexical:happy:r1",
+      "lemma": "happy",
+      "partOfSpeech": "adjective",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {
+        "initialSound": "consonant",
+        "uses": [
+          "attribute",
+          "subject-complement",
+          "object-complement"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "positive",
+          "surface": "happy",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": []
+    },
+    {
+      "id": "adjective:lexical:sad",
+      "revisionId": "adjective:lexical:sad:r1",
+      "lemma": "sad",
+      "partOfSpeech": "adjective",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {
+        "initialSound": "consonant",
+        "uses": [
+          "attribute",
+          "subject-complement",
+          "object-complement"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "positive",
+          "surface": "sad",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": []
+    },
+    {
+      "id": "adjective:lexical:tired",
+      "revisionId": "adjective:lexical:tired:r1",
+      "lemma": "tired",
+      "partOfSpeech": "adjective",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {
+        "initialSound": "consonant",
+        "uses": [
+          "attribute",
+          "subject-complement",
+          "object-complement"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "positive",
+          "surface": "tired",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": []
+    },
+    {
+      "id": "adjective:lexical:hungry",
+      "revisionId": "adjective:lexical:hungry:r1",
+      "lemma": "hungry",
+      "partOfSpeech": "adjective",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {
+        "initialSound": "consonant",
+        "uses": [
+          "attribute",
+          "subject-complement",
+          "object-complement"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "positive",
+          "surface": "hungry",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": []
+    },
+    {
+      "id": "adjective:lexical:angry",
+      "revisionId": "adjective:lexical:angry:r1",
+      "lemma": "angry",
+      "partOfSpeech": "adjective",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {
+        "initialSound": "vowel",
+        "uses": [
+          "attribute",
+          "subject-complement",
+          "object-complement"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "positive",
+          "surface": "angry",
+          "initialSound": "vowel"
+        }
+      ],
+      "frames": []
+    },
+    {
+      "id": "adjective:lexical:calm",
+      "revisionId": "adjective:lexical:calm:r1",
+      "lemma": "calm",
+      "partOfSpeech": "adjective",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {
+        "initialSound": "consonant",
+        "uses": [
+          "attribute",
+          "subject-complement",
+          "object-complement"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "positive",
+          "surface": "calm",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": []
+    },
+    {
+      "id": "adjective:lexical:busy",
+      "revisionId": "adjective:lexical:busy:r1",
+      "lemma": "busy",
+      "partOfSpeech": "adjective",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {
+        "initialSound": "consonant",
+        "uses": [
+          "attribute",
+          "subject-complement",
+          "object-complement"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "positive",
+          "surface": "busy",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": []
+    },
+    {
+      "id": "adjective:lexical:tall",
+      "revisionId": "adjective:lexical:tall:r1",
+      "lemma": "tall",
+      "partOfSpeech": "adjective",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {
+        "initialSound": "consonant",
+        "uses": [
+          "attribute",
+          "subject-complement",
+          "object-complement"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "positive",
+          "surface": "tall",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": []
+    },
+    {
+      "id": "adjective:lexical:short",
+      "revisionId": "adjective:lexical:short:r1",
+      "lemma": "short",
+      "partOfSpeech": "adjective",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {
+        "initialSound": "consonant",
+        "uses": [
+          "attribute",
+          "subject-complement",
+          "object-complement"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "positive",
+          "surface": "short",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": []
+    },
+    {
+      "id": "adjective:lexical:red",
+      "revisionId": "adjective:lexical:red:r1",
+      "lemma": "red",
+      "partOfSpeech": "adjective",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {
+        "initialSound": "consonant",
+        "uses": [
+          "attribute",
+          "subject-complement",
+          "object-complement"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "positive",
+          "surface": "red",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": []
+    },
+    {
+      "id": "adjective:lexical:blue",
+      "revisionId": "adjective:lexical:blue:r1",
+      "lemma": "blue",
+      "partOfSpeech": "adjective",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {
+        "initialSound": "consonant",
+        "uses": [
+          "attribute",
+          "subject-complement",
+          "object-complement"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "positive",
+          "surface": "blue",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": []
+    },
+    {
+      "id": "adjective:lexical:green",
+      "revisionId": "adjective:lexical:green:r1",
+      "lemma": "green",
+      "partOfSpeech": "adjective",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {
+        "initialSound": "consonant",
+        "uses": [
+          "attribute",
+          "subject-complement",
+          "object-complement"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "positive",
+          "surface": "green",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": []
+    },
+    {
+      "id": "adjective:lexical:clean",
+      "revisionId": "adjective:lexical:clean:r1",
+      "lemma": "clean",
+      "partOfSpeech": "adjective",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {
+        "initialSound": "consonant",
+        "uses": [
+          "attribute",
+          "subject-complement",
+          "object-complement"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "positive",
+          "surface": "clean",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": []
+    },
+    {
+      "id": "adjective:lexical:quiet",
+      "revisionId": "adjective:lexical:quiet:r1",
+      "lemma": "quiet",
+      "partOfSpeech": "adjective",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {
+        "initialSound": "consonant",
+        "uses": [
+          "attribute",
+          "subject-complement",
+          "object-complement"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "positive",
+          "surface": "quiet",
+          "initialSound": "consonant"
+        }
+      ],
+      "frames": []
+    },
+    {
+      "id": "adjective:lexical:empty",
+      "revisionId": "adjective:lexical:empty:r1",
+      "lemma": "empty",
+      "partOfSpeech": "adjective",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {
+        "initialSound": "vowel",
+        "uses": [
+          "attribute",
+          "subject-complement",
+          "object-complement"
+        ]
+      },
+      "forms": [
+        {
+          "kind": "positive",
+          "surface": "empty",
+          "initialSound": "vowel"
+        }
+      ],
+      "frames": []
+    },
+    {
+      "id": "verb:lexical:walk",
+      "revisionId": "verb:lexical:walk:r1",
+      "lemma": "walk",
+      "partOfSpeech": "verb",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {},
+      "forms": [
+        {
+          "kind": "base",
+          "surface": "walk",
+          "initialSound": null
+        },
+        {
+          "kind": "third",
+          "surface": "walks",
+          "initialSound": null
+        },
+        {
+          "kind": "past",
+          "surface": "walked",
+          "initialSound": null
+        },
+        {
+          "kind": "participle",
+          "surface": "walked",
+          "initialSound": null
+        },
+        {
+          "kind": "progressive",
+          "surface": "walking",
+          "initialSound": null
+        }
+      ],
+      "frames": [
+        {
+          "id": "walk-sv",
+          "pattern": "SV",
+          "recipient": null,
+          "complement": null,
+          "allowProgressive": true,
+          "allowPerfect": true,
+          "passivePromotion": null,
+          "allowedPurposes": [
+            "declarative",
+            "interrogative",
+            "imperative"
+          ],
+          "allowedPolarities": [
+            "positive",
+            "negative"
+          ],
+          "fixedTail": null
+        }
+      ]
+    },
+    {
+      "id": "verb:lexical:dance",
+      "revisionId": "verb:lexical:dance:r1",
+      "lemma": "dance",
+      "partOfSpeech": "verb",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {},
+      "forms": [
+        {
+          "kind": "base",
+          "surface": "dance",
+          "initialSound": null
+        },
+        {
+          "kind": "third",
+          "surface": "dances",
+          "initialSound": null
+        },
+        {
+          "kind": "past",
+          "surface": "danced",
+          "initialSound": null
+        },
+        {
+          "kind": "participle",
+          "surface": "danced",
+          "initialSound": null
+        },
+        {
+          "kind": "progressive",
+          "surface": "dancing",
+          "initialSound": null
+        }
+      ],
+      "frames": [
+        {
+          "id": "dance-sv",
+          "pattern": "SV",
+          "recipient": null,
+          "complement": null,
+          "allowProgressive": true,
+          "allowPerfect": true,
+          "passivePromotion": null,
+          "allowedPurposes": [
+            "declarative",
+            "interrogative",
+            "imperative"
+          ],
+          "allowedPolarities": [
+            "positive",
+            "negative"
+          ],
+          "fixedTail": null
+        }
+      ]
+    },
+    {
+      "id": "verb:lexical:laugh",
+      "revisionId": "verb:lexical:laugh:r1",
+      "lemma": "laugh",
+      "partOfSpeech": "verb",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {},
+      "forms": [
+        {
+          "kind": "base",
+          "surface": "laugh",
+          "initialSound": null
+        },
+        {
+          "kind": "third",
+          "surface": "laughs",
+          "initialSound": null
+        },
+        {
+          "kind": "past",
+          "surface": "laughed",
+          "initialSound": null
+        },
+        {
+          "kind": "participle",
+          "surface": "laughed",
+          "initialSound": null
+        },
+        {
+          "kind": "progressive",
+          "surface": "laughing",
+          "initialSound": null
+        }
+      ],
+      "frames": [
+        {
+          "id": "laugh-sv",
+          "pattern": "SV",
+          "recipient": null,
+          "complement": null,
+          "allowProgressive": true,
+          "allowPerfect": true,
+          "passivePromotion": null,
+          "allowedPurposes": [
+            "declarative",
+            "interrogative",
+            "imperative"
+          ],
+          "allowedPolarities": [
+            "positive",
+            "negative"
+          ],
+          "fixedTail": null
+        }
+      ]
+    },
+    {
+      "id": "verb:lexical:cry",
+      "revisionId": "verb:lexical:cry:r1",
+      "lemma": "cry",
+      "partOfSpeech": "verb",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {},
+      "forms": [
+        {
+          "kind": "base",
+          "surface": "cry",
+          "initialSound": null
+        },
+        {
+          "kind": "third",
+          "surface": "cries",
+          "initialSound": null
+        },
+        {
+          "kind": "past",
+          "surface": "cried",
+          "initialSound": null
+        },
+        {
+          "kind": "participle",
+          "surface": "cried",
+          "initialSound": null
+        },
+        {
+          "kind": "progressive",
+          "surface": "crying",
+          "initialSound": null
+        }
+      ],
+      "frames": [
+        {
+          "id": "cry-sv",
+          "pattern": "SV",
+          "recipient": null,
+          "complement": null,
+          "allowProgressive": true,
+          "allowPerfect": true,
+          "passivePromotion": null,
+          "allowedPurposes": [
+            "declarative",
+            "interrogative",
+            "imperative"
+          ],
+          "allowedPolarities": [
+            "positive",
+            "negative"
+          ],
+          "fixedTail": null
+        }
+      ]
+    },
+    {
+      "id": "verb:lexical:wait",
+      "revisionId": "verb:lexical:wait:r1",
+      "lemma": "wait",
+      "partOfSpeech": "verb",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {},
+      "forms": [
+        {
+          "kind": "base",
+          "surface": "wait",
+          "initialSound": null
+        },
+        {
+          "kind": "third",
+          "surface": "waits",
+          "initialSound": null
+        },
+        {
+          "kind": "past",
+          "surface": "waited",
+          "initialSound": null
+        },
+        {
+          "kind": "participle",
+          "surface": "waited",
+          "initialSound": null
+        },
+        {
+          "kind": "progressive",
+          "surface": "waiting",
+          "initialSound": null
+        }
+      ],
+      "frames": [
+        {
+          "id": "wait-sv",
+          "pattern": "SV",
+          "recipient": null,
+          "complement": null,
+          "allowProgressive": true,
+          "allowPerfect": true,
+          "passivePromotion": null,
+          "allowedPurposes": [
+            "declarative",
+            "interrogative",
+            "imperative"
+          ],
+          "allowedPolarities": [
+            "positive",
+            "negative"
+          ],
+          "fixedTail": null
+        }
+      ]
+    },
+    {
+      "id": "verb:lexical:read",
+      "revisionId": "verb:lexical:read:r1",
+      "lemma": "read",
+      "partOfSpeech": "verb",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {},
+      "forms": [
+        {
+          "kind": "base",
+          "surface": "read",
+          "initialSound": null
+        },
+        {
+          "kind": "third",
+          "surface": "reads",
+          "initialSound": null
+        },
+        {
+          "kind": "past",
+          "surface": "read",
+          "initialSound": null
+        },
+        {
+          "kind": "participle",
+          "surface": "read",
+          "initialSound": null
+        },
+        {
+          "kind": "progressive",
+          "surface": "reading",
+          "initialSound": null
+        }
+      ],
+      "frames": [
+        {
+          "id": "read-svo",
+          "pattern": "SVO",
+          "recipient": null,
+          "complement": null,
+          "allowProgressive": true,
+          "allowPerfect": true,
+          "passivePromotion": "direct-object",
+          "allowedPurposes": [
+            "declarative",
+            "interrogative",
+            "imperative"
+          ],
+          "allowedPolarities": [
+            "positive",
+            "negative"
+          ],
+          "fixedTail": null
+        }
+      ]
+    },
+    {
+      "id": "verb:lexical:write",
+      "revisionId": "verb:lexical:write:r1",
+      "lemma": "write",
+      "partOfSpeech": "verb",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {},
+      "forms": [
+        {
+          "kind": "base",
+          "surface": "write",
+          "initialSound": null
+        },
+        {
+          "kind": "third",
+          "surface": "writes",
+          "initialSound": null
+        },
+        {
+          "kind": "past",
+          "surface": "wrote",
+          "initialSound": null
+        },
+        {
+          "kind": "participle",
+          "surface": "written",
+          "initialSound": null
+        },
+        {
+          "kind": "progressive",
+          "surface": "writing",
+          "initialSound": null
+        }
+      ],
+      "frames": [
+        {
+          "id": "write-svo",
+          "pattern": "SVO",
+          "recipient": null,
+          "complement": null,
+          "allowProgressive": true,
+          "allowPerfect": true,
+          "passivePromotion": "direct-object",
+          "allowedPurposes": [
+            "declarative",
+            "interrogative",
+            "imperative"
+          ],
+          "allowedPolarities": [
+            "positive",
+            "negative"
+          ],
+          "fixedTail": null
+        }
+      ]
+    },
+    {
+      "id": "verb:lexical:buy",
+      "revisionId": "verb:lexical:buy:r1",
+      "lemma": "buy",
+      "partOfSpeech": "verb",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {},
+      "forms": [
+        {
+          "kind": "base",
+          "surface": "buy",
+          "initialSound": null
+        },
+        {
+          "kind": "third",
+          "surface": "buys",
+          "initialSound": null
+        },
+        {
+          "kind": "past",
+          "surface": "bought",
+          "initialSound": null
+        },
+        {
+          "kind": "participle",
+          "surface": "bought",
+          "initialSound": null
+        },
+        {
+          "kind": "progressive",
+          "surface": "buying",
+          "initialSound": null
+        }
+      ],
+      "frames": [
+        {
+          "id": "buy-svo",
+          "pattern": "SVO",
+          "recipient": null,
+          "complement": null,
+          "allowProgressive": true,
+          "allowPerfect": true,
+          "passivePromotion": "direct-object",
+          "allowedPurposes": [
+            "declarative",
+            "interrogative",
+            "imperative"
+          ],
+          "allowedPolarities": [
+            "positive",
+            "negative"
+          ],
+          "fixedTail": null
+        }
+      ]
+    },
+    {
+      "id": "verb:lexical:carry",
+      "revisionId": "verb:lexical:carry:r1",
+      "lemma": "carry",
+      "partOfSpeech": "verb",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {},
+      "forms": [
+        {
+          "kind": "base",
+          "surface": "carry",
+          "initialSound": null
+        },
+        {
+          "kind": "third",
+          "surface": "carries",
+          "initialSound": null
+        },
+        {
+          "kind": "past",
+          "surface": "carried",
+          "initialSound": null
+        },
+        {
+          "kind": "participle",
+          "surface": "carried",
+          "initialSound": null
+        },
+        {
+          "kind": "progressive",
+          "surface": "carrying",
+          "initialSound": null
+        }
+      ],
+      "frames": [
+        {
+          "id": "carry-svo",
+          "pattern": "SVO",
+          "recipient": null,
+          "complement": null,
+          "allowProgressive": true,
+          "allowPerfect": true,
+          "passivePromotion": "direct-object",
+          "allowedPurposes": [
+            "declarative",
+            "interrogative",
+            "imperative"
+          ],
+          "allowedPolarities": [
+            "positive",
+            "negative"
+          ],
+          "fixedTail": null
+        }
+      ]
+    },
+    {
+      "id": "verb:lexical:teach",
+      "revisionId": "verb:lexical:teach:r1",
+      "lemma": "teach",
+      "partOfSpeech": "verb",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {},
+      "forms": [
+        {
+          "kind": "base",
+          "surface": "teach",
+          "initialSound": null
+        },
+        {
+          "kind": "third",
+          "surface": "teaches",
+          "initialSound": null
+        },
+        {
+          "kind": "past",
+          "surface": "taught",
+          "initialSound": null
+        },
+        {
+          "kind": "participle",
+          "surface": "taught",
+          "initialSound": null
+        },
+        {
+          "kind": "progressive",
+          "surface": "teaching",
+          "initialSound": null
+        }
+      ],
+      "frames": [
+        {
+          "id": "teach-svoo",
+          "pattern": "SVOO",
+          "recipient": "person",
+          "complement": null,
+          "allowProgressive": true,
+          "allowPerfect": true,
+          "passivePromotion": "direct-object-or-recipient",
+          "allowedPurposes": [
+            "declarative",
+            "interrogative",
+            "imperative"
+          ],
+          "allowedPolarities": [
+            "positive",
+            "negative"
+          ],
+          "fixedTail": null
+        }
+      ]
+    },
+    {
+      "id": "verb:lexical:tell",
+      "revisionId": "verb:lexical:tell:r1",
+      "lemma": "tell",
+      "partOfSpeech": "verb",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {},
+      "forms": [
+        {
+          "kind": "base",
+          "surface": "tell",
+          "initialSound": null
+        },
+        {
+          "kind": "third",
+          "surface": "tells",
+          "initialSound": null
+        },
+        {
+          "kind": "past",
+          "surface": "told",
+          "initialSound": null
+        },
+        {
+          "kind": "participle",
+          "surface": "told",
+          "initialSound": null
+        },
+        {
+          "kind": "progressive",
+          "surface": "telling",
+          "initialSound": null
+        }
+      ],
+      "frames": [
+        {
+          "id": "tell-svoo",
+          "pattern": "SVOO",
+          "recipient": "person",
+          "complement": null,
+          "allowProgressive": true,
+          "allowPerfect": true,
+          "passivePromotion": "direct-object-or-recipient",
+          "allowedPurposes": [
+            "declarative",
+            "interrogative",
+            "imperative"
+          ],
+          "allowedPolarities": [
+            "positive",
+            "negative"
+          ],
+          "fixedTail": null
+        }
+      ]
+    },
+    {
+      "id": "verb:lexical:keep",
+      "revisionId": "verb:lexical:keep:r1",
+      "lemma": "keep",
+      "partOfSpeech": "verb",
+      "sense": "lexical",
+      "sourceIds": [
+        "clause-stage21-manual"
+      ],
+      "attributes": {},
+      "forms": [
+        {
+          "kind": "base",
+          "surface": "keep",
+          "initialSound": null
+        },
+        {
+          "kind": "third",
+          "surface": "keeps",
+          "initialSound": null
+        },
+        {
+          "kind": "past",
+          "surface": "kept",
+          "initialSound": null
+        },
+        {
+          "kind": "participle",
+          "surface": "kept",
+          "initialSound": null
+        },
+        {
+          "kind": "progressive",
+          "surface": "keeping",
+          "initialSound": null
+        }
+      ],
+      "frames": [
+        {
+          "id": "keep-svoc",
+          "pattern": "SVOC",
+          "recipient": null,
+          "complement": "single-adjective",
+          "allowProgressive": true,
+          "allowPerfect": true,
+          "passivePromotion": null,
+          "allowedPurposes": [
+            "declarative",
+            "interrogative",
+            "imperative"
+          ],
+          "allowedPolarities": [
+            "positive",
+            "negative"
+          ],
+          "fixedTail": null
+        }
+      ]
+    }
+  ]
+}

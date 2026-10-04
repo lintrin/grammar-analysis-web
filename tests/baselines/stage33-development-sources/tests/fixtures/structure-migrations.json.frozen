@@ -1,0 +1,1847 @@
+{
+  "migrations": [
+    {
+      "stage": 27,
+      "input": "She will sleep.",
+      "reason": "will / won’t 简单体主动在阶段27开放；原句和旧答案留在历史来源。",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ]
+          },
+          {
+            "key": "14",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 14
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      },
+      "sources": [
+        {
+          "path": "tests/fixtures/predicate-development.json",
+          "id": "14-outside-03",
+          "original": {
+            "status": "unsupported",
+            "code": "unknown-word"
+          }
+        },
+        {
+          "path": "tests/fixtures/predicate-development.json",
+          "id": "15-outside-03",
+          "original": {
+            "status": "unsupported",
+            "code": "unknown-word"
+          }
+        },
+        {
+          "path": "tests/fixtures/predicate-development.json",
+          "id": "16-outside-03",
+          "original": {
+            "status": "unsupported",
+            "code": "unknown-word"
+          }
+        },
+        {
+          "path": "tests/fixtures/predicate-development.json",
+          "id": "17-outside-03",
+          "original": {
+            "status": "unsupported",
+            "code": "unknown-word"
+          }
+        }
+      ]
+    },
+    {
+      "stage": 27,
+      "input": "She will not sleep.",
+      "reason": "will / won’t 简单体主动在阶段27开放；原句和旧答案留在历史来源。",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ]
+          },
+          {
+            "key": "18",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 18
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      },
+      "sources": [
+        {
+          "path": "tests/fixtures/stage8.json",
+          "id": "boundary-07",
+          "original": {
+            "status": "unsupported",
+            "nodes": [],
+            "corrections": [],
+            "purpose": null,
+            "pattern": null,
+            "complexity": null,
+            "tense": null,
+            "aspect": null,
+            "voice": null,
+            "reasons": [
+              {
+                "code": "unsupported-structure",
+                "ranges": []
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "stage": 27,
+      "input": "She won't sleep.",
+      "reason": "will / won’t 简单体主动在阶段27开放；原句和旧答案留在历史来源。",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ]
+          },
+          {
+            "key": "15",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 15
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      },
+      "sources": [
+        {
+          "path": "tests/fixtures/lexicon-development.json",
+          "id": "contraction-outside-4",
+          "original": {
+            "status": "unsupported",
+            "purpose": null,
+            "pattern": null,
+            "complexity": null,
+            "tense": null,
+            "aspect": null,
+            "voice": null,
+            "nodes": [],
+            "corrections": [],
+            "reasons": [
+              {
+                "code": "punctuation",
+                "ranges": []
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "stage": 27,
+      "input": "She will buy a book.",
+      "reason": "will / won’t 简单体主动在阶段27开放；原句和旧答案留在历史来源。",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ]
+          },
+          {
+            "key": "12",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 12
+              }
+            ]
+          },
+          {
+            "key": "19",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 13,
+                "end": 19
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      },
+      "sources": [
+        {
+          "path": "tests/fixtures/lexicon-development.json",
+          "id": "lexicon-outside-28",
+          "original": {
+            "status": "unsupported",
+            "purpose": null,
+            "pattern": null,
+            "complexity": null,
+            "tense": null,
+            "aspect": null,
+            "voice": null,
+            "nodes": [],
+            "corrections": [],
+            "reasons": [
+              {
+                "code": "unknown-word",
+                "ranges": [
+                  {
+                    "start": 4,
+                    "end": 8
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "stage": 27,
+      "input": "She will eat the apple.",
+      "reason": "will / won’t 简单体主动在阶段27开放；原句和旧答案留在历史来源。",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ]
+          },
+          {
+            "key": "12",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 12
+              }
+            ]
+          },
+          {
+            "key": "22",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 13,
+                "end": 22
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      },
+      "sources": [
+        {
+          "path": "tests/fixtures/stage26-verbs.json",
+          "id": "no-future",
+          "original": {
+            "status": "unsupported",
+            "purpose": null,
+            "pattern": null,
+            "complexity": null,
+            "tense": null,
+            "aspect": null,
+            "voice": null,
+            "nodes": [],
+            "reasons": [
+              {
+                "code": "unknown-word",
+                "ranges": [
+                  {
+                    "start": 4,
+                    "end": 8
+                  }
+                ]
+              }
+            ],
+            "corrections": []
+          }
+        }
+      ]
+    },
+    {
+      "stage": 27,
+      "input": "The nurses will carry the chairs.",
+      "reason": "will / won’t 简单体主动在阶段27开放；原句和旧答案留在历史来源。",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "10",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 10
+              }
+            ]
+          },
+          {
+            "key": "21",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 21
+              }
+            ]
+          },
+          {
+            "key": "32",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 22,
+                "end": 32
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      },
+      "sources": [
+        {
+          "path": "tests/fixtures/lexicon-acceptance.json",
+          "id": "boundary-18",
+          "original": {
+            "status": "unsupported",
+            "purpose": null,
+            "pattern": null,
+            "complexity": null,
+            "tense": null,
+            "aspect": null,
+            "voice": null,
+            "nodes": [],
+            "corrections": [],
+            "reasons": [
+              {
+                "code": "unknown-word",
+                "ranges": [
+                  {
+                    "start": 11,
+                    "end": 15
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "stage": 27,
+      "input": "The farmer won't dance.",
+      "reason": "will / won’t 简单体主动在阶段27开放；原句和旧答案留在历史来源。",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "10",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 10
+              }
+            ]
+          },
+          {
+            "key": "22",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 22
+              }
+            ]
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      },
+      "sources": [
+        {
+          "path": "tests/fixtures/lexicon-acceptance.json",
+          "id": "boundary-19",
+          "original": {
+            "status": "unsupported",
+            "purpose": null,
+            "pattern": null,
+            "complexity": null,
+            "tense": null,
+            "aspect": null,
+            "voice": null,
+            "nodes": [],
+            "corrections": [],
+            "reasons": [
+              {
+                "code": "punctuation",
+                "ranges": []
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "stage": 27,
+      "input": "She smiles because he will sleep.",
+      "reason": "will 只进入陈述分句，if 中限主句；原始历史答案不变。",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": null,
+        "complexity": "complex",
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [
+          {
+            "key": "3",
+            "parentKey": "clause-1",
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ]
+          },
+          {
+            "key": "10",
+            "parentKey": "clause-1",
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 10
+              }
+            ]
+          },
+          {
+            "key": "clause-1",
+            "parentKey": null,
+            "role": "clause",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 10
+              }
+            ],
+            "clause": {
+              "kind": "main",
+              "purpose": "declarative",
+              "pattern": "SV",
+              "tense": "present",
+              "modal": null,
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "21",
+            "parentKey": "clause-2",
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 19,
+                "end": 21
+              }
+            ]
+          },
+          {
+            "key": "32",
+            "parentKey": "clause-2",
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 22,
+                "end": 32
+              }
+            ]
+          },
+          {
+            "key": "clause-2",
+            "parentKey": null,
+            "role": "clause",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 19,
+                "end": 32
+              }
+            ],
+            "clause": {
+              "kind": "subordinate",
+              "purpose": "declarative",
+              "pattern": "SV",
+              "tense": null,
+              "modal": "will",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "connector",
+            "parentKey": null,
+            "role": "connector",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 18
+              }
+            ],
+            "relation": "cause"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      },
+      "sources": [
+        {
+          "path": "tests/fixtures/stage10a.json",
+          "id": "boundary-18",
+          "original": {
+            "status": "unsupported",
+            "purpose": null,
+            "pattern": null,
+            "complexity": null,
+            "tense": null,
+            "nodes": [],
+            "corrections": [],
+            "aspect": null,
+            "voice": null,
+            "reasons": [
+              {
+                "code": "unsupported-structure",
+                "ranges": []
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "stage": 27,
+      "input": "If she sleeps, he will smile.",
+      "reason": "will 只进入陈述分句，if 中限主句；原始历史答案不变。",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": null,
+        "complexity": "complex",
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [
+          {
+            "key": "6",
+            "parentKey": "clause-1",
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 6
+              }
+            ]
+          },
+          {
+            "key": "13",
+            "parentKey": "clause-1",
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 7,
+                "end": 13
+              }
+            ]
+          },
+          {
+            "key": "clause-1",
+            "parentKey": null,
+            "role": "clause",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 13
+              }
+            ],
+            "clause": {
+              "kind": "subordinate",
+              "purpose": "declarative",
+              "pattern": "SV",
+              "tense": "present",
+              "modal": null,
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "17",
+            "parentKey": "clause-2",
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 15,
+                "end": 17
+              }
+            ]
+          },
+          {
+            "key": "28",
+            "parentKey": "clause-2",
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 18,
+                "end": 28
+              }
+            ]
+          },
+          {
+            "key": "clause-2",
+            "parentKey": null,
+            "role": "clause",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 15,
+                "end": 28
+              }
+            ],
+            "clause": {
+              "kind": "main",
+              "purpose": "declarative",
+              "pattern": "SV",
+              "tense": null,
+              "modal": "will",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "connector",
+            "parentKey": null,
+            "role": "connector",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 2
+              },
+              {
+                "start": 13,
+                "end": 14
+              }
+            ],
+            "relation": "condition"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      },
+      "sources": [
+        {
+          "path": "tests/fixtures/stage10b.json",
+          "id": "boundary-21",
+          "original": {
+            "status": "unsupported",
+            "purpose": null,
+            "pattern": null,
+            "complexity": null,
+            "tense": null,
+            "nodes": [],
+            "corrections": [],
+            "aspect": null,
+            "voice": null,
+            "reasons": [
+              {
+                "code": "unsupported-structure",
+                "ranges": []
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "stage": 27,
+      "input": "If the boys run, she will give them a pen.",
+      "reason": "will 只进入陈述分句，if 中限主句；原始历史答案不变。",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": null,
+        "complexity": "complex",
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [
+          {
+            "key": "11",
+            "parentKey": "clause-1",
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 11
+              }
+            ]
+          },
+          {
+            "key": "15",
+            "parentKey": "clause-1",
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 12,
+                "end": 15
+              }
+            ]
+          },
+          {
+            "key": "clause-1",
+            "parentKey": null,
+            "role": "clause",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 3,
+                "end": 15
+              }
+            ],
+            "clause": {
+              "kind": "subordinate",
+              "purpose": "declarative",
+              "pattern": "SV",
+              "tense": "present",
+              "modal": null,
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "20",
+            "parentKey": "clause-2",
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 17,
+                "end": 20
+              }
+            ]
+          },
+          {
+            "key": "30",
+            "parentKey": "clause-2",
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 21,
+                "end": 30
+              }
+            ]
+          },
+          {
+            "key": "35",
+            "parentKey": "clause-2",
+            "role": "indirectObject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 31,
+                "end": 35
+              }
+            ]
+          },
+          {
+            "key": "41",
+            "parentKey": "clause-2",
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 36,
+                "end": 41
+              }
+            ]
+          },
+          {
+            "key": "clause-2",
+            "parentKey": null,
+            "role": "clause",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 17,
+                "end": 41
+              }
+            ],
+            "clause": {
+              "kind": "main",
+              "purpose": "declarative",
+              "pattern": "SVOO",
+              "tense": null,
+              "modal": "will",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "connector",
+            "parentKey": null,
+            "role": "connector",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 2
+              },
+              {
+                "start": 15,
+                "end": 16
+              }
+            ],
+            "relation": "condition"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      },
+      "sources": [
+        {
+          "path": "tests/fixtures/stage12.json",
+          "id": null,
+          "original": {
+            "status": "unsupported",
+            "code": "unknown-word"
+          }
+        }
+      ]
+    },
+    {
+      "stage": 27,
+      "input": "She will sleep and he smiles.",
+      "reason": "will 只进入陈述分句，if 中限主句；原始历史答案不变。",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": null,
+        "complexity": "compound",
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [
+          {
+            "key": "3",
+            "parentKey": "clause-1",
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ]
+          },
+          {
+            "key": "14",
+            "parentKey": "clause-1",
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 14
+              }
+            ]
+          },
+          {
+            "key": "clause-1",
+            "parentKey": null,
+            "role": "clause",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 14
+              }
+            ],
+            "clause": {
+              "kind": "independent",
+              "purpose": "declarative",
+              "pattern": "SV",
+              "tense": null,
+              "modal": "will",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "21",
+            "parentKey": "clause-2",
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 19,
+                "end": 21
+              }
+            ]
+          },
+          {
+            "key": "28",
+            "parentKey": "clause-2",
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 22,
+                "end": 28
+              }
+            ]
+          },
+          {
+            "key": "clause-2",
+            "parentKey": null,
+            "role": "clause",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 19,
+                "end": 28
+              }
+            ],
+            "clause": {
+              "kind": "independent",
+              "purpose": "declarative",
+              "pattern": "SV",
+              "tense": "present",
+              "modal": null,
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "connector",
+            "parentKey": null,
+            "role": "connector",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 15,
+                "end": 18
+              }
+            ],
+            "relation": "addition"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 27,
+      "input": "She won't sleep but he will smile.",
+      "reason": "will 只进入陈述分句，if 中限主句；原始历史答案不变。",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": null,
+        "complexity": "compound",
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [
+          {
+            "key": "3",
+            "parentKey": "clause-1",
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ]
+          },
+          {
+            "key": "15",
+            "parentKey": "clause-1",
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 15
+              }
+            ]
+          },
+          {
+            "key": "clause-1",
+            "parentKey": null,
+            "role": "clause",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 15
+              }
+            ],
+            "clause": {
+              "kind": "independent",
+              "purpose": "declarative",
+              "pattern": "SV",
+              "tense": null,
+              "modal": "will",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "22",
+            "parentKey": "clause-2",
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 20,
+                "end": 22
+              }
+            ]
+          },
+          {
+            "key": "33",
+            "parentKey": "clause-2",
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 23,
+                "end": 33
+              }
+            ]
+          },
+          {
+            "key": "clause-2",
+            "parentKey": null,
+            "role": "clause",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 20,
+                "end": 33
+              }
+            ],
+            "clause": {
+              "kind": "independent",
+              "purpose": "declarative",
+              "pattern": "SV",
+              "tense": null,
+              "modal": "will",
+              "aspect": "simple",
+              "voice": "active"
+            }
+          },
+          {
+            "key": "connector",
+            "parentKey": null,
+            "role": "connector",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 16,
+                "end": 19
+              }
+            ],
+            "relation": "contrast"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 27,
+      "input": "Your father will be smiling.",
+      "reason": "will 已收录，但新谓语链尚未开放；未知词迁移为范围限制。",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      },
+      "sources": [
+        {
+          "path": "tests/fixtures/predicate-acceptance.json",
+          "id": "independent-outside-11",
+          "original": {
+            "status": "unsupported",
+            "code": "unknown-word"
+          }
+        }
+      ]
+    },
+    {
+      "stage": 27,
+      "input": "She will has slept.",
+      "reason": "will 已收录，但新谓语链尚未开放；未知词迁移为范围限制。",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      },
+      "sources": [
+        {
+          "path": "tests/fixtures/lexicon-development.json",
+          "id": "predicate-no-edit-19",
+          "original": {
+            "status": "unsupported",
+            "purpose": null,
+            "pattern": null,
+            "complexity": null,
+            "tense": null,
+            "aspect": null,
+            "voice": null,
+            "nodes": [],
+            "corrections": [],
+            "reasons": [
+              {
+                "code": "unknown-word",
+                "ranges": [
+                  {
+                    "start": 4,
+                    "end": 8
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "stage": 27,
+      "input": "She will goes to school.",
+      "reason": "完整唯一 will go 固定目的地搭配允许单处原形纠错。",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "MODAL-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 9,
+                  "end": 13
+                },
+                "expected": "goes",
+                "replacement": "go"
+              }
+            ]
+          }
+        ]
+      },
+      "control": {
+        "input": "She will go to school.",
+        "expected": {
+          "status": "complete",
+          "purpose": "declarative",
+          "pattern": "SV",
+          "complexity": "simple",
+          "tense": null,
+          "modal": "will",
+          "aspect": "simple",
+          "voice": "active",
+          "nodes": [
+            {
+              "key": "3",
+              "parentKey": null,
+              "role": "subject",
+              "implicit": false,
+              "ranges": [
+                {
+                  "start": 0,
+                  "end": 3
+                }
+              ]
+            },
+            {
+              "key": "11",
+              "parentKey": null,
+              "role": "verb",
+              "implicit": false,
+              "ranges": [
+                {
+                  "start": 4,
+                  "end": 11
+                }
+              ]
+            },
+            {
+              "key": "21",
+              "parentKey": null,
+              "role": "adverbial",
+              "implicit": false,
+              "ranges": [
+                {
+                  "start": 12,
+                  "end": 21
+                }
+              ]
+            }
+          ],
+          "reasons": [],
+          "corrections": []
+        }
+      }
+    },
+    {
+      "stage": 28,
+      "input": "The doctor walks in school.",
+      "reason": "in 已审核收录，但裸 school 未开放为地点介词补足语；由未知词迁移为范围限制。",
+      "sources": [
+        {
+          "path": "tests/fixtures/lexicon-development.json",
+          "id": "lexicon-outside-8",
+          "original": {
+            "status": "unsupported",
+            "purpose": null,
+            "pattern": null,
+            "complexity": null,
+            "tense": null,
+            "aspect": null,
+            "voice": null,
+            "nodes": [],
+            "corrections": [],
+            "reasons": [
+              {
+                "code": "unknown-word",
+                "ranges": [
+                  {
+                    "start": 17,
+                    "end": 19
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 28,
+      "input": "She is sleeping in school.",
+      "reason": "in 已收录，裸 school 地点补足语仍未开放；所有原阶段来源保留。",
+      "sources": [
+        {
+          "path": "tests/fixtures/predicate-development.json",
+          "id": "14-outside-10",
+          "original": {
+            "status": "unsupported",
+            "code": "unknown-word"
+          }
+        },
+        {
+          "path": "tests/fixtures/predicate-development.json",
+          "id": "15-outside-10",
+          "original": {
+            "status": "unsupported",
+            "code": "unknown-word"
+          }
+        },
+        {
+          "path": "tests/fixtures/predicate-development.json",
+          "id": "16-outside-10",
+          "original": {
+            "status": "unsupported",
+            "code": "unknown-word"
+          }
+        },
+        {
+          "path": "tests/fixtures/predicate-development.json",
+          "id": "17-outside-10",
+          "original": {
+            "status": "unsupported",
+            "code": "unknown-word"
+          }
+        }
+      ],
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 29,
+      "input": "Who has seen our gifts?",
+      "reason": "who 已收录，完成体特殊疑问或关系从句仍未开放；原未知词答案迁移为明确结构限制。",
+      "sources": [
+        {
+          "path": "tests/fixtures/predicate-acceptance.json",
+          "id": "independent-outside-10",
+          "original": {
+            "status": "unsupported",
+            "code": "unknown-word"
+          }
+        }
+      ],
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 29,
+      "input": "The girl who smiles likes the book.",
+      "reason": "who 已收录，完成体特殊疑问或关系从句仍未开放；原未知词答案迁移为明确结构限制。",
+      "sources": [
+        {
+          "path": "tests/fixtures/stage12.json",
+          "id": null,
+          "original": {
+            "status": "unsupported",
+            "code": "unknown-word"
+          }
+        }
+      ],
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 29,
+      "input": "She smiles because the boy who sleeps is kind.",
+      "reason": "who 已收录，完成体特殊疑问或关系从句仍未开放；原未知词答案迁移为明确结构限制。",
+      "sources": [
+        {
+          "path": "tests/fixtures/stage10a.json",
+          "id": "boundary-17",
+          "original": {
+            "status": "unsupported",
+            "purpose": null,
+            "pattern": null,
+            "complexity": null,
+            "tense": null,
+            "nodes": [],
+            "corrections": [],
+            "aspect": null,
+            "voice": null,
+            "reasons": [
+              {
+                "code": "unsupported-structure",
+                "ranges": []
+              }
+            ]
+          }
+        }
+      ],
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": [],
+            "clauseIndex": 2
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 29,
+      "input": "If the boy who sleeps is kind, we smile.",
+      "reason": "who 已收录，完成体特殊疑问或关系从句仍未开放；原未知词答案迁移为明确结构限制。",
+      "sources": [
+        {
+          "path": "tests/fixtures/stage10b.json",
+          "id": "boundary-25",
+          "original": {
+            "status": "unsupported",
+            "purpose": null,
+            "pattern": null,
+            "complexity": null,
+            "tense": null,
+            "nodes": [],
+            "corrections": [],
+            "aspect": null,
+            "voice": null,
+            "reasons": [
+              {
+                "code": "unsupported-structure",
+                "ranges": []
+              }
+            ]
+          }
+        }
+      ],
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": [],
+            "clauseIndex": 1
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 30,
+      "input": "She eats.",
+      "reason": "新增 eat-sv 的人物主语一般现在时完整搭配；原 SVO 与原错误尾部继续保留。",
+      "sources": [
+        {
+          "path": "tests/fixtures/stage26-verbs.json",
+          "id": "eat-wrong-frame",
+          "original": {
+            "status": "unsupported",
+            "purpose": null,
+            "pattern": null,
+            "complexity": null,
+            "tense": null,
+            "aspect": null,
+            "voice": null,
+            "nodes": [],
+            "reasons": [
+              {
+                "code": "unsupported-structure",
+                "ranges": []
+              }
+            ],
+            "corrections": []
+          }
+        }
+      ],
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 8
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 30,
+      "input": "She will reads.",
+      "reason": "新增 read-sv 后该完整人物搭配唯一，允许单处原形替换；原阶段27边界及冻结哈希保留。",
+      "sources": [
+        {
+          "path": "tests/fixtures/stage27-development.json",
+          "id": "27-64",
+          "original": {
+            "status": "unsupported",
+            "purpose": null,
+            "pattern": null,
+            "complexity": null,
+            "tense": null,
+            "modal": null,
+            "aspect": null,
+            "voice": null,
+            "nodes": [],
+            "reasons": [
+              {
+                "code": "unsupported-structure",
+                "ranges": []
+              }
+            ],
+            "corrections": []
+          }
+        }
+      ],
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "MODAL-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 9,
+                  "end": 14
+                },
+                "expected": "reads",
+                "replacement": "read"
+              }
+            ]
+          }
+        ]
+      },
+      "control": {
+        "input": "She will read.",
+        "expected": {
+          "status": "complete",
+          "purpose": "declarative",
+          "pattern": "SV",
+          "complexity": "simple",
+          "tense": null,
+          "modal": "will",
+          "questionType": null,
+          "aspect": "simple",
+          "voice": "active",
+          "nodes": [
+            {
+              "key": "0",
+              "parentKey": null,
+              "role": "subject",
+              "implicit": false,
+              "ranges": [
+                {
+                  "start": 0,
+                  "end": 3
+                }
+              ],
+              "ruleId": "SV-001"
+            },
+            {
+              "key": "1",
+              "parentKey": null,
+              "role": "verb",
+              "implicit": false,
+              "ranges": [
+                {
+                  "start": 4,
+                  "end": 13
+                }
+              ],
+              "ruleId": "MODAL-WILL-001"
+            }
+          ],
+          "reasons": [],
+          "corrections": []
+        }
+      }
+    }
+  ]
+}

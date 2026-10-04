@@ -1,0 +1,334 @@
+{
+  "mode": "built",
+  "browser": "147.0.7727.15",
+  "ruleVersion": "0.23.1",
+  "lexiconVersion": "1.8.1",
+  "viewports": [
+    {
+      "width": 1280,
+      "checks": [
+        {
+          "id": "location-complement-and-nested-attribute",
+          "passed": true
+        },
+        {
+          "id": "ctrl-enter-and-keyboard-component",
+          "passed": true
+        },
+        {
+          "id": "meta-enter-and-correction-loop",
+          "passed": true
+        },
+        {
+          "id": "legacy-regression",
+          "passed": true,
+          "text": "She sleeps under the table."
+        },
+        {
+          "id": "legacy-regression",
+          "passed": true,
+          "text": "Where does she work?"
+        },
+        {
+          "id": "legacy-regression",
+          "passed": true,
+          "text": "She can be kind."
+        },
+        {
+          "id": "legacy-regression",
+          "passed": true,
+          "text": "She has been kind."
+        },
+        {
+          "id": "legacy-regression",
+          "passed": true,
+          "text": "Our father smiled and their teacher gave her a new picture."
+        },
+        {
+          "id": "clause-drilldown-and-keyboard-focus-return",
+          "passed": true
+        },
+        {
+          "id": "no-location-inheritance-into-clauses",
+          "passed": true
+        },
+        {
+          "id": "unknown-range-and-focus",
+          "passed": true
+        },
+        {
+          "id": "query-filter-and-insertion-focus",
+          "passed": true
+        },
+        {
+          "id": "edit-invalidation-and-continuous-click",
+          "passed": true
+        },
+        {
+          "id": "all-performance-inputs-and-1001-refusal",
+          "passed": true,
+          "cases": 14
+        },
+        {
+          "id": "offline-and-zero-private-network-console-storage",
+          "passed": true,
+          "offlineRequests": 0,
+          "storage": {
+            "local": [],
+            "session": [],
+            "cookies": "",
+            "databases": [],
+            "caches": []
+          }
+        },
+        {
+          "id": "zero-action-requests-online-and-offline",
+          "passed": true,
+          "requests": 0
+        },
+        {
+          "id": "refresh-defaults",
+          "passed": true
+        }
+      ],
+      "timings": [
+        {
+          "id": "read-her-question",
+          "utf16Length": 1000,
+          "interactionMs": 50
+        },
+        {
+          "id": "recipient-her",
+          "utf16Length": 1000,
+          "interactionMs": 45
+        },
+        {
+          "id": "carried-her-passive",
+          "utf16Length": 1000,
+          "interactionMs": 49
+        },
+        {
+          "id": "read-mixed-ambiguity",
+          "utf16Length": 1000,
+          "interactionMs": 49
+        },
+        {
+          "id": "will-read-many-attributes",
+          "utf16Length": 1000,
+          "interactionMs": 42
+        },
+        {
+          "id": "location-phrase-attributes",
+          "utf16Length": 1000,
+          "interactionMs": 44
+        },
+        {
+          "id": "wh-second-frame-many-attributes",
+          "utf16Length": 1000,
+          "interactionMs": 44
+        },
+        {
+          "id": "open-second-frame-many-attributes",
+          "utf16Length": 1000,
+          "interactionMs": 47
+        },
+        {
+          "id": "be-location-long-subject",
+          "utf16Length": 1000,
+          "interactionMs": 48
+        },
+        {
+          "id": "be-location-long-complement",
+          "utf16Length": 1000,
+          "interactionMs": 48
+        },
+        {
+          "id": "negative-location-long-complement",
+          "utf16Length": 1000,
+          "interactionMs": 40
+        },
+        {
+          "id": "question-location-long-subject",
+          "utf16Length": 1000,
+          "interactionMs": 41
+        },
+        {
+          "id": "where-long-subject",
+          "utf16Length": 1000,
+          "interactionMs": 49
+        },
+        {
+          "id": "location-agreement-long-complement",
+          "utf16Length": 1000,
+          "interactionMs": 50
+        }
+      ],
+      "longTasks": [],
+      "errors": [],
+      "consoleErrorCount": 0
+    },
+    {
+      "width": 390,
+      "checks": [
+        {
+          "id": "location-complement-and-nested-attribute",
+          "passed": true
+        },
+        {
+          "id": "ctrl-enter-and-keyboard-component",
+          "passed": true
+        },
+        {
+          "id": "meta-enter-and-correction-loop",
+          "passed": true
+        },
+        {
+          "id": "legacy-regression",
+          "passed": true,
+          "text": "She sleeps under the table."
+        },
+        {
+          "id": "legacy-regression",
+          "passed": true,
+          "text": "Where does she work?"
+        },
+        {
+          "id": "legacy-regression",
+          "passed": true,
+          "text": "She can be kind."
+        },
+        {
+          "id": "legacy-regression",
+          "passed": true,
+          "text": "She has been kind."
+        },
+        {
+          "id": "legacy-regression",
+          "passed": true,
+          "text": "Our father smiled and their teacher gave her a new picture."
+        },
+        {
+          "id": "clause-drilldown-and-keyboard-focus-return",
+          "passed": true
+        },
+        {
+          "id": "no-location-inheritance-into-clauses",
+          "passed": true
+        },
+        {
+          "id": "unknown-range-and-focus",
+          "passed": true
+        },
+        {
+          "id": "query-filter-and-insertion-focus",
+          "passed": true
+        },
+        {
+          "id": "edit-invalidation-and-continuous-click",
+          "passed": true
+        },
+        {
+          "id": "all-performance-inputs-and-1001-refusal",
+          "passed": true,
+          "cases": 14
+        },
+        {
+          "id": "offline-and-zero-private-network-console-storage",
+          "passed": true,
+          "offlineRequests": 0,
+          "storage": {
+            "local": [],
+            "session": [],
+            "cookies": "",
+            "databases": [],
+            "caches": []
+          }
+        },
+        {
+          "id": "zero-action-requests-online-and-offline",
+          "passed": true,
+          "requests": 0
+        },
+        {
+          "id": "refresh-defaults",
+          "passed": true
+        }
+      ],
+      "timings": [
+        {
+          "id": "read-her-question",
+          "utf16Length": 1000,
+          "interactionMs": 43
+        },
+        {
+          "id": "recipient-her",
+          "utf16Length": 1000,
+          "interactionMs": 46
+        },
+        {
+          "id": "carried-her-passive",
+          "utf16Length": 1000,
+          "interactionMs": 47
+        },
+        {
+          "id": "read-mixed-ambiguity",
+          "utf16Length": 1000,
+          "interactionMs": 49
+        },
+        {
+          "id": "will-read-many-attributes",
+          "utf16Length": 1000,
+          "interactionMs": 53
+        },
+        {
+          "id": "location-phrase-attributes",
+          "utf16Length": 1000,
+          "interactionMs": 46
+        },
+        {
+          "id": "wh-second-frame-many-attributes",
+          "utf16Length": 1000,
+          "interactionMs": 48
+        },
+        {
+          "id": "open-second-frame-many-attributes",
+          "utf16Length": 1000,
+          "interactionMs": 47
+        },
+        {
+          "id": "be-location-long-subject",
+          "utf16Length": 1000,
+          "interactionMs": 50
+        },
+        {
+          "id": "be-location-long-complement",
+          "utf16Length": 1000,
+          "interactionMs": 49
+        },
+        {
+          "id": "negative-location-long-complement",
+          "utf16Length": 1000,
+          "interactionMs": 49
+        },
+        {
+          "id": "question-location-long-subject",
+          "utf16Length": 1000,
+          "interactionMs": 50
+        },
+        {
+          "id": "where-long-subject",
+          "utf16Length": 1000,
+          "interactionMs": 48
+        },
+        {
+          "id": "location-agreement-long-complement",
+          "utf16Length": 1000,
+          "interactionMs": 48
+        }
+      ],
+      "longTasks": [],
+      "errors": [],
+      "consoleErrorCount": 0
+    }
+  ]
+}

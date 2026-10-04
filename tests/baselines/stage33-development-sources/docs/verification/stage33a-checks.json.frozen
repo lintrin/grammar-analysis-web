@@ -1,0 +1,115 @@
+{
+  "stage": 33,
+  "phase": "33A",
+  "date": "2026-10-04",
+  "baselineCommit": "0c5dbfb4940efd87ba87c7530f747168bcc1f003",
+  "node": "v24.14.1",
+  "ruleVersion": "0.22.4",
+  "lexiconVersion": "1.7.0",
+  "lexiconHash": "dc7e010f3314eec82a61720ad1d6249209c459236245b8f72ce9fcee5fc7bb4a",
+  "productionCodeChanged": false,
+  "baselineTests": 5497,
+  "finalTests": 5503,
+  "failedTests": 0,
+  "skippedTests": 0,
+  "checks": [
+    {
+      "command": "npm test",
+      "exitCode": 0,
+      "tests": 5503
+    },
+    {
+      "command": "npx tsc --noEmit",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run lint",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run lexicon -- verify",
+      "exitCode": 0,
+      "entries": 231
+    },
+    {
+      "command": "npm run build",
+      "exitCode": 0,
+      "notes": [
+        "baseline production modules unchanged after build",
+        "existing proxy and Vinext route-classification notices"
+      ]
+    },
+    {
+      "command": "git diff --check",
+      "exitCode": 0
+    },
+    {
+      "command": "git diff --cached --check",
+      "exitCode": 0
+    },
+    {
+      "command": "node scripts/stage33/freeze-scope.mjs",
+      "exitCode": 0,
+      "sources": 26
+    },
+    {
+      "command": "python3 scripts/stage33/author-answers.py",
+      "exitCode": 0,
+      "mode": "reproduce-and-compare-no-rewrite"
+    },
+    {
+      "command": "node --experimental-strip-types scripts/stage33/check-development.mjs docs/verification/stage33-first-run.json",
+      "exitCode": 1,
+      "purpose": "first expected runtime gaps after scope freeze",
+      "total": 128,
+      "pass": 44,
+      "fail": 84
+    }
+  ],
+  "runtimeAcceptanceComplete": false,
+  "remaining": [
+    "33B production protocol and audited lexicon format upgrade",
+    "33C parser and corrections",
+    "33D UI and queries",
+    "33E independent corpus and development/build browser acceptance",
+    "33F final privacy/offline/HMR/performance and delivery"
+  ],
+  "localExecutionLogs": {
+    "test": {
+      "localPath": "/tmp/grammar-stage33-baseline/test.log",
+      "sha256": "1521db7d9365f554eddf54f3c454a331965d89f3932bcc2e1b0e498d813521f2"
+    },
+    "types": {
+      "localPath": "/tmp/grammar-stage33-baseline/types.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "lint": {
+      "localPath": "/tmp/grammar-stage33-baseline/lint.log",
+      "sha256": "9d4ed79a683eccf54173b6034d4187b97e629a26e9f9dbedc55bc19d45839445"
+    },
+    "lexicon": {
+      "localPath": "/tmp/grammar-stage33-baseline/lexicon.log",
+      "sha256": "f3e17c36d9b7e0f8e38c4a6171b8dac47b4d577a7f8e2b974319910aebeb56fb"
+    },
+    "build": {
+      "localPath": "/tmp/grammar-stage33-baseline/build.log",
+      "sha256": "3a8ce6763639d01c19d8356ed3b633dddba9bdeccfc673d2024908d6831db76e"
+    },
+    "delivery-test": {
+      "localPath": "/tmp/grammar-stage33-baseline/delivery-test.log",
+      "sha256": "c70e2899874b3ff067d8c90eec718598bb9d0946ae221bdd18497e3b23b0f0de"
+    },
+    "delivery-types": {
+      "localPath": "/tmp/grammar-stage33-baseline/delivery-types.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "delivery-lint": {
+      "localPath": "/tmp/grammar-stage33-baseline/delivery-lint.log",
+      "sha256": "9d4ed79a683eccf54173b6034d4187b97e629a26e9f9dbedc55bc19d45839445"
+    },
+    "delivery-lexicon": {
+      "localPath": "/tmp/grammar-stage33-baseline/delivery-lexicon.log",
+      "sha256": "8a3d0d97ddfb950c112ab899aaa599ac26c2ca836d70ef7ea09e6ab2f28ec1a8"
+    }
+  }
+}

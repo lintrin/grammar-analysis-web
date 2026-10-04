@@ -1,0 +1,7535 @@
+{
+  "authorship": "Manual WH roles, teaching singular scope, auxiliary classifications, ranges and safe edits frozen before stage29 execution; no analyzer imports.",
+  "fixtures": [
+    {
+      "id": "29-1",
+      "kind": "correct",
+      "group": "adverbial",
+      "input": "Where do they sleep?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 5
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 8
+              },
+              {
+                "start": 14,
+                "end": 19
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 13
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-2",
+      "kind": "correct",
+      "group": "adverbial",
+      "input": "Where do they work?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 5
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 8
+              },
+              {
+                "start": 14,
+                "end": 18
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 13
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-3",
+      "kind": "correct",
+      "group": "adverbial",
+      "input": "Where do they walk?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 5
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 8
+              },
+              {
+                "start": 14,
+                "end": 18
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 13
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-4",
+      "kind": "correct",
+      "group": "adverbial",
+      "input": "Where do they run?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 5
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 8
+              },
+              {
+                "start": 14,
+                "end": 17
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 13
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-5",
+      "kind": "correct",
+      "group": "adverbial",
+      "input": "Where do they dance?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 5
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 8
+              },
+              {
+                "start": 14,
+                "end": 19
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 13
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-6",
+      "kind": "correct",
+      "group": "adverbial",
+      "input": "Where do they wait?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 5
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 8
+              },
+              {
+                "start": 14,
+                "end": 18
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 13
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-7",
+      "kind": "correct",
+      "group": "adverbial",
+      "input": "When do they sleep?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 7
+              },
+              {
+                "start": 13,
+                "end": 18
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 8,
+                "end": 12
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-8",
+      "kind": "correct",
+      "group": "adverbial",
+      "input": "When do they read the book?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 7
+              },
+              {
+                "start": 13,
+                "end": 17
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 8,
+                "end": 12
+              }
+            ],
+            "ruleId": "SVO-001"
+          },
+          {
+            "key": "4",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 18,
+                "end": 26
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-9",
+      "kind": "correct",
+      "group": "adverbial",
+      "input": "Why do they sleep?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 6
+              },
+              {
+                "start": 12,
+                "end": 17
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 7,
+                "end": 11
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-10",
+      "kind": "correct",
+      "group": "adverbial",
+      "input": "Why do they read the book?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 6
+              },
+              {
+                "start": 12,
+                "end": 16
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 7,
+                "end": 11
+              }
+            ],
+            "ruleId": "SVO-001"
+          },
+          {
+            "key": "4",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 17,
+                "end": 25
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-11",
+      "kind": "correct",
+      "group": "object",
+      "input": "Who do they see?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-object",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "WH-OBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 6
+              },
+              {
+                "start": 12,
+                "end": 15
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 7,
+                "end": 11
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-12",
+      "kind": "correct",
+      "group": "object",
+      "input": "Who do they read?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-object",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "WH-OBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 6
+              },
+              {
+                "start": 12,
+                "end": 16
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 7,
+                "end": 11
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-13",
+      "kind": "correct",
+      "group": "object",
+      "input": "What do they see?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-object",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ],
+            "ruleId": "WH-OBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 7
+              },
+              {
+                "start": 13,
+                "end": 16
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 8,
+                "end": 12
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-14",
+      "kind": "correct",
+      "group": "object",
+      "input": "What do they read?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-object",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ],
+            "ruleId": "WH-OBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 7
+              },
+              {
+                "start": 13,
+                "end": 17
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 8,
+                "end": 12
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-15",
+      "kind": "correct",
+      "group": "adverbial",
+      "input": "Where does she sleep?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 5
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 10
+              },
+              {
+                "start": 15,
+                "end": 20
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 14
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-16",
+      "kind": "correct",
+      "group": "adverbial",
+      "input": "Where does she work?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 5
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 10
+              },
+              {
+                "start": 15,
+                "end": 19
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 14
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-17",
+      "kind": "correct",
+      "group": "adverbial",
+      "input": "Where does she walk?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 5
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 10
+              },
+              {
+                "start": 15,
+                "end": 19
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 14
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-18",
+      "kind": "correct",
+      "group": "adverbial",
+      "input": "Where does she run?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 5
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 10
+              },
+              {
+                "start": 15,
+                "end": 18
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 14
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-19",
+      "kind": "correct",
+      "group": "adverbial",
+      "input": "Where does she dance?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 5
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 10
+              },
+              {
+                "start": 15,
+                "end": 20
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 14
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-20",
+      "kind": "correct",
+      "group": "adverbial",
+      "input": "Where does she wait?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 5
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 10
+              },
+              {
+                "start": 15,
+                "end": 19
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 14
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-21",
+      "kind": "correct",
+      "group": "adverbial",
+      "input": "When does she sleep?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 9
+              },
+              {
+                "start": 14,
+                "end": 19
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 13
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-22",
+      "kind": "correct",
+      "group": "adverbial",
+      "input": "When does she read the book?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 9
+              },
+              {
+                "start": 14,
+                "end": 18
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 13
+              }
+            ],
+            "ruleId": "SVO-001"
+          },
+          {
+            "key": "4",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 19,
+                "end": 27
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-23",
+      "kind": "correct",
+      "group": "adverbial",
+      "input": "Why does she sleep?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 8
+              },
+              {
+                "start": 13,
+                "end": 18
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 12
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-24",
+      "kind": "correct",
+      "group": "adverbial",
+      "input": "Why does she read the book?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 8
+              },
+              {
+                "start": 13,
+                "end": 17
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 12
+              }
+            ],
+            "ruleId": "SVO-001"
+          },
+          {
+            "key": "4",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 18,
+                "end": 26
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-25",
+      "kind": "correct",
+      "group": "object",
+      "input": "Who does she see?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-object",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "WH-OBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 8
+              },
+              {
+                "start": 13,
+                "end": 16
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 12
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-26",
+      "kind": "correct",
+      "group": "object",
+      "input": "Who does she read?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-object",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "WH-OBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 8
+              },
+              {
+                "start": 13,
+                "end": 17
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 12
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-27",
+      "kind": "correct",
+      "group": "object",
+      "input": "What does she see?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-object",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ],
+            "ruleId": "WH-OBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 9
+              },
+              {
+                "start": 14,
+                "end": 17
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 13
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-28",
+      "kind": "correct",
+      "group": "object",
+      "input": "What does she read?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-object",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ],
+            "ruleId": "WH-OBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 9
+              },
+              {
+                "start": 14,
+                "end": 18
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 13
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-29",
+      "kind": "correct",
+      "group": "adverbial",
+      "input": "Where did she sleep?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 5
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 9
+              },
+              {
+                "start": 14,
+                "end": 19
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 13
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-30",
+      "kind": "correct",
+      "group": "adverbial",
+      "input": "Where did she work?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 5
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 9
+              },
+              {
+                "start": 14,
+                "end": 18
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 13
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-31",
+      "kind": "correct",
+      "group": "adverbial",
+      "input": "Where did she walk?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 5
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 9
+              },
+              {
+                "start": 14,
+                "end": 18
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 13
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-32",
+      "kind": "correct",
+      "group": "adverbial",
+      "input": "Where did she run?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 5
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 9
+              },
+              {
+                "start": 14,
+                "end": 17
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 13
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-33",
+      "kind": "correct",
+      "group": "adverbial",
+      "input": "Where did she dance?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 5
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 9
+              },
+              {
+                "start": 14,
+                "end": 19
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 13
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-34",
+      "kind": "correct",
+      "group": "adverbial",
+      "input": "Where did she wait?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 5
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 9
+              },
+              {
+                "start": 14,
+                "end": 18
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 13
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-35",
+      "kind": "correct",
+      "group": "adverbial",
+      "input": "When did she sleep?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 8
+              },
+              {
+                "start": 13,
+                "end": 18
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 12
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-36",
+      "kind": "correct",
+      "group": "adverbial",
+      "input": "When did she read the book?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 8
+              },
+              {
+                "start": 13,
+                "end": 17
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 12
+              }
+            ],
+            "ruleId": "SVO-001"
+          },
+          {
+            "key": "4",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 18,
+                "end": 26
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-37",
+      "kind": "correct",
+      "group": "adverbial",
+      "input": "Why did she sleep?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 7
+              },
+              {
+                "start": 12,
+                "end": 17
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 8,
+                "end": 11
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-38",
+      "kind": "correct",
+      "group": "adverbial",
+      "input": "Why did she read the book?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 7
+              },
+              {
+                "start": 12,
+                "end": 16
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 8,
+                "end": 11
+              }
+            ],
+            "ruleId": "SVO-001"
+          },
+          {
+            "key": "4",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 17,
+                "end": 25
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-39",
+      "kind": "correct",
+      "group": "object",
+      "input": "Who did she see?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": "wh-object",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "WH-OBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 7
+              },
+              {
+                "start": 12,
+                "end": 15
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 8,
+                "end": 11
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-40",
+      "kind": "correct",
+      "group": "object",
+      "input": "Who did she read?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": "wh-object",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "WH-OBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 7
+              },
+              {
+                "start": 12,
+                "end": 16
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 8,
+                "end": 11
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-41",
+      "kind": "correct",
+      "group": "object",
+      "input": "What did she see?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": "wh-object",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ],
+            "ruleId": "WH-OBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 8
+              },
+              {
+                "start": 13,
+                "end": 16
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 12
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-42",
+      "kind": "correct",
+      "group": "object",
+      "input": "What did she read?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": "wh-object",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ],
+            "ruleId": "WH-OBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 8
+              },
+              {
+                "start": 13,
+                "end": 17
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 12
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-43",
+      "kind": "correct",
+      "group": "adverbial",
+      "input": "Where can she sleep?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "can",
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 5
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 9
+              },
+              {
+                "start": 14,
+                "end": 19
+              }
+            ],
+            "ruleId": "QUESTION-CAN-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 13
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-44",
+      "kind": "correct",
+      "group": "adverbial",
+      "input": "Where can she work?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "can",
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 5
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 9
+              },
+              {
+                "start": 14,
+                "end": 18
+              }
+            ],
+            "ruleId": "QUESTION-CAN-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 13
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-45",
+      "kind": "correct",
+      "group": "adverbial",
+      "input": "Where can she walk?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "can",
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 5
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 9
+              },
+              {
+                "start": 14,
+                "end": 18
+              }
+            ],
+            "ruleId": "QUESTION-CAN-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 13
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-46",
+      "kind": "correct",
+      "group": "adverbial",
+      "input": "Where can she run?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "can",
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 5
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 9
+              },
+              {
+                "start": 14,
+                "end": 17
+              }
+            ],
+            "ruleId": "QUESTION-CAN-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 13
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-47",
+      "kind": "correct",
+      "group": "adverbial",
+      "input": "Where can she dance?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "can",
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 5
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 9
+              },
+              {
+                "start": 14,
+                "end": 19
+              }
+            ],
+            "ruleId": "QUESTION-CAN-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 13
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-48",
+      "kind": "correct",
+      "group": "adverbial",
+      "input": "Where can she wait?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "can",
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 5
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 9
+              },
+              {
+                "start": 14,
+                "end": 18
+              }
+            ],
+            "ruleId": "QUESTION-CAN-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 13
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-49",
+      "kind": "correct",
+      "group": "adverbial",
+      "input": "When can she sleep?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "can",
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 8
+              },
+              {
+                "start": 13,
+                "end": 18
+              }
+            ],
+            "ruleId": "QUESTION-CAN-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 12
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-50",
+      "kind": "correct",
+      "group": "adverbial",
+      "input": "When can she read the book?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "can",
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 8
+              },
+              {
+                "start": 13,
+                "end": 17
+              }
+            ],
+            "ruleId": "QUESTION-CAN-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 12
+              }
+            ],
+            "ruleId": "SVO-001"
+          },
+          {
+            "key": "4",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 18,
+                "end": 26
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-51",
+      "kind": "correct",
+      "group": "adverbial",
+      "input": "Why can she sleep?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "can",
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 7
+              },
+              {
+                "start": 12,
+                "end": 17
+              }
+            ],
+            "ruleId": "QUESTION-CAN-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 8,
+                "end": 11
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-52",
+      "kind": "correct",
+      "group": "adverbial",
+      "input": "Why can she read the book?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "can",
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 7
+              },
+              {
+                "start": 12,
+                "end": 16
+              }
+            ],
+            "ruleId": "QUESTION-CAN-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 8,
+                "end": 11
+              }
+            ],
+            "ruleId": "SVO-001"
+          },
+          {
+            "key": "4",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 17,
+                "end": 25
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-53",
+      "kind": "correct",
+      "group": "object",
+      "input": "Who can she see?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "can",
+        "questionType": "wh-object",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "WH-OBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 7
+              },
+              {
+                "start": 12,
+                "end": 15
+              }
+            ],
+            "ruleId": "QUESTION-CAN-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 8,
+                "end": 11
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-54",
+      "kind": "correct",
+      "group": "object",
+      "input": "Who can she read?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "can",
+        "questionType": "wh-object",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "WH-OBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 7
+              },
+              {
+                "start": 12,
+                "end": 16
+              }
+            ],
+            "ruleId": "QUESTION-CAN-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 8,
+                "end": 11
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-55",
+      "kind": "correct",
+      "group": "object",
+      "input": "What can she see?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "can",
+        "questionType": "wh-object",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ],
+            "ruleId": "WH-OBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 8
+              },
+              {
+                "start": 13,
+                "end": 16
+              }
+            ],
+            "ruleId": "QUESTION-CAN-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 12
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-56",
+      "kind": "correct",
+      "group": "object",
+      "input": "What can she read?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "can",
+        "questionType": "wh-object",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ],
+            "ruleId": "WH-OBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 8
+              },
+              {
+                "start": 13,
+                "end": 17
+              }
+            ],
+            "ruleId": "QUESTION-CAN-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 12
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-57",
+      "kind": "correct",
+      "group": "adverbial",
+      "input": "Where will she sleep?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 5
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 10
+              },
+              {
+                "start": 15,
+                "end": 20
+              }
+            ],
+            "ruleId": "QUESTION-WILL-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 14
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-58",
+      "kind": "correct",
+      "group": "adverbial",
+      "input": "Where will she work?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 5
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 10
+              },
+              {
+                "start": 15,
+                "end": 19
+              }
+            ],
+            "ruleId": "QUESTION-WILL-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 14
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-59",
+      "kind": "correct",
+      "group": "adverbial",
+      "input": "Where will she walk?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 5
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 10
+              },
+              {
+                "start": 15,
+                "end": 19
+              }
+            ],
+            "ruleId": "QUESTION-WILL-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 14
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-60",
+      "kind": "correct",
+      "group": "adverbial",
+      "input": "Where will she run?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 5
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 10
+              },
+              {
+                "start": 15,
+                "end": 18
+              }
+            ],
+            "ruleId": "QUESTION-WILL-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 14
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-61",
+      "kind": "correct",
+      "group": "adverbial",
+      "input": "Where will she dance?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 5
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 10
+              },
+              {
+                "start": 15,
+                "end": 20
+              }
+            ],
+            "ruleId": "QUESTION-WILL-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 14
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-62",
+      "kind": "correct",
+      "group": "adverbial",
+      "input": "Where will she wait?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 5
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 10
+              },
+              {
+                "start": 15,
+                "end": 19
+              }
+            ],
+            "ruleId": "QUESTION-WILL-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 14
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-63",
+      "kind": "correct",
+      "group": "adverbial",
+      "input": "When will she sleep?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 9
+              },
+              {
+                "start": 14,
+                "end": 19
+              }
+            ],
+            "ruleId": "QUESTION-WILL-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 13
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-64",
+      "kind": "correct",
+      "group": "adverbial",
+      "input": "When will she read the book?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 9
+              },
+              {
+                "start": 14,
+                "end": 18
+              }
+            ],
+            "ruleId": "QUESTION-WILL-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 13
+              }
+            ],
+            "ruleId": "SVO-001"
+          },
+          {
+            "key": "4",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 19,
+                "end": 27
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-65",
+      "kind": "correct",
+      "group": "adverbial",
+      "input": "Why will she sleep?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 8
+              },
+              {
+                "start": 13,
+                "end": 18
+              }
+            ],
+            "ruleId": "QUESTION-WILL-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 12
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-66",
+      "kind": "correct",
+      "group": "adverbial",
+      "input": "Why will she read the book?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 8
+              },
+              {
+                "start": 13,
+                "end": 17
+              }
+            ],
+            "ruleId": "QUESTION-WILL-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 12
+              }
+            ],
+            "ruleId": "SVO-001"
+          },
+          {
+            "key": "4",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 18,
+                "end": 26
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-67",
+      "kind": "correct",
+      "group": "object",
+      "input": "Who will she see?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "questionType": "wh-object",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "WH-OBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 8
+              },
+              {
+                "start": 13,
+                "end": 16
+              }
+            ],
+            "ruleId": "QUESTION-WILL-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 12
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-68",
+      "kind": "correct",
+      "group": "object",
+      "input": "Who will she read?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "questionType": "wh-object",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "WH-OBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 8
+              },
+              {
+                "start": 13,
+                "end": 17
+              }
+            ],
+            "ruleId": "QUESTION-WILL-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 12
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-69",
+      "kind": "correct",
+      "group": "object",
+      "input": "What will she see?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "questionType": "wh-object",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ],
+            "ruleId": "WH-OBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 9
+              },
+              {
+                "start": 14,
+                "end": 17
+              }
+            ],
+            "ruleId": "QUESTION-WILL-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 13
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-70",
+      "kind": "correct",
+      "group": "object",
+      "input": "What will she read?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "questionType": "wh-object",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ],
+            "ruleId": "WH-OBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 9
+              },
+              {
+                "start": 14,
+                "end": 18
+              }
+            ],
+            "ruleId": "QUESTION-WILL-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 13
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-71",
+      "kind": "correct",
+      "group": "subject",
+      "input": "Who sleeps?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-subject",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "WH-SUBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 10
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-72",
+      "kind": "correct",
+      "group": "subject",
+      "input": "Who slept?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": "wh-subject",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "WH-SUBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 9
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-73",
+      "kind": "correct",
+      "group": "subject",
+      "input": "Who will sleep?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "questionType": "wh-subject",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "WH-SUBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 14
+              }
+            ],
+            "ruleId": "MODAL-WILL-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-74",
+      "kind": "correct",
+      "group": "subject",
+      "input": "Who can sleep?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "can",
+        "questionType": "wh-subject",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "WH-SUBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 7
+              },
+              {
+                "start": 8,
+                "end": 13
+              }
+            ],
+            "ruleId": "MODAL-CAN-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-75",
+      "kind": "correct",
+      "group": "subject",
+      "input": "Who opens the door?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-subject",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "WH-SUBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 9
+              }
+            ],
+            "ruleId": "SVO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 18
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-76",
+      "kind": "correct",
+      "group": "subject",
+      "input": "Who opened the door?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": "wh-subject",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "WH-SUBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 10
+              }
+            ],
+            "ruleId": "SVO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 19
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-77",
+      "kind": "correct",
+      "group": "subject",
+      "input": "Who will read the book?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "questionType": "wh-subject",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "WH-SUBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 13
+              }
+            ],
+            "ruleId": "MODAL-WILL-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 14,
+                "end": 22
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-78",
+      "kind": "correct",
+      "group": "subject",
+      "input": "Who can read the book?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "can",
+        "questionType": "wh-subject",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "WH-SUBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 7
+              },
+              {
+                "start": 8,
+                "end": 12
+              }
+            ],
+            "ruleId": "MODAL-CAN-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 13,
+                "end": 21
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-79",
+      "kind": "correct",
+      "group": "subject",
+      "input": "Who has a book?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-subject",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "WH-SUBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 7
+              }
+            ],
+            "ruleId": "SVO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 8,
+                "end": 14
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-80",
+      "kind": "correct",
+      "group": "subject",
+      "input": "Who wrote the letter?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": "wh-subject",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "WH-SUBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 9
+              }
+            ],
+            "ruleId": "SVO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 20
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-81",
+      "kind": "correct",
+      "group": "subject",
+      "input": "What sleeps?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-subject",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ],
+            "ruleId": "WH-SUBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 11
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-82",
+      "kind": "correct",
+      "group": "subject",
+      "input": "What slept?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": "wh-subject",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ],
+            "ruleId": "WH-SUBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 10
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-83",
+      "kind": "correct",
+      "group": "subject",
+      "input": "What will sleep?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "questionType": "wh-subject",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ],
+            "ruleId": "WH-SUBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 15
+              }
+            ],
+            "ruleId": "MODAL-WILL-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-84",
+      "kind": "correct",
+      "group": "subject",
+      "input": "What can sleep?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "can",
+        "questionType": "wh-subject",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ],
+            "ruleId": "WH-SUBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 8
+              },
+              {
+                "start": 9,
+                "end": 14
+              }
+            ],
+            "ruleId": "MODAL-CAN-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-85",
+      "kind": "correct",
+      "group": "subject",
+      "input": "What opens the door?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-subject",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ],
+            "ruleId": "WH-SUBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 10
+              }
+            ],
+            "ruleId": "SVO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 19
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-86",
+      "kind": "correct",
+      "group": "subject",
+      "input": "What opened the door?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": "wh-subject",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ],
+            "ruleId": "WH-SUBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 11
+              }
+            ],
+            "ruleId": "SVO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 12,
+                "end": 20
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-87",
+      "kind": "correct",
+      "group": "subject",
+      "input": "What will read the book?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "questionType": "wh-subject",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ],
+            "ruleId": "WH-SUBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 14
+              }
+            ],
+            "ruleId": "MODAL-WILL-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 15,
+                "end": 23
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-88",
+      "kind": "correct",
+      "group": "subject",
+      "input": "What can read the book?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "can",
+        "questionType": "wh-subject",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ],
+            "ruleId": "WH-SUBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 8
+              },
+              {
+                "start": 9,
+                "end": 13
+              }
+            ],
+            "ruleId": "MODAL-CAN-001"
+          },
+          {
+            "key": "3",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 14,
+                "end": 22
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-89",
+      "kind": "correct",
+      "group": "subject",
+      "input": "What has a book?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-subject",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ],
+            "ruleId": "WH-SUBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 8
+              }
+            ],
+            "ruleId": "SVO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 15
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-90",
+      "kind": "correct",
+      "group": "subject",
+      "input": "What wrote the letter?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": "wh-subject",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ],
+            "ruleId": "WH-SUBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 10
+              }
+            ],
+            "ruleId": "SVO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 21
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-91",
+      "kind": "correct",
+      "group": "subject",
+      "input": "What happened?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "past",
+        "modal": null,
+        "questionType": "wh-subject",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ],
+            "ruleId": "WH-SUBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 13
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-92",
+      "kind": "error",
+      "input": "Where do they works?",
+      "controlId": "29-2",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "DO-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 14,
+                  "end": 19
+                },
+                "expected": "works",
+                "replacement": "work"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "29-93",
+      "kind": "error",
+      "input": "When do they reads the book?",
+      "controlId": "29-8",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "DO-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 13,
+                  "end": 18
+                },
+                "expected": "reads",
+                "replacement": "read"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "29-94",
+      "kind": "error",
+      "input": "What do they reads?",
+      "controlId": "29-14",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "DO-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 13,
+                  "end": 18
+                },
+                "expected": "reads",
+                "replacement": "read"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "29-95",
+      "kind": "error",
+      "input": "Where does she works?",
+      "controlId": "29-16",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "DO-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 15,
+                  "end": 20
+                },
+                "expected": "works",
+                "replacement": "work"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "29-96",
+      "kind": "error",
+      "input": "When does she reads the book?",
+      "controlId": "29-22",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "DO-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 14,
+                  "end": 19
+                },
+                "expected": "reads",
+                "replacement": "read"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "29-97",
+      "kind": "error",
+      "input": "What does she reads?",
+      "controlId": "29-28",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "DO-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 14,
+                  "end": 19
+                },
+                "expected": "reads",
+                "replacement": "read"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "29-98",
+      "kind": "error",
+      "input": "Where did she works?",
+      "controlId": "29-30",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "DO-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 14,
+                  "end": 19
+                },
+                "expected": "works",
+                "replacement": "work"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "29-99",
+      "kind": "error",
+      "input": "When did she reads the book?",
+      "controlId": "29-36",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "DO-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 13,
+                  "end": 18
+                },
+                "expected": "reads",
+                "replacement": "read"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "29-100",
+      "kind": "error",
+      "input": "What did she reads?",
+      "controlId": "29-42",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "DO-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 13,
+                  "end": 18
+                },
+                "expected": "reads",
+                "replacement": "read"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "29-101",
+      "kind": "error",
+      "input": "Where can she works?",
+      "controlId": "29-44",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "MODAL-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 14,
+                  "end": 19
+                },
+                "expected": "works",
+                "replacement": "work"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "29-102",
+      "kind": "error",
+      "input": "When can she reads the book?",
+      "controlId": "29-50",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "MODAL-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 13,
+                  "end": 18
+                },
+                "expected": "reads",
+                "replacement": "read"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "29-103",
+      "kind": "error",
+      "input": "What can she reads?",
+      "controlId": "29-56",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "MODAL-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 13,
+                  "end": 18
+                },
+                "expected": "reads",
+                "replacement": "read"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "29-104",
+      "kind": "error",
+      "input": "Where will she works?",
+      "controlId": "29-58",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "MODAL-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 15,
+                  "end": 20
+                },
+                "expected": "works",
+                "replacement": "work"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "29-105",
+      "kind": "error",
+      "input": "When will she reads the book?",
+      "controlId": "29-64",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "MODAL-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 14,
+                  "end": 19
+                },
+                "expected": "reads",
+                "replacement": "read"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "29-106",
+      "kind": "error",
+      "input": "What will she reads?",
+      "controlId": "29-70",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "MODAL-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 14,
+                  "end": 19
+                },
+                "expected": "reads",
+                "replacement": "read"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "29-107",
+      "kind": "boundary",
+      "input": "Who open the door?",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-108",
+      "kind": "boundary",
+      "input": "What sleep?",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-109",
+      "kind": "boundary",
+      "input": "Who will be kind?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-110",
+      "kind": "boundary",
+      "input": "Who did open the door?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-111",
+      "kind": "boundary",
+      "input": "Where is the book?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-112",
+      "kind": "boundary",
+      "input": "Where does she see the teacher?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-113",
+      "kind": "boundary",
+      "input": "Where does she sleep near the table?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-114",
+      "kind": "boundary",
+      "input": "When does she sleep today?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-115",
+      "kind": "boundary",
+      "input": "Why does she sleep because he smiles?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": [],
+            "clauseIndex": 1
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-116",
+      "kind": "boundary",
+      "input": "What does she give?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-117",
+      "kind": "boundary",
+      "input": "Who does she keep clean?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-118",
+      "kind": "boundary",
+      "input": "What is read?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-119",
+      "kind": "boundary",
+      "input": "Who has slept?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-120",
+      "kind": "boundary",
+      "input": "Who is sleeping?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-121",
+      "kind": "boundary",
+      "input": "Who can have a book?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-122",
+      "kind": "boundary",
+      "input": "Who will have a book?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-123",
+      "kind": "boundary",
+      "input": "What does she see the book?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-124",
+      "kind": "boundary",
+      "input": "Who she sees?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-125",
+      "kind": "boundary",
+      "input": "Where she works?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-126",
+      "kind": "boundary",
+      "input": "When she reads the book?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-127",
+      "kind": "boundary",
+      "input": "Why she opens the door?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-128",
+      "kind": "boundary",
+      "input": "Who does she not see?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-129",
+      "kind": "boundary",
+      "input": "What will she not read?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-130",
+      "kind": "boundary",
+      "input": "Who does not sleep?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-131",
+      "kind": "boundary",
+      "input": "Where do she works?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-132",
+      "kind": "boundary",
+      "input": "Where will she works yesterday?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-133",
+      "kind": "boundary",
+      "input": "Who can can sleep?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-134",
+      "kind": "boundary",
+      "input": "Who sleeps and he smiles?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": [],
+            "clauseIndex": 1
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-135",
+      "kind": "boundary",
+      "input": "What does she read.",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "punctuation",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-136",
+      "kind": "boundary",
+      "input": "Who sleeps!",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "punctuation",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-137",
+      "kind": "correct",
+      "group": "object",
+      "input": "What does she read",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-object",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ],
+            "ruleId": "WH-OBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 9
+              },
+              {
+                "start": 14,
+                "end": 18
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 13
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "id": "29-138",
+      "kind": "correct",
+      "group": "adverbial",
+      "input": "  WHERE   WILL   SHE  WORK?  ",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 2,
+                "end": 7
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 14
+              },
+              {
+                "start": 22,
+                "end": 26
+              }
+            ],
+            "ruleId": "QUESTION-WILL-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 17,
+                "end": 20
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    }
+  ],
+  "revisions": [
+    {
+      "fromSha256": "47f0e184c5a7002c7dfc72861189983039b5131839eb0e95397b2781d78a3a70",
+      "reason": "人工规则ID补全：既有核心解析器为所有非谓语成分使用句型ID，进行体核心使用 PREDICATE-PROGRESSIVE-ACTIVE；WH 与 LOCATION 节点使用独立ID。纠正机械生成器的默认ID，范围/角色/分类/诊断/编辑不变。按代码中显式规则定义固定，无分析器输出导入。",
+      "changes": [
+        {
+          "fixtureId": "29-8",
+          "key": "2",
+          "from": "SV-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "29-8",
+          "key": "4",
+          "from": "SV-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "29-10",
+          "key": "2",
+          "from": "SV-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "29-10",
+          "key": "4",
+          "from": "SV-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "29-11",
+          "key": "2",
+          "from": "SV-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "29-12",
+          "key": "2",
+          "from": "SV-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "29-13",
+          "key": "2",
+          "from": "SV-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "29-14",
+          "key": "2",
+          "from": "SV-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "29-22",
+          "key": "2",
+          "from": "SV-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "29-22",
+          "key": "4",
+          "from": "SV-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "29-24",
+          "key": "2",
+          "from": "SV-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "29-24",
+          "key": "4",
+          "from": "SV-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "29-25",
+          "key": "2",
+          "from": "SV-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "29-26",
+          "key": "2",
+          "from": "SV-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "29-27",
+          "key": "2",
+          "from": "SV-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "29-28",
+          "key": "2",
+          "from": "SV-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "29-36",
+          "key": "2",
+          "from": "SV-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "29-36",
+          "key": "4",
+          "from": "SV-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "29-38",
+          "key": "2",
+          "from": "SV-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "29-38",
+          "key": "4",
+          "from": "SV-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "29-39",
+          "key": "2",
+          "from": "SV-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "29-40",
+          "key": "2",
+          "from": "SV-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "29-41",
+          "key": "2",
+          "from": "SV-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "29-42",
+          "key": "2",
+          "from": "SV-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "29-50",
+          "key": "2",
+          "from": "SV-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "29-50",
+          "key": "4",
+          "from": "SV-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "29-52",
+          "key": "2",
+          "from": "SV-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "29-52",
+          "key": "4",
+          "from": "SV-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "29-53",
+          "key": "2",
+          "from": "SV-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "29-54",
+          "key": "2",
+          "from": "SV-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "29-55",
+          "key": "2",
+          "from": "SV-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "29-56",
+          "key": "2",
+          "from": "SV-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "29-64",
+          "key": "2",
+          "from": "SV-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "29-64",
+          "key": "4",
+          "from": "SV-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "29-66",
+          "key": "2",
+          "from": "SV-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "29-66",
+          "key": "4",
+          "from": "SV-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "29-67",
+          "key": "2",
+          "from": "SV-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "29-68",
+          "key": "2",
+          "from": "SV-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "29-69",
+          "key": "2",
+          "from": "SV-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "29-70",
+          "key": "2",
+          "from": "SV-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "29-75",
+          "key": "2",
+          "from": "SV-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "29-76",
+          "key": "2",
+          "from": "SV-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "29-77",
+          "key": "2",
+          "from": "SV-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "29-78",
+          "key": "3",
+          "from": "SV-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "29-79",
+          "key": "2",
+          "from": "SV-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "29-80",
+          "key": "2",
+          "from": "SV-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "29-85",
+          "key": "2",
+          "from": "SV-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "29-86",
+          "key": "2",
+          "from": "SV-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "29-87",
+          "key": "2",
+          "from": "SV-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "29-88",
+          "key": "3",
+          "from": "SV-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "29-89",
+          "key": "2",
+          "from": "SV-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "29-90",
+          "key": "2",
+          "from": "SV-001",
+          "to": "SVO-001"
+        },
+        {
+          "fixtureId": "29-137",
+          "key": "2",
+          "from": "SV-001",
+          "to": "SVO-001"
+        }
+      ]
+    }
+  ]
+}

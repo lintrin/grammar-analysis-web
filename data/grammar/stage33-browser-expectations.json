@@ -1,0 +1,29 @@
+{
+  "stage": 33,
+  "status": "future-acceptance-not-executed",
+  "fixtures": "tests/fixtures/stage33-development.json",
+  "services": ["development", "isolated-final-build"],
+  "viewports": [{"width": 1280, "height": 1000}, {"width": 390, "height": 844}],
+  "flows": [
+    {"id": "location-attribute", "fixtureId": "33-affirmative-05", "actions": ["fill", "Control+Enter", "select-complement", "select-attribute", "return-parent"], "expect": ["complete-SVC", "whole-PP-complement", "tall-child-of-PP", "original-text-intact", "keyboard-focus-restored"]},
+    {"id": "negative-contraction", "fixtureId": "33-negative-04", "actions": ["fill", "Meta+Enter", "select-verb"], "expect": ["whole-curly-contraction-verb", "negative-declarative", "present-SVC"]},
+    {"id": "yes-no", "fixtureId": "33-yes-no-08", "actions": ["fill", "analyze", "select-subject-attribute"], "expect": ["past-yes-no-SVC", "verb-excludes-subject", "young-child-of-subject"]},
+    {"id": "where", "fixtureId": "33-where-09", "actions": ["fill", "analyze", "select-complement"], "expect": ["past-wh-complement-SVC", "Where-explicit-complement", "no-invented-PP"]},
+    {"id": "agreement-loop", "fixtureId": "33-error-05", "actions": ["fill", "analyze", "apply-suggestion", "reanalyze"], "expect": ["partial-no-nodes", "one-whole-contraction-edit", "exact-referenced-full-control"]},
+    {"id": "where-correction", "fixtureId": "33-error-15", "actions": ["fill", "analyze", "apply-suggestion", "reanalyze", "edit-input"], "expect": ["one-same-tense-edit", "exact-control", "result-and-suggestion-cleared-on-edit"]},
+    {"id": "unsupported-modal", "fixtureId": "33-boundary-21", "actions": ["fill", "analyze"], "expect": ["unsupported-structure", "no-classification-nodes-or-edits"]},
+    {"id": "unknown-selection", "fixtureId": "33-boundary-01", "actions": ["fill", "analyze", "select-unknown-word"], "expect": ["unknown-word", "exact-planet-original-range", "input-focus"]}
+  ],
+  "queryFlows": [
+    {"query": "is", "pos": "function-word", "expect": ["old-primary-SVC-and-new-location-SVC-separated", "simple-active-nonmodal-no-time-location-limit"]},
+    {"query": "were", "pos": "function-word", "expect": ["past-agreement", "primary-and-location-frames"]},
+    {"query": "where", "pos": "function-word", "expect": ["wh-adverbial-for-action", "wh-complement-for-finite-be"]},
+    {"query": "in", "pos": "function-word", "expect": ["licensed-location-heads-from-policy", "legacy-six-SV-limit-preserved"]},
+    {"query": "under", "pos": "function-word", "expect": ["new-be-complement-head-policy", "legacy-sleep-wait-only"]},
+    {"query": "near", "pos": "function-word", "expect": ["four-audited-head-entries", "single-complete-PP"]},
+    {"query": "be", "pos": "function-word", "expect": ["bridge-marker-does-not-inherit-finite-location-frame"]},
+    {"query": "planet", "pos": "all", "expect": ["no-results", "no-online-lookup"]}
+  ],
+  "additionalGates": ["old-SV-location-and-wh-adverbial", "old-primary-SVC-modal-and-perfect", "multi-clause-regression", "continuous-clicks", "delayed-edit-and-query-cancellation", "controlled-failure-retry", "real-rule-lexicon-hash-HMR", "offline-after-static-load", "zero-input-and-query-network-log-storage", "refresh-default-reset", "1000-and-1001-UTF16", "shared-4000-budget", "baseline-versus-final-performance-and-longtasks"],
+  "independence": "These are development sources, never independent acceptance. 33E must freeze every actual developer input including generated carriers and write new nonoverlapping acceptance answers."
+}

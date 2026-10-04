@@ -1,0 +1,3061 @@
+{
+  "authorship": "Manual expectations fixed before rule changes. WH location tails are unsupported; new SV multi-error candidates remain partial without suggestions; existing SVO edits and safe single-error controls are preserved. Offsets locate literal human-selected fragments only; no analyzer imports or output.",
+  "fixtures": [
+    {
+      "stage": 29,
+      "id": "wh-location-who-can-sleep",
+      "kind": "boundary",
+      "input": "Who can sleep in the table?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 29,
+      "id": "wh-location-who-can-work",
+      "kind": "boundary",
+      "input": "Who can work on the table today?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 29,
+      "id": "wh-location-who-can-walk",
+      "kind": "boundary",
+      "input": "Who can walk under the table?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 29,
+      "id": "wh-location-who-can-run",
+      "kind": "boundary",
+      "input": "Who can run near the table today?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 29,
+      "id": "wh-location-who-can-dance",
+      "kind": "boundary",
+      "input": "Who can dance in the table?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 29,
+      "id": "wh-location-who-can-wait",
+      "kind": "boundary",
+      "input": "Who can wait near the table today?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 29,
+      "id": "wh-location-who-will-sleep",
+      "kind": "boundary",
+      "input": "Who will sleep in the table?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 29,
+      "id": "wh-location-who-will-work",
+      "kind": "boundary",
+      "input": "Who will work on the table today?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 29,
+      "id": "wh-location-who-will-walk",
+      "kind": "boundary",
+      "input": "Who will walk under the table?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 29,
+      "id": "wh-location-who-will-run",
+      "kind": "boundary",
+      "input": "Who will run near the table today?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 29,
+      "id": "wh-location-who-will-dance",
+      "kind": "boundary",
+      "input": "Who will dance in the table?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 29,
+      "id": "wh-location-who-will-wait",
+      "kind": "boundary",
+      "input": "Who will wait near the table today?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 29,
+      "id": "wh-location-what-can-sleep",
+      "kind": "boundary",
+      "input": "What can sleep in the table?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 29,
+      "id": "wh-location-what-can-work",
+      "kind": "boundary",
+      "input": "What can work on the table today?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 29,
+      "id": "wh-location-what-can-walk",
+      "kind": "boundary",
+      "input": "What can walk under the table?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 29,
+      "id": "wh-location-what-can-run",
+      "kind": "boundary",
+      "input": "What can run near the table today?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 29,
+      "id": "wh-location-what-can-dance",
+      "kind": "boundary",
+      "input": "What can dance in the table?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 29,
+      "id": "wh-location-what-can-wait",
+      "kind": "boundary",
+      "input": "What can wait near the table today?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 29,
+      "id": "wh-location-what-will-sleep",
+      "kind": "boundary",
+      "input": "What will sleep in the table?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 29,
+      "id": "wh-location-what-will-work",
+      "kind": "boundary",
+      "input": "What will work on the table today?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 29,
+      "id": "wh-location-what-will-walk",
+      "kind": "boundary",
+      "input": "What will walk under the table?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 29,
+      "id": "wh-location-what-will-run",
+      "kind": "boundary",
+      "input": "What will run near the table today?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 29,
+      "id": "wh-location-what-will-dance",
+      "kind": "boundary",
+      "input": "What will dance in the table?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 29,
+      "id": "wh-location-what-will-wait",
+      "kind": "boundary",
+      "input": "What will wait near the table today?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 29,
+      "id": "wh-location-extra-0",
+      "kind": "boundary",
+      "input": "Who can sleeps near the table?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 29,
+      "id": "wh-location-extra-1",
+      "kind": "boundary",
+      "input": "What will works in the car?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 29,
+      "id": "wh-location-extra-2",
+      "kind": "boundary",
+      "input": "Who can sleep near the table",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 29,
+      "id": "wh-location-extra-3",
+      "kind": "boundary",
+      "input": "Who will sleep near the table",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 29,
+      "id": "wh-location-extra-4",
+      "kind": "boundary",
+      "input": "Who sleeps near the table?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 29,
+      "id": "wh-location-extra-5",
+      "kind": "boundary",
+      "input": "What slept near the table yesterday?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 29,
+      "id": "wh-location-extra-6",
+      "kind": "boundary",
+      "input": "Where does she sleep near the table?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 29,
+      "id": "wh-location-extra-7",
+      "kind": "boundary",
+      "input": "When can she work in the car?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 29,
+      "id": "wh-location-extra-8",
+      "kind": "boundary",
+      "input": "Why will she wait on the chair?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 29,
+      "id": "wh-location-extra-9",
+      "kind": "boundary",
+      "input": "What does she read near the table?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 29,
+      "id": "wh-location-extra-10",
+      "kind": "boundary",
+      "input": "Who will she see near the table?",
+      "expected": {
+        "status": "unsupported",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 29,
+      "id": "wh-control-0",
+      "kind": "correct",
+      "input": "Who can sleep?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "can",
+        "questionType": "wh-subject",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "WH-SUBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 7
+              },
+              {
+                "start": 8,
+                "end": 13
+              }
+            ],
+            "ruleId": "MODAL-CAN-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 29,
+      "id": "wh-control-1",
+      "kind": "correct",
+      "input": "Who will sleep?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "modal": "will",
+        "questionType": "wh-subject",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "WH-SUBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 14
+              }
+            ],
+            "ruleId": "MODAL-WILL-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 29,
+      "id": "wh-control-2",
+      "kind": "correct",
+      "input": "What does she read?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-object",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "object",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ],
+            "ruleId": "WH-OBJECT-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 9
+              },
+              {
+                "start": 14,
+                "end": 18
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 13
+              }
+            ],
+            "ruleId": "SVO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 29,
+      "id": "wh-control-3",
+      "kind": "correct",
+      "input": "Where does she work?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "wh-adverbial",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "adverbial",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 5
+              }
+            ],
+            "ruleId": "WH-ADVERBIAL-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 6,
+                "end": 10
+              },
+              {
+                "start": 15,
+                "end": 19
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          },
+          {
+            "key": "2",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 14
+              }
+            ],
+            "ruleId": "SV-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 30,
+      "id": "eat-negative-control",
+      "kind": "correct",
+      "input": "She does not eat.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 16
+              }
+            ],
+            "ruleId": "NEGATIVE-DO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 30,
+      "id": "eat-negative-double",
+      "kind": "boundary",
+      "input": "She do not eats.",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 30,
+      "id": "eat-negative-single",
+      "kind": "error",
+      "input": "She does not eats.",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "DO-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 13,
+                  "end": 17
+                },
+                "expected": "eats",
+                "replacement": "eat"
+              }
+            ]
+          }
+        ]
+      },
+      "controlId": "eat-negative-control"
+    },
+    {
+      "stage": 30,
+      "id": "eat-question-control",
+      "kind": "correct",
+      "input": "Does she eat?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "yes-no",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 8
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              },
+              {
+                "start": 9,
+                "end": 12
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 30,
+      "id": "eat-question-double",
+      "kind": "boundary",
+      "input": "Do she eats?",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 30,
+      "id": "eat-question-single",
+      "kind": "error",
+      "input": "Does she eats?",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "DO-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 9,
+                  "end": 13
+                },
+                "expected": "eats",
+                "replacement": "eat"
+              }
+            ]
+          }
+        ]
+      },
+      "controlId": "eat-question-control"
+    },
+    {
+      "stage": 30,
+      "id": "eat-contracted-double",
+      "kind": "boundary",
+      "input": "She don’t eats.",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": [
+              {
+                "start": 4,
+                "end": 9
+              },
+              {
+                "start": 10,
+                "end": 14
+              }
+            ]
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 30,
+      "id": "eat-no-punctuation-double",
+      "kind": "boundary",
+      "input": "Do she eats",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 30,
+      "id": "eat-old-svo-negative",
+      "kind": "boundary",
+      "input": "She do not eats the book.",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 4,
+                  "end": 6
+                },
+                "expected": "do",
+                "replacement": "does"
+              }
+            ]
+          },
+          {
+            "ruleId": "DO-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 11,
+                  "end": 15
+                },
+                "expected": "eats",
+                "replacement": "eat"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "stage": 30,
+      "id": "eat-old-svo-question",
+      "kind": "boundary",
+      "input": "Do she eats the book?",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 0,
+                  "end": 2
+                },
+                "expected": "Do",
+                "replacement": "Does"
+              }
+            ]
+          },
+          {
+            "ruleId": "DO-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 7,
+                  "end": 11
+                },
+                "expected": "eats",
+                "replacement": "eat"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "stage": 30,
+      "id": "read-negative-control",
+      "kind": "correct",
+      "input": "She does not read.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 17
+              }
+            ],
+            "ruleId": "NEGATIVE-DO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 30,
+      "id": "read-negative-double",
+      "kind": "boundary",
+      "input": "She do not reads.",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 30,
+      "id": "read-negative-single",
+      "kind": "error",
+      "input": "She does not reads.",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "DO-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 13,
+                  "end": 18
+                },
+                "expected": "reads",
+                "replacement": "read"
+              }
+            ]
+          }
+        ]
+      },
+      "controlId": "read-negative-control"
+    },
+    {
+      "stage": 30,
+      "id": "read-question-control",
+      "kind": "correct",
+      "input": "Does she read?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "yes-no",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 8
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              },
+              {
+                "start": 9,
+                "end": 13
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 30,
+      "id": "read-question-double",
+      "kind": "boundary",
+      "input": "Do she reads?",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 30,
+      "id": "read-question-single",
+      "kind": "error",
+      "input": "Does she reads?",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "DO-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 9,
+                  "end": 14
+                },
+                "expected": "reads",
+                "replacement": "read"
+              }
+            ]
+          }
+        ]
+      },
+      "controlId": "read-question-control"
+    },
+    {
+      "stage": 30,
+      "id": "read-contracted-double",
+      "kind": "boundary",
+      "input": "She don’t reads.",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": [
+              {
+                "start": 4,
+                "end": 9
+              },
+              {
+                "start": 10,
+                "end": 15
+              }
+            ]
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 30,
+      "id": "read-no-punctuation-double",
+      "kind": "boundary",
+      "input": "Do she reads",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 30,
+      "id": "read-old-svo-negative",
+      "kind": "boundary",
+      "input": "She do not reads the book.",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 4,
+                  "end": 6
+                },
+                "expected": "do",
+                "replacement": "does"
+              }
+            ]
+          },
+          {
+            "ruleId": "DO-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 11,
+                  "end": 16
+                },
+                "expected": "reads",
+                "replacement": "read"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "stage": 30,
+      "id": "read-old-svo-question",
+      "kind": "boundary",
+      "input": "Do she reads the book?",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 0,
+                  "end": 2
+                },
+                "expected": "Do",
+                "replacement": "Does"
+              }
+            ]
+          },
+          {
+            "ruleId": "DO-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 7,
+                  "end": 12
+                },
+                "expected": "reads",
+                "replacement": "read"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "stage": 30,
+      "id": "write-negative-control",
+      "kind": "correct",
+      "input": "She does not write.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 18
+              }
+            ],
+            "ruleId": "NEGATIVE-DO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 30,
+      "id": "write-negative-double",
+      "kind": "boundary",
+      "input": "She do not writes.",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 30,
+      "id": "write-negative-single",
+      "kind": "error",
+      "input": "She does not writes.",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "DO-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 13,
+                  "end": 19
+                },
+                "expected": "writes",
+                "replacement": "write"
+              }
+            ]
+          }
+        ]
+      },
+      "controlId": "write-negative-control"
+    },
+    {
+      "stage": 30,
+      "id": "write-question-control",
+      "kind": "correct",
+      "input": "Does she write?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "yes-no",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 8
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              },
+              {
+                "start": 9,
+                "end": 14
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 30,
+      "id": "write-question-double",
+      "kind": "boundary",
+      "input": "Do she writes?",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 30,
+      "id": "write-question-single",
+      "kind": "error",
+      "input": "Does she writes?",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "DO-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 9,
+                  "end": 15
+                },
+                "expected": "writes",
+                "replacement": "write"
+              }
+            ]
+          }
+        ]
+      },
+      "controlId": "write-question-control"
+    },
+    {
+      "stage": 30,
+      "id": "write-contracted-double",
+      "kind": "boundary",
+      "input": "She don’t writes.",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": [
+              {
+                "start": 4,
+                "end": 9
+              },
+              {
+                "start": 10,
+                "end": 16
+              }
+            ]
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 30,
+      "id": "write-no-punctuation-double",
+      "kind": "boundary",
+      "input": "Do she writes",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 30,
+      "id": "write-old-svo-negative",
+      "kind": "boundary",
+      "input": "She do not writes the book.",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 4,
+                  "end": 6
+                },
+                "expected": "do",
+                "replacement": "does"
+              }
+            ]
+          },
+          {
+            "ruleId": "DO-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 11,
+                  "end": 17
+                },
+                "expected": "writes",
+                "replacement": "write"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "stage": 30,
+      "id": "write-old-svo-question",
+      "kind": "boundary",
+      "input": "Do she writes the book?",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 0,
+                  "end": 2
+                },
+                "expected": "Do",
+                "replacement": "Does"
+              }
+            ]
+          },
+          {
+            "ruleId": "DO-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 7,
+                  "end": 13
+                },
+                "expected": "writes",
+                "replacement": "write"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "stage": 30,
+      "id": "open-negative-control",
+      "kind": "correct",
+      "input": "The door does not open.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 8
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 9,
+                "end": 22
+              }
+            ],
+            "ruleId": "NEGATIVE-DO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 30,
+      "id": "open-negative-double",
+      "kind": "boundary",
+      "input": "The door do not opens.",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 30,
+      "id": "open-negative-single",
+      "kind": "error",
+      "input": "The door does not opens.",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "DO-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 18,
+                  "end": 23
+                },
+                "expected": "opens",
+                "replacement": "open"
+              }
+            ]
+          }
+        ]
+      },
+      "controlId": "open-negative-control"
+    },
+    {
+      "stage": 30,
+      "id": "open-question-control",
+      "kind": "correct",
+      "input": "Does the door open?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "yes-no",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 13
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              },
+              {
+                "start": 14,
+                "end": 18
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 30,
+      "id": "open-question-double",
+      "kind": "boundary",
+      "input": "Do the door opens?",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 30,
+      "id": "open-question-single",
+      "kind": "error",
+      "input": "Does the door opens?",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "DO-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 14,
+                  "end": 19
+                },
+                "expected": "opens",
+                "replacement": "open"
+              }
+            ]
+          }
+        ]
+      },
+      "controlId": "open-question-control"
+    },
+    {
+      "stage": 30,
+      "id": "open-contracted-double",
+      "kind": "boundary",
+      "input": "The door don’t opens.",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": [
+              {
+                "start": 9,
+                "end": 14
+              },
+              {
+                "start": 15,
+                "end": 20
+              }
+            ]
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 30,
+      "id": "open-no-punctuation-double",
+      "kind": "boundary",
+      "input": "Do the door opens",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 30,
+      "id": "open-old-svo-negative",
+      "kind": "boundary",
+      "input": "She do not opens the book.",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 4,
+                  "end": 6
+                },
+                "expected": "do",
+                "replacement": "does"
+              }
+            ]
+          },
+          {
+            "ruleId": "DO-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 11,
+                  "end": 16
+                },
+                "expected": "opens",
+                "replacement": "open"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "stage": 30,
+      "id": "open-old-svo-question",
+      "kind": "boundary",
+      "input": "Do she opens the book?",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 0,
+                  "end": 2
+                },
+                "expected": "Do",
+                "replacement": "Does"
+              }
+            ]
+          },
+          {
+            "ruleId": "DO-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 7,
+                  "end": 12
+                },
+                "expected": "opens",
+                "replacement": "open"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "stage": 30,
+      "id": "close-negative-control",
+      "kind": "correct",
+      "input": "The window does not close.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": null,
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 10
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 11,
+                "end": 25
+              }
+            ],
+            "ruleId": "NEGATIVE-DO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 30,
+      "id": "close-negative-double",
+      "kind": "boundary",
+      "input": "The window do not closes.",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 30,
+      "id": "close-negative-single",
+      "kind": "error",
+      "input": "The window does not closes.",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "DO-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 20,
+                  "end": 26
+                },
+                "expected": "closes",
+                "replacement": "close"
+              }
+            ]
+          }
+        ]
+      },
+      "controlId": "close-negative-control"
+    },
+    {
+      "stage": 30,
+      "id": "close-question-control",
+      "kind": "correct",
+      "input": "Does the window close?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "modal": null,
+        "questionType": "yes-no",
+        "aspect": "simple",
+        "voice": "active",
+        "nodes": [
+          {
+            "key": "0",
+            "parentKey": null,
+            "role": "subject",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 5,
+                "end": 15
+              }
+            ],
+            "ruleId": "SV-001"
+          },
+          {
+            "key": "1",
+            "parentKey": null,
+            "role": "verb",
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 4
+              },
+              {
+                "start": 16,
+                "end": 21
+              }
+            ],
+            "ruleId": "QUESTION-DO-001"
+          }
+        ],
+        "reasons": [],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 30,
+      "id": "close-question-double",
+      "kind": "boundary",
+      "input": "Do the window closes?",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 30,
+      "id": "close-question-single",
+      "kind": "error",
+      "input": "Does the window closes?",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "DO-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 16,
+                  "end": 22
+                },
+                "expected": "closes",
+                "replacement": "close"
+              }
+            ]
+          }
+        ]
+      },
+      "controlId": "close-question-control"
+    },
+    {
+      "stage": 30,
+      "id": "close-contracted-double",
+      "kind": "boundary",
+      "input": "The window don’t closes.",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": [
+              {
+                "start": 11,
+                "end": 16
+              },
+              {
+                "start": 17,
+                "end": 23
+              }
+            ]
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 30,
+      "id": "close-no-punctuation-double",
+      "kind": "boundary",
+      "input": "Do the window closes",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": []
+      }
+    },
+    {
+      "stage": 30,
+      "id": "close-old-svo-negative",
+      "kind": "boundary",
+      "input": "She do not closes the book.",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 4,
+                  "end": 6
+                },
+                "expected": "do",
+                "replacement": "does"
+              }
+            ]
+          },
+          {
+            "ruleId": "DO-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 11,
+                  "end": 17
+                },
+                "expected": "closes",
+                "replacement": "close"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "stage": 30,
+      "id": "close-old-svo-question",
+      "kind": "boundary",
+      "input": "Do she closes the book?",
+      "expected": {
+        "status": "partial",
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "modal": null,
+        "questionType": null,
+        "aspect": null,
+        "voice": null,
+        "nodes": [],
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ],
+        "corrections": [
+          {
+            "ruleId": "AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 0,
+                  "end": 2
+                },
+                "expected": "Do",
+                "replacement": "Does"
+              }
+            ]
+          },
+          {
+            "ruleId": "DO-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 7,
+                  "end": 13
+                },
+                "expected": "closes",
+                "replacement": "close"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

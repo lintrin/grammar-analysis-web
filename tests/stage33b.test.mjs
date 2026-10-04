@@ -1,0 +1,114 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {openDatabase,migrate,importData,query,revise} from '../scripts/lexicon/store.mjs';
+import {trustedRelease,validateRelease,rebuild,exportRelease,review,publish} from '../scripts/lexicon/release.mjs';
+import {normalizeEntry,validateEntrySet,canonical,hash} from '../scripts/lexicon/data.mjs';
+import {validateAnalysisResult,analyzeSentence} from '../lib/grammar.ts';
+const old=JSON.parse(readFileSync('data/lexicon/releases/1.7.0.json'));
+const {manifest}=trustedRelease();
+const release=JSON.parse(readFileSync('data/lexicon/releases/1.8.0.json'));
+const draft=JSON.parse(readFileSync('data/lexicon/stage33-import.json'));
+const fixtures=JSON.parse(readFileSync('tests/fixtures/stage33-development.json')).fixtures;
+const copy=structuredClone;
+function database(t){const db=openDatabase(':memory:',true);t.after(()=>db.close());migrate(db);return db;}
+function result(f){const base=analyzeSentence('unknown');return {...base,input:f.input,...copy(f.expected),nodes:f.expected.nodes.map(({key,parentKey,...n})=>({...n,id:key,parentId:parentKey,explanation:'Human-authored protocol fixture'})),messages:[]};}
+
+test('33B current format-2 release rebuilds with all original forms, review bindings and frame semantics',t=>{
+ const db=database(t);assert.equal(release.formatVersion,2);assert.equal(manifest.lexiconFormatVersion,2);
+ assert.deepEqual(rebuild(db,release,release.lexiconHash),release);assert.deepEqual(exportRelease(db,'1.8.0'),release);
+ assert.equal(query(db).length,231);let changed=0;
+ for(const entry of release.entries){
+  const before=old.entries.find(e=>e.id===entry.id);assert.deepEqual(entry.forms,before.forms);
+  if(entry.revisionId===before.revisionId){assert.deepEqual(entry,before);continue;}
+  changed++;assert.notEqual(entry.contentHash,before.contentHash);assert.notEqual(entry.reviewId,before.reviewId);
+  const approval=release.reviews.find(r=>r.id===entry.reviewId);assert.equal(approval.contentHash,entry.contentHash);
+  for(const frame of before.frames){const after=entry.frames.find(f=>f.id===frame.id);const {location,...preserved}=after;
+   assert.deepEqual(preserved,{...frame,fixedTail:frame.fixedTail?.startsWith('location:')?null:frame.fixedTail});
+   assert.ok(location===null || location.attachment==='adverbial');
+  }
+ }
+ assert.equal(changed,110);assert.equal(release.entries.filter(e=>e.attributes.uses?.includes('finite-be')).filter(e=>e.frames.length===2).length,5);
+ assert.throws(()=>validateRelease(old));
+});
+test('33B rejects missing location fields, incompatible licenses and unauthorized marker uses',()=>{
+ const be=draft.entries.find(e=>e.lemma==='is');const verb=draft.entries.find(e=>e.lemma==='sleep');
+ for(const mutate of [e=>delete e.frames[0].location,e=>e.frames[0].fixedTail='location:in,on',e=>e.frames[0].location={policyId:'invented',attachment:'adverbial',presence:'optional'},e=>e.frames[0].location.extra=true,e=>e.frames[0].location.presence='required']){
+  const invalid=copy(verb);mutate(invalid);assert.throws(()=>normalizeEntry(invalid));
+ }
+ for(const mutate of [f=>f.allowPerfect=true,f=>f.allowProgressive=true,f=>f.location.presence='optional',f=>f.location.attachment='adverbial',f=>f.allowedPurposes=['imperative']]){
+  const invalid=copy(be);mutate(invalid.frames.find(f=>f.id==='location'));assert.throws(()=>normalizeEntry(invalid));
+ }
+ const marker=copy(draft.entries.find(e=>e.lemma==='who'));marker.attributes.uses.push('wh-complement');assert.throws(()=>normalizeEntry(marker));
+ for(const mutate of [entries=>entries.splice(entries.findIndex(e=>e.id==='noun:lexical:car'),1),entries=>entries.find(e=>e.lemma==='in').attributes.locationHeadPolicies['basic-object-location']=null,entries=>entries.find(e=>e.lemma==='is').frames=entries.find(e=>e.lemma==='is').frames.filter(f=>f.id==='primary')]){
+  const invalid=copy(draft.entries);mutate(invalid);assert.throws(()=>validateEntrySet(invalid));
+ }
+});
+test('33B SQL rejects malformed location objects and reviewed frame mutations; changed hashes need new reviews',t=>{
+ const db=database(t);importData(db,draft);const row=query(db,{lemma:'is'})[0];
+ const params=[row.entry.revisionId];
+ for(const payload of [{}, {policyId:'basic-object-location',attachment:'complement'}, {policyId:'basic-object-location',attachment:'complement',presence:'required',extra:true}, {policyId:'basic-object-location',attachment:'adverbial',presence:'optional'}])assert.throws(()=>db.prepare("UPDATE lexicon_frames SET location_json=? WHERE revision_id=? AND id='location'").run(JSON.stringify(payload),...params));
+ const approved=review(db,row.entry.revisionId,row.contentHash,'33B-negative-check','approve');assert.equal(approved.contentHash,row.contentHash);
+ assert.throws(()=>db.prepare('UPDATE lexicon_frames SET location_json=NULL WHERE revision_id=?').run(...params),/immutable/);
+ const next=copy(row.entry);next.revisionId+='-changed';next.frames.find(f=>f.id==='primary').allowPerfect=false;revise(db,row.entry.revisionId,next);
+ assert.throws(()=>review(db,next.revisionId,row.contentHash,'33B-negative-check','approve'),/current draft hash/);
+});
+// Frozen legacy semantics: null permits any complete audited NP, missing key forbids
+// the preposition. A noun-head array would be ignored by the legacy SV parser.
+for(const policy of ['legacy-sv-location','legacy-sv-under-location']){
+ const error=/Legacy location policies require null heads/;
+ test(`33B ${policy} rejects head arrays in entries, entry sets and releases`,()=>{
+  const entries=copy(draft.entries),entry=entries.find(e=>e.lemma==='in');
+  entry.attributes.locationHeadPolicies[policy]=['noun:lexical:car'];
+  assert.throws(()=>normalizeEntry(entry),error);
+  assert.throws(()=>validateEntrySet(entries),error);
+  const invalid=copy(release);
+  invalid.entries.find(e=>e.lemma==='in').attributes.locationHeadPolicies[policy]=['noun:lexical:car'];
+  assert.throws(()=>validateRelease(invalid),error);
+ });
+ test(`33B ${policy} import and revision rejection leave the database unchanged`,t=>{
+  const db=database(t),invalid=copy(draft);
+  invalid.entries.find(e=>e.lemma==='in').attributes.locationHeadPolicies[policy]=['noun:lexical:car'];
+  assert.throws(()=>importData(db,invalid),error);
+  assert.equal(query(db).length,0);
+  assert.equal(db.prepare('SELECT count(*) AS n FROM lexicon_sources').get().n,0);
+  importData(db,draft);
+  const before=query(db),row=before.find(r=>r.entry.lemma==='in'),replacement=copy(row.entry);
+  replacement.revisionId+=`-${policy}-restricted`;
+  replacement.attributes.locationHeadPolicies[policy]=['noun:lexical:car'];
+  assert.throws(()=>revise(db,row.entry.revisionId,replacement),error);
+  assert.deepEqual(query(db),before);
+ });
+ test(`33B ${policy} cannot review or publish a stored draft with ignored head restrictions`,t=>{
+  const db=database(t);importData(db,draft);
+  const row=query(db,{lemma:'in'})[0],invalid=copy(row.entry);
+  invalid.attributes.locationHeadPolicies[policy]=['noun:lexical:car'];
+  // Simulate a draft stored before this validation fix, with its matching old hash.
+  const contentHash=hash({...invalid,sources:invalid.sourceIds.map(id=>draft.sources.find(s=>s.id===id))});
+  db.prepare('UPDATE lexicon_revisions SET attributes_json=?,content_hash=? WHERE id=?')
+   .run(canonical(invalid.attributes),contentHash,row.entry.revisionId);
+  assert.throws(()=>review(db,row.entry.revisionId,contentHash,'33B-policy-regression','approve'),error);
+  assert.equal(query(db,{lemma:'in'})[0].status,'draft');
+  assert.equal(db.prepare('SELECT count(*) AS n FROM lexicon_reviews').get().n,0);
+  assert.throws(()=>publish(db,{lexiconVersion:'33B-ignored-policy',revisionIds:draft.entries.map(e=>e.revisionId)}),error);
+  assert.equal(db.prepare('SELECT count(*) AS n FROM lexicon_releases').get().n,0);
+ });
+}
+const wh=fixtures.filter(f=>f.kind==='correct'&&f.category==='where');
+for(const f of wh)test(`33B protocol accepts human-fixed wh-complement ${f.id}`,()=>validateAnalysisResult(result(f)));
+test('33B wh-complement rejects contradictory metadata, missing roles and unsupported original carriers',()=>{
+ const base=result(wh[0]);validateAnalysisResult(base);
+ for(const mutate of [r=>r.pattern='SV',r=>r.aspect='perfect',r=>r.voice='passive',r=>r.modal='can',r=>r.complexity='compound',r=>r.tense=r.tense==='present'?'past':'present',r=>r.nodes=r.nodes.filter(n=>n.role!=='complement'),r=>r.nodes.find(n=>n.role==='complement').role='adverbial',r=>r.nodes.find(n=>n.role==='verb').ranges[0].end++,r=>r.input=r.input.replace(/Where/i,'When '),r=>r.input=r.input.replace(/\b(am|is|are|was|were)\b/i,'do')]){const invalid=copy(base);mutate(invalid);assert.throws(()=>validateAnalysisResult(invalid));}
+ assert.equal(canonical(release),readFileSync('data/lexicon/releases/1.8.0.json','utf8').trim());
+});
+
+test('33B populated format-1 database is refused atomically and retains every historical row',async t=>{
+ const {historicalStore,historicalRelease}=await import('./helpers/historical-lexicon.mjs');
+ const db=historicalStore.openDatabase(':memory:',true);t.after(()=>db.close());historicalStore.migrate(db);historicalRelease.rebuild(db,old,old.lexiconHash);
+ const before=canonical(db.prepare("SELECT name,sql FROM sqlite_master ORDER BY name").all());
+ const rows=canonical(db.prepare('SELECT * FROM lexicon_revisions ORDER BY id').all());
+ assert.throws(()=>migrate(db),/CHECK constraint/);
+ assert.equal(canonical(db.prepare("SELECT name,sql FROM sqlite_master ORDER BY name").all()),before);
+ assert.equal(canonical(db.prepare('SELECT * FROM lexicon_revisions ORDER BY id').all()),rows);
+ assert.deepEqual(historicalRelease.exportRelease(db,'1.7.0'),old);
+});

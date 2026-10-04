@@ -1,0 +1,129 @@
+{
+  "date": "2026-10-04",
+  "stage": "33D",
+  "ruleVersion": "0.23.1",
+  "lexiconVersion": "1.8.1",
+  "developmentUrl": "http://127.0.0.1:5188",
+  "buildUrl": "http://127.0.0.1:5193",
+  "checks": [
+    {
+      "query": "is",
+      "passed": true
+    },
+    {
+      "query": "were",
+      "passed": true
+    },
+    {
+      "query": "where",
+      "passed": true
+    },
+    {
+      "query": "in",
+      "passed": true
+    },
+    {
+      "query": "under",
+      "passed": true
+    },
+    {
+      "query": "near",
+      "passed": true
+    },
+    {
+      "query": "be",
+      "passed": true
+    },
+    {
+      "query": "planet",
+      "passed": true
+    },
+    {
+      "flow": "desktop-complement-attribute-return",
+      "snapshot": true
+    },
+    {
+      "flow": "desktop-where-complement",
+      "passed": true
+    },
+    {
+      "flow": "curly-contraction-apply",
+      "passed": true
+    },
+    {
+      "flow": "old-clause-return-single-tab",
+      "passed": true
+    },
+    {
+      "flow": "mobile-query-example-where-complement",
+      "passed": true
+    },
+    {
+      "viewport": "390x844",
+      "query": "is",
+      "passed": true
+    },
+    {
+      "viewport": "390x844",
+      "query": "were",
+      "passed": true
+    },
+    {
+      "viewport": "390x844",
+      "query": "where",
+      "passed": true
+    },
+    {
+      "viewport": "390x844",
+      "query": "in",
+      "passed": true
+    },
+    {
+      "viewport": "390x844",
+      "query": "under",
+      "passed": true
+    },
+    {
+      "viewport": "390x844",
+      "query": "near",
+      "passed": true
+    },
+    {
+      "viewport": "390x844",
+      "query": "be",
+      "passed": true
+    },
+    {
+      "viewport": "390x844",
+      "query": "planet",
+      "passed": true
+    },
+    {
+      "flow": "mobile-complement-attribute-return",
+      "passed": true
+    },
+    {
+      "flow": "mobile-old-clause-return",
+      "passed": true,
+      "observed": {
+        "focus": "分句She sleepsCL",
+        "scrollWidth": 390,
+        "tabs": 1,
+        "width": 390
+      }
+    },
+    {
+      "flow": "built-desktop-query-filter-example-analysis",
+      "passed": true
+    },
+    {
+      "flow": "built-mobile-query-example-where",
+      "passed": true
+    },
+    {
+      "flow": "built-refresh-input-result-query-reset",
+      "passed": true
+    }
+  ],
+  "remaining": "33E independent acceptance and 33F joint privacy/offline/performance gates"
+}

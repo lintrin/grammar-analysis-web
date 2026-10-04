@@ -2,7 +2,7 @@
 
 面向中文学习者的英语语法分析网页应用，输入在浏览器内通过本地词典与规则分析。
 
-阶段 1–32 ✅ 已完成。当前词典 1.7.0、规则 0.22.4；5494 项测试、类型/ESLint/词典校验、构建及开发/构建浏览器验收通过。阶段 32 冻结开发来源，完成 100 个正确句、60 个对照和 20 个独立查询流程，修复错序 What + 名词短语 + can/will 的诊断。证据见 [阶段 32 交付记录](docs/archive/stage32-scope.md)；此前查询与被动纠错范围见 [阶段 31](docs/archive/stage31-scope.md)。
+阶段 1–32 ✅ 已完成。阶段 32 交付时词典 1.7.0、规则 0.22.4；5494 项测试、类型/ESLint/词典校验、构建及开发/构建浏览器验收通过。阶段 32 冻结开发来源，完成 100 个正确句、60 个对照和 20 个独立查询流程，修复错序 What + 名词短语 + can/will 的诊断。证据见 [阶段 32 交付记录](docs/archive/stage32-scope.md)；此前查询与被动纠错范围见 [阶段 31](docs/archive/stage31-scope.md)。
 
 本轮阶段 27–32 已交付；完成状态与后续候选见 [结构扩展开发计划](docs/structure-development-plan.md)，完整历史见 [归档索引](docs/archive/README.md)。独立验收集仅用于测试，不作为网页教学素材。
 
@@ -10,13 +10,13 @@
 
 制定后续开发计划时，可先查阅 [当前功能清单与开发规划基线](docs/current-features.md)，按功能核对已支持范围、组合限制及待选方向。
 
-后续路线见 [阶段 33–37 总开发计划](docs/stage33-37-development-plan.md)，已审查，待实施：依次交付 be 地点表语、限定 SVO 地点、will 进行、will 完成与联合复核。第一阶段的细化范围和验收门槛见 [阶段 33：be 地点表语与 where 提问](docs/stage33-development-plan.md)；制定计划不表示新能力已实现。
+后续路线见 [阶段 33–37 总开发计划](docs/stage33-37-development-plan.md)，阶段 33 ✅（33A–33F 全部完成）：路线依次交付 be 地点表语、限定 SVO 地点、will 进行、will 完成与联合复核。第一阶段的细化范围和验收门槛见 [阶段 33：be 地点表语与 where 提问](docs/stage33-development-plan.md)；33A 已固定 48 个正确句、16 组纠错／完整控制、46 个无建议边界及三条历史迁移，33B 协议与词典已完成，33C 解析与安全纠错已完成，33D 界面与查询已完成，33E 独立复核已完成，33F 联合交付已完成，当前下一步是阶段 34 范围冻结。范围与首次执行证据见 [33A 实施记录](docs/stage33-scope.md)；新解析与纠错已实现，阶段 33 已完成联合交付。
 
 ## 当前进度
 
-当前规则 **0.22.4**。保留五种基本句型、四种简单句用途、限定 do/be/can 否定与一般疑问，以及两个完整陈述分句的 and/but、后置 because、前置 if。支持现在/过去进行时、完成时、限定被动语态，以及完成进行、完成被动、进行被动。完整谓语、时态、体和语态按原文标注，多分句分别展示各自分类。
+当前规则 **0.23.1**。保留五种基本句型、四种简单句用途、限定 do/be/can 否定与一般疑问，以及两个完整陈述分句的 and/but、后置 because、前置 if。支持现在/过去进行时、完成时、限定被动语态，以及完成进行、完成被动、进行被动。完整谓语、时态、体和语态按原文标注，多分句分别展示各自分类。
 
-完整词形、被动转换、错误状态与限制见 [谓语范围](docs/archive/predicate-expansion-scope.md) 与 [新增词汇范围](docs/archive/lexicon-expansion-scope.md)。现有 44 组可数名词、24 个形容词、100 个实义动词词元；read 同形须依据明确形式线索区分时态，否则保留歧义。使用人工维护并经审核发布的词典快照（1.7.0），不代表支持任意英文。新增词形来自固定版本 LemmInflect，完整 MIT 许可随网页提供；阶段 26 每个新词先开放一个审核搭配，know/need/want 等限定状态义不支持进行体，traveled/traveling 等只接受已选择的拼写。拥有义 have 支持一般现在/过去时的名词短语宾语、do 否定和 do 一般疑问；陈述可进入现有两分句框架，完成时 have 仍是助动词。否定陈述开放 12 种 do/be/can/have/will 白名单缩写，接受直/弯撇号；have 缩写仅作助动词，原文区间不展开。拥有义的其它体/语态、can、祈使、无需 do 的拥有疑问，以及 SV/SVOC 被动、其它 will 链、肯定缩写、所有格、否定疑问、范围外特殊疑问、通用介词短语、新 can 链及完成进行被动仍不支持。
+完整词形、被动转换、错误状态与限制见 [谓语范围](docs/archive/predicate-expansion-scope.md) 与 [新增词汇范围](docs/archive/lexicon-expansion-scope.md)。现有 45 组可数名词、24 个形容词、100 个实义动词词元；read 同形须依据明确形式线索区分时态，否则保留歧义。使用人工维护并经审核发布的词典快照（1.8.1），不代表支持任意英文。新增词形来自固定版本 LemmInflect，完整 MIT 许可随网页提供；阶段 26 每个新词先开放一个审核搭配，know/need/want 等限定状态义不支持进行体，traveled/traveling 等只接受已选择的拼写。拥有义 have 支持一般现在/过去时的名词短语宾语、do 否定和 do 一般疑问；陈述可进入现有两分句框架，完成时 have 仍是助动词。否定陈述开放 12 种 do/be/can/have/will 白名单缩写，接受直/弯撇号；have 缩写仅作助动词，原文区间不展开。拥有义的其它体/语态、can、祈使、无需 do 的拥有疑问，以及 SV/SVOC 被动、其它 will 链、肯定缩写、所有格、否定疑问、范围外特殊疑问、通用介词短语、新 can 链及完成进行被动仍不支持。
 
 阶段 27 的 will 简单主动结构覆盖五种句型与 will be 系表，否定支持 will not/won’t；可进入既有陈述分句，但 if 条件从句内暂不开放 will。顶层和分句均有必填 modal 分类。阶段 28 仅 sleep/work/walk/run/dance/wait 的单简单句 SV 开放审核的 in/on/under/near 地点尾部，允许简单体、进行体和 can/will 简单体；完整地点短语标为状语，内部前置形容词保留定语层级。
 
@@ -99,7 +99,7 @@ node --experimental-strip-types scripts/check-stage25-fixtures.mjs
 node --experimental-strip-types scripts/check-stage25-performance.mjs
 ```
 
-常规 `npm test` 可在源码导出或缺少历史提交的浅克隆中运行。以下独立命令核验历史来源，需要 Git 可执行文件及包含阶段 12/18 固定提交 `9708002c8606afaebfc5bd9b7b80537e20149cfe`、阶段 25 固定提交 `5c527e892e2adf8341655f2242896c4106d9c020` 的仓库历史：
+当前 `npm test` 的格式 1 历史发布重放需要 Git 及固定提交 `0c5dbfb4940efd87ba87c7530f747168bcc1f003`；生产工具只接受格式 2。以下独立命令核验历史来源，需要 Git 可执行文件及包含阶段 12/18 固定提交 `9708002c8606afaebfc5bd9b7b80537e20149cfe`、阶段 25 固定提交 `5c527e892e2adf8341655f2242896c4106d9c020` 的仓库历史：
 
 ```sh
 node scripts/check-historical-baselines.mjs
@@ -114,14 +114,14 @@ Node 内置 `node:sqlite` 在 Node >=22.13 可用，本次验证版本为 24.14.
 
 ```sh
 npm run lexicon -- init
-npm run lexicon -- import --file data/lexicon/seed.json
+npm run lexicon -- rebuild
 npm run lexicon -- validate
 npm run lexicon -- query --surface her
 npm run lexicon -- query --lemma give --pos verb
 npm run lexicon -- show --revision verb:lexical:give:r1
 ```
 
-当前词典可在空工作库执行 `init` 后用 `rebuild` 重建全部 231 个已审核词条；旧 `seed.json` 仅为阶段 20 初次迁移的 91 词条。`stage21-import.json` 保存阶段 21 新增 57 个完整草稿，`stage22-import.json` 保存拥有义 have 草稿，`stage22-selection.json` 显式选择 1.2.0 的全部修订。`stage26-scope.json` 固定新增 73 个词的教学范围；`sources/lemminflect/` 保留原始子集、上游修正、哈希和许可。`node scripts/prepare-stage26-lexicon.mjs` 离线重现 `stage26-import.json` 草稿，`stage26-selection.json` 显式选择 1.3.0 的全部修订。阶段 27–30 各自的 import/selection 清单固定词条与修订选择，1.4.0–1.7.0 发布逐个保留；当前含 100 个实义动词词元、105 个实义搭配。阶段 28 复用必填 fixedTail 的有限域记录地点许可，数据库迁移 0002 同步校验并保留冻结触发器。继续扩容须先 query/show 审查、以当前哈希 review，再选择全部修订 publish 新版本、更新联合清单并 generate-client/verify，不能直接改客户端 JSON。
+当前词典可在空工作库执行 `init` 后用 `rebuild` 重建全部 232 个已审核词条；旧 `seed.json` 仅为阶段 20 初次迁移的 91 词条。`stage21-import.json` 保存阶段 21 新增 57 个完整草稿，`stage22-import.json` 保存拥有义 have 草稿，`stage22-selection.json` 显式选择 1.2.0 的全部修订。`stage26-scope.json` 固定新增 73 个词的教学范围；`sources/lemminflect/` 保留原始子集、上游修正、哈希和许可。`stage26-import.json` 保留历史草稿，原格式由测试中的固定历史代码重放，`stage26-selection.json` 显式选择 1.3.0 的全部修订。阶段 27–30 各自的 import/selection 清单固定词条与修订选择，1.4.0–1.7.0 发布逐个保留；当前含 100 个实义动词词元、105 个实义搭配。阶段 28 的 fixedTail 地点数据已在 33B 迁移到必填可空的 location 和介词 locationHeadPolicies。当前 fixedTail 仅保留 null / to school；默认空库为 `.lexicon/working-v2.sqlite`，迁移 0003 拒绝非空旧库。继续扩容须先 query/show 审查、以当前哈希 review，再选择全部修订 publish 新版本、更新联合清单并 generate-client/verify，不能直接改客户端 JSON。
 
 `init` / `migrate` 按 Drizzle journal 执行 SQL 并核对已应用迁移的 SHA-256；重复执行无操作。种子完整迁移旧人工词典，共 91 个词条、161 条词形；同 ID 同内容重复导入无操作，冲突整批回滚。数据库插入触发器同时阻止 REPLACE 覆盖冻结记录，保护不依赖 recursive_triggers 设置。普通导入只能创建草稿，拒绝审核及发布字段。
 
@@ -225,3 +225,15 @@ npm run build
 ## 许可证
 
 项目沿用仓库的 MIT 许可证；第三方组件及部署支持代码的授权信息见对应目录。
+
+33B ✅ 已完成协议与词典升级，见 [实施记录](docs/stage33b-protocol-lexicon.md)。33B 当时规则 0.23.0 / 词典 1.8.0（格式 2），5520 项测试、类型、ESLint、词库校验、构建与开发／构建浏览器回归通过；之后 33C 已完成新解析，见下方记录。
+
+33C ✅ 已完成：有限 be 地点表语、where 表语提问及同一时态的一致纠错。当前规则 0.23.1 / 词典 1.8.1，5659 项测试与工程、开发／构建浏览器检查通过。地点短语仅单简单句、简单主动，无情态或时间尾部；不扩展原 modal / perfect 系表权限。见 [33C 实施记录](docs/stage33c-location-parser.md)。
+
+33D ✅ 已完成：词典查询区分 be 名词／形容词表语与地点表语，展示 where 两类提问和逐介词许可；新增固定教学例句及范围提示。5682 项测试、类型检查、ESLint、词典校验、构建及桌面／手机浏览器闭环通过。见 [33D 实施记录](docs/stage33d-ui-query.md)。
+
+33E ✅ 已完成：40 正确句、12 组纠错与完整控制、24 个边界、8 项查询流程，首次与补充来源后均 96/96。5781 项测试和开发／构建桌面手机 80 项浏览器检查通过。见 [33E 实施记录](docs/stage33e-independent-acceptance.md)，包含三条浏览器来源遗漏的补充审计与未改写的首次证据。33F 已完成，阶段 33 ✅；下一步为阶段 34 范围冻结。
+
+33E 收尾日志发现教学列表标题重复导致 React key 不唯一，已改用完整例句；修复后全量 5781 项测试和工程检查通过，另完成开发／构建桌面手机 36 项教学与控制台验证。原独立答案、首次报告和全部例句保持不变。详见 33E 实施记录。
+
+33F ✅ 联合交付完成：5797 项测试和工程检查、77 项浏览器验收、空盘数据库重建、离线／隐私／HMR／性能复核通过。阶段 33 ✅，下一步为阶段 34。见 [交付记录](docs/stage33f-joint-delivery.md)。

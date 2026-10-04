@@ -1,0 +1,20 @@
+{
+  "stage": 33,
+  "phase": "33E-source-audit-supplement",
+  "baselineHash": "cbf0335c950d49de9626e03e09956bcdf91e20ee245eed6970201b52bf4ed180",
+  "review": "Three actual 33D browser inputs are evidenced by preceding tool actions in this conversation but absent from file/Node-call exclusion corpus. Supplemental exclusion added after the immutable first 33E run; all 88 original independent inputs remain unchanged and do not overlap. Do not treat 33E browser input repetitions as development sources.",
+  "inputs": [
+    {
+      "input": "The book is near the tall table.",
+      "origin": "33D development desktop/mobile: complete PP selection, tall attribute and parent return"
+    },
+    {
+      "input": "The bags isn’t under the table.",
+      "origin": "33D development desktop: whole curly negative contraction agreement correction"
+    },
+    {
+      "input": "The bags aren’t under the table.",
+      "origin": "33D development desktop: complete control after applying the above correction"
+    }
+  ]
+}

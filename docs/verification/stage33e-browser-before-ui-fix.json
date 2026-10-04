@@ -1,0 +1,606 @@
+{
+  "date": "2026-10-04",
+  "stage": "33E",
+  "ruleVersion": "0.23.1",
+  "lexiconVersion": "1.8.1",
+  "developmentUrl": "http://127.0.0.1:5188",
+  "buildUrl": "http://127.0.0.1:5194",
+  "checks": [
+    {
+      "service": "development",
+      "viewport": 1280,
+      "flow": "independent-query",
+      "query": "am",
+      "passed": true
+    },
+    {
+      "service": "development",
+      "viewport": 1280,
+      "flow": "independent-query",
+      "query": "was",
+      "passed": true
+    },
+    {
+      "service": "development",
+      "viewport": 1280,
+      "flow": "independent-query",
+      "query": "where",
+      "passed": true
+    },
+    {
+      "service": "development",
+      "viewport": 1280,
+      "flow": "independent-query",
+      "query": "in",
+      "passed": true
+    },
+    {
+      "service": "development",
+      "viewport": 1280,
+      "flow": "independent-query",
+      "query": "on",
+      "passed": true
+    },
+    {
+      "service": "development",
+      "viewport": 1280,
+      "flow": "independent-query",
+      "query": "under",
+      "passed": true
+    },
+    {
+      "service": "development",
+      "viewport": 1280,
+      "flow": "independent-query",
+      "query": "near",
+      "passed": true
+    },
+    {
+      "service": "development",
+      "viewport": 1280,
+      "flow": "independent-query",
+      "query": "satellite",
+      "passed": true
+    },
+    {
+      "service": "development",
+      "viewport": 390,
+      "flow": "independent-query",
+      "query": "am",
+      "passed": true
+    },
+    {
+      "service": "development",
+      "viewport": 390,
+      "flow": "independent-query",
+      "query": "was",
+      "passed": true
+    },
+    {
+      "service": "development",
+      "viewport": 390,
+      "flow": "independent-query",
+      "query": "where",
+      "passed": true
+    },
+    {
+      "service": "development",
+      "viewport": 390,
+      "flow": "independent-query",
+      "query": "in",
+      "passed": true
+    },
+    {
+      "service": "development",
+      "viewport": 390,
+      "flow": "independent-query",
+      "query": "on",
+      "passed": true
+    },
+    {
+      "service": "development",
+      "viewport": 390,
+      "flow": "independent-query",
+      "query": "under",
+      "passed": true
+    },
+    {
+      "service": "development",
+      "viewport": 390,
+      "flow": "independent-query",
+      "query": "near",
+      "passed": true
+    },
+    {
+      "service": "development",
+      "viewport": 390,
+      "flow": "independent-query",
+      "query": "satellite",
+      "passed": true
+    },
+    {
+      "service": "development",
+      "viewport": 390,
+      "fixtureId": "33e-affirmative-01",
+      "flow": "independent-grammar-components",
+      "passed": true
+    },
+    {
+      "service": "development",
+      "viewport": 390,
+      "fixtureId": "33e-negative-03",
+      "flow": "independent-grammar-components",
+      "passed": true
+    },
+    {
+      "service": "development",
+      "viewport": 390,
+      "fixtureId": "33e-yes-no-02",
+      "flow": "independent-grammar-components",
+      "passed": true
+    },
+    {
+      "service": "development",
+      "viewport": 390,
+      "fixtureId": "33e-where-02",
+      "flow": "independent-grammar-components",
+      "passed": true
+    },
+    {
+      "service": "development",
+      "viewport": 390,
+      "fixtureId": "33e-error-01",
+      "flow": "independent-correction-control-loop",
+      "passed": true
+    },
+    {
+      "service": "development",
+      "viewport": 390,
+      "fixtureId": "33e-error-04",
+      "flow": "independent-correction-control-loop",
+      "passed": true
+    },
+    {
+      "service": "development",
+      "viewport": 390,
+      "fixtureId": "33e-error-07",
+      "flow": "independent-correction-control-loop",
+      "passed": true
+    },
+    {
+      "service": "development",
+      "viewport": 390,
+      "fixtureId": "33e-error-10",
+      "flow": "independent-correction-control-loop",
+      "passed": true
+    },
+    {
+      "service": "development",
+      "viewport": 1280,
+      "fixtureId": "33e-affirmative-01",
+      "flow": "independent-grammar-components",
+      "passed": true
+    },
+    {
+      "service": "development",
+      "viewport": 1280,
+      "fixtureId": "33e-negative-03",
+      "flow": "independent-grammar-components",
+      "passed": true
+    },
+    {
+      "service": "development",
+      "viewport": 1280,
+      "fixtureId": "33e-yes-no-02",
+      "flow": "independent-grammar-components",
+      "passed": true
+    },
+    {
+      "service": "development",
+      "viewport": 1280,
+      "fixtureId": "33e-where-02",
+      "flow": "independent-grammar-components",
+      "passed": true
+    },
+    {
+      "service": "development",
+      "viewport": 1280,
+      "fixtureId": "33e-error-01",
+      "flow": "independent-correction-control-loop",
+      "passed": true
+    },
+    {
+      "service": "development",
+      "viewport": 1280,
+      "fixtureId": "33e-error-04",
+      "flow": "independent-correction-control-loop",
+      "passed": true
+    },
+    {
+      "service": "development",
+      "viewport": 1280,
+      "fixtureId": "33e-error-07",
+      "flow": "independent-correction-control-loop",
+      "passed": true
+    },
+    {
+      "service": "development",
+      "viewport": 1280,
+      "fixtureId": "33e-error-10",
+      "flow": "independent-correction-control-loop",
+      "passed": true
+    },
+    {
+      "service": "development",
+      "viewport": 1280,
+      "fixtureId": "33e-boundary-01",
+      "flow": "unknown-exact-selection-focus",
+      "passed": true,
+      "selection": {
+        "end": 38,
+        "focus": "sentence",
+        "start": 29,
+        "text": "satellite"
+      }
+    },
+    {
+      "service": "development",
+      "viewport": 1280,
+      "fixtureId": "33e-boundary-14",
+      "flow": "modal-refusal-no-components-edits",
+      "passed": true
+    },
+    {
+      "service": "development",
+      "viewport": 1280,
+      "flow": "edit-immediately-invalidates",
+      "passed": true
+    },
+    {
+      "service": "development",
+      "viewport": 1280,
+      "flow": "single-tab-no-overflow",
+      "passed": true,
+      "geometry": {
+        "scrollWidth": 1280,
+        "tabs": 1,
+        "width": 1280
+      }
+    },
+    {
+      "service": "development",
+      "viewport": 390,
+      "fixtureId": "33e-boundary-01",
+      "flow": "unknown-exact-selection-focus",
+      "passed": true,
+      "selection": {
+        "end": 38,
+        "focus": "sentence",
+        "start": 29,
+        "text": "satellite"
+      }
+    },
+    {
+      "service": "development",
+      "viewport": 390,
+      "fixtureId": "33e-boundary-14",
+      "flow": "modal-refusal-no-components-edits",
+      "passed": true
+    },
+    {
+      "service": "development",
+      "viewport": 390,
+      "flow": "edit-immediately-invalidates",
+      "passed": true
+    },
+    {
+      "service": "development",
+      "viewport": 390,
+      "flow": "single-tab-no-overflow",
+      "passed": true,
+      "geometry": {
+        "scrollWidth": 390,
+        "tabs": 1,
+        "width": 390
+      }
+    },
+    {
+      "service": "build",
+      "viewport": 1280,
+      "flow": "independent-query",
+      "query": "am",
+      "passed": true
+    },
+    {
+      "service": "build",
+      "viewport": 1280,
+      "flow": "independent-query",
+      "query": "was",
+      "passed": true
+    },
+    {
+      "service": "build",
+      "viewport": 1280,
+      "flow": "independent-query",
+      "query": "where",
+      "passed": true
+    },
+    {
+      "service": "build",
+      "viewport": 1280,
+      "flow": "independent-query",
+      "query": "in",
+      "passed": true
+    },
+    {
+      "service": "build",
+      "viewport": 1280,
+      "flow": "independent-query",
+      "query": "on",
+      "passed": true
+    },
+    {
+      "service": "build",
+      "viewport": 1280,
+      "flow": "independent-query",
+      "query": "under",
+      "passed": true
+    },
+    {
+      "service": "build",
+      "viewport": 1280,
+      "flow": "independent-query",
+      "query": "near",
+      "passed": true
+    },
+    {
+      "service": "build",
+      "viewport": 1280,
+      "flow": "independent-query",
+      "query": "satellite",
+      "passed": true
+    },
+    {
+      "service": "build",
+      "viewport": 1280,
+      "fixtureId": "33e-affirmative-01",
+      "flow": "independent-grammar-components",
+      "passed": true
+    },
+    {
+      "service": "build",
+      "viewport": 1280,
+      "fixtureId": "33e-negative-03",
+      "flow": "independent-grammar-components",
+      "passed": true
+    },
+    {
+      "service": "build",
+      "viewport": 1280,
+      "fixtureId": "33e-yes-no-02",
+      "flow": "independent-grammar-components",
+      "passed": true
+    },
+    {
+      "service": "build",
+      "viewport": 1280,
+      "fixtureId": "33e-where-02",
+      "flow": "independent-grammar-components",
+      "passed": true
+    },
+    {
+      "service": "build",
+      "viewport": 1280,
+      "fixtureId": "33e-error-01",
+      "flow": "independent-correction-control-loop",
+      "passed": true
+    },
+    {
+      "service": "build",
+      "viewport": 1280,
+      "fixtureId": "33e-error-04",
+      "flow": "independent-correction-control-loop",
+      "passed": true
+    },
+    {
+      "service": "build",
+      "viewport": 1280,
+      "fixtureId": "33e-error-07",
+      "flow": "independent-correction-control-loop",
+      "passed": true
+    },
+    {
+      "service": "build",
+      "viewport": 1280,
+      "fixtureId": "33e-error-10",
+      "flow": "independent-correction-control-loop",
+      "passed": true
+    },
+    {
+      "service": "build",
+      "viewport": 1280,
+      "fixtureId": "33e-boundary-01",
+      "flow": "unknown-exact-selection-focus",
+      "passed": true,
+      "selection": {
+        "end": 38,
+        "focus": "sentence",
+        "start": 29,
+        "text": "satellite"
+      }
+    },
+    {
+      "service": "build",
+      "viewport": 1280,
+      "fixtureId": "33e-boundary-14",
+      "flow": "modal-refusal-no-components-edits",
+      "passed": true
+    },
+    {
+      "service": "build",
+      "viewport": 1280,
+      "flow": "edit-immediately-invalidates",
+      "passed": true
+    },
+    {
+      "service": "build",
+      "viewport": 1280,
+      "flow": "single-tab-no-overflow",
+      "passed": true,
+      "geometry": {
+        "scrollWidth": 1280,
+        "tabs": 1,
+        "width": 1280
+      }
+    },
+    {
+      "service": "build",
+      "viewport": 390,
+      "flow": "independent-query",
+      "query": "am",
+      "passed": true
+    },
+    {
+      "service": "build",
+      "viewport": 390,
+      "flow": "independent-query",
+      "query": "was",
+      "passed": true
+    },
+    {
+      "service": "build",
+      "viewport": 390,
+      "flow": "independent-query",
+      "query": "where",
+      "passed": true
+    },
+    {
+      "service": "build",
+      "viewport": 390,
+      "flow": "independent-query",
+      "query": "in",
+      "passed": true
+    },
+    {
+      "service": "build",
+      "viewport": 390,
+      "flow": "independent-query",
+      "query": "on",
+      "passed": true
+    },
+    {
+      "service": "build",
+      "viewport": 390,
+      "flow": "independent-query",
+      "query": "under",
+      "passed": true
+    },
+    {
+      "service": "build",
+      "viewport": 390,
+      "flow": "independent-query",
+      "query": "near",
+      "passed": true
+    },
+    {
+      "service": "build",
+      "viewport": 390,
+      "flow": "independent-query",
+      "query": "satellite",
+      "passed": true
+    },
+    {
+      "service": "build",
+      "viewport": 390,
+      "fixtureId": "33e-affirmative-01",
+      "flow": "independent-grammar-components",
+      "passed": true
+    },
+    {
+      "service": "build",
+      "viewport": 390,
+      "fixtureId": "33e-negative-03",
+      "flow": "independent-grammar-components",
+      "passed": true
+    },
+    {
+      "service": "build",
+      "viewport": 390,
+      "fixtureId": "33e-yes-no-02",
+      "flow": "independent-grammar-components",
+      "passed": true
+    },
+    {
+      "service": "build",
+      "viewport": 390,
+      "fixtureId": "33e-where-02",
+      "flow": "independent-grammar-components",
+      "passed": true
+    },
+    {
+      "service": "build",
+      "viewport": 390,
+      "fixtureId": "33e-error-01",
+      "flow": "independent-correction-control-loop",
+      "passed": true
+    },
+    {
+      "service": "build",
+      "viewport": 390,
+      "fixtureId": "33e-error-04",
+      "flow": "independent-correction-control-loop",
+      "passed": true
+    },
+    {
+      "service": "build",
+      "viewport": 390,
+      "fixtureId": "33e-error-07",
+      "flow": "independent-correction-control-loop",
+      "passed": true
+    },
+    {
+      "service": "build",
+      "viewport": 390,
+      "fixtureId": "33e-error-10",
+      "flow": "independent-correction-control-loop",
+      "passed": true
+    },
+    {
+      "service": "build",
+      "viewport": 390,
+      "fixtureId": "33e-boundary-01",
+      "flow": "unknown-exact-selection-focus",
+      "passed": true,
+      "selection": {
+        "end": 38,
+        "focus": "sentence",
+        "start": 29,
+        "text": "satellite"
+      }
+    },
+    {
+      "service": "build",
+      "viewport": 390,
+      "fixtureId": "33e-boundary-14",
+      "flow": "modal-refusal-no-components-edits",
+      "passed": true
+    },
+    {
+      "service": "build",
+      "viewport": 390,
+      "flow": "edit-immediately-invalidates",
+      "passed": true
+    },
+    {
+      "service": "build",
+      "viewport": 390,
+      "flow": "single-tab-no-overflow",
+      "passed": true,
+      "geometry": {
+        "scrollWidth": 390,
+        "tabs": 1,
+        "width": 390
+      }
+    }
+  ]
+}

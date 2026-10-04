@@ -1,0 +1,194 @@
+{
+  "stage": 33,
+  "status": "frozen-design-not-a-published-import",
+  "currentFormatVersion": 1,
+  "targetFormatVersion": 2,
+  "authority": "Each preposition's audited locationHeadPolicies attribute; this file is the 33A authoring source. 33B migrates these exact mappings into reviewed entry revisions. Runtime parser, verifier and query read only the generated audited snapshot.",
+  "prepositions": [
+    {
+      "entryId": "function:location:in",
+      "lemma": "in",
+      "locationHeadPolicies": {
+        "basic-object-location": [
+          "noun:lexical:car",
+          "noun:lexical:bus"
+        ],
+        "legacy-sv-location": null,
+        "legacy-sv-under-location": null
+      }
+    },
+    {
+      "entryId": "function:location:on",
+      "lemma": "on",
+      "locationHeadPolicies": {
+        "basic-object-location": [
+          "noun:lexical:table",
+          "noun:lexical:chair"
+        ],
+        "legacy-sv-location": null,
+        "legacy-sv-under-location": null
+      }
+    },
+    {
+      "entryId": "function:location:under",
+      "lemma": "under",
+      "locationHeadPolicies": {
+        "basic-object-location": [
+          "noun:lexical:table",
+          "noun:lexical:chair"
+        ],
+        "legacy-sv-under-location": null
+      }
+    },
+    {
+      "entryId": "function:location:near",
+      "lemma": "near",
+      "locationHeadPolicies": {
+        "basic-object-location": [
+          "noun:lexical:table",
+          "noun:lexical:chair",
+          "noun:lexical:car",
+          "noun:lexical:bus"
+        ],
+        "legacy-sv-location": null,
+        "legacy-sv-under-location": null
+      }
+    }
+  ],
+  "policySemantics": {
+    "missingKey": "preposition-forbidden",
+    "nullHeads": "any-audited-noun-entry-in-complete-NP-no-pronoun",
+    "headEntryIds": "match-selected-noun-entry-identity-including-audited-plural-form"
+  },
+  "frameField": {
+    "name": "location",
+    "required": true,
+    "nullable": true,
+    "shape": {
+      "policyId": "nonempty-approved-policy-id",
+      "attachment": [
+        "complement",
+        "adverbial"
+      ],
+      "presence": [
+        "required",
+        "optional"
+      ]
+    }
+  },
+  "newFiniteBeFrame": {
+    "id": "location",
+    "pattern": "SVC",
+    "recipient": null,
+    "complement": "location-phrase",
+    "allowProgressive": false,
+    "allowPerfect": false,
+    "passivePromotion": null,
+    "allowedPurposes": [
+      "declarative",
+      "interrogative"
+    ],
+    "allowedPolarities": [
+      "positive",
+      "negative"
+    ],
+    "fixedTail": null,
+    "location": {
+      "policyId": "basic-object-location",
+      "attachment": "complement",
+      "presence": "required"
+    }
+  },
+  "finiteBeEntries": [
+    "function-word:auxiliary:am",
+    "function-word:auxiliary:is",
+    "function-word:auxiliary:are",
+    "function-word:auxiliary:was",
+    "function-word:auxiliary:were"
+  ],
+  "oldFiniteBeFrame": {
+    "id": "primary",
+    "preserveExistingFields": true,
+    "location": null
+  },
+  "legacySVFramePolicies": [
+    {
+      "entryId": "verb:lexical:sleep",
+      "frameId": "primary",
+      "policyId": "legacy-sv-under-location"
+    },
+    {
+      "entryId": "verb:lexical:wait",
+      "frameId": "wait-sv",
+      "policyId": "legacy-sv-under-location"
+    },
+    {
+      "entryId": "verb:lexical:work",
+      "frameId": "work-sv",
+      "policyId": "legacy-sv-location"
+    },
+    {
+      "entryId": "verb:lexical:walk",
+      "frameId": "walk-sv",
+      "policyId": "legacy-sv-location"
+    },
+    {
+      "entryId": "verb:lexical:run",
+      "frameId": "primary",
+      "policyId": "legacy-sv-location"
+    },
+    {
+      "entryId": "verb:lexical:dance",
+      "frameId": "dance-sv",
+      "policyId": "legacy-sv-location"
+    }
+  ],
+  "legacySVMigration": {
+    "attachment": "adverbial",
+    "presence": "optional",
+    "fixedTail": null,
+    "preserveExistingBehavior": true
+  },
+  "remainingFrames": {
+    "location": null,
+    "fixedTail": "retain-null-or-to-school"
+  },
+  "whereEntry": {
+    "entryId": "function:question:where",
+    "uses": [
+      "wh-adverbial",
+      "wh-complement"
+    ]
+  },
+  "futureStage34Reference": {
+    "policyId": "basic-object-location",
+    "attachment": "adverbial",
+    "presence": "optional",
+    "enabledInStage33": false
+  },
+  "storage": {
+    "frameColumn": "location_json",
+    "markerColumn": "attributes_json",
+    "sqlMigration": "0003; rebuild empty current frame table with location_json and freeze/collection triggers. Initialize a separate format-2 work database and rebuild from the new reviewed release; preserve the format-1 work database and historical release files as evidence. Never mutate an approved format-1 row or claim its old hash approves new fields.",
+    "frameChecks": [
+      "null-or-valid-JSON",
+      "exact-required-keys",
+      "approved-policy-id",
+      "required-complement-implies-SVC-and-location-phrase",
+      "optional-adverbial-implies-SV-or-reviewed-SVO",
+      "location-requires-null-fixed-tail",
+      "booleans-and-purpose-polarity-constraints"
+    ],
+    "crossEntryChecks": [
+      "policy-head-is-a-selected-noun-entry",
+      "preposition-has-location-use",
+      "finite-be-has-exact-primary-and-location-frames",
+      "no-other-function-word-frames",
+      "no-frame-implicit-policy",
+      "duplicate-head-and-policy-rejected"
+    ],
+    "hashing": "location fields and marker policies included in revision content hash; changed entries need new revisions and reviews; format 2 current reads/writes only; historical format 1 files stay frozen evidence",
+    "revisionMigration": "100 verb entries, 5 finite-be entries, 4 location preposition entries and where require new revisions and reviews (110 entries). Other entries retain exact content. locationHeadPolicies required only for location-preposition marker attributes; location required for every frame."
+  },
+  "runtimeGate": "frame is necessary but insufficient; stage capability matrix additionally gates predicate chain, purpose, polarity, tail and carrier; no old primary SVC inheritance"
+}

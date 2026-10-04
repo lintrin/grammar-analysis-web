@@ -1,0 +1,16 @@
+{
+  "browser": "147.0.7727.15",
+  "runtime": "Fresh /tmp directory contains dist, package.json, sites-env and dependency link; no .lexicon directory or SQLite data copied.",
+  "checks": [
+    {
+      "width": 1280,
+      "passed": true,
+      "maintenanceDirectoryAbsent": true
+    },
+    {
+      "width": 390,
+      "passed": true,
+      "maintenanceDirectoryAbsent": true
+    }
+  ]
+}

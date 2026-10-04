@@ -1,0 +1,92 @@
+{
+  "stage": "33C",
+  "date": "2026-10-04",
+  "lexiconFormatVersion": 2,
+  "lexiconHash": "d6112e8843db6228ff4228ad80c074469c14c39f8ee97684f01574ab8af85ac8",
+  "lexiconVersion": "1.8.1",
+  "ruleVersion": "0.23.1",
+  "tests": {
+    "total": 5659,
+    "pass": 5659,
+    "fail": 0,
+    "newStage33c": 138
+  },
+  "frozenAnswers": {
+    "total": 128,
+    "pass": 128,
+    "fail": 0,
+    "unchanged": true
+  },
+  "checks": {
+    "typescript": "passed",
+    "eslint": "passed",
+    "build": "passed",
+    "verify": "passed:232 entries",
+    "scopeFreeze": "passed",
+    "diffStaged": "passed",
+    "diffUnstaged": "passed",
+    "emptyRebuild": {
+      "sources": 11,
+      "revisions": 232,
+      "releases": 1
+    },
+    "browser": {
+      "checks": 27,
+      "passed": true,
+      "viewports": [
+        1280,
+        390
+      ],
+      "screenshotsInspected": [
+        "stage33c-desktop.png",
+        "stage33c-mobile.png"
+      ]
+    },
+    "bagPublicationReplay": "passed:immutable1.8.1 and all previous231 entries retained"
+  },
+  "historicalReleaseBytes": [
+    {
+      "path": "data/lexicon/releases/1.0.0.json",
+      "sha256": "7b276a06d7d343cbb5fb484644182948dcb8748ae5d19d08d12bee339c170989"
+    },
+    {
+      "path": "data/lexicon/releases/1.1.0.json",
+      "sha256": "8df99e138388f3d371143363397527ff31667d8cd875f42f51be1f1ec1f09242"
+    },
+    {
+      "path": "data/lexicon/releases/1.2.0.json",
+      "sha256": "8c5069ca42536de5a347bf81579c64c9a81665ad5560e5b8e11254914651fce4"
+    },
+    {
+      "path": "data/lexicon/releases/1.3.0.json",
+      "sha256": "a5ef56c8baf4347f94f66bd75fe14934a4d39ab8e14b2d188707770d8e8dd90e"
+    },
+    {
+      "path": "data/lexicon/releases/1.4.0.json",
+      "sha256": "ba097743548dca75848d6f4f0330b5a9769b145db8aaed60e18d072d9a273610"
+    },
+    {
+      "path": "data/lexicon/releases/1.5.0.json",
+      "sha256": "e33da3c86612852becc251ff40a5c580200fe738c73ed0d3b7d6b6db5431b411"
+    },
+    {
+      "path": "data/lexicon/releases/1.6.0.json",
+      "sha256": "42868f1b702aac49aa3add421504ea78b49b720da5efe403ac2ee0f72d8de5b8"
+    },
+    {
+      "path": "data/lexicon/releases/1.7.0.json",
+      "sha256": "d6fd443a4c743e7857ebb1eef9095c82a85381fcfda3667236786aa802a5762b"
+    }
+  ],
+  "previousFormat2Release": {
+    "path": "data/lexicon/releases/1.8.0.json",
+    "sha256": "2be54657ce68620748bde104d2e94b094f5aebb24e73c213ac8147cfcd120a27"
+  },
+  "limitations": [
+    "33D teaching query/categorized examples pending",
+    "33E independent acceptance pending",
+    "33F full offline/privacy/performance delivery pending",
+    "Existing proxy and Vinext route warnings retained",
+    "Old nonempty working-v2.sqlite preserved; new1.8.1 database selected explicitly"
+  ]
+}

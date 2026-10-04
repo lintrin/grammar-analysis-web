@@ -1,0 +1,2525 @@
+{
+  "targetRuleVersion": "0.5.0",
+  "state": "implemented",
+  "authorship": "Handwritten grammar expectations and sentence partitions; no analyzer-generated answers.",
+  "fixtures": [
+    {
+      "id": "negative-do-01",
+      "group": "negative-do",
+      "input": "She does not like the book.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "ranges": [{"start": 0, "end": 3}], "implicit": false},
+          {"key": "verb", "role": "verb", "parentKey": null, "ranges": [{"start": 4, "end": 17}], "implicit": false},
+          {"key": "object", "role": "object", "parentKey": null, "ranges": [{"start": 18, "end": 26}], "implicit": false}
+        ],
+        "corrections": [],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "negative-do-02",
+      "group": "negative-do",
+      "input": "They do not sleep.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "ranges": [{"start": 0, "end": 4}], "implicit": false},
+          {"key": "verb", "role": "verb", "parentKey": null, "ranges": [{"start": 5, "end": 17}], "implicit": false}
+        ],
+        "corrections": [],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "negative-do-03",
+      "group": "negative-do",
+      "input": "He did not give her a gift yesterday.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVOO",
+        "complexity": "simple",
+        "tense": "past",
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "ranges": [{"start": 0, "end": 2}], "implicit": false},
+          {"key": "verb", "role": "verb", "parentKey": null, "ranges": [{"start": 3, "end": 15}], "implicit": false},
+          {"key": "indirectObject", "role": "indirectObject", "parentKey": null, "ranges": [{"start": 16, "end": 19}], "implicit": false},
+          {"key": "object", "role": "object", "parentKey": null, "ranges": [{"start": 20, "end": 26}], "implicit": false},
+          {"key": "adverbial", "role": "adverbial", "parentKey": null, "ranges": [{"start": 27, "end": 36}], "implicit": false}
+        ],
+        "corrections": [],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "negative-do-04",
+      "group": "negative-do",
+      "input": "We do not find the book useful.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVOC",
+        "complexity": "simple",
+        "tense": "present",
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "ranges": [{"start": 0, "end": 2}], "implicit": false},
+          {"key": "verb", "role": "verb", "parentKey": null, "ranges": [{"start": 3, "end": 14}], "implicit": false},
+          {"key": "object", "role": "object", "parentKey": null, "ranges": [{"start": 15, "end": 23}], "implicit": false},
+          {"key": "complement", "role": "complement", "parentKey": null, "ranges": [{"start": 24, "end": 30}], "implicit": false}
+        ],
+        "corrections": [],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "negative-do-05",
+      "group": "negative-do",
+      "input": "  SHE  DOES NOT GO TO SCHOOL.  ",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "ranges": [{"start": 2, "end": 5}], "implicit": false},
+          {"key": "verb", "role": "verb", "parentKey": null, "ranges": [{"start": 7, "end": 18}], "implicit": false},
+          {"key": "adverbial", "role": "adverbial", "parentKey": null, "ranges": [{"start": 19, "end": 28}], "implicit": false}
+        ],
+        "corrections": [],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "negative-be-01",
+      "group": "negative-be",
+      "input": "The book is not useful.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "present",
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "ranges": [{"start": 0, "end": 8}], "implicit": false},
+          {"key": "verb", "role": "verb", "parentKey": null, "ranges": [{"start": 9, "end": 15}], "implicit": false},
+          {"key": "complement", "role": "complement", "parentKey": null, "ranges": [{"start": 16, "end": 22}], "implicit": false}
+        ],
+        "corrections": [],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "negative-be-02",
+      "group": "negative-be",
+      "input": "I am not a teacher.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "present",
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "ranges": [{"start": 0, "end": 1}], "implicit": false},
+          {"key": "verb", "role": "verb", "parentKey": null, "ranges": [{"start": 2, "end": 8}], "implicit": false},
+          {"key": "complement", "role": "complement", "parentKey": null, "ranges": [{"start": 9, "end": 18}], "implicit": false}
+        ],
+        "corrections": [],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "negative-be-03",
+      "group": "negative-be",
+      "input": "The boys are not kind.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "present",
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "ranges": [{"start": 0, "end": 8}], "implicit": false},
+          {"key": "verb", "role": "verb", "parentKey": null, "ranges": [{"start": 9, "end": 16}], "implicit": false},
+          {"key": "complement", "role": "complement", "parentKey": null, "ranges": [{"start": 17, "end": 21}], "implicit": false}
+        ],
+        "corrections": [],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "negative-be-04",
+      "group": "negative-be",
+      "input": "She was not a young teacher.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "past",
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "ranges": [{"start": 0, "end": 3}], "implicit": false},
+          {"key": "verb", "role": "verb", "parentKey": null, "ranges": [{"start": 4, "end": 11}], "implicit": false},
+          {"key": "complement", "role": "complement", "parentKey": null, "ranges": [{"start": 12, "end": 27}], "implicit": false},
+          {"key": "attribute-3", "role": "attribute", "parentKey": "complement", "ranges": [{"start": 14, "end": 19}], "implicit": false}
+        ],
+        "corrections": [],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "negative-be-05",
+      "group": "negative-be",
+      "input": "We were not good yesterday.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "past",
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "ranges": [{"start": 0, "end": 2}], "implicit": false},
+          {"key": "verb", "role": "verb", "parentKey": null, "ranges": [{"start": 3, "end": 11}], "implicit": false},
+          {"key": "complement", "role": "complement", "parentKey": null, "ranges": [{"start": 12, "end": 16}], "implicit": false},
+          {"key": "adverbial", "role": "adverbial", "parentKey": null, "ranges": [{"start": 17, "end": 26}], "implicit": false}
+        ],
+        "corrections": [],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "negative-can-01",
+      "group": "negative-can",
+      "input": "She can not go to school.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "ranges": [{"start": 0, "end": 3}], "implicit": false},
+          {"key": "verb", "role": "verb", "parentKey": null, "ranges": [{"start": 4, "end": 14}], "implicit": false},
+          {"key": "adverbial", "role": "adverbial", "parentKey": null, "ranges": [{"start": 15, "end": 24}], "implicit": false}
+        ],
+        "corrections": [],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "negative-can-02",
+      "group": "negative-can",
+      "input": "They can not see the gifts.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": null,
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "ranges": [{"start": 0, "end": 4}], "implicit": false},
+          {"key": "verb", "role": "verb", "parentKey": null, "ranges": [{"start": 5, "end": 16}], "implicit": false},
+          {"key": "object", "role": "object", "parentKey": null, "ranges": [{"start": 17, "end": 26}], "implicit": false}
+        ],
+        "corrections": [],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "negative-can-03",
+      "group": "negative-can",
+      "input": "He can not be kind.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": null,
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "ranges": [{"start": 0, "end": 2}], "implicit": false},
+          {"key": "verb", "role": "verb", "parentKey": null, "ranges": [{"start": 3, "end": 13}], "implicit": false},
+          {"key": "complement", "role": "complement", "parentKey": null, "ranges": [{"start": 14, "end": 18}], "implicit": false}
+        ],
+        "corrections": [],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "negative-can-04",
+      "group": "negative-can",
+      "input": "We can not show him a small toy.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVOO",
+        "complexity": "simple",
+        "tense": null,
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "ranges": [{"start": 0, "end": 2}], "implicit": false},
+          {"key": "verb", "role": "verb", "parentKey": null, "ranges": [{"start": 3, "end": 15}], "implicit": false},
+          {"key": "indirectObject", "role": "indirectObject", "parentKey": null, "ranges": [{"start": 16, "end": 19}], "implicit": false},
+          {"key": "object", "role": "object", "parentKey": null, "ranges": [{"start": 20, "end": 31}], "implicit": false},
+          {"key": "attribute-4", "role": "attribute", "parentKey": "object", "ranges": [{"start": 22, "end": 27}], "implicit": false}
+        ],
+        "corrections": [],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "negative-can-05",
+      "group": "negative-can",
+      "input": "She can not make the book useful.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVOC",
+        "complexity": "simple",
+        "tense": null,
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "ranges": [{"start": 0, "end": 3}], "implicit": false},
+          {"key": "verb", "role": "verb", "parentKey": null, "ranges": [{"start": 4, "end": 16}], "implicit": false},
+          {"key": "object", "role": "object", "parentKey": null, "ranges": [{"start": 17, "end": 25}], "implicit": false},
+          {"key": "complement", "role": "complement", "parentKey": null, "ranges": [{"start": 26, "end": 32}], "implicit": false}
+        ],
+        "corrections": [],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "question-can-01",
+      "group": "question-can",
+      "input": "Can she go to school?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": null,
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "ranges": [{"start": 4, "end": 7}], "implicit": false},
+          {"key": "verb", "role": "verb", "parentKey": null, "ranges": [{"start": 0, "end": 3}, {"start": 8, "end": 10}], "implicit": false},
+          {"key": "adverbial", "role": "adverbial", "parentKey": null, "ranges": [{"start": 11, "end": 20}], "implicit": false}
+        ],
+        "corrections": [],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "question-can-02",
+      "group": "question-can",
+      "input": "Can they see the book?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": null,
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "ranges": [{"start": 4, "end": 8}], "implicit": false},
+          {"key": "verb", "role": "verb", "parentKey": null, "ranges": [{"start": 0, "end": 3}, {"start": 9, "end": 12}], "implicit": false},
+          {"key": "object", "role": "object", "parentKey": null, "ranges": [{"start": 13, "end": 21}], "implicit": false}
+        ],
+        "corrections": [],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "question-can-03",
+      "group": "question-can",
+      "input": "Can I be a teacher?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": null,
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "ranges": [{"start": 4, "end": 5}], "implicit": false},
+          {"key": "verb", "role": "verb", "parentKey": null, "ranges": [{"start": 0, "end": 3}, {"start": 6, "end": 8}], "implicit": false},
+          {"key": "complement", "role": "complement", "parentKey": null, "ranges": [{"start": 9, "end": 18}], "implicit": false}
+        ],
+        "corrections": [],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "question-can-04",
+      "group": "question-can",
+      "input": "Can she give him a book?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVOO",
+        "complexity": "simple",
+        "tense": null,
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "ranges": [{"start": 4, "end": 7}], "implicit": false},
+          {"key": "verb", "role": "verb", "parentKey": null, "ranges": [{"start": 0, "end": 3}, {"start": 8, "end": 12}], "implicit": false},
+          {"key": "indirectObject", "role": "indirectObject", "parentKey": null, "ranges": [{"start": 13, "end": 16}], "implicit": false},
+          {"key": "object", "role": "object", "parentKey": null, "ranges": [{"start": 17, "end": 23}], "implicit": false}
+        ],
+        "corrections": [],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "question-can-05",
+      "group": "question-can",
+      "input": "Can the young boys find the old book useful?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVOC",
+        "complexity": "simple",
+        "tense": null,
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "ranges": [{"start": 4, "end": 18}], "implicit": false},
+          {"key": "verb", "role": "verb", "parentKey": null, "ranges": [{"start": 0, "end": 3}, {"start": 19, "end": 23}], "implicit": false},
+          {"key": "object", "role": "object", "parentKey": null, "ranges": [{"start": 24, "end": 36}], "implicit": false},
+          {"key": "complement", "role": "complement", "parentKey": null, "ranges": [{"start": 37, "end": 43}], "implicit": false},
+          {"key": "attribute-4", "role": "attribute", "parentKey": "subject", "ranges": [{"start": 8, "end": 13}], "implicit": false},
+          {"key": "attribute-5", "role": "attribute", "parentKey": "object", "ranges": [{"start": 28, "end": 31}], "implicit": false}
+        ],
+        "corrections": [],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "article-01",
+      "group": "article",
+      "input": "It is an old book.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "present",
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "ranges": [{"start": 0, "end": 2}], "implicit": false},
+          {"key": "verb", "role": "verb", "parentKey": null, "ranges": [{"start": 3, "end": 5}], "implicit": false},
+          {"key": "complement", "role": "complement", "parentKey": null, "ranges": [{"start": 6, "end": 17}], "implicit": false},
+          {"key": "attribute-3", "role": "attribute", "parentKey": "complement", "ranges": [{"start": 9, "end": 12}], "implicit": false}
+        ],
+        "corrections": [],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "article-02",
+      "group": "article",
+      "input": "She gave him an old book.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVOO",
+        "complexity": "simple",
+        "tense": "past",
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "ranges": [{"start": 0, "end": 3}], "implicit": false},
+          {"key": "verb", "role": "verb", "parentKey": null, "ranges": [{"start": 4, "end": 8}], "implicit": false},
+          {"key": "indirectObject", "role": "indirectObject", "parentKey": null, "ranges": [{"start": 9, "end": 12}], "implicit": false},
+          {"key": "object", "role": "object", "parentKey": null, "ranges": [{"start": 13, "end": 24}], "implicit": false},
+          {"key": "attribute-4", "role": "attribute", "parentKey": "object", "ranges": [{"start": 16, "end": 19}], "implicit": false}
+        ],
+        "corrections": [],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "article-03",
+      "group": "article",
+      "input": "What an old book it is!",
+      "expected": {
+        "status": "complete",
+        "purpose": "exclamatory",
+        "pattern": "SVC",
+        "complexity": "simple",
+        "tense": "present",
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "ranges": [{"start": 17, "end": 19}], "implicit": false},
+          {"key": "verb", "role": "verb", "parentKey": null, "ranges": [{"start": 20, "end": 22}], "implicit": false},
+          {"key": "complement", "role": "complement", "parentKey": null, "ranges": [{"start": 0, "end": 16}], "implicit": false},
+          {"key": "attribute-3", "role": "attribute", "parentKey": "complement", "ranges": [{"start": 8, "end": 11}], "implicit": false},
+          {"key": "attribute-4", "role": "attribute", "parentKey": "complement", "ranges": [{"start": 0, "end": 4}], "implicit": false}
+        ],
+        "corrections": [],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "article-04",
+      "group": "article",
+      "input": "An old teacher sleeps.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SV",
+        "complexity": "simple",
+        "tense": "present",
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "ranges": [{"start": 0, "end": 14}], "implicit": false},
+          {"key": "verb", "role": "verb", "parentKey": null, "ranges": [{"start": 15, "end": 21}], "implicit": false},
+          {"key": "attribute-2", "role": "attribute", "parentKey": "subject", "ranges": [{"start": 3, "end": 6}], "implicit": false}
+        ],
+        "corrections": [],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "article-05",
+      "group": "article",
+      "input": "She likes a useful book.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "ranges": [{"start": 0, "end": 3}], "implicit": false},
+          {"key": "verb", "role": "verb", "parentKey": null, "ranges": [{"start": 4, "end": 9}], "implicit": false},
+          {"key": "object", "role": "object", "parentKey": null, "ranges": [{"start": 10, "end": 23}], "implicit": false},
+          {"key": "attribute-3", "role": "attribute", "parentKey": "object", "ranges": [{"start": 12, "end": 18}], "implicit": false}
+        ],
+        "corrections": [],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "object-pronoun-01",
+      "group": "object-pronoun",
+      "input": "She sees it.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "ranges": [{"start": 0, "end": 3}], "implicit": false},
+          {"key": "verb", "role": "verb", "parentKey": null, "ranges": [{"start": 4, "end": 8}], "implicit": false},
+          {"key": "object", "role": "object", "parentKey": null, "ranges": [{"start": 9, "end": 11}], "implicit": false}
+        ],
+        "corrections": [],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "object-pronoun-02",
+      "group": "object-pronoun",
+      "input": "We found it useful.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "pattern": "SVOC",
+        "complexity": "simple",
+        "tense": "past",
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "ranges": [{"start": 0, "end": 2}], "implicit": false},
+          {"key": "verb", "role": "verb", "parentKey": null, "ranges": [{"start": 3, "end": 8}], "implicit": false},
+          {"key": "object", "role": "object", "parentKey": null, "ranges": [{"start": 9, "end": 11}], "implicit": false},
+          {"key": "complement", "role": "complement", "parentKey": null, "ranges": [{"start": 12, "end": 18}], "implicit": false}
+        ],
+        "corrections": [],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "object-pronoun-03",
+      "group": "object-pronoun",
+      "input": "Does she like it?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVO",
+        "complexity": "simple",
+        "tense": "present",
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "ranges": [{"start": 5, "end": 8}], "implicit": false},
+          {"key": "verb", "role": "verb", "parentKey": null, "ranges": [{"start": 0, "end": 4}, {"start": 9, "end": 13}], "implicit": false},
+          {"key": "object", "role": "object", "parentKey": null, "ranges": [{"start": 14, "end": 16}], "implicit": false}
+        ],
+        "corrections": [],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "object-pronoun-04",
+      "group": "object-pronoun",
+      "input": "Make it good.",
+      "expected": {
+        "status": "complete",
+        "purpose": "imperative",
+        "pattern": "SVOC",
+        "complexity": "simple",
+        "tense": null,
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "ranges": [], "implicit": true},
+          {"key": "verb", "role": "verb", "parentKey": null, "ranges": [{"start": 0, "end": 4}], "implicit": false},
+          {"key": "object", "role": "object", "parentKey": null, "ranges": [{"start": 5, "end": 7}], "implicit": false},
+          {"key": "complement", "role": "complement", "parentKey": null, "ranges": [{"start": 8, "end": 12}], "implicit": false}
+        ],
+        "corrections": [],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "object-pronoun-05",
+      "group": "object-pronoun",
+      "input": "Can he find it useful?",
+      "expected": {
+        "status": "complete",
+        "purpose": "interrogative",
+        "pattern": "SVOC",
+        "complexity": "simple",
+        "tense": null,
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "ranges": [{"start": 4, "end": 6}], "implicit": false},
+          {"key": "verb", "role": "verb", "parentKey": null, "ranges": [{"start": 0, "end": 3}, {"start": 7, "end": 11}], "implicit": false},
+          {"key": "object", "role": "object", "parentKey": null, "ranges": [{"start": 12, "end": 14}], "implicit": false},
+          {"key": "complement", "role": "complement", "parentKey": null, "ranges": [{"start": 15, "end": 21}], "implicit": false}
+        ],
+        "corrections": [],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "agreement-negative-do-01",
+      "group": "agreement-negative-do",
+      "input": "She do not sleep.",
+      "expected": {
+        "status": "partial",
+        "nodes": [],
+        "corrections": [
+          {
+            "ruleId": "AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 4,
+                  "end": 6
+                },
+                "expected": "do",
+                "replacement": "does"
+              }
+            ]
+          }
+        ],
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ]
+      },
+      "afterApply": {
+        "input": "She does not sleep.",
+        "status": "complete",
+        "pattern": "SV",
+        "purpose": "declarative",
+        "tense": "present",
+        "corrections": [],
+        "complexity": "simple",
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "implicit": false, "ranges": [{"start": 0, "end": 3}]},
+          {"key": "verb", "role": "verb", "parentKey": null, "implicit": false, "ranges": [{"start": 4, "end": 18}]}
+        ],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "agreement-negative-do-02",
+      "group": "agreement-negative-do",
+      "input": "They does not like books.",
+      "expected": {
+        "status": "partial",
+        "nodes": [],
+        "corrections": [
+          {
+            "ruleId": "AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 5,
+                  "end": 9
+                },
+                "expected": "does",
+                "replacement": "do"
+              }
+            ]
+          }
+        ],
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ]
+      },
+      "afterApply": {
+        "input": "They do not like books.",
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "tense": "present",
+        "corrections": [],
+        "complexity": "simple",
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "implicit": false, "ranges": [{"start": 0, "end": 4}]},
+          {"key": "verb", "role": "verb", "parentKey": null, "implicit": false, "ranges": [{"start": 5, "end": 16}]},
+          {"key": "object", "role": "object", "parentKey": null, "implicit": false, "ranges": [{"start": 17, "end": 22}]}
+        ],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "agreement-negative-do-03",
+      "group": "agreement-negative-do",
+      "input": "He do not give her a book.",
+      "expected": {
+        "status": "partial",
+        "nodes": [],
+        "corrections": [
+          {
+            "ruleId": "AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 3,
+                  "end": 5
+                },
+                "expected": "do",
+                "replacement": "does"
+              }
+            ]
+          }
+        ],
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ]
+      },
+      "afterApply": {
+        "input": "He does not give her a book.",
+        "status": "complete",
+        "pattern": "SVOO",
+        "purpose": "declarative",
+        "tense": "present",
+        "corrections": [],
+        "complexity": "simple",
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "implicit": false, "ranges": [{"start": 0, "end": 2}]},
+          {"key": "verb", "role": "verb", "parentKey": null, "implicit": false, "ranges": [{"start": 3, "end": 16}]},
+          {"key": "indirectObject", "role": "indirectObject", "parentKey": null, "implicit": false, "ranges": [{"start": 17, "end": 20}]},
+          {"key": "object", "role": "object", "parentKey": null, "implicit": false, "ranges": [{"start": 21, "end": 27}]}
+        ],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "agreement-negative-do-04",
+      "group": "agreement-negative-do",
+      "input": "We does not find books useful.",
+      "expected": {
+        "status": "partial",
+        "nodes": [],
+        "corrections": [
+          {
+            "ruleId": "AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 3,
+                  "end": 7
+                },
+                "expected": "does",
+                "replacement": "do"
+              }
+            ]
+          }
+        ],
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ]
+      },
+      "afterApply": {
+        "input": "We do not find books useful.",
+        "status": "complete",
+        "pattern": "SVOC",
+        "purpose": "declarative",
+        "tense": "present",
+        "corrections": [],
+        "complexity": "simple",
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "implicit": false, "ranges": [{"start": 0, "end": 2}]},
+          {"key": "verb", "role": "verb", "parentKey": null, "implicit": false, "ranges": [{"start": 3, "end": 14}]},
+          {"key": "object", "role": "object", "parentKey": null, "implicit": false, "ranges": [{"start": 15, "end": 20}]},
+          {"key": "complement", "role": "complement", "parentKey": null, "implicit": false, "ranges": [{"start": 21, "end": 27}]}
+        ],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "agreement-negative-do-05",
+      "group": "agreement-negative-do",
+      "input": "The boy do not go to school.",
+      "expected": {
+        "status": "partial",
+        "nodes": [],
+        "corrections": [
+          {
+            "ruleId": "AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 8,
+                  "end": 10
+                },
+                "expected": "do",
+                "replacement": "does"
+              }
+            ]
+          }
+        ],
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ]
+      },
+      "afterApply": {
+        "input": "The boy does not go to school.",
+        "status": "complete",
+        "pattern": "SV",
+        "purpose": "declarative",
+        "tense": "present",
+        "corrections": [],
+        "complexity": "simple",
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "implicit": false, "ranges": [{"start": 0, "end": 7}]},
+          {"key": "verb", "role": "verb", "parentKey": null, "implicit": false, "ranges": [{"start": 8, "end": 19}]},
+          {"key": "adverbial", "role": "adverbial", "parentKey": null, "implicit": false, "ranges": [{"start": 20, "end": 29}]}
+        ],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "base-negative-do-01",
+      "group": "base-negative-do",
+      "input": "She does not sleeps.",
+      "expected": {
+        "status": "partial",
+        "nodes": [],
+        "corrections": [
+          {
+            "ruleId": "DO-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 13,
+                  "end": 19
+                },
+                "expected": "sleeps",
+                "replacement": "sleep"
+              }
+            ]
+          }
+        ],
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ]
+      },
+      "afterApply": {
+        "input": "She does not sleep.",
+        "status": "complete",
+        "pattern": "SV",
+        "purpose": "declarative",
+        "tense": "present",
+        "corrections": [],
+        "complexity": "simple",
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "implicit": false, "ranges": [{"start": 0, "end": 3}]},
+          {"key": "verb", "role": "verb", "parentKey": null, "implicit": false, "ranges": [{"start": 4, "end": 18}]}
+        ],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "base-negative-do-02",
+      "group": "base-negative-do",
+      "input": "They did not saw the gifts.",
+      "expected": {
+        "status": "partial",
+        "nodes": [],
+        "corrections": [
+          {
+            "ruleId": "DO-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 13,
+                  "end": 16
+                },
+                "expected": "saw",
+                "replacement": "see"
+              }
+            ]
+          }
+        ],
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ]
+      },
+      "afterApply": {
+        "input": "They did not see the gifts.",
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "tense": "past",
+        "corrections": [],
+        "complexity": "simple",
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "implicit": false, "ranges": [{"start": 0, "end": 4}]},
+          {"key": "verb", "role": "verb", "parentKey": null, "implicit": false, "ranges": [{"start": 5, "end": 16}]},
+          {"key": "object", "role": "object", "parentKey": null, "implicit": false, "ranges": [{"start": 17, "end": 26}]}
+        ],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "base-negative-do-03",
+      "group": "base-negative-do",
+      "input": "He does not gives her a book.",
+      "expected": {
+        "status": "partial",
+        "nodes": [],
+        "corrections": [
+          {
+            "ruleId": "DO-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 12,
+                  "end": 17
+                },
+                "expected": "gives",
+                "replacement": "give"
+              }
+            ]
+          }
+        ],
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ]
+      },
+      "afterApply": {
+        "input": "He does not give her a book.",
+        "status": "complete",
+        "pattern": "SVOO",
+        "purpose": "declarative",
+        "tense": "present",
+        "corrections": [],
+        "complexity": "simple",
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "implicit": false, "ranges": [{"start": 0, "end": 2}]},
+          {"key": "verb", "role": "verb", "parentKey": null, "implicit": false, "ranges": [{"start": 3, "end": 16}]},
+          {"key": "indirectObject", "role": "indirectObject", "parentKey": null, "implicit": false, "ranges": [{"start": 17, "end": 20}]},
+          {"key": "object", "role": "object", "parentKey": null, "implicit": false, "ranges": [{"start": 21, "end": 27}]}
+        ],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "base-negative-do-04",
+      "group": "base-negative-do",
+      "input": "We do not found books useful.",
+      "expected": {
+        "status": "partial",
+        "nodes": [],
+        "corrections": [
+          {
+            "ruleId": "DO-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 10,
+                  "end": 15
+                },
+                "expected": "found",
+                "replacement": "find"
+              }
+            ]
+          }
+        ],
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ]
+      },
+      "afterApply": {
+        "input": "We do not find books useful.",
+        "status": "complete",
+        "pattern": "SVOC",
+        "purpose": "declarative",
+        "tense": "present",
+        "corrections": [],
+        "complexity": "simple",
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "implicit": false, "ranges": [{"start": 0, "end": 2}]},
+          {"key": "verb", "role": "verb", "parentKey": null, "implicit": false, "ranges": [{"start": 3, "end": 14}]},
+          {"key": "object", "role": "object", "parentKey": null, "implicit": false, "ranges": [{"start": 15, "end": 20}]},
+          {"key": "complement", "role": "complement", "parentKey": null, "implicit": false, "ranges": [{"start": 21, "end": 27}]}
+        ],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "base-negative-do-05",
+      "group": "base-negative-do",
+      "input": "I did not went to school.",
+      "expected": {
+        "status": "partial",
+        "nodes": [],
+        "corrections": [
+          {
+            "ruleId": "DO-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 10,
+                  "end": 14
+                },
+                "expected": "went",
+                "replacement": "go"
+              }
+            ]
+          }
+        ],
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ]
+      },
+      "afterApply": {
+        "input": "I did not go to school.",
+        "status": "complete",
+        "pattern": "SV",
+        "purpose": "declarative",
+        "tense": "past",
+        "corrections": [],
+        "complexity": "simple",
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "implicit": false, "ranges": [{"start": 0, "end": 1}]},
+          {"key": "verb", "role": "verb", "parentKey": null, "implicit": false, "ranges": [{"start": 2, "end": 12}]},
+          {"key": "adverbial", "role": "adverbial", "parentKey": null, "implicit": false, "ranges": [{"start": 13, "end": 22}]}
+        ],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "agreement-negative-be-01",
+      "group": "agreement-negative-be",
+      "input": "I is not kind.",
+      "expected": {
+        "status": "partial",
+        "nodes": [],
+        "corrections": [
+          {
+            "ruleId": "AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 2,
+                  "end": 4
+                },
+                "expected": "is",
+                "replacement": "am"
+              }
+            ]
+          }
+        ],
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ]
+      },
+      "afterApply": {
+        "input": "I am not kind.",
+        "status": "complete",
+        "pattern": "SVC",
+        "purpose": "declarative",
+        "tense": "present",
+        "corrections": [],
+        "complexity": "simple",
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "implicit": false, "ranges": [{"start": 0, "end": 1}]},
+          {"key": "verb", "role": "verb", "parentKey": null, "implicit": false, "ranges": [{"start": 2, "end": 8}]},
+          {"key": "complement", "role": "complement", "parentKey": null, "implicit": false, "ranges": [{"start": 9, "end": 13}]}
+        ],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "agreement-negative-be-02",
+      "group": "agreement-negative-be",
+      "input": "She are not a teacher.",
+      "expected": {
+        "status": "partial",
+        "nodes": [],
+        "corrections": [
+          {
+            "ruleId": "AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 4,
+                  "end": 7
+                },
+                "expected": "are",
+                "replacement": "is"
+              }
+            ]
+          }
+        ],
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ]
+      },
+      "afterApply": {
+        "input": "She is not a teacher.",
+        "status": "complete",
+        "pattern": "SVC",
+        "purpose": "declarative",
+        "tense": "present",
+        "corrections": [],
+        "complexity": "simple",
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "implicit": false, "ranges": [{"start": 0, "end": 3}]},
+          {"key": "verb", "role": "verb", "parentKey": null, "implicit": false, "ranges": [{"start": 4, "end": 10}]},
+          {"key": "complement", "role": "complement", "parentKey": null, "implicit": false, "ranges": [{"start": 11, "end": 20}]}
+        ],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "agreement-negative-be-03",
+      "group": "agreement-negative-be",
+      "input": "The boys is not good.",
+      "expected": {
+        "status": "partial",
+        "nodes": [],
+        "corrections": [
+          {
+            "ruleId": "AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 9,
+                  "end": 11
+                },
+                "expected": "is",
+                "replacement": "are"
+              }
+            ]
+          }
+        ],
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ]
+      },
+      "afterApply": {
+        "input": "The boys are not good.",
+        "status": "complete",
+        "pattern": "SVC",
+        "purpose": "declarative",
+        "tense": "present",
+        "corrections": [],
+        "complexity": "simple",
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "implicit": false, "ranges": [{"start": 0, "end": 8}]},
+          {"key": "verb", "role": "verb", "parentKey": null, "implicit": false, "ranges": [{"start": 9, "end": 16}]},
+          {"key": "complement", "role": "complement", "parentKey": null, "implicit": false, "ranges": [{"start": 17, "end": 21}]}
+        ],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "agreement-negative-be-04",
+      "group": "agreement-negative-be",
+      "input": "We was not kind.",
+      "expected": {
+        "status": "partial",
+        "nodes": [],
+        "corrections": [
+          {
+            "ruleId": "AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 3,
+                  "end": 6
+                },
+                "expected": "was",
+                "replacement": "were"
+              }
+            ]
+          }
+        ],
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ]
+      },
+      "afterApply": {
+        "input": "We were not kind.",
+        "status": "complete",
+        "pattern": "SVC",
+        "purpose": "declarative",
+        "tense": "past",
+        "corrections": [],
+        "complexity": "simple",
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "implicit": false, "ranges": [{"start": 0, "end": 2}]},
+          {"key": "verb", "role": "verb", "parentKey": null, "implicit": false, "ranges": [{"start": 3, "end": 11}]},
+          {"key": "complement", "role": "complement", "parentKey": null, "implicit": false, "ranges": [{"start": 12, "end": 16}]}
+        ],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "agreement-negative-be-05",
+      "group": "agreement-negative-be",
+      "input": "He were not a student.",
+      "expected": {
+        "status": "partial",
+        "nodes": [],
+        "corrections": [
+          {
+            "ruleId": "AGREEMENT-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 3,
+                  "end": 7
+                },
+                "expected": "were",
+                "replacement": "was"
+              }
+            ]
+          }
+        ],
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ]
+      },
+      "afterApply": {
+        "input": "He was not a student.",
+        "status": "complete",
+        "pattern": "SVC",
+        "purpose": "declarative",
+        "tense": "past",
+        "corrections": [],
+        "complexity": "simple",
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "implicit": false, "ranges": [{"start": 0, "end": 2}]},
+          {"key": "verb", "role": "verb", "parentKey": null, "implicit": false, "ranges": [{"start": 3, "end": 10}]},
+          {"key": "complement", "role": "complement", "parentKey": null, "implicit": false, "ranges": [{"start": 11, "end": 20}]}
+        ],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "base-negative-can-01",
+      "group": "base-negative-can",
+      "input": "She can not goes to school.",
+      "expected": {
+        "status": "partial",
+        "nodes": [],
+        "corrections": [
+          {
+            "ruleId": "MODAL-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 12,
+                  "end": 16
+                },
+                "expected": "goes",
+                "replacement": "go"
+              }
+            ]
+          }
+        ],
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ]
+      },
+      "afterApply": {
+        "input": "She can not go to school.",
+        "status": "complete",
+        "pattern": "SV",
+        "purpose": "declarative",
+        "tense": null,
+        "corrections": [],
+        "complexity": "simple",
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "implicit": false, "ranges": [{"start": 0, "end": 3}]},
+          {"key": "verb", "role": "verb", "parentKey": null, "implicit": false, "ranges": [{"start": 4, "end": 14}]},
+          {"key": "adverbial", "role": "adverbial", "parentKey": null, "implicit": false, "ranges": [{"start": 15, "end": 24}]}
+        ],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "base-negative-can-02",
+      "group": "base-negative-can",
+      "input": "They can not saw books.",
+      "expected": {
+        "status": "partial",
+        "nodes": [],
+        "corrections": [
+          {
+            "ruleId": "MODAL-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 13,
+                  "end": 16
+                },
+                "expected": "saw",
+                "replacement": "see"
+              }
+            ]
+          }
+        ],
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ]
+      },
+      "afterApply": {
+        "input": "They can not see books.",
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "declarative",
+        "tense": null,
+        "corrections": [],
+        "complexity": "simple",
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "implicit": false, "ranges": [{"start": 0, "end": 4}]},
+          {"key": "verb", "role": "verb", "parentKey": null, "implicit": false, "ranges": [{"start": 5, "end": 16}]},
+          {"key": "object", "role": "object", "parentKey": null, "implicit": false, "ranges": [{"start": 17, "end": 22}]}
+        ],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "base-negative-can-03",
+      "group": "base-negative-can",
+      "input": "He can not is kind.",
+      "expected": {
+        "status": "partial",
+        "nodes": [],
+        "corrections": [
+          {
+            "ruleId": "MODAL-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 11,
+                  "end": 13
+                },
+                "expected": "is",
+                "replacement": "be"
+              }
+            ]
+          }
+        ],
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ]
+      },
+      "afterApply": {
+        "input": "He can not be kind.",
+        "status": "complete",
+        "pattern": "SVC",
+        "purpose": "declarative",
+        "tense": null,
+        "corrections": [],
+        "complexity": "simple",
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "implicit": false, "ranges": [{"start": 0, "end": 2}]},
+          {"key": "verb", "role": "verb", "parentKey": null, "implicit": false, "ranges": [{"start": 3, "end": 13}]},
+          {"key": "complement", "role": "complement", "parentKey": null, "implicit": false, "ranges": [{"start": 14, "end": 18}]}
+        ],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "base-negative-can-04",
+      "group": "base-negative-can",
+      "input": "We can not gives him a book.",
+      "expected": {
+        "status": "partial",
+        "nodes": [],
+        "corrections": [
+          {
+            "ruleId": "MODAL-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 11,
+                  "end": 16
+                },
+                "expected": "gives",
+                "replacement": "give"
+              }
+            ]
+          }
+        ],
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ]
+      },
+      "afterApply": {
+        "input": "We can not give him a book.",
+        "status": "complete",
+        "pattern": "SVOO",
+        "purpose": "declarative",
+        "tense": null,
+        "corrections": [],
+        "complexity": "simple",
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "implicit": false, "ranges": [{"start": 0, "end": 2}]},
+          {"key": "verb", "role": "verb", "parentKey": null, "implicit": false, "ranges": [{"start": 3, "end": 15}]},
+          {"key": "indirectObject", "role": "indirectObject", "parentKey": null, "implicit": false, "ranges": [{"start": 16, "end": 19}]},
+          {"key": "object", "role": "object", "parentKey": null, "implicit": false, "ranges": [{"start": 20, "end": 26}]}
+        ],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "base-negative-can-05",
+      "group": "base-negative-can",
+      "input": "She can not found books useful.",
+      "expected": {
+        "status": "partial",
+        "nodes": [],
+        "corrections": [
+          {
+            "ruleId": "MODAL-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 12,
+                  "end": 17
+                },
+                "expected": "found",
+                "replacement": "find"
+              }
+            ]
+          }
+        ],
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ]
+      },
+      "afterApply": {
+        "input": "She can not find books useful.",
+        "status": "complete",
+        "pattern": "SVOC",
+        "purpose": "declarative",
+        "tense": null,
+        "corrections": [],
+        "complexity": "simple",
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "implicit": false, "ranges": [{"start": 0, "end": 3}]},
+          {"key": "verb", "role": "verb", "parentKey": null, "implicit": false, "ranges": [{"start": 4, "end": 16}]},
+          {"key": "object", "role": "object", "parentKey": null, "implicit": false, "ranges": [{"start": 17, "end": 22}]},
+          {"key": "complement", "role": "complement", "parentKey": null, "implicit": false, "ranges": [{"start": 23, "end": 29}]}
+        ],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "base-question-can-01",
+      "group": "base-question-can",
+      "input": "Can she goes to school?",
+      "expected": {
+        "status": "partial",
+        "nodes": [],
+        "corrections": [
+          {
+            "ruleId": "MODAL-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 8,
+                  "end": 12
+                },
+                "expected": "goes",
+                "replacement": "go"
+              }
+            ]
+          }
+        ],
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ]
+      },
+      "afterApply": {
+        "input": "Can she go to school?",
+        "status": "complete",
+        "pattern": "SV",
+        "purpose": "interrogative",
+        "tense": null,
+        "corrections": [],
+        "complexity": "simple",
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "implicit": false, "ranges": [{"start": 4, "end": 7}]},
+          {"key": "verb", "role": "verb", "parentKey": null, "implicit": false, "ranges": [{"start": 0, "end": 3}, {"start": 8, "end": 10}]},
+          {"key": "adverbial", "role": "adverbial", "parentKey": null, "implicit": false, "ranges": [{"start": 11, "end": 20}]}
+        ],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "base-question-can-02",
+      "group": "base-question-can",
+      "input": "Can they saw books?",
+      "expected": {
+        "status": "partial",
+        "nodes": [],
+        "corrections": [
+          {
+            "ruleId": "MODAL-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 9,
+                  "end": 12
+                },
+                "expected": "saw",
+                "replacement": "see"
+              }
+            ]
+          }
+        ],
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ]
+      },
+      "afterApply": {
+        "input": "Can they see books?",
+        "status": "complete",
+        "pattern": "SVO",
+        "purpose": "interrogative",
+        "tense": null,
+        "corrections": [],
+        "complexity": "simple",
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "implicit": false, "ranges": [{"start": 4, "end": 8}]},
+          {"key": "verb", "role": "verb", "parentKey": null, "implicit": false, "ranges": [{"start": 0, "end": 3}, {"start": 9, "end": 12}]},
+          {"key": "object", "role": "object", "parentKey": null, "implicit": false, "ranges": [{"start": 13, "end": 18}]}
+        ],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "base-question-can-03",
+      "group": "base-question-can",
+      "input": "Can he is kind?",
+      "expected": {
+        "status": "partial",
+        "nodes": [],
+        "corrections": [
+          {
+            "ruleId": "MODAL-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 7,
+                  "end": 9
+                },
+                "expected": "is",
+                "replacement": "be"
+              }
+            ]
+          }
+        ],
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ]
+      },
+      "afterApply": {
+        "input": "Can he be kind?",
+        "status": "complete",
+        "pattern": "SVC",
+        "purpose": "interrogative",
+        "tense": null,
+        "corrections": [],
+        "complexity": "simple",
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "implicit": false, "ranges": [{"start": 4, "end": 6}]},
+          {"key": "verb", "role": "verb", "parentKey": null, "implicit": false, "ranges": [{"start": 0, "end": 3}, {"start": 7, "end": 9}]},
+          {"key": "complement", "role": "complement", "parentKey": null, "implicit": false, "ranges": [{"start": 10, "end": 14}]}
+        ],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "base-question-can-04",
+      "group": "base-question-can",
+      "input": "Can we gives him a book?",
+      "expected": {
+        "status": "partial",
+        "nodes": [],
+        "corrections": [
+          {
+            "ruleId": "MODAL-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 7,
+                  "end": 12
+                },
+                "expected": "gives",
+                "replacement": "give"
+              }
+            ]
+          }
+        ],
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ]
+      },
+      "afterApply": {
+        "input": "Can we give him a book?",
+        "status": "complete",
+        "pattern": "SVOO",
+        "purpose": "interrogative",
+        "tense": null,
+        "corrections": [],
+        "complexity": "simple",
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "implicit": false, "ranges": [{"start": 4, "end": 6}]},
+          {"key": "verb", "role": "verb", "parentKey": null, "implicit": false, "ranges": [{"start": 0, "end": 3}, {"start": 7, "end": 11}]},
+          {"key": "indirectObject", "role": "indirectObject", "parentKey": null, "implicit": false, "ranges": [{"start": 12, "end": 15}]},
+          {"key": "object", "role": "object", "parentKey": null, "implicit": false, "ranges": [{"start": 16, "end": 22}]}
+        ],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "base-question-can-05",
+      "group": "base-question-can",
+      "input": "Can she found books useful?",
+      "expected": {
+        "status": "partial",
+        "nodes": [],
+        "corrections": [
+          {
+            "ruleId": "MODAL-BASE-001",
+            "edits": [
+              {
+                "range": {
+                  "start": 8,
+                  "end": 13
+                },
+                "expected": "found",
+                "replacement": "find"
+              }
+            ]
+          }
+        ],
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "form-mismatch",
+            "ranges": []
+          }
+        ]
+      },
+      "afterApply": {
+        "input": "Can she find books useful?",
+        "status": "complete",
+        "pattern": "SVOC",
+        "purpose": "interrogative",
+        "tense": null,
+        "corrections": [],
+        "complexity": "simple",
+        "nodes": [
+          {"key": "subject", "role": "subject", "parentKey": null, "implicit": false, "ranges": [{"start": 4, "end": 7}]},
+          {"key": "verb", "role": "verb", "parentKey": null, "implicit": false, "ranges": [{"start": 0, "end": 3}, {"start": 8, "end": 12}]},
+          {"key": "object", "role": "object", "parentKey": null, "implicit": false, "ranges": [{"start": 13, "end": 18}]},
+          {"key": "complement", "role": "complement", "parentKey": null, "implicit": false, "ranges": [{"start": 19, "end": 25}]}
+        ],
+        "aspect": "simple",
+        "voice": "active",
+        "reasons": []
+      }
+    },
+    {
+      "id": "boundary-01",
+      "group": "boundary",
+      "input": "She doesn't like books.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "pattern": "SVO",
+        "tense": "present",
+        "aspect": "simple",
+        "voice": "active",
+        "corrections": [],
+        "nodes": [
+          {
+            "key": "0-subject",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ]
+          },
+          {
+            "key": "0-verb",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 16
+              }
+            ]
+          },
+          {
+            "key": "0-object",
+            "role": "object",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 17,
+                "end": 22
+              }
+            ]
+          }
+        ],
+        "reasons": []
+      }
+    },
+    {
+      "id": "boundary-02",
+      "group": "boundary",
+      "input": "She isn't kind.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "pattern": "SVC",
+        "tense": "present",
+        "aspect": "simple",
+        "voice": "active",
+        "corrections": [],
+        "nodes": [
+          {
+            "key": "0-subject",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ]
+          },
+          {
+            "key": "0-verb",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 9
+              }
+            ]
+          },
+          {
+            "key": "0-complement",
+            "role": "complement",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 10,
+                "end": 14
+              }
+            ]
+          }
+        ],
+        "reasons": []
+      }
+    },
+    {
+      "id": "boundary-03",
+      "group": "boundary",
+      "input": "She can't go to school.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "pattern": "SV",
+        "tense": null,
+        "aspect": "simple",
+        "voice": "active",
+        "corrections": [],
+        "nodes": [
+          {
+            "key": "0-subject",
+            "role": "subject",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 0,
+                "end": 3
+              }
+            ]
+          },
+          {
+            "key": "0-verb",
+            "role": "verb",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 4,
+                "end": 12
+              }
+            ]
+          },
+          {
+            "key": "0-adverbial",
+            "role": "adverbial",
+            "parentKey": null,
+            "implicit": false,
+            "ranges": [
+              {
+                "start": 13,
+                "end": 22
+              }
+            ]
+          }
+        ],
+        "reasons": []
+      }
+    },
+    {
+      "id": "boundary-04",
+      "group": "boundary",
+      "input": "Do not sleep.",
+      "expected": {
+        "status": "unsupported",
+        "nodes": [],
+        "corrections": [],
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-05",
+      "group": "boundary",
+      "input": "Can she not go to school?",
+      "expected": {
+        "status": "unsupported",
+        "nodes": [],
+        "corrections": [],
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-06",
+      "group": "boundary",
+      "input": "She does not be kind.",
+      "expected": {
+        "status": "unsupported",
+        "nodes": [],
+        "corrections": [],
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-07",
+      "group": "boundary",
+      "input": "She will not sleep.",
+      "expected": {
+        "status": "unsupported",
+        "nodes": [],
+        "corrections": [],
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-08",
+      "group": "boundary",
+      "input": "She is not sleeping.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "complexity": "simple",
+        "pattern": "SV",
+        "tense": "present",
+        "aspect": "progressive",
+        "voice": "active",
+        "corrections": [],
+        "nodes": [
+          {"key": "0-subject", "role": "subject", "parentKey": null, "implicit": false, "ranges": [{"start": 0, "end": 3}]},
+          {"key": "0-verb", "role": "verb", "parentKey": null, "implicit": false, "ranges": [{"start": 4, "end": 19}]}
+        ],
+        "reasons": []
+      }
+    },
+    {
+      "id": "boundary-09",
+      "group": "boundary",
+      "input": "She does not like unknown.",
+      "expected": {
+        "status": "unsupported",
+        "nodes": [],
+        "corrections": [],
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-10",
+      "group": "boundary",
+      "input": "She does not go to school yesterday.",
+      "expected": {
+        "status": "unsupported",
+        "nodes": [],
+        "corrections": [],
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-11",
+      "group": "boundary",
+      "input": "She can not go to school yesterday.",
+      "expected": {
+        "status": "unsupported",
+        "nodes": [],
+        "corrections": [],
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-12",
+      "group": "boundary",
+      "input": "Can she go to school.",
+      "expected": {
+        "status": "unsupported",
+        "nodes": [],
+        "corrections": [],
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-13",
+      "group": "boundary",
+      "input": "She does not sleep?",
+      "expected": {
+        "status": "unsupported",
+        "nodes": [],
+        "corrections": [],
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-14",
+      "group": "boundary",
+      "input": "She is an useful teacher.",
+      "expected": {
+        "status": "unsupported",
+        "nodes": [],
+        "corrections": [],
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-15",
+      "group": "boundary",
+      "input": "She sees he.",
+      "expected": {
+        "status": "unsupported",
+        "nodes": [],
+        "corrections": [],
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-16",
+      "group": "boundary",
+      "input": "She gives it a book.",
+      "expected": {
+        "status": "unsupported",
+        "nodes": [],
+        "corrections": [],
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-17",
+      "group": "boundary",
+      "input": "She gives him it.",
+      "expected": {
+        "status": "unsupported",
+        "nodes": [],
+        "corrections": [],
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-18",
+      "group": "boundary",
+      "input": "She does not sleep and he smiles.",
+      "expected": {
+        "status": "complete",
+        "purpose": "declarative",
+        "complexity": "compound",
+        "pattern": null,
+        "tense": null,
+        "nodes": [
+          {"key": "clause-1", "role": "clause", "parentKey": null, "implicit": false, "ranges": [{"start": 0, "end": 18}], "clause": {"pattern": "SV", "purpose": "declarative", "tense": "present", "kind": "independent", "aspect": "simple", "voice": "active"}},
+          {"key": "clause-1-part-1", "role": "subject", "parentKey": "clause-1", "implicit": false, "ranges": [{"start": 0, "end": 3}]},
+          {"key": "clause-1-part-2", "role": "verb", "parentKey": "clause-1", "implicit": false, "ranges": [{"start": 4, "end": 18}]},
+          {"key": "clause-2", "role": "clause", "parentKey": null, "implicit": false, "ranges": [{"start": 23, "end": 32}], "clause": {"pattern": "SV", "purpose": "declarative", "tense": "present", "kind": "independent", "aspect": "simple", "voice": "active"}},
+          {"key": "clause-2-part-1", "role": "subject", "parentKey": "clause-2", "implicit": false, "ranges": [{"start": 23, "end": 25}]},
+          {"key": "clause-2-part-2", "role": "verb", "parentKey": "clause-2", "implicit": false, "ranges": [{"start": 26, "end": 32}]},
+          {"key": "connector", "role": "connector", "parentKey": null, "implicit": false, "ranges": [{"start": 19, "end": 22}], "relation": "addition"}
+        ],
+        "corrections": [],
+        "aspect": null,
+        "voice": null,
+        "reasons": []
+      }
+    },
+    {
+      "id": "boundary-19",
+      "group": "boundary",
+      "input": "She does not sleep, today.",
+      "expected": {
+        "status": "unsupported",
+        "nodes": [],
+        "corrections": [],
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "unsupported-structure",
+            "ranges": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "boundary-20",
+      "group": "boundary",
+      "input": "She sleeps. He smiles.",
+      "expected": {
+        "status": "invalid",
+        "nodes": [],
+        "corrections": [],
+        "purpose": null,
+        "pattern": null,
+        "complexity": null,
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "reasons": [
+          {
+            "code": "invalid-input",
+            "ranges": []
+          }
+        ]
+      }
+    }
+  ]
+}
