@@ -5,6 +5,9 @@
 | 文档 | 用途 |
 |---|---|
 | [项目说明](../README.md) | 当前能力、限制、启动方式、词典维护与验证命令 |
+| [当前功能清单与开发规划基线](current-features.md) | 按用户能力整理已支持功能、组合限制、运行维护能力及后续候选 |
+| [阶段 33–37 总开发计划](stage33-37-development-plan.md) | 已审查，待实施：be 地点表语、限定 SVO 地点、will 进行／完成与联合复核 |
+| [阶段 33 开发计划](stage33-development-plan.md) | 待实施：be 地点表语、where + be、限定一致纠错及独立验收 |
 | [阶段 27–32 开发计划](structure-development-plan.md) | 27–32 已交付；保留原门槛与后续候选 |
 | [词典数据库与发布协议](lexicon-database-design.md) | 现行 SQLite 维护、审核修订、不可变发布、快照与联合版本约束 |
 | [单 tab 分析流程](analysis-flow.md) | 先检查语法，通过后自动解析成分；人工预期与浏览器验收 |
