@@ -100,6 +100,8 @@ node scripts/check-historical-baselines.mjs
 node --experimental-strip-types scripts/check-stage25-baseline.mjs
 ```
 
+阶段 12、18、25、32 的开发基线统一存储在 `tests/baselines/development.json`。`strings` 保存去重字符串，各阶段的 `inputs` 用 `[字符串索引, 来源索引数组]` 引用共享字符串和该阶段的 `sources`；读取 helper 还原原始对象后，继续校验原有冻结哈希、数量、来源和独立性。四份原始 JSON 共 5,676,697 字节，合并后 1,032,271 字节，减少约 81.8%，全部输入和来源均保留。档案文档及冻结来源中出现的 `stage12/18/25/32-development.json` 是原始历史路径，仍按原提交核验，不改写为当前存储路径。此文件仅供测试和维护脚本使用。
+
 ## 本地词典维护
 
 Node 内置 `node:sqlite` 在 Node >=22.13 可用，本次验证版本为 24.14.1；目前仍会显示 experimental 提示。工作库放在忽略目录 `.lexicon/`，不需要 D1 绑定或网页服务。
@@ -191,7 +193,7 @@ npm run build
 - `tests/stage13.test.mjs` 至 `tests/stage18.test.mjs`：谓语扩展、协议、独立答案与预算回归
 - `tests/fixtures/predicate-development.json`、`predicate-acceptance.json`：人工固定开发与独立答案
 - `tests/stage25.test.mjs`、`stage25-delivery.test.mjs`、`ui-stage25.mjs`：120 个新独立人工答案、固定来源与哈希、完整纠错闭环、磁盘空库重建与重新审核、高候选词形及交付浏览器复核
-- `tests/baselines/stage25-development.json`、`tests/fixtures/lexicon-acceptance.json`：阶段 25 的冻结开发/历史清单和独立答案
+- `tests/baselines/development.json`、`tests/fixtures/lexicon-acceptance.json`：共享档案中的阶段 25 冻结开发/历史清单和独立答案
 - `tests/stage24.test.mjs`、`tests/ui-stage24.mjs`：82 个固定答案、50 项历史迁移、三类纠错门槛、精确编辑与应用后的完整结果、过期拒绝及浏览器验收
 - `tests/stage23.test.mjs`、`tests/ui-stage23.mjs`：57 个缩写人工答案、11 项历史迁移、完整 token 编辑与原文区间、基础纠错及浏览器验收
 - `tests/stage22.test.mjs`、`tests/ui-stage22.mjs`：拥有义/助动词区分、53 个人工答案、10 对基础纠错、4 项历史迁移、发布重现及浏览器验收
@@ -201,7 +203,7 @@ npm run build
 - `tests/stage19.test.mjs`、`tests/fixtures/lexicon-development.json`：未来人工答案完整性、范围和数量（不表示未来能力已实现）
 - `tests/fixtures/lexicon-migrations.json`：历史样例审查、原 fixture 与逐阶段迁移答案
 - `tests/fixtures/stage32-*.json`、`tests/stage32*.test.mjs`、`tests/ui-stage32*.mjs`：独立答案、初稿保留、交付与浏览器复核
-- `tests/baselines/`、`tests/helpers/historical-independence.mjs`：固定历史开发语料和独立性保护
+- `tests/baselines/development.json`、`tests/helpers/development-baselines.mjs`、`tests/helpers/historical-independence.mjs`：四个阶段的共享历史开发语料、无损还原和独立性保护
 - `tests/baselines/original-fixtures/`、`tests/helpers/original-fixtures.mjs`：原始样例快照与冻结来源哈希校验；常规测试不依赖 Git 历史
 - `docs/README.md`、`docs/structure-development-plan.md`：文档导航与当前阶段 27–32 开发计划（27–32 已交付）
 - `docs/lexicon-database-design.md`：现行 SQLite/审核/快照协议

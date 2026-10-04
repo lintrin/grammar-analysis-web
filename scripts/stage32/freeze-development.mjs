@@ -1,7 +1,8 @@
 // Source-only extraction and previously captured developer inputs. No grammar imports.
 import {execFileSync} from 'node:child_process';
 import {createHash} from 'node:crypto';
-import {existsSync,readFileSync,writeFileSync} from 'node:fs';
+import {readFileSync} from 'node:fs';
+import {loadStage32Baseline} from '../../tests/helpers/stage32-fixtures.mjs';
 import ts from 'typescript';
 const commit='4a2a242a8e7835e18a958d483454cb33f2186c68';
 const paths=execFileSync('git',['ls-tree','-r','--name-only',commit],{encoding:'utf8'}).trim().split('\n').filter(p=> /^(tests|docs|lib|components|app|data|scripts)\//.test(p)||p==='README.md'||p==='AGENTS.md').filter(p=>/\.(json|[cm]?js|tsx?|md|sha256|sql|csv)$/.test(p));
@@ -25,7 +26,5 @@ for(const path of [...paths,'tests/baselines/stage32-runtime-inputs.json','scrip
 const payload={formatVersion:1,stage:32,baselineCommit:commit,ruleVersion:'0.22.3',lexiconVersion:'1.7.0',extraction:'All JSON strings (including original historical snapshots), TypeScript AST literals and template source text, Markdown code/prose, plus all actual developer analyzer calls from 5271 pre-stage32 tests including corrections and generated carriers. lowercase + whitespace-collapse + trim. Git sources stay bound to immutable commit; runtime capture remains byte-frozen.',sources:sources.sort((a,b)=>a.path.localeCompare(b.path)),inputs:[...collected].sort(([a],[b])=>a<b?-1:a>b?1:0).map(([input,sources])=>({input,sources:[...sources].sort()}))};
 const contentHash=createHash('sha256').update(JSON.stringify(payload)).digest('hex');
 const output=JSON.stringify({...payload,contentHash},null,2)+'\n';
-if(existsSync('tests/baselines/stage32-development.json')) {
- if(readFileSync('tests/baselines/stage32-development.json','utf8')!==output)throw new Error('Frozen stage32 source or content changed; do not regenerate baseline');
-} else writeFileSync('tests/baselines/stage32-development.json',output);
+if(JSON.stringify(loadStage32Baseline(),null,2)+'\n'!==output)throw new Error('Frozen stage32 source or content changed; do not regenerate baseline');
 console.log({contentHash,sources:payload.sources.length,inputs:payload.inputs.length});

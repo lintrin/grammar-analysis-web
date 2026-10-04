@@ -1,7 +1,10 @@
 """Human annotations and frozen range arithmetic only. Never import or run grammar rules."""
 import json, hashlib, re
 from pathlib import Path
-baseline=json.loads(Path('tests/baselines/stage32-development.json').read_text())
+archive=json.loads(Path('tests/baselines/development.json').read_text())
+assert archive['formatVersion']==1
+baseline=archive['stages']['32'].copy()
+baseline['inputs']=[dict(input=archive['strings'][text],sources=[baseline['sources'][i]['path'] for i in sources]) for text,sources in baseline['inputs']]
 previous={x['input'] for x in baseline['inputs']}
 fixtures=[]
 def empty(status='unsupported',code='unsupported-structure',ranges=None,index=None):

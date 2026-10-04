@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
-import { readFileSync } from 'node:fs';
+import { loadDevelopmentBaseline } from './development-baselines.mjs';
 
 export const baselineHashes = Object.freeze({
   12: 'e3817b0426d3f53e63dec8732d522fa96aa75daca22c4901419615e525e4a603',
@@ -34,7 +34,7 @@ export function validateHistoricalBaseline(baseline, stage) {
 }
 
 export function loadHistoricalBaseline(stage) {
-  const baseline = JSON.parse(readFileSync(new URL(`../baselines/stage${stage}-development.json`, import.meta.url), 'utf8'));
+  const baseline = loadDevelopmentBaseline(stage);
   validateHistoricalBaseline(baseline, stage);
   return baseline;
 }

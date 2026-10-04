@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {readFileSync} from 'node:fs';
+import {loadDevelopmentBaseline} from './development-baselines.mjs';
 import {normalizeHistoricalInput, baselineHash} from './historical-independence.mjs';
 import {compareLexiconExpectation, validateLexiconExpectation} from './lexicon-expectations.mjs';
 
@@ -28,7 +29,7 @@ export function validateStage25Baseline(baseline) {
   return inputs;
 }
 export function loadStage25Baseline() {
-  const baseline = JSON.parse(readFileSync(new URL('../baselines/stage25-development.json', import.meta.url)));
+  const baseline = loadDevelopmentBaseline(25);
   validateStage25Baseline(baseline); return baseline;
 }
 export function checkStage25Independence(fixtures, baseline = loadStage25Baseline()) {

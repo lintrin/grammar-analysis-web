@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
+import {loadDevelopmentBaseline} from './development-baselines.mjs';
 import {normalizeHistoricalInput,baselineHash} from './historical-independence.mjs';
 export const STAGE32_BASELINE_HASH='cd94838068f974f5a23213aa76830e5662e16b1ec91d032779c375bf4a9ce3cd';
 export const STAGE32_ACCEPTANCE_HASH='309a54dd821ecdf2a7c777698140494ab48fd865e8a17a5675404525cfd16f2b';
@@ -13,7 +14,7 @@ export function validateStage32Baseline(baseline){
  for(const s of baseline.sources)assert.match(s.sha256,/^[a-f0-9]{64}$/);
  for(const row of baseline.inputs){assert.equal(row.input,normalizeHistoricalInput(row.input));assert.ok(row.sources.length&&row.sources.every(s=>sources.has(s)),'Missing provenance');assert.equal(inputs.has(row.input),false,'Duplicate baseline');inputs.add(row.input);}return inputs;
 }
-export const loadStage32Baseline=()=>{const b=JSON.parse(readFileSync(new URL('../baselines/stage32-development.json',import.meta.url)));validateStage32Baseline(b);return b;};
+export const loadStage32Baseline=()=>{const b=loadDevelopmentBaseline(32);validateStage32Baseline(b);return b;};
 export function checkStage32Independence(fixtures,baseline=loadStage32Baseline()){
  const old=validateStage32Baseline(baseline),unique=new Set();for(const f of fixtures){const key=normalizeHistoricalInput(f.input);assert.equal(old.has(key),false,`Historical/development input reused: ${f.input}`);assert.equal(unique.has(key),false,`Duplicate independent input: ${f.input}`);unique.add(key);}
 }
