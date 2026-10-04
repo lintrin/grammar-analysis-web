@@ -62,13 +62,15 @@ npm run start -- --port 5188
 
 单 tab 检查与解析流程使用 `tests/ui-analysis-flow.mjs`，在下述 Playwright 环境中设置 `CLAUSE_BASE_URL` 后运行；覆盖检查通过、纠错后重新检查、歧义/范围/无效输入阻断、分句和定语、桌面/390px 手机、快捷键、分析中编辑取消、断网与隐私。`CLAUSE_FLOW_REPORT` 可指定验收报告路径。
 
+测试清理：旧 `tests/ui-stage20.mjs` 的固定离线句子和断言已合入 `tests/ui-analysis-flow.mjs`；它和写死旧版本的 `tests/ui-stage32-hmr.mjs` 均已删除，当前 HMR 回归使用 `scripts/stage33/check-hmr.mjs`。阶段 27–30 开发集及阶段 32 查询集（含初稿）的哈希已由测试中的固定摘要校验，删除重复且未读取的 `.sha256` 文件；人工答案、历史来源快照与行为断言继续保留。归档中的旧文件名描述当时的验收记录。
+
 阶段 27–30 浏览器回归共用 tests/ui-structure.mjs。安装 Playwright/Chromium 后，设置 PLAYWRIGHT_MODULE 为模块绝对路径、PLAYWRIGHT_CHROMIUM_EXECUTABLE 为浏览器可执行文件；本机已有工具可直接复用。启动对应服务，分别针对开发地址和构建地址运行：
 
 ```sh
 CLAUSE_STAGE=30 CLAUSE_BASE_URL=http://127.0.0.1:5188 node tests/ui-structure.mjs
 ```
 
-CLAUSE_STAGE 可选 27、28、29、30；CLAUSE_STRUCTURE_REPORT 可指定报告路径。真实 HMR 在开发服务运行 tests/ui-stage32-hmr.mjs（同样设置 CLAUSE_BASE_URL），核验规则/词典版本/哈希变动和滞留回调。阶段 27–31 脚本属于开发范围回归，阶段 32 的独立验收另行运行。阶段 31 查询使用同一 Playwright 环境，对开发与构建地址分别运行：
+CLAUSE_STAGE 可选 27、28、29、30；CLAUSE_STRUCTURE_REPORT 可指定报告路径。真实 HMR 在 `http://127.0.0.1:5188` 的开发服务运行 `node scripts/stage33/check-hmr.mjs`，核验规则/词典版本/哈希变动和滞留回调；可用 `STAGE33_PLAYWRIGHT_MODULE`、`STAGE33_CHROMIUM` 指定现有 Playwright 模块与浏览器路径，脚本结束恢复全部修改的源文件。阶段 27–31 脚本属于开发范围回归，阶段 32 的独立验收另行运行。阶段 31 查询使用同一 Playwright 环境，对开发与构建地址分别运行：
 
 ```sh
 CLAUSE_BASE_URL=http://127.0.0.1:5188 node tests/ui-stage31.mjs
@@ -83,10 +85,9 @@ node scripts/stage32/freeze-development.mjs
 node --experimental-strip-types scripts/stage32/check-performance.mjs
 CLAUSE_BASE_URL=http://127.0.0.1:5188 node tests/ui-stage32.mjs
 CLAUSE_BASE_URL=http://127.0.0.1:5189 node tests/ui-stage32.mjs
-CLAUSE_BASE_URL=http://127.0.0.1:5188 node tests/ui-stage32-hmr.mjs
 ```
 
-需要与阶段 31 相同的 Playwright 环境。186 个固定输入保留初稿全部原句，包含额外控制/复核回归；20 个独立查询另保留 given 教学来源回归。主脚本报告用 CLAUSE_STAGE32_REPORT 指定，HMR 报告用 CLAUSE_STAGE32_HMR_REPORT；性能数据仅说明本机条件。
+需要与阶段 31 相同的 Playwright 环境。186 个固定输入保留初稿全部原句，包含额外控制/复核回归；20 个独立查询另保留 given 教学来源回归。主脚本报告用 CLAUSE_STAGE32_REPORT 指定；HMR 使用上述阶段 33 脚本。性能数据仅说明本机条件。
 
 历史独立样例与性能复核：
 

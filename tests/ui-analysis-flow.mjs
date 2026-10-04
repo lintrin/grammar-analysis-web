@@ -52,6 +52,16 @@ try {
     assert.equal(await displayed(),'She sleeps.');
     assert.equal(await panel.locator('.correction-card, .analysis-waiting').count(),0);
     assert.equal(await panel.locator('.check-status').innerText(),'当前规则检查通过');
+    // Preserve the fixed offline cases from the retired stage 20 browser script.
+    await check('Our young teacher give the girls an old picture today.','部分支持',false,1);
+    await page.getByRole('button',{name:'应用此建议并重新分析',exact:true}).click();
+    await status('规则分析完成');
+    assert.equal(await input.inputValue(),'Our young teacher gives the girls an old picture today.');
+    assert.equal(await displayed(),'Our young teacher gives the girls an old picture today.');
+    assert.equal(await panel.locator('.correction-card, .analysis-waiting').count(),0);
+    assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth),true);
+    await check('She has sent him a book.','规则分析完成',true,0);
+    assert.equal(await page.locator('.sentence-part').count(),4);
     await check('They read the book.','存在歧义',false,0);
     await check('She likes music.','超出当前范围',false,0);
     await page.getByRole('button',{name:'查看原文：music',exact:true}).press('Enter');
@@ -92,7 +102,7 @@ try {
   assert.equal(await panel.locator('.correction-card').count(),1);
   assert.equal(await panel.locator('.component-analysis').count(),0);
   assert.deepEqual(requests,[],'offline analysis, corrections and navigation make no requests');
-  for (const sentence of ['She sleep.','She likes music.','The teacher gives her an old book.']) {
+  for (const sentence of ['She sleep.','She likes music.','The teacher gives her an old book.','Our young teacher give the girls an old picture today.','Our young teacher gives the girls an old picture today.','She has sent him a book.']) {
     assert.equal(logs.some(log => log.includes(sentence)),false);
   }
   const storage = await page.evaluate(async () => ({local:Object.keys(localStorage),session:Object.keys(sessionStorage),databases:await indexedDB.databases(),cookie:document.cookie}));
@@ -101,7 +111,7 @@ try {
   assert.equal(await input.inputValue(),defaultInput);
   assert.equal(await page.locator('.result-status').innerText(),'等待分析');
   assert.deepEqual(errors,[]);
-  const report = {passed:true,viewports:[1280,390],singleTab:true,checksBeforeParts:true,appliedCorrectionRechecked:true,nonCompleteBlocked:true,navigationAndAttributes:true,pendingEditCancelled:true,offlineRequests:0,storage,pageErrors:errors};
+  const report = {passed:true,viewports:[1280,390],singleTab:true,checksBeforeParts:true,appliedCorrectionRechecked:true,stage20OfflineCasesPreserved:true,nonCompleteBlocked:true,navigationAndAttributes:true,pendingEditCancelled:true,offlineRequests:0,storage,pageErrors:errors};
   if (process.env.CLAUSE_FLOW_REPORT) writeFileSync(process.env.CLAUSE_FLOW_REPORT,JSON.stringify(report,null,2)+'\n');
   console.log('PASS: single-tab checks, automatic parts, correction recheck, blocked states, navigation, mobile, keyboard, cancellation, offline and privacy.');
 } finally {await browser.close();}

@@ -7,6 +7,7 @@
 - `She sleeps.`：通过检查，展示主语、谓语；`She sleep.`：展示主谓一致建议，不展示成分；应用建议后输入成为 `She sleeps.`，重新检查通过并展示成分。
 - `They read the book.`：保留时态歧义，不进入成分解析；`She likes music.`：词典未覆盖，可定位原文，不进入成分解析；空白输入：提示输入无效，不进入成分解析。
 - `She sleeps and he smiles.`：通过当前规则后保留分句进入、返回和焦点行为；保留简单句短语内部定语。
+- 从旧 `ui-stage20.mjs` 保留离线回归：`Our young teacher give the girls an old picture today.` 有一条一致性建议，应用后为 `Our young teacher gives the girls an old picture today.`；`She has sent him a book.` 检查通过并展示四个顶层成分。两种屏幕尺寸均验证快捷键、无横向溢出及输入不进入请求、日志或存储。版本／哈希失效及旧回调拒绝由 `scripts/stage33/check-hmr.mjs` 继续覆盖。
 - 无建议但未完整匹配不能视为检查通过。错误、范围限制和歧义分别保留现有说明。
 - 修改输入、选择教学例句或分析中编辑立即清除旧检查、建议和成分；旧回调不能覆盖新输入。键盘快捷键、手机布局、失败重试与版本失效继续回归。
 - 输入仍仅在浏览器内处理，不上传、不写日志或持久保存；刷新恢复默认输入。全部历史人工语法答案保持不变，仅迁移浏览器的 tab 定位。
@@ -33,3 +34,5 @@ CLAUSE_BASE_URL=http://127.0.0.1:5189 node tests/ui-stage32.mjs
 ```
 
 `PLAYWRIGHT_MODULE` 与 `PLAYWRIGHT_CHROMIUM_EXECUTABLE` 的设置方式沿用 README。`CLAUSE_FLOW_REPORT` 可指定单 tab 验收报告路径；报告不包含输入句子。
+
+2026-10-04 测试清理复核：移除重复的阶段 20 浏览器入口及写死旧版本的阶段 32 HMR 入口，固定离线用例合入现有单 tab 回归。清理前后均为 5803 项测试通过；类型、ESLint、差异检查通过。开发服务的 1280px/390px 浏览器回归与阶段 33 的 7 项真实 HMR／回调／失败重试检查通过，源文件逐字节恢复，手机截图已查看。此次只调整测试与文档。
